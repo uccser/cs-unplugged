@@ -460,6 +460,74 @@ if (programming_lang == "python") {
         "tooltip": "Block for advanced math operators with single operand.",
         "helpUrl": ""
       },
+      // Operators greater than block
+      {
+        "type": "operators_greater_than",
+        "message0": "%1 > %2 %3",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "A"
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_value",
+            "name": "B"
+          }
+        ],
+        "inputsInline": true,
+        "output": "Boolean",
+        "colour": 120,
+        "tooltip": "Return true if the first input is greater than the second input.",
+        "helpUrl": ""
+      },
+      // Operators less than block
+      {
+        "type": "operators_less_than",
+        "message0": "%1 < %2 %3",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "A"
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_value",
+            "name": "B"
+          }
+        ],
+        "output": "Boolean",
+        "colour": 120,
+        "tooltip": "Return true if the second input is greater than the first input.",
+        "helpUrl": ""
+      },
+      // Operators equality block
+      {
+        "type": "operators_equality",
+        "message0": "%1 = %2 %3",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "A"
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_value",
+            "name": "B"
+          }
+        ],
+        "inputsInline": true,
+        "output": "Boolean",
+        "colour": 120,
+        "tooltip": "Return true if both inputs equal each other.",
+        "helpUrl": ""
+      },
       // Sensing ask and wait block
       {
         "type": "sensing_ask_and_wait",
@@ -598,6 +666,55 @@ if (programming_lang == "python") {
         "helpUrl": ""
       }
     ]);
+
+    // Operators equality block
+    Blockly.JavaScript['operators_equality'] = function(block) {
+      var order = Blockly.JavaScript.ORDER_RELATIONAL;
+      var value_a = Blockly.JavaScript.valueToCode(block, 'A', order) || '0';
+      var value_b = Blockly.JavaScript.valueToCode(block, 'B', order) || '0';
+      var code = value_a + ' ==' + value_b;
+      return [code, order];
+    };
+    Blockly.Python['operators_equality'] = function(block) {
+      var order = Blockly.Python.ORDER_RELATIONAL;
+      var value_a = Blockly.Python.valueToCode(block, 'A', order) || '0';
+      var value_b = Blockly.Python.valueToCode(block, 'B', order) || '0';
+      var code = value_a + ' == ' + value_b;
+      return [code, order];
+    };
+    
+
+    // Operators greater than block
+    Blockly.JavaScript['operators_less_than'] = function(block) {
+      var order = Blockly.JavaScript.ORDER_RELATIONAL;
+      var value_a = Blockly.JavaScript.valueToCode(block, 'A', order);
+      var value_b = Blockly.JavaScript.valueToCode(block, 'B', order);
+      var code = value_a + ' < ' + value_b;
+      return [code, order];
+    };
+    Blockly.Python['operators_less_than'] = function(block) {
+      var order = Blockly.Python.ORDER_RELATIONAL;
+      var value_a = Blockly.Python.valueToCode(block, 'A', order);
+      var value_b = Blockly.Python.valueToCode(block, 'B', order);
+      var code = value_a + ' < ' + value_b;
+      return [code, order];
+    };
+    
+    // Operators greater than block
+    Blockly.JavaScript['operators_greater_than'] = function(block) {
+      var order = Blockly.JavaScript.ORDER_RELATIONAL;
+      var value_a = Blockly.JavaScript.valueToCode(block, 'A', order);
+      var value_b = Blockly.JavaScript.valueToCode(block, 'B', order);
+      var code = value_a + ' > ' + value_b;
+      return [code, order];
+    };
+    Blockly.Python['operators_greater_than'] = function(block) {
+      var order = Blockly.Python.ORDER_RELATIONAL;
+      var value_a = Blockly.Python.valueToCode(block, 'A', order);
+      var value_b = Blockly.Python.valueToCode(block, 'B', order);
+      var code = value_a + ' > ' + value_b;
+      return [code, order];
+    };
 
     // Operators single operand block
     Blockly.JavaScript['operators_single'] = function(block) {
