@@ -16,15 +16,6 @@ require('blockly/javascript');
 const En = require('blockly/msg/en');
 Blockly.setLocale(En);
 
-// Change default text of default blocks
- const CustomEs = {
-  TEXT_PRINT_TITLE: "say %1",
-  MATH_RANDOM_INT_TITLE: "pick random %1 to %2",
-  CONTROLS_REPEAT_TITLE: "repeat %1",
-  CONTROLS_FOR_INPUT_DO: ""
- }
- Blockly.setLocale(CustomEs);
-
 // Has to be global as other functions are using these variables
 let myCodeMirror; 
 let workspace;
@@ -347,6 +338,33 @@ if (programming_lang == "python") {
         "tooltip": "Round a number up.",
         "helpUrl": ""
       },
+      // Operators pick random int block
+      {
+        "type": "operators_random_int",
+        "message0": "pick random %1 %2 to %3 %4",
+        "args0": [
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_value",
+            "name": "a",
+            "check": "Number"
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_value",
+            "name": "b",
+            "check": "Number"
+          }
+        ],
+        "output": "Number",
+        "colour": 120,
+        "tooltip": "Return a random integer between the two numbers (inclusive).",
+        "helpUrl": ""
+      },
       // Sensing ask and wait block
       {
         "type": "sensing_ask_and_wait",
@@ -486,6 +504,33 @@ if (programming_lang == "python") {
       }
     ]);
 
+    // Operators pick random int block
+    Blockly.JavaScript['operators_random_int'] = function(block) {
+      var value_a = Blockly.JavaScript.valueToCode(block, 'a', Blockly.JavaScript.ORDER_ATOMIC) || '0';
+      var value_b = Blockly.JavaScript.valueToCode(block, 'b', Blockly.JavaScript.ORDER_ATOMIC) || '0';
+      var functionName = Blockly.JavaScript.provideFunction_(
+        'mathRandomInt',
+        ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
+            '(a, b) {',
+         '  if (a > b) {',
+         '    // Swap a and b to ensure a is smaller.',
+         '    var c = a;',
+         '    a = b;',
+         '    b = c;',
+         '  }',
+         '  return Math.floor(Math.random() * (b - a + 1) + a);',
+         '}']);
+         var code = functionName + '(' + value_a + ', ' + value_b + ')';
+      return [code, Blockly.JavaScript.ORDER_NONE];
+    };
+    Blockly.Python['operators_random_int'] = function(block) {
+      Blockly.Python.definitions_['import_random'] = 'import random';
+      var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_NONE);
+      var value_b = Blockly.Python.valueToCode(block, 'b', Blockly.Python.ORDER_NONE);
+      var code = 'random.randint(' + value_a + ', ' + value_b + ')';
+      return [code, Blockly.Python.ORDER_FUNCTION_CALL];
+    };
+
     // Controls repeat until block
     Blockly.JavaScript['controls_repeat_until'] = function(block) {
       var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_ATOMIC) || 'false';
@@ -562,7 +607,6 @@ if (programming_lang == "python") {
     // Looks say block
     Blockly.JavaScript['looks_say'] = function(block) {
       var value_value = Blockly.JavaScript.valueToCode(block, 'value', Blockly.JavaScript.ORDER_ATOMIC);
-      // TODO: Assemble JavaScript into code variable.
       var code = 'alert(' + value_value + ');\n';
       return code;
     };
@@ -615,12 +659,10 @@ if (programming_lang == "python") {
 
     // Controls stop block
     Blockly.JavaScript['controls_stop'] = function(block) {
-      // TODO: Assemble JavaScript into code variable.
       var code = 'break;\n';
       return code;
     };
     Blockly.Python['controls_stop'] = function(block) {
-      // TODO: Assemble Python into code variable.
       var code = 'break\n';
       return code;
     };
@@ -628,16 +670,12 @@ if (programming_lang == "python") {
     // Sensing ask and wait block
     Blockly.JavaScript['sensing_ask_and_wait'] = function(block) {
       var value_question = Blockly.JavaScript.valueToCode(block, 'question', Blockly.JavaScript.ORDER_ATOMIC);
-      // TODO: Assemble JavaScript into code variable.
       var code = 'prompt(' + value_question + ');\n'
-      // TODO: Change ORDER_NONE to the correct strength.
       return [code, Blockly.JavaScript.ORDER_NONE];
     };
     Blockly.Python['sensing_ask_and_wait'] = function(block) {
       var value_question = Blockly.Python.valueToCode(block, 'question', Blockly.Python.ORDER_ATOMIC);
-      // TODO: Assemble Python into code variable.
       var code = 'input(' + value_question + ')\n';
-      // TODO: Change ORDER_NONE to the correct strength.
       return [code, Blockly.Python.ORDER_NONE];
     };
 
