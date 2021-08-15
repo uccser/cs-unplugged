@@ -459,8 +459,43 @@ if (programming_lang == "python") {
         "colour": 45,
         "tooltip": "Do some statements several times.",
         "helpUrl": ""
+      },
+      // Controls repeat until block
+      {
+        "type": "controls_repeat_until",
+        "message0": "repeat until %1 %2",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "condition",
+            "check": "Boolean"
+          },
+          {
+            "type": "input_statement",
+            "name": "body"
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 45,
+        "tooltip": "Repeat a statement several times until a condition is met.",
+        "helpUrl": ""
       }
     ]);
+
+    // Controls repeat until block
+    Blockly.JavaScript['controls_repeat_until'] = function(block) {
+      var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_ATOMIC) || 'false';
+      var statements_body = Blockly.JavaScript.statementToCode(block, 'body');
+      var code = 'while (!' + value_condition + ') {\n' + statements_body + '}\n';
+      return code;
+    };
+    Blockly.Python['controls_repeat_until'] = function(block) {
+      var value_condition = Blockly.Python.valueToCode(block, 'condition', Blockly.Python.ORDER_ATOMIC) || 'False';
+      var statements_body = Blockly.Python.statementToCode(block, 'body') || '  pass';
+      var code = 'while not ' + value_condition + ':\n' + statements_body + '\n';
+      return code;
+    };
 
     // Controls repeat block
     Blockly.JavaScript['controls_repeat_num_times'] = function(block) {
