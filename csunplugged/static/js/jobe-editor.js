@@ -109,7 +109,6 @@ if (programming_lang == "python") {
         "tooltip": "Return the product of the two numbers.",
         "helpUrl": ""
       },
-      ,
       // Operators divide block 
       {
         "type": "operators_divide",
@@ -310,6 +309,26 @@ if (programming_lang == "python") {
         "tooltip": "Returns true if at least one of the inputs is true.",
         "helpUrl": ""
       },
+      // Operators round up block
+      {
+        "type": "operators_round",
+        "message0": "round %1 %2",
+        "args0": [
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_value",
+            "name": "a",
+            "check": "Number"
+          }
+        ],
+        "inputsInline": true,
+        "output": "Number",
+        "colour": 120,
+        "tooltip": "Round a number up.",
+        "helpUrl": ""
+      },
       // Sensing ask and wait block
       {
         "type": "sensing_ask_and_wait",
@@ -340,6 +359,18 @@ if (programming_lang == "python") {
         "helpUrl": ""
       },
     ]);
+
+    // Operators round up block
+    Blockly.JavaScript['operators_round'] = function(block) {
+      var value_a = Blockly.JavaScript.valueToCode(block, 'a', Blockly.JavaScript.ORDER_ATOMIC);
+      var code = 'Math.round(' + value_a + ')';
+      return [code, Blockly.JavaScript.ORDER_NONE];
+    };
+    Blockly.Python['operators_round'] = function(block) {
+      var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC);
+      var code = 'round(' + value_a + ')';
+      return [code, Blockly.Python.ORDER_NONE];
+    };
 
     // Operators logical OR block 
     Blockly.JavaScript['operators_or'] = function(block) {
