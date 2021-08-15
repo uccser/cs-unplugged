@@ -261,8 +261,44 @@ if (programming_lang == "python") {
         "colour": 120,
         "tooltip": "Returns true if the second string is in the first string.",
         "helpUrl": ""
+      },
+      // Sensing ask and wait block
+      {
+        "type": "sensing_ask_and_wait",
+        "message0": "ask %1 %2 and wait",
+        "args0": [
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_value",
+            "name": "question",
+            "check": "String"
+          }
+        ],
+        "inputsInline": true,
+        "output": "String",
+        "colour": 180,
+        "tooltip": "Ask user for some text.",
+        "helpUrl": ""
       }
     ]);
+
+    // Sensing ask and wait block
+    Blockly.JavaScript['sensing_ask_and_wait'] = function(block) {
+      var value_question = Blockly.JavaScript.valueToCode(block, 'question', Blockly.JavaScript.ORDER_ATOMIC);
+      // TODO: Assemble JavaScript into code variable.
+      var code = 'prompt(' + value_question + ')'
+      // TODO: Change ORDER_NONE to the correct strength.
+      return [code, Blockly.JavaScript.ORDER_NONE];
+    };
+    Blockly.Python['sensing_ask_and_wait'] = function(block) {
+      var value_question = Blockly.Python.valueToCode(block, 'question', Blockly.Python.ORDER_ATOMIC);
+      // TODO: Assemble Python into code variable.
+      var code = 'input(' + value_question + ')';
+      // TODO: Change ORDER_NONE to the correct strength.
+      return [code, Blockly.Python.ORDER_NONE];
+    };
 
     // Operators <string> contains <substring> block
     Blockly.JavaScript['operators_string_contains'] = function(block) {
