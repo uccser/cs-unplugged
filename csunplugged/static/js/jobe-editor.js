@@ -434,16 +434,12 @@ if (programming_lang == "python") {
       // Controls repeat block
       {
         "type": "controls_repeat_num_times",
-        "message0": "repeat %1 %2 %3 %4",
+        "message0": "repeat %1 %2 %3",
         "args0": [
           {
-            "type": "field_number",
+            "type": "input_value",
             "name": "num",
-            "value": 0,
-            "min": 0
-          },
-          {
-            "type": "input_dummy"
+            "check": "Number"
           },
           {
             "type": "input_statement",
@@ -499,21 +495,16 @@ if (programming_lang == "python") {
 
     // Controls repeat block
     Blockly.JavaScript['controls_repeat_num_times'] = function(block) {
-      var number_num = block.getFieldValue('num') || '0';
+      var value_num = Blockly.JavaScript.valueToCode(block, 'num', Blockly.JavaScript.ORDER_ATOMIC) || '0';
       var statements_body = Blockly.JavaScript.statementToCode(block, 'body');
-      var code = 'for (var count = 0; count < ' + number_num + '; count++) {\n' + statements_body + '}\n';
+      var code = 'for (var count = 0; count < ' + value_num + '; count++) {\n' + statements_body + '}\n';
       return code;
     };
     Blockly.Python['controls_repeat_num_times'] = function(block) {
-      var number_num = block.getFieldValue('num') || '0'; 
-      var statements_body = Blockly.Python.statementToCode(block, 'body');
+      var value_num = Blockly.Python.valueToCode(block, 'num', Blockly.Python.ORDER_ATOMIC) || '0';
+      var statements_body = Blockly.Python.statementToCode(block, 'body') || '  pass';
 
-      if (statements_body === "") {
-        statements_body = '  pass'; // 2 spaces for indentation in Python
-      }
-
-      // TODO: Assemble Python into code variable.
-      var code = 'for count in range(' + number_num + '):\n' + statements_body + '\n';
+      var code = 'for count in range(' + value_num + '):\n' + statements_body + '\n';
       return code;
     };
     
