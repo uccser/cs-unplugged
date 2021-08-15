@@ -78,8 +78,6 @@ function setupLessonNav() {
   
   // Hides the next/prev challenge buttons if there is no challenge available in that direction.
   const index = getCurrentIndex();
-  console.log("INDEX")
-   console.log(index);
   if (index === programming_exercises.length-1) {
     $("#next_challenge_button").find('button').hide()
   }

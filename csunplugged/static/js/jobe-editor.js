@@ -9,12 +9,8 @@ var CodeMirror = require("codemirror");
 require("codemirror/mode/python/python.js");
 
 // Blockly editor imports
-const Blockly = require('blockly/core');
-require('blockly/blocks');
+const Blockly = require('blockly');
 require('blockly/python');
-require('blockly/javascript');
-const En = require('blockly/msg/en');
-Blockly.setLocale(En);
 
 // Has to be global as other functions are using these variables
 let myCodeMirror; 
@@ -45,6 +41,12 @@ if (programming_lang == "python") {
 } else {
   // Set up blockly editor
   document.addEventListener("DOMContentLoaded", function () {
+
+    const LOOKS_BLOCKS_COLOUR = '#9966ff'
+    const CONTROL_BLOCKS_COLOUR = '#ffab19'
+    const SENSING_BLOCKS_COLOUR = '#5cb1d6'
+    const OPERATORS_BLOCKS_COLOUR = '#59c059'
+
     // Custom Blockly blocks to look and act like Scratch
     Blockly.defineBlocksWithJsonArray([
       // Looks say block
@@ -63,9 +65,42 @@ if (programming_lang == "python") {
         "inputsInline": true,
         "previousStatement": null,
         "nextStatement": null,
-        "colour": 240,
+        "colour": LOOKS_BLOCKS_COLOUR,
         "tooltip": "Say the specified text, number or other value.",
         "helpUrl": ""
+      },
+      // Operators number block
+      {
+        "type": "operators_number",
+        "message0": "%1",
+        "args0": [{
+          "type": "field_number",
+          "name": "NUM",
+          "value": 0
+        }],
+        "output": "Number",
+        "helpUrl": "",
+        "colour": '#4c97ff',
+        "tooltip": "A number.",
+        "extensions": ["parent_tooltip_when_inline"]
+      },
+      // Operators text block
+      {
+        "type": "operators_string",
+        "message0": "%1",
+        "args0": [{
+          "type": "field_input",
+          "name": "TEXT",
+          "text": ""
+        }],
+        "output": "String",
+        "colour": '#4c97ff',
+        "helpUrl": "",
+        "tooltip": "A letter, word, or a line or text.",
+        "extensions": [
+          "text_quotes",
+          "parent_tooltip_when_inline"
+        ]
       },
       // Operators modulo block
       {
@@ -89,7 +124,7 @@ if (programming_lang == "python") {
         ],
         "inputsInline": true,
         "output": "Number",
-        "colour": '#7459c0',
+        "colour": OPERATORS_BLOCKS_COLOUR,
         "tooltip": "Return the modulo of the two numbers.",
         "helpUrl": ""
       },
@@ -114,7 +149,7 @@ if (programming_lang == "python") {
         ],
         "inputsInline": true,
         "output": "Number",
-        "colour": 120,
+        "colour": OPERATORS_BLOCKS_COLOUR,
         "tooltip": "Return the product of the two numbers.",
         "helpUrl": ""
       },
@@ -139,7 +174,7 @@ if (programming_lang == "python") {
         ],
         "inputsInline": true,
         "output": "Number",
-        "colour": 120,
+        "colour": OPERATORS_BLOCKS_COLOUR,
         "tooltip": "Return the quotient of the two numbers.",
         "helpUrl": ""
       },
@@ -164,7 +199,7 @@ if (programming_lang == "python") {
         ],
         "inputsInline": true,
         "output": "Number",
-        "colour": 120,
+        "colour": OPERATORS_BLOCKS_COLOUR,
         "tooltip": "Return the sum of the two numbers.",
         "helpUrl": ""
       },
@@ -189,7 +224,7 @@ if (programming_lang == "python") {
         ],
         "inputsInline": true,
         "output": "Number",
-        "colour": 120,
+        "colour": OPERATORS_BLOCKS_COLOUR,
         "tooltip": "Return the difference of the two numbers.",
         "helpUrl": ""
       },
@@ -214,7 +249,7 @@ if (programming_lang == "python") {
         ],
         "inputsInline": true,
         "output": "String",
-        "colour": 120,
+        "colour": OPERATORS_BLOCKS_COLOUR,
         "tooltip": "Returns a combination of the two input strings added together.",
         "helpUrl": ""
       },
@@ -241,7 +276,7 @@ if (programming_lang == "python") {
           }
         ],
         "output": "String",
-        "colour": 120,
+        "colour": OPERATORS_BLOCKS_COLOUR,
         "tooltip": "Returns the letter of the specified position. #1 is the first item.",
         "helpUrl": ""
       },
@@ -266,8 +301,27 @@ if (programming_lang == "python") {
         ],
         "inputsInline": true,
         "output": "Boolean",
-        "colour": 120,
+        "colour": OPERATORS_BLOCKS_COLOUR,
         "tooltip": "Returns true if the second string is in the first string.",
+        "helpUrl": ""
+      },
+      // Operators length of
+      {
+        "type": "operators_length_of",
+        "message0": "length of %1 %2",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "VALUE",
+            "check": "String"
+          },
+          {
+            "type": "input_dummy"
+          }
+        ],
+        "output": "Number",
+        "colour": OPERATORS_BLOCKS_COLOUR,
+        "tooltip": "",
         "helpUrl": ""
       },
       // Operators logical AND block 
@@ -290,7 +344,7 @@ if (programming_lang == "python") {
           }
         ],
         "output": "Boolean",
-        "colour": 120,
+        "colour": OPERATORS_BLOCKS_COLOUR,
         "tooltip": "Returns true if both inputs are true.",
         "helpUrl": ""
       },
@@ -314,23 +368,26 @@ if (programming_lang == "python") {
           }
         ],
         "output": "Boolean",
-        "colour": 120,
+        "colour": OPERATORS_BLOCKS_COLOUR,
         "tooltip": "Returns true if at least one of the inputs is true.",
         "helpUrl": ""
       },
       // Operators logical NOT block
       {
         "type": "operators_not",
-        "message0": "not %1",
+        "message0": "not %1 %2",
         "args0": [
           {
             "type": "input_value",
             "name": "argument",
             "check": "Boolean"
+          },
+          {
+            "type": "input_dummy"
           }
         ],
         "output": "Boolean",
-        "colour": 120,
+        "colour": OPERATORS_BLOCKS_COLOUR,
         "tooltip": "Return true if the input is false. Returns false if the input is true.",
         "helpUrl": ""
       },
@@ -350,7 +407,7 @@ if (programming_lang == "python") {
         ],
         "inputsInline": true,
         "output": "Number",
-        "colour": 120,
+        "colour": OPERATORS_BLOCKS_COLOUR,
         "tooltip": "Round a number up.",
         "helpUrl": ""
       },
@@ -377,14 +434,14 @@ if (programming_lang == "python") {
           }
         ],
         "output": "Number",
-        "colour": 120,
+        "colour": OPERATORS_BLOCKS_COLOUR,
         "tooltip": "Return a random integer between the two numbers (inclusive).",
         "helpUrl": ""
       },
       // Operators single operand block
       {
         "type": "operators_single",
-        "message0": "%1 of %2",
+        "message0": "%1 of %2 %3",
         "args0": [
           {
             "type": "field_dropdown",
@@ -453,10 +510,13 @@ if (programming_lang == "python") {
             "name": "NUM",
             "check": "Number",
             "align": "RIGHT"
+          },
+          {
+            "type": "input_dummy"
           }
         ],
         "output": "Number",
-        "colour": 120,
+        "colour": OPERATORS_BLOCKS_COLOUR,
         "tooltip": "Block for advanced math operators with single operand.",
         "helpUrl": ""
       },
@@ -479,7 +539,7 @@ if (programming_lang == "python") {
         ],
         "inputsInline": true,
         "output": "Boolean",
-        "colour": 120,
+        "colour": OPERATORS_BLOCKS_COLOUR,
         "tooltip": "Return true if the first input is greater than the second input.",
         "helpUrl": ""
       },
@@ -501,7 +561,7 @@ if (programming_lang == "python") {
           }
         ],
         "output": "Boolean",
-        "colour": 120,
+        "colour": OPERATORS_BLOCKS_COLOUR,
         "tooltip": "Return true if the second input is greater than the first input.",
         "helpUrl": ""
       },
@@ -524,7 +584,7 @@ if (programming_lang == "python") {
         ],
         "inputsInline": true,
         "output": "Boolean",
-        "colour": 120,
+        "colour": OPERATORS_BLOCKS_COLOUR,
         "tooltip": "Return true if both inputs equal each other.",
         "helpUrl": ""
       },
@@ -544,7 +604,7 @@ if (programming_lang == "python") {
         ],
         "inputsInline": true,
         "output": "String",
-        "colour": 180,
+        "colour": SENSING_BLOCKS_COLOUR,
         "tooltip": "Ask user for some text.",
         "helpUrl": ""
       },
@@ -568,7 +628,7 @@ if (programming_lang == "python") {
         ],
         "previousStatement": null,
         "nextStatement": null,
-        "colour": 30,
+        "colour": CONTROL_BLOCKS_COLOUR,
         "tooltip": "",
         "helpUrl": ""
       },
@@ -599,7 +659,7 @@ if (programming_lang == "python") {
         ],
         "previousStatement": null,
         "nextStatement": null,
-        "colour": 30,
+        "colour": CONTROL_BLOCKS_COLOUR,
         "tooltip": "",
         "helpUrl": ""
       },
@@ -608,7 +668,7 @@ if (programming_lang == "python") {
         "type": "controls_stop",
         "message0": "stop",
         "previousStatement": null,
-        "colour": 15,
+        "colour": CONTROL_BLOCKS_COLOUR,
         "tooltip": "Stops the containing loop.",
         "helpUrl": ""
       },
@@ -637,7 +697,7 @@ if (programming_lang == "python") {
         ],
         "previousStatement": null,
         "nextStatement": null,
-        "colour": 45,
+        "colour": CONTROL_BLOCKS_COLOUR,
         "tooltip": "Do some statements several times.",
         "helpUrl": ""
       },
@@ -661,11 +721,60 @@ if (programming_lang == "python") {
         ],
         "previousStatement": null,
         "nextStatement": null,
-        "colour": 45,
+        "colour": CONTROL_BLOCKS_COLOUR,
         "tooltip": "Repeat a statement several times until a condition is met.",
         "helpUrl": ""
       }
     ]);
+
+    // Operators number block
+    Blockly.JavaScript['operators_number'] = function(block) {
+      // Numeric value.
+      var code = Number(block.getFieldValue('NUM'));
+      var order = code >= 0 ? Blockly.JavaScript.ORDER_ATOMIC :
+                  Blockly.JavaScript.ORDER_UNARY_NEGATION;
+      return [code, order];
+    };
+    Blockly.Python['operators_number'] = function(block) {
+      // Numeric value.
+      var code = Number(block.getFieldValue('NUM'));
+      var order;
+      if (code == Infinity) {
+        code = 'float("inf")';
+        order = Blockly.Python.ORDER_FUNCTION_CALL;
+      } else if (code == -Infinity) {
+        code = '-float("inf")';
+        order = Blockly.Python.ORDER_UNARY_SIGN;
+      } else {
+        order = code < 0 ? Blockly.Python.ORDER_UNARY_SIGN :
+                Blockly.Python.ORDER_ATOMIC;
+      }
+      return [code, order];
+    };
+
+    // Operators text block
+    Blockly.JavaScript['operators_string'] = function(block) {
+      // Text value.
+      var code = Blockly.JavaScript.quote_(block.getFieldValue('TEXT'));
+      return [code, Blockly.JavaScript.ORDER_ATOMIC];
+    };
+    Blockly.Python['operators_string'] = function(block) {
+      // Text value.
+      var code = Blockly.Python.quote_(block.getFieldValue('TEXT'));
+      return [code, Blockly.Python.ORDER_ATOMIC];
+    };
+
+    // Operators length of
+    Blockly.JavaScript['operators_length_of'] = function(block) {
+      // String or array length.
+      var text = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_MEMBER) || '\'\'';
+      return [text + '.length', Blockly.JavaScript.ORDER_MEMBER];
+    };
+    Blockly.Python['operators_length_of'] = function(block) {
+      // Is the string null or array empty?
+      var text = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE) || '\'\'';
+      return ['len(' + text + ')', Blockly.Python.ORDER_FUNCTION_CALL];
+    };
 
     // Operators equality block
     Blockly.JavaScript['operators_equality'] = function(block) {
