@@ -281,8 +281,29 @@ if (programming_lang == "python") {
         "colour": 180,
         "tooltip": "Ask user for some text.",
         "helpUrl": ""
-      }
+      },
+      // Controls stop block
+      {
+        "type": "controls_stop",
+        "message0": "stop",
+        "previousStatement": null,
+        "colour": 15,
+        "tooltip": "Stops the containing loop.",
+        "helpUrl": ""
+      },
     ]);
+
+    // Controls stop block
+    Blockly.JavaScript['controls_stop'] = function(block) {
+      // TODO: Assemble JavaScript into code variable.
+      var code = 'break;\n';
+      return code;
+    };
+    Blockly.Python['controls_stop'] = function(block) {
+      // TODO: Assemble Python into code variable.
+      var code = 'break\n';
+      return code;
+    };
 
     // Sensing ask and wait block
     Blockly.JavaScript['sensing_ask_and_wait'] = function(block) {
@@ -446,8 +467,6 @@ if (programming_lang == "python") {
     // Displays the user's previous submission 
     if (previous_submission) {
       // Decodes the previous_submission which contains HTML entities. Outputs a string, and it converts it to XML
-      console.log("PREVIOUS SUBMISSIONS")
-      console.log(previous_submission)
       const xml_node = Blockly.Xml.textToDom(utils.decodeHTMLEntities(previous_submission))
 
       Blockly.Xml.domToWorkspace(xml_node, workspace);
