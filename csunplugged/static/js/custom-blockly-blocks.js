@@ -1,0 +1,1278 @@
+const LOOKS_BLOCKS_COLOUR = '#9966ff'
+const CONTROL_BLOCKS_COLOUR = '#ffab19'
+const SENSING_BLOCKS_COLOUR = '#5cb1d6'
+const OPERATORS_BLOCKS_COLOUR = '#59c059'
+
+function setupBlockly(Blockly) {
+    
+// Custom Blockly blocks to look and act like Scratch
+Blockly.defineBlocksWithJsonArray([
+    // Looks say block
+    {
+    "type": "looks_say",
+    "message0": "say %1 %2",
+    "args0": [
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_value",
+        "name": "value"
+        }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": LOOKS_BLOCKS_COLOUR,
+    "tooltip": "Say the specified text, number or other value.",
+    "helpUrl": ""
+    },
+    // Operators number block
+    {
+    "type": "operators_number",
+    "message0": "%1",
+    "args0": [{
+        "type": "field_number",
+        "name": "NUM",
+        "value": 0
+    }],
+    "output": "Number",
+    "helpUrl": "",
+    "colour": '#4c97ff',
+    "tooltip": "A number.",
+    "extensions": ["parent_tooltip_when_inline"]
+    },
+    // Operators text block
+    {
+    "type": "operators_string",
+    "message0": "%1",
+    "args0": [{
+        "type": "field_input",
+        "name": "TEXT",
+        "text": ""
+    }],
+    "output": "String",
+    "colour": '#4c97ff',
+    "helpUrl": "",
+    "tooltip": "A letter, word, or a line or text.",
+    "extensions": [
+        "text_quotes",
+        "parent_tooltip_when_inline"
+    ]
+    },
+    // Operators modulo block
+    {
+    "type": "operators_modulo",
+    "message0": "%1 mod %2 %3",
+    "args0": [
+        {
+        "type": "input_value",
+        "name": "a",
+        "check": "Number"
+        },
+        {
+        "type": "input_dummy",
+        "align": "CENTRE"
+        },
+        {
+        "type": "input_value",
+        "name": "n",
+        "check": "Number"
+        }
+    ],
+    "inputsInline": true,
+    "output": "Number",
+    "colour": OPERATORS_BLOCKS_COLOUR,
+    "tooltip": "Return the modulo of the two numbers.",
+    "helpUrl": ""
+    },
+    // Operators multiply block
+    {
+    "type": "operators_multiply",
+    "message0": "%1 * %2 %3",
+    "args0": [
+        {
+        "type": "input_value",
+        "name": "x",
+        "check": "Number"
+        },
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_value",
+        "name": "y",
+        "check": "Number"
+        }
+    ],
+    "inputsInline": true,
+    "output": "Number",
+    "colour": OPERATORS_BLOCKS_COLOUR,
+    "tooltip": "Return the product of the two numbers.",
+    "helpUrl": ""
+    },
+    // Operators divide block 
+    {
+    "type": "operators_divide",
+    "message0": "%1 / %2 %3",
+    "args0": [
+        {
+        "type": "input_value",
+        "name": "x",
+        "check": "Number"
+        },
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_value",
+        "name": "y",
+        "check": "Number"
+        }
+    ],
+    "inputsInline": true,
+    "output": "Number",
+    "colour": OPERATORS_BLOCKS_COLOUR,
+    "tooltip": "Return the quotient of the two numbers.",
+    "helpUrl": ""
+    },
+    // Operators add block 
+    {
+    "type": "operators_add",
+    "message0": "%1 + %2 %3",
+    "args0": [
+        {
+        "type": "input_value",
+        "name": "x",
+        "check": "Number"
+        },
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_value",
+        "name": "y",
+        "check": "Number"
+        }
+    ],
+    "inputsInline": true,
+    "output": "Number",
+    "colour": OPERATORS_BLOCKS_COLOUR,
+    "tooltip": "Return the sum of the two numbers.",
+    "helpUrl": ""
+    },
+    // Operators subtract block
+    {
+    "type": "operators_subtract",
+    "message0": "%1 - %2 %3",
+    "args0": [
+        {
+        "type": "input_value",
+        "name": "x",
+        "check": "Number"
+        },
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_value",
+        "name": "y",
+        "check": "Number"
+        }
+    ],
+    "inputsInline": true,
+    "output": "Number",
+    "colour": OPERATORS_BLOCKS_COLOUR,
+    "tooltip": "Return the difference of the two numbers.",
+    "helpUrl": ""
+    },
+    // Operators join/concatenate string block
+    {
+    "type": "operators_join_string",
+    "message0": "join %1 %2 %3",
+    "args0": [
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_value",
+        "name": "a",
+        "check": "String"
+        },
+        {
+        "type": "input_value",
+        "name": "b",
+        "check": "String"
+        }
+    ],
+    "inputsInline": true,
+    "output": "String",
+    "colour": OPERATORS_BLOCKS_COLOUR,
+    "tooltip": "Returns a combination of the two input strings added together.",
+    "helpUrl": ""
+    },
+    // Operators letter <num> of <string> block
+    {
+    "type": "operators_letter_of",
+    "message0": "letter %1 %2 of %3 %4",
+    "args0": [
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_value",
+        "name": "index",
+        "check": "Number"
+        },
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_value",
+        "name": "word",
+        "check": "String"
+        }
+    ],
+    "output": "String",
+    "colour": OPERATORS_BLOCKS_COLOUR,
+    "tooltip": "Returns the letter of the specified position. #1 is the first item.",
+    "helpUrl": ""
+    },
+    // Operators <string> contains <substring> block
+    {
+    "type": "operators_string_contains",
+    "message0": "%1 contains %2 %3 ?",
+    "args0": [
+        {
+        "type": "input_value",
+        "name": "word",
+        "check": "String"
+        },
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_value",
+        "name": "subword",
+        "check": "String"
+        }
+    ],
+    "inputsInline": true,
+    "output": "Boolean",
+    "colour": OPERATORS_BLOCKS_COLOUR,
+    "tooltip": "Returns true if the second string is in the first string.",
+    "helpUrl": ""
+    },
+    // Operators length of
+    {
+    "type": "operators_length_of",
+    "message0": "length of %1 %2",
+    "args0": [
+        {
+        "type": "input_value",
+        "name": "VALUE",
+        "check": "String"
+        },
+        {
+        "type": "input_dummy"
+        }
+    ],
+    "output": "Number",
+    "colour": OPERATORS_BLOCKS_COLOUR,
+    "tooltip": "",
+    "helpUrl": ""
+    },
+    // Operators logical AND block 
+    {
+    "type": "operators_and",
+    "message0": "%1 and %2 %3",
+    "args0": [
+        {
+        "type": "input_value",
+        "name": "a",
+        "check": "Boolean"
+        },
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_value",
+        "name": "b",
+        "check": "Boolean"
+        }
+    ],
+    "output": "Boolean",
+    "colour": OPERATORS_BLOCKS_COLOUR,
+    "tooltip": "Returns true if both inputs are true.",
+    "helpUrl": ""
+    },
+    // Operators logical OR block 
+    {
+    "type": "operators_or",
+    "message0": "%1 or %2 %3",
+    "args0": [
+        {
+        "type": "input_value",
+        "name": "a",
+        "check": "Boolean"
+        },
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_value",
+        "name": "b",
+        "check": "Boolean"
+        }
+    ],
+    "output": "Boolean",
+    "colour": OPERATORS_BLOCKS_COLOUR,
+    "tooltip": "Returns true if at least one of the inputs is true.",
+    "helpUrl": ""
+    },
+    // Operators logical NOT block
+    {
+    "type": "operators_not",
+    "message0": "not %1 %2",
+    "args0": [
+        {
+        "type": "input_value",
+        "name": "argument",
+        "check": "Boolean"
+        },
+        {
+        "type": "input_dummy"
+        }
+    ],
+    "output": "Boolean",
+    "colour": OPERATORS_BLOCKS_COLOUR,
+    "tooltip": "Return true if the input is false. Returns false if the input is true.",
+    "helpUrl": ""
+    },
+    // Operators round up block
+    {
+    "type": "operators_round",
+    "message0": "round %1 %2",
+    "args0": [
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_value",
+        "name": "a",
+        "check": "Number"
+        }
+    ],
+    "inputsInline": true,
+    "output": "Number",
+    "colour": OPERATORS_BLOCKS_COLOUR,
+    "tooltip": "Round a number up.",
+    "helpUrl": ""
+    },
+    // Operators pick random int block
+    {
+    "type": "operators_random_int",
+    "message0": "pick random %1 %2 to %3 %4",
+    "args0": [
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_value",
+        "name": "a",
+        "check": "Number"
+        },
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_value",
+        "name": "b",
+        "check": "Number"
+        }
+    ],
+    "output": "Number",
+    "colour": OPERATORS_BLOCKS_COLOUR,
+    "tooltip": "Return a random integer between the two numbers (inclusive).",
+    "helpUrl": ""
+    },
+    // Operators single operand block
+    {
+    "type": "operators_single",
+    "message0": "%1 of %2 %3",
+    "args0": [
+        {
+        "type": "field_dropdown",
+        "name": "OP",
+        "options": [
+            [
+            "abs",
+            "ABS"
+            ],
+            [
+            "floor",
+            "FLOOR"
+            ],
+            [
+            "ceiling",
+            "CEIL"
+            ],
+            [
+            "sqrt",
+            "ROOT"
+            ],
+            [
+            "sin",
+            "SIN"
+            ],
+            [
+            "cos",
+            "COS"
+            ],
+            [
+            "tan",
+            "TAN"
+            ],
+            [
+            "asin",
+            "ASIN"
+            ],
+            [
+            "acos",
+            "ACOS"
+            ],
+            [
+            "atan",
+            "ATAN"
+            ],
+            [
+            "ln",
+            "LN"
+            ],
+            [
+            "log",
+            "LOG10"
+            ],
+            [
+            "e ^",
+            "EXP"
+            ],
+            [
+            "10 ^",
+            "POW10"
+            ]
+        ]
+        },
+        {
+        "type": "input_value",
+        "name": "NUM",
+        "check": "Number",
+        "align": "RIGHT"
+        },
+        {
+        "type": "input_dummy"
+        }
+    ],
+    "output": "Number",
+    "colour": OPERATORS_BLOCKS_COLOUR,
+    "tooltip": "Block for advanced math operators with single operand.",
+    "helpUrl": ""
+    },
+    // Operators greater than block
+    {
+    "type": "operators_greater_than",
+    "message0": "%1 > %2 %3",
+    "args0": [
+        {
+        "type": "input_value",
+        "name": "A"
+        },
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_value",
+        "name": "B"
+        }
+    ],
+    "inputsInline": true,
+    "output": "Boolean",
+    "colour": OPERATORS_BLOCKS_COLOUR,
+    "tooltip": "Return true if the first input is greater than the second input.",
+    "helpUrl": ""
+    },
+    // Operators less than block
+    {
+    "type": "operators_less_than",
+    "message0": "%1 < %2 %3",
+    "args0": [
+        {
+        "type": "input_value",
+        "name": "A"
+        },
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_value",
+        "name": "B"
+        }
+    ],
+    "output": "Boolean",
+    "colour": OPERATORS_BLOCKS_COLOUR,
+    "tooltip": "Return true if the second input is greater than the first input.",
+    "helpUrl": ""
+    },
+    // Operators equality block
+    {
+    "type": "operators_equality",
+    "message0": "%1 = %2 %3",
+    "args0": [
+        {
+        "type": "input_value",
+        "name": "A"
+        },
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_value",
+        "name": "B"
+        }
+    ],
+    "inputsInline": true,
+    "output": "Boolean",
+    "colour": OPERATORS_BLOCKS_COLOUR,
+    "tooltip": "Return true if both inputs equal each other.",
+    "helpUrl": ""
+    },
+    // Sensing ask and wait block
+    {
+        "type": "sensing_ask_and_wait",
+        "message0": "ask %1 %2 and wait for type %3 %4",
+        "args0": [
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_value",
+            "name": "question",
+            "check": "String"
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "field_dropdown",
+            "name": "TYPE",
+            "options": [
+              [
+                "text",
+                "T"
+              ],
+              [
+                "number",
+                "N"
+              ]
+            ]
+          }
+        ],
+        "inputsInline": true,
+        "output": "String",
+        "colour": 180,
+        "tooltip": "Ask user for some text.",
+        "helpUrl": ""
+    },
+    // Controls if, then block
+    {
+    "type": "controls_if_then",
+    "message0": "if %1 then %2 %3",
+    "args0": [
+        {
+        "type": "input_value",
+        "name": "condition",
+        "check": "Boolean"
+        },
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_statement",
+        "name": "body"
+        }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": CONTROL_BLOCKS_COLOUR,
+    "tooltip": "",
+    "helpUrl": ""
+    },
+    // Controls, if, then, else block
+    {
+    "type": "controls_if_then_else",
+    "message0": "if %1 then %2 %3 else %4 %5",
+    "args0": [
+        {
+        "type": "input_value",
+        "name": "condition",
+        "check": "Boolean"
+        },
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_statement",
+        "name": "body_1"
+        },
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_statement",
+        "name": "body_2"
+        }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": CONTROL_BLOCKS_COLOUR,
+    "tooltip": "",
+    "helpUrl": ""
+    },
+    // Controls stop block
+    {
+    "type": "controls_stop",
+    "message0": "stop",
+    "previousStatement": null,
+    "colour": CONTROL_BLOCKS_COLOUR,
+    "tooltip": "Stops the containing loop.",
+    "helpUrl": ""
+    },
+    // Controls repeat block
+    {
+    "type": "controls_repeat_num_times",
+    "message0": "repeat %1 %2 %3 %4",
+    "args0": [
+        {
+        "type": "input_value",
+        "name": "num",
+        "check": "Number"
+        },
+        {
+        "type": "input_dummy",
+        "align": "RIGHT"
+        },
+        {
+        "type": "input_statement",
+        "name": "body"
+        },
+        {
+        "type": "input_dummy",
+        "align": "RIGHT"
+        }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": CONTROL_BLOCKS_COLOUR,
+    "tooltip": "Do some statements several times.",
+    "helpUrl": ""
+    },
+    // Controls repeat until block
+    {
+    "type": "controls_repeat_until",
+    "message0": "repeat until %1 %2 %3",
+    "args0": [
+        {
+        "type": "input_value",
+        "name": "condition",
+        "check": "Boolean"
+        },
+        {
+        "type": "input_dummy"
+        },
+        {
+        "type": "input_statement",
+        "name": "body"
+        }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": CONTROL_BLOCKS_COLOUR,
+    "tooltip": "Repeat a statement several times until a condition is met.",
+    "helpUrl": ""
+    }
+]);
+
+// Operators number block
+Blockly.JavaScript['operators_number'] = function(block) {
+    // Numeric value.
+    var code = Number(block.getFieldValue('NUM'));
+    var order = code >= 0 ? Blockly.JavaScript.ORDER_ATOMIC :
+                Blockly.JavaScript.ORDER_UNARY_NEGATION;
+    return [code, order];
+};
+Blockly.Python['operators_number'] = function(block) {
+    // Numeric value.
+    var code = Number(block.getFieldValue('NUM'));
+    var order;
+    if (code == Infinity) {
+    code = 'float("inf")';
+    order = Blockly.Python.ORDER_FUNCTION_CALL;
+    } else if (code == -Infinity) {
+    code = '-float("inf")';
+    order = Blockly.Python.ORDER_UNARY_SIGN;
+    } else {
+    order = code < 0 ? Blockly.Python.ORDER_UNARY_SIGN :
+            Blockly.Python.ORDER_ATOMIC;
+    }
+    return [code, order];
+};
+
+// Operators text block
+Blockly.JavaScript['operators_string'] = function(block) {
+    // Text value.
+    var code = Blockly.JavaScript.quote_(block.getFieldValue('TEXT'));
+    return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+Blockly.Python['operators_string'] = function(block) {
+    // Text value.
+    var code = Blockly.Python.quote_(block.getFieldValue('TEXT'));
+    return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+// Operators length of
+Blockly.JavaScript['operators_length_of'] = function(block) {
+    // String or array length.
+    var text = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_MEMBER) || '\'\'';
+    return [text + '.length', Blockly.JavaScript.ORDER_MEMBER];
+};
+Blockly.Python['operators_length_of'] = function(block) {
+    // Is the string null or array empty?
+    var text = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE) || '\'\'';
+    return ['len(' + text + ')', Blockly.Python.ORDER_FUNCTION_CALL];
+};
+
+// Operators equality block
+Blockly.JavaScript['operators_equality'] = function(block) {
+    var order = Blockly.JavaScript.ORDER_RELATIONAL;
+    var value_a = Blockly.JavaScript.valueToCode(block, 'A', order) || '0';
+    var value_b = Blockly.JavaScript.valueToCode(block, 'B', order) || '0';
+    var code = value_a + ' == ' + value_b;
+    return [code, order];
+};
+Blockly.Python['operators_equality'] = function(block) {
+    var order = Blockly.Python.ORDER_RELATIONAL;
+    var value_a = Blockly.Python.valueToCode(block, 'A', order) || '0';
+    var value_b = Blockly.Python.valueToCode(block, 'B', order) || '0';
+    var code = value_a + ' == ' + value_b;
+    return [code, order];
+};
+
+
+// Operators greater than block
+Blockly.JavaScript['operators_less_than'] = function(block) {
+    var order = Blockly.JavaScript.ORDER_RELATIONAL;
+    var value_a = Blockly.JavaScript.valueToCode(block, 'A', order);
+    var value_b = Blockly.JavaScript.valueToCode(block, 'B', order);
+    var code = value_a + ' < ' + value_b;
+    return [code, order];
+};
+Blockly.Python['operators_less_than'] = function(block) {
+    var order = Blockly.Python.ORDER_RELATIONAL;
+    var value_a = Blockly.Python.valueToCode(block, 'A', order);
+    var value_b = Blockly.Python.valueToCode(block, 'B', order);
+    var code = value_a + ' < ' + value_b;
+    return [code, order];
+};
+
+// Operators greater than block
+Blockly.JavaScript['operators_greater_than'] = function(block) {
+    var order = Blockly.JavaScript.ORDER_RELATIONAL;
+    var value_a = Blockly.JavaScript.valueToCode(block, 'A', order);
+    var value_b = Blockly.JavaScript.valueToCode(block, 'B', order);
+    var code = value_a + ' > ' + value_b;
+    return [code, order];
+};
+Blockly.Python['operators_greater_than'] = function(block) {
+    var order = Blockly.Python.ORDER_RELATIONAL;
+    var value_a = Blockly.Python.valueToCode(block, 'A', order);
+    var value_b = Blockly.Python.valueToCode(block, 'B', order);
+    var code = value_a + ' > ' + value_b;
+    return [code, order];
+};
+
+// Operators single operand block
+Blockly.JavaScript['operators_single'] = function(block) {
+    // Math operators with single operand.
+    var operator = block.getFieldValue('OP');
+    var code;
+    var arg;
+    if (operator == 'SIN' || operator == 'COS' || operator == 'TAN') {
+    arg = Blockly.JavaScript.valueToCode(block, 'NUM',
+        Blockly.JavaScript.ORDER_DIVISION) || '0';
+    } else {
+    arg = Blockly.JavaScript.valueToCode(block, 'NUM',
+        Blockly.JavaScript.ORDER_NONE) || '0';
+    }
+    // First, handle cases which generate values that don't need parentheses
+    // wrapping the code.
+    switch (operator) {
+    case 'ABS':
+        code = 'Math.abs(' + arg + ')';
+        break;
+    case 'FLOOR':
+        code = 'Math.floor(' + arg + ')';
+        break;
+    case 'CEIL':
+        code = 'Math.ceil(' + arg + ')';
+        break;
+    case 'ROOT':
+        code = 'Math.sqrt(' + arg + ')';
+        break;
+    case 'SIN':
+        code = 'Math.sin(' + arg + ' / 180 * Math.PI)';
+        break;
+    case 'COS':
+        code = 'Math.cos(' + arg + ' / 180 * Math.PI)';
+        break;
+    case 'TAN':
+        code = 'Math.tan(' + arg + ' / 180 * Math.PI)';
+        break;
+    case 'LN':
+        code = 'Math.log(' + arg + ')';
+        break;
+    case 'EXP':
+        code = 'Math.exp(' + arg + ')';
+        break;
+    case 'POW10':
+        code = 'Math.pow(10,' + arg + ')';
+        break;
+    }
+    if (code) {
+    return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+    }
+    // Second, handle cases which generate values that may need parentheses
+    // wrapping the code.
+    switch (operator) {
+    case 'LOG10':
+        code = 'Math.log(' + arg + ') / Math.log(10)';
+        break;
+    case 'ASIN':
+        code = 'Math.asin(' + arg + ') / Math.PI * 180';
+        break;
+    case 'ACOS':
+        code = 'Math.acos(' + arg + ') / Math.PI * 180';
+        break;
+    case 'ATAN':
+        code = 'Math.atan(' + arg + ') / Math.PI * 180';
+        break;
+    default:
+        throw Error('Unknown math operator: ' + operator);
+    }
+    return [code, Blockly.JavaScript.ORDER_DIVISION];
+};
+Blockly.Python['operators_single'] = function(block) {
+    // Math operators with single operand.
+    var operator = block.getFieldValue('OP');
+    var code;
+    var arg;
+    
+    Blockly.Python.definitions_['import_math'] = 'import math';
+    if (operator == 'SIN' || operator == 'COS' || operator == 'TAN') {
+    arg = Blockly.Python.valueToCode(block, 'NUM',
+        Blockly.Python.ORDER_MULTIPLICATIVE) || '0';
+    } else {
+    arg = Blockly.Python.valueToCode(block, 'NUM',
+        Blockly.Python.ORDER_NONE) || '0';
+    }
+
+    // First, handle cases which generate values that don't need parentheses
+    // wrapping the code.
+    switch (operator) {
+    case 'ABS':
+        code = 'math.fabs(' + arg + ')';
+        break;
+    case 'FLOOR':
+        code = 'math.floor(' + arg + ')';
+        break;
+    case 'CEIL':
+        code = 'math.ceil(' + arg + ')';
+        break;
+    case 'ROOT':
+        code = 'math.sqrt(' + arg + ')';
+        break;
+    case 'SIN':
+        code = 'math.sin(' + arg + ' / 180.0 * math.pi)';
+        break;
+    case 'COS':
+        code = 'math.cos(' + arg + ' / 180.0 * math.pi)';
+        break;
+    case 'TAN':
+        code = 'math.tan(' + arg + ' / 180.0 * math.pi)';
+        break;
+    case 'LN':
+        code = 'math.log(' + arg + ')';
+        break;
+    case 'LOG10':
+        code = 'math.log10(' + arg + ')';
+        break;
+    case 'EXP':
+        code = 'math.exp(' + arg + ')';
+        break;
+    case 'POW10':
+        code = 'math.pow(10,' + arg + ')';
+        break;
+    }
+    if (code) {
+    return [code, Blockly.Python.ORDER_FUNCTION_CALL];
+    }
+    // Second, handle cases which generate values that may need parentheses
+    // wrapping the code.
+    switch (operator) {
+    case 'ASIN':
+        code = 'math.asin(' + arg + ') / math.pi * 180';
+        break;
+    case 'ACOS':
+        code = 'math.acos(' + arg + ') / math.pi * 180';
+        break;
+    case 'ATAN':
+        code = 'math.atan(' + arg + ') / math.pi * 180';
+        break;
+    default:
+        throw Error('Unknown math operator: ' + operator);
+    }
+    return [code, Blockly.Python.ORDER_MULTIPLICATIVE];
+};
+
+// Operators logical NOT block
+Blockly.JavaScript['operators_not'] = function(block) {
+    var value_argument = Blockly.JavaScript.valueToCode(block, 'argument', Blockly.JavaScript.ORDER_LOGICAL_NOT) || 'true';
+    var code = '!' + value_argument;
+    return [code, Blockly.JavaScript.ORDER_LOGICAL_NOT];
+};
+Blockly.Python['operators_not'] = function(block) {
+    var value_argument = Blockly.Python.valueToCode(block, 'argument', Blockly.Python.ORDER_LOGICAL_NOT);
+    var code = 'not ' + value_argument;
+    return [code, Blockly.Python.ORDER_LOGICAL_NOT];
+};
+
+// Operators pick random int block
+Blockly.JavaScript['operators_random_int'] = function(block) {
+    var value_a = Blockly.JavaScript.valueToCode(block, 'a', Blockly.JavaScript.ORDER_ATOMIC) || '0';
+    var value_b = Blockly.JavaScript.valueToCode(block, 'b', Blockly.JavaScript.ORDER_ATOMIC) || '0';
+    var functionName = Blockly.JavaScript.provideFunction_(
+    'mathRandomInt',
+    ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
+        '(a, b) {',
+        '  if (a > b) {',
+        '    // Swap a and b to ensure a is smaller.',
+        '    var c = a;',
+        '    a = b;',
+        '    b = c;',
+        '  }',
+        '  return Math.floor(Math.random() * (b - a + 1) + a);',
+        '}']);
+        var code = functionName + '(' + value_a + ', ' + value_b + ')';
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.Python['operators_random_int'] = function(block) {
+    Blockly.Python.definitions_['import_random'] = 'import random';
+    var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_NONE);
+    var value_b = Blockly.Python.valueToCode(block, 'b', Blockly.Python.ORDER_NONE);
+    var code = 'random.randint(' + value_a + ', ' + value_b + ')';
+    return [code, Blockly.Python.ORDER_FUNCTION_CALL];
+};
+
+// Controls repeat until block
+Blockly.JavaScript['controls_repeat_until'] = function(block) {
+    var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_ATOMIC) || 'false';
+    var statements_body = Blockly.JavaScript.statementToCode(block, 'body');
+    var code = 'while (!' + value_condition + ') {\n' + statements_body + '}\n';
+    return code;
+};
+Blockly.Python['controls_repeat_until'] = function(block) {
+    var value_condition = Blockly.Python.valueToCode(block, 'condition', Blockly.Python.ORDER_ATOMIC) || 'False';
+    var statements_body = Blockly.Python.statementToCode(block, 'body') || '  pass';
+    var code = 'while not ' + value_condition + ':\n' + statements_body + '\n';
+    return code;
+};
+
+// Controls repeat block
+Blockly.JavaScript['controls_repeat_num_times'] = function(block) {
+    var value_num = Blockly.JavaScript.valueToCode(block, 'num', Blockly.JavaScript.ORDER_ATOMIC) || '0';
+    var statements_body = Blockly.JavaScript.statementToCode(block, 'body');
+    var code = 'for (var count = 0; count < ' + value_num + '; count++) {\n' + statements_body + '}\n';
+    return code;
+};
+Blockly.Python['controls_repeat_num_times'] = function(block) {
+    var value_num = Blockly.Python.valueToCode(block, 'num', Blockly.Python.ORDER_ATOMIC) || '0';
+    var statements_body = Blockly.Python.statementToCode(block, 'body') || '  pass';
+
+    var code = 'for count in range(' + value_num + '):\n' + statements_body + '\n';
+    return code;
+};
+
+// Controls, if, then, else block
+Blockly.JavaScript['controls_if_then_else'] = function(block) {
+    var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_ATOMIC) || 'false';
+    var statements_body_1 = Blockly.JavaScript.statementToCode(block, 'body_1');
+    var statements_body_2 = Blockly.JavaScript.statementToCode(block, 'body_2');
+    var code = 'if (' + value_condition + ') {\n' + statements_body_1 + '} else {\n' + statements_body_2 + '}\n';
+    return code;
+};
+Blockly.Python['controls_if_then_else'] = function(block) {
+    var value_condition = Blockly.Python.valueToCode(block, 'condition', Blockly.Python.ORDER_ATOMIC) || "False";
+    var statements_body_1 = Blockly.Python.statementToCode(block, 'body_1');
+    var statements_body_2 = Blockly.Python.statementToCode(block, 'body_2');
+
+    if (statements_body_1 === "") {
+    statements_body_1 = '  pass\n'; // 2 spaces for indentation in Python
+    }
+    if (statements_body_2 === "") {
+    statements_body_2 = '  pass'; // 2 spaces for indentation in Python
+    }
+
+    // TODO: Assemble Python into code variable.
+    var code = 'if ' + value_condition + ':\n' + statements_body_1 + 'else:\n' + statements_body_2 + '\n';
+    return code;
+};
+
+// Controls if, then block
+Blockly.JavaScript['controls_if_then'] = function(block) {
+    var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_ATOMIC) || 'false';
+    var statements_body = Blockly.JavaScript.statementToCode(block, 'body');
+    var code = 'if (' + value_condition + ') {\n' + statements_body + '}\n';
+    return code;
+};
+Blockly.Python['controls_if_then'] = function(block) {
+    var value_condition = Blockly.Python.valueToCode(block, 'condition', Blockly.Python.ORDER_ATOMIC) || "False";
+    var statements_body = Blockly.Python.statementToCode(block, 'body');
+
+    if (statements_body === "") {
+    statements_body = '  pass\n';
+    }
+
+    var code = 'if ' + value_condition + ':\n' + statements_body + '\n';
+    return code;
+};
+
+// Looks say block
+Blockly.JavaScript['looks_say'] = function(block) {
+    var value_value = Blockly.JavaScript.valueToCode(block, 'value', Blockly.JavaScript.ORDER_ATOMIC);
+    var code = 'alert(' + value_value + ');\n';
+    return code;
+};
+Blockly.Python['looks_say'] = function(block) {
+    var value_value = Blockly.Python.valueToCode(block, 'value', Blockly.Python.ORDER_ATOMIC);
+    var code = 'print(' + value_value + ')\n';
+    return code;
+};
+
+// Operators round up block
+Blockly.JavaScript['operators_round'] = function(block) {
+    var value_a = Blockly.JavaScript.valueToCode(block, 'a', Blockly.JavaScript.ORDER_ATOMIC);
+    var code = 'Math.round(' + value_a + ')';
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.Python['operators_round'] = function(block) {
+    var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC);
+    var code = 'round(' + value_a + ')';
+    return [code, Blockly.Python.ORDER_NONE];
+};
+
+// Operators logical OR block 
+Blockly.JavaScript['operators_or'] = function(block) {
+    var value_a = Blockly.JavaScript.valueToCode(block, 'a', Blockly.JavaScript.ORDER_LOGICAL_OR) || 'false';
+    var value_b = Blockly.JavaScript.valueToCode(block, 'b', Blockly.JavaScript.ORDER_LOGICAL_OR) || 'false';
+    var code = value_a + ' || ' + value_b;
+    return [code, Blockly.JavaScript.ORDER_LOGICAL_OR];
+};
+Blockly.Python['operators_or'] = function(block) {
+    var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC) || 'False';
+    var value_b = Blockly.Python.valueToCode(block, 'b', Blockly.Python.ORDER_ATOMIC) || 'False';
+    var code = value_a + ' or ' + value_b;
+    return [code, Blockly.Python.ORDER_NONE];
+};
+
+
+// Operators logical AND block
+Blockly.JavaScript['operators_and'] = function(block) {
+    var value_a = Blockly.JavaScript.valueToCode(block, 'a', Blockly.JavaScript.ORDER_ATOMIC) || 'false';
+    var value_b = Blockly.JavaScript.valueToCode(block, 'b', Blockly.JavaScript.ORDER_ATOMIC) || 'false';
+    var code = value_a + ' && ' + value_b;
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.Python['operators_and'] = function(block) {
+    var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC) || 'False';
+    var value_b = Blockly.Python.valueToCode(block, 'b', Blockly.Python.ORDER_ATOMIC) || 'False';
+    var code = value_a + ' and ' + value_b;
+    return [code, Blockly.Python.ORDER_NONE];
+};
+
+// Controls stop block
+Blockly.JavaScript['controls_stop'] = function(block) {
+    var code = 'break;\n';
+    return code;
+};
+Blockly.Python['controls_stop'] = function(block) {
+    var code = 'break\n';
+    return code;
+};
+
+// Sensing ask and wait block
+Blockly.JavaScript['sensing_ask_and_wait'] = function(block) {
+    if (block.getField('question')) {
+        // Internal message.
+        var msg = Blockly.JavaScript.quote_(block.getFieldValue('question'));
+    } else {
+        // External message.
+        var msg = Blockly.JavaScript.valueToCode(block, 'question', Blockly.JavaScript.ORDER_NONE) || '\'\'';
+    }
+    var code = 'window.prompt(' + msg + ')';
+
+    var dropdown_type = block.getFieldValue('TYPE');
+    if (dropdown_type === 'N') { // If asking for a number, then convert the input to a number.
+        code = 'Number(' + code + ')';
+    }
+
+    return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+Blockly.Python['sensing_ask_and_wait'] = function(block) {
+    var functionName = Blockly.Python.provideFunction_(
+    'text_prompt',
+    ['def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '(msg):',
+        '  try:',
+        '    return raw_input(msg)',
+        '  except NameError:',
+        '    return input(msg)']);
+    if (block.getField('question')) {
+        // Internal message.
+        var msg = Blockly.Python.quote_(block.getFieldValue('question'));
+    } else {
+        // External message.
+        var msg = Blockly.Python.valueToCode(block, 'question', Blockly.Python.ORDER_NONE) || '\'\'';
+    }
+    msg = '""' // Replaces user input parameters to be blank so it matches the expected output
+    var code = functionName + '(' + msg + ')';
+    
+    var dropdown_type = block.getFieldValue('TYPE');
+    if (dropdown_type === 'N') { // If asking for a number, then convert the input to a number.
+        code = 'float(' + functionName + '(' + msg + ')' + ')';
+    }
+    return [code, Blockly.Python.ORDER_FUNCTION_CALL];
+};
+
+// Operators <string> contains <substring> block
+Blockly.JavaScript['operators_string_contains'] = function(block) {
+    var value_word = Blockly.JavaScript.valueToCode(block, 'word', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_subword = Blockly.JavaScript.valueToCode(block, 'subword', Blockly.JavaScript.ORDER_ATOMIC);
+    var code = value_word + ".includes(" + value_subword + ")";
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.Python['operators_string_contains'] = function(block) {
+    var value_word = Blockly.Python.valueToCode(block, 'word', Blockly.Python.ORDER_ATOMIC);
+    var value_subword = Blockly.Python.valueToCode(block, 'subword', Blockly.Python.ORDER_ATOMIC);
+    var code = value_subword + " in " + value_word;
+    return [code, Blockly.Python.ORDER_NONE];
+};
+
+// Operators letter <num> of <string> block
+Blockly.JavaScript['operators_letter_of'] = function(block) {
+    var value_index = Blockly.JavaScript.valueToCode(block, 'index', Blockly.JavaScript.ORDER_ATOMIC) - 1; // subtract 1 since index starts from 0 in JS
+    var value_word = Blockly.JavaScript.valueToCode(block, 'word', Blockly.JavaScript.ORDER_ATOMIC);
+    var code = value_word + ".charAt(" + value_index + ")";
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.Python['operators_letter_of'] = function(block) {
+    var value_index = Blockly.Python.valueToCode(block, 'index', Blockly.Python.ORDER_ATOMIC) - 1; // subtract 1 since index starts from 0 in Python
+    var value_word = Blockly.Python.valueToCode(block, 'word', Blockly.Python.ORDER_ATOMIC);
+    var code = value_word + "[" + value_index + "]";
+    return [code, Blockly.Python.ORDER_NONE];
+};
+
+// Operators join/concatenate string block
+Blockly.JavaScript['operators_join_string'] = function(block) {
+    var value_a = Blockly.JavaScript.valueToCode(block, 'a', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_b = Blockly.JavaScript.valueToCode(block, 'b', Blockly.JavaScript.ORDER_ATOMIC);
+    var code = value_a + ' + ' + value_b;
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.Python['operators_join_string'] = function(block) {
+    var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC);
+    var value_b = Blockly.Python.valueToCode(block, 'b', Blockly.Python.ORDER_ATOMIC);
+    var code = value_a + ' + ' + value_b;
+    return [code, Blockly.Python.ORDER_NONE];
+};
+
+// Operators modulo block
+Blockly.JavaScript['operators_modulo'] = function(block) {
+    var value_a = Blockly.JavaScript.valueToCode(block, 'a', Blockly.JavaScript.ORDER_MODULUS);
+    var value_n = Blockly.JavaScript.valueToCode(block, 'n', Blockly.JavaScript.ORDER_MODULUS);
+    var code = '(' + value_a + ' % ' + value_n + ' + ' + value_n + ')' + ' % ' +  value_n;
+    return [code, Blockly.JavaScript.ORDER_ADDITION];
+};
+Blockly.Python['operators_modulo'] = function(block) {
+    var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC);
+    var value_n = Blockly.Python.valueToCode(block, 'n', Blockly.Python.ORDER_ATOMIC);
+    var code = value_a + ' % ' + value_n;
+    return [code, Blockly.Python.ORDER_NONE];
+};
+
+// Operators multiply block
+Blockly.JavaScript['operators_multiply'] = function(block) {
+    var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_MULTIPLICATION);
+    var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_MULTIPLICATION);
+    var code = value_x + ' * ' + value_y;
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.Python['operators_multiply'] = function(block) {
+    var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
+    var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC);
+    var code = value_x + ' * ' + value_y;
+    return [code, Blockly.Python.ORDER_NONE];
+};
+
+// Operators divide block
+Blockly.JavaScript['operators_divide'] = function(block) {
+    var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+    var code = value_x + ' / ' + value_y;
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.Python['operators_divide'] = function(block) {
+    var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
+    var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC);
+    var code = value_x + ' / ' + value_y;
+    return [code, Blockly.Python.ORDER_NONE];
+};
+
+// Operators add block
+Blockly.JavaScript['operators_add'] = function(block) {
+    var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+    var code = value_x + ' + ' + value_y;
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.Python['operators_add'] = function(block) {
+    var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
+    var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC);
+    var code = value_x + ' + ' + value_y;
+    return [code, Blockly.Python.ORDER_NONE];
+};
+
+// Operators subtract blocks
+Blockly.JavaScript['operators_subtract'] = function(block) {
+    var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+    var code = value_x + ' - ' + value_y;
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.Python['operators_subtract'] = function(block) {
+    var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
+    var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC);
+    var code = value_x + ' - ' + value_y;
+    return [code, Blockly.Python.ORDER_NONE];
+};
+
+}
+
+module.exports = setupBlockly

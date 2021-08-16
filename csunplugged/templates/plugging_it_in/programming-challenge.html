@@ -170,6 +170,14 @@
         <p class='pii-block-heading'>{% trans "Create your program in the editor below" %}</p>
         <div id="blocklyDiv" style="height: 100%; "></div>
         <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+          <category name="Values" colour="#4c97ff">
+            <block type="operators_number">
+              <field name="NUM">0</field>
+            </block>
+            <block type="operators_string">
+              <field name="TEXT">abc</field>
+            </block>
+          </category>
           <category name="Looks" colour="#9966ff">
             <block type="looks_say">
               <value name="value">
@@ -203,12 +211,6 @@
             </block>
           </category>
           <category name="Operators" colour="#40bf4a">
-            <block type="operators_number">
-              <field name="NUM">0</field>
-            </block>
-            <block type="operators_string">
-              <field name="TEXT">abc</field>
-            </block>
             <block type="operators_add">
               <value name="x">
                 <shadow type="math_number">
