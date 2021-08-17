@@ -135,7 +135,7 @@ class ProgrammingChallengeView(generic.DetailView):
 
         try:
             programming_lang_slug = self.kwargs.get("programming_lang_slug", None)
-            context["programming_lang"] = programming_lang_slug.lower() # make sure the /python or /block-based is lower case, because this will get checked in the programming.
+            context["programming_lang"] = programming_lang_slug.lower() # make sure the /python or /block-based is lower case, because this will get checked in the programming-challenge.html page
 
             lesson_slug = self.kwargs.get("lesson_slug", None)
             lesson = Lesson.objects.get(slug=lesson_slug)

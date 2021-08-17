@@ -579,7 +579,7 @@ Blockly.defineBlocksWithJsonArray([
         ],
         "inputsInline": true,
         "output": "String",
-        "colour": 180,
+        "colour": SENSING_BLOCKS_COLOUR,
         "tooltip": "Ask user for some text.",
         "helpUrl": ""
     },
