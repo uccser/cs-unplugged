@@ -67,9 +67,9 @@ if (programming_lang == "python") {
       zoom : {
         controls : true,
         wheel : true,
-        startScale : 1,
-        maxScale : 3,
-        minScale : 0.3,
+        startScale : 0.8,
+        maxScale : 1.7,
+        minScale : 0.5,
         scaleSpeed : 1.2
       }
     };
