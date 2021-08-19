@@ -53,7 +53,7 @@ Blockly.defineBlocksWithJsonArray([
     "tooltip": "Say the specified text, number or other value.",
     "helpUrl": ""
     },
-    // Operators number block
+    // Values number block
     {
     "type": "values_number",
     "message0": "%1",
@@ -68,7 +68,7 @@ Blockly.defineBlocksWithJsonArray([
     "tooltip": "A number.",
     "extensions": ["parent_tooltip_when_inline"]
     },
-    // Operators text block
+    // Values text block
     {
     "type": "values_string",
     "message0": "%1",
@@ -740,16 +740,13 @@ Blockly.Python['values_boolean'] = function(block) {
     return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-// Operators number block
+// Values number block
 Blockly.JavaScript['values_number'] = function(block) {
-    // Numeric value.
     var code = Number(block.getFieldValue('NUM'));
-    var order = code >= 0 ? Blockly.JavaScript.ORDER_ATOMIC :
-                Blockly.JavaScript.ORDER_UNARY_NEGATION;
+    var order = code >= 0 ? Blockly.JavaScript.ORDER_ATOMIC : Blockly.JavaScript.ORDER_UNARY_NEGATION;
     return [code, order];
 };
 Blockly.Python['values_number'] = function(block) {
-    // Numeric value.
     var code = Number(block.getFieldValue('NUM'));
     var order;
     if (code == Infinity) {
@@ -765,14 +762,12 @@ Blockly.Python['values_number'] = function(block) {
     return [code, order];
 };
 
-// Operators text block
+// Values string block
 Blockly.JavaScript['values_string'] = function(block) {
-    // Text value.
     var code = Blockly.JavaScript.quote_(block.getFieldValue('TEXT'));
     return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 Blockly.Python['values_string'] = function(block) {
-    // Text value.
     var code = Blockly.Python.quote_(block.getFieldValue('TEXT'));
     return [code, Blockly.Python.ORDER_ATOMIC];
 };
