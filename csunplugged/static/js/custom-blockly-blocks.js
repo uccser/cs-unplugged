@@ -1,3 +1,4 @@
+const VALUES_BLOCKS_COLOUR = '#4c97ff'
 const LOOKS_BLOCKS_COLOUR = '#9966ff'
 const CONTROL_BLOCKS_COLOUR = '#ffab19'
 const SENSING_BLOCKS_COLOUR = '#5cb1d6'
@@ -7,6 +8,31 @@ function setupBlockly(Blockly) {
     
 // Custom Blockly blocks to look and act like Scratch
 Blockly.defineBlocksWithJsonArray([
+    // Values boolean block
+    {
+    "type": "values_boolean",
+    "message0": "%1",
+    "args0": [
+        {
+        "type": "field_dropdown",
+        "name": "VALUE",
+        "options": [
+            [
+            "true",
+            "TRUE"
+            ],
+            [
+            "false",
+            "FALSE"
+            ]
+        ]
+        }
+    ],
+    "output": "Boolean",
+    "colour": VALUES_BLOCKS_COLOUR,
+    "tooltip": "Returns either true or false.",
+    "helpUrl": ""
+    },
     // Looks say block
     {
     "type": "looks_say",
@@ -29,7 +55,7 @@ Blockly.defineBlocksWithJsonArray([
     },
     // Operators number block
     {
-    "type": "operators_number",
+    "type": "values_number",
     "message0": "%1",
     "args0": [{
         "type": "field_number",
@@ -38,13 +64,13 @@ Blockly.defineBlocksWithJsonArray([
     }],
     "output": "Number",
     "helpUrl": "",
-    "colour": '#4c97ff',
+    "colour": VALUES_BLOCKS_COLOUR,
     "tooltip": "A number.",
     "extensions": ["parent_tooltip_when_inline"]
     },
     // Operators text block
     {
-    "type": "operators_string",
+    "type": "values_string",
     "message0": "%1",
     "args0": [{
         "type": "field_input",
@@ -52,7 +78,7 @@ Blockly.defineBlocksWithJsonArray([
         "text": ""
     }],
     "output": "String",
-    "colour": '#4c97ff',
+    "colour": VALUES_BLOCKS_COLOUR,
     "helpUrl": "",
     "tooltip": "A letter, word, or a line or text.",
     "extensions": [
@@ -702,15 +728,27 @@ Blockly.defineBlocksWithJsonArray([
     }
 ]);
 
+// Values boolean block
+Blockly.JavaScript['values_boolean'] = function(block) {
+    var dropdown_value = block.getFieldValue('VALUE');
+    var code = (dropdown_value == 'TRUE') ? 'true' : 'false';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+Blockly.Python['values_boolean'] = function(block) {
+    var dropdown_value = block.getFieldValue('VALUE');
+    var code = (dropdown_value == 'TRUE') ? 'True' : 'False';
+    return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
 // Operators number block
-Blockly.JavaScript['operators_number'] = function(block) {
+Blockly.JavaScript['values_number'] = function(block) {
     // Numeric value.
     var code = Number(block.getFieldValue('NUM'));
     var order = code >= 0 ? Blockly.JavaScript.ORDER_ATOMIC :
                 Blockly.JavaScript.ORDER_UNARY_NEGATION;
     return [code, order];
 };
-Blockly.Python['operators_number'] = function(block) {
+Blockly.Python['values_number'] = function(block) {
     // Numeric value.
     var code = Number(block.getFieldValue('NUM'));
     var order;
@@ -728,12 +766,12 @@ Blockly.Python['operators_number'] = function(block) {
 };
 
 // Operators text block
-Blockly.JavaScript['operators_string'] = function(block) {
+Blockly.JavaScript['values_string'] = function(block) {
     // Text value.
     var code = Blockly.JavaScript.quote_(block.getFieldValue('TEXT'));
     return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
-Blockly.Python['operators_string'] = function(block) {
+Blockly.Python['values_string'] = function(block) {
     // Text value.
     var code = Blockly.Python.quote_(block.getFieldValue('TEXT'));
     return [code, Blockly.Python.ORDER_ATOMIC];
