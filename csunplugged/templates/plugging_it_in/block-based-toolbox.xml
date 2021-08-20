@@ -32,10 +32,17 @@
     <block type="controls_stop"></block>
     </category>
     <category name="Sensing" colour="#4cbfe6">
-    <block type="sensing_ask_and_wait">
+    <block type="sensing_ask_and_wait_text">
         <value name="question">
         <shadow type="text">
-            <field name="TEXT">What is your name?</field>
+            <field name="TEXT">What's your name?</field>
+        </shadow>
+        </value>
+    </block>
+    <block type="sensing_ask_and_wait_number">
+        <value name="question">
+        <shadow type="text">
+            <field name="TEXT">What's your age?</field>
         </shadow>
         </value>
     </block>

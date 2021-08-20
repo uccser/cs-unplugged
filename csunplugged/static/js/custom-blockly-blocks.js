@@ -572,10 +572,10 @@ Blockly.defineBlocksWithJsonArray([
     "tooltip": "Return true if both inputs equal each other.",
     "helpUrl": ""
     },
-    // Sensing ask and wait block
+    // Sensing ask and wait number block
     {
-        "type": "sensing_ask_and_wait",
-        "message0": "ask %1 %2 and wait for type %3 %4",
+        "type": "sensing_ask_and_wait_number",
+        "message0": "ask %1 %2 and wait for number",
         "args0": [
           {
             "type": "input_dummy"
@@ -584,23 +584,26 @@ Blockly.defineBlocksWithJsonArray([
             "type": "input_value",
             "name": "question",
             "check": "String"
-          },
+          }
+        ],
+        "inputsInline": true,
+        "output": "Number",
+        "colour": SENSING_BLOCKS_COLOUR,
+        "tooltip": "Ask user for some number.",
+        "helpUrl": ""
+    },
+    // Sensing ask and wait text block
+    {
+        "type": "sensing_ask_and_wait_text",
+        "message0": "ask %1 %2 and wait for text",
+        "args0": [
           {
             "type": "input_dummy"
           },
           {
-            "type": "field_dropdown",
-            "name": "TYPE",
-            "options": [
-              [
-                "text",
-                "T"
-              ],
-              [
-                "number",
-                "N"
-              ]
-            ]
+            "type": "input_value",
+            "name": "question",
+            "check": "String"
           }
         ],
         "inputsInline": true,
@@ -1151,8 +1154,8 @@ Blockly.Python['controls_stop'] = function(block) {
     return code;
 };
 
-// Sensing ask and wait block
-Blockly.JavaScript['sensing_ask_and_wait'] = function(block) {
+// Sensing ask and wait number block
+Blockly.JavaScript['sensing_ask_and_wait_number'] = function(block) {
     if (block.getField('question')) {
         // Internal message.
         var msg = Blockly.JavaScript.quote_(block.getFieldValue('question'));
@@ -1160,23 +1163,17 @@ Blockly.JavaScript['sensing_ask_and_wait'] = function(block) {
         // External message.
         var msg = Blockly.JavaScript.valueToCode(block, 'question', Blockly.JavaScript.ORDER_NONE) || '\'\'';
     }
-    var code = 'window.prompt(' + msg + ')';
-
-    var dropdown_type = block.getFieldValue('TYPE');
-    if (dropdown_type === 'N') { // If asking for a number, then convert the input to a number.
-        code = 'Number(' + code + ')';
-    }
-
+    var code = 'Number(window.prompt(' + msg + '))';
     return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
-};
-Blockly.Python['sensing_ask_and_wait'] = function(block) {
+  };
+Blockly.Python['sensing_ask_and_wait_number'] = function(block) {
     var functionName = Blockly.Python.provideFunction_(
-    'text_prompt',
-    ['def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '(msg):',
-        '  try:',
-        '    return raw_input(msg)',
-        '  except NameError:',
-        '    return input(msg)']);
+        'text_prompt',
+        ['def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '(msg):',
+            '  try:',
+            '    return raw_input(msg)',
+            '  except NameError:',
+            '    return input(msg)']);
     if (block.getField('question')) {
         // Internal message.
         var msg = Blockly.Python.quote_(block.getFieldValue('question'));
@@ -1185,14 +1182,42 @@ Blockly.Python['sensing_ask_and_wait'] = function(block) {
         var msg = Blockly.Python.valueToCode(block, 'question', Blockly.Python.ORDER_NONE) || '\'\'';
     }
     msg = '""' // Replaces user input parameters to be blank so it matches the expected output
-    var code = functionName + '(' + msg + ')';
-    
-    var dropdown_type = block.getFieldValue('TYPE');
-    if (dropdown_type === 'N') { // If asking for a number, then convert the input to a number.
-        code = 'float(' + functionName + '(' + msg + ')' + ')';
-    }
+    var code = 'float(' + functionName + '(' + msg + '))';
     return [code, Blockly.Python.ORDER_FUNCTION_CALL];
-};
+  };
+
+// Sensing ask and wait text block
+Blockly.JavaScript['sensing_ask_and_wait_text'] = function(block) {
+    if (block.getField('question')) {
+        // Internal message.
+        var msg = Blockly.JavaScript.quote_(block.getFieldValue('question'));
+    } else {
+        // External message.
+        var msg = Blockly.JavaScript.valueToCode(block, 'question', Blockly.JavaScript.ORDER_NONE) || '\'\'';
+    }
+    var code = 'window.prompt(' + msg + ')';
+    return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+  };
+Blockly.Python['sensing_ask_and_wait_text'] = function(block) {
+    var functionName = Blockly.Python.provideFunction_(
+        'text_prompt',
+        ['def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '(msg):',
+            '  try:',
+            '    return raw_input(msg)',
+            '  except NameError:',
+            '    return input(msg)']);
+        if (block.getField('question')) {
+            // Internal message.
+            var msg = Blockly.Python.quote_(block.getFieldValue('question'));
+        } else {
+            // External message.
+            var msg = Blockly.Python.valueToCode(block, 'question', Blockly.Python.ORDER_NONE) || '\'\'';
+        }
+        msg = '""' // Replaces user input parameters to be blank so it matches the expected output
+        var code = functionName + '(' + msg + ')';
+
+    return [code, Blockly.Python.ORDER_FUNCTION_CALL];
+  };
 
 // Operators <string> contains <substring> block
 Blockly.JavaScript['operators_string_contains'] = function(block) {
