@@ -229,9 +229,9 @@
     let lesson_url = "{% url 'plugging_it_in:lesson' topic.slug lesson.slug %}";
     let csrf_token = '{{ csrf_token }}';
     let jobe_proxy_url = '{{ jobe_proxy_url }}';
-    let save_attempt_url = "{% url 'plugging_it_in:save_attempt' %}"
-    let programming_lang = "{{ programming_lang }}"
-    let previous_submission = "{{ previous_submission }}"
+    let save_attempt_url = "{% url 'plugging_it_in:save_attempt' %}";
+    let programming_lang = "{{ programming_lang }}";
+    let previous_submission = `{{ previous_submission }}` // allows value of the variable previous_submission to go on multiline without causing syntax error.
   </script>
 
   <script src="{% static 'js/jobe-editor.js' %}"></script>
