@@ -59,7 +59,6 @@ services:
 
     elasticsearch:
         image: elasticsearch:5
-        restart: always
         networks:
             - backend
         volumes:

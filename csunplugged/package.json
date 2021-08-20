@@ -28,6 +28,7 @@
         "gulp": "4.0.2",
         "intro.js": "2.9.3",
         "jquery": "3.4.1",
+        "multiple-select": "1.5.2",
         "pixrem": "5.0.0",
         "popper.js": "1.16.1",
         "postcss-flexbugs-fixes": "4.1.0",
