@@ -19,6 +19,7 @@ binary-numbers-using-variable:
   programming-languages:
     - scratch
     - python
+    - block-based
   learning-outcomes:
     - programming-explain-sequencing
     - programming-describe-variables
@@ -47,6 +48,7 @@ binary-numbers-using-variable-operator-repeat:
   programming-languages:
     - scratch
     - python
+    - block-based
   learning-outcomes:
     - programming-outline-variable-updates
     - programming-describe-variable-output
