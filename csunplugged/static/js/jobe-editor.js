@@ -1,8 +1,8 @@
 // Scripts used to manage the UI functionality for the programming challenge editor screen.
 
 const codeTester = require("./test-code.js");
-const editorUtils = require("./editor-options-menu.js")
-const utils = require("./utils.js")
+const editorUtils = require("./editor-options-menu.js");
+const utils = require("./utils.js");
 
 // Python editor imports
 var CodeMirror = require("codemirror");
@@ -15,8 +15,8 @@ require('blockly/python');
 
 
 // Has to be global as other functions are using these variables
-let myCodeMirror; 
-let workspace;
+var myCodeMirror; 
+var workspace;
 // Set up code mirror or blockly editor depending what programming_lang is from URL (/python or /block-based)
 if (programming_lang == "python") {
   let myTextarea = document.getElementById("codemirror_editor");
@@ -47,9 +47,9 @@ if (programming_lang == "python") {
     // Add the custom Scratch-like Blockly blocks
     setupBlockly(Blockly);
 
-    const toolbox = document.getElementById('toolbox');
+    var toolbox = document.getElementById('toolbox');
     /* Workspace configurations */
-    const options = {
+    var options = {
       toolbox : toolbox,
       collapse : true,
       comments : true,
@@ -79,7 +79,7 @@ if (programming_lang == "python") {
     // Displays the user's previous block-based submission 
     if (previous_block_based_submission) {
       // Decodes the previous_block_based_submission which contains HTML entities. Outputs a string, and it converts it to XML
-      const xml_node = Blockly.Xml.textToDom(utils.decodeHTMLEntities(previous_block_based_submission))
+      var xml_node = Blockly.Xml.textToDom(utils.decodeHTMLEntities(previous_block_based_submission));
 
       Blockly.Xml.domToWorkspace(xml_node, workspace);
     }
@@ -91,7 +91,7 @@ if (programming_lang == "python") {
  * Disables the "CHECK" button and shows a loading spinner while request is being processed.
  */
 function sendCodeToJobe() {
-  let code = '';
+  var code = '';
    if (programming_lang == 'python') {
      // Replaces all user input parameters to be blank so it matches the expected output
      // Takes into consideration cases input("thing)"), input('thing)'), input(thing) and int(input(thing))
@@ -113,7 +113,7 @@ function sendCodeToJobe() {
     updateResultsTable(result);
 
     // Saving the users code
-    save_code(allCorrect(result) ? "passed" : "failed")
+    save_code(allCorrect(result) ? "passed" : "failed");
 
     $("#editor_run_button").prop("disabled", false);
     $(".code_running_spinner").css("display", "none");
@@ -128,10 +128,10 @@ function sendCodeToJobe() {
 function allCorrect(results) {
   for (result of results) {
     if (result.status != "Passed") {
-      return false
+      return false;
     }
   }
-  return true
+  return true;
 }
 
 /**
@@ -139,7 +139,7 @@ function allCorrect(results) {
  * @param {String} status If the user has Started, Passed or Failed the challenge.
  */
 async function save_code(status="started") {
-  let raw_code;
+  var raw_code;
   if (programming_lang == "python") {
      raw_code = myCodeMirror.getValue();
   } else {
@@ -152,7 +152,7 @@ async function save_code(status="started") {
       "attempt": raw_code,
       "status": status,
       "programming_language": programming_lang
-  }
+  };
 
   // Saves the code in the django session
   let response = await fetch(save_attempt_url, {
@@ -228,11 +228,11 @@ function download(filename, text) {
  * Downloads the editor code to a file called <current_challenge_slug>.py.
  */
 function downloadCode() {
-  let code;
+  var code;
   if (programming_lang == "python") {
     code = myCodeMirror.getValue()
   } else {
-    const lang = 'Python'
+    const lang = 'Python';
     code = Blockly[lang].workspaceToCode(workspace);
   }
   download(current_challenge_slug + ".py", code);
@@ -243,7 +243,7 @@ function downloadCode() {
  */
 function runCode() { 
     // Convert blockly code to JavaScript
-    const lang = 'JavaScript'
+    const lang = 'JavaScript';
     const code = Blockly[lang].workspaceToCode(workspace);
  
     console.log(code);
@@ -266,7 +266,7 @@ $("#download_button").click(downloadCode);
 $("#blockly_editor_run_program_button").click(runCode);
 
 // Apply the navigation setup
-editorUtils.setupLessonNav()
+editorUtils.setupLessonNav();
 
 // Save code when the user navigates using the next or prev buttons or opening nav
 // Manually navigating to the next page to ensure code is saved first before the page reloads.
