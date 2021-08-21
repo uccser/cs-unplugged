@@ -119,7 +119,7 @@ class ProgrammingChallengeView(generic.DetailView):
         return get_object_or_404(
             self.model.objects.select_related(),
             topic__slug=self.kwargs.get("topic_slug", None),
-            slug=self.kwargs.get("programming_challenge_slug", None)
+            slug=self.kwargs.get("challenge_slug", None)
         )
 
     def get_context_data(self, **kwargs):
@@ -134,15 +134,15 @@ class ProgrammingChallengeView(generic.DetailView):
         context["topic"] = self.object.topic
 
         try:
-            programming_lang_slug = self.kwargs.get("programming_lang_slug", None)
-            context["programming_lang"] = programming_lang_slug.lower() # make sure the /python or /block-based is lower case, because this will get checked in the programming-challenge.html page
+            language_slug = self.kwargs.get("language_slug", None)
+            context["programming_lang"] = language_slug.lower()  # ensure /python or /block-based is lower case
 
             lesson_slug = self.kwargs.get("lesson_slug", None)
             lesson = Lesson.objects.get(slug=lesson_slug)
             context["lesson"] = lesson
-            
-            # Get Python challenges if programming_lang_slug == 'python' else get Block-based challanges
-            if (programming_lang_slug == "python"):
+
+            # Get Python challenges if language_slug == 'python' else get Block-based challanges
+            if (language_slug == "python"):
                 challlenges = lesson.retrieve_related_programming_challenges("Python")
             else:
                 challlenges = lesson.retrieve_related_programming_challenges("Block-based")
@@ -160,11 +160,12 @@ class ProgrammingChallengeView(generic.DetailView):
         context["jobe_proxy_url"] = reverse('plugging_it_in:jobe_proxy')
         context["saved_attempts"] = self.request.session.get('saved_attempts', {})
         try:
-            # Retrieves either the python or blockly code for a specific question, depending what the value of context["programming_lang"] is
-            if programming_lang_slug == "python":
-                context["previous_text_based_submission"] = context["saved_attempts"][self.object.slug][context["programming_lang"]]["code"]
+            # Retrieves python/blockly code for a specific question, depending what context["programming_lang"] is
+            lang = context["programming_lang"]
+            if language_slug == "python":
+                context["previous_text_based_submission"] = context["saved_attempts"][self.object.slug][lang]["code"]
             else:
-                context["previous_block_based_submission"] = context["saved_attempts"][self.object.slug][context["programming_lang"]]["code"]
+                context["previous_block_based_submission"] = context["saved_attempts"][self.object.slug][lang]["code"]
         except KeyError:
             context["previous_text_based_submission"] = ''
             context["previous_block_based_submission"] = ''
@@ -210,21 +211,24 @@ class SaveAttemptView(View):
 
         # To stop a "passed" or "failed" status being overridden by "started"
         if (not (body["status"] == "started"
-                 and request.session.get('saved_attempts', {}).get(body["challenge"], {}).get(body["programming_language"], {}).get("status", "")
+                 and request.session.get('saved_attempts', {})
+                 .get(body["challenge"], {})
+                 .get(body["programming_language"], {})
+                 .get("status", "")
                  in {'passed', 'failed'})
                 and body["attempt"] != ""):
 
-            # if attempting the current challenge for the first time
-            # then initialise the challenge as an empty object to avoid KeyError when saving Python/Block-based attempt.
+            # if attempting the current challenge for the first time,
+            # initialise the challenge as an empty object to avoid KeyError when saving user's attempt
             if (body["challenge"] not in request.session['saved_attempts']):
                 request.session['saved_attempts'][body["challenge"]] = {}
-            
-            # Saves the python/block-based attempt in different places for the current challenge.
+
+            # Saves the python/block-based attempt in different places for the current challenge
             request.session['saved_attempts'][body["challenge"]][body["programming_language"]] = {
                 "status": body["status"],
                 "code": body["attempt"],
             }
-            # Set session as modified to force data updates to be saved. 
+            # Set session as modified to force data updates to be saved
             # https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Sessions
             request.session.modified = True
             return HttpResponse("Saved the attempt.")
