@@ -161,9 +161,13 @@ class ProgrammingChallengeView(generic.DetailView):
         context["saved_attempts"] = self.request.session.get('saved_attempts', {})
         try:
             # Retrieves either the python or blockly code for a specific question, depending what the value of context["programming_lang"] is
-            context["previous_submission"] = context["saved_attempts"][self.object.slug][context["programming_lang"]]["code"]
+            if programming_lang_slug == "python":
+                context["previous_text_based_submission"] = context["saved_attempts"][self.object.slug][context["programming_lang"]]["code"]
+            else:
+                context["previous_block_based_submission"] = context["saved_attempts"][self.object.slug][context["programming_lang"]]["code"]
         except KeyError:
-            context["previous_submission"] = ''
+            context["previous_text_based_submission"] = ''
+            context["previous_block_based_submission"] = ''
 
         return context
 
@@ -202,14 +206,20 @@ class SaveAttemptView(View):
         body_unicode = request.body.decode('utf-8')
         body = json.loads(body_unicode)
 
-        request.session['saved_attempts'] = request.session.get('saved_attempts', {body["challenge"]: {}, body["programming_language"]: ""})
+        request.session['saved_attempts'] = request.session.get('saved_attempts', {})
 
         # To stop a "passed" or "failed" status being overridden by "started"
         if (not (body["status"] == "started"
                  and request.session.get('saved_attempts', {}).get(body["challenge"], {}).get(body["programming_language"], {}).get("status", "")
                  in {'passed', 'failed'})
                 and body["attempt"] != ""):
-            # Saves the python attempt and blockly attempt in different places for the same question.
+
+            # if attempting the current challenge for the first time
+            # then initialise the challenge as an empty object to avoid KeyError when saving Python/Block-based attempt.
+            if (body["challenge"] not in request.session['saved_attempts']):
+                request.session['saved_attempts'][body["challenge"]] = {}
+            
+            # Saves the python/block-based attempt in different places for the current challenge.
             request.session['saved_attempts'][body["challenge"]][body["programming_language"]] = {
                 "status": body["status"],
                 "code": body["attempt"],

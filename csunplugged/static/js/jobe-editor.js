@@ -76,10 +76,10 @@ if (programming_lang == "python") {
     /* Injects the blockly workspace */
     workspace = Blockly.inject('blocklyDiv', options);
 
-    // Displays the user's previous submission 
-    if (previous_submission) {
-      // Decodes the previous_submission which contains HTML entities. Outputs a string, and it converts it to XML
-      const xml_node = Blockly.Xml.textToDom(utils.decodeHTMLEntities(previous_submission))
+    // Displays the user's previous block-based submission 
+    if (previous_block_based_submission) {
+      // Decodes the previous_block_based_submission which contains HTML entities. Outputs a string, and it converts it to XML
+      const xml_node = Blockly.Xml.textToDom(utils.decodeHTMLEntities(previous_block_based_submission))
 
       Blockly.Xml.domToWorkspace(xml_node, workspace);
     }
