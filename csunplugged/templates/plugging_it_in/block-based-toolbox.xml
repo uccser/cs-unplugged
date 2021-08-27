@@ -1,190 +1,198 @@
 <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-    <category name="Values" colour="#4c97ff">
-    <block type="values_number">
-        <field name="NUM">0</field>
-    </block>
-    <block type="values_string">
-        <field name="TEXT">abc</field>
-    </block>
-    <block type="values_boolean"></block>
-    </category>
     <category name="Looks" colour="#9966ff">
-    <block type="looks_say">
-        <value name="value">
-        <shadow type="text">
-            <field name="TEXT">abc</field>
-        </shadow>
-        </value>
-    </block>
+        <block type="looks_say">
+            <value name="value">
+            <block type="values_string">
+                <field name="TEXT">abc</field>
+            </block>
+            </value>
+        </block>
+        <block type="looks_say">
+            <value name="value">
+                <block type="values_number">
+                    <field name="NUM">123</field>
+                </block>
+            </value>
+        </block>
     </category>
     <category name="Control" colour="#ffab19">
-    <block type="controls_repeat_num_times">
-        <value name="num">
-        <shadow type="math_number">
-            <field name="NUM">10</field>
-        </shadow>
-        </value>
-    </block>
-    <!-- Forever loop? -->
-    <block type="controls_if_then"></block>
-    <block type="controls_if_then_else"></block>
-    <block type="controls_repeat_until"></block>
-    <block type="controls_stop"></block>
+        <block type="controls_repeat_num_times">
+            <value name="num">
+                <block type="values_number">
+                    <field name="NUM">10</field>
+                </block>
+            </value>
+        </block>
+        <!-- Forever loop? -->
+        <block type="controls_if_then"></block>
+        <block type="controls_if_then_else"></block>
+        <block type="controls_repeat_until"></block>
+        <block type="controls_stop"></block>
     </category>
     <category name="Sensing" colour="#4cbfe6">
-    <block type="sensing_ask_and_wait_text">
-        <value name="question">
-        <shadow type="text">
-            <field name="TEXT">What's your name?</field>
-        </shadow>
-        </value>
-    </block>
-    <block type="sensing_ask_and_wait_number">
-        <value name="question">
-        <shadow type="text">
-            <field name="TEXT">What's your age?</field>
-        </shadow>
-        </value>
-    </block>
+        <block type="sensing_ask_and_wait_text">
+            <value name="question">
+                <block type="values_string">
+                    <field name="TEXT">What's your name?</field>
+                </block>
+            </value>
+        </block>
+        <block type="sensing_ask_and_wait_number">
+            <value name="question">
+                <block type="values_string">
+                    <field name="TEXT">What's your age?</field>
+                </block>
+            </value>
+        </block>
     </category>
     <category name="Operators" colour="#40bf4a">
-    <block type="operators_add">
-        <value name="x">
-        <shadow type="math_number">
-            <field name="NUM">1</field>
-        </shadow>
-        </value>
-        <value name="y">
-        <shadow type="math_number">
-            <field name="NUM">1</field>
-        </shadow>
-        </value>
-    </block>
-    <block type="operators_subtract">
-        <value name="x">
-        <shadow type="math_number">
-            <field name="NUM">1</field>
-        </shadow>
-        </value>
-        <value name="y">
-        <shadow type="math_number">
-            <field name="NUM">1</field>
-        </shadow>
-        </value>
-    </block>
-    <block type="operators_multiply">
-        <value name="x">
-        <shadow type="math_number">
-            <field name="NUM">1</field>
-        </shadow>
-        </value>
-        <value name="y">
-        <shadow type="math_number">
-            <field name="NUM">1</field>
-        </shadow>
-        </value>
-    </block>
-    <block type="operators_divide">
-        <value name="x">
-        <shadow type="math_number">
-            <field name="NUM">1</field>
-        </shadow>
-        </value>
-        <value name="y">
-        <shadow type="math_number">
-            <field name="NUM">1</field>
-        </shadow>
-        </value>
-    </block>
-    <block type="operators_random_int">
-        <value name="a">
-        <shadow type="math_number">
-            <field name="NUM">1</field>
-        </shadow>
-        </value>
-        <value name="b">
-        <shadow type="math_number">
-            <field name="NUM">100</field>
-        </shadow>
-        </value>
-    </block>
-    <block type="operators_greater_than"></block>
-    <block type="operators_less_than"></block>
-    <block type="operators_equality"></block>
-    <block type="operators_and"></block>
-    <block type="operators_or"></block>
-    <block type="operators_not"></block>
-    <block type="operators_join_string">
-        <value name="a">
-        <shadow type="text">
-            <field name="TEXT">apple </field>
-        </shadow>
-        </value>
-        <value name="b">
-        <shadow type="text">
-            <field name="TEXT">banana</field>
-        </shadow>
-        </value>
-    </block>
-    <block type="operators_letter_of">
-        <value name="index">
-        <shadow type="math_number">
-            <field name="NUM">1</field>
-        </shadow>
-        </value>
-        <value name="word">
-        <shadow type="text">
-            <field name="TEXT">apple</field>
-        </shadow>
-        </value>
-    </block>
-    <block type="operators_length_of">
-        <value name="VALUE">
-        <shadow type="text">
-            <field name="TEXT">abc</field>
-        </shadow>
-        </value>
-    </block>
-    <block type="operators_string_contains">
-        <value name="word">
-        <shadow type="text">
-            <field name="TEXT">apple</field>
-        </shadow>
-        </value>
-        <value name="subword">
-        <shadow type="text">
-            <field name="TEXT">a</field>
-        </shadow>
-        </value>
-    </block>
-    </block>
-    <block type="operators_modulo">
-        <value name="a">
-        <shadow type="math_number">
-            <field name="NUM">-3</field>
-        </shadow>
-        </value>
-        <value name="n">
-        <shadow type="math_number">
-            <field name="NUM">2</field>
-        </shadow>
-        </value>
-    </block>
-    <block type="operators_round">
-        <value name="a">
-        <shadow type="math_number">
-            <field name="NUM">3.14</field>
-        </shadow>
-        </value>
-    </block>
-    <block type="operators_single">
-        <field name="OP">ABS</field>
-        <value name="NUM">
-        <shadow type="math_number">
-            <field name="NUM">9</field>
-        </shadow>
-        </value>
-    </block>
+        <block type="operators_add">
+            <value name="x">
+                <block type="values_number">
+                    <field name="NUM">1</field>
+                </block>
+            </value>
+            <value name="y">
+                <block type="values_number">
+                    <field name="NUM">1</field>
+                </block>
+            </value>
+        </block>
+        <block type="operators_subtract">
+            <value name="x">
+                <block type="values_number">
+                    <field name="NUM">1</field>
+                </block>
+            </value>
+            <value name="y">
+                <block type="values_number">
+                    <field name="NUM">1</field>
+                </block>
+            </value>
+        </block>
+        <block type="operators_multiply">
+            <value name="x">
+                <block type="values_number">
+                    <field name="NUM">1</field>
+                </block>
+            </value>
+            <value name="y">
+                <block type="values_number">
+                    <field name="NUM">1</field>
+                </block>
+            </value>
+        </block>
+        <block type="operators_divide">
+            <value name="x">
+                <block type="values_number">
+                    <field name="NUM">1</field>
+                </block>
+            </value>
+            <value name="y">
+                <block type="values_number">
+                    <field name="NUM">1</field>
+                </block>
+            </value>
+        </block>
+        <block type="operators_random_int">
+            <value name="a">
+                <block type="values_number">
+                    <field name="NUM">1</field>
+                </block>
+            </value>
+            <value name="b">
+                <block type="values_number">
+                    <field name="NUM">100</field>
+                </block>
+            </value>
+        </block>
+        <block type="operators_greater_than"></block>
+        <block type="operators_less_than"></block>
+        <block type="operators_equality"></block>
+        <block type="operators_and"></block>
+        <block type="operators_or"></block>
+        <block type="operators_not"></block>
+        <block type="operators_join_string">
+            <value name="a">
+                <block type="values_string">
+                    <field name="TEXT">apple </field>
+                </block>
+            </value>
+            <value name="b">
+                <block type="values_string">
+                    <field name="TEXT">banana</field>
+                </block>
+            </value>
+        </block>
+        <block type="operators_letter_of">
+            <value name="index">
+                <block type="values_number">
+                    <field name="NUM">1</field>
+                </block>
+            </value>
+            <value name="word">
+                <block type="values_string">
+                    <field name="TEXT">apple</field>
+                </block>
+            </value>
+        </block>
+        <block type="operators_length_of">
+            <value name="VALUE">
+                <block type="values_string">
+                    <field name="TEXT">abc</field>
+                </block>
+            </value>
+        </block>
+        <block type="operators_string_contains">
+            <value name="word">
+                <block type="values_string">
+                    <field name="TEXT">apple</field>
+                </block>
+            </value>
+            <value name="subword">
+                <block type="values_string">
+                    <field name="TEXT">a</field>
+                </block>
+            </value>
+        </block>
+        </block>
+        <block type="operators_modulo">
+            <value name="a">
+                <block type="values_number">
+                    <field name="NUM">-3</field>
+                </block>
+            </value>
+            <value name="n">
+                <block type="values_number">
+                    <field name="NUM">2</field>
+                </block>
+            </value>
+        </block>
+        <block type="operators_round">
+            <value name="a">
+                <block type="values_number">
+                    <field name="NUM">3.14</field>
+                </block>
+            </value>
+        </block>
+        <block type="operators_single">
+            <field name="OP">ABS</field>
+                <value name="NUM">
+                    <block type="values_number">
+                        <field name="NUM">9</field>
+                    </block>
+            </value>
+        </block>
     </category>
     <category name="Variables" colour="#ff8c1a" custom="VARIABLE"></category>
+    <sep></sep>
+    <category name="Values" colour="#4c97ff">
+        <block type="values_number">
+            <field name="NUM">0</field>
+        </block>
+        <block type="values_string">
+            <field name="TEXT">abc</field>
+        </block>
+        <block type="values_boolean"></block>
+    </category>
 </xml>
