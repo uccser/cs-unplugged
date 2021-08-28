@@ -44,12 +44,120 @@ if (programming_lang == "python") {
   // Set up blockly editor
   document.addEventListener("DOMContentLoaded", function () {
 
+    // Set the math_change block to contain the values_number block by default.
+    Blockly.Variables.flyoutCategoryBlocks = function(workspace) {
+      var variableModelList = workspace.getVariablesOfType('');
+    
+      var xmlList = [];
+      if (variableModelList.length > 0) {
+        // New variables are added to the end of the variableModelList.
+        var mostRecentVariable = variableModelList[variableModelList.length - 1];
+        if (Blockly.Blocks['variables_set']) {
+          var block = Blockly.utils.xml.createElement('block');
+          block.setAttribute('type', 'variables_set');
+          block.setAttribute('gap', Blockly.Blocks['math_change'] ? 8 : 24);
+          block.appendChild(
+              Blockly.Variables.generateVariableFieldDom(mostRecentVariable));
+          xmlList.push(block);
+        }
+        if (Blockly.Blocks['math_change']) {
+          var block = Blockly.utils.xml.createElement('block');
+          block.setAttribute('type', 'math_change');
+          block.setAttribute('gap', Blockly.Blocks['variables_get'] ? 20 : 8);
+          block.appendChild(
+              Blockly.Variables.generateVariableFieldDom(mostRecentVariable));
+          var value = Blockly.Xml.textToDom(
+              '<value name="DELTA">' +
+              '<block type="values_number">' +
+              '<field name="NUM">1</field>' +
+              '</block>' +
+              '</value>');
+          block.appendChild(value);
+          xmlList.push(block);
+        }
+    
+        if (Blockly.Blocks['variables_get']) {
+          variableModelList.sort(Blockly.VariableModel.compareByName);
+          for (var i = 0, variable; (variable = variableModelList[i]); i++) {
+            var block = Blockly.utils.xml.createElement('block');
+            block.setAttribute('type', 'variables_get');
+            block.setAttribute('gap', 8);
+            block.appendChild(Blockly.Variables.generateVariableFieldDom(variable));
+            xmlList.push(block);
+          }
+        }
+      }
+      return xmlList;
+    };
+
+    // Custom Blockly Theme
+    var blocklyTheme = Blockly.Theme.defineTheme('block-based-scratch', {
+      "base": Blockly.Theme.Classic,
+      "blockStyles": {
+        "values_blocks": {
+          "colourPrimary": "#FF6680",
+          "colourSecondary": "#FFABB9",
+          "colourTertiary": "#FF4A68",
+        },
+        "looks_blocks": {
+          "colourPrimary": "#9966FF",
+          "colourSecondary": "#BB99FF",
+          "colourTertiary": "#774DCB",
+        },
+        "control_blocks": {
+          "colourPrimary": "#FFAB19",
+          "colourSecondary": "#FFBE4D",
+          "colourTertiary": "#CF8B17",
+        },
+        "sensing_blocks": {
+          "colourPrimary": "#5CB1D6",
+          "colourSecondary": "#87BED6",
+          "colourTertiary": "#2E8EB8",
+        },
+        "operators_blocks": {
+          "colourPrimary": "#59C059",
+          "colourSecondary": "#7EBF7E",
+          "colourTertiary": "#3D9438",
+        },
+        "variable_blocks": {
+          "colourPrimary": "#FF8D1A",
+          "colourSecondary": "#FFA64D",
+          "colourTertiary": "#DB6E00",
+        },
+      },
+      "categoryStyles": {
+        "values_category": {
+          "colour": "#FF6680",
+        },
+        "looks_category": {
+          "colour": "#9966ff",
+        },
+        "control_category": {
+          "colour": "#ffab19",
+        },
+        "sensing_category": {
+          "colour": "#5cb1d6",
+        },
+        "operators_category": {
+          "colour": "#59c059",
+        },
+        "variable_category": {
+          "colour": "#ff8d1a",
+        },
+      },
+      "componentStyles": {
+        "toolboxBackgroundColour": "#f7f7f7",
+        "flyoutBackgroundColour": "#e9ecef"
+      }
+    });
+
     // Add the custom Scratch-like Blockly blocks
     setupBlockly(Blockly);
 
     var toolbox = document.getElementById('toolbox');
     /* Workspace configurations */
     var options = {
+      theme: blocklyTheme,
       toolbox : toolbox,
       collapse : true,
       comments : true,
@@ -67,8 +175,8 @@ if (programming_lang == "python") {
       zoom : {
         controls : true,
         wheel : true,
-        startScale : 0.8,
-        maxScale : 1.7,
+        startScale : 0.9,
+        maxScale : 2,
         minScale : 0.5,
         scaleSpeed : 1.2
       }

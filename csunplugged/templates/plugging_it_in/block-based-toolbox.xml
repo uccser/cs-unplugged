@@ -1,10 +1,10 @@
 <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-    <category name="Looks" colour="#9966ff">
+    <category name="Looks" categorystyle="looks_category">
         <block type="looks_say">
             <value name="value">
-            <block type="values_string">
-                <field name="TEXT">abc</field>
-            </block>
+                <block type="values_string">
+                    <field name="TEXT">abc</field>
+                </block>
             </value>
         </block>
         <block type="looks_say">
@@ -14,8 +14,13 @@
                 </block>
             </value>
         </block>
+        <block type="looks_say">
+            <value name="value">
+                <block type="values_boolean"></block>
+            </value>
+        </block>
     </category>
-    <category name="Control" colour="#ffab19">
+    <category name="Control" categorystyle="control_category">
         <block type="controls_repeat_num_times">
             <value name="num">
                 <block type="values_number">
@@ -29,7 +34,7 @@
         <block type="controls_repeat_until"></block>
         <block type="controls_stop"></block>
     </category>
-    <category name="Sensing" colour="#4cbfe6">
+    <category name="Sensing" categorystyle="sensing_category">
         <block type="sensing_ask_and_wait_text">
             <value name="question">
                 <block type="values_string">
@@ -45,7 +50,7 @@
             </value>
         </block>
     </category>
-    <category name="Operators" colour="#40bf4a">
+    <category name="Operators" categorystyle="operators_category">
         <block type="operators_add">
             <value name="x">
                 <block type="values_number">
@@ -184,9 +189,9 @@
             </value>
         </block>
     </category>
-    <category name="Variables" colour="#ff8c1a" custom="VARIABLE"></category>
+    <category name="Variables" categorystyle="variable_category" custom="VARIABLE"></category>
     <sep></sep>
-    <category name="Values" colour="#4c97ff">
+    <category name="Values" categorystyle="values_category">
         <block type="values_number">
             <field name="NUM">0</field>
         </block>

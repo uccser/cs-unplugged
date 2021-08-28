@@ -29,7 +29,7 @@ Blockly.defineBlocksWithJsonArray([
         }
     ],
     "output": "Boolean",
-    "colour": VALUES_BLOCKS_COLOUR,
+    "style":  "values_blocks",
     "tooltip": "Returns either true or false.",
     "helpUrl": ""
     },
@@ -49,7 +49,7 @@ Blockly.defineBlocksWithJsonArray([
     "inputsInline": true,
     "previousStatement": null,
     "nextStatement": null,
-    "colour": LOOKS_BLOCKS_COLOUR,
+    "style":  "looks_blocks",
     "tooltip": "Say the specified text, number or other value.",
     "helpUrl": ""
     },
@@ -64,7 +64,7 @@ Blockly.defineBlocksWithJsonArray([
     }],
     "output": "Number",
     "helpUrl": "",
-    "colour": VALUES_BLOCKS_COLOUR,
+    "style":  "values_blocks",
     "tooltip": "A number.",
     "extensions": ["parent_tooltip_when_inline"]
     },
@@ -78,7 +78,7 @@ Blockly.defineBlocksWithJsonArray([
         "text": ""
     }],
     "output": "String",
-    "colour": VALUES_BLOCKS_COLOUR,
+    "style":  "values_blocks",
     "helpUrl": "",
     "tooltip": "A letter, word, or a line or text.",
     "extensions": [
@@ -108,7 +108,7 @@ Blockly.defineBlocksWithJsonArray([
     ],
     "inputsInline": true,
     "output": "Number",
-    "colour": OPERATORS_BLOCKS_COLOUR,
+    "style":  "operators_blocks",
     "tooltip": "Return the modulo of the two numbers.",
     "helpUrl": ""
     },
@@ -133,7 +133,7 @@ Blockly.defineBlocksWithJsonArray([
     ],
     "inputsInline": true,
     "output": "Number",
-    "colour": OPERATORS_BLOCKS_COLOUR,
+    "style":  "operators_blocks",
     "tooltip": "Return the product of the two numbers.",
     "helpUrl": ""
     },
@@ -158,7 +158,7 @@ Blockly.defineBlocksWithJsonArray([
     ],
     "inputsInline": true,
     "output": "Number",
-    "colour": OPERATORS_BLOCKS_COLOUR,
+    "style":  "operators_blocks",
     "tooltip": "Return the quotient of the two numbers.",
     "helpUrl": ""
     },
@@ -183,7 +183,7 @@ Blockly.defineBlocksWithJsonArray([
     ],
     "inputsInline": true,
     "output": "Number",
-    "colour": OPERATORS_BLOCKS_COLOUR,
+    "style":  "operators_blocks",
     "tooltip": "Return the sum of the two numbers.",
     "helpUrl": ""
     },
@@ -208,7 +208,7 @@ Blockly.defineBlocksWithJsonArray([
     ],
     "inputsInline": true,
     "output": "Number",
-    "colour": OPERATORS_BLOCKS_COLOUR,
+    "style":  "operators_blocks",
     "tooltip": "Return the difference of the two numbers.",
     "helpUrl": ""
     },
@@ -233,7 +233,7 @@ Blockly.defineBlocksWithJsonArray([
     ],
     "inputsInline": true,
     "output": "String",
-    "colour": OPERATORS_BLOCKS_COLOUR,
+    "style":  "operators_blocks",
     "tooltip": "Returns a combination of the two input strings added together.",
     "helpUrl": ""
     },
@@ -260,7 +260,7 @@ Blockly.defineBlocksWithJsonArray([
         }
     ],
     "output": "String",
-    "colour": OPERATORS_BLOCKS_COLOUR,
+    "style":  "operators_blocks",
     "tooltip": "Returns the letter of the specified position. #1 is the first item.",
     "helpUrl": ""
     },
@@ -285,7 +285,7 @@ Blockly.defineBlocksWithJsonArray([
     ],
     "inputsInline": true,
     "output": "Boolean",
-    "colour": OPERATORS_BLOCKS_COLOUR,
+    "style":  "operators_blocks",
     "tooltip": "Returns true if the second string is in the first string.",
     "helpUrl": ""
     },
@@ -304,7 +304,7 @@ Blockly.defineBlocksWithJsonArray([
         }
     ],
     "output": "Number",
-    "colour": OPERATORS_BLOCKS_COLOUR,
+    "style":  "operators_blocks",
     "tooltip": "",
     "helpUrl": ""
     },
@@ -328,7 +328,7 @@ Blockly.defineBlocksWithJsonArray([
         }
     ],
     "output": "Boolean",
-    "colour": OPERATORS_BLOCKS_COLOUR,
+    "style":  "operators_blocks",
     "tooltip": "Returns true if both inputs are true.",
     "helpUrl": ""
     },
@@ -352,7 +352,7 @@ Blockly.defineBlocksWithJsonArray([
         }
     ],
     "output": "Boolean",
-    "colour": OPERATORS_BLOCKS_COLOUR,
+    "style":  "operators_blocks",
     "tooltip": "Returns true if at least one of the inputs is true.",
     "helpUrl": ""
     },
@@ -371,7 +371,7 @@ Blockly.defineBlocksWithJsonArray([
         }
     ],
     "output": "Boolean",
-    "colour": OPERATORS_BLOCKS_COLOUR,
+    "style":  "operators_blocks",
     "tooltip": "Return true if the input is false. Returns false if the input is true.",
     "helpUrl": ""
     },
@@ -391,7 +391,7 @@ Blockly.defineBlocksWithJsonArray([
     ],
     "inputsInline": true,
     "output": "Number",
-    "colour": OPERATORS_BLOCKS_COLOUR,
+    "style":  "operators_blocks",
     "tooltip": "Round a number up.",
     "helpUrl": ""
     },
@@ -418,7 +418,7 @@ Blockly.defineBlocksWithJsonArray([
         }
     ],
     "output": "Number",
-    "colour": OPERATORS_BLOCKS_COLOUR,
+    "style":  "operators_blocks",
     "tooltip": "Return a random integer between the two numbers (inclusive).",
     "helpUrl": ""
     },
@@ -500,7 +500,7 @@ Blockly.defineBlocksWithJsonArray([
         }
     ],
     "output": "Number",
-    "colour": OPERATORS_BLOCKS_COLOUR,
+    "style":  "operators_blocks",
     "tooltip": "Block for advanced math operators with single operand.",
     "helpUrl": ""
     },
@@ -523,7 +523,7 @@ Blockly.defineBlocksWithJsonArray([
     ],
     "inputsInline": true,
     "output": "Boolean",
-    "colour": OPERATORS_BLOCKS_COLOUR,
+    "style":  "operators_blocks",
     "tooltip": "Return true if the first input is greater than the second input.",
     "helpUrl": ""
     },
@@ -545,7 +545,7 @@ Blockly.defineBlocksWithJsonArray([
         }
     ],
     "output": "Boolean",
-    "colour": OPERATORS_BLOCKS_COLOUR,
+    "style":  "operators_blocks",
     "tooltip": "Return true if the second input is greater than the first input.",
     "helpUrl": ""
     },
@@ -568,7 +568,7 @@ Blockly.defineBlocksWithJsonArray([
     ],
     "inputsInline": true,
     "output": "Boolean",
-    "colour": OPERATORS_BLOCKS_COLOUR,
+    "style":  "operators_blocks",
     "tooltip": "Return true if both inputs equal each other.",
     "helpUrl": ""
     },
@@ -588,7 +588,7 @@ Blockly.defineBlocksWithJsonArray([
         ],
         "inputsInline": true,
         "output": "Number",
-        "colour": SENSING_BLOCKS_COLOUR,
+        "style":  "sensing_blocks",
         "tooltip": "Ask user for some number.",
         "helpUrl": ""
     },
@@ -608,7 +608,7 @@ Blockly.defineBlocksWithJsonArray([
         ],
         "inputsInline": true,
         "output": "String",
-        "colour": SENSING_BLOCKS_COLOUR,
+        "style":  "sensing_blocks",
         "tooltip": "Ask user for some text.",
         "helpUrl": ""
     },
@@ -632,7 +632,7 @@ Blockly.defineBlocksWithJsonArray([
     ],
     "previousStatement": null,
     "nextStatement": null,
-    "colour": CONTROL_BLOCKS_COLOUR,
+    "style":  "control_blocks",
     "tooltip": "",
     "helpUrl": ""
     },
@@ -663,7 +663,7 @@ Blockly.defineBlocksWithJsonArray([
     ],
     "previousStatement": null,
     "nextStatement": null,
-    "colour": CONTROL_BLOCKS_COLOUR,
+    "style":  "control_blocks",
     "tooltip": "",
     "helpUrl": ""
     },
@@ -672,7 +672,7 @@ Blockly.defineBlocksWithJsonArray([
     "type": "controls_stop",
     "message0": "stop",
     "previousStatement": null,
-    "colour": CONTROL_BLOCKS_COLOUR,
+    "style":  "control_blocks",
     "tooltip": "Stops the containing loop.",
     "helpUrl": ""
     },
@@ -701,7 +701,7 @@ Blockly.defineBlocksWithJsonArray([
     ],
     "previousStatement": null,
     "nextStatement": null,
-    "colour": CONTROL_BLOCKS_COLOUR,
+    "style":  "control_blocks",
     "tooltip": "Do some statements several times.",
     "helpUrl": ""
     },
@@ -725,7 +725,7 @@ Blockly.defineBlocksWithJsonArray([
     ],
     "previousStatement": null,
     "nextStatement": null,
-    "colour": CONTROL_BLOCKS_COLOUR,
+    "style":  "control_blocks",
     "tooltip": "Repeat a statement several times until a condition is met.",
     "helpUrl": ""
     }
