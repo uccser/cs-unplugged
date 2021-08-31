@@ -41,7 +41,8 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         kwargs = {
             "topic_slug": self.topic.slug,
             "lesson_slug": self.lesson.slug,
-            "programming_challenge_slug": self.challenge.slug,
+            "challenge_slug": self.challenge.slug,
+            "language_slug": "python",
         }
         url = reverse("plugging_it_in:programming_challenge", kwargs=kwargs)
         response = self.client.get(url)
@@ -52,7 +53,8 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         kwargs = {
             "topic_slug": "wrong_slug",
             "lesson_slug": self.lesson.slug,
-            "programming_challenge_slug": self.challenge.slug,
+            "challenge_slug": self.challenge.slug,
+            "language_slug": "python",
         }
         url = reverse("plugging_it_in:programming_challenge", kwargs=kwargs)
         response = self.client.get(url)
@@ -63,7 +65,8 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         kwargs = {
             "topic_slug": self.topic.slug,
             "lesson_slug": "wrong_slug",
-            "programming_challenge_slug": self.challenge.slug,
+            "challenge_slug": self.challenge.slug,
+            "language_slug": "python",
         }
         url = reverse("plugging_it_in:programming_challenge", kwargs=kwargs)
         response = self.client.get(url)
@@ -74,7 +77,8 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         kwargs = {
             "topic_slug": self.topic.slug,
             "lesson_slug": self.lesson.slug,
-            "programming_challenge_slug": "wrong_slug",
+            "challenge_slug": "wrong_slug",
+            "language_slug": "python",
         }
         url = reverse("plugging_it_in:programming_challenge", kwargs=kwargs)
         response = self.client.get(url)
@@ -85,7 +89,8 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         kwargs = {
             "topic_slug": self.topic.slug,
             "lesson_slug": self.lesson.slug,
-            "programming_challenge_slug": self.challenge.slug,
+            "challenge_slug": self.challenge.slug,
+            "language_slug": "python",
         }
         url = reverse("plugging_it_in:programming_challenge", kwargs=kwargs)
         response = self.client.get(url)
@@ -111,7 +116,8 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         kwargs = {
             "topic_slug": self.topic.slug,
             "lesson_slug": self.lesson.slug,
-            "programming_challenge_slug": self.challenge.slug,
+            "challenge_slug": self.challenge.slug,
+            "language_slug": "python"
         }
         url = reverse("plugging_it_in:programming_challenge", kwargs=kwargs)
         response = self.client.get(url)
@@ -158,7 +164,8 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         kwargs = {
             "topic_slug": self.topic.slug,
             "lesson_slug": self.lesson.slug,
-            "programming_challenge_slug": self.challenge.slug,
+            "challenge_slug": self.challenge.slug,
+            "language_slug": "python",
         }
         url = reverse("plugging_it_in:programming_challenge", kwargs=kwargs)
         response = self.client.get(url)
@@ -203,7 +210,8 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         kwargs = {
             "topic_slug": self.topic.slug,
             "lesson_slug": self.lesson.slug,
-            "programming_challenge_slug": self.challenge.slug,
+            "challenge_slug": self.challenge.slug,
+            "language_slug": "python",
         }
         url = reverse("plugging_it_in:programming_challenge", kwargs=kwargs)
         response = self.client.get(url)
@@ -222,7 +230,8 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         kwargs = {
             "topic_slug": self.topic.slug,
             "lesson_slug": self.lesson.slug,
-            "programming_challenge_slug": self.challenge.slug,
+            "challenge_slug": self.challenge.slug,
+            "language_slug": "python",
         }
         url = reverse("plugging_it_in:programming_challenge", kwargs=kwargs)
         response = self.client.get(url)
@@ -248,7 +257,8 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         kwargs = {
             "topic_slug": self.topic.slug,
             "lesson_slug": self.lesson.slug,
-            "programming_challenge_slug": self.challenge.slug,
+            "challenge_slug": self.challenge.slug,
+            "language_slug": "python",
         }
         url = reverse("plugging_it_in:programming_challenge", kwargs=kwargs)
         response = self.client.get(url)
@@ -263,7 +273,8 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         kwargs = {
             "topic_slug": self.topic.slug,
             "lesson_slug": self.lesson.slug,
-            "programming_challenge_slug": self.challenge.slug,
+            "challenge_slug": self.challenge.slug,
+            "language_slug": "python"
         }
         url = reverse("plugging_it_in:programming_challenge", kwargs=kwargs)
         response = self.client.get(url)
@@ -283,7 +294,8 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         kwargs = {
             "topic_slug": self.topic.slug,
             "lesson_slug": self.lesson.slug,
-            "programming_challenge_slug": self.challenge.slug,
+            "challenge_slug": self.challenge.slug,
+            "language_slug": "python",
         }
         url = reverse("plugging_it_in:programming_challenge", kwargs=kwargs)
         response = self.client.get(url)

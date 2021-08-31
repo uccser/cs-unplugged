@@ -16,7 +16,8 @@ class SaveAttemptViewTest(BaseTestWithDB):
         new_attempt = {
             "challenge": "test_challenge",
             "attempt": "print('Hello World')",
-            "status": "passed"
+            "status": "passed",
+            "programming_language": "python",
         }
 
         url = reverse("plugging_it_in:save_attempt")
@@ -31,14 +32,15 @@ class SaveAttemptViewTest(BaseTestWithDB):
         new_attempt = {
             "challenge": "test_challenge",
             "attempt": "print('Hello World')",
-            "status": "passed"
+            "status": "passed",
+            "programming_language": "python",
         }
 
         url = reverse("plugging_it_in:save_attempt")
         self.client.post(url, json.dumps(new_attempt), content_type='application/json')
 
         self.assertEqual(
-            self.client.session['saved_attempts']['test_challenge'],
+            self.client.session['saved_attempts']['test_challenge']['python'],
             {
                 "status": "passed",
                 "code": "print('Hello World')"
@@ -79,7 +81,8 @@ class SaveAttemptViewTest(BaseTestWithDB):
         new_attempt = {
             "challenge": "test_challenge",
             "attempt": "print('Hello World')",
-            "status": "started"
+            "status": "started",
+            "programming_language": "python",
         }
 
         url = reverse("plugging_it_in:save_attempt")
@@ -94,14 +97,15 @@ class SaveAttemptViewTest(BaseTestWithDB):
         new_attempt = {
             "challenge": "test_challenge",
             "attempt": "print('Hello World')",
-            "status": "started"
+            "status": "started",
+            "programming_language": "python",
         }
 
         url = reverse("plugging_it_in:save_attempt")
         self.client.post(url, json.dumps(new_attempt), content_type='application/json')
 
         self.assertEqual(
-            self.client.session['saved_attempts']['test_challenge'],
+            self.client.session['saved_attempts']['test_challenge']['python'],
             {
                 "status": "started",
                 "code": "print('Hello World')"
@@ -112,13 +116,15 @@ class SaveAttemptViewTest(BaseTestWithDB):
         first_attempt = {
             "challenge": "test_challenge",
             "attempt": "print('Hello World')",
-            "status": "passed"
+            "status": "passed",
+            "programming_language": "python",
         }
 
         second_attempt = {
             "challenge": "test_challenge",
             "attempt": "print('Hello World')",
-            "status": "started"
+            "status": "started",
+            "programming_language": "python",
         }
 
         url = reverse("plugging_it_in:save_attempt")
@@ -139,13 +145,15 @@ class SaveAttemptViewTest(BaseTestWithDB):
         first_attempt = {
             "challenge": "test_challenge",
             "attempt": "print('Hello World')",
-            "status": "passed"
+            "status": "passed",
+            "programming_language": "python",
         }
 
         second_attempt = {
             "challenge": "test_challenge",
             "attempt": "print('Hello World')",
-            "status": "started"
+            "status": "started",
+            "programming_language": "python",
         }
 
         url = reverse("plugging_it_in:save_attempt")
@@ -158,7 +166,7 @@ class SaveAttemptViewTest(BaseTestWithDB):
 
         # The first attempt should be retained since it has been checked
         self.assertEqual(
-            self.client.session['saved_attempts']['test_challenge'],
+            self.client.session['saved_attempts']['test_challenge']['python'],
             {
                 "status": "passed",
                 "code": "print('Hello World')"
