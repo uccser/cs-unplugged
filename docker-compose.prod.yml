@@ -20,7 +20,7 @@ services:
                 condition: on-failure
             labels:
                 - "traefik.enable=true"
-                - "traefik.docker.network=uccser-dev-public"
+                - "traefik.docker.network=uccser-public"
                 - "traefik.http.services.cs-unplugged-django.loadbalancer.server.port=8000"
                 - "traefik.http.routers.cs-unplugged-django.service=cs-unplugged-django"
                 - "traefik.http.routers.cs-unplugged-django.rule=Host(`${CS_UNPLUGGED_DOMAIN}`)"
@@ -41,7 +41,7 @@ services:
             - cs-unplugged_postgres_user
             - cs-unplugged_postgres_password
         networks:
-            - uccser-dev-public
+            - uccser-public
             - backend
 
     postgres:
@@ -122,7 +122,7 @@ secrets:
         external: true
 
 networks:
-    uccser-dev-public:
+    uccser-public:
         external: true
     backend:
         driver: overlay
