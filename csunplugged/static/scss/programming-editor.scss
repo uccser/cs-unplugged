@@ -4,7 +4,9 @@
 @import "node_modules/bootstrap/scss/mixins";
 
 $student-colour: #3044b3;
-$student-colour-light: #5a9fffff;;
+$student-colour-light: #5a9fffff;
+$scratch-flag-colour: #4cbf56;
+$scratch-flag-border-colour: #4ab750;
 
 html,
 body {
@@ -227,6 +229,11 @@ body {
         border: 2px solid $student-colour-light;
         color: $student-colour-light; 
         background-color: transparent;
+      }
+
+      #blockly_editor_run_program_button {
+        border: 2px solid $scratch-flag-border-colour;
+        background-color: $scratch-flag-colour;
       }
 
       #editor_run_button:disabled {
