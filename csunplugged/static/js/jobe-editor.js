@@ -158,6 +158,7 @@ if (programming_lang == "python") {
     /* Workspace configurations */
     var options = {
       theme: blocklyTheme,
+      renderer: 'zelos',
       toolbox : toolbox,
       collapse : true,
       comments : true,
