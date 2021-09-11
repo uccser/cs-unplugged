@@ -1002,7 +1002,7 @@ Blockly.JavaScript['operators_not'] = function(block) {
     return [code, Blockly.JavaScript.ORDER_LOGICAL_NOT];
 };
 Blockly.Python['operators_not'] = function(block) {
-    var value_argument = Blockly.Python.valueToCode(block, 'argument', Blockly.Python.ORDER_LOGICAL_NOT);
+    var value_argument = Blockly.Python.valueToCode(block, 'argument', Blockly.Python.ORDER_LOGICAL_NOT) || 'True';
     var code = 'not ' + value_argument;
     return [code, Blockly.Python.ORDER_LOGICAL_NOT];
 };
@@ -1295,14 +1295,22 @@ Blockly.Python['operators_join_string'] = function(block) {
 
 // Operators modulo block
 Blockly.JavaScript['operators_modulo'] = function(block) {
-    var value_a = Blockly.JavaScript.valueToCode(block, 'a', Blockly.JavaScript.ORDER_MODULUS) || '0';
-    var value_n = Blockly.JavaScript.valueToCode(block, 'n', Blockly.JavaScript.ORDER_MODULUS) || '0';
+    var value_a = Blockly.JavaScript.valueToCode(block, 'a', Blockly.JavaScript.ORDER_MODULUS);
+    var value_n = Blockly.JavaScript.valueToCode(block, 'n', Blockly.JavaScript.ORDER_MODULUS);
+    if (!value_a && !value_n) {
+        value_a = '0';
+        value_n = '1';
+    }
     var code = '(' + value_a + ' % ' + value_n + ' + ' + value_n + ')' + ' % ' +  value_n;
     return [code, Blockly.JavaScript.ORDER_ADDITION];
 };
 Blockly.Python['operators_modulo'] = function(block) {
-    var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC) || '0';
-    var value_n = Blockly.Python.valueToCode(block, 'n', Blockly.Python.ORDER_ATOMIC) || '0';
+    var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC);
+    var value_n = Blockly.Python.valueToCode(block, 'n', Blockly.Python.ORDER_ATOMIC);
+    if (!value_a && !value_n) {
+        value_a = '0';
+        value_n = '1';
+    }
     var code = value_a + ' % ' + value_n;
     return [code, Blockly.Python.ORDER_NONE];
 };
