@@ -1109,12 +1109,14 @@ Blockly.Python['controls_if_then'] = function(block) {
 
 // Looks say block
 Blockly.JavaScript['looks_say'] = function(block) {
-    var value_value = Blockly.JavaScript.valueToCode(block, 'value', Blockly.JavaScript.ORDER_ATOMIC);
-    var code = 'alert(' + value_value + ');\n';
+    var value_value = Blockly.JavaScript.valueToCode(block, 'value', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    // if the value is an expression, then it gets executed and the output is set to a variable first before getting displayed.
+    var value_variable = "var value = " + value_value + ";\n" 
+    var code = value_variable + 'document.querySelector("#block-based-console-content").innerHTML += ' + "value + '<br/>'\n"
     return code;
 };
 Blockly.Python['looks_say'] = function(block) {
-    var value_value = Blockly.Python.valueToCode(block, 'value', Blockly.Python.ORDER_ATOMIC);
+    var value_value = Blockly.Python.valueToCode(block, 'value', Blockly.Python.ORDER_ATOMIC) || '\'\'';
     var code = 'print(' + value_value + ')\n';
     return code;
 };

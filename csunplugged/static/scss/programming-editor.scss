@@ -164,11 +164,30 @@ body {
     border: 1px solid grey;
     border-radius: 15px;
     background-color: white;
+    max-height: 40%;
 
     .table {
       margin-bottom: 0px;
     }
   }
+
+  .block-based-console {
+    margin: 0px; 
+    padding: 0.7rem; 
+    overflow-y: auto; 
+    flex-shrink: 1; 
+    max-height: 30%; 
+    background-color: white; 
+    border: 1px solid grey; 
+    border-radius: 15px;
+
+    #block-based-console-content { 
+      font-size: 87.5%;
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+  }
+
+  
 }
 
 .pii-block-heading {

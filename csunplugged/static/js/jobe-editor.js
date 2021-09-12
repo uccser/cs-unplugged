@@ -359,6 +359,8 @@ function runCode() {
  
     // Run JavaScript code
     try {
+      // Refresh the Output box
+      document.querySelector("#block-based-console-content").innerHTML = ">>> "
       eval(code);
     } catch (error) {
       console.log(error);
