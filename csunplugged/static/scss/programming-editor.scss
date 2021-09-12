@@ -5,8 +5,7 @@
 
 $student-colour: #3044b3;
 $student-colour-light: #5a9fffff;
-$scratch-flag-colour: #4cbf56;
-$scratch-flag-border-colour: #4ab750;
+$scratch-flag-colour: #6abf74;
 
 html,
 body {
@@ -244,6 +243,11 @@ body {
         color: white;
       }
 
+      #blockly_editor_run_program_button:hover {
+        background-color: #4cbf56;
+        border: 2px solid #4ab750;
+      }
+
       #download_button {
         border: 2px solid $student-colour-light;
         color: $student-colour-light; 
@@ -251,11 +255,11 @@ body {
       }
 
       #blockly_editor_run_program_button {
-        border: 2px solid $scratch-flag-border-colour;
+        border: 2px solid $scratch-flag-colour;
         background-color: $scratch-flag-colour;
       }
 
-      #editor_run_button:disabled {
+      #editor_check_button:disabled {
         background-color: #a4caffff;
         border-color: #a4caffff;
         cursor: normal;

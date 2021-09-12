@@ -213,7 +213,7 @@ function sendCodeToJobe() {
    console.log("SEND CODE TO JOBE")
    console.log(code)
 
-  $("#editor_run_button").prop("disabled", true);
+  $("#editor_check_button").prop("disabled", true);
   $(".code_running_spinner").css("display", "inline-block");
 
   // Run the test_cases
@@ -223,7 +223,7 @@ function sendCodeToJobe() {
     // Saving the users code
     save_code(allCorrect(result) ? "passed" : "failed");
 
-    $("#editor_run_button").prop("disabled", false);
+    $("#editor_check_button").prop("disabled", false);
     $(".code_running_spinner").css("display", "none");
   });
 }

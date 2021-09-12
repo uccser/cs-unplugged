@@ -18,7 +18,7 @@ $(document).ready(function () {
                 step: 2
             },
             {
-                element: "#editor_run_button",
+                element: "#editor_check_button",
                 intro: "Clicking the 'Check' button will run your code to see if it works correctly for our test cases.",
                 step: 3
             },
