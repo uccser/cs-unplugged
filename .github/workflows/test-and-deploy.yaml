@@ -4,6 +4,10 @@ on:
   workflow_dispatch:
   push:
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
 jobs:
   test-content:
     name: Tests - Content
@@ -220,9 +224,11 @@ jobs:
           path: resources.tar.gz
           retention-days: 3
 
-  publish-dev-docker-image:
-    name: Create and publish dev image
-    if: (github.ref == 'refs/heads/develop')
+  publish-docker-image:
+    name: Create and publish Docker image
+    if: |
+      (github.ref == 'refs/heads/develop')
+      || startsWith(github.ref, 'refs/heads/research-study-')
     runs-on: ubuntu-20.04
     needs: [
       create-static-files,
@@ -257,11 +263,23 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Setup Docker metadata
+        if: |
+          (github.ref == 'refs/heads/develop')
+          || startsWith(github.ref, 'refs/heads/research-study-')
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=ref,event=branch,enable=true
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v2.6.1
         with:
           file: ./infrastructure/production/django/Dockerfile
           context: .
           push: true
-          tags: ghcr.io/uccser/cs-unplugged:develop
-          build-args: GIT_SHA=${{ github.sha }}
+          tags: ${{ steps.meta.outputs.tags }}
+          build-args: |
+            GIT_SHA=${{ github.sha }}
