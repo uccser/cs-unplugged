@@ -1110,9 +1110,28 @@ Blockly.Python['controls_if_then'] = function(block) {
 // Looks say block
 Blockly.JavaScript['looks_say'] = function(block) {
     var value_value = Blockly.JavaScript.valueToCode(block, 'value', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
-    // if the value is an expression, then it gets executed and the output is set to a variable first before getting displayed.
-    var value_variable = "var value = " + value_value + ";\n" 
-    var code = value_variable + 'document.querySelector("#block-based-console-content").innerHTML += ' + "value + '<br/>'\n"
+    var functionName = Blockly.JavaScript.provideFunction_(
+        'checkDataType',
+        ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
+            '(a) {',
+            '  var type_a;',
+            '  switch(typeof a){',
+            '    case \'number\':',
+            '      type_a = \'console-number\'',
+            '      break',
+            '    case \'boolean\':',
+            '      type_a = \'console-boolean\'',
+            '      break',
+            '    default:',
+            '      type_a = \'console-default\'',
+            '  }',
+            '  return type_a;',
+            '}']);
+    // if the value_value is an expression, then execute it first and put the output in a variable.
+    var get_value = "var value = " + value_value + ";\n"
+    var get_value_type = 'var value_type = ' + functionName + '(value);\n'
+    var innerHTML_value = "'<span class=' + value_type + '>' + value + '</span><br/>'\n";
+    var code = get_value + get_value_type + 'document.querySelector("#block-based-console-content").innerHTML += ' + innerHTML_value;
     return code;
 };
 Blockly.Python['looks_say'] = function(block) {
