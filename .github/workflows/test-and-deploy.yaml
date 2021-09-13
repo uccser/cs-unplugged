@@ -283,4 +283,3 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           build-args: |
             GIT_SHA=${{ github.sha }}
-            BUILD_ENVIRONMENT=staging
