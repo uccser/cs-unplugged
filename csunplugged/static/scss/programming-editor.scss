@@ -454,6 +454,8 @@ body {
   }
 }
 
-.introjs-fixParent{
-  position: absolute !important;
+// Customise the Block-based editor to have rounded corners and have a border
+.injectionDiv {
+  border: 1px solid gray;
+  border-radius: 15px;
 }
