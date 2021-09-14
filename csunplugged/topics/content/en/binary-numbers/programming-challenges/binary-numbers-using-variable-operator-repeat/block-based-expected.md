@@ -1,12 +1,11 @@
-```scratch
-when green flag clicked
+{image file-path="img/plugging-it-in/block-based-blocks/values-number.png" caption="false" alt="Number block"}
 
-set [number of dots v] to [1]
+{image file-path="img/plugging-it-in/block-based-blocks/looks-say.png" caption="false" alt="Say block"}
 
-repeat (5)
-end
+{image file-path="img/plugging-it-in/block-based-blocks/operators-multiply.png" caption="false" alt="Multiply block"}
 
-say (number of dots) for (1) secs
+{image file-path="img/plugging-it-in/block-based-blocks/variables-custom-var.png" caption="false" alt="Custom variable block"}
 
-set [number of dots v] to ((number of dots) * (2))
-```
+{image file-path="img/plugging-it-in/block-based-blocks/variables-set-to.png" caption="false" alt="Set variable to block"}
+
+{image file-path="img/plugging-it-in/block-based-blocks/control-repeat.png" caption="false" alt="Repeat block"}

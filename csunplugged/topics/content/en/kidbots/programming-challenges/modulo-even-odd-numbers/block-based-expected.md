@@ -1,15 +1,17 @@
-```scratch
-when green flag clicked
+{image file-path="img/plugging-it-in/block-based-blocks/values-number.png" caption="false" alt="Number block"}
 
-ask [Enter a number:] and wait
+{image file-path="img/plugging-it-in/block-based-blocks/values-string.png" caption="false" alt="String block"}
 
-set [number v] to (answer)
+{image file-path="img/plugging-it-in/block-based-blocks/sensing-ask-and-wait-number.png" caption="false" alt="Ask and wait for number block"}
 
-say [You entered an even number!]
+{image file-path="img/plugging-it-in/block-based-blocks/looks-say.png" caption="false" alt="Say block"}
 
-say [You entered an odd number!]
+{image file-path="img/plugging-it-in/block-based-blocks/operators-mod.png" caption="false" alt="Mod block"}
 
-if <((number) mod (2)) = [0]> then
-else
-end
-```
+{image file-path="img/plugging-it-in/block-based-blocks/operators-equal.png" caption="false" alt="Equality block"}
+
+{image file-path="img/plugging-it-in/block-based-blocks/variables-set-to.png" caption="false" alt="Set variable to block"}
+
+{image file-path="img/plugging-it-in/block-based-blocks/variables-custom-var.png" caption="false" alt="Custom variable block"}
+
+{image file-path="img/plugging-it-in/block-based-blocks/control-if-else.png" caption="false" alt="If else block"}
