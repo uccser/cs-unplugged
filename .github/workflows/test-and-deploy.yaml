@@ -89,7 +89,9 @@ jobs:
 
   create-static-files:
     name: Create static files
-    if: (github.ref == 'refs/heads/develop')
+    if: |
+      (github.ref == 'refs/heads/develop')
+      || startsWith(github.ref, 'refs/heads/research-study-')
     runs-on: ubuntu-20.04
     needs: [
       test-content,
@@ -127,7 +129,9 @@ jobs:
 
   create-resource-thumbnails:
     name: Create resource thumbnails
-    if: (github.ref == 'refs/heads/develop')
+    if: |
+      (github.ref == 'refs/heads/develop')
+      || startsWith(github.ref, 'refs/heads/research-study-')
     runs-on: ubuntu-20.04
     needs: [
       test-content,
@@ -171,7 +175,9 @@ jobs:
 
   create-resources:
     name: Create resources
-    if: (github.ref == 'refs/heads/develop')
+    if: |
+      (github.ref == 'refs/heads/develop')
+      || startsWith(github.ref, 'refs/heads/research-study-')
     runs-on: ubuntu-20.04
     strategy:
       matrix:
