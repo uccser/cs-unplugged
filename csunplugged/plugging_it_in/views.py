@@ -65,6 +65,7 @@ class AboutView(generic.TemplateView):
 
     template_name = "plugging_it_in/about.html"
 
+
 class BlockBasedAndScratchView(generic.TemplateView):
     """View for the diferrences between the Block-based system and Scratch page that renders from a template."""
 
