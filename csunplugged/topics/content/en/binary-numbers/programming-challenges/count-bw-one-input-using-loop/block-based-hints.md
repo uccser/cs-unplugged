@@ -14,16 +14,15 @@
         string.
 
 -   You can access a letter at the specified position in a string by using
-    the `scratch:letter (1) of [world]` block under “Operators”.
-    For example: `scratch:letter (1) of [world] //w`
+    the 'Letter of' block under “Operators”.
 
 -   In this challenge you need to access all the letters in user’s input and
     check to see if each of them is equal to B (black) or W (white).
 
 -   You can find how many letters a string has by using the
-    `scratch:length of [world]` block unders “Operators”.
+    'Length of' block under “Operators”.
 
--   The `scratch: if <> then` block checks if the condition is true and then
+-   The 'If' block checks if the condition is true and then
     runs the blocks inside of the IF block.
     In this challenge you need to check if each letter of the input is equal
     to ‘W’ or “B’.

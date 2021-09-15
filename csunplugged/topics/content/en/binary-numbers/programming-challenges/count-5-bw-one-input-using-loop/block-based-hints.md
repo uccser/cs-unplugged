@@ -14,8 +14,7 @@
         string.
 
 -   You can access a letter at the specified position in a string by using
-    the `scratch:letter (1) of [world]` block under “Operators”.
-    For example: `scratch:letter (1) of [world] //w`
+    the 'Letter of' block under “Operators”.
 
 -   In this challenge you need to access all the 5 letters in user’s input and
     check to see if each of them is equal to B (black) or W (white).
