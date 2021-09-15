@@ -99,7 +99,7 @@ class ProgrammingChallengeListView(generic.DetailView):
 
         # Add in a QuerySet of all the connected programming exercises for this topic
         context["programming_challenges"] = self.object.retrieve_related_programming_challenges(
-        ).prefetch_related('implementations')
+        ).prefetch_related('implementations', 'implementations__language')
         return context
 
 
