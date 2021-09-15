@@ -1,14 +1,14 @@
 # Programming Reminders
 
-#### Print statements
+#### Output statements
 
-###### Print a string directly
+###### Output a string directly
 
-{image file-path="img/plugging-it-in/programming-reminders-block-based/print-a-string.png" caption="false" alt="Blocks showing how to print a string"}
+{image file-path="img/plugging-it-in/programming-reminders-block-based/output-a-string.png" caption="false" alt="Blocks showing how to output a string"}
 
-###### Print a variable
+###### Output a variable
 
-{image file-path="img/plugging-it-in/programming-reminders-block-based/print-a-variable.png" caption="false" alt="Blocks showing how to print a variable"}
+{image file-path="img/plugging-it-in/programming-reminders-block-based/output-a-variable.png" caption="false" alt="Blocks showing how to output a variable"}
 
 #### Variables
 
@@ -44,10 +44,10 @@
 
 #### Loops
 
-###### Print string 10 times 
+###### Output string 10 times 
 
-{image file-path="img/plugging-it-in/programming-reminders-block-based/loops-repeat.png" caption="false" alt="Blocks showing how to print a string"}
+{image file-path="img/plugging-it-in/programming-reminders-block-based/loops-repeat.png" caption="false" alt="Blocks showing how to output a string"}
 
-###### Print number until number reaches 10
+###### Output number until number reaches 10
 
-{image file-path="img/plugging-it-in/programming-reminders-block-based/loops-repeat-until.png" caption="false" alt="Blocks showing how to print a string"}
+{image file-path="img/plugging-it-in/programming-reminders-block-based/loops-repeat-until.png" caption="false" alt="Blocks showing how to output a string"}

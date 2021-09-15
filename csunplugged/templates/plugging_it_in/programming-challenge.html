@@ -174,7 +174,6 @@
           <div class="programming__submit_options d-flex justify-content-start">
             <button class="editor_button" id="blockly_editor_run_program_button" >{% trans "Run" %}</button>
             <button class="editor_button" id="editor_check_button" >{% trans "Submit" %}</button>
-            <button class="editor_button" id="download_button" >{% trans "Download" %}</button>
           </div>
           <div class="code_running_spinner spinner-grow" role="status">
             <span class="sr-only"></span>
@@ -183,16 +182,14 @@
       </div>
 
       <div class="col-12 col-md-3 programming__results">
-        <p class="pii-block-heading d-inline">{% trans "Your results will be displayed here" %}</p>
+        <p class="pii-block-heading d-inline">{% trans "Your submission results will be displayed here" %}</p>
         {% include "plugging_it_in/results-table.html" %}
         <div id="walkthrough-btn-container" class="row">
           <button id="introjs-walkthrough" class="btn btn-outline-secondary btn-sm col-6 offset-6 my-2">{% trans "How does this page work?" %}</button>
         </div>
         <p class="pii-block-heading d-inline">{% trans "Run Output" %}</p>
         <div class="block-based-console">
-          <div id="block-based-console-content">
-            >>>
-          </div>
+          <div id="block-based-console-content"></div>
         </div>
       </div>
     {% endif %}

@@ -336,14 +336,7 @@ function download(filename, text) {
  * Downloads the editor code to a file called <current_challenge_slug>.py.
  */
 function downloadCode() {
-  var code;
-  if (programming_lang == "python") {
-    code = myCodeMirror.getValue()
-  } else {
-    const lang = 'Python';
-    code = Blockly[lang].workspaceToCode(workspace);
-  }
-  download(current_challenge_slug + ".py", code);
+  download(current_challenge_slug + ".py", myCodeMirror.getValue());
  }
 
 /**
@@ -359,7 +352,7 @@ function runCode() {
     // Run JavaScript code
     try {
       // Refresh the Output box
-      document.querySelector("#block-based-console-content").innerHTML = ">>> "
+      document.querySelector("#block-based-console-content").innerHTML = ""
       eval(code);
     } catch (error) {
       console.log(error);

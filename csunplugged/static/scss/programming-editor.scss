@@ -163,7 +163,7 @@ body {
     border: 1px solid #1b7bffff;
     border-radius: 15px;
     background-color: white;
-    max-height: 40%;
+    max-height: 50%;
 
     .table {
       margin-bottom: 0px;
@@ -175,10 +175,11 @@ body {
     padding: 0.7rem; 
     overflow-y: auto; 
     flex-shrink: 1; 
-    max-height: 30%; 
+    max-height: 50%; 
     background-color: white; 
     border: 1px solid #4ab750; 
     border-radius: 15px;
+    min-height: 45px;
 
     #block-based-console-content { 
       font-size: 87.5%;
