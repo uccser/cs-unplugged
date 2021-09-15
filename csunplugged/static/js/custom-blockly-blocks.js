@@ -1208,9 +1208,14 @@ Blockly.Python['sensing_ask_and_wait_number'] = function(block) {
         'text_prompt',
         ['def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '(msg):',
             '  try:',
-            '    return raw_input(msg)',
+            '    user_input = raw_input(msg)',
             '  except NameError:',
-            '    return input(msg)']);
+            '    user_input = input(msg)',
+            '  finally:',
+            '    if any(not c.isalnum() for c in user_input):',
+            '      return float(user_input)',
+            '    else:',
+            '      return int(user_input)']);
     if (block.getField('question')) {
         // Internal message.
         var msg = Blockly.Python.quote_(block.getFieldValue('question'));
@@ -1219,7 +1224,7 @@ Blockly.Python['sensing_ask_and_wait_number'] = function(block) {
         var msg = Blockly.Python.valueToCode(block, 'question', Blockly.Python.ORDER_NONE) || '\'\'';
     }
     msg = '""' // Replaces user input parameters to be blank so it matches the expected output
-    var code = 'float(' + functionName + '(' + msg + '))';
+    var code = functionName + '(' + msg + ')';
     return [code, Blockly.Python.ORDER_FUNCTION_CALL];
   };
 
