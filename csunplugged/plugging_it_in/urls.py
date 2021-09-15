@@ -17,6 +17,11 @@ urlpatterns = [
         views.AboutView.as_view(),
         name="about"
     ),
+    path(
+        'block-based-vs-scratch/',
+        views.BlockBasedAndScratchView.as_view(),
+        name="block_based_vs_scratch"
+    ),
     url(
         r"^(?P<topic_slug>[-\w]+)/(?P<lesson_slug>[-\w]+)/$",
         views.ProgrammingChallengeListView.as_view(),

@@ -65,6 +65,11 @@ class AboutView(generic.TemplateView):
 
     template_name = "plugging_it_in/about.html"
 
+class BlockBasedAndScratchView(generic.TemplateView):
+    """View for the diferrences between the Block-based system and Scratch page that renders from a template."""
+
+    template_name = "plugging_it_in/block-based-vs-scratch.html"
+
 
 class ProgrammingChallengeListView(generic.DetailView):
     """View showing all the programming exercises for a specific lesson."""

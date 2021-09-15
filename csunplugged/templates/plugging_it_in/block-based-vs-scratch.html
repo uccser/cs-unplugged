@@ -1,0 +1,31 @@
+{% extends "base-plugging-it-in.html" %}
+
+{% load i18n %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+    {% trans "Block-based System vs Scratch" %}
+{% endblock title %}
+
+{% block breadcrumbs %}
+    {% breadcrumb "Block-based System vs Scratch" "plugging_it_in:about" %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+    <h1>{% trans "Block-based System vs Scratch" %}</h1>
+{% endblock page_heading %}
+
+{% block content %}
+    <p>
+        Computer Science isn’t all about programming, but in the end we need to write programs to make useful things happen on computers.
+        CS Unplugged is a great way to engage with the ideas that help people write great programs, but it’s good to link the ideas with the skill of actually programming.
+        The “Plugging it in” material provides one way to achieve this by giving challenges for students to automate some of the Unplugged activities by programming them.
+        The challenges are at a variety of levels, so that there’s something suitable for beginners and more advanced students alike.
+    </p>
+
+    <p>
+        <a href="{% url 'plugging_it_in:index' %}" class="btn plugging-it-in-navigation">
+            {% trans "Go back to home" %}
+        </a>
+    </p>
+{% endblock content %}

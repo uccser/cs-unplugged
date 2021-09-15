@@ -40,7 +40,7 @@
             </div>
           {% elif language.slug == "block-based" %}
             <div class="alert alert-info my-3" role="alert">
-              {% trans "The following challenges use Blockly, which have been adapted to look like Scratch and contains an interactive editor. To find out the differences, click here! If you like the challenges to be purely in Scratch, then go over to the Scratch tab instead." %}
+              {% trans "The following challenges use Blockly, which have been adapted to look like Scratch and contains an interactive editor. To find out the differences, " %}<a href="{% url 'plugging_it_in:block_based_vs_scratch' %}">{% trans "click here" %}</a>{% trans ". If you like the challenges to be purely in Scratch, then go over to the Scratch tab instead." %}
             </div>
           {% endif %}
           {% include "plugging_it_in/programming-challenges-table.html" %}
