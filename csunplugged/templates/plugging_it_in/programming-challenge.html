@@ -184,12 +184,12 @@
       <div class="col-12 col-md-3 programming__results">
         <p class="pii-block-heading d-inline">{% trans "Your submission results will be displayed here" %}</p>
         {% include "plugging_it_in/results-table.html" %}
-        <div id="walkthrough-btn-container" class="row">
-          <button id="introjs-walkthrough" class="btn btn-outline-secondary btn-sm col-6 offset-6 my-2">{% trans "How does this page work?" %}</button>
-        </div>
-        <p class="pii-block-heading d-inline">{% trans "Run Output" %}</p>
+        <p class="pii-block-heading d-inline mt-3">{% trans "Run Output" %}</p>
         <div class="block-based-console">
           <div id="block-based-console-content"></div>
+        </div>
+        <div id="walkthrough-btn-container" class="row">
+          <button id="introjs-walkthrough" class="btn btn-outline-secondary btn-sm col-6 offset-6 my-2">{% trans "How does this page work?" %}</button>
         </div>
       </div>
     {% endif %}
