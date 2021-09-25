@@ -1365,7 +1365,11 @@ Blockly.JavaScript['operators_divide'] = function(block) {
 Blockly.Python['operators_divide'] = function(block) {
     var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC) || '0';
     var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC) || '0';
-    var code = value_x + ' / ' + value_y;
+    var functionName = Blockly.Python.provideFunction_(
+        'divideNumber',
+        ['def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '(x, y):',
+            '  return int(x/y) if (x/y).is_integer() else (x/y)']);
+    var code = functionName + '(' + value_x + ', ' + value_y + ')';
     return [code, Blockly.Python.ORDER_NONE];
 };
 
