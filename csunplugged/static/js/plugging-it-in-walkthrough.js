@@ -139,7 +139,7 @@ $(document).ready(function () {
                 },
                 {
                     element: ".block-based-console",
-                    intro: "This is where the output of your program will get displayed when you click the 'Run' button.",
+                    intro: "This is where the output of your program will be displayed when you click the 'Run' button. Note: the console will display different colours depending on the data type that it is outputting (e.g., number = blue, boolean = purple, string = black.)",
                     step: 11,
                     position: "bottom"
                 },
