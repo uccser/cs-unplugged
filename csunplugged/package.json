@@ -26,7 +26,7 @@
         "gulp-terser": "2.0.1",
         "gulp": "4.0.2",
         "intro.js": "4.2.2",
-        "jquery": "3.4.1",
+        "jquery": "3.6.0",
         "multiple-select": "1.5.2",
         "pixrem": "5.0.0",
         "popper.js": "1.16.1",
