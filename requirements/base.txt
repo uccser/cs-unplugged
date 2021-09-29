@@ -13,7 +13,7 @@ psycopg2==2.8.6
 # Resources
 WeasyPrint==52.4
 Pillow==8.3.2
-yattag==1.12.2
+yattag==1.14.0
 tinycss==0.4
 
 # Markdown
