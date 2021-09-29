@@ -33,7 +33,7 @@
         "postcss-flexbugs-fixes": "4.1.0",
         "scratchblocks": "uccser/scratchblocks#master",
         "vinyl-buffer": "1.0.1",
-        "yargs": "17.0.1"
+        "yargs": "17.2.1"
     },
     "engines": {
         "node": ">=8"
