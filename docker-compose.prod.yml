@@ -49,8 +49,12 @@ services:
                 - "traefik.docker.network=uccser-public"
                 - "traefik.http.services.cs-unplugged-django.loadbalancer.server.port=8000"
                 - "traefik.http.routers.cs-unplugged-django.service=cs-unplugged-django"
-                - "traefik.http.routers.cs-unplugged-django.rule=Host(`${CS_UNPLUGGED_DOMAIN}`)"
+                - "traefik.http.routers.cs-unplugged-django.rule=${CS_UNPLUGGED_ROUTER_RULE}"
                 - "traefik.http.routers.cs-unplugged-django.entryPoints=web"
+                # Redirect non-www to www, only triggers in production swarm.
+                - "traefik.http.middlewares.redirect-non-www.redirectregex.regex=^https://csunplugged\.org(.*)"
+                - "traefik.http.middlewares.redirect-non-www.redirectregex.replacement=https://www.csunplugged.org$${1}"
+                - "traefik.http.middlewares.redirect-non-www.redirectregex.permanent=true"
         networks:
             - uccser-public
             - backend
@@ -68,7 +72,7 @@ services:
             restart_policy:
                 condition: none
         healthcheck:
-          disable: true
+            disable: true
         networks:
             - backend
 
