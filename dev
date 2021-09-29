@@ -78,9 +78,6 @@ cmd_update() {
   cmd_update_data
 
   echo ""
-  cmd_rebuild_index
-
-  echo ""
   cmd_make_resource_thumbnails
   cmd_collect_static
 
