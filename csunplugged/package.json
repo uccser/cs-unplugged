@@ -30,7 +30,8 @@
         "multiple-select": "1.5.2",
         "pixrem": "5.0.0",
         "popper.js": "1.16.1",
-        "postcss-flexbugs-fixes": "4.1.0",
+        "postcss": "8.3.6",
+        "postcss-flexbugs-fixes": "5.0.2",
         "scratchblocks": "uccser/scratchblocks#master",
         "vinyl-buffer": "1.0.1",
         "yargs": "17.2.1"
