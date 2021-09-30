@@ -2,9 +2,9 @@
 
 ## Preparatory knowledge
 
-[Binary searching and sequential searching lessons]('topics:unit_plan' 'searching-algorithms' 'unit-plan').
+- [Binary searching and sequential searching lessons]('topics:unit_plan' 'searching-algorithms' 'unit-plan').
 
-Note: this activity is about Binary Search Trees, or BSTs.
+**Note:** This activity is about Binary Search Trees, or BSTs.
 There is a previous activity about Binary Search, which uses a sorted list of values.
 Students often understandably confuse Binary Search and Binary Search Trees.
 Both are mentioned below, and although they have elements in common, they are distinct ideas.
@@ -167,7 +167,7 @@ Students may ask what happens if two values are the same. This is something they
 
 -    Or you could count the number of items at a node, so if you get a second one, you store a count of 2 at that node (this is an example of data associated with the value)
 
--    In some cases duplicates shouldn't occur; for example, if the value is an ID or account number, there shouldn't be two people with the number. 
+-    In some cases duplicates shouldn't occur; for example, if the value is an ID or account number, there shouldn't be two people with the number.
 
 {panel end}
 
@@ -239,7 +239,7 @@ Note that it's important that every value down the left branch of a node is smal
 {image file-path="img/topics/binary-search-tree-big-tree-completed.png" alt="A large binary search tree."}
 
 Note: this large tree can be recreated using these numbers in this order:
-53, 86, 61, 27, 88, 30, 49, 23, 28, 55, 91, 12, 21, 72, 90, 32, 10, 99, 81, 60, 45, 20, 93, 97, 3, 31, 41, 58, 76, 
+53, 86, 61, 27, 88, 30, 49, 23, 28, 55, 91, 12, 21, 72, 90, 32, 10, 99, 81, 60, 45, 20, 93, 97, 3, 31, 41, 58, 76,
 84, 73, 18, 92, 7, 47, 36, 74, 5, 48, 98, 19, 15, 46, 75, 14, 16, 17, 96.
 
 {panel end}
