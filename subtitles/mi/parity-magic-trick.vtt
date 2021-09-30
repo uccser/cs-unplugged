@@ -1,0 +1,550 @@
+WEBVTT
+Kind: captions
+Language: mi
+
+NOTE
+Computer Science Education Research,
+University of Canterbury, New Zealand
+Subtitle file for the video "CS Unplugged: Parity Magic"
+Author: Alasdair Smith 13/02/2017
+Edited by: Courtney Bracefield 05/08/2020
+
+00:00.000 --> 00:04.000
+CS Unplugged
+Te Mātai Rorohiko me te kore rorohiko
+
+00:04.600 --> 00:06.200
+Pūrite Mīharo
+
+00:06.200 --> 00:10.000
+Ka pai, whakatū tō ringa mēnā ki ōu whakaaro he āhua mīharo ngā rorohiko,
+
+00:10.000 --> 00:13.600
+he maha ngā mahi o te rorohiko, heoi anō, kāore tātou i te tino mōhio ka pēhea te mahi.
+
+00:13.600 --> 00:18.400
+He āhua mīharo ngā rorohiko ki a koutou? Ka pai.
+
+00:18.400 --> 00:21.600
+I tēnei rā, ka ako koutou i tētahi tiriki mīharo.
+
+00:21.600 --> 00:26.400
+Nā reira, me whai au i tētahi kaitūao e āhei ana ki te waihanga he tukutuku, rima mā rima te nui
+
+00:26.400 --> 00:32.800
+me ēnei kāri autō. Nā reira e āhei ana te kāri kia noho mā, kia noho pango rānei, me te mea hoki me matapōkere katoa te whakatakoto.
+
+00:32.800 --> 00:36.200
+Kōwai e pirangi ana ki te mahi? 
+Ngā mihi Ellie, haramai ki mua?
+
+00:36.200 --> 00:39.200
+Māu e mahi. Te tumanako kua rawaka ngā kāri, ka pai.
+
+00:39.200 --> 00:42.000
+Tēnā waihanga i tētahi tukutuku rima mā rima ki runga nei, he pai tērā.
+
+00:42.000 --> 00:45.000
+Nā reira, i a ia e mahi ana i tērā, he hiahia nōku ki te whakamarama atu
+
+00:45.000 --> 00:51.200
+nā reira, i mua rā i kī ahau koinei tētahi moka; ka whakaahua ake i ēnei autō
+
+00:51.200 --> 00:57.800
+kotahi te moka. e āhei ana tētahi moka kia whakakā, kia whakaweto rānei.
+
+00:57.800 --> 01:04.200
+I ako mō ngā moka i hea? Huri atu ki te tangata kei tō taha, arā, kōrero atu ki a ia mō taua kaupapa.
+
+NOTE
+[silence]
+
+01:18.000 --> 01:20.800
+Karu ki konei.
+
+01:20.800 --> 01:25.000
+Nā reira, i kōhimuhimu tētahi mo ngā moka,
+
+01:25.000 --> 01:30.600
+i kōrero tētahi mo ngā Nama Tāhūrua
+i ako tātou mo ngā Nama Tāhūrua i tērā atu rā, nē?
+
+NOTE changed 'word' to 'words' in the above sentence
+
+01:30.600 --> 01:34.600
+Āe? Nā reira, he moka ēnei, he orite ēnei ki ngā nama tāhūrua nē?
+
+01:34.600 --> 01:37.200
+Ka taea te kā,
+te weto rānei.
+
+01:37.200 --> 01:40.000
+Ka pai, kua rau atu ia i te rima mā rima?
+
+01:40.000 --> 01:45.400
+Āe? Ka pai, nga mihi Ellie. Nā reira, i tēnei wā, ka whakauaua ake i tēnei mahi mōku,
+
+01:45.400 --> 01:51.200
+ka tāpirihia tētahi pou anō ki raro nei,
+
+01:51.200 --> 01:57.800
+ka tāpirihia tētahi kapa anō ki raro iho,
+
+01:57.800 --> 02:00.600
+hei uaua ake.
+
+02:06.600 --> 02:09.000
+Ka pai
+
+02:10.400 --> 02:13.400
+Kua mahi i tērā, ināianei,
+
+02:13.400 --> 02:19.200
+He wareware ahau, 
+me te mea anō, he atarua ōku karu ina ka tangohia tōku mōhiti.
+
+02:19.200 --> 02:21.600
+Auē, tē taea te kite ināianei.
+
+02:21.600 --> 02:25.600
+Ākuanei ka tono au ki tētahi kia hurihia tētahi o aua kāri,
+
+02:25.600 --> 02:29.200
+whakatū tō ringa mēnā ki ōu whakaaro e āhei ana ahau ki te kōwhiri i te kāri tika?
+
+02:29.200 --> 02:31.600
+Whakatū tō ringa mēnā ki ōu whakaaro, tē taea te mahi, ki te āhua wareware koe,
+
+02:31.600 --> 02:35.200
+otirā, e āhei ana koe ki te pai tō pupuri mahara? Whakatū o ringa?
+
+02:35.200 --> 02:38.000
+Ka pai, me tiro tātou,
+Rhylee, e āhei ana koe ki te hurihia tētahi o ngā kāri?
+
+02:38.000 --> 02:41.000
+Koutou mā, me āta tirotiro mēnā e tika ana āna mahi
+
+02:41.000 --> 02:42.800
+me āta titiro hoki koe kia mōhio ai kāore au e mahi tinihanga ana,
+
+02:42.800 --> 02:47.000
+kāre au mō te titiro. Ka tango i ōku mōhiti anō hoki.
+
+02:49.200 --> 02:51.800
+Me whāki mai te katoa i te wā kua mutu ia.
+
+02:51.800 --> 02:53.000
+["Kua Mutu"]
+
+02:53.000 --> 02:59.000
+Nā reira, Rhylee, Rhylee, Rhylee.
+
+03:03.400 --> 03:05.400
+He tika, he hē rānei?
+
+03:05.400 --> 03:06.600
+["Katau"]
+
+03:06.600 --> 03:09.000
+Nā te tūpono noa iho pea, na te waimārie noa iho pea? Pea?
+
+03:09.000 --> 03:12.200
+Ngā mihi Rhylee, hōmai te pakipaki māna. Ngā mihi Rhylee.
+
+03:12.200 --> 03:15.800
+Tēnā, kei konei ētahi o koutou, ka pōhēhē,
+ka taea te tinihanga i ahau, nā te mea kei te rārangi o raro nei?
+
+03:15.800 --> 03:18.600
+I puritia ki ōku mahara? Tērā pea.
+
+03:18.600 --> 03:22.200
+Sammy, ka neke au ki konei i tēnei wā
+nā reira kāore rawa au i te mahi tinihanga,
+
+03:22.200 --> 03:26.200
+me tiro koutou kia mōhio ai kua hurihia e Sammy tētahi o ngā kāri, ā, titiro mai kia kite kāore au e mahi tinihanga ana,
+
+03:26.200 --> 03:32.000
+ā, ka kati hoki i ngā karu kei te muri o tōku māhunga.
+
+03:34.800 --> 03:36.000
+["Kua Mutu"]
+
+03:36.000 --> 03:41.000
+Tēnā, me titiro tātou. Sammy Sammy Sammy.
+
+03:45.400 --> 03:47.000
+He tika, he hē rānei?
+
+03:50.200 --> 03:52.600
+I te tika rānei tāku? He rawe!
+
+03:52.600 --> 03:56.800
+Nā reira, mēnā ka tika te whakautu mō te wā tuarua, he tiriki mīharo tonu?
+
+03:56.800 --> 04:01.000
+He mahi anō kei te haere rānei?
+Whakatū tō ringa mēnā ka whakaaro tonu he tiriki mīharo?
+
+04:01.000 --> 04:04.200
+Whakatū tō ringa mēnā ki ōu whakaaro he mea anō kei te haere.
+
+04:04.200 --> 04:09.000
+Ka pai, me tiro tātou ki ēnei mahinga.
+
+04:10.600 --> 04:16.800
+Mēnā e orite ana ēnei ki ngā mea o mua,
+ā, me titiro ki ngā kapa
+
+04:16.800 --> 04:22.000
+e hia ngā kāri pango ka kitea e koe ki roto i tēnei kapa?
+
+04:22.000 --> 04:23.400
+["Whā"]
+
+04:23.400 --> 04:25.600
+E hia ngā kāri pango ki roto nei?
+
+04:25.600 --> 04:33.000
+["Whā"] ["Whā"] ["Rua"]
+["Whā"] ["Whā"]
+
+04:33.000 --> 04:38.200
+Nā reira, me tiro tātou ki ēnei tīwae,
+e hia kei roto i tēnei tīwae?
+
+NOTE changed 'how many is in' to 'how many are in'
+
+04:38.200 --> 04:48.000
+["Rua"] ["Ono"] ["Whā"]
+["Rua"] ["Whā"] ["Whā"]
+
+04:48.000 --> 04:52.000
+He aha ngā mea orite o ēnei nama katoa?
+
+04:52.000 --> 04:56.000
+He aha ēnei? Me pēhea te whakarōpū i aua nama? Āe?
+
+04:56.000 --> 04:57.400
+Nama Taurua?
+
+04:57.400 --> 05:00.000
+Whakatū tō ringa mēnā ka whakaae ki taua kōrero?
+
+05:00.000 --> 05:03.000
+Ko ngā nama taukehe, kei te tika koe.
+
+05:03.000 --> 05:11.000
+Kei te tika koe, nā te mea i kii ahau ka whakauaua ake i tēnei mahi mā te tāpirihia i tētahi anō kapa me tētahi anō tīwae, nē rā?
+
+05:11.000 --> 05:12.800
+I whakauaua, i whakamāmā rānei au i tēnei mahi?
+
+05:12.800 --> 05:14.000
+["Māmā ake"]
+
+05:14.000 --> 05:20.000
+I pēhea au e whakamāmā ake i tēnei mā te tāpiri i tētahi kāri pango ki tēnei kapa?
+
+NOTE Changed 'Why' to 'How'
+
+05:20.000 --> 05:22.000
+I te aha au?
+
+05:22.000 --> 05:28.000
+Nā, i tāpirihia tētahi anō kia māmā ai tō maumahara i ngā kāri katoa?
+
+05:28.000 --> 05:31.600
+Āe? Mēnā kāre au i mahi i tērā, e hia ngā kāri pango ināianei?
+
+05:31.600 --> 05:32.800
+["Toru"]
+
+05:32.800 --> 05:36.600
+Tāpiri ai au i tētahi kāri pango ki konei, ka hanga i te aha? Ka huri i te rōpū taukehe ki te aha?
+
+05:36.600 --> 05:42.400
+["Taurua"] Āe, taurua, nā reira nā te tāpiri i tērā kapa me tērā pou,
+
+05:42.400 --> 05:50.200
+I hurihia ko ngā kāri pango katoa kia taurua,
+nā reira i āhei au te whakatika i te hapa
+
+05:50.200 --> 05:53.400
+ko tēhea te mea i tahurihia.
+
+05:53.400 --> 05:59.200
+Nā reira, kia tirohia ngā āhuatanga o tērā.
+Ka tango ahau i te pou kua tāpirihia,
+
+05:59.200 --> 06:02.800
+me te kapa tāpiri anō hoki, 
+ā, māu e tohutohu mai me aha.
+
+06:02.800 --> 06:08.600
+Ināianei ka muku au i ngā tau hoki kia kore tētahi e whāngai kupu, ka pai?
+
+06:08.600 --> 06:11.000
+Kua rite koe?
+Me karanga mai te pango, te mā rānei
+
+06:11.000 --> 06:13.800
+ā, whakamārama mai i te mahi māku.
+He aha taku mahi kei konei?
+
+06:13.800 --> 06:18.800
+["Pango"] <:> ["Pango"]
+<:>[Kōrihi rangirua]
+
+06:18.800 --> 06:22.400
+Pango
+
+06:22.400 --> 06:27.200
+["Mā"] ["Pango"]
+
+06:27.200 --> 06:30.600
+Kua mutu ērā kapa, nā reira me mahi tātou i nga pou.
+
+06:30.600 --> 06:37.800
+["Pango"] ["Pango"]
+["Pango"] ["Mā"]
+
+06:37.800 --> 06:40.200
+Auē, mō tōku hē
+
+06:40.200 --> 06:43.600
+["Pango"] ["Mā"]
+
+06:43.600 --> 06:47.200
+Ka pai, kia mārama ō koutou tirohanga, ka aha ki konei,
+
+06:47.200 --> 06:53.400
+mēnā ka rau atu he mā ki kōnei:
+he tika te tīwae ināianei?
+
+06:53.400 --> 06:54.600
+["Āe"]
+
+06:54.600 --> 06:58.000
+Kua tika te kapa ināianei? 
+["Āe"]
+
+06:58.000 --> 07:04.000
+Nā reira, kei te whakaraupapa te kokona rā i ngā kapa e rua me ngā tīwae e rua ki ngā wāhi e tika ana,
+
+07:04.000 --> 07:07.600
+nā reira, he tino kāri tēnei nē rā?
+
+07:07.600 --> 07:15.600
+Ka pai. Kua kite koutou i ngā āhuatanga, kō wai e pirangi ana ki te ngana?
+
+07:15.600 --> 07:18.600
+Kō wai e pirangi ana ki te ngana?
+Robert, ki ōu whakaaro, e āhei ana koe?
+
+07:18.600 --> 07:21.800
+Ā tēnā, me tū koe ki korā.
+Katia o karu, whakaweto i ngā karu
+
+07:21.800 --> 07:24.400
+kei tua i tō upoko, wetokina.
+
+07:24.400 --> 07:28.800
+Ko wai o koutou, te mea ka haere mai
+ki konei ki te whakahuri i te kāri.
+
+07:28.800 --> 07:35.400
+Haere mai Jack ki mua nei ki te whakahuri. Hurihia 
+tētahi. Koutou mā, kia mataara, kia whakahuri ia i te kāri kotahi noa iho,
+
+07:35.400 --> 07:40.600
+Ka tiro ahau ki tērā
+Ka tū noa a Robert, kāre mō te huri mai.
+
+07:49.000 --> 07:51.000
+Ka pai, he aha te kī ki a Robert?
+["Kua Mutu"]
+
+07:51.000 --> 07:54.200
+Ā tēnā, Robert haramai ki konei
+me te mea hoki ka awhina mātou i a koe.
+
+07:54.200 --> 07:57.400
+Nā reira, e hia kei roto i tēnei kapa?
+
+07:57.400 --> 07:59.000
+Whā
+He pai tērā? Āe
+
+07:59.000 --> 08:02.200
+Pēhea tēnei? Whā
+He pai tērā? Āe
+
+08:02.200 --> 08:04.800
+Pēhea tēnei? Whā
+He pai tērā? Āe
+
+08:04.800 --> 08:07.400
+Pēhea tēnei? Rua
+He pai tērā? Āe
+
+08:07.400 --> 08:10.400
+Pēhea tēnei?
+Toru, te āhua nei, kua raru tēnei.
+
+08:10.400 --> 08:14.600
+Ahahahahaa! Me rau atu he porohita ki korā,
+
+08:14.600 --> 08:18.600
+ki ōku whakaaro kua tika koe.
+Ki ahau nei, he rapanga kei roto, nā te mea he nama taurua.
+
+08:18.600 --> 08:21.400
+Me tiro ki te kapa e whai ake?
+["Kāore"]
+
+08:21.400 --> 08:24.400
+He aha ai?
+Nā te mea kua tae kē tātou ki te whakautu.
+
+08:24.400 --> 08:28.800
+Kua kimi kē tātou i te whakautu, ā, kotahi anake te hapa ka kimihia, nē rā?
+
+08:28.800 --> 08:32.000
+Nā reira, ināianei me tiro tātou ki ngā tīwae:
+E hia kei roto?
+
+NOTE changed 'is' to 'are'
+
+08:32.000 --> 08:32.800
+Rua
+
+08:32.800 --> 08:34.000
+E pai ana tērā? Āe
+
+08:34.000 --> 08:36.800
+Pēhea tēnei? Te Ono
+He pai tērā? Āe
+
+08:36.800 --> 08:39.600
+Pēhea tēnei? Whā
+He pai tērā? Āe
+
+08:39.600 --> 08:43.600
+Pēhea tēnei?
+Kotahi, nō reira, arā tētahi raru kua kitea.
+
+08:43.600 --> 08:46.400
+He rapanga kei roto, me titiro tātou ki tērā.
+
+08:46.400 --> 08:49.400
+Nā reira, e Robert, ko tēhea te kāri kua hurihia?
+
+08:49.400 --> 08:53.600
+Ko tēnei, nā te mea he aho huri noa i korā, 
+he aho huri noa i korā.
+
+08:53.600 --> 08:57.000
+Nā reira, ka kite ake ahau 
+i te tūnga tika mō tēnei.
+
+08:57.000 --> 08:59.400
+Hurihia, tau kē!
+
+08:59.400 --> 09:02.800
+Whakatū tō ringa mēnā ka whakaae ki tewhakautu o Robert, ā, koirā te kāri kua tīnihia?
+
+09:02.800 --> 09:11.400
+Ka pai, homai te pakipaki hei whakanui i a ia.
+Ngā mihi Robert.
+
+09:11.400 --> 09:15.200
+Nā reira, he aha ai kei te ako tātou me ngā autō i runga i te poari
+
+09:15.200 --> 09:17.500
+ā, me pēhea tēnei e hāngai pū ana ki ngā rorohiko?
+
+09:17.500 --> 09:21.200
+Nā te mea, he whakaahuahanga tēnei.
+
+09:21.200 --> 09:28.000
+Nā Ellie ēnei raraunga i waihanga mo tētahi mahi puoro nāna i tito,
+
+09:28.000 --> 09:32.000
+ā, ināianei kei te tukuatu ia i tērā ki te ipurangi.
+
+09:32.000 --> 09:36.000
+Nā reira, mēnā kei te mahi ia i tērā, ka whakamahi pea ina ia i ētahi waea nō ngā waea pūkoro me ētahi atu mea,
+
+09:36.000 --> 09:41.600
+nā reira kei te tāpiri noa tātou i ētahi anō raraunga ki tāna kōnae,
+
+09:41.600 --> 09:46.300
+me āna raraunga, me āna mahi,
+mēnā he māhirihiri kei roto;
+
+09:46.300 --> 09:53.400
+mēnā kua weto tētahi o ngā iatohu, arā, kāore e kā ana,
+
+09:53.400 --> 09:59.400
+e āhei ana te rorohiko kia whakatikatika i ēnei mea katoa, ā, ka noho orite tonu
+
+09:59.400 --> 10:02.200
+mo te tangata e whiwhi ana i te mutunga iho.
+
+10:02.200 --> 10:07.200
+Ka pēnei hoki mō ngā kōpae me ngā kōpae ataata,
+nō reira, whakatū tō ringa mēnā i a koe tētahi kōpae ataata
+
+10:07.200 --> 10:12.000
+i te wāhanga ka timata ki te tapepa,
+ā, ka timata te whakatongitongi, te kore rongo i ngā oro rānei?
+
+10:12.000 --> 10:20.600
+Ka pai, nā reira, ringa ki raro. Mēnā ka hurihia te kōpae ka kite te maha o ngā wāhanga kua pīata me ngā wāhanga kua waimeha anō hoki,
+
+10:20.600 --> 10:26.200
+ki runga? Ko ia o ērā he moka, ā, ka pupuri te kōpae ki te mano miriona o ngā moka.
+
+10:26.200 --> 10:31.000
+Nā reira, mēnā ka tīhaea, ā, ka tau rānei te puehu ki runga,
+
+10:31.000 --> 10:35.400
+me te mea hoki, mēnā karekau aua raraunga tāpiri, ka koretake to kōpae,
+
+10:35.400 --> 10:37.000
+ā, me whiu atu ki te rāpihi.
+
+10:37.000 --> 10:43.400
+Engari, he raraunga anō kei runga i te kōpae,
+nā reira mēnā ka tau te kopra puehu kotahi ki runga,
+
+10:43.400 --> 10:45.600
+ka taea te whakamahi, ā, ka whakatikatika noa.
+
+10:45.600 --> 10:50.200
+Ā, me nui te tiwha i runga i te kōpae kia timata te whakatongitongi.
+
+10:50.200 --> 10:53.600
+Kua kite koutou i ngā riwha? Kua tangohia te kōpae ataata me te kī
+
+10:53.600 --> 10:57.000
+"Auē, he paru katoa, kua riwha anō hoki tēnei. Te āhua nei koirā te take kua pakaru."
+
+10:57.000 --> 10:58.400
+Kua mahi koe i tērā?
+
+10:58.400 --> 11:02.600
+Ka pai, māu e horoi anō,
+ā, ko te tūmanako, kua tika te whakahaere?
+
+11:02.600 --> 11:05.800
+Nā te mea, kua whakahokia anōtia ki te āhua tika
+
+11:05.800 --> 11:09.800
+ināianei, ka āhei te pānui, te whakatika anō hoki i ngā hapa me ngā raru
+
+11:09.800 --> 11:13.600
+Ka pai, ngā mihi.
