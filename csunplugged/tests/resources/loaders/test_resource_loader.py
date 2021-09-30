@@ -26,7 +26,7 @@ class ResourceLoaderTest(BaseTestWithDB):
         self.assertEqual("Resource 1", resource.name)
         self.assertIn("Description of resource 1", resource.content)
         self.assertEqual("resource-untranslated", resource.slug)
-        self.assertEqual("GridResourceGenerator", resource.generator_module)
+        self.assertEqual("BareResourceGenerator", resource.generator_module)
         self.assertEqual(False, resource.copies)
 
     def test_resource_loader_config_missing_translation_fallback(self):
@@ -80,7 +80,7 @@ class ResourceLoaderTest(BaseTestWithDB):
         resource_loader.load()
         self.assertEquals(
             Resource.objects.get(slug="resource-untranslated").generator_module,
-            "GridResourceGenerator",
+            "BareResourceGenerator",
         )
 
     def test_resource_loader_missing_copies_value(self):

@@ -1,4 +1,4 @@
 resource-untranslated:
-  generator-module: GridResourceGenerator.py
-  thumbnail-static-path: img/resources/grid/thumbnail.png
+  generator-module: BareResourceGenerator.py
+  thumbnail-static-path: img/resources/bare/thumbnail.png
   copies: false

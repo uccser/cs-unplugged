@@ -71,10 +71,10 @@ class ManagementCommandTest(BaseTestWithDB):
     def test_rebuild_index_command_resource_model(self):
         resources_test_data = ResourcesTestDataGenerator()
         resources_test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "resources/bare.html",
+            "BareResourceGenerator",
         )
         management.call_command("rebuild_index", "--noinput")
 

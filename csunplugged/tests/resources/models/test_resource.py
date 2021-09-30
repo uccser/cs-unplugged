@@ -10,30 +10,30 @@ class ResourceModelTest(BaseTestWithDB):
 
     def test_resource_str(self):
         resource = self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "resources/bare.html",
+            "BareResourceGenerator",
         )
-        self.assertEqual(resource.__str__(), "Grid")
+        self.assertEqual(resource.__str__(), "Bare")
 
     def test_resource_model_name(self):
         resource = self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "resources/bare.html",
+            "BareResourceGenerator",
         )
         self.assertEqual(resource.MODEL_NAME, "Printable")
 
     def test_resource_model_get_absolute_url(self):
         resource = self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "resources/bare.html",
+            "BareResourceGenerator",
         )
         self.assertEqual(
             resource.get_absolute_url(),
-            "/en/resources/grid/"
+            "/en/resources/bare/"
         )

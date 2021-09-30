@@ -2,7 +2,7 @@
 
 # Disable unused import warnings for this file
 # flake8: noqa: F401
-
+from tests.resources.BareResourceGenerator import BareResourceGenerator
 from .ArrowsResourceGenerator import ArrowsResourceGenerator
 from .BarcodeChecksumPosterResourceGenerator import BarcodeChecksumPosterResourceGenerator
 from .BinaryCardsResourceGenerator import BinaryCardsResourceGenerator

@@ -24,7 +24,7 @@ class IndexViewTest(BaseTestWithDB):
             "resource",
             "Resource",
             "Description",
-            "GridResourceGenerator",
+            "BareResourceGenerator",
         )
         url = reverse("resources:index")
         response = self.client.get(url)

@@ -25,10 +25,10 @@ class ResourceViewTest(BaseTestWithDB):
 
     def test_resource_view_with_valid_slug(self):
         resource = self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "resources/bare.html",
+            "BareResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug
@@ -39,10 +39,10 @@ class ResourceViewTest(BaseTestWithDB):
 
     def test_resource_view_with_invalid_slug(self):
         self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "resources/bare.html",
+            "BareResourceGenerator",
         )
         kwargs = {
             "resource_slug": "wrong_slug",
@@ -53,10 +53,10 @@ class ResourceViewTest(BaseTestWithDB):
 
     def test_resource_view_context(self):
         resource = self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "resources/bare.html",
+            "BareResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -73,10 +73,10 @@ class ResourceViewTest(BaseTestWithDB):
     @override_settings(DEPLOYED=True)
     def test_resource_view_resource_thumbnail_base_context_production_en(self):
         resource = self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "resources/bare.html",
+            "BareResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -85,17 +85,17 @@ class ResourceViewTest(BaseTestWithDB):
         response = self.client.get(url)
         self.assertEqual(
             response.context["resource_thumbnail_base"],
-            "/static/img/resources/grid/thumbnails/{}/".format(self.language)
+            "/staticfiles/img/resources/bare/thumbnails/{}/".format(self.language)
         )
 
     @override_settings(DEPLOYED=True)
     def test_resource_view_resource_thumbnail_base_context_production_de(self):
         with translation.override("de"):
             resource = self.test_data.create_resource(
-                "grid",
-                "Grid",
-                "resources/grid.html",
-                "GridResourceGenerator",
+                "bare",
+                "Bare",
+                "resources/bare.html",
+                "BareResourceGenerator",
             )
             kwargs = {
                 "resource_slug": resource.slug,
@@ -104,17 +104,17 @@ class ResourceViewTest(BaseTestWithDB):
             response = self.client.get(url)
             self.assertEqual(
                 response.context["resource_thumbnail_base"],
-                "/static/img/resources/grid/thumbnails/de/"
+                "/staticfiles/img/resources/bare/thumbnails/de/"
             )
 
     @override_settings(DEPLOYED=True)
     @override_settings(LANGUAGES=MULTIPLE_LANGUAGES_WITH_INCONTEXT)
     def test_resource_view_resource_thumbnail_base_context_production_in_context(self):
         resource = self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "resources/bare.html",
+            "BareResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -126,15 +126,15 @@ class ResourceViewTest(BaseTestWithDB):
             print(response.context["resource"])
             self.assertEqual(
                 response.context["resource_thumbnail_base"],
-                "/static/img/resources/grid/thumbnails/en/"
+                "/staticfiles/img/resources/bare/thumbnails/en/"
             )
 
     def test_resource_view_lesson_context(self):
         resource = self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "resources/bare.html",
+            "BareResourceGenerator",
         )
 
         # Create topic data

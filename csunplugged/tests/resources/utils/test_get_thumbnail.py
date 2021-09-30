@@ -103,7 +103,7 @@ class GetThumbnailTest(BaseTestWithDB):
             "resource",
             "Resource",
             "Description of resource",
-            "GridResourceGenerator",
+            "BareResourceGenerator",
         )
         self.assertEqual(
             get_thumbnail_static_path_for_resource(resource),
@@ -117,7 +117,7 @@ class GetThumbnailTest(BaseTestWithDB):
             "resource",
             "Resource",
             "Description of resource",
-            "GridResourceGenerator",
+            "BareResourceGenerator",
         )
         self.assertEqual(
             get_thumbnail_static_path_for_resource(resource),
@@ -132,7 +132,7 @@ class GetThumbnailTest(BaseTestWithDB):
                 "resource",
                 "Resource",
                 "Description of resource",
-                "GridResourceGenerator",
+                "BareResourceGenerator",
             )
             self.assertEqual(
                 get_thumbnail_static_path_for_resource(resource),
@@ -148,7 +148,7 @@ class GetThumbnailTest(BaseTestWithDB):
                 "resource",
                 "Resource",
                 "Description of resource",
-                "GridResourceGenerator",
+                "BareResourceGenerator",
             )
             self.assertEqual(
                 get_thumbnail_static_path_for_resource(resource),
