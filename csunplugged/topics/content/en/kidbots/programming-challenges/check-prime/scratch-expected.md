@@ -6,11 +6,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks for solution 1
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 set [divisor v] to [2]
 
 set [number v] to (answer)
@@ -18,11 +18,11 @@ set [number v] to (answer)
 change [divisor v] by (1)
 ```
 
-```scratch:split:random
+```scratch
 ask [Enter a number to check if it's a prime number:] and wait
 ```
 
-```scratch:split:random
+```scratch
 say (join (number) [ is not a prime number.])
 
 say (join (number) [ is not a prime number.])
@@ -30,7 +30,7 @@ say (join (number) [ is not a prime number.])
 say (join (number) [ is a prime number.])
 ```
 
-```scratch:split:random
+```scratch
 if <((number) mod (divisor)) = [0]> then
 end
 
@@ -50,11 +50,11 @@ stop [this script v]
 
 # Recommended blocks for solution 2
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 set [is prime v] to [true]
 
 set [divisor v] to [2]
@@ -66,11 +66,11 @@ change [divisor v] by (1)
 set [number v] to (answer)
 ```
 
-```scratch:split:random
+```scratch
 ask [Enter a number to check if it's a prime number:] and wait
 ```
 
-```scratch:split:random
+```scratch
 say (join (number) [ is not a prime number.])
 
 say (join (number) [ is not a prime number.])
@@ -78,7 +78,7 @@ say (join (number) [ is not a prime number.])
 say (join (number) [ is a prime number.])
 ```
 
-```scratch:split:random
+```scratch
 if <(is prime) = [true]> then
 end
 

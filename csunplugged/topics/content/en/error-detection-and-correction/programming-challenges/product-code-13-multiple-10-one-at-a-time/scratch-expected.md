@@ -7,17 +7,17 @@ see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 say [The sum is NOT a multiple of 10]
 
 say [The sum is a multiple of 10]
 ```
 
-```scratch:split:random
+```scratch
 ask (join (join [Enter digit ] (index)) [ of the product code:]) and wait
 
 ask (join (join [Enter digit ] (index)) [ of the product code:]) and wait
@@ -25,7 +25,7 @@ ask (join (join [Enter digit ] (index)) [ of the product code:]) and wait
 ask (join (join [Enter digit ] (index)) [ of the product code:]) and wait
 ```
 
-```scratch:split:random
+```scratch
 repeat (6)
 end
 
@@ -34,7 +34,7 @@ else
 end
 ```
 
-```scratch:split:random
+```scratch
 set [odd total v] to [0]
 
 set [even total v] to [0]

@@ -6,7 +6,7 @@ Click on the green flag, enter the inputs provided in the “testing examples”
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Please enter a decimal number:] and wait
@@ -14,7 +14,7 @@ ask [Please enter a decimal number:] and wait
 say (join (join (join [The binary representation for the number ] (answer)) [ is ]) (binary number))
 ```
 
-```scratch:split:random
+```scratch
 if <<(decimal number) > (bit value)> or <(decimal number) = (bit value)>> then
 else
 end
@@ -26,7 +26,7 @@ repeat until <(bit value) = [1]>
 end
 ```
 
-```scratch:split:random
+```scratch
 set [decimal number v] to (answer)
 
 set [bit value v] to [1]

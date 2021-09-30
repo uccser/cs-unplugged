@@ -34,7 +34,7 @@ def redirect_to_changelog(request):
 
     Returns a 301 permanent redirect HTTP response.
     """
-    return redirect("http://cs-unplugged.readthedocs.io/en/latest/changelog.html", permanent=True)
+    return redirect("https://cs-unplugged.readthedocs.io/changelog.html", permanent=True)
 
 
 def redirect_to_modems_unplugged_2(request):

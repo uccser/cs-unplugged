@@ -2,7 +2,7 @@
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when I receive [go v]
 
 move_forward() :: custom

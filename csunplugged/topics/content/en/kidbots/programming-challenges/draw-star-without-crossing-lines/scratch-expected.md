@@ -6,11 +6,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 clear
 
 pen down
@@ -22,7 +22,7 @@ set pen size to (3)
 change pen color by (30)
 ```
 
-```scratch:split:random
+```scratch
 go to x: (50) y: (0)
 
 move (50) steps
@@ -34,7 +34,7 @@ move (50) steps
 turn ccw (60) degrees
 ```
 
-```scratch:split:random
+```scratch
 repeat (6)
 end
 ```

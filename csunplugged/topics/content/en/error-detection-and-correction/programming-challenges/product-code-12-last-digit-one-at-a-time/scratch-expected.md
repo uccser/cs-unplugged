@@ -7,7 +7,7 @@ see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 say (join [The last digit of the product code is ] (last digit))
@@ -17,7 +17,7 @@ end
 ```
 
 
-```scratch:split:random
+```scratch
 ask (join (join [Enter digit ] (index)) [ of the product code:]) and wait
 
 ask (join (join [Enter digit ] (index)) [ of the product code:]) and wait
@@ -25,7 +25,7 @@ ask (join (join [Enter digit ] (index)) [ of the product code:]) and wait
 ask (join (join [Enter digit ] (index)) [ of the product code:]) and wait
 ```
 
-```scratch:split:random
+```scratch
 set [total 1 v] to [0]
 
 set [total 2 v] to [0]

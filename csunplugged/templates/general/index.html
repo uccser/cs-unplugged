@@ -90,13 +90,10 @@
             </div>
             <div class="col-12 col-md-4 mb-4">
                 <h2 class="plugging-it-in-colour">For students</h2>
-                <a class="link-item link-item-top link-item-top-plugging-it-in-1 no-text-decoration d-block mb-3{% if prod_deployment %} unavailable"{% else %}" href="{% url 'plugging_it_in:index' %}"{% endif %}>
+                <a class="link-item link-item-top link-item-top-plugging-it-in-1 no-text-decoration d-block mb-3" href="{% url 'plugging_it_in:index' %}">
                     <h3 class="mb-0">
                         {% trans "Plugging it in" %}
                     </h3>
-                    {% if prod_deployment %}
-                        <span class="badge badge-secondary">Coming soon</span>
-                    {% endif %}
                     {% if LANGUAGE_CODE != "en" %}
                         {% include "generic/not-available-badge.html" %}
                     {% endif %}

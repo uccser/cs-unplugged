@@ -6,11 +6,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 set [secs1 v] to [0]
 
 set [mins1 v] to [0]
@@ -56,7 +56,7 @@ set [total mins v] to ((total mins) mod (60))
 change [total hours v] by (1)
 ```
 
-```scratch:split:random
+```scratch
 ask [Enter the number of hours for the first clip: ] and wait
 
 ask [Enter the number of minutes for the first clip: ] and wait
@@ -70,7 +70,7 @@ ask [Enter the number of minutes for the second clip: ] and wait
 ask [Enter the number of seconds for the second clip: ] and wait
 ```
 
-```scratch:split:random
+```scratch
 if <(total secs) > [59]> then
 end
 

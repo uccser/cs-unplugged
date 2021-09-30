@@ -7,13 +7,13 @@ see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Enter a 13-digit product code:] and wait
 ```
 
-```scratch:split:random
+```scratch
 say [Please enter a 13 digit number!]
 
 say [Invalid product code!]
@@ -21,12 +21,12 @@ say [Invalid product code!]
 say [Valid product code!]
 ```
 
-```scratch:split:random
+```scratch
 repeat (6)
 end
 
 if <((total) mod (10)) = [0]> then
-else 
+else
 end
 
 if <(length of (product code)) = [13]> then
@@ -35,7 +35,7 @@ else
 end
 ```
 
-```scratch:split:random
+```scratch
 set [index v] to [1]
 
 set [product code v] to []

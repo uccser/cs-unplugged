@@ -1,5 +1,5 @@
 unit-plans:
-  - sequential-and-binary-search-unit-plan/sequential-and-binary-search-unit-plan.yaml
+  - unit-plan/unit-plan.yaml
 
 icon: img/topics/searching-algorithms-icon.png
 

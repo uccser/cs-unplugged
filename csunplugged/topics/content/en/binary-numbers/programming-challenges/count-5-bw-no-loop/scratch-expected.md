@@ -6,13 +6,13 @@ Click on the green flag, enter the inputs provided in the “testing examples”
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 say (total number of dots)
 ```
 
-```scratch:split:random
+```scratch
 if <(answer) = [W]> then
 end
 
@@ -29,7 +29,7 @@ if <(answer) = [W]> then
 end
 ```
 
-```scratch:split:random
+```scratch
 ask [What's your first card (B for black, W for white)?] and wait
 
 ask [What's your second card (B for black, W for white)?] and wait
@@ -41,7 +41,7 @@ ask [What's your fourth card (B for black, W for white)?] and wait
 ask [What's your fifth card (B for black, W for white)?] and wait
 ```
 
-```scratch:split:random
+```scratch
 set [total number of dots v] to [0]
 
 set [total number of dots v] to ((total number of dots) + (16))

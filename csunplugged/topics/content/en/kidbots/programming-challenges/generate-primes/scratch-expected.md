@@ -6,11 +6,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 set [prime numbers v] to [ ]
 
 set [number v] to [2]
@@ -30,15 +30,15 @@ change [number v] by (1)
 set [is prime v] to [false]
 ```
 
-```scratch:split:random
+```scratch
 ask [I'll generate the prime numbers up to this number:] and wait
 ```
 
-```scratch:split:random
+```scratch
 say (prime numbers)
 ```
 
-```scratch:split:random
+```scratch
 if <((number) mod (index)) = [0]> then
 end
 

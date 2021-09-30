@@ -54,7 +54,7 @@ function sendCodeToJobe() {
 
 /**
  * Returns if the user has passed all test cases.
- * @param {Array} results An array of the test case results 
+ * @param {Array} results An array of the test case results
  * @return {Array} If all the test cases passed returns "Passed", otherwise "Failed"
  */
 function allCorrect(results) {
@@ -118,7 +118,7 @@ function updateResultsTable(results) {
       row_element.removeClass("table-danger");
       row_element.removeClass("table-warning");
       $(`#test-case-${result.id}-help-icon`).css('visibility','hidden');
-      
+
     } else if (result.status == "Syntax Error") {
       row_element.addClass("table-warning");
       row_element.removeClass("table-danger");
@@ -133,7 +133,7 @@ function updateResultsTable(results) {
 
 /**
  * Downloads text to a file.
- * @param {String} filename The filename of the file to be downloaded. 
+ * @param {String} filename The filename of the file to be downloaded.
  * @param {String} text The text content of the file to be downloaded.
  */
 function download(filename, text) {

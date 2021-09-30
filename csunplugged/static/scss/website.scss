@@ -39,7 +39,6 @@
 @import "node_modules/bootstrap/scss/print";
 
 @import "pygments-vs";
-@import "sticky-state";
 @import "directional";
 @import url('https://fonts.googleapis.com/css?family=Sniglet');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
@@ -562,6 +561,9 @@ ol, ul {
   img {
     @include img-fluid;
   }
+  .figure-img {
+      max-height: 50vh;
+  }
   margin-bottom: $spacer * 0.5;
   @include media-breakpoint-up(md) {
     margin-top: $spacer * 0.5;
@@ -761,7 +763,7 @@ button:hover .icon-search {
         }
     }
 }
-#challenges-form {
+.challenges-form {
     .empty-feedback {
         display: none;
         width: 100%;
@@ -880,4 +882,9 @@ button:hover .icon-search {
 
 #plugging-it-in-logo-educators {
   height: 3em;
+}
+
+.scratchblocks-inline > svg {
+    height: 2.5rem;
+    width: auto;
 }

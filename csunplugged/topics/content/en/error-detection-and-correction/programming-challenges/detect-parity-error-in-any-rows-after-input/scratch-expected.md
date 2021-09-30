@@ -7,7 +7,7 @@ see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 say (join [There is a parity error in row ] (index row)) for (3) secs
@@ -17,7 +17,7 @@ add (answer) to [rows v]
 delete (all v) of [rows v]
 ```
 
-```scratch:split:random
+```scratch
 set [black cards total v] to [0]
 
 set [row number v] to [1]
@@ -41,13 +41,13 @@ change [index row v] by (1)
 change [black cards total v] by (1)
 ```
 
-```scratch:split:random
+```scratch
 ask [How many rows would you like to enter?] and wait
 
 ask (join [Enter row ] (row number)) and wait
 ```
 
-```scratch:split:random
+```scratch
 repeat (number of rows)
 end
 

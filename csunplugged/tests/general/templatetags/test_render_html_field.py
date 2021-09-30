@@ -44,7 +44,7 @@ class RenderHTMLFieldTest(BaseTestWithDB):
             "{% load render_html_field %}\n{% render_html_field integration.content %}",
             context
         )
-        self.assertHTMLEqual(rendered, "<img src='/staticfiles/img/logo-small.png'>")
+        self.assertHTMLEqual(rendered, "<img src='/static/img/logo-small.png'>")
 
     def test_render_html_field_empty(self):
         topic = self.test_data.create_topic(1)

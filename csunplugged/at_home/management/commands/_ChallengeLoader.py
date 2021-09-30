@@ -32,7 +32,7 @@ class ChallengeLoader(TranslatableModelLoader):
         """
         challenge_translations = self.get_yaml_translations(
             CHALLENGES_FILENAME,
-            required_fields=["question", "answer"]
+            required_fields=["question"]
         )
 
         for (challenge_order_number, challenge_data) in challenge_translations.items():
@@ -52,16 +52,22 @@ class ChallengeLoader(TranslatableModelLoader):
                 # Check if challenge image is available
                 find_image_files([challenge_image], self.structure_file_path)
 
-            # Create or update challenge and save to databbase
+            # Create or update challenge and save to database
             challenge, created = Challenge.objects.update_or_create(
                 order_number=challenge_order_number,
                 activity=self.activity,
             )
             self.populate_translations(challenge, translations)
-            self.mark_translation_availability(
-                challenge,
-                required_fields=["question", "answer"]
-            )
+            if "answer" in challenge_data:
+                self.mark_translation_availability(
+                    challenge,
+                    required_fields=["question", "answer"]
+                )
+            else:
+                self.mark_translation_availability(
+                    challenge,
+                    required_fields=["question"]
+                )
             challenge.save()
 
             if created:

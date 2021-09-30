@@ -68,10 +68,10 @@ class GetThumbnailTest(BaseTestWithDB):
     def test_get_thumbnail_base_local_development(self):
         self.assertEqual(
             get_thumbnail_base("resource"),
-            "/staticfiles/img/resources/resource/thumbnails/en/"
+            "/static/img/resources/resource/thumbnails/en/"
         )
 
-    @override_settings(DJANGO_PRODUCTION=True)
+    @override_settings(DEPLOYED=True)
     @override_settings(STATIC_URL="https://static.csunplugged.org/")
     def test_get_thumbnail_base_production_en(self):
         self.assertEqual(
@@ -79,7 +79,7 @@ class GetThumbnailTest(BaseTestWithDB):
             "https://static.csunplugged.org/img/resources/resource/thumbnails/en/"
         )
 
-    @override_settings(DJANGO_PRODUCTION=True)
+    @override_settings(DEPLOYED=True)
     @override_settings(STATIC_URL="https://static.csunplugged.org/")
     def test_get_thumbnail_base_production_de(self):
         with translation.override("de"):
@@ -88,7 +88,7 @@ class GetThumbnailTest(BaseTestWithDB):
                 "https://static.csunplugged.org/img/resources/resource/thumbnails/de/"
             )
 
-    @override_settings(DJANGO_PRODUCTION=True)
+    @override_settings(DEPLOYED=True)
     @override_settings(STATIC_URL="https://static.csunplugged.org/")
     @override_settings(LANGUAGES=MULTIPLE_LANGUAGES_WITH_INCONTEXT)
     def test_get_thumbnail_base_production_in_context(self):
@@ -107,10 +107,10 @@ class GetThumbnailTest(BaseTestWithDB):
         )
         self.assertEqual(
             get_thumbnail_static_path_for_resource(resource),
-            "/staticfiles/img/resources/resource/thumbnails/en/resource-paper_size-a4.png"
+            "/static/img/resources/resource/thumbnails/en/resource-paper_size-a4.png"
         )
 
-    @override_settings(DJANGO_PRODUCTION=True)
+    @override_settings(DEPLOYED=True)
     @override_settings(STATIC_URL="https://static.csunplugged.org/")
     def test_get_thumbnail_static_path_for_resource_production_en(self):
         resource = self.test_data.create_resource(
@@ -124,7 +124,7 @@ class GetThumbnailTest(BaseTestWithDB):
             "https://static.csunplugged.org/img/resources/resource/thumbnails/en/resource-paper_size-a4.png"
         )
 
-    @override_settings(DJANGO_PRODUCTION=True)
+    @override_settings(DEPLOYED=True)
     @override_settings(STATIC_URL="https://static.csunplugged.org/")
     def test_get_thumbnail_static_path_for_resource_production_de(self):
         with translation.override("de"):
@@ -139,7 +139,7 @@ class GetThumbnailTest(BaseTestWithDB):
                 "https://static.csunplugged.org/img/resources/resource/thumbnails/de/resource-paper_size-a4.png"
             )
 
-    @override_settings(DJANGO_PRODUCTION=True)
+    @override_settings(DEPLOYED=True)
     @override_settings(STATIC_URL="https://static.csunplugged.org/")
     @override_settings(LANGUAGES=MULTIPLE_LANGUAGES_WITH_INCONTEXT)
     def test_get_thumbnail_static_path_for_resource_production_in_context(self):

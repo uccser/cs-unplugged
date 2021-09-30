@@ -35,7 +35,7 @@ class IndexViewTest(BaseTestWithDB):
         )
         self.assertEqual(
             response.context["all_resources"][0].thumbnail,
-            "/staticfiles/img/resources/resource/thumbnails/en/resource-paper_size-a4.png"
+            "/static/img/resources/resource/thumbnails/en/resource-paper_size-a4.png"
         )
 
     def test_resources_index_with_multiple_resources(self):
