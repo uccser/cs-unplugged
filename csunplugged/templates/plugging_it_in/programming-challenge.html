@@ -180,12 +180,13 @@
 {% endblock body_container %}
 
 {% block scripts %}
+  {% csrf_token %}
   <script type="text/javascript">
     let current_challenge_slug = '{{ programming_challenge.slug }}';
     let test_cases = {{ test_cases_json|safe }};
     let programming_exercises = {{ programming_exercises_json|safe }};
     let lesson_url = "{% url 'plugging_it_in:lesson' topic.slug lesson.slug %}";
-    let csrf_token = '{{ csrf_token }}';
+    let csrf_token = jQuery("[name=csrfmiddlewaretoken]").val();
     let jobe_proxy_url = '{{ jobe_proxy_url }}';
     let save_attempt_url = "{% url 'plugging_it_in:save_attempt' %}"
   </script>
