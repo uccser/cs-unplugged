@@ -3,7 +3,7 @@
 from django.urls import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from django.contrib.postgres.fields import JSONField, IntegerRangeField
+from django.contrib.postgres.fields import IntegerRangeField
 from resources.models import Resource
 from utils.TranslatableModel import TranslatableModel
 
@@ -151,7 +151,7 @@ class UnitPlan(TranslatableModel):
     name = models.CharField(max_length=100, default="")
     content = models.TextField(default="")
     computational_thinking_links = models.TextField(default="")
-    heading_tree = JSONField(default=dict)
+    heading_tree = models.JSONField(default=dict)
 
     def get_absolute_url(self):
         """Return the canonical URL for a unit plan.
@@ -366,7 +366,7 @@ class Lesson(TranslatableModel):
     duration = models.PositiveSmallIntegerField(null=True)
     content = models.TextField(default="")
     computational_thinking_links = models.TextField(default="")
-    heading_tree = JSONField(default=list)
+    heading_tree = models.JSONField(default=list)
     age_group = models.ManyToManyField(
         AgeGroup,
         through="LessonNumber",

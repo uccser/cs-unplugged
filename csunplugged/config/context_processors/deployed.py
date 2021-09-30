@@ -10,5 +10,7 @@ def deployed(request):
         Dictionary containing deployed boolean to add to context.
     """
     return {
-        "DEPLOYED": settings.DJANGO_PRODUCTION
+        "DEPLOYED": settings.DEPLOYED,
+        "PRODUCTION_ENVIRONMENT": settings.PRODUCTION_ENVIRONMENT,
+        "STAGING_ENVIRONMENT": settings.STAGING_ENVIRONMENT,
     }

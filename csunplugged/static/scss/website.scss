@@ -39,7 +39,6 @@
 @import "node_modules/bootstrap/scss/print";
 
 @import "pygments-vs";
-@import "sticky-state";
 @import "directional";
 @import url('https://fonts.googleapis.com/css?family=Sniglet');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
@@ -880,4 +879,9 @@ button:hover .icon-search {
 
 #plugging-it-in-logo-educators {
   height: 3em;
+}
+
+.scratchblocks-inline > svg {
+    height: 2.5rem;
+    width: auto;
 }

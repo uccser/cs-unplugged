@@ -6,19 +6,19 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 set [year v] to (answer)
 ```
 
-```scratch:split:random
+```scratch
 ask [Enter the year and I will tell you if it's a leap year or not:] and wait
 ```
 
-```scratch:split:random
+```scratch
 say (join (year) [ is not a leap year!])
 
 say (join (year) [ is a leap year!])
@@ -28,7 +28,7 @@ say (join (year) [ is not a leap year!])
 say (join (year) [ is a leap year!])
 ```
 
-```scratch:split:random
+```scratch
 if <not <((year) mod (4)) = [0]>> then
 else
 end

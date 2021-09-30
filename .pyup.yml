@@ -1,6 +1,0 @@
-# Settings for pyup bot
-# Details here: https://pyup.io/docs/configuration/
-
-branch: develop
-label_prs: backend
-branch_prefix: pyup/

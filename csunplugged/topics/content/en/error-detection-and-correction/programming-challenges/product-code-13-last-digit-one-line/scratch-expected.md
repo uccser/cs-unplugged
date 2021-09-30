@@ -7,13 +7,13 @@ see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Enter first 12 digits of the barcode:] and wait
 ```
 
-```scratch:split:random
+```scratch
 repeat (6)
 end
 
@@ -22,13 +22,13 @@ else
 end
 ```
 
-```scratch:split:random
+```scratch
 say [You must enter a 12 digit number!]
 
 say (join [The last digit of the product code is: ] (last digit))
 ```
 
-```scratch:split:random
+```scratch
 set [index v] to [1]
 
 set [first 12 digits v] to [0]

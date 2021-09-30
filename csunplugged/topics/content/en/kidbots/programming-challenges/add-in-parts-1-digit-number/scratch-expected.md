@@ -6,11 +6,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 set [num1 v] to (answer)
 
 set [num2 v] to (answer)
@@ -20,13 +20,13 @@ set [ten minus num1 v] to ((10) - (num1))
 set [left from num2 v] to ((num2) - (ten minus num1))
 ```
 
-```scratch:split:random
+```scratch
 ask [Enter the 1st number:] and wait
 
 ask [Enter the 2nd number:] and wait
 ```
 
-```scratch:split:random
+```scratch
 say [Enter two numbers less than 10. Enter the larger number first.] for (3) secs
 
 say (join (join (join (num1) [+]) (num2)) [=?]) for (3) secs
@@ -42,7 +42,7 @@ say (join (join (join (num1) [+]) (num2)) [=?]) for (5) secs
 say ((num1) + (num2))
 ```
 
-```scratch:split:random
+```scratch
 if <((num1) + (num2)) > [10]> then
 else
 end

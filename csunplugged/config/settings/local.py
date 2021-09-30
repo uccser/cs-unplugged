@@ -15,9 +15,16 @@ from .base import *  # noqa: F403
 # ----------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
-    "default": env.db("DATABASE_URL"),  # noqa: F405
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": env("POSTGRES_DB"),  # noqa: F405
+        "USER": env("POSTGRES_USER"),  # noqa: F405
+        "PASSWORD": env("POSTGRES_PASSWORD"),  # noqa: F405
+        "HOST": env("POSTGRES_HOST"),  # noqa: F405
+        "PORT": env("POSTGRES_PORT"),  # noqa: F405
+        "ATOMIC_REQUESTS": True,
+    }
 }
-DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # DEBUG
 # ----------------------------------------------------------------------------
@@ -28,7 +35,7 @@ TEMPLATES[0]["OPTIONS"]["debug"] = DEBUG  # noqa: F405
 # ----------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
-SECRET_KEY = env("DJANGO_SECRET_KEY", default="l@@)w&&%&u37+sjz^lsx^+29y_333oid3ygxzucar^8o(axo*f")  # noqa: F405
+SECRET_KEY = env("DJANGO_SECRET_KEY", default="DJANGO_SECRET_KEY_FOR_LOCAL_DEVELOPMENT")  # noqa: F405
 
 # Mail settings
 # ----------------------------------------------------------------------------
@@ -55,7 +62,13 @@ INSTALLED_APPS += ["debug_toolbar", ]  # noqa: F405
 
 INTERNAL_IPS = ["127.0.0.1", "10.0.2.2", ]
 
-ALLOWED_HOSTS = [".canterbury.ac.nz", "localhost", "127.0.0.1", "[::1]"]
+ALLOWED_HOSTS = [
+    ".canterbury.ac.nz",
+    "localhost",
+    "cs-unplugged.localhost",
+    "127.0.0.1",
+    "[::1]",
+]
 
 
 def show_django_debug_toolbar(request):
@@ -88,6 +101,3 @@ TEST_RUNNER = "django.test.runner.DiscoverRunner"
 # Your local stuff: Below this line define 3rd party library settings
 # ----------------------------------------------------------------------------
 INSTALLED_APPS += ["dev.apps.DevConfig"]  # noqa: F405
-
-# Jobe Server
-JOBE_SERVER_URL = "http://jobeinabox"

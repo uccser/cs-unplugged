@@ -7,7 +7,7 @@ Click on the green flag, and use the buttons to see the expected output of your 
 # Recommended blocks
 
 Events
-```scratch:split:random
+```scratch
 when green flag clicked
 
 when this sprite clicked
@@ -20,7 +20,7 @@ broadcast [home v]
 ```
 
 Control
-```scratch:split:random
+```scratch
 repeat (length of [source code v] :: list)
 end
 
@@ -54,7 +54,7 @@ wait (0.5) secs
 ```
 
 Data - Variable
-```scratch:split:random
+```scratch
 set [statement v] to [0]
 
 set [source line v] to [1]
@@ -65,7 +65,7 @@ change [source line v] by (1)
 ```
 
 Data - List
-```scratch:split:random
+```scratch
 insert [forward] at (last v) of [source code v]
 
 insert [backward] at (last v) of [source code v]
@@ -82,7 +82,7 @@ delete (all v) of [source code v]
 ```
 
 Looks
-```scratch:split:random
+```scratch
 set size to (30) %
 
 set size to (50) %
@@ -95,7 +95,7 @@ say [Oh no! Missed it! Press "home" and then "clear" to try again.]
 ```
 
 Sensing
-```scratch:split:random
+```scratch
 go to x: (50) y: (0)
 
 go to x: ((pick random (-1) to (4)) * (50)) y: ((pick random (-3) to (3)) * (50))
@@ -113,7 +113,7 @@ point in direction (90 v)
 ```
 
 Sound
-```scratch:split:random
+```scratch
 play sound [meow v]
 ```
 

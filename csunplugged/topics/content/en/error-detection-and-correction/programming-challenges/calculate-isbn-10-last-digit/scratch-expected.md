@@ -7,19 +7,19 @@ see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Enter the first 9 digits of an ISBN-10 number:] and wait
 ```
 
-```scratch:split:random
+```scratch
 say [The last digit is: X]
 
 say (join [The last digit is: ] (last digit))
 ```
 
-```scratch:split:random
+```scratch
 set [index v] to [1]
 
 set [multiplier v] to [10]
@@ -41,7 +41,7 @@ change [multiplier v] by (-1)
 set [last digit v] to (((0) - (total)) mod (11))
 ```
 
-```scratch:split:random
+```scratch
 if <(last digit) = [10]> then
 else
 end

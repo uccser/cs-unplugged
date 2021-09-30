@@ -6,11 +6,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 clear
 
 pen down
@@ -18,7 +18,7 @@ pen down
 pen up
 ```
 
-```scratch:split:random
+```scratch
 ask [Enter an odd number of points to draw a star:] and wait
 
 repeat (points)
@@ -27,7 +27,7 @@ end
 set [points v] to (answer)
 ```
 
-```scratch:split:random
+```scratch
 go to x: (0) y: (0)
 
 move (200) steps

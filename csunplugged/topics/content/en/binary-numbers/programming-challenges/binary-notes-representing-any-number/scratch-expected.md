@@ -6,19 +6,19 @@ Click on the green flag, enter the inputs provided in the “testing examples”
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Please enter a decimal number:] and wait
 ```
 
-```scratch:split:random
+```scratch
 play note (72 v) for (0.5) beats
 
 play note (48 v) for (0.5) beats
 ```
 
-```scratch:split:random
+```scratch
 repeat until <(decimal number) < (bit value)>
 end
 
@@ -30,7 +30,7 @@ else
 end
 ```
 
-```scratch:split:random
+```scratch
 set [decimal number v] to (answer)
 
 set [bit value v] to [1]

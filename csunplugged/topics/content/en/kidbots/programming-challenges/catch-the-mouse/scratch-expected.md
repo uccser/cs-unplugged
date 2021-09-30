@@ -7,7 +7,7 @@ Click on the green flag and press the “Go” button to see the expected output
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when I receive [go v]
 
 move_forward() :: custom

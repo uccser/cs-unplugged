@@ -5,7 +5,6 @@ broken-link-checker:
     - csunplugged/build/
     - csunplugged/node_modules/
     - csunplugged/staticfiles/
-    - csunplugged/temp/
     - csunplugged/utils/custom_converter_templates/
   skip-urls:
     # Broken linksthat should not be changed as within license file

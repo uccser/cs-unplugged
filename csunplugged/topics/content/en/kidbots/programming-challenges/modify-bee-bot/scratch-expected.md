@@ -7,7 +7,7 @@ Click on the green flag, and use the buttons to see the expected output of your 
 # Recommended blocks
 
 Control
-```scratch:split:random
+```scratch
 if <(statement) = [spin]> then
 end
 
@@ -16,12 +16,12 @@ end
 ```
 
 Data - List
-```scratch:split:random
+```scratch
 insert [spin] at (last v) of [source code v]
 ```
 
 Sensing
-```scratch:split:random
+```scratch
 turn cw (90) degrees
 ```
 

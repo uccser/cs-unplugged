@@ -6,7 +6,7 @@ Click on the green flag, enter the inputs provided in the “testing examples”
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Please enter a decimal number:] and wait
@@ -17,7 +17,7 @@ end
 say (join (join (join [The binary representation for the number ] (answer)) [ is ]) (binary number))
 ```
 
-```scratch:split:random
+```scratch
 set [decimal number v] to (answer)
 
 set [remainder v] to [0]

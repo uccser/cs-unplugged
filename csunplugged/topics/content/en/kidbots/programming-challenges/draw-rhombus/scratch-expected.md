@@ -6,11 +6,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 set [angle v] to (answer)
 
 ask [Enter one angle of a rhombus:] and wait
@@ -19,7 +19,7 @@ repeat (2)
 end
 ```
 
-```scratch:split:random
+```scratch
 clear
 
 pen down
@@ -29,7 +29,7 @@ pen up
 set pen size to (3)
 ```
 
-```scratch:split:random
+```scratch
 move (100) steps
 
 turn ccw (angle) degrees

@@ -6,11 +6,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 clear
 
 pen down
@@ -18,13 +18,13 @@ pen down
 pen up
 ```
 
-```scratch:split:random
+```scratch
 set [pi v] to [3.1415]
 
 set [radius v] to [100]
 ```
 
-```scratch:split:random
+```scratch
 go to x: (0) y: (0)
 
 point in direction (0 v)
@@ -38,7 +38,7 @@ move ((((radius) * (2)) * (pi)) / (360)) steps
 turn ccw (1) degrees
 ```
 
-```scratch:split:random
+```scratch
 repeat (360)
 end
 ```

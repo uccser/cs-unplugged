@@ -228,7 +228,7 @@
           </small>
         </p>
         <p class="mb-0">
-          <small><a href="http://cs-unplugged.readthedocs.io/en/latest/changelog.html">{{ VERSION_NUMBER }}</a></small>
+          <small><a href="https://cs-unplugged.readthedocs.io/changelog.html">{{ VERSION_NUMBER }}{% if not PRODUCTION_ENVIRONMENT %} - {{ GIT_SHA }}{% endif %}</a></small>
         </p>
       </div>
     </footer>
@@ -261,6 +261,7 @@
     <script>
       glossary_url = "{% url 'topics:glossary_json' %}";
     </script>
+    <script src="{% static 'js/vendors.js' %}"></script>
     <script src="{% static 'js/website.js' %}"></script>
     <script src="https://www.youtube.com/player_api"></script>
     <script src="https://player.vimeo.com/api/player.js"></script>
