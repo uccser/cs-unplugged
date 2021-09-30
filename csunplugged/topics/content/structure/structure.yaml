@@ -5,6 +5,7 @@ topics:
   - sorting-networks
   - kidbots
   - image-representation
+  - data-structures-for-searching
 
 age-groups: age-groups.yaml
 programming-challenges-structure: programming-challenges-structure.yaml

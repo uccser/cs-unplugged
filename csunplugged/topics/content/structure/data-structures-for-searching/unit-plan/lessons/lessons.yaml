@@ -1,0 +1,7 @@
+binary-search-trees:
+  duration: 45
+  computational-thinking-links: binary-search-trees-ct-links.md
+  learning-outcomes:
+    - organise-find-data-bst
+    - assess-efficiency-bst
+    - compare-efficiency-bst

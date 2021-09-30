@@ -561,6 +561,9 @@ ol, ul {
   img {
     @include img-fluid;
   }
+  .figure-img {
+      max-height: 50vh;
+  }
   margin-bottom: $spacer * 0.5;
   @include media-breakpoint-up(md) {
     margin-top: $spacer * 0.5;
