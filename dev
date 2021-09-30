@@ -110,7 +110,7 @@ defhelp reboot_django 'Reboot Django container.'
 # Run Django updatedata command
 cmd_update_data() {
   echo "Loading content..."
-  docker-compose -f docker-compose.local.yml run --rm --label traefik.enable=false django python ./manage.py updatedata
+  docker-compose -f docker-compose.local.yml run --rm --label traefik.enable=false django python ./manage.py updatedata "$@"
 }
 defhelp updatedata 'Load content into database.'
 
