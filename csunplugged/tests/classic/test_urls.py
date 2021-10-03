@@ -11,7 +11,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/activities")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/activities",
+            "https://classic.csunplugged.org/activities",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -20,7 +20,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/artificial-intelligence")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/artificial-intelligence",
+            "https://classic.csunplugged.org/artificial-intelligence",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -29,7 +29,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/binary-numbers")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/binary-numbers",
+            "https://classic.csunplugged.org/binary-numbers",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -38,7 +38,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/books")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/books",
+            "https://classic.csunplugged.org/books",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -56,7 +56,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/class-simulation-computer-unfinished")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/class-simulation-computer-unfinished",
+            "https://classic.csunplugged.org/class-simulation-computer-unfinished",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -65,7 +65,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/community")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/community",
+            "https://classic.csunplugged.org/community",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -74,7 +74,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/community-activties")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/community-activties",
+            "https://classic.csunplugged.org/community-activties",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -87,7 +87,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/contribute")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/contribute",
+            "https://classic.csunplugged.org/contribute",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -96,7 +96,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/cryptographic-protocols")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/cryptographic-protocols",
+            "https://classic.csunplugged.org/cryptographic-protocols",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -105,7 +105,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/curriculum-links")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/curriculum-links",
+            "https://classic.csunplugged.org/curriculum-links",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -114,7 +114,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/databases")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/databases",
+            "https://classic.csunplugged.org/databases",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -123,7 +123,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/divideandconquer")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/divideandconquer",
+            "https://classic.csunplugged.org/divideandconquer",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -132,7 +132,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/dominating-sets")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/dominating-sets",
+            "https://classic.csunplugged.org/dominating-sets",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -141,7 +141,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/error-detection")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/error-detection",
+            "https://classic.csunplugged.org/error-detection",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -150,7 +150,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/events")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/events",
+            "https://classic.csunplugged.org/events",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -159,7 +159,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/finite-state-automata")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/finite-state-automata",
+            "https://classic.csunplugged.org/finite-state-automata",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -168,7 +168,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/graph-colouring")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/graph-colouring",
+            "https://classic.csunplugged.org/graph-colouring",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -177,7 +177,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/harold-the-robot-2")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/harold-the-robot-2",
+            "https://classic.csunplugged.org/harold-the-robot-2",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -186,7 +186,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/human-interface-design")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/human-interface-design",
+            "https://classic.csunplugged.org/human-interface-design",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -195,7 +195,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/image-representation")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/image-representation",
+            "https://classic.csunplugged.org/image-representation",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -204,7 +204,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/information-hiding")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/information-hiding",
+            "https://classic.csunplugged.org/information-hiding",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -213,7 +213,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/information-theory")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/information-theory",
+            "https://classic.csunplugged.org/information-theory",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -222,7 +222,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/line-drawing")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/line-drawing",
+            "https://classic.csunplugged.org/line-drawing",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -231,7 +231,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/minimal-spanning-trees")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/minimal-spanning-trees",
+            "https://classic.csunplugged.org/minimal-spanning-trees",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -240,7 +240,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/modem/")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/modems-unplugged-2",
+            "https://classic.csunplugged.org/activities/community-activities/modems-unplugged/",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -249,7 +249,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/modems-unplugged-2")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/modems-unplugged-2",
+            "https://classic.csunplugged.org/activities/community-activities/modems-unplugged/",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -258,7 +258,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/network-protocols")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/network-protocols",
+            "https://classic.csunplugged.org/network-protocols",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -267,7 +267,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/phylogenetics")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/phylogenetics",
+            "https://classic.csunplugged.org/phylogenetics",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -276,7 +276,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/programming-languages")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/programming-languages",
+            "https://classic.csunplugged.org/programming-languages",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -285,7 +285,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/projects")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/projects",
+            "https://classic.csunplugged.org/projects",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -294,7 +294,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/promotional")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/promotional",
+            "https://classic.csunplugged.org/promotional",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -303,7 +303,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/public-key-encryption")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/public-key-encryption",
+            "https://classic.csunplugged.org/public-key-encryption",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -312,7 +312,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/research")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/research",
+            "https://classic.csunplugged.org/research",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -321,7 +321,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/routing-and-deadlock")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/routing-and-deadlock",
+            "https://classic.csunplugged.org/routing-and-deadlock",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -330,7 +330,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/scout-patrol-encryption")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/scout-patrol-encryption",
+            "https://classic.csunplugged.org/scout-patrol-encryption",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -339,7 +339,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/searching-algorithms")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/searching-algorithms",
+            "https://classic.csunplugged.org/searching-algorithms",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -352,7 +352,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/sorting-algorithms")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/sorting-algorithms",
+            "https://classic.csunplugged.org/sorting-algorithms",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -361,7 +361,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/sorting-networks")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/sorting-networks",
+            "https://classic.csunplugged.org/sorting-networks",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -370,7 +370,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/steiner-trees")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/steiner-trees",
+            "https://classic.csunplugged.org/steiner-trees",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -379,7 +379,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/teachers")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/teachers",
+            "https://classic.csunplugged.org/teachers",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -388,7 +388,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/text-compression")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/text-compression",
+            "https://classic.csunplugged.org/text-compression",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -397,7 +397,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/the-turing-test")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/the-turing-test",
+            "https://classic.csunplugged.org/the-turing-test",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -406,7 +406,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/translations")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/translations",
+            "https://classic.csunplugged.org/translations",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -415,7 +415,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/videos")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/videos",
+            "https://classic.csunplugged.org/videos",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -424,7 +424,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/wp-content/")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/wp-content/",
+            "https://classic.csunplugged.org/wp-content/",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -433,7 +433,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/wp-content/uploads/2015/03/CSUnplugged_OS_2015_v3.1.pdf")
         self.assertRedirects(
             response,
-            "http://classic.csunplugged.org/wp-content/uploads/2015/03/CSUnplugged_OS_2015_v3.1.pdf",
+            "https://classic.csunplugged.org/wp-content/uploads/2015/03/CSUnplugged_OS_2015_v3.1.pdf",
             status_code=301,
             fetch_redirect_response=False
         )
