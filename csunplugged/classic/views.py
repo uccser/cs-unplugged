@@ -42,4 +42,7 @@ def redirect_to_modems_unplugged_2(request):
 
     Returns a 301 permanent redirect HTTP response.
     """
-    return redirect("https://classic.csunplugged.org/activities/community-activities/modems-unplugged/", permanent=True)
+    return redirect(
+        "https://classic.csunplugged.org/activities/community-activities/modems-unplugged/",
+        permanent=True,
+    )
