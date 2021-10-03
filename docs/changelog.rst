@@ -839,7 +839,7 @@ The following topics are available in this version:
 ==============================================================================
 
 - **Release date:** 11th January 2016
-- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_2015_v3.2.2.docx>`__
+- **Downloads:** `Word document <https://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_2015_v3.2.2.docx>`__
 
 **Changelog:**
 
@@ -849,7 +849,7 @@ The following topics are available in this version:
 ==============================================================================
 
 - **Release date:** 6th January 2016
-- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_2015_v3.2.1.docx>`__
+- **Downloads:** `Word document <https://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_2015_v3.2.1.docx>`__
 
 **Changelog:**
 
@@ -859,7 +859,7 @@ The following topics are available in this version:
 ==============================================================================
 
 - **Release date:** 5th January 2016
-- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_2015_v3.2.docx>`__
+- **Downloads:** `Word document <https://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_2015_v3.2.docx>`__
 
 **Changelog:**
 
@@ -870,7 +870,7 @@ The following topics are available in this version:
 ==============================================================================
 
 - **Release date:** March 2015
-- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/03/CSUnplugged_OS_2015_v3.1.docx>`__ and `PDF document <http://classic.csunplugged.org/wp-content/uploads/2015/03/CSUnplugged_OS_2015_v3.1.pdf>`__
+- **Downloads:** `Word document <https://classic.csunplugged.org/wp-content/uploads/2015/03/CSUnplugged_OS_2015_v3.1.docx>`__ and `PDF document <https://classic.csunplugged.org/wp-content/uploads/2015/03/CSUnplugged_OS_2015_v3.1.pdf>`__
 
 **Changelog:**
 
@@ -887,7 +887,7 @@ The following topics are available in this version:
 ==============================================================================
 
 - **Release date:** 2012
-- **Downloads:** `Part 1 Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_Part1_2012.docx>`__ and `Part 2 Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_Part2_2012.doc>`__
+- **Downloads:** `Part 1 Word document <https://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_Part1_2012.docx>`__ and `Part 2 Word document <https://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_Part2_2012.doc>`__
 
 **Changelog:**
 
@@ -898,7 +898,7 @@ The following topics are available in this version:
 ==============================================================================
 
 - **Release date:** 2010
-- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/unplugged-v2-teachers-March2010.doc>`__
+- **Downloads:** `Word document <https://classic.csunplugged.org/wp-content/uploads/2015/01/unplugged-v2-teachers-March2010.doc>`__
 
 **Changelog:**
 
@@ -911,7 +911,7 @@ The following topics are available in this version:
 ==============================================================================
 
 - **Release date:** Mid 1990s
-- **Downloads:** `PDF document <http://classic.csunplugged.org/wp-content/uploads/2015/01/unplugged-book-v1.pdf>`__ and `LaTeX source <http://classic.csunplugged.org/wp-content/uploads/2015/01/unplugged-book-v1-latex-source.zip>`__
+- **Downloads:** `PDF document <https://classic.csunplugged.org/wp-content/uploads/2015/01/unplugged-book-v1.pdf>`__ and `LaTeX source <https://classic.csunplugged.org/wp-content/uploads/2015/01/unplugged-book-v1-latex-source.zip>`__
 
 **Changelog:**
 

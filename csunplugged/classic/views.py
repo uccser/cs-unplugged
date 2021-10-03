@@ -37,7 +37,7 @@ def redirect_to_changelog(request):
     return redirect("https://cs-unplugged.readthedocs.io/changelog.html", permanent=True)
 
 
-def redirect_to_modems_unplugged_2(request):
+def redirect_to_modems_unplugged(request):
     """Redirect request to specific modems page.
 
     Returns a 301 permanent redirect HTTP response.
