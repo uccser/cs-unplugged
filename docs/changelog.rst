@@ -45,6 +45,7 @@ All notable changes to this project will be documented in this file.
 - Scratch blocks are updated from Scratch 2 to Scratch 3.
 - Fix bug when plural was displayed when there is only one object.
 - Update links to Classic CS Unplugged.
+- Add open/close icon to detail panels.
 - Simplify flags for makeresources management command.
 - Switch to GitHub dependency manager.
 - Dependency changes:
