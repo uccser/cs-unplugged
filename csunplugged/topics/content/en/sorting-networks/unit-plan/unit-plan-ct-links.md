@@ -116,8 +116,7 @@ Could this problem be solved easier by a non-parallel system?
 
 A very important rule for the data that Sorting Networks can process is the data
 must have something called a transitive relation.
-The transitive relation means: if a is less than b, and b is less than c, then a
-is less than c.
+The transitive relation means: if 'a' is less than 'b', and 'b' is less than 'c', then 'a' is less than 'c'.
 For example, numbers have a transitive relation: the number 5 is less than 10,
 and 10 is less than 15, which means that 5 must also be less than 15.
 Data must have this relation for a Sorting Network to be able to sort it.

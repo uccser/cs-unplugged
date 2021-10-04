@@ -107,7 +107,7 @@ These trees rely on the logic that if we are following one branch, then one can 
 This is because of the simple relationship between the nodes in the tree, and the nodes that they connect to.
 As with the data we could use in a sorting network, any data can be put into a binary search tree as long as it has what is called a "transitive relation".
 For example, numbers have a transitive relation based on "less than": the number 5 is less than 10, and 10 is less than 15, which means that 5 must also be less than 15.
-In general, this transitive relation means: if a is less than b, and b is less than c, then a is less than c.
+In general, this transitive relation means: if 'a' is less than 'b', and 'b' is less than 'c', then 'a' is less than 'c'.
 If items don’t have this relation then there is no logical way for us to figure out where to put it in the tree!
 Not all relations are transitive; for example, consider the relation "is standing next to".
 If Arnold is standing next to Tim, and Tim is standing next to Caitlin, it doesn't necessarily mean that Arnold is standing next to Caitlin.
