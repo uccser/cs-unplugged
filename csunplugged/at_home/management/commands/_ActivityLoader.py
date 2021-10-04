@@ -12,7 +12,7 @@ from at_home.models import Activity
 
 INTRODUCTION_FILENAME = 'introduction.md'
 ACTIVITY_STEPS_FILENAME = 'activity-steps.yaml'
-ACTIVITY_EXTRA_INFORMATION_FILENMAE = 'activity-extra-information.md'
+ACTIVITY_EXTRA_INFORMATION_FILENAME = 'activity-extra-information.md'
 INSIDE_THE_COMPUTER_FILENAME = 'inside-the-computer.md'
 PROJECT_FILENAME = 'project.md'
 MORE_INFORMATION_FILENAME = 'more-information.md'
@@ -70,12 +70,12 @@ class ActivityLoader(TranslatableModelLoader):
 
         activity_extra_info_md_file_path = self.get_localised_file(
             language,
-            ACTIVITY_EXTRA_INFORMATION_FILENMAE,
+            ACTIVITY_EXTRA_INFORMATION_FILENAME,
         )
         activity_extra_info_exists = os.path.exists(activity_extra_info_md_file_path)
         if activity_extra_info_exists:
             activity_extra_info_translations = self.get_markdown_translations(
-                ACTIVITY_EXTRA_INFORMATION_FILENMAE,
+                ACTIVITY_EXTRA_INFORMATION_FILENAME,
                 heading_required=False,
                 remove_title=False,
             )
@@ -124,7 +124,7 @@ class ActivityLoader(TranslatableModelLoader):
             defaults={
                 'order_number': order_number,
                 'icon': activity_icon,
-            }
+            },
         )
 
         self.populate_translations(activity, activity_translations)

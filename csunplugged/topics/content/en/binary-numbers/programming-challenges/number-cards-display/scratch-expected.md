@@ -6,7 +6,7 @@ Click on the green flag, enter the inputs provided in the “testing examples”
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 set [number of dots v] to [1]
 
 set [number of dots v] to ((number of dots) * (2))
@@ -14,7 +14,7 @@ set [number of dots v] to ((number of dots) * (2))
 set [number of cards v] to (answer)
 ```
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [How many cards would you like to display?] and wait

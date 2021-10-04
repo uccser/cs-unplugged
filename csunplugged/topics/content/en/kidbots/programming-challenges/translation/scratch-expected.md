@@ -6,15 +6,15 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 set [sides v] to [50]
 ```
 
-```scratch:split:random
+```scratch
 clear
 
 pen down
@@ -24,7 +24,7 @@ pen up
 set pen size to (3)
 ```
 
-```scratch:split:random
+```scratch
 go to x: (-180) y: (-50)
 
 point in direction (0 v)
@@ -66,7 +66,7 @@ turn ccw ((180) - (45)) degrees
 turn ccw ((180) - (90)) degrees
 ```
 
-```scratch:split:random
+```scratch
 repeat (2)
 end
 

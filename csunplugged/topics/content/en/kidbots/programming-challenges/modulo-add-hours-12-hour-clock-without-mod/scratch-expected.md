@@ -6,11 +6,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 set [original time v] to (answer)
 
 set [hours to add v] to (answer)
@@ -20,17 +20,17 @@ set [new time v] to ((original time) + (hours to add))
 change [new time v] by (-12)
 ```
 
-```scratch:split:random
+```scratch
 ask [Enter a time:] and wait
 
 ask [Enter the number of hours to add:] and wait
 ```
 
-```scratch:split:random
+```scratch
 say (join [The new time is ] (join (new time) [ o'clock.]))
 ```
 
-```scratch:split:random
+```scratch
 repeat until <<(new time) < [12]> or <(new time) = [12]>>
 end
 ```

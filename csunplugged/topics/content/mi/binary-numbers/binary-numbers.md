@@ -1,0 +1,3 @@
+# He nama tāhūrua
+
+Ka whakamahi ngā rorohiko o nāianei i ngā mati hei whakaahuahanga i te mōhiohio - koia te take e kīia ai he pūnaha matihiko. Ko te rautaki māmā, ko te rautaki o ia rā hei whakaahuahanga i ngā mati, ko te pūnaha tāhūrua, ka whakamahi i ngā mati e rua noa iho (ka tuhia te 0 me te 1 i te nuinga o ngā wā). Ka kīia ko te tāhūrua nā te mea e rua noa iho ngā mati e whakamahia ana, arā, e rua ngā tūnga. Kei tēnei kōwae ako me ngā akoranga e whai ake nei, ka tūhuratia te mahi a te pūnaha tāhūrua, me te nui o te whai mārama ki te whakaahuahanga raraunga.

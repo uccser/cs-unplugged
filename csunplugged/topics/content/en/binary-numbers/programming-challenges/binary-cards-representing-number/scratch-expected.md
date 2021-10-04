@@ -6,7 +6,7 @@ Click on the green flag, enter the inputs provided in the “testing examples”
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Please enter a number between 0 and 31:] and wait
@@ -21,7 +21,7 @@ end
 say (join (join (join [The binary representation for the number ] (answer)) [ is ]) (cards))
 ```
 
-```scratch:split:random
+```scratch
 set [number v] to (answer)
 
 set [bit value v] to [32]

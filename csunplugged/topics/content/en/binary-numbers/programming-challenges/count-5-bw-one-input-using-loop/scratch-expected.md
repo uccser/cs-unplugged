@@ -6,7 +6,7 @@ Click on the green flag, enter the inputs provided in the “testing examples”
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Please enter 5 cards (B for black and W for white):] and wait
@@ -22,7 +22,7 @@ change [index v] by (1)
 say (total number of dots)
 ```
 
-```scratch:split:random
+```scratch
 set [total number of dots v] to [0]
 
 set [index v] to [1]

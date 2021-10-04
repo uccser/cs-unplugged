@@ -6,7 +6,8 @@ Pāwhiria te haki kākāriki kia kite ai i ngā tāputa o tō papatono.
 
 # He paraka hei tauira
 
-<pre><code class="scratch:split:random">ina pāwhiria te haki
+```scratch
+ina pāwhiria te haki
 
 kīia [1] mō ngā hēkona (1)
 
@@ -17,6 +18,6 @@ kīia [4] mō ngā hēkona (1)
 kīia [8] mō ngā hēkona (1)
 
 kīia [16] mō ngā hēkona (1)
-</code></pre>
+```
 
 {panel end}

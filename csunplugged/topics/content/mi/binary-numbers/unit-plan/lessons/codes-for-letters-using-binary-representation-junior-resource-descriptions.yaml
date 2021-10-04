@@ -1,0 +1,7 @@
+---
+binary-cards:
+  description: Kōtahi te huinga hei whakaaturanga mā te akomanga.
+binary-cards-small:
+  description: Kotahi te huinga kāri mā ia ākonga.
+binary-to-alphabet:
+  description: He whārangi wātea mā ngā ākonga, me te pepa whakautu mō te kaiako.

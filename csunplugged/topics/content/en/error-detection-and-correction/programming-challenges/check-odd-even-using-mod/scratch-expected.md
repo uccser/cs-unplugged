@@ -7,7 +7,7 @@ see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Enter a number:] and wait
@@ -19,7 +19,7 @@ else
 end
 ```
 
-```scratch:split:random
+```scratch
 say [You entered an even number!]
 
 say [You entered an odd number!]

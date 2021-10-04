@@ -6,11 +6,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 clear
 
 set pen size to (3)
@@ -20,13 +20,13 @@ pen down
 pen up
 ```
 
-```scratch:split:random
+```scratch
 set [angle v] to (answer)
 
 ask [Enter an angle between 0 and 180 (not including 0 and 180):] and wait
 ```
 
-```scratch:split:random
+```scratch
 go to x: (0) y: (0)
 
 go to x: (0) y: (0)
@@ -40,7 +40,7 @@ move (100) steps
 turn ccw ((180) - (angle)) degrees
 ```
 
-```scratch:split:random
+```scratch
 say [This is an acute triangle.] for (2) secs
 
 say [This is a right triangle.] for (2) secs
@@ -48,7 +48,7 @@ say [This is a right triangle.] for (2) secs
 say [This is an obtuse triangle.] for (2) secs
 ```
 
-```scratch:split:random
+```scratch
 if <(angle) < [90]> then
 end
 
