@@ -24,7 +24,7 @@ Can they give an algorithm to find the smallest or largest value in the tree wit
 
 Binary search trees are a type of data structure, and so can be used with any type of data, as long as that data can be put into an order.
 When we use a binary search tree its structure also allows us to ignore much of the information it contains, and focus only on the information that we need at the time.
-This is because when we use it we only ever have to look at one node at a time, and have no need to look at any others in the tree, until we move on to another. 
+This is because when we use it we only ever have to look at one node at a time, and have no need to look at any others in the tree, until we move on to another.
 
 #### Examples of what you could look for:
 
@@ -57,7 +57,7 @@ Students who have previously used sorting networks will probably notice many sim
 As with a sorting network, at each node a comparison is made between two numbers, and the result of this comparison tells you where to go next.
 The interesting thing to observe here is that using just one very simple comparison operation (in different ways), we are able to both sort data into order, and search through it.
 Another connection between these two activities is the type of data that can be used - the data must have something called a "transitive relation".
-This is further explained under logic, and also in the sorting networks unit plan under logic. 
+This is further explained under logic, and also in the [Sorting networks unit plan]('topics:unit_plan' 'sorting-networks' 'unit-plan') under logic.
 Because it is based on a simple comparison step, any type of data that can be sorted using a sorting network can also be placed into a binary search tree.
 As binary search trees are abstract data structures, they can be generalised for use with any type of data that can be put into some kind of order.
 The other connection students will likely make is between binary search trees, and binary search! While the names are almost the same, the actual pattern they both follow is subtly different, although they both make use of the divide and conquer strategy.
@@ -91,7 +91,7 @@ However if we need to add more data in the future then a binary search tree is a
 
 #### Examples of what you could look for:
 
-Can students identify what makes an efficient binary search tree and what makes an inefficient one? 
+Can students identify what makes an efficient binary search tree and what makes an inefficient one?
 
 Can they compare the pros and cons of using sorted lists and trees in different situations?
 
@@ -107,7 +107,7 @@ These trees rely on the logic that if we are following one branch, then one can 
 This is because of the simple relationship between the nodes in the tree, and the nodes that they connect to.
 As with the data we could use in a sorting network, any data can be put into a binary search tree as long as it has what is called a "transitive relation".
 For example, numbers have a transitive relation based on "less than": the number 5 is less than 10, and 10 is less than 15, which means that 5 must also be less than 15.
-In general, this transitive relation means: if a is less than b, and b is less than c, then a is less than c. 
+In general, this transitive relation means: if a is less than b, and b is less than c, then a is less than c.
 If items don’t have this relation then there is no logical way for us to figure out where to put it in the tree!
 Not all relations are transitive; for example, consider the relation "is standing next to".
 If Arnold is standing next to Tim, and Tim is standing next to Caitlin, it doesn't necessarily mean that Arnold is standing next to Caitlin.
