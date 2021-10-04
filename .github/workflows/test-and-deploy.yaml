@@ -108,6 +108,7 @@ jobs:
       || github.event_name == 'release'
     runs-on: ubuntu-20.04
     needs: [
+      test-django-system-check,
       test-content,
       test-general,
       test-resources,
@@ -149,6 +150,7 @@ jobs:
       || github.event_name == 'release'
     runs-on: ubuntu-20.04
     needs: [
+      test-django-system-check,
       test-content,
       test-general,
       test-resources,
@@ -207,6 +209,7 @@ jobs:
         ]
       fail-fast: true
     needs: [
+      test-django-system-check,
       test-content,
       test-general,
       test-resources,
