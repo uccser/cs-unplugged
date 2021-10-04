@@ -92,36 +92,36 @@ It's helpful to use these terms with the class so that they get used to them.
 
 ## Searching the tree
 
-1. Reveal what is under the disc at the root, which in the example has the number 40.
+1.  Reveal what is under the disc at the root, which in the example has the number 40.
 
-{image file-path="img/topics/binary-search-tree-numbers-step-1.png" alt="A binary search tree with the number 40 at the root."}
+    {image file-path="img/topics/binary-search-tree-numbers-step-1.png" alt="A binary search tree with the number 40 at the root."}
 
-2. Explain that we're looking for the number 25 in this tree.
-   There is a simple rule: everything down the left branch of a disc is smaller than the value shown, and everything down the right branch is larger.
+2.  Explain that we're looking for the number 25 in this tree.
+    There is a simple rule: everything down the left branch of a disc is smaller than the value shown, and everything down the right branch is larger.
 
-3. Ask which branch the number 25 should be down. (It is smaller than 40, so it must be down the left branch, since everything smaller is down the left).
+3.  Ask which branch the number 25 should be down. (It is smaller than 40, so it must be down the left branch, since everything smaller is down the left).
 
-4. Turn the first disc back over (so that students don't easily remember what was on it), and follow the left branch, revealing the number under the next disc.
-   In this case it is 23. Ask if 25 will be left or right from 23? (It is larger, so it will be down the right branch.)
+4.  Turn the first disc back over (so that students don't easily remember what was on it), and follow the left branch, revealing the number under the next disc.
+    In this case it is 23. Ask if 25 will be left or right from 23? (It is larger, so it will be down the right branch.)
 
-{image file-path="img/topics/binary-search-tree-numbers-step-2.png" alt="A binary search tree with the root hidden. The left branch from the root has the number 23 shown."}
+    {image file-path="img/topics/binary-search-tree-numbers-step-2.png" alt="A binary search tree with the root hidden. The left branch from the root has the number 23 shown."}
 
-5. Hide the 23 again, and reveal the disc down the right branch, which is 30.
-   Ask if we should go left or right? (Left, because 25 is less than 30; students may also observe that there's no choice, but that isn't relevant, as you must go left if the number is smaller).
+5.  Hide the 23 again, and reveal the disc down the right branch, which is 30.
+    Ask if we should go left or right? (Left, because 25 is less than 30; students may also observe that there's no choice, but that isn't relevant, as you must go left if the number is smaller.)
 
-{image file-path="img/topics/binary-search-tree-numbers-step-3.png" alt="The right branch from node 23 shows the number 30."}
+    {image file-path="img/topics/binary-search-tree-numbers-step-3.png" alt="The right branch from node 23 shows the number 30."}
 
-6. Hide the 30, and reveal the disc down the left, which is 25. You have located the disc you were searching for.
+6.  Hide the 30, and reveal the disc down the left, which is 25. You have located the disc you were searching for.
 
-{image file-path="img/topics/binary-search-tree-numbers-step-4.png" alt="The left branch from node 30 shows the number 25."}
+    {image file-path="img/topics/binary-search-tree-numbers-step-4.png" alt="The left branch from node 30 shows the number 25."}
 
 ## Finding another number
 
-8. Make sure all the discs are hidden, and return to the root.
+1.  Make sure all the discs are hidden, and return to the root.
 
-9. This time ask the students for directions to find the number 55.
-   (They should work out that this requires going right at 40, right at 44, right at 48, and left at 91.)
-   Remember to flip each disc back after looking at it, to avoid students memorising the tree.
+2.  This time ask the students for directions to find the number 55.
+    (They should work out that this requires going right at 40, right at 44, right at 48, and left at 91.)
+    Remember to flip each disc back after looking at it, to avoid students memorising the tree.
 
 ## What if the number isn't there?
 
@@ -148,7 +148,7 @@ It's a very simple "tree" at this stage, with just one value in it!!
 But it gets more interesting as you add more values.
 Once the root is put down, students can add each value as for "adding a value" above i.e. search for where it belongs, and when you get to the end of the path, add it as a branch from the disc that you got to.
 For example, suppose we're making a tree with the numbers 45, 23, 26 then 76.
-The tree would be built up as follows.
+The tree would be built up as follows:
 
 {image file-path="img/topics/binary-search-tree-numbers-step-6.png" alt="Constructing a binary search tree with the numbers 45, 23, 26 and 76."}
 
@@ -204,16 +204,16 @@ Everyone should agree that it’s higher, so draw a long branch to the right.
 
 Repeat this process as a class until students understand how to add a new word correctly.
 
-Once they do, put students into groups of 3, where one person holds the word and makes the decisions, the other person draws the branch once a decision is made, and the third person confirms that the person is correct.
+Once they do, put students into groups of 3, where one person holds the word and makes the decisions, another person draws the branch once a decision is made, and the third person confirms it is correct.
 (This is important because if the binary search tree is built incorrectly, then it won’t be reliable).
 Once the the teams are ready, have them line up behind the root word and set teams off in 20 second intervals, until all words have been placed on the tree.
 Once the binary search tree is set up, then work through different scenarios, including:
 
--    Adding a new word - how many words can we add to our binary tree search? (There is no limit).
+-    Adding a new word - how many words can we add to our binary tree search? (There is no limit.)
 
 -    Finding different words and counting how many nodes need to be checked. (Some will be near the root, but usually will be further down the tree.)
 
--    Can we reliably accept that if a word isn’t found in the binary search tree by following the left/right rule, that it isn’t there? (If it is built accurately, then you can be sure that it's not down another branch of the tree that wasn't explored; if students make a mistake placing a node, this could be a learning point, since that node probably can’t be found in future searches).
+-    Can we reliably accept that if a word isn’t found in the binary search tree by following the left/right rule, that it isn’t there? (If it is built accurately, then you can be sure that it's not down another branch of the tree that wasn't explored; if students make a mistake placing a node, this could be a learning point, since that node probably can’t be found in future searches.)
 
 {panel type="teaching"}
 
@@ -291,7 +291,7 @@ In fact, every time the number of items being searched doubles, it only takes a 
 Have students create a new tree where you give them numbers in ascending order (e.g. 2, 12, 21, 23, 41, 45...), instead of random order.
 For example, below is a tree where we've added the numbers 5, 10, 15 and so on; as a result, every branch is a right branch.
 It works, but if we keep getting new numbers to add in increasing order, they will form a long chain of right branches, and it is slow to find things in it.
-As students add numbers like 50, 55, 60, and so on, and they will see that it gets to be a long way from the root to a leaf.
+As students add numbers like 50, 55, 60, and so on, they will see that it gets to be a long way from the root to a leaf.
 Luckily it’s usual for data to arrive in a random order, and you don't get these patterns.
 The paradox about binary search trees is that they perform the worst when you give them ordered information, and are much better when it's random!
 In practice this situation can be avoided easily using some simple changes to the algorithm for adding nodes.
