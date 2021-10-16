@@ -41,14 +41,30 @@
                       </strong>
                     </li>
                     <li>
-                      {{ topic.lessons.count }} {% trans "lessons" %}
+                      {% blocktrans count topic.lessons.count as num_lessons %}
+                        {{ num_lessons }} lesson
+                        {% plural %}
+                        {{ num_lessons }} lessons
+                      {% endblocktrans %}
                     </li>
                   {% endif %}
                   {% if topic.curriculum_integrations.exists %}
-                    <li>{{ topic.curriculum_integrations.count }} {% trans "curriculum integrations" %}</li>
+                    <li>
+                      {% blocktrans count topic.curriculum_integrations.count as num_curriculum_integrations %}
+                        {{ num_curriculum_integrations }} curriculum integration
+                        {% plural %}
+                        {{ num_curriculum_integrations }} curriculum integrations
+                      {% endblocktrans %}
+                    </li>
                   {% endif %}
                   {% if topic.programming_challenges.exists %}
-                    <li>{{ topic.programming_challenges.count }} {% trans "programming challenges" %}</li>
+                    <li>
+                      {% blocktrans count topic.programming_challenges.count as num_programming_challenges %}
+                        {{ num_programming_challenges }} programming challenge
+                        {% plural %}
+                        {{ num_programming_challenges }} programming challenges
+                      {% endblocktrans %}
+                    </li>
                   {% endif %}
                 </ul>
               </div>

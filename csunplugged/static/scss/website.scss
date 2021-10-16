@@ -247,6 +247,10 @@ details {
   overflow: hidden;
   background-color: $gray-lighter;
 
+  &[open] summary:before {
+    content: '⊖';
+  }
+
   summary {
     background-color: $details-summary-bg;
     color: $gray-dark;
@@ -255,6 +259,16 @@ details {
     padding: ($spacer * .25) ($spacer * .25) ($spacer * .25) $spacer;
     display: flex;
     align-items: center;
+    list-style: none;
+    &::-webkit-details-marker {
+        display: none;
+    }
+    &:before {
+        content: '⊕';
+        margin-right: 0.5rem;
+        padding-bottom: 0.15rem;
+        opacity: .6;
+    }
     .inline-image {
       margin-top: 0.2rem;
       margin-bottom: 0.2rem;
@@ -560,6 +574,9 @@ ol, ul {
 .img-container {
   img {
     @include img-fluid;
+  }
+  .figure-img {
+      max-height: 50vh;
   }
   margin-bottom: $spacer * 0.5;
   @include media-breakpoint-up(md) {
@@ -884,4 +901,8 @@ button:hover .icon-search {
 .scratchblocks-inline > svg {
     height: 2.5rem;
     width: auto;
+}
+
+#classic-cs-unplugged-logo {
+    height: 5rem;
 }

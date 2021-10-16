@@ -78,9 +78,6 @@ cmd_update() {
   cmd_update_data
 
   echo ""
-  cmd_rebuild_index
-
-  echo ""
   cmd_make_resource_thumbnails
   cmd_collect_static
 
@@ -92,14 +89,14 @@ defhelp update 'Run Django migrate and updatedata commands and build static file
 # Run Django makemigrations command
 cmd_makemigrations() {
   echo "Creating database migrations..."
-  docker-compose -f docker-compose.local.yml run --rm --label traefik.enable=false django python ./manage.py makemigrations --no-input
+  docker-compose -f docker-compose.local.yml exec django python ./manage.py makemigrations --no-input
 }
 defhelp makemigrations 'Run Django makemigrations command.'
 
 # Run Django migrate command
 cmd_migrate() {
   echo "Applying database migrations..."
-  docker-compose -f docker-compose.local.yml run --rm --label traefik.enable=false django python ./manage.py migrate
+  docker-compose -f docker-compose.local.yml exec django python ./manage.py migrate
 }
 defhelp migrate 'Run Django migrate command.'
 
@@ -113,7 +110,7 @@ defhelp reboot_django 'Reboot Django container.'
 # Run Django updatedata command
 cmd_update_data() {
   echo "Loading content..."
-  docker-compose -f docker-compose.local.yml run --rm --label traefik.enable=false django python ./manage.py updatedata
+  docker-compose -f docker-compose.local.yml run --rm --label traefik.enable=false django python ./manage.py updatedata "$@"
 }
 defhelp updatedata 'Load content into database.'
 
@@ -160,6 +157,13 @@ defhelp makeresourcethumbnails 'Run Django makeresourcethumbnails command.'
 cmd_make_resources() {
   echo "Creating static resource PDFs..."
   docker-compose -f docker-compose.local.yml run --rm --label traefik.enable=false django python ./manage.py makeresources
+}
+defhelp makeresources 'Run Django makeresources command.'
+
+# Run Django makeresources command
+cmd_makemessages() {
+  echo "Running Django makemessages command..."
+  docker-compose -f docker-compose.local.yml exec django python ./manage.py makemessages -l en
 }
 defhelp makeresources 'Run Django makeresources command.'
 

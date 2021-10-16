@@ -111,11 +111,11 @@ urlpatterns = [
     ),
     path(
         'modem/',
-        views.redirect_to_modems_unplugged_2,
+        views.redirect_to_modems_unplugged,
     ),
     path(
         'modems-unplugged-2',
-        views.redirect_to_classic_unplugged,
+        views.redirect_to_modems_unplugged,
     ),
     path(
         'network-protocols',

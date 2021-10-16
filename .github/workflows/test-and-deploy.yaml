@@ -3,12 +3,27 @@ name: Test and deploy
 on:
   workflow_dispatch:
   push:
+  release:
+    types: [published]
 
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
+  test-django-system-check:
+    name: Tests - Django system check
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Create Docker network
+        run: docker network create uccser-development-proxy
+      - name: Start systems
+        run: docker-compose -f docker-compose.local.yml up -d
+      - name: Run Django system check
+        run: docker-compose -f docker-compose.local.yml run --rm django python ./manage.py check --fail-level WARNING
+
   test-content:
     name: Tests - Content
     runs-on: ubuntu-20.04
@@ -27,8 +42,6 @@ jobs:
         run: docker-compose -f docker-compose.local.yml run --rm django python ./manage.py migrate
       - name: Load content
         run: docker-compose -f docker-compose.local.yml run --rm django python ./manage.py updatedata
-      - name: Rebuild search
-        run: docker-compose -f docker-compose.local.yml run --rm django python ./manage.py rebuild_index --noinput
       - name: Make resource thumbnails
         run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py makeresourcethumbnails
       - name: Collect static files
@@ -92,8 +105,10 @@ jobs:
     if: |
       (github.ref == 'refs/heads/develop')
       || startsWith(github.ref, 'refs/heads/research-study-')
+      || github.event_name == 'release'
     runs-on: ubuntu-20.04
     needs: [
+      test-django-system-check,
       test-content,
       test-general,
       test-resources,
@@ -132,8 +147,10 @@ jobs:
     if: |
       (github.ref == 'refs/heads/develop')
       || startsWith(github.ref, 'refs/heads/research-study-')
+      || github.event_name == 'release'
     runs-on: ubuntu-20.04
     needs: [
+      test-django-system-check,
       test-content,
       test-general,
       test-resources,
@@ -178,6 +195,7 @@ jobs:
     if: |
       (github.ref == 'refs/heads/develop')
       || startsWith(github.ref, 'refs/heads/research-study-')
+      || github.event_name == 'release'
     runs-on: ubuntu-20.04
     strategy:
       matrix:
@@ -191,6 +209,7 @@ jobs:
         ]
       fail-fast: true
     needs: [
+      test-django-system-check,
       test-content,
       test-general,
       test-resources,
@@ -235,6 +254,7 @@ jobs:
     if: |
       (github.ref == 'refs/heads/develop')
       || startsWith(github.ref, 'refs/heads/research-study-')
+      || github.event_name == 'release'
     runs-on: ubuntu-20.04
     needs: [
       create-static-files,
@@ -270,18 +290,16 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Docker metadata
-        if: |
-          (github.ref == 'refs/heads/develop')
-          || startsWith(github.ref, 'refs/heads/research-study-')
         id: meta
         uses: docker/metadata-action@v3
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=ref,event=branch,enable=true
+            type=ref,event=tag,priority=1
+            type=ref,event=branch,priority=2
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v2.6.1
+        uses: docker/build-push-action@v2.7.0
         with:
           file: ./infrastructure/production/django/Dockerfile
           context: .

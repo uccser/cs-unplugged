@@ -27,7 +27,9 @@ ARG APP_HOME=/app
 # Set environment variables
 ENV LANG C.UTF-8
 ENV DEPLOYED=False
+# Turns off buffering for easier container logging
 ENV PYTHONUNBUFFERED 1
+# Keeps Python from generating .pyc files in the container
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV BUILD_ENV ${BUILD_ENVIRONMENT}
 

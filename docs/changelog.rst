@@ -23,6 +23,101 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+6.3.0
+==============================================================================
+
+**Release date:** 4th October 2021
+
+**Changelog:**
+
+- New topic "Data structures for searching":
+
+  - Includes binary search trees lesson, aimed at ages 11 to 14. `#1559 <https://github.com/uccser/cs-unplugged/pull/1559>`__
+
+- Add Māori subtitles for videos.
+- Move website from Google Cloud Platform to Docker Swarm hosted at the University of Canterbury.  `#1616 <https://github.com/uccser/cs-unplugged/pull/1616>`__
+
+  - Modifies website infrastructure to use Docker Swarm, running all website components as services.
+  - Static files are now served by Django.
+  - Use GitHub actions for automated workflows. This includes testing, deployment, and internationalisation jobs.
+  - Simplify static file pipeline, runs as separate Docker service.
+
+- Scratch blocks are updated from Scratch 2 to Scratch 3.
+- Fix bug when plural was displayed when there is only one object.
+- Update links to Classic CS Unplugged.
+- Add open/close icon to detail panels.
+- Simplify flags for makeresources management command.
+- Switch to GitHub dependency manager.
+- Dependency changes:
+
+  - Add ansi-colors 4.1.1.
+  - Add browser-sync 2.27.5.
+  - Add cssnano 5.0.8.
+  - Add del 4.1.1.
+  - Add django-haystack[elasticsearch] 3.1.1.
+  - Add elasticsearch 5.5.3.
+  - Add fancy-log 1.3.3.
+  - Add gulp-concat 2.6.1.
+  - Add gulp-error-handle 1.0.1.
+  - Add gulp-imagemin 7.0.0.
+  - Add pixrem 5.0.0.
+  - Add postcss 8.3.8.
+  - Add sass 1.42.1.
+  - Add whitenoise 5.3.0.
+  - Update autoprefixer from 9.5.1 to 10.3.6.
+  - Update bootstrap from 4.4.1 to 4.6.0.
+  - Update browserify from 16.2.3 to 17.0.0.
+  - Update codemirror from 5.52.2 to 5.63.1.
+  - Update coverage from 5.3.1 to 5.5.
+  - Update crowdin/github-action from 1.0.18 to 1.4.0.
+  - Update django from 2.2.12 to 3.2.6.
+  - Update django-debug-toolbar from 3.1.1 to 3.2.2.
+  - Update django-enviro from 0.4.5 to 0.7.0.
+  - Update django-extensions from 3.0.9 to 3.1.3.
+  - Update django-modeltranslation from 0.16.1 to 0.17.3.
+  - Update flake8 from 3.8.4 to 3.9.2.
+  - Update gulp-filter from 5.1.0 to 7.0.0.
+  - Update gulp-if from 2.0.2 to 3.0.0.
+  - Update gulp-postcss from 8.0.0 to 9.0.1.
+  - Update gulp-sass from 4.0.2 to 5.0.0.
+  - Update gulp-sourcemaps from 2.6.5 to 3.0.0.
+  - Update gulp-tap from 1.0.1 to 2.0.0.
+  - Update gulp-terser from 1.1.7 to 2.1.0.
+  - Update gunicorn from 19.9.0 to 20.1.0.
+  - Update intro.js from 2.9.3 to 4.2.2.
+  - Update jquery from 3.4.1 to 3.6.0.
+  - Update multiple-select 1.2.1 to 1.5.2.
+  - Update Pillow from 8.1.0 to 8.3.2.
+  - Update popper.js from 1.15.0 to 1.16.1.
+  - Update postcss-flexbugs-fixes from 4.1.0 to 5.0.2.
+  - Update psycopg2 from 2.7.6.1 to 2.9.1.
+  - Update pydocstyle from 5.1.1 to 6.1.1.
+  - Update PyYAML from 5.3.1 to 5.4.
+  - Update requests from 2.25.1 to 2.26.0.
+  - Update scratchblocks from 3.1.2 to UCCSER variant.
+  - Update sphinx from 3.4.3 to 4.2.0.
+  - Update sphinx-rtd-theme from 0.5.1 to 1.0.0.
+  - Update tqdm from 4.51.0 to 4.62.3.
+  - Update uniseg from 0.7.1 to 0.7.1.post2.
+  - Update verto from 0.10.0 to 1.0.1.
+  - Update weasyprint from 52.2 to 52.4.
+  - Update yargs from 13.2.4 to 17.2.1.
+  - Update yattag from 1.12.2 to 1.14.0.
+  - Remove django-haystack.
+  - Remove gulp-jshint.
+  - Remove gulp-notify.
+  - Remove gulp-rename.
+  - Remove gulp-util.
+  - Remove gulplog.
+  - Remove jshint-stylish.
+  - Remove jshint.
+  - Remove request.
+  - Remove run-sequence.
+  - Remove sticky-state.
+  - Remove through2.
+  - Remove wheel.
+  - Remove Whoosh.
+
 6.2.1
 ==============================================================================
 
@@ -745,7 +840,7 @@ The following topics are available in this version:
 ==============================================================================
 
 - **Release date:** 11th January 2016
-- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_2015_v3.2.2.docx>`__
+- **Downloads:** `Word document <https://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_2015_v3.2.2.docx>`__
 
 **Changelog:**
 
@@ -755,7 +850,7 @@ The following topics are available in this version:
 ==============================================================================
 
 - **Release date:** 6th January 2016
-- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_2015_v3.2.1.docx>`__
+- **Downloads:** `Word document <https://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_2015_v3.2.1.docx>`__
 
 **Changelog:**
 
@@ -765,7 +860,7 @@ The following topics are available in this version:
 ==============================================================================
 
 - **Release date:** 5th January 2016
-- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_2015_v3.2.docx>`__
+- **Downloads:** `Word document <https://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_2015_v3.2.docx>`__
 
 **Changelog:**
 
@@ -776,7 +871,7 @@ The following topics are available in this version:
 ==============================================================================
 
 - **Release date:** March 2015
-- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/03/CSUnplugged_OS_2015_v3.1.docx>`__ and `PDF document <http://classic.csunplugged.org/wp-content/uploads/2015/03/CSUnplugged_OS_2015_v3.1.pdf>`__
+- **Downloads:** `Word document <https://classic.csunplugged.org/wp-content/uploads/2015/03/CSUnplugged_OS_2015_v3.1.docx>`__ and `PDF document <https://classic.csunplugged.org/wp-content/uploads/2015/03/CSUnplugged_OS_2015_v3.1.pdf>`__
 
 **Changelog:**
 
@@ -793,7 +888,7 @@ The following topics are available in this version:
 ==============================================================================
 
 - **Release date:** 2012
-- **Downloads:** `Part 1 Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_Part1_2012.docx>`__ and `Part 2 Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_Part2_2012.doc>`__
+- **Downloads:** `Part 1 Word document <https://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_Part1_2012.docx>`__ and `Part 2 Word document <https://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_Part2_2012.doc>`__
 
 **Changelog:**
 
@@ -804,7 +899,7 @@ The following topics are available in this version:
 ==============================================================================
 
 - **Release date:** 2010
-- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/unplugged-v2-teachers-March2010.doc>`__
+- **Downloads:** `Word document <https://classic.csunplugged.org/wp-content/uploads/2015/01/unplugged-v2-teachers-March2010.doc>`__
 
 **Changelog:**
 
@@ -817,7 +912,7 @@ The following topics are available in this version:
 ==============================================================================
 
 - **Release date:** Mid 1990s
-- **Downloads:** `PDF document <http://classic.csunplugged.org/wp-content/uploads/2015/01/unplugged-book-v1.pdf>`__ and `LaTeX source <http://classic.csunplugged.org/wp-content/uploads/2015/01/unplugged-book-v1-latex-source.zip>`__
+- **Downloads:** `PDF document <https://classic.csunplugged.org/wp-content/uploads/2015/01/unplugged-book-v1.pdf>`__ and `LaTeX source <https://classic.csunplugged.org/wp-content/uploads/2015/01/unplugged-book-v1-latex-source.zip>`__
 
 **Changelog:**
 

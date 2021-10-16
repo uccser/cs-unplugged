@@ -48,6 +48,17 @@ binary-match-letters-numbers:
 binary-count-highest-number:
   text: Count on from the highest number to find the total number of dots on the binary cards.
 
+# DATA STRUCTURES FOR SEARCHING LEARNING OUTCOMES
+
+organise-find-data-bst:
+  text: Organise and find data using a binary search tree (BST).
+
+assess-efficiency-bst:
+  text: Assess the efficiency of a binary search tree (BST) for searching.
+
+compare-efficiency-bst:
+  text: Compare the efficiency of a binary search tree (BST) with other approaches to searching.
+
 # DRAMA LEARNING OUTCOMES
 
 drama-create-video-binary:

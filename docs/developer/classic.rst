@@ -1,7 +1,7 @@
 Classic Application
 ##############################################################################
 
-The classic application stores data related to `Classic CS Unplugged <http://classic.csunplugged.org/>`_, are provides redirections to the website for old links and also allows old pages to be available in the website search.
+The classic application stores data related to `Classic CS Unplugged <https://classic.csunplugged.org/>`_, are provides redirections to the website for old links and also allows old pages to be available in the website search.
 
 The classic application uses a model to store pages that are available for searching.
 More information about why this application has both data in configuration files and in view/url files can be found in the :doc:`search` documentation.
