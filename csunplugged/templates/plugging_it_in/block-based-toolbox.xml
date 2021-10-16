@@ -1,5 +1,6 @@
 <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
     <category name="Looks" categorystyle="looks_category">
+        <block type="looks_say"></block>
         <block type="looks_say">
             <value name="value">
                 <block type="values_string">
