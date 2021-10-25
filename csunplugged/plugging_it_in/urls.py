@@ -28,9 +28,9 @@ urlpatterns = [
         name="lesson"
     ),
     url(
-         r"^(?P<topic_slug>[-\w]+)/(?P<lesson_slug>[-\w]+)/(?P<challenge_slug>[-\w]+)/(?P<language_slug>[-\w]+)/$",
-         views.ProgrammingChallengeView.as_view(),
-         name="programming_challenge"
+        r"^(?P<topic_slug>[-\w]+)/(?P<lesson_slug>[-\w]+)/(?P<challenge_slug>[-\w]+)/(?P<language_slug>[-\w]+)/$",
+        views.ProgrammingChallengeView.as_view(),
+        name="programming_challenge"
     ),
     url(
         r"^jobe_proxy$",

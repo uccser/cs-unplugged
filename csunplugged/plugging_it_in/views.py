@@ -147,11 +147,12 @@ class ProgrammingChallengeView(generic.DetailView):
             lesson = Lesson.objects.get(slug=lesson_slug)
             context["lesson"] = lesson
 
-            # Get Python challenges if language_slug == 'python' else get Block-based challanges
-            if (language_slug == "python"):
-                challlenges = lesson.retrieve_related_programming_challenges("Python")
+            # Get Python or block-based challenges depending on the language_slug
+            # else raise a 404 error
+            if (language_slug in ["python", "block-based"]):
+                challlenges = lesson.retrieve_related_programming_challenges(language_slug.capitalize())
             else:
-                challlenges = lesson.retrieve_related_programming_challenges("Block-based")
+                raise Http404("Language does not exist")
 
             context["programming_challenges"] = challlenges
             context["programming_exercises_json"] = json.dumps(list(challlenges.values()))
@@ -170,8 +171,10 @@ class ProgrammingChallengeView(generic.DetailView):
             lang = context["programming_lang"]
             if language_slug == "python":
                 context["previous_text_based_submission"] = context["saved_attempts"][self.object.slug][lang]["code"]
-            else:
+            elif language_slug == "block-based":
                 context["previous_block_based_submission"] = context["saved_attempts"][self.object.slug][lang]["code"]
+            else:
+                return Http404("Language does not exist")
         except KeyError:
             context["previous_text_based_submission"] = ''
             context["previous_block_based_submission"] = ''
