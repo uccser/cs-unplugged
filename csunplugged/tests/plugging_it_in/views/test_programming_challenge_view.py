@@ -315,3 +315,18 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
             response.context["saved_attempts"],
             {"test_session": "testing"}
         )
+
+    def test_programming_challenge_view_programming_lang_context(self):
+        self.create_challenge()
+        kwargs = {
+            "topic_slug": self.topic.slug,
+            "lesson_slug": self.lesson.slug,
+            "challenge_slug": self.challenge.slug,
+            "language_slug": "python",
+        }
+        url = reverse("plugging_it_in:programming_challenge", kwargs=kwargs)
+        response = self.client.get(url)
+        self.assertEqual(
+            response.context["programming_lang"],
+            "python"
+        )
