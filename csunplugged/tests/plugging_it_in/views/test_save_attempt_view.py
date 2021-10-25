@@ -51,7 +51,8 @@ class SaveAttemptViewTest(BaseTestWithDB):
         new_attempt = {
             "challenge": "",
             "attempt": "",
-            "status": ""
+            "status": "",
+            "programming_language": "python"
         }
 
         url = reverse("plugging_it_in:save_attempt")
@@ -66,7 +67,8 @@ class SaveAttemptViewTest(BaseTestWithDB):
         new_attempt = {
             "challenge": "",
             "attempt": "",
-            "status": ""
+            "status": "",
+            "programming_language": "python",
         }
 
         url = reverse("plugging_it_in:save_attempt")

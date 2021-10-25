@@ -72,6 +72,18 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         response = self.client.get(url)
         self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
+    def test_programming_challenge_view_with_invalid_language_slug(self):
+        self.create_challenge()
+        kwargs = {
+            "topic_slug": self.topic.slug,
+            "lesson_slug": self.lesson.slug,
+            "challenge_slug": self.challenge.slug,
+            "language_slug": "wrong_slug",
+        }
+        url = reverse("plugging_it_in:programming_challenge", kwargs=kwargs)
+        response = self.client.get(url)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
+
     def test_programming_challenge_view_with_invalid_challenge_slug(self):
         self.create_challenge()
         kwargs = {
