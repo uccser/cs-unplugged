@@ -1,5 +1,4 @@
 // Scripts used to manage the UI functionality for the programming challenge editor screen.
-
 const codeTester = require("./test-code.js");
 const editorUtils = require("./editor-options-menu.js");
 const utils = require("./utils.js");
@@ -14,11 +13,15 @@ const setupBlockly = require("./custom-blockly-blocks.js");
 require('blockly/python');
 
 
-// Has to be global as other functions are using these variables
+// Has to be global as other functions use these variables
 var myCodeMirror; 
 var workspace;
-// Set up code mirror or blockly editor depending what programming_lang is from URL (/python or /block-based)
+
+// Sets up code mirror or blockly editor depending what the value of programming_lang 
+// is from the end of the URL (/python or /block-based)
+// If the end of the URL is /python then displayed the Python editor, else display the Blockly editor
 if (programming_lang == "python") {
+  // Set up Python editor
   let myTextarea = document.getElementById("codemirror_editor");
   myCodeMirror = CodeMirror.fromTextArea(myTextarea, {
     mode: {
@@ -41,56 +44,11 @@ if (programming_lang == "python") {
   });
 
 } else {
-  // Set up blockly editor
+  // Set up block-based editor
   document.addEventListener("DOMContentLoaded", function () {
 
-    // Set the math_change block to contain the values_number block by default.
-    Blockly.Variables.flyoutCategoryBlocks = function(workspace) {
-      var variableModelList = workspace.getVariablesOfType('');
-    
-      var xmlList = [];
-      if (variableModelList.length > 0) {
-        // New variables are added to the end of the variableModelList.
-        var mostRecentVariable = variableModelList[variableModelList.length - 1];
-        if (Blockly.Blocks['variables_set']) {
-          var block = Blockly.utils.xml.createElement('block');
-          block.setAttribute('type', 'variables_set');
-          block.setAttribute('gap', Blockly.Blocks['math_change'] ? 8 : 24);
-          block.appendChild(
-              Blockly.Variables.generateVariableFieldDom(mostRecentVariable));
-          xmlList.push(block);
-        }
-        if (Blockly.Blocks['math_change']) {
-          var block = Blockly.utils.xml.createElement('block');
-          block.setAttribute('type', 'math_change');
-          block.setAttribute('gap', Blockly.Blocks['variables_get'] ? 20 : 8);
-          block.appendChild(
-              Blockly.Variables.generateVariableFieldDom(mostRecentVariable));
-          var value = Blockly.Xml.textToDom(
-              '<value name="DELTA">' +
-              '<block type="values_number">' +
-              '<field name="NUM">1</field>' +
-              '</block>' +
-              '</value>');
-          block.appendChild(value);
-          xmlList.push(block);
-        }
-    
-        if (Blockly.Blocks['variables_get']) {
-          variableModelList.sort(Blockly.VariableModel.compareByName);
-          for (var i = 0, variable; (variable = variableModelList[i]); i++) {
-            var block = Blockly.utils.xml.createElement('block');
-            block.setAttribute('type', 'variables_get');
-            block.setAttribute('gap', 8);
-            block.appendChild(Blockly.Variables.generateVariableFieldDom(variable));
-            xmlList.push(block);
-          }
-        }
-      }
-      return xmlList;
-    };
-
-    // Custom Blockly Theme
+    // Creates the theme that will be set to the Blockly editor
+    // The colours were chosen to make the custom blocks visually look like Scratch
     var blocklyTheme = Blockly.Theme.defineTheme('block-based-scratch', {
       "base": Blockly.Theme.Classic,
       "blockStyles": {
@@ -155,7 +113,8 @@ if (programming_lang == "python") {
     setupBlockly(Blockly);
 
     var toolbox = document.getElementById('toolbox');
-    /* Workspace configurations */
+
+    // Defines the configuration for the Blockly's workspace (area where blocks are dropped)
     var options = {
       theme: blocklyTheme,
       renderer: 'zelos',
@@ -181,37 +140,41 @@ if (programming_lang == "python") {
         scaleSpeed : 1.2
       }
     };
-    /* Injects the blockly workspace */
+
+    // Injects the Blockly workspace
     workspace = Blockly.inject('blocklyDiv', options);
 
-    // Displays the user's previous block-based submission 
+    // If the user has previously submitted their program, then display it
     if (previous_block_based_submission) {
-      // Decodes the previous_block_based_submission which contains HTML entities. Outputs a string, and it converts it to XML
+      // Decodes the previous_block_based_submission as it contains unwanted HTML entities
+      // The decoded string is then converted into XML
       var xml_node = Blockly.Xml.textToDom(utils.decodeHTMLEntities(previous_block_based_submission));
 
+      // Outputs the XML to the workspace
       Blockly.Xml.domToWorkspace(xml_node, workspace);
     }
   })
 }
 
 /**
- * Retrieves code from the code mirror editor, runs all the test cases then updates the results table.
+ * Retrieves code from the code mirror and the Blockly workspace, runs all the test cases then updates the results table.
  * Disables the "CHECK" button and shows a loading spinner while request is being processed.
  */
 function sendCodeToJobe() {
   var code = '';
-   if (programming_lang == 'python') {
-     // Replaces all user input parameters to be blank so it matches the expected output
-     // Takes into consideration cases input("thing)"), input('thing)'), input(thing) and int(input(thing))
-     code = myCodeMirror.getValue().replace(/(input\("[^"]+"\)|input\('[^']+'\)|input\([^)]+\))/mg, 'input()');
-   } else {
-     // converts Blockly-code to Python
-     const lang = 'Python';
-     code = Blockly[lang].workspaceToCode(workspace);
-   }
 
-   console.log("SEND CODE TO JOBE")
-   console.log(code)
+  // If the programming_lang is Python, then get the code in the code mirror editor, 
+  // else get the block-based program in the Blockly workspace
+  if (programming_lang == 'python') {
+    // Replaces all user input parameters to be blank so it matches the expected output
+    // Takes into consideration cases input("thing)"), input('thing)'), input(thing) and int(input(thing))
+    code = myCodeMirror.getValue().replace(/(input\("[^"]+"\)|input\('[^']+'\)|input\([^)]+\))/mg, 'input()');
+  } else {
+    // Uses the Python code generators to convert blocks into Python code
+    const lang = 'Python';
+    code = Blockly[lang].workspaceToCode(workspace);
+  }
+
 
   $("#editor_check_button").prop("disabled", true);
   $(".code_running_spinner").css("display", "inline-block");
@@ -248,12 +211,16 @@ function allCorrect(results) {
  */
 async function save_code(status="started") {
   var raw_code;
+
+  // If the programming_lang is Python, then get the code in the code mirror editor, 
+  // else get the block-based program in the Blockly workspace
   if (programming_lang == "python") {
-     raw_code = myCodeMirror.getValue();
+    raw_code = myCodeMirror.getValue();
   } else {
     xml_code = Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace());
     raw_code = Blockly.Xml.domToText(xml_code);
   }
+
   // Sets the saved attempt
   let data = {
       "challenge": current_challenge_slug,
@@ -282,7 +249,6 @@ async function save_code(status="started") {
  */
 function updateResultsTable(results) {
   for (result of results) {
-    console.log(result)
     // Update status cell
     $(`#test-case-${result.id}-status`).text(result.status);
 
@@ -337,21 +303,20 @@ function download(filename, text) {
  */
 function downloadCode() {
   download(current_challenge_slug + ".py", myCodeMirror.getValue());
- }
+}
 
 /**
- * Retrieves the code from the blockly editor, converts it to JavaScript, runs the code.
+ * Retrieves the code from the Blockly editor, uses the JavaScript code generator 
+ * to converts it to JavaScript and executes the code in the browser.
  */
 function runCode() { 
-    // Convert blockly code to JavaScript
+    // Convert block-based program into JavaScript
     const lang = 'JavaScript';
     const code = Blockly[lang].workspaceToCode(workspace);
- 
-    console.log(code);
- 
-    // Run JavaScript code
+
+    // Executes JavaScript code in the browser
     try {
-      // Refresh the Output box
+      // Refresh the Command Shell output box
       document.querySelector("#block-based-console-content").innerHTML = ""
       eval(code);
     } catch (error) {

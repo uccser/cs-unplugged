@@ -1,6 +1,6 @@
 /**
-* Takes an encoded HTML entitity and returns a decoded version of it.
-* @param {string} str 
+* Takes an encoded HTML entitity and returns the decoded version of it.
+* @param {string} str an encoded HTML entity
 * @returns decoded HTML entity
 */
 function decodeHTMLEntities (str) {
