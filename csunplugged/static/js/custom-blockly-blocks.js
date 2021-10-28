@@ -619,7 +619,7 @@ Blockly.defineBlocksWithJsonArray([
     "previousStatement": null,
     "nextStatement": null,
     "style":  "control_blocks",
-    "tooltip": "",
+    "tooltip": "If value is true, then do some statements.",
     "helpUrl": ""
     },
     // Controls, if, then, else block
@@ -650,7 +650,7 @@ Blockly.defineBlocksWithJsonArray([
     "previousStatement": null,
     "nextStatement": null,
     "style":  "control_blocks",
-    "tooltip": "",
+    "tooltip": "If value is true, then do the first set of statements, else do the second set of statements",
     "helpUrl": ""
     },
     // Controls stop block
