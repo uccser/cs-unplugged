@@ -62,6 +62,7 @@ LOCAL_APPS = [
     "search.apps.SearchConfig",
     "classic.apps.ClassicConfig",
     "at_home.apps.AtHomeConfig",
+    "moocs.apps.MoocsConfig",
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
