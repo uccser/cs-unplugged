@@ -20,16 +20,16 @@
             </h1>
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10 col-lg-8 text-center">
-                    {% if LANGUAGE_CODE == "en" %}
-                        <a class="btn btn-warning text-wrap mb-3" role="button" href="{% url 'at_home:index' %}">
-                            <strong>COVID-19</strong>: Click here to see how to use CS Unplugged at home
-                        </a>
-                    {% endif %}
                     <p class="lead text-light text-wrap text-shadow">
                         {% blocktrans trimmed %}
                             CS Unplugged is a collection of free teaching material that teaches Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around.
                         {% endblocktrans %}
                     </p>
+                    {% if LANGUAGE_CODE == "en" %}
+                        <a class="btn btn-info text-wrap mb-4" role="button" href="{% url 'moocs:index' %}">
+                            <strong>New online course for educators available</strong> - Click here to learn more
+                        </a>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -76,6 +76,11 @@
                         {% trans "Curriculum Integrations" %}
                     </h3>
                 </a>
+                <a class="link-item link-item-top link-item-top-educator-4 no-text-decoration d-block mb-3" href="{% url 'moocs:index' %}">
+                    <h3 class="mb-0">
+                        {% trans "Online Courses" %}
+                    </h3>
+                </a>
             </div>
             <div class="col-12 col-md-4 mb-4">
                 <h2 class="at-home-colour">At home</h2>
@@ -102,10 +107,8 @@
         </div>
         <div class="text-center my-5">
             <p class="lead mb-2">The original activities are still available at</p>
-            <a class="link-item link-item-top link-item-top-orange no-text-decoration d-inline-block" href="https://classic.csunplugged.org/">
-                <h3 class="mb-0">
-                    {% trans "Classic CS Unplugged" %}
-                </h3>
+            <a class="no-text-decoration d-inline-block" href="https://classic.csunplugged.org/">
+                <img class="img-fluid" id="classic-cs-unplugged-logo" src="{% static 'img/cs-unplugged-classic-logo.svg' %}" alt="{% trans "Classic CS Unplugged" %}">
             </a>
         </div>
     </div>

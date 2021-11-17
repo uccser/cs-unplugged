@@ -73,7 +73,7 @@ Different data structures have different strengths and weaknesses, there is no m
 So when we decide which data structure(s) to use when solving a problem we need to take into account several factors, for example: what type(s) of data are we going to be using? Is speed important for this task? Is it important that we don’t use too much computer memory? Is it ok if it is occasionally slow if that means most of the time it is really fast?
 For example, binary search trees work well if items are added to them in a random order, but they can become very inefficient if you add data in an already sorted order!
 Evaluating how fast these algorithms will be with different kinds of input will be crucial to understanding how fast a computer program will work in these different situations.
-The factors you need to think about will be different for different problems, and in some cases there are factors which will only matter if you are actually programming your solution (such as how much memory it uses). 
+The factors you need to think about will be different for different problems, and in some cases there are factors which will only matter if you are actually programming your solution (such as how much memory it uses).
 When we select which data structures to use we must evaluate them based on these factors, and choose the one we think is most suitable for the problem.
 When we create our data structures we also have to evaluate the individual parts of them to ensure they function well.
 For example, it is important to evaluate how random the hash function that a hash table uses is.
@@ -84,7 +84,7 @@ For example, it is important to evaluate how random the hash function that a has
 
 # Logic
 
-To design data structures we must use our logic skills. 
+To design data structures we must use our logic skills.
 For example, in a binary search tree, each decision going through the tree is based on the logic that a range of values can only be down one particular branch because of the rules around how the tree was constructed.
 We can extend logical reasoning to work out where the smallest value in a tree is, and also, for a given value, where the next largest one will be.
 In hash tables, we need to design the hash function we choose, as it has a large impact on how we store data in the hash table, and this in turn has a large impact on how quickly we can search through it.
@@ -99,6 +99,6 @@ Therefore a good hash function should ensure that every piece of data will end u
 In some of the examples we added the digits of a value together to get a hash value.
 But what would happen if we multiply them together?
 This might appear to produce a better range of values, but (applying some logic) we can realise that if any of the digits is a zero, then the hash total will be zero, so this value will become more likely to occur.
-There are many other combinations of arithmetic we could apply, but good reasoning needs to be applied to make sure that it doesn't turn out to hash many values to the same place.
+There are many other combinations of arithmetic we could apply, but good reasoning needs to be applied to make sure that it doesn't turn out to hash a large number of values to the same place.
 
 {panel end}

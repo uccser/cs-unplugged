@@ -23,7 +23,9 @@ Sometimes you just need to know if the key exists; for example, a spelling check
 ## Digital Technologies | Data Structures
 
 One of the data structures that will be explained in this unit is the **binary search tree**; these have a lot of the same benefits as sorted lists, but make it a lot easier to keep the data organised.
-Trees in general come up a lot in computer science because they provide a very structured way to keep information organised - even the structure of folders used on a personal computer is a type of tree - so studying a particular kind of tree called a binary search tree is a good introduction to ideas that keep coming up when developing software.
+Trees in general come up a lot in computer science because they provide a very structured way to keep information organised.
+The structure of folders used on a personal computer is a type of tree - so studying a particular kind of tree called a binary search tree is a good introduction to ideas that keep coming up when developing software.
+
 Another structure that we introduce in this unit is a **hash table**.
 These are similar to a list of data, but data is placed at very specific points in the list, rather than being in a completely random or a completely sorted order.
 The main idea of a hash table is that you can apply a simple calculation (called a hash function) to the key that you're looking for, and that will tell you where to look for it in the hash table.
@@ -78,7 +80,7 @@ Typically it’s a login name, customer number, product name, or anything that s
 Binary search trees are also the basis of a commonly used structure where the relationships between the keys are important - especially if you're looking for values similar to the one being searched for.
 Hashing, and using hash functions supports programmers to make really fast searching algorithms.
 This approach might seem almost fanciful at first because it relies a lot on randomness - making a very random value by chopping up and mixing the key you're searching for, and hoping that not too many other things come out to the same value.
-Fortunately the statistics around this are well understood, and people can design very fast and efficient hash tables. 
+Fortunately the statistics around this are well understood, and people can design very fast and efficient hash tables.
 
 {image file-path="img/topics/data-structures-for-searching-searching-girl.png" alt="Using a search engine."}
 

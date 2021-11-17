@@ -50,6 +50,7 @@ function pathsConfig(appName) {
         scss_source: `${staticSourceRoot}/scss`,
         js_source: `${staticSourceRoot}/js`,
         images_source: `${staticSourceRoot}/img`,
+        files_source: `${staticSourceRoot}/files`,
         vendor_js_source: [
             `${vendorsRoot}/jquery/dist/jquery.js`,
             `${vendorsRoot}/popper.js/dist/umd/popper.js`,
@@ -63,6 +64,7 @@ function pathsConfig(appName) {
         fonts_output: `${staticOutputRoot}/fonts`,
         images_output: `${staticOutputRoot}/img`,
         js_output: `${staticOutputRoot}/js`,
+        files_output: `${staticOutputRoot}/files`,
     }
 }
 
@@ -167,6 +169,12 @@ function img() {
         .pipe(dest(paths.images_output))
 }
 
+// Downloadable files
+function files() {
+    return src(`${paths.files_source}/**/*`)
+        .pipe(dest(paths.files_output))
+}
+
 // Browser sync server for live reload
 // TODO: Not yet working
 // function initBrowserSync() {
@@ -202,7 +210,8 @@ const generateAssets = parallel(
     scss,
     js,
     vendorJs,
-    img
+    img,
+    files
 )
 
 // Set up dev environment

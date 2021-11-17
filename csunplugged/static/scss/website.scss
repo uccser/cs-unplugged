@@ -442,7 +442,7 @@ body {
 }
 
 ol, ul {
-    margin-bottom: 1rem !important;
+    margin-bottom: 1rem;
 }
 
 .large-text {
@@ -481,6 +481,12 @@ ol, ul {
     }
     &-educator-3 {
       border-top-color: mix($educator-colour, $white, 60%);
+      &:hover {
+        background-color: mix($educator-colour, $white, 10%);
+      }
+    }
+    &-educator-4 {
+      border-top-color: mix($educator-colour, $white, 40%);
       &:hover {
         background-color: mix($educator-colour, $white, 10%);
       }
@@ -901,4 +907,16 @@ button:hover .icon-search {
 .scratchblocks-inline > svg {
     height: 2.5rem;
     width: auto;
+}
+
+#classic-cs-unplugged-logo {
+    height: 5rem;
+}
+
+
+// MOOCs
+
+.edx-logo {
+    height: 3rem;
+    margin-left: 0.5rem;
 }

@@ -1,0 +1,124 @@
+{% extends "base-educators.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+  {% trans "Online Courses" %}
+{% endblock title %}
+
+{% block breadcrumbs %}
+  {% breadcrumb "Online Courses" "moocs:index" %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+  <h1>{% trans "Online Courses" %}</h1>
+{% endblock page_heading %}
+
+{% block content %}
+    <p class="lead">
+        {% blocktrans trimmed %}
+        The following massive open online courses have been created by the CS Unplugged team.
+        {% endblocktrans %}
+    </p>
+
+    <hr>
+
+    {# <img src="{% static 'img/moocs/teaching-computational-thinking.png' %}"  alt="Teacher talking to students"> #}
+
+    <h2>Teaching Computational Thinking</h2>
+    <h6 class="mb-2 text-muted">Available in English</h6>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <h4>Summary</h4>
+            <p>
+                This course is for educators who are passionate about the future of their 7-12+ year old students and want to learn more about teaching computer science in an engaging and meaningful way.
+            </p>
+
+            <a class="link-item no-text-decoration d-inline-block mb-3" href="https://www.edx.org/course/teaching-computational-thinking">
+                <div class="d-flex align-items-center">
+                    {% trans "Click here to view course on" %}
+                    <img class="img-fluid edx-logo" src="{% static 'img/moocs/edx-logo.svg' %}" alt="EdX logo">
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <h4>Course contents and resources</h4>
+
+            <ul>
+                <li class="mb-2">
+                    <a href="{% url 'topics:unit_plan' 'sorting-networks' 'unit-plan' %}">Sorting networks</a>
+                </li>
+                <li class="mb-2">
+                    <a href="{% url 'topics:unit_plan' 'binary-numbers' 'unit-plan' %}">Binary numbers</a>
+                </li>
+                <li class="mb-2">
+                    <a href="{% url 'topics:unit_plan' 'image-representation' 'unit-plan' %}">Image representation</a>
+                    <ul>
+                        <li>
+                            <a href="{% static 'files/mooc/teaching-computational-thinking/Image representation - Exploring pixels worksheets.pdf' %}" target="_blank" rel="noopener noreferrer">
+                                Exploring pixels worksheets
+                            </a> - A3 size
+                        </li>
+                        <li>
+                            <a href="http://csunplugged.mines.edu/activity-computer_vision.html" target="_blank" rel="noopener noreferrer">
+                                CS@Mines computer vision worksheet
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="mb-2">
+                    <a href="{% url 'topics:unit_plan' 'error-detection-and-correction' 'unit-plan' %}">Error detection and correction</a>
+                    <ul>
+                        <li>
+                            <a href="{% static 'files/mooc/teaching-computational-thinking/Error Detection and Correction - Will It Scan.pdf' %}" target="_blank" rel="noopener noreferrer">
+                                Will it scan activity
+                            </a> - Includes sample QR codes for printing
+                        </li>
+                    </ul>
+                </li>
+                <li class="mb-2">
+                    Human computer Interaction (HCI)
+                    <ul>
+                        <li>
+                            <a href="{% static 'files/mooc/teaching-computational-thinking/HCI - Think-aloud lesson.pdf' %}" target="_blank" rel="noopener noreferrer">
+                                Think-aloud protocol lesson plan
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% static 'files/mooc/teaching-computational-thinking/HCI - The Stroop effect lesson.pdf' %}" target="_blank" rel="noopener noreferrer">
+                                Stroop effect lesson plan
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="{% static 'files/mooc/teaching-computational-thinking/HCI - The Stroop effect lesson - Printable.pdf' %}" target="_blank" rel="noopener noreferrer">
+                                        Activity printable
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{% static 'files/mooc/teaching-computational-thinking/HCI - Heuristics lesson.pdf' %}" target="_blank" rel="noopener noreferrer">
+                                Nielsen’s heuristics lesson plan
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="{% static 'files/mooc/teaching-computational-thinking/HCI - Heuristics lesson - Bingo board.pdf' %}" target="_blank" rel="noopener noreferrer">
+                                        Activity printable
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <hr>
+
+    <p><small>edX logo is a registered trademarks of edX Inc. All Rights Reserved.</small></p>
+
+{% endblock content %}

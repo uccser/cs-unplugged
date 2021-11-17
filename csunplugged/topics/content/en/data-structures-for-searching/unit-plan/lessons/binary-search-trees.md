@@ -260,7 +260,7 @@ If you run out of room, the tree doesn't have to be too tidy, as long as it's ob
 
 In practice, we'd usually have some information associated with the value that we're looking for (such as a person's details).
 You could build a binary search tree that looks up the population of cities, dates of historical events, or the definition of foreign words (an example is shown below).
-Having students research the content of a disc and then place it provides an integrated learning opportunity.
+Having students research the content of a disc and then place it, provides an integrated learning opportunity.
 
 {image file-path="img/topics/binary-search-tree-cities.png" alt="A binary search tree where the nodes are cities with their population number, sorted in alphabetical order."}
 
