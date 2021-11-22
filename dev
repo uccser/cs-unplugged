@@ -160,12 +160,12 @@ cmd_make_resources() {
 }
 defhelp makeresources 'Run Django makeresources command.'
 
-# Run Django makeresources command
+# Run Django makemessages command
 cmd_makemessages() {
   echo "Running Django makemessages command..."
   docker-compose -f docker-compose.local.yml exec django python ./manage.py makemessages -l en
 }
-defhelp makeresources 'Run Django makeresources command.'
+defhelp makemessages 'Run Django makemessages command.'
 
 # Build Docker images
 cmd_build() {
