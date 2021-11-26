@@ -5,6 +5,7 @@ binary-numbers-no-calculations:
   programming-languages:
     - scratch
     - python
+    - block-based
   learning-outcomes:
     - programming-explain-sequencing
     - programming-explain-output
@@ -19,6 +20,7 @@ binary-numbers-using-variable:
   programming-languages:
     - scratch
     - python
+    - block-based
   learning-outcomes:
     - programming-explain-sequencing
     - programming-describe-variables
@@ -33,6 +35,7 @@ binary-numbers-using-variables-as-operator:
   programming-languages:
     - scratch
     - python
+    - block-based
   learning-outcomes:
     - programming-explain-sequencing
     - programming-outline-variable-updates
@@ -47,6 +50,7 @@ binary-numbers-using-variable-operator-repeat:
   programming-languages:
     - scratch
     - python
+    - block-based
   learning-outcomes:
     - programming-outline-variable-updates
     - programming-describe-variable-output
@@ -62,6 +66,7 @@ number-cards-display:
   programming-languages:
     - scratch
     - python
+    - block-based
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -78,6 +83,7 @@ dots-right-left:
   programming-languages:
     - scratch
     - python
+    - block-based
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -95,6 +101,7 @@ dots-largest-to-1:
   programming-languages:
     - scratch
     - python
+    - block-based
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -129,6 +136,7 @@ count-5-bw-no-loop:
   programming-languages:
     - scratch
     - python
+    - block-based
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -145,6 +153,7 @@ count-5-bw-using-loop:
   programming-languages:
     - scratch
     - python
+    - block-based
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -162,6 +171,7 @@ count-5-bw-one-input-no-loop:
   programming-languages:
     - scratch
     - python
+    - block-based
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -179,6 +189,7 @@ count-5-bw-one-input-using-loop:
   programming-languages:
     - scratch
     - python
+    - block-based
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -197,6 +208,7 @@ count-bw-one-input-using-loop:
   programming-languages:
     - scratch
     - python
+    - block-based
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -253,6 +265,7 @@ number-bits-representing-number:
   programming-languages:
     - scratch
     - python
+    - block-based
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables

@@ -1,0 +1,1384 @@
+<xml xmlns="https://developers.google.com/blockly/xml"><block type="factory_base" id="7ho)1cdp)a+}8eXOS/ds" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">operators_equality</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="lIon0[*XWH-0/jR}cc;5">
+        <field name="INPUTNAME">A</field>
+        <field name="ALIGN">LEFT</field>
+        <value name="TYPE">
+          <shadow type="type_null" id="+f*xQ4$6S5l!bS6blHC-"></shadow>
+        </value>
+        <next>
+          <block type="input_dummy" id="Kl)1.AAa!p3_xkHEnhHy">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="+NJ8T[G`Kv^}(Vm~_+/*">
+                <field name="TEXT">=</field>
+              </block>
+            </statement>
+            <next>
+              <block type="input_value" id="Ep~PD.q@EVWA;ZFXz!?B">
+                <field name="INPUTNAME">B</field>
+                <field name="ALIGN">LEFT</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="FMFAA%aqHU`a`:ydNzqU"></shadow>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="{^oZL-ozpV.[O8RFmE)D" deletable="false" movable="false">
+        <field name="TEXT">Return true if both inputs equal each other.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id=";o%4tXOm62L/_1=Qyb4Q" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="0=~-o?m^SKT!:C;k)_@B"></shadow>
+      <block type="type_boolean" id="ds4Mb.-Ec_iV1ax{,`uG"></block>
+    </value>
+  </block><block type="factory_base" id="7579st|q45CCsbvgR(7{" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">operators_modulo</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="M{~C}I(KECGt%MsVhR6X">
+        <field name="INPUTNAME">a</field>
+        <field name="ALIGN">LEFT</field>
+        <value name="TYPE">
+          <shadow type="type_null" id="+d;O6:uQdEe#E[AQ{:M["></shadow>
+          <block type="type_number" id="e+=^$pg[|3mt+My0TBeM"></block>
+        </value>
+        <next>
+          <block type="input_dummy" id=";Zu=LUe.(N0j?FeRLC}C">
+            <field name="ALIGN">CENTRE</field>
+            <statement name="FIELDS">
+              <block type="field_static" id=".AVC-U9A`0sx6;;Kr_.[">
+                <field name="TEXT">mod</field>
+              </block>
+            </statement>
+            <next>
+              <block type="input_value" id="3ZaULc@^u[5l[!v8#6Ta">
+                <field name="INPUTNAME">n</field>
+                <field name="ALIGN">LEFT</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="+t$gY9i#K]r|6==*Xk;6"></shadow>
+                  <block type="type_number" id="z}NQ#os4]J)_ahqbLk6s"></block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id=")l`v8/s-DywjC6-[0]Yu" deletable="false" movable="false">
+        <field name="TEXT">Return the modulo of the two numbers.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="}8d[-NVU=3M.?U}9.N,9" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="u)CyspVGdcPEV:Mh2F8)"></shadow>
+      <block type="type_number" id="K#$sAsRn.N,p^GGOYM+K"></block>
+    </value>
+  </block><block type="factory_base" id="xw]q`@A=,`DK^Xt73XJ|" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">operators_multiply</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="YIwJCSDz4o0_#o$g`S(u">
+        <field name="INPUTNAME">x</field>
+        <field name="ALIGN">LEFT</field>
+        <value name="TYPE">
+          <shadow type="type_null" id="ZG1{C}gl(xK|]cORAYRq"></shadow>
+          <block type="type_number" id="{@$-hCna}lP[t4}yqnMO"></block>
+        </value>
+        <next>
+          <block type="input_dummy" id="BG}~G)j#g(?cZXCURjo^">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="d17zqotni,?1_xE/RTe0">
+                <field name="TEXT">*</field>
+              </block>
+            </statement>
+            <next>
+              <block type="input_value" id="PnN+a8:EF4I;oN*Sc${{">
+                <field name="INPUTNAME">y</field>
+                <field name="ALIGN">LEFT</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="]nMWD!t{V;3I20SU$E{g"></shadow>
+                  <block type="type_number" id="J4vq||ARAq|c}$e_iuO}"></block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="mGl$Dfg{(vU%2CUBRf32" deletable="false" movable="false">
+        <field name="TEXT">Return the product of the two numbers.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="UQl_fkfwSp1@Ar$E7TMz" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="gk8]#1~;j4%N1-R7JLO8"></shadow>
+      <block type="type_number" id="moPOa-=7}cOc_m7(38F#"></block>
+    </value>
+  </block><block type="factory_base" id="b$i{Po/#EpOkAsq9fwx0" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">operators_divide</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="z[+cO]h|1~`H^BK:bG/:">
+        <field name="INPUTNAME">x</field>
+        <field name="ALIGN">LEFT</field>
+        <value name="TYPE">
+          <shadow type="type_null" id="kW31%bR,J(CrsaY]Ny=D"></shadow>
+          <block type="type_number" id="tfA,PG*CpV!_zcP;FFJ2"></block>
+        </value>
+        <next>
+          <block type="input_dummy" id="w0~Vem5M=eW#tXJLHe%g">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="2G%)s3_eh!Px@jU1!HWW">
+                <field name="TEXT">/</field>
+              </block>
+            </statement>
+            <next>
+              <block type="input_value" id="=i/6x*9hX,FBzf;wgCk/">
+                <field name="INPUTNAME">y</field>
+                <field name="ALIGN">LEFT</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="O_E=}U@=Gue^..Jrh|^|"></shadow>
+                  <block type="type_number" id="e|L[{DI*(b*HqeNfM!4v"></block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="@`,h=ISgpSWD1kH%Jfo?" deletable="false" movable="false">
+        <field name="TEXT">Return the quotient of the two numbers.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="=iPEh1?uxn{HfRPLkMRR" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="V9Gp^iVCy/L0e-tFDeur"></shadow>
+      <block type="type_number" id="aVZ;naXS#y=283gK4E/q"></block>
+    </value>
+  </block><block type="factory_base" id="FVvycHuq{Q0h!7kGa(ft" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">operators_add</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="T6GkQ8O(X}E9BH4pxTCa">
+        <field name="INPUTNAME">x</field>
+        <field name="ALIGN">LEFT</field>
+        <value name="TYPE">
+          <shadow type="type_null" id="C-w3Y*(!|ie=x9m$D?TZ"></shadow>
+          <block type="type_number" id="eMcK3]H;mpYQ4xxr}LyZ"></block>
+        </value>
+        <next>
+          <block type="input_dummy" id="1@Z%`lg$+`k{k3d)o{R|">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="2ph*txsV[GBSP[gGm0~u">
+                <field name="TEXT">+</field>
+              </block>
+            </statement>
+            <next>
+              <block type="input_value" id="]y7TX6gw{czwQRN.I-b.">
+                <field name="INPUTNAME">y</field>
+                <field name="ALIGN">LEFT</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="wHPoC;,slX#{88@w+D%r"></shadow>
+                  <block type="type_number" id="{51$Akbl2etiIuu}D~NC"></block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="E/)aICR1%d[sOA5Q?Bm[" deletable="false" movable="false">
+        <field name="TEXT">Return the sum of the two numbers.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="F8?odoTk=I=(=e{K-GFQ" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="s*W~d()y.,lC(./M~+0}"></shadow>
+      <block type="type_number" id="X~]ccB@4[i6?Vjc3,Yi("></block>
+    </value>
+  </block><block type="factory_base" id="wNuI0bf?V345zrRv^4d`" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">operators_subtract</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="nbmr?8fG]bw60r6xK@R$">
+        <field name="INPUTNAME">x</field>
+        <field name="ALIGN">LEFT</field>
+        <value name="TYPE">
+          <shadow type="type_null" id="Au/p(n9%4$9wRq~+xip)"></shadow>
+          <block type="type_number" id="iq?2M_*c%E.jN@^Diui}"></block>
+        </value>
+        <next>
+          <block type="input_dummy" id="n?E+._#X%JO@U}.fI5i{">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="patW!?]Gs@7|(R+DRF3l">
+                <field name="TEXT">-</field>
+              </block>
+            </statement>
+            <next>
+              <block type="input_value" id="^#orJNC~J]+sH%Lh4Q=i">
+                <field name="INPUTNAME">y</field>
+                <field name="ALIGN">LEFT</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="Rg([@4Ab:4*zi?=1WIxe"></shadow>
+                  <block type="type_number" id="iH;nRd9=D6l6]YRr@@d@"></block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d.YW_(*Zh)wv/.Ne~V`)" deletable="false" movable="false">
+        <field name="TEXT">Return the difference of the two numbers.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="5^tz5.hvhsXKGW9~D.{v" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="iT`G4NBvKM,eX=Iz(w^]"></shadow>
+      <block type="type_number" id="`q?HstG9[SM]mW0BQyAx"></block>
+    </value>
+  </block><block type="factory_base" id="wIioa`s@q,82CL#-HP{!" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">operators_greater_than</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="|N~xyce|[SG:hf,MyTk^">
+        <field name="INPUTNAME">A</field>
+        <field name="ALIGN">LEFT</field>
+        <value name="TYPE">
+          <shadow type="type_null" id="8v-sG2yasvTCb2J#H[G7"></shadow>
+        </value>
+        <next>
+          <block type="input_dummy" id="w{0FWqs*$(Q24sZirL^z">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="vJpPc5zF^XThpXeIr|5%">
+                <field name="TEXT">&gt;</field>
+              </block>
+            </statement>
+            <next>
+              <block type="input_value" id="gOn7rCRYI*8I6KPI:m+b">
+                <field name="INPUTNAME">B</field>
+                <field name="ALIGN">LEFT</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="e-V,qmP]o?h;qtW]kxxI"></shadow>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="IvqW_RV@Ng7W`U|Ll%qy" deletable="false" movable="false">
+        <field name="TEXT">Return true if the first input is greater than the second input.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="6]Q_]kr;EbR60BE-O*pr" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="A.ze)U$T8{V?xe/nDKha"></shadow>
+      <block type="type_boolean" id="mgE4cgCAMQE_9BK]4N{C"></block>
+    </value>
+  </block><block type="factory_base" id="wIioa`s@q,82CL#-HP{!" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">operators_less_than</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="-+|zZUFGd7|GO,(hjGx(">
+        <field name="INPUTNAME">A</field>
+        <field name="ALIGN">LEFT</field>
+        <value name="TYPE">
+          <shadow type="type_null" id="Tq}+Y^5.qZdYaVh.1uA-"></shadow>
+        </value>
+        <next>
+          <block type="input_dummy" id="IFTa#hMou1.E|%]|IMRH">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="]Dp-.=57diC)_mxA.b:f">
+                <field name="TEXT">&lt;</field>
+              </block>
+            </statement>
+            <next>
+              <block type="input_value" id="@|%nP@Rjut9^m!!*)r[[">
+                <field name="INPUTNAME">B</field>
+                <field name="ALIGN">LEFT</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="i@mo;Mo;:k4JiClxc9Dl"></shadow>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="IvqW_RV@Ng7W`U|Ll%qy" deletable="false" movable="false">
+        <field name="TEXT">Return true if the second input is greater than the first input.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="6]Q_]kr;EbR60BE-O*pr" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="r#+dJUi/,g@Y1:)Wpysq"></shadow>
+      <block type="type_boolean" id="]L=l7i8soc:a9[6uMCr!"></block>
+    </value>
+  </block><block type="factory_base" id="!X^B^oza(,)/EW3iGcv)" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">operators_join_string</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="{(!DqyXGkAtjS7d+Y[c(">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="a_2xKVEm]1,aZ+(IKiGG">
+            <field name="TEXT">join</field>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="~9?H7#hqhq.cF=e3x_bD">
+            <field name="INPUTNAME">a</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="[~ko6[@pWfn5,!jQjWup"></shadow>
+              <block type="type_string" id="-wQ|7IGa4DWHKN:Xq+-#"></block>
+            </value>
+            <next>
+              <block type="input_value" id="2w|yLwd98(?y13bpY/)H">
+                <field name="INPUTNAME">b</field>
+                <field name="ALIGN">LEFT</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="T6}vaV,gYasWuqOs}7d|"></shadow>
+                  <block type="type_string" id="-aOb+,-xSw~O](BE]ATk"></block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="OdJ?CA9lF}+E:`w^V3d(" deletable="false" movable="false">
+        <field name="TEXT">Returns a combination of the two input strings added together.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="7fE+ZKv5dRTMU*iQ~IuE" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="pIjh#+/lXfoJ1?Ff^DM{"></shadow>
+      <block type="type_string" id="u0iKYB3]knLj}}ANpNo="></block>
+    </value>
+  </block><block type="factory_base" id="SYR;R)9T1j~/9;uCp/--" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">operators_letter_of</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="}2$^bWBqh1U;+vlGEE;)">
+        <field name="INPUTNAME">index</field>
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="~+WV7Rbe{LpM?V[ipj%p">
+            <field name="TEXT">letter</field>
+          </block>
+        </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id="A:ptvBCgI3H:rE@~8S`G"></shadow>
+          <block type="type_number" id="@l=!_5sFX{%_SRxtQD03"></block>
+        </value>
+        <next>
+          <block type="input_value" id="nym`wss:y0u!O$C^:nm=">
+            <field name="INPUTNAME">word</field>
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="*gqg1-zX}}`7S{4B/lL#">
+                <field name="TEXT">of</field>
+              </block>
+            </statement>
+            <value name="TYPE">
+              <shadow type="type_null" id="@=*Bd-}2?#tZLu1a%_*m"></shadow>
+              <block type="type_string" id="8$8o#94Wzne}_:E)Y2S]"></block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="Cji5WDh{x3%%ZKF!/M2X" deletable="false" movable="false">
+        <field name="TEXT">Returns the letter of the specified position. #1 is the first item.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="dHLe?~LawMNOngi-^S|5" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="9Jsg~v/bO90o|v.Ft(~N"></shadow>
+      <block type="type_string" id="l[HUZ,rN0%X$W2}3]B03"></block>
+    </value>
+  </block><block type="factory_base" id="a;}Nl3@MENrp=+g@6avh" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">operators_string_contains</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="(y[zNt^wIF@_Xy06sEJC">
+        <field name="INPUTNAME">word</field>
+        <field name="ALIGN">LEFT</field>
+        <value name="TYPE">
+          <shadow type="type_null" id="MDMh!ic}^Z_IrEj{BIEO"></shadow>
+          <block type="type_string" id="nRWvh_|`]+q_@~E/ECnj"></block>
+        </value>
+        <next>
+          <block type="input_dummy" id="U!Q6q$rKokpH{CO[kDA$">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="38GDx;Bz4y.(T$Y(SZ#_">
+                <field name="TEXT">contains</field>
+              </block>
+            </statement>
+            <next>
+              <block type="input_value" id="4:isu0,(D9(eI@=SW2wP">
+                <field name="INPUTNAME">subword</field>
+                <field name="ALIGN">LEFT</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="FYm{m^n#?fwd(-4gHE$?"></shadow>
+                  <block type="type_string" id="8?^4]UoOx,N=PThq1:})"></block>
+                </value>
+                <next>
+                  <block type="input_dummy" id="^AAszayCy$9.Yo3q~bo$">
+                    <field name="ALIGN">LEFT</field>
+                    <statement name="FIELDS">
+                      <block type="field_static" id="U?aV4=TjQ`tx]_`imv*d">
+                        <field name="TEXT">?</field>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="T55|mC$(o7a4M0h(tO?2" deletable="false" movable="false">
+        <field name="TEXT">Returns true if the second string is in the first string.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="/+)#3h0ExNXp7R;+gKA/" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="k-CzzSrhENH``:Up0NMp"></shadow>
+      <block type="type_boolean" id="rNb#6;VYxWtveZg/**8q"></block>
+    </value>
+  </block><block type="factory_base" id="zhXuf.:O.6kKW8x,6~SO" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">controls_if_then</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_value" id=".w=hHB1y%4IsSibC9%;~">
+        <field name="INPUTNAME">condition</field>
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="Vae:2,5?C45b5%2sDVZ;">
+            <field name="TEXT">if</field>
+          </block>
+        </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id="N-{~|Ir(^}5{l^Q(Y=W5"></shadow>
+          <block type="type_boolean" id="_`*o98;m8n{yPs:wwnP2"></block>
+        </value>
+        <next>
+          <block type="input_dummy" id="B$obC7?$L7e:C?b.-HRk">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="=HRriY@C9POfwgor!PBM">
+                <field name="TEXT">then</field>
+              </block>
+            </statement>
+            <next>
+              <block type="input_statement" id="gX.5qB{sb@VvzNi*$@#~">
+                <field name="INPUTNAME">body</field>
+                <field name="ALIGN">LEFT</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="vhse4Hm^~#EwG:YouBP@"></shadow>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="nP}##N;|cjY=CAn,j[CR" deletable="false" movable="false">
+        <field name="TEXT">If value is true, then do some statements.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="J6-cSsNU1j._1bs*o[Rs" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="$)lc7PH^tG_YA-?yWn9b"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="n$Ubdw,wO}+H:mi)!R[0"></shadow>
+    </value>
+  </block><block type="factory_base" id="s)Bor/EWPR9zzeo5f-JK" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="TOP"></mutation>
+    <field name="NAME">controls_stop</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">TOP</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="5x#59DWs=r2#-p_)wBlE">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="Bu54Aiqc`^37WYbTtnCA">
+            <field name="TEXT">stop</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="1tK-g7AQtIwO(s.17^Ct" deletable="false" movable="false">
+        <field name="TEXT">Stops the containing loop.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="WN|x(nBBP?JJ|9|3z,.V" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="7K4Z%qv%C$mEtdmF:_9x"></shadow>
+    </value>
+  </block><block type="factory_base" id="-@-3FZ_79Q/T[Vb~`.`v" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">operators_and</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="AdntjeoYu?kchhZ4W)(D">
+        <field name="INPUTNAME">a</field>
+        <field name="ALIGN">LEFT</field>
+        <value name="TYPE">
+          <shadow type="type_null" id="AS1v6M8j*4-DEjS[L`rb"></shadow>
+          <block type="type_boolean" id="$Ag00b,nPuDaS%N-k#v*"></block>
+        </value>
+        <next>
+          <block type="input_dummy" id="DJ.irlX6.*DAizsp=5yC">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="$O,A8Oe{Qcq)j)q=15TJ">
+                <field name="TEXT">and</field>
+              </block>
+            </statement>
+            <next>
+              <block type="input_value" id="ABi(rW@DaIIg^B3m,h7U">
+                <field name="INPUTNAME">b</field>
+                <field name="ALIGN">LEFT</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="hNpUVON55G{`PwPvVvrR"></shadow>
+                  <block type="type_boolean" id="Q@zzIC$f3,tHYNo#j^Td"></block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="rpT^H;Q`|qemJ-ZHtavD" deletable="false" movable="false">
+        <field name="TEXT">Returns true if both inputs are true.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id=".]WtrX+I8iyn{NTK%)mB" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="[Bt9IWr94~%NwKIKLc`d"></shadow>
+      <block type="type_boolean" id="`k2^:IL0;[ct#5jzyS**"></block>
+    </value>
+  </block><block type="factory_base" id="-1c7Mk3;oCpOR]*P0vgH" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">operators_or</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="^Z^?nUl4qFtrz*0R8f]o">
+        <field name="INPUTNAME">a</field>
+        <field name="ALIGN">LEFT</field>
+        <value name="TYPE">
+          <shadow type="type_null" id="=(^*X+:{IU#T34!8@J?R"></shadow>
+          <block type="type_boolean" id="8]T5C{6)KIt7)$@/yJ0f"></block>
+        </value>
+        <next>
+          <block type="input_dummy" id=":VN){,i#sJ^%O1=Ep;[F">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="/!=xzoewNm_v8JM]ADyO">
+                <field name="TEXT">or</field>
+              </block>
+            </statement>
+            <next>
+              <block type="input_value" id=",VIzyNwn%Dr3?OLqHS`?">
+                <field name="INPUTNAME">b</field>
+                <field name="ALIGN">LEFT</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="[?w!?c8Nr+m^rs@D?5XU"></shadow>
+                  <block type="type_boolean" id="4]X#$g4%}HzVSC8R{;kB"></block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="5tp,ai^I7T.vis[BG98`" deletable="false" movable="false">
+        <field name="TEXT">Returns true if at least one of the inputs is true.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="Xd)A(9x%:*pEq3s@^H-E" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="287GXZAV9*LC59t+-dEF"></shadow>
+      <block type="type_boolean" id="nSxlzr=-uDbKI45AOgx%"></block>
+    </value>
+  </block><block type="factory_base" id="f_hg2E([eM`1GL5:n#BF" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">operators_round</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="P.8G}*AVjTWsNolX1^Me">
+        <field name="INPUTNAME">a</field>
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="!$;nIBe*|_^Nf=l3v1QO">
+            <field name="TEXT">round</field>
+          </block>
+        </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id="G?aGX0gM:#Y(!w|Km=l2"></shadow>
+          <block type="type_number" id="(=ZOtV(O)oWXQM8m2qOt"></block>
+        </value>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="k|^Ckg6-1[QDOyr_:q{y" deletable="false" movable="false">
+        <field name="TEXT">Round a number up.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="G|](vT}(EcVIVu$2DoHi" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="-8xzP3vk+GfAqYOu[tm:"></shadow>
+      <block type="type_number" id="8X]l?LjL6Uo{xOsx%1tB"></block>
+    </value>
+  </block><block type="factory_base" id="IdC1rpfQm*K25)$7n5|N" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">looks_say</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="bn(GH$-rJ{6pC?`RMF_k">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="gmbu15XD1ixWH]*VPYNH">
+            <field name="TEXT">say</field>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="g4b%tRR=OtP8{(c%`S%3">
+            <field name="INPUTNAME">value</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="_jo:@-Gd.]o40)PIZUlg"></shadow>
+              <block type="type_null" id="HF.*_b)usEfQ?lbf4P`+"></block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="iL|PsZcI3f_sS{{FTBb|" deletable="false" movable="false">
+        <field name="TEXT">Say the specified text, number or other value.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="*{#v1v.Fia#1DXH~nUZU" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="Xtnv;Lge7,8,_ao`s{^J"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="}q|?]?Eqz]Gq|.y?GYp~"></shadow>
+    </value>
+  </block><block type="factory_base" id="zhXuf.:O.6kKW8x,6~SO" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">controls_if_then_else</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_value" id=".w=hHB1y%4IsSibC9%;~">
+        <field name="INPUTNAME">condition</field>
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="Vae:2,5?C45b5%2sDVZ;">
+            <field name="TEXT">if</field>
+          </block>
+        </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id="N-{~|Ir(^}5{l^Q(Y=W5"></shadow>
+          <block type="type_boolean" id="_`*o98;m8n{yPs:wwnP2"></block>
+        </value>
+        <next>
+          <block type="input_dummy" id="B$obC7?$L7e:C?b.-HRk">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="=HRriY@C9POfwgor!PBM">
+                <field name="TEXT">then</field>
+              </block>
+            </statement>
+            <next>
+              <block type="input_statement" id="gX.5qB{sb@VvzNi*$@#~">
+                <field name="INPUTNAME">body_1</field>
+                <field name="ALIGN">LEFT</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="vhse4Hm^~#EwG:YouBP@"></shadow>
+                </value>
+                <next>
+                  <block type="input_dummy" id="}`?f-UEHByA8b2$1pyL`">
+                    <field name="ALIGN">LEFT</field>
+                    <statement name="FIELDS">
+                      <block type="field_static" id=".L1G{ejRe8M!U,g{4,8N">
+                        <field name="TEXT">then</field>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="input_statement" id="wOYg0Jeygu}6.Ven=i^l">
+                        <field name="INPUTNAME">body_2</field>
+                        <field name="ALIGN">LEFT</field>
+                        <value name="TYPE">
+                          <shadow type="type_null" id="~yKoG$bhAhfZ:dSPV9iJ"></shadow>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="nP}##N;|cjY=CAn,j[CR" deletable="false" movable="false">
+        <field name="TEXT">If value is true, then do the first set of statements, else do the second set of statements</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="J6-cSsNU1j._1bs*o[Rs" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="$)lc7PH^tG_YA-?yWn9b"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="n$Ubdw,wO}+H:mi)!R[0"></shadow>
+    </value>
+  </block><block type="factory_base" id="}Zg3}QjiEZ[~(@{akPWP" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">controls_repeat_num_times</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="u%i%/vb]g(j~q2M3G]UE">
+        <field name="INPUTNAME">num</field>
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="cwA(y,xQXLQYd!Qc.1-L">
+            <field name="TEXT">repeat</field>
+          </block>
+        </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id="e|QY}aSn[3E{TCcs`a*u"></shadow>
+          <block type="type_number" id="}K~jp,BF@Xp:ycUw2:TR"></block>
+        </value>
+        <next>
+          <block type="input_dummy" id="*8BmvG|-B4Cj}ij54@54">
+            <field name="ALIGN">RIGHT</field>
+            <next>
+              <block type="input_statement" id="Q9sY7_|hI|7ZfZBb!d/I">
+                <field name="INPUTNAME">body</field>
+                <field name="ALIGN">LEFT</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="~.i?Jg|`(grdVj8Ex3pk"></shadow>
+                </value>
+                <next>
+                  <block type="input_dummy" id="B_~0mWmCz4vg.NjGRr4I">
+                    <field name="ALIGN">RIGHT</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="w1bsfBK}X*e{,uow-Jdu" deletable="false" movable="false">
+        <field name="TEXT">Do some statements several times.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="o/;l))eNyU{T6cx)8HZ^" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="ueMQDp)0EOG0UNtZUUep"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="p}{W59QSl/1Go`;yO#@V"></shadow>
+    </value>
+  </block><block type="factory_base" id="1gy%@?|zZ5+GT{F8eu[e" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">controls_repeat_until</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="R*d%@vZxoT?s+9Bv8n5/">
+        <field name="INPUTNAME">condition</field>
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="H?]Cgmlcwr93sg4q{f9h">
+            <field name="TEXT">repeat until</field>
+          </block>
+        </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id="bBLQ^,@pgs*:11{%/i`h"></shadow>
+          <block type="type_boolean" id="+Cw32/t(kIeldF[WS496"></block>
+        </value>
+        <next>
+          <block type="input_dummy" id="LK7A2=Yg@Tl|F1_Bm{xt">
+            <field name="ALIGN">LEFT</field>
+            <next>
+              <block type="input_statement" id="Epcl3s]aUpnG{vq;PK}q">
+                <field name="INPUTNAME">body</field>
+                <field name="ALIGN">LEFT</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="#qF7(Hl0FeBCk(tuA`gu"></shadow>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="GM2pWM(?IV.4~m%a+[QV" deletable="false" movable="false">
+        <field name="TEXT">Repeat a statement several times until a condition is met.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id=")|$![5TGx!fBFnDFahWg" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="#jW-40Foi#tVJpt8SlPU"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="f6^}@wu)EtyUS#zq)6li"></shadow>
+    </value>
+  </block><block type="factory_base" id="xo_t2xHqx2z9Dc#ryPfJ" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">operators_random_int</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="1*,7os7VIn[JZiFl9RjT">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="QE%,73Y%0-TCXI3|i`Bs">
+            <field name="TEXT">pick random</field>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="d6#e4@CiHo@D2i{#?R}:">
+            <field name="INPUTNAME">a</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="vO3C{jqmqDl$]xvg=x4M"></shadow>
+              <block type="type_number" id="a/k.|]c|rOgM^;p,TMK*"></block>
+            </value>
+            <next>
+              <block type="input_dummy" id="2/xLKfIPx@`W/b_rL1Nn">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="zdxO6Q_g+p48kl8-eMjj">
+                    <field name="TEXT">to</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="input_value" id="Gsl0e+`EOq9ANt~7Edq;">
+                    <field name="INPUTNAME">b</field>
+                    <field name="ALIGN">LEFT</field>
+                    <value name="TYPE">
+                      <shadow type="type_null" id="sAp!,MM}D:1WI_*[wfx;"></shadow>
+                      <block type="type_number" id="@)Fy.!`dcz%YIOv[y8Vq"></block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="ym[P*{ef!wGy_QW~xI2F" deletable="false" movable="false">
+        <field name="TEXT">Return a random integer between the two numbers (inclusive).</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="Yl9LQNBM)L!;-Cc@F4qP" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="g40rOO:KZG_/=!gv:-.="></shadow>
+      <block type="type_number" id="y;nJt`{qI~]9~n!qY{qc"></block>
+    </value>
+  </block><block type="factory_base" id="mAJp?vxofz/@$bm.Lu)i" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">operators_not</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="XEf~_)L[d/wASH_B.P#1">
+        <field name="INPUTNAME">argument</field>
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id=".00?~VR?FSLS+x%J?,Ze">
+            <field name="TEXT">not</field>
+          </block>
+        </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id="T2RP^$`S#}ts*hVrDljZ"></shadow>
+          <block type="type_boolean" id="~(y5bkAl5k0v3{Qg|@zo"></block>
+        </value>
+        <next>
+          <block type="input_dummy" id="4N3XeyegR(gal%Yr?+mC">
+            <field name="ALIGN">LEFT</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="=9!By*hDr$I$?qbqH+qu" deletable="false" movable="false">
+        <field name="TEXT">Return true if the input is false. Returns false if the input is true.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="1qzOC?28a;1#2mnxNJh," deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="T~obOsZ{MA,r2;kJ)8hA"></shadow>
+      <block type="type_boolean" id="N^uF#G*knHBdSl#^(=Ns"></block>
+    </value>
+  </block><block type="factory_base" id="[3H]L{F:cJ6^+8tr0:rr" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">operators_single</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="1u?eJ/CWk6~U-FFP33?U">
+        <field name="INPUTNAME">NUM</field>
+        <field name="ALIGN">RIGHT</field>
+        <statement name="FIELDS">
+          <block type="field_dropdown" id="ML2IFdZ+,28Xf~RYPGcq">
+            <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"></mutation>
+            <field name="FIELDNAME">OP</field>
+            <field name="USER0">abs</field>
+            <field name="CPU0">ABS</field>
+            <field name="USER1">floor</field>
+            <field name="CPU1">FLOOR</field>
+            <field name="USER2">ceiling</field>
+            <field name="CPU2">CEIL</field>
+            <field name="USER3">sqrt</field>
+            <field name="CPU3">ROOT</field>
+            <field name="USER4">sin</field>
+            <field name="CPU4">SIN</field>
+            <field name="USER5">cos</field>
+            <field name="CPU5">COS</field>
+            <field name="USER6">tan</field>
+            <field name="CPU6">TAN</field>
+            <field name="USER7">asin</field>
+            <field name="CPU7">ASIN</field>
+            <field name="USER8">acos</field>
+            <field name="CPU8">ACOS</field>
+            <field name="USER9">atan</field>
+            <field name="CPU9">ATAN</field>
+            <field name="USER10">ln</field>
+            <field name="CPU10">LN</field>
+            <field name="USER11">log</field>
+            <field name="CPU11">LOG10</field>
+            <field name="USER12">e ^</field>
+            <field name="CPU12">EXP</field>
+            <field name="USER13">10 ^</field>
+            <field name="CPU13">POW10</field>
+            <next>
+              <block type="field_static" id="P(=0[!6^r)XBcyG@}`$!">
+                <field name="TEXT">of</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id="U.a9:p3Kpuc#)_UrW)w@"></shadow>
+          <block type="type_number" id="=t5y)$IY/+]N}p!pyxuO"></block>
+        </value>
+        <next>
+          <block type="input_dummy" id="$|wty^A?T7$N0kfOH1PT">
+            <field name="ALIGN">LEFT</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="T!9d-_e~8Z-[xZSHT$nx" deletable="false" movable="false">
+        <field name="TEXT">Block for advanced math operators with single operand.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="8).xzuRti*a-U8r[+R4e" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="?d082A9uq)tvgs2Rzk{H"></shadow>
+      <block type="type_number" id="j]{_ezS#)24[?Sn$;8,m"></block>
+    </value>
+  </block><block type="factory_base" id="qeFGdpE7*t*hfU6hS;@G" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">operators_length_of</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="eP=~+k;}9.QOhNU7lI]q">
+        <field name="INPUTNAME">VALUE</field>
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="d7{T:YVg[[[_{}`45WE?">
+            <field name="TEXT">length of</field>
+          </block>
+        </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id="0m^S3^DVD!qMgh*CIxia"></shadow>
+          <block type="type_string" id="xy,HI=!yg6PUx=C,]opJ"></block>
+        </value>
+        <next>
+          <block type="input_dummy" id="eAWoK3aF=$/@(caJSkO.">
+            <field name="ALIGN">LEFT</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="]FgII5-9,+b1-#D0lJQy" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id=".WV/25)(Q;Kj:_eh+|p8" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="Sy[+N_1oV+)7A5Txwy%f"></shadow>
+      <block type="type_number" id="Ww?_KJ(h/zjZ=4}%?xUi"></block>
+    </value>
+  </block><block type="factory_base" id="YE6.$PcGwU3_(oz0e%}q" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">values_boolean</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="FMV*q%Bgw($lkXAP4%[Y">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_dropdown" id="CmPPDZDH|SmjADi-vr6V">
+            <mutation options="[&quot;text&quot;,&quot;text&quot;]"></mutation>
+            <field name="FIELDNAME">VALUE</field>
+            <field name="USER0">true</field>
+            <field name="CPU0">TRUE</field>
+            <field name="USER1">false</field>
+            <field name="CPU1">FALSE</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="oOEmqNTV=GozA]e/k48`" deletable="false" movable="false">
+        <field name="TEXT">Returns either true or false.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="|v1M)kX@{svmhKaUlu8E" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="S1#%q`Ue?V!a|ID/QQ21"></shadow>
+      <block type="type_boolean" id="g$xtEFPFuKgRvw9x;2iL"></block>
+    </value>
+  </block><block type="factory_base" id="^yIk1o]Q^G~KzV3{y:kB" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">values_number</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="0s018~PO@T(gF|Ii-73?">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_number" id="%m%-8?SZ?:AP@o[@?J(|">
+            <field name="VALUE">0</field>
+            <field name="FIELDNAME">NUM</field>
+            <field name="MIN">-Infinity</field>
+            <field name="MAX">Infinity</field>
+            <field name="PRECISION">0</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id=":792mFIp17nQPrn@oO0A" deletable="false" movable="false">
+        <field name="TEXT">A number.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id=";TFzWlp{KdqT$^iHcI6y" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="|f:_Nf)w}Rvu|IeC1cM["></shadow>
+      <block type="type_number" id="m-HxOH90wRwltMu%4y`x"></block>
+    </value>
+  </block><block type="factory_base" id="..^Unzs6xt|P_Cd#?z[3" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">sensing_ask_and_wait_number</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="c-#j.d5/ngaE)3hR(-e?">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="3sok{f1O%1tBemk0m11a">
+            <field name="TEXT">ask</field>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="F!)#Se.OcX{7C/xmCoM2">
+            <field name="INPUTNAME">question</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="+egqIAoUdvr5#YSo=0ZW"></shadow>
+              <block type="type_string" id="dg63;K]U|Q~D23PE(vR*"></block>
+            </value>
+            <next>
+              <block type="input_dummy" id="}a9qSQ1nHFKV2Bk=;2j0">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="w$6e%S5ra.IL/+P74~X{">
+                    <field name="TEXT">and wait for number</field>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="L{*-Zp2)+TTOFFgB(.f/" deletable="false" movable="false">
+        <field name="TEXT">Ask user for some number.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="O?#Pw=]=YB+pa!vo.N._" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="UBlFj~!3vJUVa0(g[%ee"></shadow>
+      <block type="type_number" id="MW?n9;D!.FmUl$5wfg*1"></block>
+    </value>
+  </block><block type="factory_base" id="?}.+QguNX!mKSjY46CaY" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">sensing_ask_and_wait_text</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="Vp6q(N{ZWbBL]3R3$0zF">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="eBPLEJq;]u*rr*1sV#Nc">
+            <field name="TEXT">ask</field>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="{1l,){wnjKY.j;Q+-nDQ">
+            <field name="INPUTNAME">question</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="]AMBy_}^J}J;(Lt?nGYx"></shadow>
+              <block type="type_string" id="_jXzF7/EYE^K~GAJhqZL"></block>
+            </value>
+            <next>
+              <block type="input_dummy" id="vC]a@_=%5.6!-{=[H%|)">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="7i5a|9a,.8q1!g/qD_}}">
+                    <field name="TEXT">and wait for text</field>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="RBdJbB!O}B!M*({^{$Xw" deletable="false" movable="false">
+        <field name="TEXT">Ask user for some text.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id=";[ts*W%LDIEG_=qB|967" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="Lpsoa9AiVeuBV]$,fe0A"></shadow>
+      <block type="type_string" id="IWMxxVc`JJ}jAGOX3}@;"></block>
+    </value>
+  </block><block type="factory_base" id="IQgVbqeKMaP{Lh7}7%9." deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">values_string</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="X*`f5o!bI6oi9A#MAb]h">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_input" id=";{`^_]f}t@+*2+c.ks,~">
+            <field name="TEXT"></field>
+            <field name="FIELDNAME">TEXT</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id=";Z(ea_=%;uR(Yth26vO#" deletable="false" movable="false">
+        <field name="TEXT">A letter, word, or a line or text.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="p|4qaWsrfpcm~uCVDG6," deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="CDcH|W)R-Ry?%dNP}_yu"></shadow>
+      <block type="type_string" id="9:~OqhEPPGLO38kSLPx{"></block>
+    </value>
+  </block></xml>

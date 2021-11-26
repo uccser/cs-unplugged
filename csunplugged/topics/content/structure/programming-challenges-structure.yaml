@@ -7,6 +7,10 @@ languages:
         name: Python
         number: 2
         icon: img/python-logo.png
+    block-based:
+        name: Block-based
+        number: 3
+        icon: img/blockly-logo.png
 
 difficulties:
   - difficulty-0

@@ -42,7 +42,7 @@
     <p class='challenges-heading'>{% trans "Challenges" %}</p>
     <ol class='challenges-list'>
       {% for programming_challenge_item in programming_challenges %}
-      <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge_item.slug %}">
+      <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge_item.slug programming_lang %}">
         <li class="{% if programming_challenge.slug == programming_challenge_item.slug %}current-exercise{% endif %} row">
           <div class='row'>
             <div class='nav-row-info col-10 d-flex'>
@@ -56,11 +56,11 @@
 
             <div class='col-2 d-flex align-items-center justify-content-center'>
             {% if programming_challenge_item.slug in saved_attempts %}
-              {% if saved_attempts|get_item:programming_challenge_item.slug|get_item:"status" == "failed" %}
+              {% if saved_attempts|get_item:programming_challenge_item.slug|get_item:programming_lang|get_item:"status" == "failed" %}
                 <p class="status-badge bg-danger border-danger text-white">{% trans "Incorrect" %}</p>
-              {% elif saved_attempts|get_item:programming_challenge_item.slug|get_item:"status" == "passed" %}
+              {% elif saved_attempts|get_item:programming_challenge_item.slug|get_item:programming_lang|get_item:"status" == "passed" %}
                 <p class="status-badge bg-success border-success text-white">{% trans "Correct" %}</p>
-              {% elif saved_attempts|get_item:programming_challenge_item.slug|get_item:"status" == "started" %}
+              {% elif saved_attempts|get_item:programming_challenge_item.slug|get_item:programming_lang|get_item:"status" == "started" %}
                 <p class="status-badge border-warning bg-warning">{% trans "Started" %}</p>
               {% endif %}
             {% else %}
@@ -97,9 +97,10 @@
 
         {% render_html_field programming_challenge.content %}
 
-        {% comment %} Challenge Hints {% endcomment %}
-        {% for implementation in implementations %}
-          {% if implementation.language.name == "Python" and implementation.hints %}
+        {% for implementation in implementations %}  
+          {% comment %} Displays the hints/programming reminders or recommended blocks accordingly to what programming_lang is (e.g., python or block-based) {% endcomment %}
+          {% comment %} Challenge Hints {% endcomment %}
+          {% if implementation.language.name == programming_lang|capfirst and implementation.hints %}
             <details>
               <summary>
                 <strong>
@@ -114,7 +115,7 @@
           {% endif %}
 
           {% comment %} Programming syntax reminders {% endcomment %}
-          {% if implementation.language.name == "Python" and implementation.language.programming_reminders %}
+          {% if implementation.language.name == programming_lang|capfirst and implementation.language.programming_reminders %}
             <details>
               <summary>
                 <strong>{% trans "Programming Reminders" %}</strong>
@@ -122,32 +123,77 @@
               <div class="boxed-text-content">
                 {% render_html_field implementation.language.programming_reminders %}
               </div>
-            </details>
+            </details>          
+          {% endif %}
+
+          {% comment %} Recommended blocks {% endcomment %}
+          {% if implementation.language.name != 'Python' and implementation.language.name == programming_lang|capfirst and implementation.expected_result %}
+            <details>
+              <summary>
+                <strong>{% trans "Recommended Blocks" %}</strong>
+              </summary>
+              <div class="boxed-text-content">
+                {% render_html_field implementation.expected_result %}
+              </div>
+            </details>  
           {% endif %}
         {% endfor %}
       </div>
     </div>
-    <div class="col-12 col-md-4 programming__editor">
-      <p class='pii-block-heading'>{% trans "Enter your code in the editor below" %}</p>
-      <textarea id="codemirror_editor">{{ previous_submission|safe }}</textarea>
-      <div class="programming__submit d-flex justify-content-between align-items-center">
-        <div class="programming__submit_options d-flex justify-content-start">
-          <button class="editor_button" id="editor_run_button" >{% trans "Check" %}</button>
-          <button class="editor_button" id="download_button" >{% trans "Download" %}</button>
-        </div>
-        <div class="code_running_spinner spinner-grow" role="status">
-          <span class="sr-only"></span>
-        </div>
-      </div>
-    </div>
 
-    <div class="col-12 col-md-4 programming__results">
-      <p class="pii-block-heading d-inline">{% trans "Your results will be displayed here" %}</p>
-      {% include "plugging_it_in/results-table.html" %}
-      <div id="walkthrough-btn-container" class="row">
-        <button id="introjs-walkthrough" class="btn btn-outline-secondary btn-sm col-6 offset-6 my-2">{% trans "How does this page work?" %}</button>
+    {% comment %} Display the Python editor or the Blockly editor {% endcomment %}
+    {% if programming_lang == 'python' %}
+      <div class="col-12 col-md-4 programming__editor">
+        <p class='pii-block-heading'>{% trans "Enter your code in the editor below" %}</p>
+        <textarea id="codemirror_editor">{{ previous_text_based_submission|safe }}</textarea>
+        <div class="programming__submit d-flex justify-content-between align-items-center">
+          <div class="programming__submit_options d-flex justify-content-start">
+            <button class="editor_button" id="editor_check_button" >{% trans "Check" %}</button>
+            <button class="editor_button" id="download_button" >{% trans "Download" %}</button>
+          </div>
+          <div class="code_running_spinner spinner-grow" role="status">
+            <span class="sr-only"></span>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <div class="col-12 col-md-4 programming__results">
+        <p class="pii-block-heading d-inline">{% trans "Your results will be displayed here" %}</p>
+        {% include "plugging_it_in/results-table.html" %}
+        <div id="walkthrough-btn-container" class="row">
+          <button id="introjs-walkthrough" class="btn btn-outline-secondary btn-sm col-6 offset-6 my-2">{% trans "How does this page work?" %}</button>
+        </div>
+      </div>
+
+    {% else %}  
+      <div class="col-12 col-md-5 programming__editor">
+        <p class='pii-block-heading'>{% trans "Create your program in the editor below" %}</p>
+        <div id="blocklyDiv" style="height: 100%; "></div>
+        <!-- Displays all the custom blocks and categories in the Blockly workspace -->
+        {% include "plugging_it_in/block-based-toolbox.xml" %}
+        <div class="programming__submit d-flex justify-content-between align-items-center">
+          <div class="programming__submit_options d-flex justify-content-start">
+            <button class="editor_button" id="blockly_editor_run_program_button" >{% trans "Run" %}</button>
+            <button class="editor_button" id="editor_check_button" >{% trans "Submit" %}</button>
+          </div>
+          <div class="code_running_spinner spinner-grow" role="status">
+            <span class="sr-only"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3 programming__results">
+        <p class="pii-block-heading d-inline">{% trans "Your submission results will be displayed here" %}</p>
+        {% include "plugging_it_in/results-table.html" %}
+        <p class="pii-block-heading d-inline mt-3">{% trans "Run Output" %}</p>
+        <div class="block-based-console">
+          <div id="block-based-console-content"></div>
+        </div>
+        <div id="walkthrough-btn-container" class="row">
+          <button id="introjs-walkthrough" class="btn btn-outline-secondary btn-sm col-6 offset-6 my-2">{% trans "How does this page work?" %}</button>
+        </div>
+      </div>
+    {% endif %}
   {% else %}
     <div class="col-md-6 offset-md-3 justify-content-center mt-3">
       {% with model=programming_challenge parent=topic homepage='plugging_it_in:index' %}
@@ -188,7 +234,9 @@
     let lesson_url = "{% url 'plugging_it_in:lesson' topic.slug lesson.slug %}";
     let csrf_token = jQuery("[name=csrfmiddlewaretoken]").val();
     let jobe_proxy_url = '{{ jobe_proxy_url }}';
-    let save_attempt_url = "{% url 'plugging_it_in:save_attempt' %}"
+    let save_attempt_url = "{% url 'plugging_it_in:save_attempt' %}";
+    let programming_lang = "{{ programming_lang }}";
+    let previous_block_based_submission = "{{ previous_block_based_submission }}" 
   </script>
 
   <script src="{% static 'js/jobe-editor.js' %}"></script>

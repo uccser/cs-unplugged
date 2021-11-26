@@ -1,0 +1,54 @@
+{% extends "base-plugging-it-in.html" %}
+
+{% load i18n %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+    {% trans "Block-based System vs Scratch" %}
+{% endblock title %}
+
+{% block breadcrumbs %}
+    {% breadcrumb "Block-based System vs Scratch" "plugging_it_in:about" %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+    <h1>{% trans "Block-based System vs Scratch" %}</h1>
+{% endblock page_heading %}
+
+{% block content %}
+    <h3>Values Category</h3>
+    <p>
+        The Values category is one major difference between the new Block-based system and Scratch that will immediately stand out to Scratch users.
+        This category contains the 'Number', 'String', and 'Boolean' blocks, which relate to the four major data types in programming, i.e., integer/float, string, and boolean.
+        In Scratch, the blocks contain blank fields where users can type their input in. However, in the block-based system, users are forced to specify what type their input is by using one of the three data type blocks.
+    </p>
+
+    <h3>Ask and Wait for Number/Text</h3>
+    <p>
+        The 'Ask and Wait' block is a popular block in Scratch and is used to get user-specified input when the program is executed.
+        However, this block does not really specify the type of input the user has entered.
+        Therefore, we created the 'Ask and Wait for Text' and 'Ask and Wait for Number' blocks to, furthermore, enforce users to specify the data type their program is expecting.
+        This further bridges the gap between block-based and text-based programming and will help ease this transition.
+    </p>
+
+    <h3>Running your program</h3>
+    <p>
+        Scratch users are familiar with clicking the green flag or using the 'When green flag is clicked' block to start their program.
+        However, this new system does not use this feature. Instead, it simply has a Run button located at the bottom of the screen to start their program immediately.
+        This Run button has been designed to have the same colour as Scratch's green flag to passively inform users that this is how to run their program.
+        Clicking this Run button will execute their program, but it won't submit it to the testing server, giving them the ability to debug their program.
+    </p>
+
+    <h3>Displaying the output</h3>
+    <p>
+        Finally, the new block-based system displays the output differently from Scratch.
+        It uses a Console box (located underneath the Results Table), labelled "Run Output", to display the output of users' programs.
+        The colours of the output in the Console box change depending on the type of the output (e.g., green for integer/float, black for string, and purple for boolean).
+    </p>
+
+    <p>
+        <a href="{% url 'plugging_it_in:index' %}" class="btn plugging-it-in-navigation">
+            {% trans "Go back to home" %}
+        </a>
+    </p>
+{% endblock content %}
