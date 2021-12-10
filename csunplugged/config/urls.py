@@ -9,6 +9,7 @@ from django.http.response import HttpResponse
 from django.urls import include, path
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
+from . import views
 import environ
 env = environ.Env()
 
@@ -26,6 +27,7 @@ urlpatterns += [
     path('en/search/', include('search.urls', namespace='search')),
     path('admin/', admin.site.urls),
     path('healthcheck/', HttpResponse),
+    path('status/', view=views.get_release_and_commit, name="get-release-and-commit")
 ]
 
 if settings.DEBUG:  # pragma: no cover
@@ -40,7 +42,7 @@ if settings.DEBUG:  # pragma: no cover
     from django.views import defaults
     urlpatterns += [
         path('400/', defaults.bad_request, kwargs={'exception': Exception('Bad request')}),
-        path('403/', defaults.permission_denied, kwargs={'exception': Exception('Permissin denied')}),
+        path('403/', defaults.permission_denied, kwargs={'exception': Exception('Permission denied')}),
         path('404/', defaults.page_not_found, kwargs={'exception': Exception('Page not found')}),
         path('500/', defaults.server_error),
     ]
