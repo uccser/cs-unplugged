@@ -25,13 +25,17 @@
 
     <hr>
 
-    {# <img src="{% static 'img/moocs/teaching-computational-thinking.png' %}"  alt="Teacher talking to students"> #}
-
-    <h2>Teaching Computational Thinking</h2>
-    <h6 class="mb-2 text-muted">Available in English</h6>
-
+    <div class="row align-items-center">
+        <div class="col-sm-12 col-md-3">
+            <img src="{% static 'img/moocs/teaching-computational-thinking.png' %}" class="figure-img img-fluid" alt="Teacher talking to students.">
+        </div>
+        <div class="col-sm-12 col-md-9">
+            <h2>Teaching Computational Thinking</h2>
+            <h5 class="text-muted">Available in English</h5>
+        </div>
+    </div>
     <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-5">
+        <div class="col-sm-12 col-md-6">
             <h4>Summary</h4>
             <p>
                 This course is for educators who are passionate about the future of their 7-12+ year old students and want to learn more about teaching computer science in an engaging and meaningful way.
@@ -39,12 +43,12 @@
 
             <a class="link-item no-text-decoration d-inline-block mb-3" href="https://www.edx.org/course/teaching-computational-thinking">
                 <div class="d-flex align-items-center">
-                    {% trans "Click here to view course on" %}
+                    {% trans "Click here to access course on" %}
                     <img class="img-fluid edx-logo" src="{% static 'img/moocs/edx-logo.svg' %}" alt="EdX logo">
                 </div>
             </a>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-7">
+        <div class="col-sm-12 col-md-6">
             <h4>Course contents and resources</h4>
 
             <ol class="mooc-course-contents">
@@ -165,6 +169,6 @@
 
     <hr>
 
-    <p><small>edX logo is a registered trademarks of edX Inc. All Rights Reserved.</small></p>
+    <p><small>The edX logo is a registered trademarks of edX Inc. All Rights Reserved.</small></p>
 
 {% endblock content %}
