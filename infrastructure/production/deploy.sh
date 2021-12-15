@@ -13,7 +13,7 @@ checkEnvVariableExists() {
     fi
 }
 checkEnvVariableExists CS_UNPLUGGED_IMAGE_TAG
-checkEnvVariableExists CS_UNPLUGGED_DOMAIN
+checkEnvVariableExists CS_UNPLUGGED_ROUTER_RULE
 
 docker stack deploy cs-unplugged -c docker-compose.prod.yml
 docker service scale cs-unplugged_task-update-data=1
