@@ -23,7 +23,7 @@ python-markdown-math==0.6
 # Search
 django-haystack[elasticsearch]==3.1.1
 elasticsearch==5.5.3
-django-widget-tweaks==1.4.9
+django-widget-tweaks==1.4.11
 
 # YAML Loading
 PyYAML==6.0
