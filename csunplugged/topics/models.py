@@ -413,7 +413,7 @@ class Lesson(TranslatableModel):
         ).select_related('difficulty')
 
         if language_filter != "all":
-            programming_challenges = programming_challenges.filter(implementations__language__name=language_filter)
+            programming_challenges = programming_challenges.filter(implementations__language__slug=language_filter)
 
         for programming_challenge in programming_challenges:
             challenge_numbers = ProgrammingChallengeNumber.objects.get(
