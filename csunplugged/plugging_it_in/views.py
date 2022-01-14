@@ -141,8 +141,7 @@ class ProgrammingChallengeView(generic.DetailView):
 
         try:
             language_slug = self.kwargs.get("language_slug", None)
-            context["programming_lang"] = language_slug.lower()  # ensure /python or /block-based is lower case
-
+            context["programming_lang"] = language_slug
             lesson_slug = self.kwargs.get("lesson_slug", None)
             lesson = Lesson.objects.get(slug=lesson_slug)
             context["lesson"] = lesson
@@ -150,17 +149,22 @@ class ProgrammingChallengeView(generic.DetailView):
             # Get Python or block-based challenges depending on the language_slug
             # else raise a 404 error
             if (language_slug in ["python", "block-based"]):
-                challlenges = lesson.retrieve_related_programming_challenges(language_slug.capitalize())
+                challenges = lesson.retrieve_related_programming_challenges(language_slug)
             else:
                 raise Http404("Language does not exist")
 
-            context["programming_challenges"] = challlenges
-            context["programming_exercises_json"] = json.dumps(list(challlenges.values()))
+            context["programming_challenges"] = challenges
+            context["programming_exercises_json"] = json.dumps(list(challenges.values()))
         except ObjectDoesNotExist:
             raise Http404("Lesson does not exist")
 
-        context["implementations"] = self.object.ordered_implementations()
+        try:
+            implementation = self.object.implementations.get(language__slug=language_slug)
+        except ObjectDoesNotExist:
+            implementation = None
+        context["implementation"] = implementation
 
+        # TODO: Check if only required test cases
         related_test_cases = self.object.related_test_cases()
         context["test_cases_json"] = json.dumps(list(related_test_cases.values()))
         context["test_cases"] = related_test_cases

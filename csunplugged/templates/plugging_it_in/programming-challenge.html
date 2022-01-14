@@ -97,47 +97,45 @@
 
         {% render_html_field programming_challenge.content %}
 
-        {% for implementation in implementations %}  
-          {% comment %} Displays the hints/programming reminders or recommended blocks accordingly to what programming_lang is (e.g., python or block-based) {% endcomment %}
-          {% comment %} Challenge Hints {% endcomment %}
-          {% if implementation.language.name == programming_lang|capfirst and implementation.hints %}
-            <details>
-              <summary>
-                <strong>
-                  {% trans "Hints" %}
-                </strong>
-              </summary>
+        {% comment %} Displays the hints/programming reminders or recommended blocks accordingly to what programming_lang is (e.g., python or block-based) {% endcomment %}
+        {% comment %} Challenge Hints {% endcomment %}
+        {% if implementation.language.slug == programming_lang and implementation.hints %}
+        <details>
+            <summary>
+            <strong>
+                {% trans "Hints" %}
+            </strong>
+            </summary>
 
-              <div class="boxed-text-content">
-                {% render_html_field implementation.hints %}
-              </div>
-            </details>
-          {% endif %}
+            <div class="boxed-text-content">
+            {% render_html_field implementation.hints %}
+            </div>
+        </details>
+        {% endif %}
 
-          {% comment %} Programming syntax reminders {% endcomment %}
-          {% if implementation.language.name == programming_lang|capfirst and implementation.language.programming_reminders %}
-            <details>
-              <summary>
-                <strong>{% trans "Programming Reminders" %}</strong>
-              </summary>
-              <div class="boxed-text-content">
-                {% render_html_field implementation.language.programming_reminders %}
-              </div>
-            </details>          
-          {% endif %}
+        {% comment %} Programming syntax reminders {% endcomment %}
+        {% if implementation.language.programming_reminders %}
+        <details>
+            <summary>
+            <strong>{% trans "Programming Reminders" %}</strong>
+            </summary>
+            <div class="boxed-text-content">
+            {% render_html_field implementation.language.programming_reminders %}
+            </div>
+        </details>
+        {% endif %}
 
-          {% comment %} Recommended blocks {% endcomment %}
-          {% if implementation.language.name != 'Python' and implementation.language.name == programming_lang|capfirst and implementation.expected_result %}
-            <details>
-              <summary>
-                <strong>{% trans "Recommended Blocks" %}</strong>
-              </summary>
-              <div class="boxed-text-content">
-                {% render_html_field implementation.expected_result %}
-              </div>
-            </details>  
-          {% endif %}
-        {% endfor %}
+        {% comment %} Recommended blocks {% endcomment %}
+        {% if implementation.language.name != 'Python' and implementation.expected_result %}
+        <details>
+            <summary>
+            <strong>{% trans "Recommended Blocks" %}</strong>
+            </summary>
+            <div class="boxed-text-content">
+            {% render_html_field implementation.expected_result %}
+            </div>
+        </details>
+        {% endif %}
       </div>
     </div>
 
@@ -165,7 +163,7 @@
         </div>
       </div>
 
-    {% else %}  
+    {% else %}
       <div class="col-12 col-md-5 programming__editor">
         <p class='pii-block-heading'>{% trans "Create your program in the editor below" %}</p>
         <div id="blocklyDiv" style="height: 100%; "></div>
@@ -236,7 +234,7 @@
     let jobe_proxy_url = '{{ jobe_proxy_url }}';
     let save_attempt_url = "{% url 'plugging_it_in:save_attempt' %}";
     let programming_lang = "{{ programming_lang }}";
-    let previous_block_based_submission = "{{ previous_block_based_submission }}" 
+    let previous_block_based_submission = "{{ previous_block_based_submission }}"
   </script>
 
   <script src="{% static 'js/jobe-editor.js' %}"></script>
