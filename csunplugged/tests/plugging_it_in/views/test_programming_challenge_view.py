@@ -230,7 +230,7 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
 
         self.assertEqual(
             response.context["programming_exercises_json"],
-            json.dumps(list(self.lesson.retrieve_related_programming_challenges("Python").values()))
+            json.dumps(list(self.lesson.retrieve_related_programming_challenges("python").values()))
         )
 
     def test_programming_challenge_view_test_cases_context(self):
