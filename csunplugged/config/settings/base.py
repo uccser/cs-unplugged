@@ -24,9 +24,6 @@ ROOT_DIR = environ.Path(__file__) - 3
 # Load operating system environment variables and then prepare to use them
 env = environ.Env()
 
-# Wipe default Django logging
-LOGGING_CONFIG = None
-
 # APP CONFIGURATION
 # ----------------------------------------------------------------------------
 DJANGO_APPS = [
@@ -237,30 +234,48 @@ TEMPLATES = [
 
 # LOGGING
 # ------------------------------------------------------------------------------
+# Based off https://lincolnloop.com/blog/django-logging-right-way/
+
 logging.config.dictConfig({
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'console': {
-            # exact format is not important, this is the minimum information
-            'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "console": {
+            "format": "%(asctime)s %(name)-20s %(levelname)-10s %(message)s",
         },
     },
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'console',
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "console",
         },
     },
-    'loggers': {
-        '': {
-            'level': 'INFO',
-            'handlers': ['console', ],
+    "loggers": {
+        # Root logger
+        "": {
+            "level": env("LOG_LEVEL", default="INFO"),
+            "handlers": ["console", ],
         },
-        'csunplugged': {
-            'level': 'INFO',
-            'handlers': ['console', ],
-            # required to avoid double logging with root logger
+        "django": {
+            "handlers": ["console"],
+            "level": env("LOG_LEVEL", default="INFO"),
+            "propagate": False,
+        },
+        # Project specific logger
+        "csunplugged": {
+            "level": env("LOG_LEVEL", default="INFO"),
+            "handlers": ["console", ],
+            # Required to avoid double logging with root logger
+            "propagate": False,
+        },
+        'gunicorn.error': {
+            "level": env("LOG_LEVEL", default="INFO"),
+            'handlers': ['console'],
+            'propagate': False,
+        },
+        'gunicorn.access': {
+            "level": env("LOG_LEVEL", default="INFO"),
+            'handlers': ['console'],
             'propagate': False,
         },
     },
