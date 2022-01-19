@@ -23,6 +23,30 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+6.5.0
+==============================================================================
+
+**Release date:** 19th December 2022
+
+**Changelog:**
+
+- Add block based programming language for Plugging It In.
+- Update information on Online Courses page.
+- Add new Classic CS Unplugged logo.
+- Fix grammar in several lessons.
+- Expand 'BST' acronym in learning outcomes.
+- Add Django system check to required checks in testing and deployment pipeline.
+- Set Traefik redirect middleware to have a unique name.
+- Dependency updates:
+  - Update autoprefixer from 10.3.6 to 10.3.7.
+  - Update codemirror from 5.63.1 to 5.63.3.
+  - Update postcss 8.3.8 to 8.3.9.
+  - Update sass 1.42.1 to 1.43.1.
+  - Update django from 3.2.7 to 3.2.8.
+  - Update PyYAML from 5.4 to 6.0.
+  - Update flake8 from 3.9.2 to 4.0.1.
+  - Update coverage from 5.5 to 6.0.2.
+
 6.4.0
 ==============================================================================
 
