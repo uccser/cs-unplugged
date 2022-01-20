@@ -14,10 +14,10 @@ require('blockly/python');
 
 
 // Has to be global as other functions use these variables
-var myCodeMirror; 
+var myCodeMirror;
 var workspace;
 
-// Sets up code mirror or blockly editor depending what the value of programming_lang 
+// Sets up code mirror or blockly editor depending what the value of programming_lang
 // is from the end of the URL (/python or /block-based)
 // If the end of the URL is /python then displayed the Python editor, else display the Blockly editor
 if (programming_lang == "python") {
@@ -163,7 +163,7 @@ if (programming_lang == "python") {
 function sendCodeToJobe() {
   var code = '';
 
-  // If the programming_lang is Python, then get the code in the code mirror editor, 
+  // If the programming_lang is Python, then get the code in the code mirror editor,
   // else get the block-based program in the Blockly workspace
   if (programming_lang == 'python') {
     // Replaces all user input parameters to be blank so it matches the expected output
@@ -171,8 +171,7 @@ function sendCodeToJobe() {
     code = myCodeMirror.getValue().replace(/(input\("[^"]+"\)|input\('[^']+'\)|input\([^)]+\))/mg, 'input()');
   } else {
     // Uses the Python code generators to convert blocks into Python code
-    const lang = 'Python';
-    code = Blockly[lang].workspaceToCode(workspace);
+    code = Blockly['Python'].workspaceToCode(workspace);
   }
 
 
@@ -212,7 +211,7 @@ function allCorrect(results) {
 async function save_code(status="started") {
   var raw_code;
 
-  // If the programming_lang is Python, then get the code in the code mirror editor, 
+  // If the programming_lang is Python, then get the code in the code mirror editor,
   // else get the block-based program in the Blockly workspace
   if (programming_lang == "python") {
     raw_code = myCodeMirror.getValue();
@@ -305,33 +304,11 @@ function downloadCode() {
   download(current_challenge_slug + ".py", myCodeMirror.getValue());
 }
 
-/**
- * Retrieves the code from the Blockly editor, uses the JavaScript code generator 
- * to converts it to JavaScript and executes the code in the browser.
- */
-function runCode() { 
-    // Convert block-based program into JavaScript
-    const lang = 'JavaScript';
-    const code = Blockly[lang].workspaceToCode(workspace);
-
-    // Executes JavaScript code in the browser
-    try {
-      // Refresh the Command Shell output box
-      document.querySelector("#block-based-console-content").innerHTML = ""
-      eval(code);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
 // Setting up event listener for the check button to run the code.
 $("#editor_check_button").click(sendCodeToJobe);
 
 // Setting up event listener for the download button.
 $("#download_button").click(downloadCode);
-
-// Setting up event listener for the run button to run the code
-$("#blockly_editor_run_program_button").click(runCode);
 
 // Apply the navigation setup
 editorUtils.setupLessonNav();

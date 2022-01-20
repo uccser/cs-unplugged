@@ -97,67 +97,56 @@ $(document).ready(function () {
                     step: 2
                 },
                 {
-                    element: "#blockly_editor_run_program_button",
-                    intro: "Clicking the 'Run' button will run the program you have created without submitting it.",
-                    step: 3
-                },
-                {
                     element: "#editor_check_button",
-                    intro: "Clicking the 'Submit' button will submit your program to see if it works correctly for our test cases.",
-                    step: 4
+                    intro: "Clicking the 'Test' button will test your program to see if it works correctly for our test cases.",
+                    step: 3
                 },
                 {
                     element: "#test-case-table",
                     intro: "These are the test cases that will be used to see if your program is working correctly.",
-                    step: 5
+                    step: 4
                 },
                 {
                     element: "#test-case-table tbody tr:nth-child(1)",
                     intro: "Here is the first test case.",
-                    step: 6
+                    step: 5
                 },
                 {
                     element: "#test-case-table tbody tr:nth-child(1) td:nth-child(1)",
                     intro: "This is the input that will be passed to your program for this particular test. \
                     If this is blank, it means no input will be passed to your program.",
-                    step: 7
+                    step: 6
                 },
                 {
                     element: "#test-case-table tbody tr:nth-child(1) td:nth-child(2)",
                     intro: "This is the output that the test expects your program to print for the given input.",
-                    step: 8
+                    step: 7
                 },
                 {
                     element: "#test-case-table tbody tr:nth-child(1) td:nth-child(3)",
                     intro: "This is where your program will print its output. This is compared against the expected output.",
-                    step: 9
+                    step: 8
                 },
                 {
                     element: "#test-case-table tbody tr:nth-child(1) td:nth-child(4)",
                     intro: "A test case will pass if the received output matches the expected output. If all test cases pass the question has been solved.",
-                    step: 10
-                },
-                {
-                    element: ".block-based-console",
-                    intro: "This is where the output of your program will be displayed when you click the 'Run' button. Note: the console will display different colours depending on the data type that it is outputting (e.g., number = blue, boolean = purple, string = black.)",
-                    step: 11,
-                    position: "bottom"
+                    step: 9
                 },
                 {
                     element: "#next_challenge_button button",
                     intro: "Click this button when you are ready to move on to the next challenge.",
-                    step: 12,
+                    step: 10,
                     position: "top"
                 },
                 {
                     element: "#lessons_nav_toggle",
                     intro: "Click here to see the other challenges for this topic.",
-                    step: 13
+                    step: 11
                 },
                 {
                     element: ".navbar-brand",
                     intro: "Click here to see the other topics available.",
-                    step: 14
+                    step: 12
                 },
             ].filter(function (obj) {
                 style = $(obj.element).attr('style');
