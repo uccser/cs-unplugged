@@ -209,7 +209,7 @@ Blockly.defineBlocksWithJsonArray([
     // Operators join/concatenate string block
     {
     "type": "operators_join_string",
-    "message0": "join %1 %2 %3",
+    "message0": "join %1 %2 and %3",
     "args0": [
         {
         "type": "input_dummy"
@@ -217,18 +217,16 @@ Blockly.defineBlocksWithJsonArray([
         {
         "type": "input_value",
         "name": "a",
-        "check": "String"
         },
         {
         "type": "input_value",
         "name": "b",
-        "check": "String"
         }
     ],
     "inputsInline": true,
     "output": "String",
     "style":  "operators_blocks",
-    "tooltip": "Returns a combination of the two input strings added together.",
+    "tooltip": "Returns the combination of two inputs as a string (this can join a number and string together).",
     "helpUrl": ""
     },
     // Operators letter <num> of <string> block
@@ -1046,7 +1044,7 @@ Blockly.Python['operators_letter_of'] = function(block) {
 Blockly.Python['operators_join_string'] = function(block) {
     var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC) || '\'\'';
     var value_b = Blockly.Python.valueToCode(block, 'b', Blockly.Python.ORDER_ATOMIC) || '\'\'';
-    var code = value_a + ' + ' + value_b;
+    var code = 'str(' + value_a + ') + str(' + value_b + ')';
     return [code, Blockly.Python.ORDER_NONE];
 };
 
