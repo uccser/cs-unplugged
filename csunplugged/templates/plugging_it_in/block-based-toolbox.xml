@@ -118,18 +118,7 @@
         <block type="operators_and"></block>
         <block type="operators_or"></block>
         <block type="operators_not"></block>
-        <block type="operators_join_string">
-            <value name="a">
-                <block type="values_string">
-                    <field name="TEXT">apple </field>
-                </block>
-            </value>
-            <value name="b">
-                <block type="values_string">
-                    <field name="TEXT">banana</field>
-                </block>
-            </value>
-        </block>
+        <block type="operators_join_string"></block>
         <block type="operators_letter_of">
             <value name="index">
                 <block type="values_number">
@@ -190,8 +179,6 @@
             </value>
         </block>
     </category>
-    <category name="Variables" categorystyle="variable_category" custom="VARIABLE"></category>
-    <sep></sep>
     <category name="Values" categorystyle="values_category">
         <block type="values_number">
             <field name="NUM">0</field>
@@ -201,4 +188,5 @@
         </block>
         <block type="values_boolean"></block>
     </category>
+    <category name="Variables" categorystyle="variable_category" custom="VARIABLE"></category>
 </xml>

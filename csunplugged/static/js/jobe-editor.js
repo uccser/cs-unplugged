@@ -112,6 +112,8 @@ if (programming_lang == "python") {
     // Add the custom Scratch-like Blockly blocks
     setupBlockly(Blockly);
 
+    // TODO: Implement continuous toolbox when using ES6 syntax.
+    // https://google.github.io/blockly-samples/plugins/continuous-toolbox/README.html
     var toolbox = document.getElementById('toolbox');
 
     // Defines the configuration for the Blockly's workspace (area where blocks are dropped)
