@@ -32,20 +32,21 @@ All notable changes to this project will be documented in this file.
 
 - Add block based programming language for Plugging It In.
 - Update information on Online Courses page.
-- Add new Classic CS Unplugged logo.
-- Fix grammar in several lessons.
-- Expand 'BST' acronym in learning outcomes.
-- Add Django system check to required checks in testing and deployment pipeline.
-- Set Traefik redirect middleware to have a unique name.
+- Update logging configuration.
+- Update team members.
+- Enable CORS headers for providing version information.
 - Dependency updates:
-  - Update autoprefixer from 10.3.6 to 10.3.7.
-  - Update codemirror from 5.63.1 to 5.63.3.
-  - Update postcss 8.3.8 to 8.3.9.
-  - Update sass 1.42.1 to 1.43.1.
-  - Update django from 3.2.7 to 3.2.8.
-  - Update PyYAML from 5.4 to 6.0.
-  - Update flake8 from 3.9.2 to 4.0.1.
-  - Update coverage from 5.5 to 6.0.2.
+  - Update autoprefixer from 10.3.7 to 10.4.0.
+  - Update crowdin/github-action from 1.4.0 to 1.4.2.
+  - Update browser-sync from 2.27.5 to 2.27.7
+  - Update codemirror from 5.63.3 tp 5.64.0.
+  - Update cssnano from 5.0.8 to 5.0.12.
+  - Add blockly 6.20210701.0.
+  - Update intro.js from 4.2.2 to 4.3.0.
+  - Update postcss from 8.3.9 to 8.4.5.
+  - Update sass from 1.43.2 tp 1.45.0.
+  - Update yargs from 17.2.1 to 17.3.0.
+
 
 6.4.0
 ==============================================================================
