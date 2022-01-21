@@ -130,7 +130,7 @@ if (programming_lang == "python") {
       media : 'https://blockly-demo.appspot.com/static/media/',
       rtl : false,
       scrollbars : true,
-      sounds : true,
+      sounds : false,
       oneBasedIndex : true,
       zoom : {
         controls : true,
