@@ -4,7 +4,8 @@
 @import "node_modules/bootstrap/scss/mixins";
 
 $student-colour: #3044b3;
-$student-colour-light: #5a9fffff;;
+$student-colour-light: #5a9fffff;
+$scratch-flag-colour: #6abf74;
 
 html,
 body {
@@ -131,7 +132,7 @@ body {
     cursor: pointer;
     opacity: 0.7;
   }
-  
+
   .programming__info-area-content {
     flex-shrink: 1;
     background-color: white;
@@ -159,9 +160,10 @@ body {
   padding-right: 20px !important;
 
   .results-table {
-    border: 1px solid grey;
+    border: 1px solid gray;
     border-radius: 15px;
     background-color: white;
+    max-height: 50%;
 
     .table {
       margin-bottom: 0px;
@@ -182,7 +184,7 @@ body {
   padding: 20px 10px;
   display: flex;
   flex-direction: column;
-  
+
   .CodeMirror {
     flex-grow: 1;
     margin: 0px;
@@ -202,7 +204,7 @@ body {
     .programming__submit_options {
       height: 100%;
       align-items: flex-end;
-    
+
       .editor_button {
         border: none;
         background-color: $student-colour-light;
@@ -223,13 +225,13 @@ body {
         color: white;
       }
 
-      #download_button {
+     #download_button {
         border: 2px solid $student-colour-light;
-        color: $student-colour-light; 
+        color: $student-colour-light;
         background-color: transparent;
       }
 
-      #editor_run_button:disabled {
+      #editor_check_button:disabled {
         background-color: #a4caffff;
         border-color: #a4caffff;
         cursor: normal;
@@ -257,10 +259,18 @@ body {
     font-weight: bold;
     visibility: hidden;
   }
+
+  .console-boolean {
+    color: #BB29BB;
+  }
+
+  .console-number {
+    color: #1b7bffff;
+  }
 }
 
 // For small devices
-@include media-breakpoint-down(sm) { 
+@include media-breakpoint-down(sm) {
   .programming__results, .programming__editor, .programming__info-area {
     padding: 20px !important;
   }
@@ -268,13 +278,9 @@ body {
   .programming__results {
     padding-bottom: 160px !important;
   }
-
-  #walkthrough-btn-container {
-    display: none; // The walkthrough is unnavigable on small screens
-  }
 }
 
-// Side Drawer 
+// Side Drawer
 .sidenav {
   width: 0;
   position: fixed;
@@ -297,11 +303,11 @@ body {
     h5, p {
       margin-bottom: 0px;
     }
-  
+
     h2, h5, p {
       padding-left: 20px;
     }
-    
+
     h2:hover, p:hover {
       opacity: 0.8;
     }
@@ -343,7 +349,7 @@ body {
     .current-exercise {
       background-color: #e9f1fc;
     }
-  
+
     .current-exercise:hover {
       background-color: #e9f1fc;
     }
@@ -402,7 +408,7 @@ body {
 .status-badge {
   border: 1px solid #343a40;
   color: #343a40;
-  border-radius: 5px; 
+  border-radius: 5px;
   font-size: 10px;
   padding: 0px 5px !important;
   margin: 0px;
@@ -426,4 +432,10 @@ body {
 
 .introjs-fixParent{
   position: absolute !important;
+}
+
+// Customise the Block-based editor to have rounded corners and have a border
+.injectionDiv {
+  border: 1px solid gray;
+  border-radius: 15px;
 }

@@ -1,0 +1,68 @@
+{% extends "base-plugging-it-in.html" %}
+
+{% load i18n %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+    {% trans "Block-based System vs Scratch" %}
+{% endblock title %}
+
+{% block breadcrumbs %}
+    {% breadcrumb "Block-based System vs Scratch" "plugging_it_in:about" %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+    <h1>{% trans "Block-based System vs Scratch" %}</h1>
+{% endblock page_heading %}
+
+{% block content %}
+
+    <p>If your students are using a block-based language such as Scratch or Snap!, we offer two options for them to see exercises in a familiar format:</p>
+
+    <ul>
+        <li>
+            The links to "Scratch challenges" give questions and hints using the <a href="https://scratch.mit.edu/">Scratch programming language</a>.
+            However, the challenge web pages are unable to test if your program is working as specified in the challenge.
+        </li>
+        <li>
+            The links to "Block-based challenges" use a format similar to Scratch, but allow you to put your own programs into the web page and test if they are working as required by the challenge.
+        </li>
+    </ul>
+
+    <p>
+        The "Block-based exercises" here are based on the Blockly system, but we've adjusted them to look and behave as much as possible like Scratch and Snap! so that it will be familiar to those programming in the other languages.
+        There are a few small differences that might take some getting used to, although they will also help students to see how slightly different languages can be used to achieve a different outcome.
+    </p>
+
+    <p>
+        Here are the main differences you'll find in the Block-based challenges if you're used to using Scratch.
+    </p>
+
+    <h3>Values Category</h3>
+    <p>
+        The Values category is one major difference between the new Block-based system and Scratch that will immediately stand out to Scratch users.
+        This category contains the 'Number', 'String', and 'Boolean' blocks, which relate to the four major data types in programming, i.e., integer/float, string, and boolean.
+        In Scratch, the blocks contain blank fields where users can type their input in. However, in the block-based system, users are forced to specify what type their input is by using one of the three data type blocks.
+    </p>
+
+    <h3>Ask and Wait for Number/Text</h3>
+    <p>
+        The 'Ask and Wait' block is a popular block in Scratch and is used to get user-specified input when the program is executed.
+        However, this block does not really specify the type of input the user has entered.
+        Therefore, we created the 'Ask and Wait for Text' and 'Ask and Wait for Number' blocks to, furthermore, enforce users to specify the data type their program is expecting.
+        This further bridges the gap between block-based and text-based programming and will help ease this transition.
+    </p>
+
+    <h3>Running your program</h3>
+    <p>
+        Scratch users are familiar with clicking the green flag or using the 'When green flag is clicked' block to start their program.
+        However, this new system does not use this feature. Instead, it simply has a 'Test' button located at the bottom of the screen to start their program immediately.
+        Clicking this button will run their program for each of the test cases, so they can determine if it has passed.
+    </p>
+
+    <p>
+        <a href="{% url 'plugging_it_in:index' %}" class="btn plugging-it-in-navigation">
+            {% trans "Go back to home" %}
+        </a>
+    </p>
+{% endblock content %}

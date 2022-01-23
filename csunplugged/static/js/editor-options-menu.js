@@ -31,11 +31,12 @@ function getCurrentIndex() {
  * Gets the link to the next challenge if it is not the last challenge.
  */
 function getNextChallengeURL() {
+  console.log(programming_exercises)
   const index = getCurrentIndex();
 
   if (index !== programming_exercises.length-1) {
     const nextLesson = programming_exercises[index+1];
-    return nextLessonUrl = lesson_url + nextLesson.slug;
+    return nextLessonUrl = lesson_url + nextLesson.slug + "/" + programming_lang;
   }
 
   return '#'
@@ -49,7 +50,7 @@ function getPreviousChallengeURL() {
 
   if (index !== 0) {
     const prevLesson = programming_exercises[index-1];
-    return prevLessonUrl = lesson_url + prevLesson.slug;
+    return prevLessonUrl = lesson_url + prevLesson.slug + "/" + programming_lang;
   }
 
   return "#"

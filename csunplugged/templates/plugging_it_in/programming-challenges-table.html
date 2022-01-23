@@ -18,7 +18,7 @@
   <tbody>
     {% for programming_challenge in programming_challenges %}
       {% for implementation in programming_challenge.implementations.all %}
-        {% if implementation.language.name == language %}
+        {% if implementation.language.slug == language.slug %}
           <tr class="align-middle{% if not programming_challenge.translation_available %} table-active{% endif %}">
             <td class="text-center">
               {{ programming_challenge.challenge_set_number }}.{{ programming_challenge.challenge_number }}
@@ -28,8 +28,12 @@
                 {% include "generic/not-available-badge.html" %}
                 <br>
               {% endif %}
-              {% if language == "Python" %}
-                <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge.slug %}">
+              {% if language.slug == "python" %}
+                <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge.slug 'python' %}">
+                  <strong>{{ programming_challenge.name }}</strong>
+                </a>
+              {% elif language.slug == "block-based" %}
+                <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge.slug 'block-based' %}">
                   <strong>{{ programming_challenge.name }}</strong>
                 </a>
               {% else %}

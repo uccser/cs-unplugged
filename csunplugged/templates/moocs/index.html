@@ -25,11 +25,15 @@
 
     <hr>
 
-    {# <img src="{% static 'img/moocs/teaching-computational-thinking.png' %}"  alt="Teacher talking to students"> #}
-
-    <h2>Teaching Computational Thinking</h2>
-    <h6 class="mb-2 text-muted">Available in English</h6>
-
+    <div class="row align-items-center">
+        <div class="col-sm-12 col-md-3">
+            <img src="{% static 'img/moocs/teaching-computational-thinking.png' %}" class="figure-img img-fluid" alt="Teacher talking to students.">
+        </div>
+        <div class="col-sm-12 col-md-9">
+            <h2>Teaching Computational Thinking</h2>
+            <h5 class="text-muted">Available in English</h5>
+        </div>
+    </div>
     <div class="row">
         <div class="col-sm-12 col-md-6">
             <h4>Summary</h4>
@@ -39,7 +43,7 @@
 
             <a class="link-item no-text-decoration d-inline-block mb-3" href="https://www.edx.org/course/teaching-computational-thinking">
                 <div class="d-flex align-items-center">
-                    {% trans "Click here to view course on" %}
+                    {% trans "Click here to access course on" %}
                     <img class="img-fluid edx-logo" src="{% static 'img/moocs/edx-logo.svg' %}" alt="EdX logo">
                 </div>
             </a>
@@ -47,15 +51,28 @@
         <div class="col-sm-12 col-md-6">
             <h4>Course contents and resources</h4>
 
-            <ul>
-                <li class="mb-2">
-                    <a href="{% url 'topics:unit_plan' 'sorting-networks' 'unit-plan' %}">Sorting networks</a>
+            <ol class="mooc-course-contents">
+                <li>
+                    Introduction
+                    <ul>
+                        <li>
+                            <a href="{% url 'topics:unit_plan' 'sorting-networks' 'unit-plan' %}">Sorting networks unit plan</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="mb-2">
-                    <a href="{% url 'topics:unit_plan' 'binary-numbers' 'unit-plan' %}">Binary numbers</a>
+                <li>
+                    Binary basics
+                    <ul>
+                        <li>
+                            <a href="{% url 'topics:unit_plan' 'binary-numbers' 'unit-plan' %}">Binary numbers unit plan</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="mb-2">
-                    <a href="{% url 'topics:unit_plan' 'image-representation' 'unit-plan' %}">Image representation</a>
+                <li>
+                    Text representation
+                </li>
+                <li>
+                    Image representation
                     <ul>
                         <li>
                             <a href="{% static 'files/mooc/teaching-computational-thinking/Image representation - Exploring pixels worksheets.pdf' %}" target="_blank" rel="noopener noreferrer">
@@ -63,30 +80,56 @@
                             </a> - A3 size
                         </li>
                         <li>
-                            <a href="http://csunplugged.mines.edu/activity-computer_vision.html" target="_blank" rel="noopener noreferrer">
+                            <a href="https://web.archive.org/web/20200712105556/http://csunplugged.mines.edu/activity-computer_vision.html" target="_blank" rel="noopener noreferrer">
                                 CS@Mines computer vision worksheet
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'topics:unit_plan' 'image-representation' 'unit-plan' %}">Image representation unit plan</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Parity error correction
+                    <ul>
+                        <li>
+                            <a href="{% url 'topics:lesson' 'error-detection-and-correction' 'unit-plan' 'parity-magic' %}">
+                                Parity magic lesson
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'topics:unit_plan' 'error-detection-and-correction' 'unit-plan' %}">
+                                Error detection and correction unit plan
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="mb-2">
-                    <a href="{% url 'topics:unit_plan' 'error-detection-and-correction' 'unit-plan' %}">Error detection and correction</a>
+                <li>
+                    Product codes
+                </li>
+                <li>
+                    QR codes
                     <ul>
                         <li>
                             <a href="{% static 'files/mooc/teaching-computational-thinking/Error Detection and Correction - Will It Scan.pdf' %}" target="_blank" rel="noopener noreferrer">
                                 Will it scan activity
-                            </a> - Includes sample QR codes for printing
+                            </a> - Includes QR codes for printing
                         </li>
                     </ul>
                 </li>
-                <li class="mb-2">
-                    Human computer Interaction (HCI)
+                <li>
+                    Human computer interaction
                     <ul>
                         <li>
                             <a href="{% static 'files/mooc/teaching-computational-thinking/HCI - Think-aloud lesson.pdf' %}" target="_blank" rel="noopener noreferrer">
                                 Think-aloud protocol lesson plan
                             </a>
                         </li>
+                    </ul>
+                </li>
+                <li>
+                    Human capabilities
+                    <ul>
                         <li>
                             <a href="{% static 'files/mooc/teaching-computational-thinking/HCI - The Stroop effect lesson.pdf' %}" target="_blank" rel="noopener noreferrer">
                                 Stroop effect lesson plan
@@ -99,9 +142,14 @@
                                 </li>
                             </ul>
                         </li>
+                    </ul>
+                </li>
+                <li>
+                    Evaluating usability and wrap up
+                    <ul>
                         <li>
                             <a href="{% static 'files/mooc/teaching-computational-thinking/HCI - Heuristics lesson.pdf' %}" target="_blank" rel="noopener noreferrer">
-                                Nielsen’s heuristics lesson plan
+                                Nielsen's heuristics lesson plan
                             </a>
                             <ul>
                                 <li>
@@ -113,12 +161,12 @@
                         </li>
                     </ul>
                 </li>
-            </ul>
+            </ol>
         </div>
     </div>
 
     <hr>
 
-    <p><small>edX logo is a registered trademarks of edX Inc. All Rights Reserved.</small></p>
+    <p><small>The edX logo is a registered trademarks of edX Inc. All Rights Reserved.</small></p>
 
 {% endblock content %}

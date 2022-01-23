@@ -24,9 +24,6 @@ ROOT_DIR = environ.Path(__file__) - 3
 # Load operating system environment variables and then prepare to use them
 env = environ.Env()
 
-# Wipe default Django logging
-LOGGING_CONFIG = None
-
 # APP CONFIGURATION
 # ----------------------------------------------------------------------------
 DJANGO_APPS = [
@@ -46,6 +43,7 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    "corsheaders",
     "django_bootstrap_breadcrumbs",
     "haystack",
     "widget_tweaks",
@@ -71,6 +69,7 @@ INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 # MIDDLEWARE CONFIGURATION
 # ----------------------------------------------------------------------------
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -201,6 +200,7 @@ TEMPLATES = [
     {
         # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
         "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "APP_DIRS": True,
         # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
         "DIRS": [
             str(ROOT_DIR.path("templates")),
@@ -208,12 +208,6 @@ TEMPLATES = [
         "OPTIONS": {
             # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
             "debug": DEBUG,
-            # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
-            # https://docs.djangoproject.com/en/dev/ref/templates/api/#loader-types
-            "loaders": [
-                "django.template.loaders.filesystem.Loader",
-                "django.template.loaders.app_directories.Loader",
-            ],
             # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
             "context_processors": [
                 "django.template.context_processors.debug",
@@ -240,30 +234,48 @@ TEMPLATES = [
 
 # LOGGING
 # ------------------------------------------------------------------------------
+# Based off https://lincolnloop.com/blog/django-logging-right-way/
+
 logging.config.dictConfig({
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'console': {
-            # exact format is not important, this is the minimum information
-            'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "console": {
+            "format": "%(asctime)s %(name)-20s %(levelname)-10s %(message)s",
         },
     },
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'console',
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "console",
         },
     },
-    'loggers': {
-        '': {
-            'level': 'INFO',
-            'handlers': ['console', ],
+    "loggers": {
+        # Root logger
+        "": {
+            "level": env("LOG_LEVEL", default="INFO"),
+            "handlers": ["console", ],
         },
-        'csunplugged': {
-            'level': 'INFO',
-            'handlers': ['console', ],
-            # required to avoid double logging with root logger
+        "django": {
+            "handlers": ["console"],
+            "level": env("LOG_LEVEL", default="INFO"),
+            "propagate": False,
+        },
+        # Project specific logger
+        "csunplugged": {
+            "level": env("LOG_LEVEL", default="INFO"),
+            "handlers": ["console", ],
+            # Required to avoid double logging with root logger
+            "propagate": False,
+        },
+        'gunicorn.error': {
+            "level": env("LOG_LEVEL", default="INFO"),
+            'handlers': ['console'],
+            'propagate': False,
+        },
+        'gunicorn.access': {
+            "level": env("LOG_LEVEL", default="INFO"),
+            'handlers': ['console'],
             'propagate': False,
         },
     },
@@ -360,3 +372,9 @@ ACTIVITIES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("at_home")), "cont
 BREADCRUMBS_TEMPLATE = "django_bootstrap_breadcrumbs/bootstrap4.html"
 JOBE_SERVER_URL = "http://jobe"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:8000",
+    "http://localhost:8000",
+    "https://canterbury.ac.nz"
+]

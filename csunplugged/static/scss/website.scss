@@ -920,3 +920,26 @@ button:hover .icon-search {
     height: 3rem;
     margin-left: 0.5rem;
 }
+.mooc-course-contents {
+    > li {
+        margin-bottom: 1rem;
+        &::marker {
+            font-weight: bold;
+            color: grey;
+        }
+    }
+    & > li > ul {
+        font-size: 0.9rem;
+        list-style-type: disc;
+
+        &::before {
+            content: 'Supporting resources';
+            font-size: 0.7rem;
+            color: grey;
+            margin-left: -2rem;
+        }
+        & > li > ul {
+            list-style-type: circle;
+        }
+    }
+}
