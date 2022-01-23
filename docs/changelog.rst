@@ -36,17 +36,29 @@ All notable changes to this project will be documented in this file.
 - Update team members.
 - Enable CORS headers for providing version information.
 - Dependency updates:
-  - Update autoprefixer from 10.3.7 to 10.4.0.
-  - Update crowdin/github-action from 1.4.0 to 1.4.2.
+  - Add blockly 7.20211209.2.
+  - Add django-cors-headers 3.11.0.
+  - Update autoprefixer from 10.3.7 to 10.4.2.
   - Update browser-sync from 2.27.5 to 2.27.7
-  - Update codemirror from 5.63.3 tp 5.64.0.
-  - Update cssnano from 5.0.8 to 5.0.12.
-  - Add blockly 6.20210701.0.
+  - Update codemirror from 5.63.3 tp 5.65.1.
+  - Update coverage from 6.0.2 to 6.2.
+  - Update crowdin/github-action from 1.4.0 to 1.4.6.
+  - Update cssnano from 5.0.8 to 5.0.15.
+  - Update django from 3.2.8 to 3.2.11.
+  - Update django-debug-toolbar from 3.2.2 to 3.2.4.
+  - Update django-environ from 0.7.0 to 0.8.1.
+  - Update django-extensions from 3.1.3 to 3.1.5.
+  - Update django-widget-tweaks from 1.4.8 to 1.4.12.
+  - Update docker/login-action from 1.10.0 to 1.12.0.
+  - Update fancy-log from 1.3.3 tp 2.0.0.
+  - Update gulp-sass from 5.0.0 to 5.1.0.
   - Update intro.js from 4.2.2 to 4.3.0.
+  - Update lxml from 4.6.3 to 4.7.1.
+  - Update Pillow from 8.3.2 to 9.0.0.
   - Update postcss from 8.3.9 to 8.4.5.
-  - Update sass from 1.43.2 tp 1.45.0.
-  - Update yargs from 17.2.1 to 17.3.0.
-
+  - Update psycopg2 from 2.9.1 to 2.9.3.
+  - Update sass from 1.43.2 tp 1.49.0.
+  - Update yargs from 17.2.1 to 17.3.1.
 
 6.4.0
 ==============================================================================
@@ -122,7 +134,7 @@ All notable changes to this project will be documented in this file.
   - Update crowdin/github-action from 1.0.18 to 1.4.0.
   - Update django from 2.2.12 to 3.2.6.
   - Update django-debug-toolbar from 3.1.1 to 3.2.2.
-  - Update django-enviro from 0.4.5 to 0.7.0.
+  - Update django-environ from 0.4.5 to 0.7.0.
   - Update django-extensions from 3.0.9 to 3.1.3.
   - Update django-modeltranslation from 0.16.1 to 0.17.3.
   - Update flake8 from 3.8.4 to 3.9.2.
