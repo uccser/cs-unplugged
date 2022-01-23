@@ -9,7 +9,7 @@ from django.http.response import HttpResponse
 from django.urls import include, path
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
-from . import views
+from config import views
 import environ
 env = environ.Env()
 

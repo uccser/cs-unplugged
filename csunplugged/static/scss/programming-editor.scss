@@ -132,7 +132,7 @@ body {
     cursor: pointer;
     opacity: 0.7;
   }
-  
+
   .programming__info-area-content {
     flex-shrink: 1;
     background-color: white;
@@ -169,25 +169,6 @@ body {
       margin-bottom: 0px;
     }
   }
-
-  .block-based-console {
-    margin: 0px; 
-    padding: 0.7rem; 
-    overflow-y: auto; 
-    flex-shrink: 1; 
-    max-height: 50%; 
-    background-color: white; 
-    border: 1px solid gray; 
-    border-radius: 15px;
-    min-height: 45px;
-
-    #block-based-console-content { 
-      font-size: 87.5%;
-      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    }
-  }
-
-  
 }
 
 .pii-block-heading {
@@ -203,7 +184,7 @@ body {
   padding: 20px 10px;
   display: flex;
   flex-direction: column;
-  
+
   .CodeMirror {
     flex-grow: 1;
     margin: 0px;
@@ -223,7 +204,7 @@ body {
     .programming__submit_options {
       height: 100%;
       align-items: flex-end;
-    
+
       .editor_button {
         border: none;
         background-color: $student-colour-light;
@@ -244,20 +225,10 @@ body {
         color: white;
       }
 
-      #blockly_editor_run_program_button:hover {
-        background-color: #43b14c;
-        border: 2px solid #4ab750;
-      }
-
-      #download_button {
+     #download_button {
         border: 2px solid $student-colour-light;
-        color: $student-colour-light; 
+        color: $student-colour-light;
         background-color: transparent;
-      }
-
-      #blockly_editor_run_program_button {
-        border: 2px solid $scratch-flag-colour;
-        background-color: $scratch-flag-colour;
       }
 
       #editor_check_button:disabled {
@@ -299,7 +270,7 @@ body {
 }
 
 // For small devices
-@include media-breakpoint-down(sm) { 
+@include media-breakpoint-down(sm) {
   .programming__results, .programming__editor, .programming__info-area {
     padding: 20px !important;
   }
@@ -309,7 +280,7 @@ body {
   }
 }
 
-// Side Drawer 
+// Side Drawer
 .sidenav {
   width: 0;
   position: fixed;
@@ -332,11 +303,11 @@ body {
     h5, p {
       margin-bottom: 0px;
     }
-  
+
     h2, h5, p {
       padding-left: 20px;
     }
-    
+
     h2:hover, p:hover {
       opacity: 0.8;
     }
@@ -378,7 +349,7 @@ body {
     .current-exercise {
       background-color: #e9f1fc;
     }
-  
+
     .current-exercise:hover {
       background-color: #e9f1fc;
     }
@@ -437,7 +408,7 @@ body {
 .status-badge {
   border: 1px solid #343a40;
   color: #343a40;
-  border-radius: 5px; 
+  border-radius: 5px;
   font-size: 10px;
   padding: 0px 5px !important;
   margin: 0px;
