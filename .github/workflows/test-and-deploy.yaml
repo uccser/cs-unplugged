@@ -283,7 +283,7 @@ jobs:
           ls artifacts/resources-*/resources.tar.gz | xargs -n1 tar -xz --directory csunplugged/staticfiles/resources --file
 
       - name: Log in to the Container registry
-        uses: docker/login-action@v1.12.0
+        uses: docker/login-action@v1.13.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
