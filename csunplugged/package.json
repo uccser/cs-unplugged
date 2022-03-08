@@ -31,7 +31,7 @@
         "multiple-select": "1.5.2",
         "pixrem": "5.0.0",
         "popper.js": "1.16.1",
-        "postcss": "8.4.5",
+        "postcss": "8.4.8",
         "postcss-flexbugs-fixes": "5.0.2",
         "sass": "1.49.0",
         "scratchblocks": "uccser/scratchblocks#master",
