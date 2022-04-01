@@ -22,7 +22,7 @@ python-markdown-math==0.6
 
 # Search
 django-haystack[elasticsearch]==3.1.1
-elasticsearch==5.5.3
+elasticsearch==8.1.2
 django-widget-tweaks==1.4.12
 
 # YAML Loading
