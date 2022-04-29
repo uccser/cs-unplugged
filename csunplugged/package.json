@@ -12,7 +12,7 @@
         "child_process": "1.0.2",
         "codemirror": "5.65.1",
         "cssnano": "5.0.15",
-        "blockly": "7.20211209.2",
+        "blockly": "7.20211209.5",
         "details-element-polyfill": "2.4.0",
         "fancy-log": "2.0.0",
         "gulp-concat": "2.6.1",
