@@ -92,3 +92,4 @@ class Command(BaseCommand):
             pdf_file_output = open(os.path.join(pdf_directory, filename), "wb")
             pdf_file_output.write(pdf_file)
             pdf_file_output.close()
+        print("  - Created PDF '{}' in '{}'".format(filename, language_code))

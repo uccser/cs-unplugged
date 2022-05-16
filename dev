@@ -156,7 +156,7 @@ defhelp makeresourcethumbnails 'Run Django makeresourcethumbnails command.'
 # Run Django makeresources command
 cmd_make_resources() {
   echo "Creating static resource PDFs..."
-  docker-compose -f docker-compose.local.yml run --rm --label traefik.enable=false django python ./manage.py makeresources
+  docker-compose -f docker-compose.local.yml run --rm --label traefik.enable=false django python ./manage.py makeresources "$@"
 }
 defhelp makeresources 'Run Django makeresources command.'
 
