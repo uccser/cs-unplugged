@@ -1,0 +1,18 @@
+lessons: lessons/lessons.yaml
+computational-thinking-links: unit-plan-ct-links.md
+
+age-groups:
+  5-7:
+    how-many-guesses-junior:
+      number: 1
+    divide-and-conquer-junior:
+      number: 2
+  8-10:
+    how-many-guesses:
+      number: 1
+    divide-and-conquer:
+      number: 2
+    the-great-number-hunt-unsorted:
+      number: 3
+    the-great-number-hunt-sorted:
+      number: 4

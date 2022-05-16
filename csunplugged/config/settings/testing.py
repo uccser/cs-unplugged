@@ -8,9 +8,16 @@ from .base import *  # noqa: F403
 # ----------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
-    "default": env.db("DATABASE_URL"),  # noqa: F405
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": env("POSTGRES_DB"),  # noqa: F405
+        "USER": env("POSTGRES_USER"),  # noqa: F405
+        "PASSWORD": env("POSTGRES_PASSWORD"),  # noqa: F405
+        "HOST": env("POSTGRES_HOST"),  # noqa: F405
+        "PORT": env("POSTGRES_PORT"),  # noqa: F405
+        "ATOMIC_REQUESTS": True,
+    }
 }
-DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # DEBUG
 # ----------------------------------------------------------------------------
@@ -47,25 +54,11 @@ CACHES = {
 # ----------------------------------------------------------------------------
 TEST_RUNNER = "django.test.runner.DiscoverRunner"
 
-# STATIC FILE CONFIGURATION
-# ------------------------------------------------------------------------------
-STATIC_URL = "https://static.cs-unplugged.localhost/"
-
 # PASSWORD HASHING
 # ----------------------------------------------------------------------------
 # Use fast password hasher so tests run faster
 PASSWORD_HASHERS = [
     "django.contrib.auth.hashers.MD5PasswordHasher",
-]
-
-# TEMPLATE LOADERS
-# ----------------------------------------------------------------------------
-# Keep templates in memory so tests run faster
-TEMPLATES[0]["OPTIONS"]["loaders"] = [  # noqa: F405
-    ["django.template.loaders.cached.Loader", [
-        "django.template.loaders.filesystem.Loader",
-        "django.template.loaders.app_directories.Loader",
-    ], ],
 ]
 
 # Your local stuff: Below this line define 3rd party library settings

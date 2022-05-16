@@ -14,8 +14,17 @@ from .base import *  # noqa: F403
 # DATABASE CONFIGURATION
 # ----------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {"default": env.db("DATABASE_URL")}
-DATABASES["default"]["ATOMIC_REQUESTS"] = True
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": env("POSTGRES_DB"),  # noqa: F405
+        "USER": env("POSTGRES_USER"),  # noqa: F405
+        "PASSWORD": env("POSTGRES_PASSWORD"),  # noqa: F405
+        "HOST": env("POSTGRES_HOST"),  # noqa: F405
+        "PORT": env("POSTGRES_PORT"),  # noqa: F405
+        "ATOMIC_REQUESTS": True,
+    }
+}
 
 # DEBUG
 # ----------------------------------------------------------------------------
@@ -26,11 +35,7 @@ TEMPLATES[0]["OPTIONS"]["debug"] = DEBUG  # noqa: F405
 # ----------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
-SECRET_KEY = env("DJANGO_SECRET_KEY", default="l@@)w&&%&u37+sjz^lsx^+29y_333oid3ygxzucar^8o(axo*f")  # noqa: F405
-
-# STATIC FILE CONFIGURATION
-# ------------------------------------------------------------------------------
-STATIC_URL = "https://static.cs-unplugged.localhost/"
+SECRET_KEY = env("DJANGO_SECRET_KEY", default="DJANGO_SECRET_KEY_FOR_LOCAL_DEVELOPMENT")  # noqa: F405
 
 # Mail settings
 # ----------------------------------------------------------------------------

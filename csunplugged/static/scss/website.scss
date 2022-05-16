@@ -39,7 +39,6 @@
 @import "node_modules/bootstrap/scss/print";
 
 @import "pygments-vs";
-@import "sticky-state";
 @import "directional";
 @import url('https://fonts.googleapis.com/css?family=Sniglet');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
@@ -248,6 +247,10 @@ details {
   overflow: hidden;
   background-color: $gray-lighter;
 
+  &[open] summary:before {
+    content: '⊖';
+  }
+
   summary {
     background-color: $details-summary-bg;
     color: $gray-dark;
@@ -256,6 +259,16 @@ details {
     padding: ($spacer * .25) ($spacer * .25) ($spacer * .25) $spacer;
     display: flex;
     align-items: center;
+    list-style: none;
+    &::-webkit-details-marker {
+        display: none;
+    }
+    &:before {
+        content: '⊕';
+        margin-right: 0.5rem;
+        padding-bottom: 0.15rem;
+        opacity: .6;
+    }
     .inline-image {
       margin-top: 0.2rem;
       margin-bottom: 0.2rem;
@@ -429,7 +442,7 @@ body {
 }
 
 ol, ul {
-    margin-bottom: 1rem !important;
+    margin-bottom: 1rem;
 }
 
 .large-text {
@@ -468,6 +481,12 @@ ol, ul {
     }
     &-educator-3 {
       border-top-color: mix($educator-colour, $white, 60%);
+      &:hover {
+        background-color: mix($educator-colour, $white, 10%);
+      }
+    }
+    &-educator-4 {
+      border-top-color: mix($educator-colour, $white, 40%);
       &:hover {
         background-color: mix($educator-colour, $white, 10%);
       }
@@ -561,6 +580,9 @@ ol, ul {
 .img-container {
   img {
     @include img-fluid;
+  }
+  .figure-img {
+      max-height: 50vh;
   }
   margin-bottom: $spacer * 0.5;
   @include media-breakpoint-up(md) {
@@ -885,4 +907,39 @@ button:hover .icon-search {
 .scratchblocks-inline > svg {
     height: 2.5rem;
     width: auto;
+}
+
+#classic-cs-unplugged-logo {
+    height: 5rem;
+}
+
+
+// MOOCs
+
+.edx-logo {
+    height: 3rem;
+    margin-left: 0.5rem;
+}
+.mooc-course-contents {
+    > li {
+        margin-bottom: 1rem;
+        &::marker {
+            font-weight: bold;
+            color: grey;
+        }
+    }
+    & > li > ul {
+        font-size: 0.9rem;
+        list-style-type: disc;
+
+        &::before {
+            content: 'Supporting resources';
+            font-size: 0.7rem;
+            color: grey;
+            margin-left: -2rem;
+        }
+        & > li > ul {
+            list-style-type: circle;
+        }
+    }
 }

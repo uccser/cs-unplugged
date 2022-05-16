@@ -26,8 +26,10 @@ ARG APP_HOME=/app
 
 # Set environment variables
 ENV LANG C.UTF-8
-ENV DJANGO_PRODUCTION=False
+ENV DEPLOYED=False
+# Turns off buffering for easier container logging
 ENV PYTHONUNBUFFERED 1
+# Keeps Python from generating .pyc files in the container
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV BUILD_ENV ${BUILD_ENVIRONMENT}
 
@@ -54,6 +56,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     fontconfig \
     # Translations dependencies
     gettext \
+    # Healthcheck tool
+    curl \
     # Cleaning up unused files
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
     && rm -rf /var/lib/apt/lists/*
@@ -66,7 +70,7 @@ COPY --from=python-build-stage /usr/src/app/wheels  /wheels/
 RUN pip install --no-cache-dir --no-index --find-links=/wheels/ /wheels/* \
     && rm -rf /wheels/
 
-COPY ./infrastructure/production/django/entrypoint /entrypoint
+COPY ./infrastructure/local/django/entrypoint /entrypoint
 RUN sed -i 's/\r$//g' /entrypoint
 RUN chmod +x /entrypoint
 
@@ -78,7 +82,7 @@ RUN chmod +x /start
 COPY ./csunplugged/static/fonts/ /usr/share/fonts/
 RUN fc-cache -fv
 
-# Copy application code to WORKDIR
-COPY . ${APP_HOME}
+HEALTHCHECK --interval=15s --timeout=30s --start-period=5s --retries=3 \
+    CMD curl --fail --silent http://localhost:8000/healthcheck/ || exit 1
 
 ENTRYPOINT ["/entrypoint"]

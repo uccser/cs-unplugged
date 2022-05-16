@@ -123,15 +123,6 @@ third-party-licenses/flake8.txt
 ==============================================================================
 
 ==============================================================================
-gevent
-------------------------------------------------------------------------------
-https://github.com/gevent/gevent
-Copyright Denis Bilenko and the contributors, http://www.gevent.org.
-Licensed under MIT License.
-third-party-licenses/gevent.txt
-==============================================================================
-
-==============================================================================
 gunicorn
 ------------------------------------------------------------------------------
 http://gunicorn.org/
@@ -296,15 +287,6 @@ https://github.com/rtfd/sphinx_rtd_theme
 Copyright (c) 2013 Dave Snider
 Licensed under MIT License.
 third-party-licenses/sphinx-rtd-theme.txt
-==============================================================================
-
-==============================================================================
-StickyState
-------------------------------------------------------------------------------
-https://github.com/soenkekluth/sticky-state
-Copyright Sönke Kluth <soenke.kluth@gmail.com> (http://soenkekluth.com/).
-Licensed under MIT License.
-third-party-licenses/sticky-state.txt
 ==============================================================================
 
 ==============================================================================

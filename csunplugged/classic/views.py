@@ -9,7 +9,7 @@ def redirect_to_classic_unplugged(request, **kwargs):
 
     Returns a 301 permanent redirect HTTP response.
     """
-    url = urljoin("http://classic.csunplugged.org", request.path)
+    url = urljoin("https://classic.csunplugged.org", request.path)
     return redirect(url, permanent=True)
 
 
@@ -34,12 +34,15 @@ def redirect_to_changelog(request):
 
     Returns a 301 permanent redirect HTTP response.
     """
-    return redirect("http://cs-unplugged.readthedocs.io/en/latest/changelog.html", permanent=True)
+    return redirect("https://cs-unplugged.readthedocs.io/changelog.html", permanent=True)
 
 
-def redirect_to_modems_unplugged_2(request):
+def redirect_to_modems_unplugged(request):
     """Redirect request to specific modems page.
 
     Returns a 301 permanent redirect HTTP response.
     """
-    return redirect("http://classic.csunplugged.org/modems-unplugged-2", permanent=True)
+    return redirect(
+        "https://classic.csunplugged.org/activities/community-activities/modems-unplugged/",
+        permanent=True,
+    )

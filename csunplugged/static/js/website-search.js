@@ -8,6 +8,7 @@ $(document).ready(function() {
   $('#areas-filter').multipleSelect({
     filter: true,
     textTemplate: formatArea,
+    labelTemplate: formatArea,
     selectAll: false,
     width: '100%',
     onClick: updateSelectedAreas,
@@ -17,13 +18,6 @@ $(document).ready(function() {
 
   // Render selected areas on initial load.
   updateSelectedAreas();
-
-  // Add styling to <optgroup> labels.
-  $('.areas-filter-container .ms-drop li.group').each(function(i, obj) {
-    var data = areaData[$(this).next().find(':checkbox').val()];
-    var label = $(this).find('label').contents().last();
-    label.replaceWith(createAreaBadge(data.colour, label.text()));
-  });
 
   // Indent all area children.
   $('.areas-filter-container .ms-drop li:not(.group)').find(':checkbox').each(function(i, obj) {
@@ -48,7 +42,7 @@ function createAreaBadge(colour, text) {
    * @param {string} text - Text of badge.
    * @return {string} HTML of curriculum area badge.
    */
-  return '<span class="area-badge badge-' + colour + '">' + text + '</span>';
+  return `<span class="area-badge badge-${colour}">${text}</span>`;
 };
 
 function updateSelectedAreas(changeData) {
@@ -70,11 +64,15 @@ function updateSelectedAreas(changeData) {
 };
 
 function formatArea(element) {
-  /**
-   * Render curriculum area option in multiple select widget.
-   * @param {Node} element - Element to render text.
-   * @return {string} HTML of curriculum area badge.
-   */
-  var data = areaData[element[0].value];
-  return createAreaBadge(data.colour, data.text);
+    /**
+     * Render curriculum area option in multiple select widget.
+     * @param {Node} element - Element to render text.
+     * @return {string} HTML of curriculum area badge.
+     */
+    var element_value = element[0].value;
+    if (!element_value) {
+        element_value = areaGroupMapping[element[0].label];
+    }
+    var data = areaData[element_value];
+    return createAreaBadge(data.colour, data.text, data.child);
 };

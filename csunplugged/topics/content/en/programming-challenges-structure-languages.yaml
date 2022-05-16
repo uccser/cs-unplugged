@@ -2,3 +2,5 @@ scratch:
   name: Scratch
 python:
   name: Python
+block-based:
+  name: Block-based

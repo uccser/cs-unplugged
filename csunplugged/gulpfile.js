@@ -24,7 +24,7 @@ const pixrem = require('pixrem')
 const postcss = require('gulp-postcss')
 const postcssFlexbugFixes = require('postcss-flexbugs-fixes')
 const reload = browserSync.reload
-const sass = require('gulp-sass')
+const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps')
 const spawn = require('child_process').spawn
 const tap = require('gulp-tap')
@@ -50,18 +50,21 @@ function pathsConfig(appName) {
         scss_source: `${staticSourceRoot}/scss`,
         js_source: `${staticSourceRoot}/js`,
         images_source: `${staticSourceRoot}/img`,
+        files_source: `${staticSourceRoot}/files`,
         vendor_js_source: [
-            `${vendorsRoot}/jquery/dist/jquery.slim.js`,
+            `${vendorsRoot}/jquery/dist/jquery.js`,
             `${vendorsRoot}/popper.js/dist/umd/popper.js`,
             `${vendorsRoot}/bootstrap/dist/js/bootstrap.js`,
             `${vendorsRoot}/details-element-polyfill/dist/details-element-polyfill.js`,
             `${vendorsRoot}/scratchblocks/build/scratchblocks.min.js`,
+            `${vendorsRoot}/multiple-select/dist/multiple-select-es.js`,
         ],
         // Output files
         css_output: `${staticOutputRoot}/css`,
         fonts_output: `${staticOutputRoot}/fonts`,
         images_output: `${staticOutputRoot}/img`,
         js_output: `${staticOutputRoot}/js`,
+        files_output: `${staticOutputRoot}/files`,
     }
 }
 
@@ -155,7 +158,6 @@ function vendorJs() {
     return src(paths.vendor_js_source)
         .pipe(errorHandler(catchError))
         .pipe(concat('vendors.js'))
-        .pipe(dest(paths.js_output))
         .pipe(terser())
         .pipe(dest(paths.js_output))
 }
@@ -167,34 +169,39 @@ function img() {
         .pipe(dest(paths.images_output))
 }
 
-// Browser sync server for live reload
-function initBrowserSync() {
-    browserSync.init(
-        [
-            // `${paths.css}/*.css`,
-            `${paths.js}/*.js`
-        ], {
-        // https://www.browsersync.io/docs/options/#option-proxy
-        proxy: {
-                target: 'cs-unplugged.localhost/:80',
-            proxyReq: [
-                function (proxyReq, req) {
-                    // Assign proxy "host" header same as current request at Browsersync server
-                    proxyReq.setHeader('Host', req.headers.host)
-                }
-            ]
-        },
-        // https://www.browsersync.io/docs/options/#option-open
-        // Disable as it doesn't work from inside a container
-        open: false
-    }
-    )
+// Downloadable files
+function files() {
+    return src(`${paths.files_source}/**/*`)
+        .pipe(dest(paths.files_output))
 }
+
+// Browser sync server for live reload
+// TODO: Not yet working
+// function initBrowserSync() {
+//     browserSync.init({
+//         // https://www.browsersync.io/docs/options/#option-proxy
+//         proxy: {
+//                 target: 'cs-unplugged.localhost:8000',
+//                 proxyReq: [
+//                     function (proxyReq, req) {
+//                         // Assign proxy "host" header same as current request at Browsersync server
+//                         proxyReq.setHeader('Host', req.headers.host)
+//                     }
+//                 ]
+//             },
+//             // https://www.browsersync.io/docs/options/#option-open
+//             // Disable as it doesn't work from inside a container
+//             open: false
+//         }
+//     )
+// }
 
 // Watch
 function watchPaths() {
-    // watch(`${paths.sass}/*.scss`, scss)
-    watch([`${paths.js_source}/*.js`, `!${paths.js_source}/*.min.js`], js).on("change", reload)
+    watch([`${paths.js_source}/**/*.js`], js).on("change", reload)
+    watch([`${paths.css_source}/**/*.css`], css).on("change", reload)
+    watch([`${paths.scss_source}/**/*.scss`], scss).on("change", reload)
+    watch([`${paths.images_source}/**/*`], img).on("change", reload)
 }
 
 // Generate all assets
@@ -203,16 +210,16 @@ const generateAssets = parallel(
     scss,
     js,
     vendorJs,
-    img
+    img,
+    files
 )
 
 // Set up dev environment
 const dev = parallel(
-    initBrowserSync,
+    // initBrowserSync,
     watchPaths
 )
+// TODO: Look at cleaning build folder
 exports["generate-assets"] = generateAssets
 exports["dev"] = dev
-// TODO: Look at cleaning build folder
-exports.default = generateAssets
-// exports.default = series(generateAssets, dev)
+exports.default = series(generateAssets, dev)

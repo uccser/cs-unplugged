@@ -1,33 +1,6 @@
 version: "3.8"
 
 services:
-    # Reverse proxy
-    # Accessible at localhost:8080
-    traefik:
-        build:
-            context: .
-            dockerfile: ./infrastructure/local/traefik/Dockerfile
-        # TODO: Healthcheck currently broken
-        # healthcheck:
-        #     test: traefik healthcheck --ping
-        #     start_period: 5s
-        #     interval: 10s
-        #     timeout: 5s
-        #     retries: 3
-        ports:
-            # HTTP/HTTPS ports
-            - "80:80"
-            - "443:443"
-            # Web UI
-            - "8080:8080"
-        volumes:
-            # So that Traefik can listen to the Docker events
-            - /var/run/docker.sock:/var/run/docker.sock:ro
-            # Map the static config and certificates into the container
-            - ./infrastructure/local/traefik/:/etc/traefik/:ro
-        networks:
-            - local
-
     django:
         build:
             context: .
@@ -40,34 +13,18 @@ services:
             - ./infrastructure/local/postgres/.envs
         command: /start
         networks:
-            - local
+            - uccser-development-proxy
+            - backend
         labels:
             # General labels
             - "traefik.enable=true"
-            - "traefik.http.services.django.loadbalancer.server.port=8000"
+            - "traefik.docker.network=uccser-development-proxy"
+            - "traefik.http.services.cs-unplugged-django.loadbalancer.server.port=8000"
             # HTTPS
-            - "traefik.http.routers.django.entryPoints=web-secure"
-            - "traefik.http.routers.django.service=django"
-            - "traefik.http.routers.django.rule=Host(`cs-unplugged.localhost`)"
-            - "traefik.http.routers.django.tls=true"
-
-    # File server
-    # Accessible at static.cs-unplugged.localhost
-    nginx:
-        image: nginx:1.19.10
-        volumes:
-            - ./csunplugged/staticfiles/:/usr/share/nginx/html:ro
-        networks:
-            - local
-        labels:
-            # General labels
-            - "traefik.enable=true"
-            - "traefik.http.services.nginx.loadbalancer.server.port=80"
-            # HTTPS
-            - "traefik.http.routers.nginx.entryPoints=web-secure"
-            - "traefik.http.routers.nginx.service=nginx"
-            - "traefik.http.routers.nginx.rule=Host(`static.cs-unplugged.localhost`)"
-            - "traefik.http.routers.nginx.tls=true"
+            - "traefik.http.routers.cs-unplugged-django.entryPoints=web-secure"
+            - "traefik.http.routers.cs-unplugged-django.service=cs-unplugged-django"
+            - "traefik.http.routers.cs-unplugged-django.rule=Host(`cs-unplugged.localhost`)"
+            - "traefik.http.routers.cs-unplugged-django.tls=true"
 
     # Node server for creating static files
     node:
@@ -82,17 +39,9 @@ services:
             - ./csunplugged/static:/app/static:z
             - ./csunplugged/build:/app/build:z
         command: npm run dev
-        ports:
-            - "3000:3000"
-            # Expose browsersync UI: https://www.browsersync.io/docs/options/#option-ui
-            - "3001:3001"
 
     postgres:
-        build:
-            context: .
-            # Always use production image
-            dockerfile: ./infrastructure/production/postgres/Dockerfile
-        image: cs_unplugged_production_postgres
+        image: postgres:13.3
         healthcheck:
             test: ["CMD-SHELL", "pg_isready -U postgres"]
             start_period: 10s
@@ -102,7 +51,7 @@ services:
         env_file:
             - ./infrastructure/local/postgres/.envs
         networks:
-            - local
+            - backend
         volumes:
             - local-postgres-data:/var/lib/postgresql/data:Z
             - local-postgres-data-backups:/backups:z
@@ -110,37 +59,38 @@ services:
 
     elasticsearch:
         image: elasticsearch:5
-        restart: always
         networks:
-            - local
+            - backend
         volumes:
             - local-search-index:/usr/share/elasticsearch/data:Z
 
     jobe:
         image: trampgeek/jobeinabox:latest
-        ports:
-            - "4000:80"
         networks:
-            - local
+            - backend
 
-    # docs:
-    #     image: cs_unplugged_local_docs
-    #     build:
-    #         context: .
-    #         dockerfile: ./infrastructure/local/docs/Dockerfile
-    #     volumes:
-    #         - ./docs:/docs:z
-    #         - ./config:/app/config:z
-    #         - ./cs-unplugged:/app/cs_unplugged:z
-    #     ports:
-    #         - "7000:7000"
-    #     command: /start-docs
-    #     labels:
-    #         - "traefik.http.routers.docs.rule=Host(`docs.cs-unplugged.localhost`)"
+    docs:
+        image: ghcr.io/uccser/local-docs-image:latest
+        volumes:
+            - ./docs:/docs:z
+        networks:
+            - uccser-development-proxy
+        labels:
+            # General labels
+            - "traefik.enable=true"
+            - "traefik.http.services.cs-unplugged-docs.loadbalancer.server.port=7000"
+            # HTTPS
+            - "traefik.http.routers.cs-unplugged-docs.entryPoints=web-secure"
+            - "traefik.http.routers.cs-unplugged-docs.service=cs-unplugged-docs"
+            - "traefik.http.routers.cs-unplugged-docs.rule=Host(`docs.cs-unplugged.localhost`)"
+            - "traefik.http.routers.cs-unplugged-docs.tls=true"
+
 
 networks:
-    local:
+    backend:
         driver: bridge
+    uccser-development-proxy:
+        external: true
 
 volumes:
     local-postgres-data: {}

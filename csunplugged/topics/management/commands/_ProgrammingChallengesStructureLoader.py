@@ -65,7 +65,7 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
 
             prog_reminders_translations = self.get_blank_translation_dictionary()
             # scratch currently unsupported
-            if prog_language == "python":
+            if prog_language == "python" or prog_language == "block-based":
                 prog_reminders_filename = "programming-reminders-{0}.md".format(prog_language)
                 programming_reminders_translations = self.get_markdown_translations(
                     os.path.join(

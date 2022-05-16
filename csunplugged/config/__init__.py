@@ -1,3 +1,3 @@
 """Module for Django system configuration."""
 
-__version__ = "6.2.1"
+__version__ = "6.5.0"
