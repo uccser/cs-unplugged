@@ -9,7 +9,7 @@ from django.contrib.postgres.indexes import GinIndex
 class ClassicPage(models.Model):
     """Model for Classic CS Unplugged page in database."""
 
-    MODEL_NAME = _("Classic CS Unplugged page")
+    MODEL_NAME = _("Classic CS Unplugged Page")
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)

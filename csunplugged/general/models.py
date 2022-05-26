@@ -11,7 +11,7 @@ from search.utils import get_template_text
 class GeneralPage(models.Model):
     """Model for general page in database."""
 
-    MODEL_NAME = _("General page")
+    MODEL_NAME = _("General Page")
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)

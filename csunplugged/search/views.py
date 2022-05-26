@@ -33,6 +33,7 @@ class SearchView(generic.TemplateView):
             Dictionary of context values.
         """
         context = super().get_context_data(*args, **kwargs)
+        context['models'] = SEARCH_MODEL_FILTER_VALUES
 
         # Get request query parmaters
         query_text = self.request.GET.get('q')
