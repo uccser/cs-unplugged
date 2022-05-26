@@ -24,7 +24,7 @@ class GeneralPageModelTest(BaseTestWithDB):
             template="template.html",
             url_name="url",
         )
-        self.assertEqual(page.MODEL_NAME, "General page")
+        self.assertEqual(page.MODEL_NAME, "General Page")
 
     @override_settings(ROOT_URLCONF="tests.general.models.assets.urls")
     def test_general_page_model_get_absolute_url(self):
