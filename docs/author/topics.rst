@@ -44,7 +44,7 @@ This is a broad overview of the topics application, and the following sections p
 Viewing All Topics Content
 ------------------------------------------------------------------------------
 
-When developing locally, once you have run ``./csu start`` and ``./csu update`` (see
+When developing locally, once you have run ``./dev start`` and ``./dev update`` (see
 :doc:`../getting_started/helper_commands`) you can go to the url below to see your
 local version of the website:
 
@@ -130,12 +130,12 @@ To set up a new topic, which you can then add content to, you will first need to
 - Create a set of required directories and config files within the ``topics/structure/`` directory.
 - Add the minimum required configuration settings to these files.
 
-Before you can run ``./csu update`` and view the topic on your local machine, these Markdown
+Before you can run ``./dev update`` and view the topic on your local machine, these Markdown
 and YAML files must contain some required headings and content. We recommend adding some
 placeholder content to these files and checking that you can view them locally, before moving
 on to adding content.
 
-After these steps have been completed you can run ``./csu update``, and view
+After these steps have been completed you can run ``./dev update``, and view
 the topic at:
 
 .. code-block:: none
@@ -178,7 +178,7 @@ Add the required fields, and their keys, to these YAML files:
 
 - The **lesson** config file. The required fields are listed in the section :ref:`lesson-file` section.
 
-Now you can run the ./csu update command.
+Now you can run the ``./dev update`` command.
 Once this has finished you will be able to view the topic at ``cs-unplugged.localhost/en/topics/``
 
 The description of the topic is written in the **topic** Markdown file.
