@@ -141,7 +141,7 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
         image = self.add_dots(page_outline, column_width, show_bits_value)
         image = self.add_digit_values(page_outline, column_width, value_type, True)
         image = image.rotate(90, expand=True)
-        return {"type": "image", "data": image}
+        return {"type": "image", "data": image, "thumbnail": True}
 
     def back_page(self, value_type, column_width, page_outline):
         """Return a Pillow object of back page of Binary Windows.
