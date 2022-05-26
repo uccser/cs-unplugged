@@ -41,7 +41,7 @@ services:
         command: npm run dev
 
     postgres:
-        image: postgres:13.3
+        image: postgres:13.6
         healthcheck:
             test: ["CMD-SHELL", "pg_isready -U postgres"]
             start_period: 10s
@@ -55,14 +55,6 @@ services:
         volumes:
             - local-postgres-data:/var/lib/postgresql/data:Z
             - local-postgres-data-backups:/backups:z
-
-
-    elasticsearch:
-        image: elasticsearch:5
-        networks:
-            - backend
-        volumes:
-            - local-search-index:/usr/share/elasticsearch/data:Z
 
     jobe:
         image: trampgeek/jobeinabox:latest

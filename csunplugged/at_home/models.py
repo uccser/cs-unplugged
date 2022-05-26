@@ -4,17 +4,20 @@ from django.urls import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from utils.TranslatableModel import TranslatableModel
+from django.contrib.postgres.search import SearchVectorField
+from django.contrib.postgres.indexes import GinIndex
 
 
 class Activity(TranslatableModel):
     """Model for an activity in database."""
 
-    MODEL_NAME = _("Activity")
+    MODEL_NAME = _("At Home Activity")
 
     slug = models.SlugField(max_length=100)
     name = models.CharField(max_length=150, default="")
     icon = models.CharField(max_length=150, null=True)
     order_number = models.PositiveSmallIntegerField(unique=True)
+    search_vector = SearchVectorField(null=True)
     # The following are stored as HTML from Markdown files
     introduction = models.TextField(default="")
     inside_the_computer = models.TextField(default="")
@@ -40,10 +43,30 @@ class Activity(TranslatableModel):
         """
         return self.name
 
+    def index_contents(self):
+        """Return dictionary for search indexing.
+
+        Returns:
+            Dictionary of content for search indexing. The dictionary keys
+            are the weightings of content, and the dictionary values
+            are strings of content to index.
+        """
+        text = (
+            self.introduction + self.inside_the_computer +
+            self.project + self.more_information
+        )
+        return {
+            'A': self.name,
+            'B': text,
+        }
+
     class Meta:
         """Set consistent ordering of activities."""
 
         ordering = ["order_number", ]
+        indexes = [
+            GinIndex(fields=['search_vector'])
+        ]
 
 
 class Challenge(TranslatableModel):
