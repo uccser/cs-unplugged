@@ -1,4 +1,4 @@
-"""Module for the testing custom Django rebuild_index command."""
+"""Module for the testing custom Django rebuild_search_indexes command."""
 
 from os.path import join, dirname
 from django.conf import settings
@@ -27,19 +27,19 @@ class ManagementCommandTest(BaseTestWithDB):
         self.language = "en"
         self.test_data = TopicsTestDataGenerator()
 
-    def test_rebuild_index_command_no_items(self):
-        management.call_command("rebuild_index", "--noinput")
+    def test_rebuild_search_indexes_command_no_items(self):
+        management.call_command("rebuild_search_indexes")
 
-    def test_rebuild_index_command_topic_model(self):
+    def test_rebuild_search_indexes_command_topic_model(self):
         self.test_data.create_topic(1)
-        management.call_command("rebuild_index", "--noinput")
+        management.call_command("rebuild_search_indexes")
 
-    def test_rebuild_index_command_unit_plan_model(self):
+    def test_rebuild_search_indexes_command_unit_plan_model(self):
         topic = self.test_data.create_topic(1)
         self.test_data.create_unit_plan(topic, 1)
-        management.call_command("rebuild_index", "--noinput")
+        management.call_command("rebuild_search_indexes")
 
-    def test_rebuild_index_command_lesson_model(self):
+    def test_rebuild_search_indexes_command_lesson_model(self):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
@@ -49,14 +49,14 @@ class ManagementCommandTest(BaseTestWithDB):
             1,
             age_group_1
         )
-        management.call_command("rebuild_index", "--noinput")
+        management.call_command("rebuild_search_indexes")
 
-    def test_rebuild_index_command_curriculum_integration_model(self):
+    def test_rebuild_search_indexes_command_curriculum_integration_model(self):
         topic = self.test_data.create_topic(1)
         self.test_data.create_integration(topic, 1)
-        management.call_command("rebuild_index", "--noinput")
+        management.call_command("rebuild_search_indexes")
 
-    def test_rebuild_index_command_programming_challenge_model(self):
+    def test_rebuild_search_indexes_command_programming_challenge_model(self):
         topic = self.test_data.create_topic(1)
         difficulty = self.test_data.create_difficulty_level(1)
         language = self.test_data.create_programming_language(1)
@@ -66,9 +66,9 @@ class ManagementCommandTest(BaseTestWithDB):
             language,
             challenge,
         )
-        management.call_command("rebuild_index", "--noinput")
+        management.call_command("rebuild_search_indexes")
 
-    def test_rebuild_index_command_resource_model(self):
+    def test_rebuild_search_indexes_command_resource_model(self):
         resources_test_data = ResourcesTestDataGenerator()
         resources_test_data.create_resource(
             "grid",
@@ -76,19 +76,19 @@ class ManagementCommandTest(BaseTestWithDB):
             "resources/grid.html",
             "GridResourceGenerator",
         )
-        management.call_command("rebuild_index", "--noinput")
+        management.call_command("rebuild_search_indexes")
 
-    def test_rebuild_index_command_classic_page_model(self):
+    def test_rebuild_search_indexes_command_classic_page_model(self):
         page = ClassicPage(
             slug="page",
             name="Page",
             redirect="http://www.example.com",
         )
         page.save()
-        management.call_command("rebuild_index", "--noinput")
+        management.call_command("rebuild_search_indexes")
 
     @override_settings(TEMPLATES=test_template_settings)
-    def test_rebuild_index_command_general_page_model(self):
+    def test_rebuild_search_indexes_command_general_page_model(self):
         page = GeneralPage(
             slug="page",
             name="Page",
@@ -96,10 +96,10 @@ class ManagementCommandTest(BaseTestWithDB):
             url_name="url",
         )
         page.save()
-        management.call_command("rebuild_index", "--noinput")
+        management.call_command("rebuild_search_indexes")
 
     @override_settings(TEMPLATES=test_template_settings)
-    def test_rebuild_index_command_general_page_with_invalid_template(self):
+    def test_rebuild_search_indexes_command_general_page_with_invalid_template(self):
         page = GeneralPage(
             slug="page",
             name="Page",
@@ -110,11 +110,10 @@ class ManagementCommandTest(BaseTestWithDB):
         self.assertRaises(
             TemplateSyntaxError,
             management.call_command,
-            "rebuild_index",
-            "--noinput"
+            "rebuild_search_indexes",
         )
 
-    def test_rebuild_index_command_multiple_models(self):
+    def test_rebuild_search_indexes_command_multiple_models(self):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
@@ -124,4 +123,4 @@ class ManagementCommandTest(BaseTestWithDB):
             1,
             age_group_1
         )
-        management.call_command("rebuild_index", "--noinput")
+        management.call_command("rebuild_search_indexes")

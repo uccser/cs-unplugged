@@ -85,6 +85,15 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
         return pages
 
     def page_outline(self, number_of_bits, column_width):
+        """Create outline (lines without content) for page.
+
+        Args:
+            number_of_bits (int): Number of bits on page.
+            column_width (int): Width of each bit on page.
+
+        Return:
+            Page outline as type Image.
+        """
         page_outline = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), "#fff")
         draw = ImageDraw.Draw(page_outline)
         image_midpoint_y = int(IMAGE_SIZE_Y / 2)

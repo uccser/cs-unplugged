@@ -201,15 +201,6 @@ Running ``./csu reboot_django`` will rebuild the Django Docker container.
 
 -----------------------------------------------------------------------------
 
-.. _rebuild_index:
-
-``rebuild_index``
-==============================================================================
-
-Running ``./csu rebuild_index`` runs the Haystack ``rebuild_index`` Django command.
-
------------------------------------------------------------------------------
-
 .. _restart:
 
 ``restart``

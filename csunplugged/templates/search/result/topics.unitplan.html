@@ -1,0 +1,15 @@
+{% load i18n %}
+
+<p class="mb-0">
+  <a href="{{ result.get_absolute_url }}">
+    {{ result.name }}
+  </a>
+</p>
+<p class="mb-0">
+  <small class="text-muted">
+    {% trans "Within topic" %}
+    <a href="{{ result.topic.get_absolute_url }}" class="text-muted">
+      {{ result.topic.name }}
+    </a>
+  </small>
+</p>

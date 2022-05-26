@@ -5,74 +5,76 @@ $(document).ready(function() {
     placeholder: "Show all types",
   });
 
-  $('#areas-filter').multipleSelect({
-    filter: true,
-    textTemplate: formatArea,
-    labelTemplate: formatArea,
-    selectAll: false,
-    width: '100%',
-    onClick: updateSelectedAreas,
-    onOptgroupClick: updateSelectedAreas,
-    maxHeight: 500,
-  });
+//   $('#areas-filter').multipleSelect({
+//     filter: true,
+//     textTemplate: formatArea,
+//     labelTemplate: formatArea,
+//     selectAll: false,
+//     width: '100%',
+//     onClick: updateSelectedAreas,
+//     onOptgroupClick: updateSelectedAreas,
+//     maxHeight: 500,
+//   });
 
   // Render selected areas on initial load.
-  updateSelectedAreas();
+//   updateSelectedAreas();
 
   // Indent all area children.
-  $('.areas-filter-container .ms-drop li:not(.group)').find(':checkbox').each(function(i, obj) {
-    if (areaData[$(this).val()]['child']) {
-      $(this).addClass('area-child');
-    }
-  });
+//   $('.areas-filter-container .ms-drop li:not(.group)').find(':checkbox').each(function(i, obj) {
+//     if (areaData[$(this).val()]['child']) {
+//       $(this).addClass('area-child');
+//     }
+//   });
 
   // Clear form button.
   $('#clear-form').click(function(){
      $('#id_q').val('');
      $('#models-filter').multipleSelect('uncheckAll');
-     $('#areas-filter').multipleSelect('uncheckAll');
-     updateSelectedAreas();
+    //  $('#areas-filter').multipleSelect('uncheckAll');
+    //  updateSelectedAreas();
  });
 });
 
-function createAreaBadge(colour, text) {
-  /**
-   * Create HTML of curriculum area badge.
-   * @param {string} colour - Colour of badge.
-   * @param {string} text - Text of badge.
-   * @return {string} HTML of curriculum area badge.
-   */
-  return `<span class="area-badge badge-${colour}">${text}</span>`;
-};
+// function createAreaBadge(id) {
+//     /**
+//      * Create HTML of curriculum area badge.
+//      * @param {int} id - ID for area to create badge for.
+//      * @return {string} HTML of curriculum area badge.
+//      */
+//     var area_data = areaData[id];
+//     var child_class = '';
+//     if (area_data.child) {
+//         child_class = ' area-child';
+//     }
+//     return `<span class="area-badge badge-${area_data.colour}${child_class}">${area_data.text}</span>`;
+// };
 
-function updateSelectedAreas(changeData) {
-  /**
-   * Update selected field with curriculum area badges.
-   * @param {object} changeData - Data of the clicked item.
-   */
-  var $selectedSpan = $('.areas-filter-container .ms-choice span');
-  $selectedSpan.empty();
-  var $selectedValues = $('#areas-filter').multipleSelect('getSelects');
-  if ($selectedValues.length == 0) {
-    $selectedSpan.text("Show all curriculum areas");
-  } else {
-    for (var i = 0; i < $selectedValues.length; i++) {
-      var data = areaData[$selectedValues[i]];
-      $selectedSpan.append(createAreaBadge(data.colour, data.text));
-    }
-  }
-};
+// function updateSelectedAreas(changeData) {
+//   /**
+//    * Update selected field with curriculum area badges.
+//    * @param {object} changeData - Data of the clicked item.
+//    */
+//   var $selectedSpan = $('.areas-filter-container .ms-choice span');
+//   $selectedSpan.empty();
+//   var $selectedValues = $('#areas-filter').multipleSelect('getSelects');
+//   if ($selectedValues.length == 0) {
+//     $selectedSpan.text("Show all curriculum areas");
+//   } else {
+//     for (var i = 0; i < $selectedValues.length; i++) {
+//       $selectedSpan.append(createAreaBadge($selectedValues[i]));
+//     }
+//   }
+// };
 
-function formatArea(element) {
-    /**
-     * Render curriculum area option in multiple select widget.
-     * @param {Node} element - Element to render text.
-     * @return {string} HTML of curriculum area badge.
-     */
-    var element_value = element[0].value;
-    if (!element_value) {
-        element_value = areaGroupMapping[element[0].label];
-    }
-    var data = areaData[element_value];
-    return createAreaBadge(data.colour, data.text, data.child);
-};
+// function formatArea(element) {
+//     /**
+//      * Render curriculum area option in multiple select widget.
+//      * @param {Node} element - Element to render text.
+//      * @return {string} HTML of curriculum area badge.
+//      */
+//     var element_value = element[0].value;
+//     if (!element_value) {
+//         element_value = element[0].dataset.value;
+//     }
+//     return createAreaBadge(element_value);
+// };
