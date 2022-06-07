@@ -1,8 +1,0 @@
-{{ object.name }}
-{{ object.content }}
-{% for curriculum_area in object.curriculum_areas.all %}
-  {{ curriculum_area.name }}
-  {% if curriculum_area.parent %}
-    {{ curriculum_area.parent.name }}
-  {% endif %}
-{% endfor %}

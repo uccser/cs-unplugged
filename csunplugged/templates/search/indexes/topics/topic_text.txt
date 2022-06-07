@@ -1,3 +1,0 @@
-{{ object.name }}
-{{ object.content }}
-{{ object.other_resources }}
