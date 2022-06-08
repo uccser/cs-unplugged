@@ -40,4 +40,4 @@ django-bidi-utils==1.0
 requests==2.27.1
 
 # CORS
-django-cors-headers==3.11.0
+django-cors-headers==3.13.0
