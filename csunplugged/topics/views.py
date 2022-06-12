@@ -1,7 +1,7 @@
 """Views for the topics application."""
 
 from django.db.models import Q
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.views import generic
 from django.http import JsonResponse, Http404
 from config.templatetags.render_html_field import render_html_with_static
@@ -97,7 +97,7 @@ class LessonView(generic.DetailView):
             Lesson object, or raises 404 error if not found.
         """
         return get_object_or_404(
-            self.model.objects.select_related(),
+            self.model,
             topic__slug=self.kwargs.get("topic_slug", None),
             slug=self.kwargs.get("lesson_slug", None),
         )
@@ -364,3 +364,55 @@ def glossary_json(request, **kwargs):
         return JsonResponse(data)
     else:
         raise Http404("Term parameter not specified.")
+
+
+# Redirects
+
+def redirect_to_topic(request, **kwargs):
+    """Redirect request to topic.
+
+    Returns a 301 permanent redirect HTTP response.
+    """
+    return redirect(
+        'topics:topic',
+        topic_slug=kwargs.get('topic_slug'),
+        permanent=True,
+    )
+
+
+def redirect_to_topic_whats_it_all_about(request, **kwargs):
+    """Redirect request to What's it all about page for a topic.
+
+    Returns a 301 permanent redirect HTTP response.
+    """
+    return redirect(
+        'topics:topic_whats_it_all_about',
+        topic_slug=kwargs.get('topic_slug'),
+        permanent=True,
+    )
+
+
+def redirect_to_lesson(request, **kwargs):
+    """Redirect request to lesson.
+
+    Returns a 301 permanent redirect HTTP response.
+    """
+    return redirect(
+        'topics:lesson',
+        topic_slug=kwargs.get('topic_slug'),
+        lesson_slug=kwargs.get('lesson_slug'),
+        permanent=True,
+    )
+
+
+def redirect_to_lesson_programming(request, **kwargs):
+    """Redirect request to lesson programming.
+
+    Returns a 301 permanent redirect HTTP response.
+    """
+    return redirect(
+        'topics:programming_challenges_list',
+        topic_slug=kwargs.get('topic_slug'),
+        lesson_slug=kwargs.get('lesson_slug'),
+        permanent=True,
+    )
