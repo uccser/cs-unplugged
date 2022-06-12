@@ -4,7 +4,7 @@
 
 # Preparatory knowledge
 
-Students should have completed Lesson 1 (for the relevant age group) of the [Binary Numbers unit]('topics:unit_plan' 'binary-numbers' 'unit-plan') before beginning this unit.
+Students should have completed Lesson 1 (for the relevant age group) of the [Binary Numbers topic]('topics:topic' 'binary-numbers') before beginning this unit.
 
 {panel end}
 

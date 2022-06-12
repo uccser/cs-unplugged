@@ -53,7 +53,7 @@ There are many patterns (some algorithmic, some mathematical, and some abstract 
 We have included several in our explanations, but it’s possible that students will come across more as well!
 Hashing, and using hash functions, is a strategy that appears in many different areas in Computer Science.
 Along with searching, it is common in error detection and correction, in cryptography, and in security.
-In fact, if you have learnt about check digits in the [Error Detection and Correction unit]('topics:unit_plan' 'error-detection-and-correction' 'unit-plan'), then you have already used a simple hash function - the formula we use to calculate a check digit is a hash function.
+In fact, if you have learnt about check digits in the [Error Detection and Correction unit]('topics:topic' 'error-detection-and-correction'), then you have already used a simple hash function - the formula we use to calculate a check digit is a hash function.
 When we use hash tables for searching we use hash functions to locate data, and in these other areas it is used to validate data and check it is correct.
 Some of the hash functions used in this unit, for specific sized hash tables, follow a pattern.
 This pattern can be used to make an algorithm that means we can apply these hash functions to hash tables of any size.

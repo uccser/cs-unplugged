@@ -57,7 +57,7 @@ Students who have previously used sorting networks will probably notice many sim
 As with a sorting network, at each node a comparison is made between two numbers, and the result of this comparison tells you where to go next.
 The interesting thing to observe here is that using just one very simple comparison operation (in different ways), we are able to both sort data into order, and search through it.
 Another connection between these two activities is the type of data that can be used - the data must have something called a "transitive relation".
-This is further explained under logic, and also in the [Sorting networks unit plan]('topics:unit_plan' 'sorting-networks' 'unit-plan') under logic.
+This is further explained under logic, and also in the [Sorting networks topic]('topics:topic' 'sorting-networks') under logic.
 Because it is based on a simple comparison step, any type of data that can be sorted using a sorting network can also be placed into a binary search tree.
 As binary search trees are abstract data structures, they can be generalised for use with any type of data that can be put into some kind of order.
 The other connection students will likely make is between binary search trees, and binary search! While the names are almost the same, the actual pattern they both follow is subtly different, although they both make use of the divide and conquer strategy.

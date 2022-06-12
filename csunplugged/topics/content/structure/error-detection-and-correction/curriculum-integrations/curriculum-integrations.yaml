@@ -3,7 +3,6 @@ quick-card-flip-magic:
   curriculum-areas:
     - numeracy
   prerequisite-lessons:
-    unit-plan:
       - parity-magic
 
 what-if:
@@ -11,7 +10,6 @@ what-if:
   curriculum-areas:
     - writing
   prerequisite-lessons:
-    unit-plan:
       - parity-magic
 
 biographies-and-error-control-history:
@@ -24,7 +22,6 @@ instructional-writing:
   curriculum-areas:
     - writing
   prerequisite-lessons:
-    unit-plan:
       - parity-magic
 
 word-study-activity:
@@ -32,5 +29,4 @@ word-study-activity:
   curriculum-areas:
     - word-study
   prerequisite-lessons:
-    unit-plan:
       - parity-magic

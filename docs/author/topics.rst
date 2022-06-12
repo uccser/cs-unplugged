@@ -1259,12 +1259,8 @@ Curriculum Integrations Configuration File
 
     - **Optional Fields:**
 
-      - ``prerequisite-lessons:`` A list of unit plan keys containing lessons that are
+      - ``prerequisite-lessons:`` A list of lesson slugs that are
         expected to be completed before attempting this curriculum integration.
-
-        - **Required Fields:**
-
-          - ``<unit-plan-key>:`` A key corresponding to a unit plan.
 
             - **Required Fields:**
 

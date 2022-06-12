@@ -13,7 +13,6 @@ from django.utils.translation import get_language
 from .models import (
     Topic,
     CurriculumIntegration,
-    UnitPlan,
     Lesson,
     LessonNumber,
     ProgrammingChallenge,
@@ -37,7 +36,6 @@ class IndexView(generic.ListView):
             Queryset of Topic objects ordered by name.
         """
         topics = Topic.objects.order_by("name").prefetch_related(
-            "unit_plans",
             "lessons",
             "curriculum_integrations",
             "programming_challenges",
@@ -71,78 +69,18 @@ class TopicView(generic.DetailView):
         """
         # Call the base implementation first to get a context
         context = super(TopicView, self).get_context_data(**kwargs)
-        # Add in a QuerySet of all the connected unit plans
-        unit_plans = self.object.unit_plans.order_by("name")
-        context["unit_plans"] = add_lesson_ages_to_objects(unit_plans)
+        context["grouped_lessons"] = group_lessons_by_age(self.object.lessons.all())
         # Add in a QuerySet of all the connected curriculum integrations
         context["curriculum_integrations"] = self.object.curriculum_integrations.order_by("number")
         return context
 
 
-class UnitPlanView(generic.DetailView):
-    """View for a specific unit plan."""
+class TopicWhatsItAllAboutView(generic.DetailView):
+    """View for a topic's whats it all about section."""
 
-    model = UnitPlan
-    template_name = "topics/unit-plan.html"
-    context_object_name = "unit_plan"
-
-    def get_object(self, **kwargs):
-        """Retrieve object for the unit plan view.
-
-        Returns:
-            UnitPlan object, or raises 404 error if not found.
-        """
-        return get_object_or_404(
-            self.model.objects.select_related(),
-            topic__slug=self.kwargs.get("topic_slug", None),
-            slug=self.kwargs.get("unit_plan_slug", None)
-        )
-
-    def get_context_data(self, **kwargs):
-        """Provide the context data for the unit plan view.
-
-        Returns:
-            Dictionary of context data.
-        """
-        # Call the base implementation first to get a context
-        context = super(UnitPlanView, self).get_context_data(**kwargs)
-        # Loading object under consistent context names for breadcrumbs
-        context["topic"] = self.object.topic
-        # Add all the connected lessons
-        context["grouped_lessons"] = group_lessons_by_age(self.object.lessons.all())
-        return context
-
-
-class UnitPlanDescriptionView(generic.DetailView):
-    """View for a specific unit plan."""
-
-    model = UnitPlan
-    template_name = "topics/unit-plan-description.html"
-    context_object_name = "unit_plan"
-
-    def get_object(self, **kwargs):
-        """Retrieve object for the unit plan view.
-
-        Returns:
-            UnitPlan object, or raises 404 error if not found.
-        """
-        return get_object_or_404(
-            self.model.objects.select_related(),
-            topic__slug=self.kwargs.get("topic_slug", None),
-            slug=self.kwargs.get("unit_plan_slug", None)
-        )
-
-    def get_context_data(self, **kwargs):
-        """Provide the context data for the unit plan view.
-
-        Returns:
-            Dictionary of context data.
-        """
-        # Call the base implementation first to get a context
-        context = super(UnitPlanDescriptionView, self).get_context_data(**kwargs)
-        # Loading object under consistent context names for breadcrumbs
-        context["topic"] = self.object.topic
-        return context
+    model = Topic
+    template_name = "topics/topic-whats-it-all-about.html"
+    slug_url_kwarg = "topic_slug"
 
 
 class LessonView(generic.DetailView):
@@ -161,7 +99,6 @@ class LessonView(generic.DetailView):
         return get_object_or_404(
             self.model.objects.select_related(),
             topic__slug=self.kwargs.get("topic_slug", None),
-            unit_plan__slug=self.kwargs.get("unit_plan_slug", None),
             slug=self.kwargs.get("lesson_slug", None),
         )
 
@@ -185,7 +122,6 @@ class LessonView(generic.DetailView):
                 }
             )
         context["topic"] = self.object.topic
-        context["unit_plan"] = self.object.unit_plan
         # Add all the connected programming challenges
         context["programming_challenges"] = self.object.programming_challenges.exists()
         # Add all the connected learning outcomes
@@ -224,13 +160,11 @@ class ProgrammingChallengeList(generic.base.TemplateView):
         lesson = get_object_or_404(
             Lesson.objects.select_related(),
             topic__slug=self.kwargs.get("topic_slug", None),
-            unit_plan__slug=self.kwargs.get("unit_plan_slug", None),
             slug=self.kwargs.get("lesson_slug", None),
         )
         context["lesson"] = lesson
         context["programming_challenges"] = lesson.retrieve_related_programming_challenges().prefetch_related(
             'learning_outcomes', 'learning_outcomes__curriculum_areas', 'implementations')
-        context["unit_plan"] = lesson.unit_plan
         context["topic"] = lesson.topic
         return context
 
@@ -362,7 +296,6 @@ class CurriculumIntegrationView(generic.DetailView):
         context["integration_curriculum_areas"] = self.object.curriculum_areas.order_by("name")
         # Add in a QuerySet of all the prerequisite lessons
         context["prerequisite_lessons"] = self.object.prerequisite_lessons.select_related().order_by(
-            "unit_plan__name",
             "lessonnumber",
         )
         return context

@@ -9,7 +9,6 @@ from topics.management.commands._LessonsLoader import LessonsLoader
 from topics.management.commands._ProgrammingChallengesLoader import ProgrammingChallengesLoader
 from topics.management.commands._ProgrammingChallengesStructureLoader import ProgrammingChallengesStructureLoader
 from topics.management.commands._TopicLoader import TopicLoader
-from topics.management.commands._UnitPlanLoader import UnitPlanLoader
 from topics.management.commands._ClassroomResourcesLoader import ClassroomResourcesLoader
 from at_home.management.commands._ActivityLoader import ActivityLoader
 from at_home.management.commands._ChallengeLoader import ChallengeLoader
@@ -41,9 +40,9 @@ class LoaderFactory:
         """Create learning outcomes loader."""
         return LearningOutcomesLoader(**kwargs)
 
-    def create_lessons_loader(self, topic, unit_plan, **kwargs):
+    def create_lessons_loader(self, topic, **kwargs):
         """Create lessons loader."""
-        return LessonsLoader(topic, unit_plan, **kwargs)
+        return LessonsLoader(topic, **kwargs)
 
     def create_classroom_resources_loader(self, **kwargs):
         """Create lessons loader."""
@@ -60,10 +59,6 @@ class LoaderFactory:
     def create_topic_loader(self, **kwargs):
         """Create topic loader."""
         return TopicLoader(self, **kwargs)
-
-    def create_unit_plan_loader(self, topic, **kwargs):
-        """Create unit plan loader."""
-        return UnitPlanLoader(self, topic, **kwargs)
 
     def create_activity_loader(self, **kwargs):
         """Create activity loader."""

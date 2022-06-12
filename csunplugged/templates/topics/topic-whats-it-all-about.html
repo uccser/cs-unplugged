@@ -5,49 +5,60 @@
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
-  {{ unit_plan.name }} - {% trans "Description" %}
+  {{ topic.name }} - {% trans "What's it all about" %}
 {% endblock title %}
 
 {% block breadcrumbs %}
   {% breadcrumb "Topics" "topics:index" %}
   {% breadcrumb topic.name "topics:topic" topic.slug %}
-  {% breadcrumb unit_plan.name "topics:unit_plan" topic.slug unit_plan.slug %}
-  {% breadcrumb "Description" "topics:unit_plan_description" topic.slug unit_plan.slug %}
+  {% breadcrumb "What's it all about" "topics:topic_whats_it_all_about" topic.slug %}
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1 id="{{ unit_plan.slug }}"><span class="text-muted">{% trans "Unit plan:" %}</span> {{ unit_plan.name }}</h1>
+  <h1 id="{{ topic.slug }}">
+        {{ topic.name }}
+        <br>
+        <small class="text-muted">
+            {% trans "What's it all about?"%}
+        </small>
+  </h1>
   {% if not topic.translation_available %}
-    {% with model=unit_plan parent=topic %}
+    {% with model=topic %}
       {% include 'topics/not-available-warning.html' %}
     {% endwith %}
   {% endif %}
 {% endblock page_heading %}
 
 {% block left_column_content  %}
-  {% if unit_plan.translation_available %}
-    {% render_html_field unit_plan.content %}
+  {% if topic.translation_available %}
+    {% render_html_field topic.whats_it_all_about %}
 
-    {% with computational_thinking_links=unit_plan.computational_thinking_links %}
+    {% with computational_thinking_links=topic.computational_thinking_links %}
       {% include "topics/computational-thinking-links.html" %}
     {% endwith %}
   {% endif %}
+
+  <p class="text-center">
+    <a href="{% url 'topics:topic' topic.slug %}" class="btn btn-outline-primary">
+        {% trans "Go back to the topic homepage" %}
+    </a>
+  </p>
 {% endblock left_column_content  %}
 
 {% block right_column_content %}
-  {% if unit_plan.translation_available %}
+  {% if topic.translation_available %}
   <div id="sticky-sidebar" class="position-sticky">
     <h2 class="heading-underline">{% trans "Table of contents" %}</h2>
     <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
       <li class="nav-item">
-        <a class="nav-link" href="#{{ unit_plan.slug }}">{{ unit_plan.name }}</a>
+        <a class="nav-link" href="#{{ topic.slug }}">{{ topic.name }}</a>
       </li>
-      {% for heading_node in unit_plan.heading_tree %}
+      {% for heading_node in topic.whats_it_all_about_heading_tree %}
         <li class="nav-item">
           <a class="nav-link" href="#{{ heading_node.slug }}">{{ heading_node.text }}</a>
         </li>
       {% endfor %}
-      {% if unit_plan.computational_thinking_links %}
+      {% if topic.computational_thinking_links %}
         <li class="nav-item">
           <a class="nav-link" href="#ct-links">{% trans "Computational Thinking" %}</a>
         </li>

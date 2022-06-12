@@ -122,8 +122,8 @@ class TopicLoaderTest(BaseTestWithDB):
             topic_loader.load,
         )
 
-    def test_topic_loader_missing_unit_plans(self):
-        content_path, structure_filename = "topic-missing-unit-plans", "topic-missing-unit-plans.yaml"
+    def test_topic_loader_missing_lessons(self):
+        content_path, structure_filename = "topic-missing-lessons", "topic-missing-unit-plans.yaml"
         factory = Mock()
         topic_loader = TopicLoader(
             factory,

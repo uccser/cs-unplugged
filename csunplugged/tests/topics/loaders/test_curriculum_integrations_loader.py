@@ -110,9 +110,8 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
         config_file = "prerequisite-lessons.yaml"
         self.test_data.create_curriculum_area("1")
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
-        self.test_data.create_lesson(topic, unit_plan, "1")
-        self.test_data.create_lesson(topic, unit_plan, "2")
+        self.test_data.create_lesson(topic, "1")
+        self.test_data.create_lesson(topic, "2")
         ci_loader = CurriculumIntegrationsLoader(topic, base_path=self.base_path, structure_filename=config_file)
         ci_loader.load()
         ci_objects = CurriculumIntegration.objects.all()
@@ -135,9 +134,8 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
         config_file = "prerequisite-lessons-translation.yaml"
         self.test_data.create_curriculum_area("1")
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
-        self.test_data.create_lesson(topic, unit_plan, "1")
-        self.test_data.create_lesson(topic, unit_plan, "2")
+        self.test_data.create_lesson(topic, "1")
+        self.test_data.create_lesson(topic, "2")
         ci_loader = CurriculumIntegrationsLoader(topic, base_path=self.base_path, structure_filename=config_file)
         ci_loader.load()
         ci_objects = CurriculumIntegration.objects.all()
@@ -180,29 +178,8 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
             [],
         )
 
-    def test_prerequisite_lessons_blank_lessons(self):
-        config_file = "prerequisite-lessons-blank-lessons.yaml"
-        self.test_data.create_curriculum_area("1")
-        topic = self.test_data.create_topic("1")
-        ci_loader = CurriculumIntegrationsLoader(topic, base_path=self.base_path, structure_filename=config_file)
-        self.assertRaises(
-            MissingRequiredFieldError,
-            ci_loader.load
-        )
-
     def test_prerequisite_lessons_invalid_lesson(self):
         config_file = "prerequisite-lessons-invalid-lesson.yaml"
-        self.test_data.create_curriculum_area("1")
-        topic = self.test_data.create_topic("1")
-        self.test_data.create_unit_plan(topic, "1")
-        ci_loader = CurriculumIntegrationsLoader(topic, base_path=self.base_path, structure_filename=config_file)
-        self.assertRaises(
-            KeyNotFoundError,
-            ci_loader.load
-        )
-
-    def test_prerequisite_lessons_invalid_unit_plan(self):
-        config_file = "prerequisite-lessons-invalid-unit-plan.yaml"
         self.test_data.create_curriculum_area("1")
         topic = self.test_data.create_topic("1")
         ci_loader = CurriculumIntegrationsLoader(topic, base_path=self.base_path, structure_filename=config_file)

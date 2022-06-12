@@ -97,7 +97,7 @@
                 {{ lesson.number }}
               </td>
               <td>
-                <a href="{% url 'topics:lesson' lesson.topic.slug lesson.unit_plan.slug lesson.slug %}">
+                <a href="{% url 'topics:lesson' lesson.topic.slug lesson.slug %}">
                   <strong>{{ lesson.name }}</strong>
                   {% if not lesson.translation_available %}
                     <br>

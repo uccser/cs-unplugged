@@ -28,7 +28,7 @@
             {{ lesson.number }}
           </td>
           <td style="width:60%">
-            <a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.slug %}">
+            <a href="{% url 'topics:lesson' topic.slug lesson.slug %}">
               <strong>{{ lesson.name }}</strong>
               {% if not lesson.translation_available %}
                 <br>
@@ -38,7 +38,7 @@
           </td>
           {% if lesson.has_programming_challenges %}
             <td class="text-center table-success-cell" style="width:20%">
-              <a href="{% url 'topics:programming_challenges_list' topic.slug unit_plan.slug lesson.slug %}">
+              <a href="{% url 'topics:programming_challenges_list' topic.slug lesson.slug %}">
                 {% trans "Yes" %}
               </a>
           {% else %}

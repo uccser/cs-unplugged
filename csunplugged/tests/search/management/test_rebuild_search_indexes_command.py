@@ -34,18 +34,11 @@ class ManagementCommandTest(BaseTestWithDB):
         self.test_data.create_topic(1)
         management.call_command("rebuild_search_indexes")
 
-    def test_rebuild_search_indexes_command_unit_plan_model(self):
-        topic = self.test_data.create_topic(1)
-        self.test_data.create_unit_plan(topic, 1)
-        management.call_command("rebuild_search_indexes")
-
     def test_rebuild_search_indexes_command_lesson_model(self):
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
         self.test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             age_group_1
         )
@@ -115,11 +108,9 @@ class ManagementCommandTest(BaseTestWithDB):
 
     def test_rebuild_search_indexes_command_multiple_models(self):
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
         self.test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             age_group_1
         )

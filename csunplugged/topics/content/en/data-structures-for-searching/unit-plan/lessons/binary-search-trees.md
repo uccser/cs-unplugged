@@ -2,7 +2,7 @@
 
 ## Preparatory knowledge
 
-- [Binary searching and sequential searching lessons]('topics:unit_plan' 'searching-algorithms' 'unit-plan').
+- [Binary searching and sequential searching lessons]('topics:topic' 'searching-algorithms').
 
 **Note:** This activity is about Binary Search Trees, or BSTs.
 There is a previous activity about Binary Search, which uses a sorted list of values.

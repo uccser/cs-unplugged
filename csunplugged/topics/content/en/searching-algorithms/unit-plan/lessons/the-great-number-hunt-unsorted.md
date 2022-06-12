@@ -27,7 +27,7 @@ Guide students through how the game will work by following the instructions on t
 # Teaching observations
 
 If students make the connection that the real money serial could have a check digit, they would be correct in that what they learnt in the error detection and correction unit would apply in knowing if the serial number represents real money or fake money.
-Here’s a link to the [Error Detection and Correction unit]('topics:unit_plan' 'error-detection-and-correction' 'unit-plan') for more information.
+Here’s a link to the [Error Detection and Correction topic]('topics:topic' 'error-detection-and-correction') for more information.
 However, this isn't the purpose of this exercise; the goal is to find a number in the number boxes.
 
 {panel end}

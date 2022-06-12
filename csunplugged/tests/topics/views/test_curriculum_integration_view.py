@@ -87,17 +87,14 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
 
     def test_curriculum_integration_view_prerequisite_lessons_context(self):
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
         lesson_1 = self.test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             age_group_1
         )
         lesson_2 = self.test_data.create_lesson(
             topic,
-            unit_plan,
             2,
             age_group_1
         )

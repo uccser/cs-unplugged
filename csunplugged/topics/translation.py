@@ -6,7 +6,6 @@ Utilised by django-modeltranslation. See http://django-modeltranslation.readthed
 from modeltranslation.translator import translator, TranslationOptions
 from topics.models import (
     Topic,
-    UnitPlan,
     ProgrammingChallenge,
     ProgrammingChallengeImplementation,
     Lesson,
@@ -29,17 +28,6 @@ class TopicTranslationOptions(TranslationOptions):
     fallback_undefined = {
         "content": None,
         "other_resources": None
-    }
-
-
-class UnitPlanTranslationOptions(TranslationOptions):
-    """Translation options for UnitPlan model."""
-
-    fields = ("name", "content", "computational_thinking_links", "heading_tree")
-    fallback_undefined = {
-        "content": None,
-        "computational_thinking_links": None,
-        "heading_tree": None
     }
 
 
@@ -159,7 +147,6 @@ class ProgrammingChallengeLanguageTranslationOptions(TranslationOptions):
 
 
 translator.register(Topic, TopicTranslationOptions)
-translator.register(UnitPlan, UnitPlanTranslationOptions)
 translator.register(ProgrammingChallenge, ProgrammingChallengeTranslationOptions)
 translator.register(ProgrammingChallengeImplementation, ProgrammingChallengeImplementationTranslationOptions)
 translator.register(Lesson, LessonTranslationOptions)
