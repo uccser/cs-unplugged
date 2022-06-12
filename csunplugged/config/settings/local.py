@@ -3,7 +3,6 @@
 Django settings for local development environment.
 
 - Run in Debug mode
-- Add custom dev application
 - Add Django Debug Toolbar
 - Add django-extensions
 - Use console backend for emails
@@ -96,8 +95,3 @@ INSTALLED_APPS += ["django_extensions", ]
 # TESTING
 # ----------------------------------------------------------------------------
 TEST_RUNNER = "django.test.runner.DiscoverRunner"
-
-
-# Your local stuff: Below this line define 3rd party library settings
-# ----------------------------------------------------------------------------
-INSTALLED_APPS += ["dev.apps.DevConfig"]  # noqa: F405

@@ -52,14 +52,6 @@ local version of the website:
 
   cs-unplugged.localhost/
 
-You can also go to the url below to get a quick overview of what content is loaded:
-
-.. code-block:: none
-
-  cs-unplugged.localhost/__dev__/
-
-For more information about what this page displays, see :doc:`../developer/dev`.
-
 .. _topics-directory-structure:
 
 Topics Content Directory

@@ -65,7 +65,6 @@ PASSWORD_HASHERS = [
 # ----------------------------------------------------------------------------
 INSTALLED_APPS += [  # noqa: F405
     "test_without_migrations",
-    "dev.apps.DevConfig",
     # Model for TranslatableModel tests
     "tests.utils.translatable_model",
 ]
