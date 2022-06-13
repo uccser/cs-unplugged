@@ -24,7 +24,14 @@ from topics.models import (
 class TopicTranslationOptions(TranslationOptions):
     """Translation options for Topic model."""
 
-    fields = ("name", "content", "other_resources")
+    fields = (
+        "name",
+        "content",
+        "whats_it_all_about",
+        "whats_it_all_about_heading_tree",
+        "computational_thinking_links",
+        "other_resources",
+    )
     fallback_undefined = {
         "content": None,
         "other_resources": None

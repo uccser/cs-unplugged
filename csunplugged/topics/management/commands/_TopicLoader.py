@@ -96,7 +96,6 @@ class TopicLoader(TranslatableModelLoader):
             required_fields=[
                 "name",
                 "content",
-                "whats_it_all_about",
             ]
         )
         topic.save()
