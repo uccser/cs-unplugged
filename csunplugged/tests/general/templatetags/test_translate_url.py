@@ -15,7 +15,7 @@ AVAILABLE_LANGUAGES_EN = (
     ("en", "English"),
 )
 
-VALID_PATH = "/topics/topic-name/unit-plan/unit-plan-name/"
+VALID_PATH = "/topics/topic-name/"
 INVALID_PATH = "/this/is/an/invalid/url"
 
 

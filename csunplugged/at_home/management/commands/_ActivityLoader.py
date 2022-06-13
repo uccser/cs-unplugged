@@ -136,7 +136,6 @@ class ActivityLoader(TranslatableModelLoader):
         else:
             self.log('Updated Activity: {}'.format(activity.name))
 
-        # structure_filename = os.path.join(unit_plan_file_path)
         self.factory.create_challenge_loader(
             activity,
             base_path=self.base_path,

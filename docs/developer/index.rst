@@ -15,7 +15,6 @@ The following pages are for those wanting to develop the CS Unplugged system.
     classic
     media
     resources
-    dev
     search
     deployment
     test_suite

@@ -29,7 +29,7 @@
       <a href="{% url 'plugging_it_in:lesson' topic.slug lesson.slug %}" target="_blank" rel="noopener noreferrer">
         <h2 class='lesson-heading'>{{lesson.name}}</h2>
       </a>
-      <a href="{% url 'topics:lesson' topic.slug lesson.unit_plan.slug lesson.slug %}" target="_blank" rel="noopener noreferrer">
+      <a href="{% url 'topics:lesson' topic.slug lesson.slug %}" target="_blank" rel="noopener noreferrer">
         <p>
           {% trans "Jump to the CS Unplugged lesson" %}
           <img class="d-inline" src="{% static 'img/plugging-it-in/icons8-external-link.svg' %}">

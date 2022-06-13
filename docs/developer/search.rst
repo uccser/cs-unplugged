@@ -32,7 +32,7 @@ However Django is not setup to handle multiple URL routes all based off the patt
 For example, Django would not check a URL matches a unit plan slug after failing to find a topic:
 
 - ``r"^/topics/(?P<topic_slug>[-\w]+)/$"``
-- ``r"^/topics/(?P<unit_plan_slug>[-\w]+)/$"``
+- ``r"^/topics/(?P<lesson_slug>[-\w]+)/$"``
 
 Therefore the current setup of URLs and views for the ``general`` and ``classic`` applications is left untouched, and new configuration files are added for data to be added as models.
 The configuration files do duplicate some data, but only for pages that are searchable.

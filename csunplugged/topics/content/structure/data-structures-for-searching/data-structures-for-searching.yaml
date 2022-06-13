@@ -1,4 +1,11 @@
-unit-plans:
-  - unit-plan/unit-plan.yaml
-
 icon: img/topics/data-structures-for-searching-icon.png
+
+lessons: lessons/lessons.yaml
+
+age-groups:
+  11-14:
+    binary-search-trees:
+      number: 1
+
+whats-it-all-about: whats-it-all-about.md
+computational-thinking-links: ct-links.md

@@ -52,14 +52,6 @@ local version of the website:
 
   cs-unplugged.localhost/
 
-You can also go to the url below to get a quick overview of what content is loaded:
-
-.. code-block:: none
-
-  cs-unplugged.localhost/__dev__/
-
-For more information about what this page displays, see :doc:`../developer/dev`.
-
 .. _topics-directory-structure:
 
 Topics Content Directory
@@ -1259,12 +1251,8 @@ Curriculum Integrations Configuration File
 
     - **Optional Fields:**
 
-      - ``prerequisite-lessons:`` A list of unit plan keys containing lessons that are
+      - ``prerequisite-lessons:`` A list of lesson slugs that are
         expected to be completed before attempting this curriculum integration.
-
-        - **Required Fields:**
-
-          - ``<unit-plan-key>:`` A key corresponding to a unit plan.
 
             - **Required Fields:**
 

@@ -1,9 +1,25 @@
-unit-plans:
-  - unit-plan/unit-plan.yaml
-
 icon: img/topics/binary-cards-4-bits-icon.png
 
-other-resources: other-resources.md
+lessons: lessons/lessons.yaml
 
+age-groups:
+  5-7:
+    how-binary-digits-work-junior:
+      number: 1
+    reinforcing-sequencing-in-binary-number-systems-junior:
+      number: 2
+    codes-for-letters-using-binary-representation-junior:
+      number: 3
+  8-10:
+    how-binary-digits-work:
+      number: 1
+    reinforcing-sequencing-in-binary-number-systems:
+      number: 2
+    codes-for-letters-using-binary-representation:
+      number: 3
+
+whats-it-all-about: whats-it-all-about.md
+computational-thinking-links: ct-links.md
+other-resources: other-resources.md
 programming-challenges: programming-challenges/programming-challenges.yaml
 curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml

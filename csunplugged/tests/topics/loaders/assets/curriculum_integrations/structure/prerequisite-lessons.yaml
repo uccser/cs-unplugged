@@ -3,6 +3,5 @@ integration-1:
   curriculum-areas:
     - area-1
   prerequisite-lessons:
-    unit-plan-1:
       - lesson-1
       - lesson-2

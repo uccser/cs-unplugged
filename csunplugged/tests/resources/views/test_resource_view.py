@@ -140,24 +140,20 @@ class ResourceViewTest(BaseTestWithDB):
         # Create topic data
         topic_test_data = TopicsTestDataGenerator()
         topic = topic_test_data.create_topic(1)
-        unit_plan = topic_test_data.create_unit_plan(topic, 1)
         age_group_1 = topic_test_data.create_age_group(5, 7)
         age_group_2 = topic_test_data.create_age_group(8, 10)
         lesson1 = topic_test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             age_group_1
         )
         lesson2 = topic_test_data.create_lesson(
             topic,
-            unit_plan,
             2,
             age_group_1
         )
         lesson3 = topic_test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             age_group_2
         )

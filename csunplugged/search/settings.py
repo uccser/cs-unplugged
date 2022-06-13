@@ -2,7 +2,6 @@
 
 from topics.models import (
     Topic,
-    UnitPlan,
     Lesson,
     ProgrammingChallenge,
     CurriculumIntegration,
@@ -62,17 +61,10 @@ SEARCH_CLASSES_AND_BOOSTS = [
         'prefetch_related': [],
     },
     {
-        'class': UnitPlan,
-        'boost': 1.5,
-        'curriculum_area_filtered': False,
-        'select_related': ['topic'],
-        'prefetch_related': [],
-    },
-    {
         'class': Lesson,
         'boost': 1.2,
         'curriculum_area_filtered': True,
-        'select_related': ['topic', 'unit_plan', 'unit_plan__topic'],
+        'select_related': ['topic'],
         'prefetch_related': ['learning_outcomes'],
         'render_function': lesson_render_function,
     },
