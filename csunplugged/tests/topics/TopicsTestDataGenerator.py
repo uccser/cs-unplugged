@@ -5,7 +5,6 @@ import yaml
 
 from topics.models import (
     Topic,
-    UnitPlan,
     Lesson,
     LessonNumber,
     AgeGroup,
@@ -111,32 +110,11 @@ class TopicsTestDataGenerator:
         topic.save()
         return topic
 
-    def create_unit_plan(self, topic, number):
-        """Create unit plan object.
-
-        Args:
-            topic: The related Topic object (Topic).
-            number: Identifier of the unit plan (int).
-
-        Returns:
-            UnitPlan object.
-        """
-        unit_plan = UnitPlan(
-            topic=topic,
-            slug="unit-plan-{}".format(number),
-            name="Unit Plan {}".format(number),
-            content="<p>Content for unit plan {}.</p>".format(number),
-            languages=["en"],
-        )
-        unit_plan.save()
-        return unit_plan
-
-    def create_lesson(self, topic, unit_plan, number, age_groups=None):
+    def create_lesson(self, topic, number, age_groups=None):
         """Create lesson object.
 
         Args:
             topic: The related Topic object (Topic).
-            unit_plan: The related UnitPlan object (UnitPlan).
             number: Identifier of the topic (int).
 
         Returns:
@@ -146,7 +124,6 @@ class TopicsTestDataGenerator:
             age_groups = [age_groups]
         lesson = Lesson(
             topic=topic,
-            unit_plan=unit_plan,
             slug="lesson-{}".format(number),
             name="Lesson {} ({} to {})".format(
                 number,

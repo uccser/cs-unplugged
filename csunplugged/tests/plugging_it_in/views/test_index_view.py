@@ -12,15 +12,13 @@ class IndexViewTest(BaseTestWithDB):
         self.test_data = TopicsTestDataGenerator()
 
     def test_pii_index_view_with_valid_slug(self):
-        topic = self.test_data.create_topic(1)
-        self.test_data.create_unit_plan(topic, 1)
+        self.test_data.create_topic(1)
         url = reverse("plugging_it_in:index")
         response = self.client.get(url)
         self.assertEqual(HTTPStatus.OK, response.status_code)
 
     def test_pii_index_view_topics_context_without_programming_challenge(self):
-        topic = self.test_data.create_topic(1)
-        self.test_data.create_unit_plan(topic, 1)
+        self.test_data.create_topic(1)
         url = reverse("plugging_it_in:index")
         response = self.client.get(url)
         self.assertEqual(
@@ -30,11 +28,9 @@ class IndexViewTest(BaseTestWithDB):
 
     def test_pii_index_view_topics_context_with_programming_challenge(self):
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
         lesson = self.test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             age_group_1
         )
@@ -56,11 +52,9 @@ class IndexViewTest(BaseTestWithDB):
 
     def test_pii_index_view_grouped_lessons_context_with_programming_challenges(self):
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
         lesson = self.test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             age_group_1
         )
@@ -90,18 +84,15 @@ class IndexViewTest(BaseTestWithDB):
 
     def test_pii_index_view_grouped_lessons_context_with_lesson_without_programming_challenges(self):
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
         self.test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             age_group_1
         )
 
         lesson_with_programming_exercise = self.test_data.create_lesson(
             topic,
-            unit_plan,
             2,
             age_group_1
         )
@@ -133,9 +124,7 @@ class IndexViewTest(BaseTestWithDB):
             )
 
     def test_pii_index_view_templates(self):
-        topic = self.test_data.create_topic(1)
-        self.test_data.create_unit_plan(topic, 1)
-
+        self.test_data.create_topic(1)
         url = reverse("plugging_it_in:index")
         response = self.client.get(url)
         template_found = False

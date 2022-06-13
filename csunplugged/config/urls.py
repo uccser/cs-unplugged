@@ -35,9 +35,6 @@ if settings.DEBUG:  # pragma: no cover
     urlpatterns += [
         path('__debug__/', include(debug_toolbar.urls)),
     ]
-    urlpatterns += i18n_patterns(
-        path('__dev__/', include('dev.urls', namespace='dev')),
-    )
     # These patterns allows these error pages to be debugged during development.
     from django.views import defaults
     urlpatterns += [

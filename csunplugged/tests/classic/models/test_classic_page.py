@@ -21,7 +21,7 @@ class ClassicPageModelTest(BaseTestWithDB):
             name="Page",
             redirect="http://www.example.com",
         )
-        self.assertEqual(page.MODEL_NAME, "Classic CS Unplugged page")
+        self.assertEqual(page.MODEL_NAME, "Classic CS Unplugged Page")
 
     def test_classic_page_model_get_absolute_url(self):
         page = ClassicPage(

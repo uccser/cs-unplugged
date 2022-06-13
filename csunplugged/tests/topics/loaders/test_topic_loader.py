@@ -22,6 +22,10 @@ class TopicLoaderTest(BaseTestWithDB):
     def test_basic_topic_loader_configuration(self):
         content_path, structure_filename = "topic-1", "topic-1.yaml"
         factory = Mock()
+        # Create data as other loaders are mocked
+        self.test_data.create_age_group(5, 12)
+        temp_topic = self.test_data.create_topic("test")
+        self.test_data.create_lesson(temp_topic, 1)
         topic_loader = TopicLoader(
             factory,
             content_path=content_path,
@@ -29,6 +33,8 @@ class TopicLoaderTest(BaseTestWithDB):
             structure_filename=structure_filename
         )
         topic_loader.load()
+        # Delete temp topic after loader is run
+        temp_topic.delete()
         self.assertQuerysetEqual(
             Topic.objects.all(),
             ["<Topic: Topic 1>"]
@@ -38,6 +44,10 @@ class TopicLoaderTest(BaseTestWithDB):
     def test_topic_loader_slug(self):
         content_path, structure_filename = "topic-1", "topic-1.yaml"
         factory = Mock()
+        # Create data as other loaders are mocked
+        self.test_data.create_age_group(5, 12)
+        temp_topic = self.test_data.create_topic("test")
+        self.test_data.create_lesson(temp_topic, 1)
         topic_loader = TopicLoader(
             factory,
             content_path=content_path,
@@ -67,6 +77,10 @@ class TopicLoaderTest(BaseTestWithDB):
     def test_topic_loader_valid_name_text(self):
         content_path, structure_filename = "topic-1", "topic-1.yaml"
         factory = Mock()
+        # Create data as other loaders are mocked
+        self.test_data.create_age_group(5, 12)
+        temp_topic = self.test_data.create_topic("test")
+        self.test_data.create_lesson(temp_topic, 1)
         topic_loader = TopicLoader(
             factory,
             content_path=content_path,
@@ -82,6 +96,10 @@ class TopicLoaderTest(BaseTestWithDB):
     def test_topic_loader_missing_name_text(self):
         content_path, structure_filename = "topic-missing-name", "topic-missing-name.yaml"
         factory = Mock()
+        # Create data as other loaders are mocked
+        self.test_data.create_age_group(5, 12)
+        temp_topic = self.test_data.create_topic("test")
+        self.test_data.create_lesson(temp_topic, 1)
         topic_loader = TopicLoader(
             factory,
             content_path=content_path,
@@ -96,6 +114,10 @@ class TopicLoaderTest(BaseTestWithDB):
     def test_topic_loader_valid_content_text(self):
         content_path, structure_filename = "topic-1", "topic-1.yaml"
         factory = Mock()
+        # Create data as other loaders are mocked
+        self.test_data.create_age_group(5, 12)
+        temp_topic = self.test_data.create_topic("test")
+        self.test_data.create_lesson(temp_topic, 1)
         topic_loader = TopicLoader(
             factory,
             content_path=content_path,
@@ -111,6 +133,10 @@ class TopicLoaderTest(BaseTestWithDB):
     def test_topic_loader_missing_content_text(self):
         content_path, structure_filename = "topic-missing-content", "topic-missing-content.yaml"
         factory = Mock()
+        # Create data as other loaders are mocked
+        self.test_data.create_age_group(5, 12)
+        temp_topic = self.test_data.create_topic("test")
+        self.test_data.create_lesson(temp_topic, 1)
         topic_loader = TopicLoader(
             factory,
             content_path=content_path,
@@ -122,8 +148,8 @@ class TopicLoaderTest(BaseTestWithDB):
             topic_loader.load,
         )
 
-    def test_topic_loader_missing_unit_plans(self):
-        content_path, structure_filename = "topic-missing-unit-plans", "topic-missing-unit-plans.yaml"
+    def test_topic_loader_missing_lessons(self):
+        content_path, structure_filename = "topic-missing-lessons", "topic-missing-lessons.yaml"
         factory = Mock()
         topic_loader = TopicLoader(
             factory,
@@ -139,6 +165,10 @@ class TopicLoaderTest(BaseTestWithDB):
     def test_topic_loader_valid_icon(self):
         content_path, structure_filename = "topic-valid-icon", "topic-valid-icon.yaml"
         factory = Mock()
+        # Create data as other loaders are mocked
+        self.test_data.create_age_group(5, 12)
+        temp_topic = self.test_data.create_topic("test")
+        self.test_data.create_lesson(temp_topic, 1)
         topic_loader = TopicLoader(
             factory,
             content_path=content_path,
@@ -154,6 +184,10 @@ class TopicLoaderTest(BaseTestWithDB):
     def test_topic_loader_missing_icon(self):
         content_path, structure_filename = "topic-1", "topic-1.yaml"
         factory = Mock()
+        # Create data as other loaders are mocked
+        self.test_data.create_age_group(5, 12)
+        temp_topic = self.test_data.create_topic("test")
+        self.test_data.create_lesson(temp_topic, 1)
         topic_loader = TopicLoader(
             factory,
             content_path=content_path,
@@ -166,6 +200,10 @@ class TopicLoaderTest(BaseTestWithDB):
     def test_topic_loader_with_other_resources(self):
         content_path, structure_filename = "topic-with-other-resources", "topic-with-other-resources.yaml"
         factory = Mock()
+        # Create data as other loaders are mocked
+        self.test_data.create_age_group(5, 12)
+        temp_topic = self.test_data.create_topic("test")
+        self.test_data.create_lesson(temp_topic, 1)
         topic_loader = TopicLoader(
             factory,
             content_path=content_path,
@@ -180,6 +218,10 @@ class TopicLoaderTest(BaseTestWithDB):
     def test_topic_translation(self):
         content_path, structure_filename = "topic-translation", "topic-translation.yaml"
         factory = Mock()
+        # Create data as other loaders are mocked
+        self.test_data.create_age_group(5, 12)
+        temp_topic = self.test_data.create_topic("test")
+        self.test_data.create_lesson(temp_topic, 1)
         topic_loader = TopicLoader(
             factory,
             content_path=content_path,
@@ -205,6 +247,12 @@ class TopicLoaderTest(BaseTestWithDB):
         content_path = "topic-translation-other-resources-missing"
         structure_filename = "topic-translation-other-resources-missing.yaml"
         factory = Mock()
+
+        # Create data as other loaders are mocked
+        self.test_data.create_age_group(5, 12)
+        temp_topic = self.test_data.create_topic("test")
+        self.test_data.create_lesson(temp_topic, 1)
+
         topic_loader = TopicLoader(
             factory,
             content_path=content_path,
@@ -226,6 +274,10 @@ class TopicLoaderTest(BaseTestWithDB):
         content_path = "empty-icon"
         structure_filename = "empty-icon.yaml"
         factory = Mock()
+        # Create data as other loaders are mocked
+        self.test_data.create_age_group(5, 12)
+        temp_topic = self.test_data.create_topic("test")
+        self.test_data.create_lesson(temp_topic, 1)
         topic_loader = TopicLoader(
             factory,
             content_path=content_path,
@@ -240,6 +292,10 @@ class TopicLoaderTest(BaseTestWithDB):
         content_path = "empty-other-resources"
         structure_filename = "empty-other-resources.yaml"
         factory = Mock()
+        # Create data as other loaders are mocked
+        self.test_data.create_age_group(5, 12)
+        temp_topic = self.test_data.create_topic("test")
+        self.test_data.create_lesson(temp_topic, 1)
         topic_loader = TopicLoader(
             factory,
             content_path=content_path,
@@ -254,6 +310,10 @@ class TopicLoaderTest(BaseTestWithDB):
         content_path = "empty-programming-challenges"
         structure_filename = "empty-programming-challenges.yaml"
         factory = Mock()
+        # Create data as other loaders are mocked
+        self.test_data.create_age_group(5, 12)
+        temp_topic = self.test_data.create_topic("test")
+        self.test_data.create_lesson(temp_topic, 1)
         topic_loader = TopicLoader(
             factory,
             content_path=content_path,
@@ -267,6 +327,10 @@ class TopicLoaderTest(BaseTestWithDB):
         content_path = "empty-curriculum-integrations"
         structure_filename = "empty-curriculum-integrations.yaml"
         factory = Mock()
+        # Create data as other loaders are mocked
+        self.test_data.create_age_group(5, 12)
+        temp_topic = self.test_data.create_topic("test")
+        self.test_data.create_lesson(temp_topic, 1)
         topic_loader = TopicLoader(
             factory,
             content_path=content_path,

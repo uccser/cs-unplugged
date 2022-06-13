@@ -28,11 +28,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "basic-config.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -47,11 +45,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "basic-config.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -65,37 +61,13 @@ class LessonsLoaderTest(BaseTestWithDB):
     #       is a parent loader to the lesson loader. Therefore this loader,
     #       is not run if the topic cannot be found.
 
-    def test_lesson_loader_unit_plan_set_correctly(self):
-        config_file = "basic-config.yaml"
-
-        topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
-
-        lesson_loader = LessonsLoader(
-            topic,
-            unit_plan,
-            structure_filename=config_file,
-            base_path=self.base_path
-        )
-        lesson_loader.load()
-        self.assertEquals(
-            Lesson.objects.get(slug="lesson-1").unit_plan,
-            unit_plan,
-        )
-
-    # Note: Missing unit plan does not need to be tested as the unit plan loader
-    #       is a parent loader to the lesson loader. Therefore this loader,
-    #       is not run if the unit plan cannot be found.
-
     def test_lesson_loader_slug_set_correctly(self):
         config_file = "basic-config.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -112,11 +84,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "basic-config.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -130,11 +100,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "missing-title.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -147,11 +115,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "basic-config.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -165,11 +131,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "missing-content.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -182,11 +146,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "ct-links.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -200,11 +162,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "basic-config.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -215,11 +175,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "duration.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -238,11 +196,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "heading-tree.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -276,30 +232,26 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "basic-config.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
         lesson_loader.load()
-        # Empty list will evaluate to false
+        # Empty dict will evaluate to false
         self.assertFalse(Lesson.objects.get(slug="lesson-1").heading_tree)
 
     def test_lesson_loader_optional_programming_challenges_set_correctly(self):
         config_file = "programming-challenges.yaml"
 
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         difficulty = self.test_data.create_difficulty_level(1)
         self.test_data.create_programming_challenge(topic, 1, difficulty)
         self.test_data.create_programming_challenge(topic, 2, difficulty)
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -316,10 +268,8 @@ class LessonsLoaderTest(BaseTestWithDB):
     def test_lesson_loader_optional_programming_challenges_empty(self):
         config_file = "programming-challenges-empty.yaml"
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -329,10 +279,8 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "programming-challenges-invalid.yaml"
 
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -345,14 +293,12 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "basic-config.yaml"
 
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         difficulty = self.test_data.create_difficulty_level(1)
         self.test_data.create_programming_challenge(topic, 1, difficulty)
         self.test_data.create_programming_challenge(topic, 2, difficulty)
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -366,11 +312,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "programming-challenges-description.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -384,11 +328,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "basic-config.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -399,13 +341,11 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "learning-outcomes.yaml"
 
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         self.test_data.create_learning_outcome(1)
         self.test_data.create_learning_outcome(2)
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -423,12 +363,10 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "learning-outcomes.yaml"
 
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         self.test_data.create_learning_outcome(1)
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -441,11 +379,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "learning-outcomes-empty.yaml"
 
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -458,13 +394,11 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "basic-config.yaml"
 
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         self.test_data.create_learning_outcome(1)
         self.test_data.create_learning_outcome(2)
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -478,13 +412,11 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "classroom-resources.yaml"
 
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         self.test_data.create_classroom_resource(1)
         self.test_data.create_classroom_resource(2)
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -502,12 +434,10 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "classroom-resources.yaml"
 
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         self.test_data.create_classroom_resource(1)
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -520,11 +450,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "classroom-resources-empty.yaml"
 
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -537,11 +465,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "basic-config.yaml"
 
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -555,11 +481,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "multiple-lessons.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -577,10 +501,8 @@ class LessonsLoaderTest(BaseTestWithDB):
     def test_lessons_loader_missing_configuration_file(self):
         config_file = "missing.yaml"
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -592,10 +514,8 @@ class LessonsLoaderTest(BaseTestWithDB):
     def test_lessons_loader_empty_configuration_file(self):
         config_file = "empty.yaml"
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -607,10 +527,8 @@ class LessonsLoaderTest(BaseTestWithDB):
     def test_lessons_loader_missing_lesson_data(self):
         config_file = "missing-lesson-data.yaml"
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -623,7 +541,6 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "generated-resources.yaml"
 
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         self.resource_test_data.create_resource(
             "grid",
             "Grid",
@@ -638,7 +555,6 @@ class LessonsLoaderTest(BaseTestWithDB):
         )
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -654,10 +570,8 @@ class LessonsLoaderTest(BaseTestWithDB):
     def test_lesson_loader_optional_generated_resources_empty(self):
         config_file = "generated-resources-empty.yaml"
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -668,7 +582,6 @@ class LessonsLoaderTest(BaseTestWithDB):
     def test_lesson_loader_optional_generated_resources_description_empty(self):
         config_file = "generated-resources-description-empty.yaml"
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         self.resource_test_data.create_resource(
             "grid",
             "Grid",
@@ -677,7 +590,6 @@ class LessonsLoaderTest(BaseTestWithDB):
         )
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -689,7 +601,6 @@ class LessonsLoaderTest(BaseTestWithDB):
     def test_lesson_loader_optional_generated_resources_description_missing(self):
         config_file = "generated-resources-description-missing.yaml"
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         self.resource_test_data.create_resource(
             "grid",
             "Grid",
@@ -698,7 +609,6 @@ class LessonsLoaderTest(BaseTestWithDB):
         )
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -707,10 +617,8 @@ class LessonsLoaderTest(BaseTestWithDB):
     def test_lesson_loader_optional_generated_resources_slug_invalid(self):
         config_file = "generated-resources.yaml"
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -722,10 +630,8 @@ class LessonsLoaderTest(BaseTestWithDB):
     def test_lessons_loader_translation_basic(self):
         config_file = "basic-translation.yaml"
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -742,11 +648,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "complex-translation.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -785,11 +689,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "basic-config.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -803,11 +705,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "translation-missing-ct-links.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )
@@ -831,11 +731,9 @@ class LessonsLoaderTest(BaseTestWithDB):
         config_file = "translation-missing-pcd.yaml"
 
         topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             topic,
-            unit_plan,
             structure_filename=config_file,
             base_path=self.base_path
         )

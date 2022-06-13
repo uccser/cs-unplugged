@@ -9,7 +9,7 @@ urlpatterns = [
     # eg: /search/
     path(
         '',
-        views.CustomSearchView.as_view(),
+        views.SearchView.as_view(),
         name="index"
     ),
 ]

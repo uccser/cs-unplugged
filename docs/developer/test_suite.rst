@@ -8,7 +8,7 @@ Test Suite
 Running the Test Suite
 ==============================================================================
 
-``./csu test_suite`` will run the entire test suite. For running a specific tests, viewing code coverage, and more testing commands, see :doc:`../getting_started/helper_commands`.
+``./dev test_suite`` will run the entire test suite. For running a specific tests, viewing code coverage, and more testing commands, see :doc:`../getting_started/helper_commands`.
 
 
 Structure

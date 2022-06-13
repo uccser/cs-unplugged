@@ -85,6 +85,15 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
         return pages
 
     def page_outline(self, number_of_bits, column_width):
+        """Create outline (lines without content) for page.
+
+        Args:
+            number_of_bits (int): Number of bits on page.
+            column_width (int): Width of each bit on page.
+
+        Return:
+            Page outline as type Image.
+        """
         page_outline = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), "#fff")
         draw = ImageDraw.Draw(page_outline)
         image_midpoint_y = int(IMAGE_SIZE_Y / 2)
@@ -132,7 +141,7 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
         image = self.add_dots(page_outline, column_width, show_bits_value)
         image = self.add_digit_values(page_outline, column_width, value_type, True)
         image = image.rotate(90, expand=True)
-        return {"type": "image", "data": image}
+        return {"type": "image", "data": image, "thumbnail": True}
 
     def back_page(self, value_type, column_width, page_outline):
         """Return a Pillow object of back page of Binary Windows.

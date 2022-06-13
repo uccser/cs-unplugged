@@ -5,7 +5,7 @@ from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
-from topics.models import CurriculumArea, UnitPlan, Lesson
+from topics.models import CurriculumArea, Lesson
 
 
 class CurriculumIntegrationsLoader(TranslatableModelLoader):
@@ -88,37 +88,18 @@ class CurriculumIntegrationsLoader(TranslatableModelLoader):
             if "prerequisite-lessons" in integration_data:
                 prerequisite_lessons = integration_data["prerequisite-lessons"]
                 if prerequisite_lessons is not None:
-                    for (unit_plan_slug, lessons) in prerequisite_lessons.items():
-                        if lessons is None:
-                            raise MissingRequiredFieldError(
-                                self.structure_file_path,
-                                ["unit-plan"],
-                                "Prerequisite Lesson"
-                            )
+                    for lesson_slug in prerequisite_lessons:
                         try:
-                            UnitPlan.objects.get(
+                            lesson = Lesson.objects.get(
                                 topic__slug=self.topic.slug,
-                                slug=unit_plan_slug
+                                slug=lesson_slug,
                             )
+                            integration.prerequisite_lessons.add(lesson)
                         except ObjectDoesNotExist:
                             raise KeyNotFoundError(
                                 self.structure_file_path,
-                                unit_plan_slug,
-                                "Unit Plans"
+                                lesson_slug,
+                                "Lessons"
                             )
-                        for lesson_slug in lessons:
-                            try:
-                                lesson = Lesson.objects.get(
-                                    topic__slug=self.topic.slug,
-                                    unit_plan__slug=unit_plan_slug,
-                                    slug=lesson_slug,
-                                )
-                                integration.prerequisite_lessons.add(lesson)
-                            except ObjectDoesNotExist:
-                                raise KeyNotFoundError(
-                                    self.structure_file_path,
-                                    lesson_slug,
-                                    "Lessons"
-                                )
 
             self.log("Added curriculum integration: {}".format(integration.name), 1)

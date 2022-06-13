@@ -33,11 +33,10 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Full text search
     "django.contrib.postgres",
-
     # Useful template tags
     "django.contrib.humanize",
-
     # Admin
     "django.contrib.admin",
 ]
@@ -45,8 +44,6 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     "corsheaders",
     "django_bootstrap_breadcrumbs",
-    "haystack",
-    "widget_tweaks",
     "modeltranslation",
     "bidiutils",
 ]
@@ -335,18 +332,6 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
-
-# SEARCH CONFIGURATION
-# ------------------------------------------------------------------------------
-# See: http://django-haystack.readthedocs.io/en/v2.6.0/settings.html
-HAYSTACK_CONNECTIONS = {
-    'default': {
-        'ENGINE': 'haystack.backends.elasticsearch5_backend.Elasticsearch5SearchEngine',
-        'URL': 'elasticsearch:9200',
-        'INDEX_NAME': 'haystack',
-    },
-}
-HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
 
 # OTHER SETTINGS
 # ------------------------------------------------------------------------------

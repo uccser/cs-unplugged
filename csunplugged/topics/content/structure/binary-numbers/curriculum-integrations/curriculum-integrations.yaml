@@ -3,7 +3,6 @@ binary-or-normal-candles:
   curriculum-areas:
     - writing
   prerequisite-lessons:
-    unit-plan:
       - how-binary-digits-work
 
 whose-cake-is-it:
@@ -11,7 +10,6 @@ whose-cake-is-it:
   curriculum-areas:
     - writing
   prerequisite-lessons:
-    unit-plan:
       - how-binary-digits-work
 
 binary-name-necklaces:
@@ -19,7 +17,6 @@ binary-name-necklaces:
   curriculum-areas:
     - art
   prerequisite-lessons:
-    unit-plan:
       - codes-for-letters-using-binary-representation
 
 binary-patterns:
@@ -27,7 +24,6 @@ binary-patterns:
   curriculum-areas:
     - art
   prerequisite-lessons:
-    unit-plan:
       - how-binary-digits-work
 
 binary-tunes:
@@ -35,7 +31,6 @@ binary-tunes:
   curriculum-areas:
     - music
   prerequisite-lessons:
-    unit-plan:
       - how-binary-digits-work
 
 biographies-and-binary-number-system-history:
@@ -49,5 +44,4 @@ binary-art:
   curriculum-areas:
     - art
   prerequisite-lessons:
-    unit-plan:
       - codes-for-letters-using-binary-representation

@@ -36,6 +36,12 @@ urlpatterns = [
         views.TopicView.as_view(),
         name="topic"
     ),
+    # eg: /topics/binary-numbers/whats-it-all-about/
+    path(
+        '<slug:topic_slug>/whats-it-all-about/',
+        views.TopicWhatsItAllAboutView.as_view(),
+        name="topic_whats_it_all_about"
+    ),
     # eg: /topics/binary-numbers/integrations/binary-bracelets/
     path(
         '<slug:topic_slug>/integrations/<slug:integration_slug>/',
@@ -60,28 +66,40 @@ urlpatterns = [
         views.ProgrammingChallengeLanguageSolutionView.as_view(),
         name="programming_challenge_solution"
     ),
+    # Redirect
     # eg: /topics/binary-numbers/unit-plan/
     path(
-        '<slug:topic_slug>/<slug:unit_plan_slug>/',
-        views.UnitPlanView.as_view(),
-        name="unit_plan"
+        '<slug:topic_slug>/unit-plan/',
+        views.redirect_to_topic,
     ),
-    # eg: /topics/binary-numbers/unit-plan/description/
+    # eg: /topics/binary-numbers/lesson-1/
     path(
-        '<slug:topic_slug>/<slug:unit_plan_slug>/description/',
-        views.UnitPlanDescriptionView.as_view(),
-        name="unit_plan_description"
-    ),
-    # eg: /topics/binary-numbers/unit-plan/lesson-1/
-    path(
-        '<slug:topic_slug>/<slug:unit_plan_slug>/<slug:lesson_slug>/',
+        '<slug:topic_slug>/<slug:lesson_slug>/',
         views.LessonView.as_view(),
         name="lesson"
     ),
-    # eg: /topics/binary-numbers/unit-plan/lesson-1/programming/
+    # eg: /topics/binary-numbers/lesson-1/programming/
     path(
-        '<slug:topic_slug>/<slug:unit_plan_slug>/<slug:lesson_slug>/programming/',
+        '<slug:topic_slug>/<slug:lesson_slug>/programming/',
         views.ProgrammingChallengeList.as_view(),
         name="programming_challenges_list"
+    ),
+    # Redirect
+    # eg: /topics/binary-numbers/unit-plan/description/
+    path(
+        '<slug:topic_slug>/<slug:deprecated_unit_plan_slug>/description/',
+        views.redirect_to_topic_whats_it_all_about,
+    ),
+    # Redirect
+    # eg: /topics/binary-numbers/unit-plan/lesson-1/
+    path(
+        '<slug:topic_slug>/<slug:deprecated_unit_plan_slug>/<slug:lesson_slug>/',
+        views.redirect_to_lesson,
+    ),
+    # Redirect
+    # eg: /topics/binary-numbers/unit-plan/lesson-1/programming/
+    path(
+        '<slug:topic_slug>/<slug:deprecated_unit_plan_slug>/<slug:lesson_slug>/programming/',
+        views.redirect_to_lesson_programming,
     ),
 ]
