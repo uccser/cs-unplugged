@@ -49,11 +49,6 @@ class IndexViewTest(BaseTestWithDB):
                     "selected": False,
                 },
                 {
-                    "value": "topics.unitplan",
-                    "name": "Unit Plan",
-                    "selected": False,
-                },
-                {
                     "value": "topics.lesson",
                     "name": "Lesson",
                     "selected": False,
@@ -96,7 +91,6 @@ class IndexViewTest(BaseTestWithDB):
         url = reverse("search:index")
         get_parameters = [
             ("models", "topics.topic"),
-            ("models", "topics.unitplan"),
         ]
         url += query_string(get_parameters)
         response = self.client.get(url)
@@ -106,11 +100,6 @@ class IndexViewTest(BaseTestWithDB):
                 {
                     "value": "topics.topic",
                     "name": "Topic",
-                    "selected": True,
-                },
-                {
-                    "value": "topics.unitplan",
-                    "name": "Unit Plan",
                     "selected": True,
                 },
                 {
@@ -480,12 +469,10 @@ class IndexViewTest(BaseTestWithDB):
     #     get_parameters = [
     #         ("q", "Unit Plan 1"),
     #         ("models", "topics.topic"),
-    #         ("models", "topics.unitplan"),
     #     ]
     #     url += query_string(get_parameters)
     #     response = self.client.get(url)
     #     result_objects = response.context["results"]
-    #     self.assertIsInstance(result_objects[0], UnitPlan)
 
     # def test_search_view_curriculum_areas_filter_1(self):
     #     topic = self.test_data.create_topic(1)

@@ -47,16 +47,18 @@ class TopicLoader(TranslatableModelLoader):
             topic_translations[language]["name"] = content.title
             topic_translations[language]["content"] = content.html_string
 
-        whats_it_all_about_translations = self.get_markdown_translations(
-            'whats-it-all-about.md',
-            heading_required=False,
-            remove_title=True,
-        )
-        for language, content in whats_it_all_about_translations.items():
-            topic_translations[language]["whats_it_all_about"] = content.html_string
-            if content.heading_tree:
-                heading_tree = convert_heading_tree_to_dict(content.heading_tree)
-                topic_translations[language]["whats_it_all_about_heading_tree"] = heading_tree
+        if "whats-it-all-about" in topic_structure:
+            whats_it_all_about_filename = topic_structure["whats-it-all-about"]
+            whats_it_all_about_translations = self.get_markdown_translations(
+                whats_it_all_about_filename,
+                heading_required=False,
+                remove_title=True,
+            )
+            for language, content in whats_it_all_about_translations.items():
+                topic_translations[language]["whats_it_all_about"] = content.html_string
+                if content.heading_tree:
+                    heading_tree = convert_heading_tree_to_dict(content.heading_tree)
+                    topic_translations[language]["whats_it_all_about_heading_tree"] = heading_tree
 
         if "computational-thinking-links" in topic_structure:
             ct_links_filename = topic_structure["computational-thinking-links"]

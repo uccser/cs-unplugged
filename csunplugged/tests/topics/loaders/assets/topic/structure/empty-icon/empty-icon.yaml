@@ -1,3 +1,6 @@
-unit-plans:
-  - unit-plan-1
+lessons: lessons/lessons.yaml
+age-groups:
+  5-12:
+    lesson-1:
+      number: 1
 icon:
