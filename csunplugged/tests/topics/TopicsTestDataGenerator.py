@@ -5,7 +5,6 @@ import yaml
 
 from topics.models import (
     Topic,
-    UnitPlan,
     Lesson,
     LessonNumber,
     AgeGroup,

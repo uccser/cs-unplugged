@@ -4,7 +4,7 @@ from django.core import management
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from tests.create_query_string import query_string
-from topics.models import Topic, UnitPlan, Lesson
+from topics.models import Topic, Lesson
 
 
 class IndexViewTest(BaseTestWithDB):

@@ -38,7 +38,7 @@ class LessonModelTest(BaseTestWithDB):
         )
         self.assertEqual(
             lesson.get_absolute_url(),
-            "/en/topics/topic-1/unit-plan-1/lesson-1/"
+            "/en/topics/topic-1/lesson-1/"
         )
 
     def test_get_filtered_programming_exercises_by_lanaguge(self):

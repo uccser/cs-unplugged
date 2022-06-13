@@ -21,7 +21,7 @@ class TopicWhatsItAllAboutViewTest(BaseTestWithDB):
         self.assertEqual(HTTPStatus.OK, response.status_code)
 
     def test_topic_whats_it_all_about_view_with_invalid_topic_slug(self):
-        topic = self.test_data.create_topic(1)
+        self.test_data.create_topic(1)
         kwargs = {
             "topic_slug": "wrong_slug",
         }
@@ -48,4 +48,8 @@ class TopicWhatsItAllAboutViewTest(BaseTestWithDB):
         }
         url = reverse("topics:topic_whats_it_all_about", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertTrue("topics/topic-whats-it-all-about.html" in response.templates)
+        template_found = False
+        for template in response.templates:
+            if template.name == "topics/topic-whats-it-all-about.html":
+                template_found = True
+        self.assertTrue(template_found)
