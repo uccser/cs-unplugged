@@ -50,7 +50,7 @@ class TopicLoader(TranslatableModelLoader):
         whats_it_all_about_translations = self.get_markdown_translations(
             'whats-it-all-about.md',
             heading_required=False,
-            remove_title=False,
+            remove_title=True,
         )
         for language, content in whats_it_all_about_translations.items():
             topic_translations[language]["whats_it_all_about"] = content.html_string

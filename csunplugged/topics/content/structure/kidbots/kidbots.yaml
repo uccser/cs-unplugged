@@ -1,7 +1,20 @@
-unit-plans:
-  - unit-plan/unit-plan.yaml
-
 icon: img/topics/unplugged-programming-icon.png
 
+lessons: lessons/lessons.yaml
+
+age-groups:
+  5-7:
+    rescue-mission:
+      number: 1
+    fitness-unplugged:
+      number: 2
+  8-10:
+    sending-a-rocket-to-mars:
+      number: 1
+    modulo:
+      number: 3
+
+whats-it-all-about: whats-it-all-about.md
+computational-thinking-links: ct-links.md
 programming-challenges: programming-challenges/programming-challenges.yaml
 curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml

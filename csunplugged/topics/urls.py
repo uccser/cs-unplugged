@@ -72,13 +72,13 @@ urlpatterns = [
         '<slug:topic_slug>/unit-plan/',
         views.redirect_to_topic,
     ),
-    # eg: /topics/binary-numbers/unit-plan/lesson-1/
+    # eg: /topics/binary-numbers/lesson-1/
     path(
         '<slug:topic_slug>/<slug:lesson_slug>/',
         views.LessonView.as_view(),
         name="lesson"
     ),
-    # eg: /topics/binary-numbers/unit-plan/lesson-1/programming/
+    # eg: /topics/binary-numbers/lesson-1/programming/
     path(
         '<slug:topic_slug>/<slug:lesson_slug>/programming/',
         views.ProgrammingChallengeList.as_view(),

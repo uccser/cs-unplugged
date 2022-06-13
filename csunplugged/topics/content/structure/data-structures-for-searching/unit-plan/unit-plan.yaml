@@ -1,7 +1,0 @@
-lessons: lessons/lessons.yaml
-computational-thinking-links: unit-plan-ct-links.md
-
-age-groups:
-  11-14:
-    binary-search-trees:
-      number: 1

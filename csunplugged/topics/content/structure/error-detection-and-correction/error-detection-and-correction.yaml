@@ -1,7 +1,19 @@
-unit-plans:
-    - unit-plan/unit-plan.yaml
-
 icon: img/topics/parity-trick-example-icon.png
+
+lessons: lessons/lessons.yaml
+
+age-groups:
+  5-7:
+    parity-magic-junior:
+      number: 1
+  8-10:
+    parity-magic:
+      number: 1
+    product-code-check-digits:
+      number: 2
+
+whats-it-all-about: whats-it-all-about.md
+computational-thinking-links: ct-links.md
 programming-challenges: programming-challenges/programming-challenges.yaml
 curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml
 other-resources: other-resources.md

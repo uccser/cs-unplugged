@@ -1,6 +1,23 @@
-unit-plans:
-  - unit-plan/unit-plan.yaml
-
 icon: img/topics/searching-algorithms-icon.png
 
+lessons: lessons/lessons.yaml
+
+age-groups:
+  5-7:
+    how-many-guesses-junior:
+      number: 1
+    divide-and-conquer-junior:
+      number: 2
+  8-10:
+    how-many-guesses:
+      number: 1
+    divide-and-conquer:
+      number: 2
+    the-great-number-hunt-unsorted:
+      number: 3
+    the-great-number-hunt-sorted:
+      number: 4
+
+whats-it-all-about: whats-it-all-about.md
+computational-thinking-links: ct-links.md
 curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml
