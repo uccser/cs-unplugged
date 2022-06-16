@@ -1,0 +1,81 @@
+// Default mixins and settings -----------------
+@import "node_modules/reveal.js/css/theme/template/mixins";
+@import "node_modules/reveal.js/css/theme/template/settings";
+@import "core-variables";
+
+// Background of the presentation
+$backgroundColor: $background-colour;
+
+// Primary/body text
+$mainFont: $font-family-sans-serif;
+$mainFontSize: 3em;
+$mainColor: #222;
+
+// Vertical spacing between blocks of text
+$blockMargin: 20px;
+
+// Headings
+$headingMargin: 0 0 $blockMargin 0;
+$headingFont: $headings-font-family;
+$headingColor: #222;
+$headingLineHeight: 1.2;
+$headingLetterSpacing: normal;
+$headingTextTransform: normal;
+$headingTextShadow: none;
+$headingFontWeight: normal;
+$heading1TextShadow: $headingTextShadow;
+
+$heading1Size: 3.77em;
+$heading2Size: 2.11em;
+$heading3Size: 1.55em;
+$heading4Size: 1.00em;
+
+$codeFont: monospace;
+
+// Links and actions
+$linkColor: #2a76dd;
+$linkColorHover: lighten($linkColor, 20%);
+
+// Text selection
+$selectionBackgroundColor: #FF5E99;
+$selectionColor: #fff;
+
+// Generates the presentation background, can be overridden
+// to return a background image or gradient
+@mixin bodyBackground() {
+    background: $backgroundColor;
+}
+
+// Change text colors against dark slide backgrounds
+// @include dark-bg-text-color(#fff);
+
+// Custom theme rules
+
+#slides {
+    .r-display-1 {
+        font-size: 10em;
+    }
+
+    .r-left-align {
+        text-align: left;
+    }
+
+    // Colour overrides
+    .r-text-green {
+        color: #0B983A;
+    }
+    .r-text-blue {
+        color: #0F70B7;
+    }
+    .r-text-purple {
+        color: #82358C;
+    }
+    .r-text-red {
+        color: #E30613;
+    }
+    .r-text-black {
+        color: black;
+    }
+}
+
+@import "node_modules/reveal.js/css/theme/template/theme";

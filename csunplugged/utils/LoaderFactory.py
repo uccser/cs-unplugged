@@ -15,6 +15,7 @@ from at_home.management.commands._ChallengeLoader import ChallengeLoader
 from resources.management.commands._ResourcesLoader import ResourcesLoader
 from classic.management.commands._ClassicPagesLoader import ClassicPagesLoader
 from general.management.commands._GeneralPagesLoader import GeneralPagesLoader
+from at_a_distance.management.commands._LessonLoader import AtADistanceLessonLoader
 
 
 class LoaderFactory:
@@ -79,3 +80,7 @@ class LoaderFactory:
     def create_general_pages_loader(self, **kwargs):
         """Create general pages loader."""
         return GeneralPagesLoader(structure_dir="", **kwargs)
+
+    def create_at_a_distance_lesson_loader(self, **kwargs):
+        """Create at a distance lesson loader."""
+        return AtADistanceLessonLoader(self, **kwargs)

@@ -1,0 +1,15 @@
+@import "core-variables";
+@import "node_modules/reveal.js/dist/reveal";
+@import "at-a-distance-slide-theme";
+
+#at-a-distance-jumbotron {
+    background-color: lighten($at-a-distance-colour, 25%);
+}
+
+.navbar.navbar-at-a-distance {
+    background-color: darken($at-a-distance-colour, 25%);
+}
+
+#slides {
+    border: 1px solid grey;
+}

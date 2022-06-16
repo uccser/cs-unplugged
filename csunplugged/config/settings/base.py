@@ -58,6 +58,7 @@ LOCAL_APPS = [
     "classic.apps.ClassicConfig",
     "at_home.apps.AtHomeConfig",
     "moocs.apps.MoocsConfig",
+    "at_a_distance.apps.AtADistanceConfig",
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -354,6 +355,7 @@ MODELTRANSLATION_CUSTOM_FIELDS = ("JSONField",)
 CLASSIC_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("classic")), "content")
 GENERAL_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("general")), "content")
 ACTIVITIES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("at_home")), "content")
+AT_A_DISTANCE_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("at_a_distance")), "content")
 BREADCRUMBS_TEMPLATE = "django_bootstrap_breadcrumbs/bootstrap4.html"
 JOBE_SERVER_URL = "http://jobe"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

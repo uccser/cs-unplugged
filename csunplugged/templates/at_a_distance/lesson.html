@@ -1,0 +1,56 @@
+{% extends "at_a_distance/base.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load render_html_field %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+    {{ lesson.name }}
+{% endblock title %}
+
+{% block breadcrumbs %}
+    {% breadcrumb lesson.name "at_a_distance:lesson" lesson.slug %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+    <h1 id="{{ lesson.slug }}">{{ lesson.name }}</h1>
+    {% if not lesson.translation_available %}
+      {% with model=lesson %}
+        {% include "topics/not-available-warning.html" %}
+      {% endwith %}
+    {% endif %}
+{% endblock page_heading %}
+
+{% block content %}
+    {% if lesson.translation_available %}
+        {% render_html_field lesson.introduction %}
+
+        <h2>Slides</h2>
+        <div>
+            <h3 class="h6">How to use the slideshow</h3>
+            <ul>
+                <li>Press <kbd>F</kbd> to enter full screen.</li>
+                <li>Press <kbd>Esc</kbd> to exit full screen.</li>
+            </ul>
+        </div>
+        <div id="slides" class="embed-responsive embed-responsive-16by9">
+            <div class="reveal embed-responsive-item">
+                <div class="slides">
+                    <section>
+                        <h2>CS Unplugged - At a Distance</h1>
+                        <h1>{{ lesson.name }}</h1>
+                    </section>
+
+                    {% include lesson.get_slides_path %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}
+
+{% block scripts %}
+    {% if lesson.translation_available %}
+        <script src="{% static 'js/at-a-distance-slides.js' %}"></script>
+    {% endif %}
+{% endblock scripts %}

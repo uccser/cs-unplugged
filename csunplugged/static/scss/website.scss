@@ -40,6 +40,7 @@
 
 @import "pygments-vs";
 @import "directional";
+@import "at-a-distance";
 @import url('https://fonts.googleapis.com/css?family=Sniglet');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
@@ -363,7 +364,7 @@ body {
     padding-top: 0px;
   }
   position: relative;
-  background-color: $gray-100;
+  background-color: $background-colour;
 }
 
 #content-container {

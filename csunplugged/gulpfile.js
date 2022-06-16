@@ -61,7 +61,6 @@ function pathsConfig(appName) {
         ],
         // Output files
         css_output: `${staticOutputRoot}/css`,
-        fonts_output: `${staticOutputRoot}/fonts`,
         images_output: `${staticOutputRoot}/img`,
         js_output: `${staticOutputRoot}/js`,
         files_output: `${staticOutputRoot}/files`,
