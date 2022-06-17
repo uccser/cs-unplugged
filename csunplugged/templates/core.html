@@ -44,7 +44,9 @@
     <meta name="msapplication-config" content="{% static 'img/browserconfig.xml' %}">
     <meta name="theme-color" content="#ffffff">
   </head>
-  <body style="text-align: {{LANGUAGE_START}};"{% block body_attribute_overrides %}{% endblock body_attribute_overrides %}>
+  <body style="text-align: {{LANGUAGE_START}};" class="{% block extra_body_classes %}{% endblock extra_body_classes %}">
+    {% block body %}
+
     {% block navbar %}
     {% endblock navbar %}
 
@@ -270,6 +272,8 @@
     </script>
     {% block scripts %}
     {% endblock scripts %}
+
+    {% endblock body %}
 
     {% if DEPLOYED %}
       <!-- Google Tag Manager -->

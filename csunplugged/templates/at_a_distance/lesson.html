@@ -26,7 +26,13 @@
     {% if lesson.translation_available %}
         {% render_html_field lesson.introduction %}
 
-        <h2>Slides</h2>
+        <p>
+            <a href="{% url 'at_a_distance:lesson_slides' lesson.slug %}" class="btn btn-primary" target="_blank">
+                Open slides in presentation mode
+            </a>
+        </p>
+
+        <h2>Slides with notes</h2>
         <div>
             <h3 class="h6">How to use the slideshow</h3>
             <ul>
@@ -50,7 +56,6 @@
 {% endblock content %}
 
 {% block scripts %}
-    {% if lesson.translation_available %}
-        <script src="{% static 'js/at-a-distance-slides.js' %}"></script>
-    {% endif %}
+    {{ block.super }}
+    {% include "at_a_distance/components/reveal-initialize.html" with embedded="true" speaker_mode=False show_notes="true" %}
 {% endblock scripts %}

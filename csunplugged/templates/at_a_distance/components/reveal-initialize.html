@@ -1,0 +1,26 @@
+<script>
+    let deck = new CSU_ATD_Reveal({
+        embedded: {{ embedded }},
+        showNotes: {{ show_notes }},
+
+        transition: 'slide',
+        plugins: [
+            {% if speaker_mode %}CSU_ATD_SpeakerNotes,{% endif %}
+        ],
+
+        // The "normal" size of the presentation, aspect ratio will
+        // be preserved when the presentation is scaled to fit different
+        // resolutions. Can be specified using percentage units.
+        width: 1920,
+        height: 1080,
+
+        // Factor of the display size that should remain empty around
+        // the content
+        margin: 0.04,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 2.0,
+    })
+    deck.initialize();
+</script>

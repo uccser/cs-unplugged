@@ -360,7 +360,7 @@ $navbar-height: 50px;
 $navbar-padding-bottom: 24px;
 body {
   padding-top: $navbar-height;
-  &.homepage {
+  &.no-padding {
     padding-top: 0px;
   }
   position: relative;

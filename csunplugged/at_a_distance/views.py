@@ -20,3 +20,12 @@ class LessonView(generic.DetailView):
     template_name = "at_a_distance/lesson.html"
     context_object_name = "lesson"
     slug_url_kwarg = "lesson_slug"
+
+
+class LessonSlidesView(generic.DetailView):
+    """View for a specific lesson's slides."""
+
+    model = Lesson
+    template_name = "at_a_distance/lesson-slides.html"
+    context_object_name = "lesson"
+    slug_url_kwarg = "lesson_slug"

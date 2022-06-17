@@ -17,4 +17,10 @@ urlpatterns = [
         views.LessonView.as_view(),
         name='lesson'
     ),
+    # eg: /at-a-distance/stroop-effect/slides/
+    path(
+        '<slug:lesson_slug>/slides/',
+        views.LessonSlidesView.as_view(),
+        name='lesson_slides'
+    ),
 ]
