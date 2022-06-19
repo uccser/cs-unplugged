@@ -52,17 +52,29 @@ $selectionColor: #fff;
 // Custom theme rules
 
 #slides {
-    .r-display-1 {
-        font-size: 10em;
-    }
 
+    // Font
+    @for $i from 1 through 20 {
+        .r-font-size-#{$i} {
+            font-size: $i * 0.5em;
+        }
+    }
     .r-left-align {
         text-align: left;
+    }
+    .r-bold {
+        font-weight: bold;
+    }
+    p {
+        margin: 0 0 1rem 0;
+    }
+    p:last-child {
+        margin: 0;
     }
 
     // Colour overrides
     .r-text-green {
-        color: #0B983A;
+        color: #17BA1F;
     }
     .r-text-blue {
         color: #0F70B7;
@@ -73,8 +85,85 @@ $selectionColor: #fff;
     .r-text-red {
         color: #E30613;
     }
+    .r-text-yellow {
+        color: #F0DA18;
+    }
     .r-text-black {
         color: black;
+    }
+
+    // Layout
+    .r-grid {
+        display: grid;
+    }
+    .r-grid-columns{
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+    }
+    .r-flex {
+        display: flex;
+    }
+    .r-flex-align-items-center {
+        align-items: center;
+    }
+    .r-flex-justify-content-center {
+        justify-content: center;
+    }
+}
+
+// Speaker notes
+
+$speech-bubble-background: mix(#fff, $at-a-distance-colour, 95%);
+
+.reveal .speaker-notes {
+
+    font-family: $font-family-sans-serif;
+
+    p {
+        line-height: inherit;
+    }
+
+    .speech-bubble {
+        background: $speech-bubble-background;
+        border: 1px solid $at-a-distance-colour;
+        border-radius: 1rem;
+        margin: 0 0 1.5em 0;
+        padding: 0.5em;
+        position: relative;
+
+        blockquote {
+            // Overrides for reveal theme defaults
+            margin: 0;
+            padding: 0;
+            box-shadow: none;
+            background: none;
+            width: auto;
+        }
+
+        .speech-bubble-arrow {
+            border-left: 21px solid transparent;
+            bottom: -25px;
+            position: absolute;
+            right: 15px;
+
+            &::before {
+                border-left: 23px solid transparent;
+                border-top: 23px solid $at-a-distance-colour;
+                bottom: 2px;
+                content: "";
+                position: absolute;
+                right: 5px;
+            }
+
+            &::after {
+                border-left: 21px solid transparent;
+                border-top: 21px solid $speech-bubble-background;
+                bottom: 4px;
+                content: "";
+                position: absolute;
+                right: 6px;
+            }
+        }
     }
 }
 

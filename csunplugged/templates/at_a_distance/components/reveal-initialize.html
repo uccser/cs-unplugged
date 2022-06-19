@@ -1,7 +1,8 @@
 <script>
-    let deck = new CSU_ATD_Reveal({
+    let slides = new CSU_ATD_Reveal({
         embedded: {{ embedded }},
         showNotes: {{ show_notes }},
+        overview: false,
 
         transition: 'slide',
         plugins: [
@@ -22,5 +23,5 @@
         minScale: 0.1,
         maxScale: 2.0,
     })
-    deck.initialize();
+    slides.initialize();
 </script>
