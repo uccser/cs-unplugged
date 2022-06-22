@@ -4,7 +4,6 @@ from os.path import join
 from django.urls import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from django.utils.translation import get_language
 from utils.TranslatableModel import TranslatableModel
 from at_a_distance.settings import AT_A_DISTANCE_SLIDES_TEMPLATE_BASE_PATH
 
@@ -33,7 +32,6 @@ class Lesson(TranslatableModel):
     def get_slides_path(self):
         return join(
             AT_A_DISTANCE_SLIDES_TEMPLATE_BASE_PATH,
-            get_language(),
             f'{self.slug}.html'
         )
 
