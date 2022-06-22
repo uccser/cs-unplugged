@@ -7,7 +7,9 @@
         disableLayout: false,
         center: false,
 
-        transition: 'slide',
+        transition: 'none',
+        backgroundTransition: 'fade',
+
         plugins: [
             {% if speaker_mode %}CSU_ATD_SpeakerNotes,{% endif %}
         ],

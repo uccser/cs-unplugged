@@ -46,6 +46,9 @@ $selectionColor: #fff;
     background: $backgroundColor;
 }
 
+// Custom variables
+$footer-height: 3rem;
+
 // Change text colors against dark slide backgrounds
 // @include dark-bg-text-color(#fff);
 
@@ -91,8 +94,20 @@ $selectionColor: #fff;
     .r-text-black {
         color: black;
     }
+    .r-text-white {
+        color: white;
+    }
 
     // Layout
+    .r-centered {
+        top: 0;
+        bottom: 0;
+        display: flex !important;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
     .r-grid {
         display: grid;
     }
@@ -170,11 +185,34 @@ $speech-bubble-background: mix(#fff, $at-a-distance-colour, 95%);
 // Footer
 .reveal > .footer {
     position: absolute;
+    height: $footer-height;
     bottom: 0;
-    padding: 1rem;
-    font-size: 1.5rem;
+    font-size: 0.5em;
     color: $at-a-distance-colour;
     width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5px;
+
+    img {
+        margin: 0;
+    }
 }
+.reveal.has-dark-background > .footer {
+    color: white;
+}
+
+/*
+Spacer to prevent the content from running into the footer.
+From https://github.com/hakimel/reveal.js/issues/2707#issuecomment-647708919
+*/
+.reveal .slides section::after {
+    content: ' ';
+    display: block;
+    height: $footer-height;
+}
+
 
 @import "node_modules/reveal.js/css/theme/template/theme";
