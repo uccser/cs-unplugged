@@ -1,2 +1,14 @@
-stroop-effect:
+parity-magic:
     order-number: 1
+# qr-codes:
+#     order-number: 2
+# product-code-check-digits:
+#     order-number: 3
+# finite-state-automata:
+#     order-number: 4
+# image-representation:
+#     order-number: 5
+# binary-representation:
+#     order-number: 6
+stroop-effect:
+    order-number: 7

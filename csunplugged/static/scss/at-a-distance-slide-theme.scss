@@ -107,6 +107,9 @@ $footer-height: 3rem;
         flex-wrap: nowrap;
         justify-content: center;
     }
+    .r-flex-grow {
+        flex-grow: 1;
+    }
 
     .r-grid {
         display: grid;
@@ -123,6 +126,14 @@ $footer-height: 3rem;
     }
     .r-flex-justify-content-center {
         justify-content: center;
+    }
+
+    // Other
+    iframe {
+        border: none;
+    }
+    &.embed-responsive .reveal .slides section iframe {
+        position: initial;
     }
 }
 
