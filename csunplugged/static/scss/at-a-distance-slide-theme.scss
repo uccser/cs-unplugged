@@ -167,4 +167,14 @@ $speech-bubble-background: mix(#fff, $at-a-distance-colour, 95%);
     }
 }
 
+// Footer
+.reveal > .footer {
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: $at-a-distance-colour;
+    width: 100%;
+}
+
 @import "node_modules/reveal.js/css/theme/template/theme";

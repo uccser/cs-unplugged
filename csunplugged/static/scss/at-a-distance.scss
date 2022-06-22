@@ -3,11 +3,11 @@
 @import "at-a-distance-slide-theme";
 
 #at-a-distance-jumbotron {
-    background-color: lighten($at-a-distance-colour, 25%);
+    background-color: rgba($at-a-distance-colour, 15%);
 }
 
 .navbar.navbar-at-a-distance {
-    background-color: darken($at-a-distance-colour, 25%);
+    background-color: $at-a-distance-colour;
 }
 
 #slides.embed-responsive {

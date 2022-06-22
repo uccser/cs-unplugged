@@ -40,18 +40,8 @@
                 <li>Press <kbd>Esc</kbd> to exit full screen.</li>
             </ul>
         </div>
-        <div id="slides" class="embed-responsive embed-responsive-16by9">
-            <div class="reveal embed-responsive-item">
-                <div class="slides">
-                    <section>
-                        <h2>CS Unplugged - At a Distance</h1>
-                        <h1>{{ lesson.name }}</h1>
-                    </section>
 
-                    {% include lesson.get_slides_path %}
-                </div>
-            </div>
-        </div>
+        {% include "at_a_distance/components/reveal-slides-structure.html" with embed=True %}
     {% endif %}
 {% endblock content %}
 

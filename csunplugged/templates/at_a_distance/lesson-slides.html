@@ -16,22 +16,11 @@
 {% block extra_body_classes %}no-padding{% endblock extra_body_classes %}
 
 {% block body %}
-    <div id="slides" class="w-100 h-100">
-        <div class="reveal">
-            <div class="slides">
-                <section>
-                    <h2>CS Unplugged - At a Distance</h1>
-                    <h1>{{ lesson.name }}</h1>
-                </section>
+    {% include "at_a_distance/components/reveal-slides-structure.html" %}
 
-                {% include lesson.get_slides_path %}
-            </div>
-        </div>
-    </div>
-
-{% block scripts %}
-    {{ block.super }}
-    {% include "at_a_distance/components/reveal-initialize.html" with embedded="false" speaker_mode=True show_notes="false" %}
-{% endblock scripts %}
+    {% block scripts %}
+        {{ block.super }}
+        {% include "at_a_distance/components/reveal-initialize.html" with embedded="false" speaker_mode=True show_notes="false" %}
+    {% endblock scripts %}
 
 {% endblock body %}

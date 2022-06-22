@@ -1,6 +1,6 @@
 <div class="slides">
     <section>
-        <h1>Key questions</h1>
+        <h2>Key questions</h2>
         <ul>
             <li>
                 Have you ever used an application and had to think carefully about what to click?
@@ -33,7 +33,7 @@
     </section>
 
     <section>
-        <h1 class="r-font-size-20 r-text-green">RED</h1>
+        <h1 class="r-font-size-20 r-text-green">RED</h2>
 
         <aside class="notes">
             {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -50,23 +50,23 @@
     </section>
 
     <section>
-        <h1 class="r-font-size-20 r-text-blue">GREEN</h1>
+        <h1 class="r-font-size-20 r-text-blue">GREEN</h2>
     </section>
 
     <section>
-        <h1 class="r-font-size-20 r-text-purple">BLUE</h1>
+        <h1 class="r-font-size-20 r-text-purple">BLUE</h2>
     </section>
 
     <section>
-        <h1 class="r-font-size-20 r-text-red">BLACK</h1>
+        <h1 class="r-font-size-20 r-text-red">BLACK</h2>
     </section>
 
     <section>
-        <h1 class="r-font-size-20 r-text-black">RED</h1>
+        <h1 class="r-font-size-20 r-text-black">RED</h2>
     </section>
 
     <section>
-        <h1 class="r-font-size-20 r-text-green">PURPLE</h1>
+        <h1 class="r-font-size-20 r-text-green">PURPLE</h2>
 
         <aside class="notes">
             {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -80,7 +80,7 @@
     </section>
 
     <section>
-        <h1>Instructions for timing exercises</h1>
+        <h2>Instructions for timing exercises</h2>
         <aside class="notes">
             {% include "at_a_distance/components/speech-bubble-open.html" %}
                 <p>
@@ -103,7 +103,7 @@
     </section>
 
     <section data-timer="1">
-        <h1 class="r-font-size-2">Incongruent</h1>
+        <h1 class="r-font-size-2">Incongruent</h2>
         <div class="r-grid r-grid-columns">
             <div class="left-column r-font-size-3 r-bold">
                 <div class="r-text-red">Blue</div>
@@ -152,7 +152,7 @@
     </section>
 
     <section data-timer="2">
-        <h1 class="r-font-size-2">Congruent</h1>
+        <h1 class="r-font-size-2">Congruent</h2>
         <div class="r-grid r-grid-columns">
             <div class="left-column r-font-size-3 r-bold">
                 <div class="r-text-red">Red</div>
@@ -189,8 +189,8 @@
         </aside>
     </section>
 
-    <section data-timer="1">
-        <h1 class="r-font-size-2">Results</h1>
+    <section>
+        <h1 class="r-font-size-2">Results</h2>
         <div class="r-grid r-grid-columns">
             <div class="left-column r-font-size-3 r-bold">
                 <h3>Incongruent</h3>
@@ -242,6 +242,141 @@
             {% include "at_a_distance/components/speech-bubble-close.html" %}
         </aside>
     </section>
+
+    <section>
+        <h2>HCI in action</h2>
+        {% comment %} Image for airline interface {% endcomment %}
+
+        <aside class="notes">
+            {% include "at_a_distance/components/speech-bubble-open.html" %}
+                <p>
+                    This screen is from an airline booking system; once you have entered all the details, it asks this questions.
+                    What do you notice about it?
+                    Share your ideas in the chat.
+                </p>
+            {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+            <p>
+                What for a couple of responses and respond appropriately.
+                <strong>Answer:</strong> if people are in a hurry, they will naturally press the green button to continue (green means “go”, orange means “warning”), but that will wipe all the information they have entered.
+            </p>
+
+            {% include "at_a_distance/components/speech-bubble-open.html" %}
+                <p>
+                    A lot of people pressed the wrong button and lost all their work.
+                    You could say that they didn't read it properly, but usually people are under pressure when they are using systems, and don't have time to carefully consider every step.
+                    If you expect them to do that, then it's like the Stroop effect.
+                    A good interface shouldn't make people have to think hard.
+                </p>
+            {% include "at_a_distance/components/speech-bubble-close.html" %}
+        </aside>
+    </section>
+
+    <section>
+        <h2>HCI in action</h2>
+        {% comment %} Image for quit prompt {% endcomment %}
+
+        <aside class="notes">
+            {% include "at_a_distance/components/speech-bubble-open.html" %}
+                <p>
+                    Suppose you didn't really want to quit this program.
+                    Which button should you press to avoid losing your work?
+                    Are you sure?
+                </p>
+            {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+            <p>
+                What for a few answers and respond appropriately.
+            </p>
+
+            {% include "at_a_distance/components/speech-bubble-open.html" %}
+                <p>
+                    This isn't a drastic problem, but you do have to think carefully, and the consequences of a mistake are severe.
+                    Interfaces should be worded in a way that the user can confidently navigating it without having to stop and think hard all the time.
+                </p>
+            {% include "at_a_distance/components/speech-bubble-close.html" %}
+        </aside>
+    </section>
+
+    <section>
+        <h2>HCI in action</h2>
+        {% comment %} Image of date prompt {% endcomment %}
+
+        <aside class="notes">
+            {% include "at_a_distance/components/speech-bubble-open.html" %}
+                <p>
+                    This is our last example.
+                    Why is this an invalid date format?
+                    What would you need to type to make it correct?
+                    Share your ideas in the chat.
+                </p>
+            {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+            <p>
+                Wait for some responses and respond appropriately.
+                <strong>Answer:</strong> The month is in capital letters (“MAR”) but it should be written as “Mar”.
+                The format shows “MMM” which conflicts with the “Mar” example.
+            </p>
+
+            {% include "at_a_distance/components/speech-bubble-open.html" %}
+                <p>
+                    These are examples of just one type of problem in interfaces: confusing people with potentially contradictory messaging, even though they can work out what to do if they think about it.
+                    It only slows people down a little, but it can make them feel like you did when doing the Stroop experiment - frustrated and anxious, when they are trying to get their work done.
+                    Good interface designers anticipate and avoid these sorts of problems.
+                </p>
+            {% include "at_a_distance/components/speech-bubble-close.html" %}
+        </aside>
+    </section>
+
+    <section>
+        <h2>HCI: Answering our key question</h2>
+        <p>Do software designers use psychology concepts when designing their applications?</p>
+
+        <aside class="notes">
+            {% include "at_a_distance/components/speech-bubble-open.html" %}
+                <p>
+                    Software designers write programs for people, not for computers.
+                    We've shown in this session how important it is for them to consider and understand how their end users (people) will interact with the programs they create.
+                </p>
+                <p>
+                    This kind of problem is just one of many ways that bad interfaces can make life difficult for computer users.
+                    There are many other ideas from psychology that are important in interface design, such as the length of delays people can handle waiting for software to respond (spoiler: one tenth of a second is the limit in a lot of cases), how inconsistent designs can be confusing, and lots more.
+                    Many of these things are fun when they are a game like the one we played, but can be very frustrating when the prevent someone from getting their job done.
+                </p>
+            {% include "at_a_distance/components/speech-bubble-close.html" %}
+        </aside>
+    </section>
+
+    <section>
+        <h2>Stroop effect - Supporting resources</h2>
+        <ul>
+            <li>
+                Online Course (MOOC) - Teaching Computational Thinking<br>
+                <a href="https://www.edx.org/course/teaching-computational-thinking">https://www.edx.org/course/teaching-computational-thinking</a>
+
+                <ul>
+                    <li>Section 9: Human capabilities</li>
+                    <li>Examples of face to face teaching in Section 9.1 - Stroop effect lessons</li>
+                </ul>
+            </li>
+            <li>
+                Computer Science Field Guide: Human Computer Interaction<br>
+                <a href="https://www.csfieldguide.org.nz/en/chapters/human-computer-interaction/">https://www.csfieldguide.org.nz/en/chapters/human-computer-interaction/</a>
+            </li>
+        </ul>
+
+
+        <aside class="notes">
+            {% include "at_a_distance/components/speech-bubble-open.html" %}
+                <p>
+                    Here are the supporting resources for you.
+                    The first link show more details relating to this issue for young students.
+                    The Computer Science Field Guide chapter shows a broader view of the kinds of interface issues that can come up.
+                </p>
+            {% include "at_a_distance/components/speech-bubble-close.html" %}
+        </aside>
+    </section>
+
 </div>
 
 <script>
