@@ -29,3 +29,9 @@ class LessonSlidesView(generic.DetailView):
     template_name = "at_a_distance/lesson-slides.html"
     context_object_name = "lesson"
     slug_url_kwarg = "lesson_slug"
+
+
+class LessonSlideSpeakerNotesView(generic.TemplateView):
+    """View for speaker notes window."""
+
+    template_name = "at_a_distance/reveal-speaker-notes-plugin/speaker-notes-window.html"
