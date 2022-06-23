@@ -99,7 +99,7 @@ $footer-height: 3rem;
     }
 
     // Layout
-    .r-centered {
+    .r-flex {
         top: 0;
         bottom: 0;
         display: flex !important;
@@ -201,7 +201,7 @@ $speech-bubble-background: mix(#fff, $at-a-distance-colour, 95%);
     font-size: 0.5em;
     color: $at-a-distance-colour;
     width: 100%;
-    z-index: 10;
+    z-index: 0;  // Hidden behind backgrounds
     display: flex;
     justify-content: flex-start;
     align-items: center;
