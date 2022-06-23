@@ -137,62 +137,6 @@ $footer-height: 3rem;
     }
 }
 
-// Speaker notes
-
-$speech-bubble-background: mix(#fff, $at-a-distance-colour, 95%);
-
-.reveal .speaker-notes {
-
-    font-family: $font-family-sans-serif;
-
-    p {
-        line-height: inherit;
-    }
-
-    .speech-bubble {
-        background: $speech-bubble-background;
-        border: 1px solid $at-a-distance-colour;
-        border-radius: 1rem;
-        margin: 0 0 1.5em 0;
-        padding: 0.5em;
-        position: relative;
-
-        blockquote {
-            // Overrides for reveal theme defaults
-            margin: 0;
-            padding: 0;
-            box-shadow: none;
-            background: none;
-            width: auto;
-        }
-
-        .speech-bubble-arrow {
-            border-left: 21px solid transparent;
-            bottom: -25px;
-            position: absolute;
-            right: 15px;
-
-            &::before {
-                border-left: 23px solid transparent;
-                border-top: 23px solid $at-a-distance-colour;
-                bottom: 2px;
-                content: "";
-                position: absolute;
-                right: 5px;
-            }
-
-            &::after {
-                border-left: 21px solid transparent;
-                border-top: 21px solid $speech-bubble-background;
-                bottom: 4px;
-                content: "";
-                position: absolute;
-                right: 6px;
-            }
-        }
-    }
-}
-
 // Footer
 .reveal > .footer {
     position: absolute;

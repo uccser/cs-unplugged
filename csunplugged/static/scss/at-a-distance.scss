@@ -1,6 +1,7 @@
 @import "core-variables";
 @import "node_modules/reveal.js/dist/reveal";
-@import "at-a-distance-slide-theme";
+@import "at-a-distance/slide-theme";
+@import "at-a-distance/speaker-notes";
 
 #at-a-distance-jumbotron {
     background-color: rgba($at-a-distance-colour, 15%);

@@ -32,7 +32,7 @@
     // In order to prevent XSS, the speaker view will only run if its
     // opener has the same origin as itself
     if (window.location.origin !== openerOrigin) {
-        connectionStatus.innerHTML = 'Cross origin error.<br>The speaker window can only be opened from the same origin.';
+        connectionStatus.innerHTML = 'Error: The speaker notes window can only be opened from the same origin and by a slide deck.';
         return;
     }
 

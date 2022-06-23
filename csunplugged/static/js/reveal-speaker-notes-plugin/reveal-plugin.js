@@ -44,7 +44,7 @@ const Plugin = () => {
             speakerWindow.focus();
         }
         else {
-            speakerWindow = window.open('/at-a-distance/speaker-notes/', 'Speaker Notes', 'width=1000,height=1000');
+            speakerWindow = window.open('/at-a-distance/speaker-notes/', 'Speaker Notes', 'width=1200,height=800');
 
             if (!speakerWindow) {
                 alert('Speaker view popup failed to open. Please make sure popups are allowed and reopen the speaker view.');
