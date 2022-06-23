@@ -1,7 +1,9 @@
+@import "../core-variables";
 @import "../at-a-distance/speaker-notes";
 
 body {
     font-size: 18px;
+    font-family: $font-family-sans-serif;
 }
 
 #current-slide,
@@ -95,7 +97,7 @@ body {
 .speaker-controls-notes .label {
     text-transform: uppercase;
     font-weight: normal;
-    font-size: 0.66em;
+    font-size: 1rem;
     color: #666;
     margin: 0;
 }
@@ -130,7 +132,7 @@ body {
 .speaker-controls-time .pacing .hours-value,
 .speaker-controls-time .pacing .minutes-value,
 .speaker-controls-time .pacing .seconds-value {
-    font-size: 1.9em;
+    font-size: 2rem;
 }
 
 .speaker-controls-time .timer {
@@ -168,8 +170,8 @@ body {
 
 .speaker-controls-notes .value {
     margin-top: 5px;
-    line-height: 1.4;
-    font-size: 1.2em;
+    line-height: 1.5;
+    font-size: 1rem;
 }
 
 /* Layout selector */
@@ -232,7 +234,6 @@ body[data-speaker-layout="wide"] #speaker-controls {
     left: 0;
     width: 100%;
     height: 50%;
-    font-size: 1.25em;
 }
 
 /* Speaker layout: Tall */
@@ -259,7 +260,6 @@ body[data-speaker-layout="tall"] #speaker-controls {
     left: 45%;
     width: 55%;
     height: 100%;
-    font-size: 1.25em;
 }
 
 /* Speaker layout: Notes only */
@@ -274,7 +274,6 @@ body[data-speaker-layout="notes-only"] #speaker-controls {
     left: 0;
     width: 100%;
     height: 100%;
-    font-size: 1.25em;
 }
 
 @media screen and (max-width: 1080px) {
