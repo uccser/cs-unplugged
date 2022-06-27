@@ -1,3 +1,9 @@
+/**
+ * Modified version of the reveal.js speaker notes plugin.
+ *
+ * Changes from original are listed in the README file.
+ */
+
 (function () {
 
     var notes,
@@ -135,12 +141,8 @@
         if (data.notes) {
             notes.classList.remove('hidden');
             notesValue.style.whiteSpace = data.whitespace;
-            if (data.markdown) {
-                notesValue.innerHTML = marked(data.notes);
-            }
-            else {
-                notesValue.innerHTML = data.notes;
-            }
+            notesValue.innerHTML = data.notes;
+            setupNoteCopyEvents();
         }
         else {
             notes.classList.add('hidden');
@@ -193,7 +195,7 @@
         var urlSeparator = /\?/.test(data.url) ? '&' : '?';
         var hash = '#/' + data.state.indexh + '/' + data.state.indexv;
         var currentURL = data.url + urlSeparator + params + '&postMessageEvents=true' + hash;
-        var upcomingURL = data.url + urlSeparator + params + '&controls=false' + hash;
+        var upcomingURL = data.url + urlSeparator + params + '&controls=false&keyboard=false' + hash;
 
         currentSlide = document.createElement('iframe');
         currentSlide.setAttribute('width', 1280);
@@ -216,7 +218,6 @@
 
         notes = document.querySelector('.speaker-controls-notes');
         notesValue = document.querySelector('.speaker-controls-notes .value');
-
     }
 
     /**
@@ -543,4 +544,23 @@
 
     }
 
+    function setupNoteCopyEvents() {
+        var pre_elems = notesValue.querySelectorAll("pre");
+        pre_elems.forEach(
+            function (pre) {
+                pre.addEventListener("click", copyToClipboard, true)
+            }
+        );
+    }
+
+    /*
+     * Copies elements text to the system clipboard.
+     * New function added by UCCSER
+     */
+    function copyToClipboard(event) {
+        var text = event.target.innerText;
+        navigator.clipboard.writeText(text);
+        // Remove highlight
+        document.getSelection().removeAllRanges();
+    }
 })();

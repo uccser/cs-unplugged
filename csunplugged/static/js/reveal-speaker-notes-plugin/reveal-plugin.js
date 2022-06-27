@@ -1,21 +1,7 @@
 /**
  * Modified version of the reveal.js speaker notes plugin.
  *
- * https://github.com/hakimel/reveal.js
- * https://github.com/hakimel/reveal.js/tree/master/plugin/notes
- *
- * The source repository is licensed under the MIT license.
- * The original license is available at third-party-licences/revealjs.txt
- *
- * A big thank you to Hakim El Hattab for making such a great framework.
- *
- * Changes from original:
- * - HTML for speaker view is served at a specific URL by Django.
- *   This allows us to easier edit and link files to the HTML.
- * - JavaScript for the speaker view has been moved to its
- *   own file for easier editing.
- * - CSS for the speaker view has been moved to its own
- *   file for easier editing and been converted to SCSS.
+ * Changes from original are listed in the README file.
  *
  * This script handles opening of and synchronization with the
  * speaker notes window.

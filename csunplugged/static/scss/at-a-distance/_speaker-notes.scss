@@ -52,4 +52,15 @@ $speech-bubble-background: mix(#fff, $at-a-distance-colour, 95%);
             }
         }
     }
+
+    pre {
+        white-space: pre-line;
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        border: 1px solid #c9c9c9;
+        background: #f9f9f9;
+        border-radius: 6px;
+        cursor: copy;
+        user-select: all;
+    }
 }

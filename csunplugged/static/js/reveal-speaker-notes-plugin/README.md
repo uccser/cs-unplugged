@@ -17,6 +17,7 @@ A big thank you to Hakim El Hattab for making such a great framework.
   This allows us to easier edit and link files to the HTML.
 - JavaScript for the speaker view has been moved to its own file for easier editing.
 - CSS for the speaker view has been moved to its own file for easier editing and been converted to SCSS.
+- Remove Markdown support for speaker notes.
 
 ## Files related to plugin
 
