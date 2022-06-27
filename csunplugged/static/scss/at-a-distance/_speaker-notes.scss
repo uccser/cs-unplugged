@@ -55,12 +55,33 @@ $speech-bubble-background: mix(#fff, $at-a-distance-colour, 95%);
 
     pre {
         white-space: pre-line;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+        line-height: inherit;
         padding: 0.5rem;
-        border: 1px solid #c9c9c9;
-        background: #f9f9f9;
-        border-radius: 6px;
-        cursor: copy;
+        margin: 0;
+        border-left: 3px solid $at-a-distance-colour;
+        background: rgba($at-a-distance-colour, 4%);
+        cursor: pointer;
         user-select: all;
+        box-shadow: none;
+
+        &:hover {
+            background: rgba($at-a-distance-colour, 10%);
+        }
+    }
+
+    div.tooltip {
+        color: #747474;
+        font-size: 0.8rem;
+        user-select: none;
+        margin-bottom: 0.5rem;
+    }
+
+    pre + div.tooltip-hide,
+    pre + div + div {
+        display: none;
+    }
+    pre + div.tooltip-hide + div {
+        display: block;
     }
 }

@@ -37,7 +37,7 @@ $linkColor: #2a76dd;
 $linkColorHover: lighten($linkColor, 20%);
 
 // Text selection
-$selectionBackgroundColor: #FF5E99;
+$selectionBackgroundColor: $at-a-distance-colour;
 $selectionColor: #fff;
 
 // Generates the presentation background, can be overridden

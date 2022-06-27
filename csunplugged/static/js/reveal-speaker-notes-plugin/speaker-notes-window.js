@@ -544,11 +544,24 @@
 
     }
 
+    /*
+     * Sets up <pre> tags in speaker notes for copying.
+     */
     function setupNoteCopyEvents() {
         var pre_elems = notesValue.querySelectorAll("pre");
         pre_elems.forEach(
             function (pre) {
                 pre.addEventListener("click", copyToClipboard, true)
+
+                let tooltip_instruction = document.createElement("div");
+                tooltip_instruction.classList.add("tooltip");
+                tooltip_instruction.innerText = "📋 Click text box above to copy to clipboard";
+
+                let tooltip_success = document.createElement("div");
+                tooltip_success.classList.add("tooltip");
+                tooltip_success.innerText = "✅ Copied!";
+
+                pre.after(tooltip_instruction, tooltip_success);
             }
         );
     }
@@ -558,9 +571,17 @@
      * New function added by UCCSER
      */
     function copyToClipboard(event) {
-        var text = event.target.innerText;
+        let pre = event.target;
+        // Copy text
+        var text = pre.innerText;
         navigator.clipboard.writeText(text);
         // Remove highlight
         document.getSelection().removeAllRanges();
+        // Update tooltips
+        var hidden_tooltips = notesValue.querySelectorAll(".tooltip-hide");
+        hidden_tooltips.forEach( function(tooltip) {
+            tooltip.classList.remove("tooltip-hide");
+        });
+        pre.nextSibling.classList.add("tooltip-hide");
     }
 })();
