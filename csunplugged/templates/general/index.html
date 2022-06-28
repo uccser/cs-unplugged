@@ -92,6 +92,16 @@
                         {% include "generic/not-available-badge.html" %}
                     {% endif %}
                 </a>
+
+                <h2 class="at-a-distance-colour mt-4">At a distance</h2>
+                <a class="link-item link-item-top link-item-top-at-a-distance-1 no-text-decoration d-block mb-3" href="{% url 'at_a_distance:index' %}">
+                    <h3 class="mb-0">
+                        {% trans "Distance lessons" %}
+                    </h3>
+                    {% if LANGUAGE_CODE != "en" %}
+                        {% include "generic/not-available-badge.html" %}
+                    {% endif %}
+                </a>
             </div>
             <div class="col-12 col-md-4 mb-4">
                 <h2 class="plugging-it-in-colour">For students</h2>

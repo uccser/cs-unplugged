@@ -46,9 +46,6 @@ $selectionColor: #fff;
     background: $backgroundColor;
 }
 
-// Custom variables
-$footer-height: 3rem;
-
 // Change text colors against dark slide backgrounds
 // @include dark-bg-text-color(#fff);
 
@@ -69,7 +66,7 @@ $footer-height: 3rem;
         font-weight: bold;
     }
     p {
-        margin: 0 0 1rem 0;
+        margin: 0 0 1rem;
     }
     p:last-child {
         margin: 0;
@@ -118,14 +115,18 @@ $footer-height: 3rem;
         grid-auto-flow: column;
         grid-auto-columns: 1fr;
     }
-    .r-flex {
-        display: flex;
-    }
     .r-flex-align-items-center {
         align-items: center;
     }
     .r-flex-justify-content-center {
         justify-content: center;
+    }
+
+    // Title slide
+    .r-title-slide {
+        img {
+            max-width: 40%;
+        }
     }
 
     // Other
@@ -138,18 +139,17 @@ $footer-height: 3rem;
 }
 
 // Footer
+$footer-height: 5%;  // To ensure matches slide dimensions
+$footer-padding: 8px;
 .reveal > .footer {
     position: absolute;
     height: $footer-height;
-    bottom: 0;
-    font-size: 0.5em;
-    color: $at-a-distance-colour;
-    width: 100%;
+    bottom: $footer-padding;
+    left: 5px;
+    width: 80%;
     z-index: 0;  // Hidden behind backgrounds
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 5px;
+    align-items: flex-end;
 
     img {
         margin: 0;

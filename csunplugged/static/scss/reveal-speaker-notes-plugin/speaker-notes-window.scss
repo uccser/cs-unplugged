@@ -6,6 +6,22 @@ body {
     font-family: $font-family-sans-serif;
 }
 
+div.tooltip {
+    color: #747474;
+    font-size: 0.8rem;
+    user-select: none;
+    margin-bottom: 0.5rem;
+}
+
+pre+div.tooltip-hide,
+pre+div+div {
+    display: none;
+}
+
+pre+div.tooltip-hide+div {
+    display: block;
+}
+
 #current-slide,
 #upcoming-slide,
 #speaker-controls {

@@ -84,6 +84,7 @@ h6 {
 .educator-colour { color: $educator-colour;}
 .at-home-colour { color: $at-home-colour;}
 .plugging-it-in-colour { color: $plugging-it-in-colour;}
+.at-a-distance-colour { color: $at-a-distance-colour;}
 
 input[type="text"].long-text-field {
   width: 20em;
@@ -502,6 +503,12 @@ ol, ul {
       border-top-color: $plugging-it-in-colour;
       &:hover {
         background-color: mix($plugging-it-in-colour, $white, 10%);
+      }
+    }
+    &-at-a-distance-1 {
+      border-top-color: $at-a-distance-colour;
+      &:hover {
+        background-color: mix($at-a-distance-colour, $white, 10%);
       }
     }
     &-orange {

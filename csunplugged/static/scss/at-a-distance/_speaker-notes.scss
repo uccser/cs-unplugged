@@ -2,12 +2,18 @@
 
 $speech-bubble-background: mix(#fff, $at-a-distance-colour, 95%);
 
-.speaker-notes {
+.reveal .speaker-notes {
 
     font-family: $font-family-sans-serif;
+    font-size: 1rem;
 
     p {
         line-height: inherit;
+        margin: 0 0 1rem;
+
+        &:last-child {
+            margin: 0;
+        }
     }
 
     .speech-bubble {
@@ -25,6 +31,7 @@ $speech-bubble-background: mix(#fff, $at-a-distance-colour, 95%);
             box-shadow: none;
             background: none;
             width: auto;
+            font-style: normal;
         }
 
         .speech-bubble-arrow {
@@ -68,20 +75,5 @@ $speech-bubble-background: mix(#fff, $at-a-distance-colour, 95%);
         &:hover {
             background: rgba($at-a-distance-colour, 10%);
         }
-    }
-
-    div.tooltip {
-        color: #747474;
-        font-size: 0.8rem;
-        user-select: none;
-        margin-bottom: 0.5rem;
-    }
-
-    pre + div.tooltip-hide,
-    pre + div + div {
-        display: none;
-    }
-    pre + div.tooltip-hide + div {
-        display: block;
     }
 }

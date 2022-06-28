@@ -13,4 +13,14 @@
 
 #slides.embed-responsive {
     border: 1px solid grey;
+
+    // Widen speaker view on lesson page
+    .reveal.show-notes {
+        max-width: 60%;
+
+        .speaker-notes {
+            width: 66.666%;
+            padding: 0.8rem;
+        }
+    }
 }
