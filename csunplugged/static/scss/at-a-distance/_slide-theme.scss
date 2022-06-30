@@ -12,7 +12,7 @@ $mainFontSize: 3em;
 $mainColor: #222;
 
 // Vertical spacing between blocks of text
-$blockMargin: 20px;
+$blockMargin: 0.2em;
 
 // Headings
 $headingMargin: 0 0 $blockMargin 0;
@@ -71,6 +71,9 @@ $selectionColor: #fff;
     p:last-child {
         margin: 0;
     }
+    li {
+        margin-bottom: $blockMargin;
+    }
 
     // Colour overrides
     .r-text-green {
@@ -111,9 +114,9 @@ $selectionColor: #fff;
     .r-grid {
         display: grid;
     }
-    .r-grid-columns{
+    .r-grid-columns {
         grid-auto-flow: column;
-        grid-auto-columns: 1fr;
+        grid-auto-columns: minmax(0, 1fr);
     }
     .r-flex-align-items-center {
         align-items: center;
@@ -129,12 +132,20 @@ $selectionColor: #fff;
         }
     }
 
-    // Other
+    // Embeds
     iframe {
         border: none;
+        max-width: initial;
+        max-height: initial;
     }
     &.embed-responsive .reveal .slides section iframe {
         position: initial;
+    }
+    .r-iframe-scale {
+        transform-origin: top center ;
+    }
+    .r-iframe-scale-2 {
+        transform: scale(2);
     }
 }
 
@@ -168,6 +179,5 @@ From https://github.com/hakimel/reveal.js/issues/2707#issuecomment-647708919
     display: block;
     height: $footer-height;
 }
-
 
 @import "node_modules/reveal.js/css/theme/template/theme";

@@ -2,7 +2,9 @@
 
 $speech-bubble-background: mix(#fff, $at-a-distance-colour, 95%);
 
-.reveal .speaker-notes {
+// Scoped twice to override default reveal.js theme
+#slides .speaker-notes,
+.speaker-notes {
 
     font-family: $font-family-sans-serif;
     font-size: 1rem;
