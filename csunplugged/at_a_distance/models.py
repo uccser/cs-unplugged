@@ -30,6 +30,7 @@ class Lesson(TranslatableModel):
         return reverse("at_a_distance:lesson", kwargs={"lesson_slug": self.slug})
 
     def get_slides_path(self):
+        """Return the path to the lesson slides."""
         return join(
             AT_A_DISTANCE_SLIDES_TEMPLATE_BASE_PATH,
             f'{self.slug}.html'

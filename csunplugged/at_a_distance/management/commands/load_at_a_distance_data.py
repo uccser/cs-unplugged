@@ -5,7 +5,6 @@ from django.core.management.base import BaseCommand
 from django.conf import settings
 from utils.BaseLoader import BaseLoader
 from utils.LoaderFactory import LoaderFactory
-from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
 
 class Command(BaseCommand):

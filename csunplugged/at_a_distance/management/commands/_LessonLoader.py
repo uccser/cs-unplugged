@@ -1,16 +1,10 @@
 """Custom loader for loading an at a distance lesson."""
 
-import os.path
 from django.db import transaction
-from django.template.loader import render_to_string
 from utils.TranslatableModelLoader import TranslatableModelLoader
-from utils.language_utils import get_available_languages, get_default_language
-from utils.check_required_files import find_image_files
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 from at_a_distance.models import Lesson
 from at_a_distance.settings import AT_A_DISTANCE_INTRODUCTION_FILENAME
-
 
 
 class AtADistanceLessonLoader(TranslatableModelLoader):

@@ -1,6 +1,5 @@
 """Views for the at a distance application."""
 
-import json
 from django.views import generic
 from at_a_distance.models import Lesson
 
