@@ -1,5 +1,5 @@
-parity-magic:
-    order-number: 1
+# parity-magic:
+#     order-number: 1
 # qr-codes:
 #     order-number: 2
 # product-code-check-digits:
