@@ -130,6 +130,9 @@ $selectionColor: #fff;
     .r-p-0 {
         padding: 0;
     }
+    .r-inline-block {
+        display: inline-block;
+    }
 
     // Title slide
     .r-title-slide {
@@ -150,8 +153,11 @@ $selectionColor: #fff;
     .r-iframe-scale {
         transform-origin: top center ;
     }
+    .r-iframe-scale-1-5 {
+        transform: perspective(300em) scale(1.5);
+    }
     .r-iframe-scale-2 {
-        transform: scale(2);
+        transform: perspective(300em) scale(2);
     }
 }
 
@@ -174,6 +180,42 @@ $footer-padding: 8px;
 }
 .reveal.has-dark-background > .footer {
     color: white;
+}
+
+// Slide specific
+.binary-digit-word {
+    display: flex;
+    justify-content: center;
+
+    h2 {
+        position: relative;
+    }
+    #binary-digit-word-animation-start {
+        left: 0;
+        transition: left 1.5s ease-in-out 0.5s;
+    }
+    #binary-digit-word-animation-middle {
+        transition: all 1s ease-in;
+        opacity: 1;
+    }
+    #binary-digit-word-animation-end {
+        right: 0;
+        transition: right 1.5s ease-in-out 0.5s;
+    }
+    &.animate {
+        #binary-digit-word-animation-start {
+            left: 1.95em;
+        }
+        #binary-digit-word-animation-middle {
+            opacity: 0;
+        }
+        #binary-digit-word-animation-end {
+            right: 1.95em;
+        }
+    }
+}
+.binary-cards-5 {
+    transform-origin: 86% 0%;
 }
 
 /*

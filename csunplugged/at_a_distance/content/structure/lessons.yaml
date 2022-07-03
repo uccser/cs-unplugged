@@ -8,7 +8,7 @@ finite-state-automata:
     order-number: 4
 # image-representation:
 #     order-number: 5
-# binary-representation:
-#     order-number: 6
+binary-representation:
+    order-number: 6
 stroop-effect:
     order-number: 7
