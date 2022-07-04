@@ -1,0 +1,181 @@
+{% load static %}
+
+<section>
+    <h2>Key questions</h2>
+    <ul>
+        <li>
+            What is an algorithm?
+        </li>
+        <li>
+            How is an algorithm different from a program?
+        </li>
+    </ul>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                This is what we'll look at; no need to answer them now, but think about:
+                Is an algorithm a recipe?
+                Steps for a solution?
+                Need to work on a computer?
+                Same as a program?
+                All these different definitions have been used, but it's easier to look at an example of an algorithm than define one.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section class="r-flex">
+    <iframe class="r-flex-grow r-iframe-scale r-iframe-scale-1-5" src="https://www.csfieldguide.org.nz/en/interactives/iframe/high-score-boxes/"></iframe>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Could be scores, temperatures, money owing... a common problem that /tjvr/scratchblocksneeds solving.
+            </p>
+
+            <p>
+                I'll click on these one at a time, and then at the end you can type the high score in the chat.
+            </p>
+
+            <p>
+                What algorithm did you use?
+                Anyone remember all numbers? (Probably not)
+                How many numbers did you need to remember?
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Tease out how they deal with each number (compared it with highest so far); lead them to the idea that the are remembering the maximum <em>so far</em>, not the maximum.
+        </p>
+    </aside>
+</section>
+
+<section>
+    <h2>As an algorithm</h2>
+
+    <pre><code class="language-plaintext r-font-size-3" data-trim>
+        set the maximum_so_far to the first number
+
+        for each other number:
+            if the next number is larger than maximum_so_far:
+                set maximum_so_far to the number
+
+        At the end, maximum_so_far contains the largest value
+    </code></pre>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Hopefully this is roughly the algorithm that the group have articulated when thinking about how the exercise went.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section class="r-flex">
+    <h2>Scratch</h2>
+    <div class="r-flex-grow r-grid r-grid-columns r-h-100">
+        <div>
+            <div class="r-h-100 r-flex">
+                <iframe class="r-flex-grow" src="https://scratch.mit.edu/projects/711368155/embed"></iframe>
+            </div>
+        </div>
+        <div>
+            <img src="{% static 'img/at_a_distance/algorithms/scratch-program.svg' %}" class="r-h-100">
+        </div>
+    </div>
+
+    <aside class="notes">
+    </aside>
+</section>
+
+<section class="r-flex">
+    <h2>Python</h2>
+    <div class="r-flex-grow r-grid r-grid-columns r-h-100">
+        <div>
+            <div class="r-h-100 r-flex">
+
+            </div>
+        </div>
+        <div>
+            <pre><code class="language-python" data-trim>
+                max_so_far = int(input("Type in a score: "))
+
+                for i in range(4):
+                    score = int(input("Type in a score: "))
+                    if score > max_so_far:
+                        max_so_far = score
+
+                print("High score was", max_so_far)
+            </code></pre>
+        </div>
+    </div>
+
+    <aside class="notes">
+    </aside>
+</section>
+
+<section>
+    <h2>Key questions</h2>
+    <ul>
+        <li>
+            What is an algorithm?
+        </li>
+        <li>
+            How is an algorithm different from a program?
+        </li>
+    </ul>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                An algorithm is a process for achieving an outcome that can be implemented as a program.
+            </p>
+
+            <p>
+                A program will work on a computer, and algorithm is the idea for how it works.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section>
+    <h2>Algorithms - Supporting resources</h2>
+    <ul>
+        <li>
+            Computer Science Field Guide on Algorithms:<br>
+            <a href="https://www.csfieldguide.org.nz/en/chapters/algorithms/">
+                https://www.csfieldguide.org.nz/en/chapters/algorithms/
+            </a>
+        </li>
+        <li>
+            High score activity:<br>
+            <a href="https://www.csfieldguide.org.nz/en/interactives/high-score-boxes/">
+                https://www.csfieldguide.org.nz/en/interactives/high-score-boxes/
+            </a>
+        </li>
+    </ul>
+
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Here are the supporting resources for you.
+            </p>
+
+            <p>
+                Reminder: the main point is learning how to go from a problem (high score) to an algorithm (tracking the largest so far) to a program.
+                This is way better than googling how to do it!!
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <pre>
+            Computer Science Field Guide on Algorithms:
+            https://www.csfieldguide.org.nz/en/chapters/algorithms/
+
+            High score activity:
+            https://www.csfieldguide.org.nz/en/interactives/high-score-boxes/
+        </pre>
+    </aside>
+</section>

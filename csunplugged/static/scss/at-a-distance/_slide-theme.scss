@@ -1,6 +1,7 @@
 // Default mixins and settings -----------------
 @import "node_modules/reveal.js/css/theme/template/mixins";
 @import "node_modules/reveal.js/css/theme/template/settings";
+@import "node_modules/reveal.js/plugin/highlight/monokai";
 @import "core-variables";
 
 // Background of the presentation
@@ -74,6 +75,14 @@ $selectionColor: #fff;
     li {
         margin-bottom: $blockMargin;
     }
+    pre {
+        line-height: inherit;
+
+        code {
+            max-height: none;
+            padding: 1em;
+        }
+    }
 
     // Colour overrides
     .r-text-green {
@@ -133,6 +142,9 @@ $selectionColor: #fff;
     .r-inline-block {
         display: inline-block;
     }
+    .r-h-100 {
+        height: 100%;
+    }
 
     // Title slide
     .r-title-slide {
@@ -151,7 +163,7 @@ $selectionColor: #fff;
         position: initial;
     }
     .r-iframe-scale {
-        transform-origin: top center ;
+        transform-origin: top center;
     }
     .r-iframe-scale-1-5 {
         transform: perspective(300em) scale(1.5);

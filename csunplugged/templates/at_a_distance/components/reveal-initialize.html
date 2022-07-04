@@ -15,7 +15,8 @@
         backgroundTransition: 'fade',
 
         plugins: [
-            {% if speaker_mode %}CSU_ATD_SpeakerNotes,{% endif %}
+            {% if speaker_mode %}CSU_ATD_SpeakerNotes,{% endif %},
+            CSU_ATD_Highlight,
         ],
 
         // The "normal" size of the presentation, aspect ratio will

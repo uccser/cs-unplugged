@@ -12,3 +12,5 @@ binary-representation:
     order-number: 6
 stroop-effect:
     order-number: 7
+algorithms:
+    order-number: 8
