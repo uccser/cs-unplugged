@@ -197,12 +197,12 @@
 </section>
 
 <section class="r-flex">
-    <h2>&nbsp;</h2>
+    <h2>Show exactly 13 dots</h2>
     <iframe class="r-flex-grow r-iframe-scale-1-5 binary-cards-5" src="https://cs-field-guide-dev.csse.canterbury.ac.nz/en/interactives/iframe/binary-cards/?cards=5&rtl=true&hide-ui=true&total=false"></iframe>
 
     <aside class="notes">
         <p>
-            Click on the cards to toggle them as required.
+            <em>Click on the cards to toggle them as required.</em>
         </p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -299,11 +299,14 @@
                 Let's have a go with another number.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
 
-        <p>
-            Flip all the cards so they are now showing their dots.
-        </p>
+<section class="r-flex">
+    <h2>Show exactly 25 dots</h2>
+    <iframe class="r-flex-grow r-iframe-scale-1-5 binary-cards-5" src="https://cs-field-guide-dev.csse.canterbury.ac.nz/en/interactives/iframe/binary-cards/?cards=5&rtl=true&hide-ui=true&total=false"></iframe>
 
+    <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 What bits do you need to show the number 25, and how would you say that using just zeros and ones, if we use 'one' for yes, and 'zero' for no?
@@ -380,7 +383,7 @@
 </section>
 
 <section class="r-flex">
-    <h2>&nbsp;</h2>
+    <h2>What month is this?</h2>
     <iframe class="r-flex-grow r-iframe-scale-1-5 binary-cards-5" src="https://cs-field-guide-dev.csse.canterbury.ac.nz/en/interactives/iframe/binary-cards/?cards=5&rtl=true&hide-ui=true&total=false&start=BWBWB"></iframe>
 
     <aside class="notes">
@@ -405,7 +408,29 @@
             <p>
                 We've looked at representing numbers using binary digits.
                 Let's look at how we can represent letters of the alphabet.
-                When we do this with students we can support them to get to the point where they say A can be 1, B can be 2, C 3 and so forth.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section class="r-flex">
+    <h2>Letters</h2>
+    <p>
+        <code class="fragment fade-down r-font-size-3">
+            no, yes, no, no, no
+        </code>
+    </p>
+    <p>
+        <code class="fragment fade-down r-font-size-3">
+            no, yes, no, no, yes
+        </code>
+    </p>
+    <iframe class="r-flex-grow r-iframe-scale-1-5 binary-cards-5" src="https://cs-field-guide-dev.csse.canterbury.ac.nz/en/interactives/iframe/binary-cards/?cards=5&rtl=true&hide-ui=true&total=false"></iframe>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                When we look at the alphabet with students we can support them to get to the point where they say A can be 1, B can be 2, C 3 and so forth.
                 Of course, you may get a mischief student who says T should be 1, W should be 2, and S should be 3, but usually the class will talk them out of that!
             </p>
 
@@ -414,17 +439,14 @@
                 You can work it out and share your answer in the chat.
                 I'm using five binary cards for this.
                 The message I'm sending you is no, yes, no, no, no.
-                I'll put it in the chat.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>
-            Copy the text below (by clicking the box) and pasting it in the chat.
+            <em>
+                Push the next slide button to show 'no, yes, no, no, no' on the screen.
+            </em>
         </p>
-
-        <pre>
-            no, yes, no, no, no
-        </pre>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
@@ -441,15 +463,15 @@
                 I'm seeing a lot of Hs in the chat.
                 You're right, the answer is H.
                 Here's my next letter.
-                No, yes, no, no, yes.
-                I'll type it in the chat.
                 What letter have I represented here?
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
-        <pre>
-            no, yes, no, no, yes
-        </pre>
+        <p>
+            <em>
+                Push the next slide button to show 'no, yes, no, no, yes' on the screen.
+            </em>
+        </p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
@@ -480,7 +502,15 @@
                 Properly we would have been saying zero, one, zero, one, one, instead of yes's and no's.
                 It all comes down to the same idea, that is, so long as I can communicate two values, I can communicate anything I want.
             </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
 
+<section>
+    <h2>Alternative objects</h2>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 A fun thing to do with a class is to get them to think of other methods that can be used to send binary messages.
                 All that is needed is two distinct states, such as sitting and standing, or orange and blue stickie notes.
