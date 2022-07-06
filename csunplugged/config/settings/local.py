@@ -95,3 +95,10 @@ INSTALLED_APPS += ["django_extensions", ]
 # TESTING
 # ----------------------------------------------------------------------------
 TEST_RUNNER = "django.test.runner.DiscoverRunner"
+
+# LOGGING
+# ------------------------------------------------------------------------------
+# Based off https://lincolnloop.com/blog/django-logging-right-way/
+# Suppress these loggers in local development for less noise in logs
+logging.getLogger('gunicorn.access').handlers = []  # noqa F405
+logging.getLogger('gunicorn.error').handlers = []  # noqa F405
