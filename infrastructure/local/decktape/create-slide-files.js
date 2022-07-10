@@ -22,6 +22,7 @@ function generateSlideFiles(data) {
         lesson_slugs.forEach(lesson_slug => {
 
             let output_directory = path.join(FILES_BASE_PATH, language_code, lesson_slug);
+            let slide_count = data.slide_counts[lesson_slug]
 
             // Create directory if it doesn't exist
             if (!fs.existsSync(output_directory)) {
@@ -33,10 +34,11 @@ function generateSlideFiles(data) {
                 `/decktape/decktape.js reveal \
                 --chrome-path chromium-browser \
                 --chrome-arg=--no-sandbox \
+                --slides 1-${slide_count} \
                 --screenshots \
                 --screenshots-size=${resolution} \
                 --screenshots-directory=${output_directory} \
-                ${BASE_URL}/${language_code}/at-a-distance/${lesson_slug}/slides/?hide-debug-toolbar \
+                ${BASE_URL}/${language_code}/at-a-distance/${lesson_slug}/slides-file-generation/?hide-debug-toolbar \
                 ${lesson_slug}.pdf`,
                 {
                     stdio: 'inherit',

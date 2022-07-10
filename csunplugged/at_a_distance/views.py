@@ -5,6 +5,7 @@ from django.conf import settings
 from django.http import JsonResponse
 from at_a_distance.models import Lesson
 from at_a_distance.settings import AT_A_DISTANCE_SLIDE_RESOLUTION
+from at_a_distance.utils import get_slide_lengths
 
 
 class IndexView(generic.ListView):
@@ -31,6 +32,26 @@ class LessonSlidesView(generic.DetailView):
     template_name = "at_a_distance/lesson-slides.html"
     context_object_name = "lesson"
     slug_url_kwarg = "lesson_slug"
+
+
+class LessonFileGenerationView(generic.DetailView):
+    """View for generating a specific lesson's files."""
+
+    model = Lesson
+    template_name = "at_a_distance/lesson-slides.html"
+    context_object_name = "lesson"
+    slug_url_kwarg = "lesson_slug"
+
+    def get_context_data(self, **kwargs):
+        """Provide the context data for the index view.
+
+        Returns:
+            Dictionary of context data.
+        """
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        context['fragments'] = 'false';
+        return context
 
 
 class LessonSlideSpeakerNotesView(generic.TemplateView):
@@ -66,5 +87,6 @@ def slides_file_generation_json(request, **kwargs):
 
     # Other values
     data["resolution"] = AT_A_DISTANCE_SLIDE_RESOLUTION
+    data["slide_counts"] = get_slide_lengths()
 
     return JsonResponse(data, safe=False)

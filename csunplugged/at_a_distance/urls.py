@@ -33,4 +33,9 @@ urlpatterns = [
         views.LessonSlidesView.as_view(),
         name='lesson_slides'
     ),
+    # eg: /at-a-distance/stroop-effect/slides/
+    path(
+        '<slug:lesson_slug>/slides-file-generation/',
+        views.LessonFileGenerationView.as_view(),
+    ),
 ]
