@@ -402,7 +402,7 @@
 
     {% comment %} Wait until JavaScript library is loaded {% endcomment %}
     document.addEventListener("DOMContentLoaded", function(event) {
-        slides.on( 'slidechanged', event => {
+        Reveal.on( 'slidechanged', event => {
             if ("timer" in event.currentSlide.dataset) {
                 var id = event.currentSlide.dataset.timer;
                 if (timers[id].timer) {

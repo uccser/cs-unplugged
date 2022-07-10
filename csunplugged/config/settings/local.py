@@ -62,22 +62,19 @@ INSTALLED_APPS += ["debug_toolbar", ]  # noqa: F405
 INTERNAL_IPS = ["127.0.0.1", "10.0.2.2", ]
 
 ALLOWED_HOSTS = [
-    ".canterbury.ac.nz",
-    "localhost",
     "cs-unplugged.localhost",
-    "127.0.0.1",
-    "[::1]",
+    "localhost",
+    "django",
 ]
 
 
 def show_django_debug_toolbar(request):
-    """Show Django Debug Toolbar in every request when running locally.
+    """Show toolbar in request unless parameter is given.
 
     Args:
         request: The request object.
     """
-    return True
-
+    return "hide-debug-toolbar" not in request.GET
 
 DEBUG_TOOLBAR_CONFIG = {
     "DISABLE_PANELS": [

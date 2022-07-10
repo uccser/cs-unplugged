@@ -160,6 +160,14 @@ cmd_make_resources() {
 }
 defhelp makeresources 'Run Django makeresources command.'
 
+# Run Django create_lesson_pdfs command
+cmd_create_lesson_pdfs() {
+  echo "Creating At a Distance lesson PDFs..."
+  docker-compose -f docker-compose.local.yml run --rm decktape
+#   docker-compose -f docker-compose.local.yml run --rm --label traefik.enable=false django python ./manage.py create_lesson_pdfs "$@"
+}
+defhelp create_lesson_pdfs 'Run Django create_lesson_pdfs command.'
+
 # Run Django makemessages command
 cmd_makemessages() {
   echo "Running Django makemessages command..."

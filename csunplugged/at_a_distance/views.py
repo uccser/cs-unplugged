@@ -1,7 +1,10 @@
 """Views for the at a distance application."""
 
 from django.views import generic
+from django.conf import settings
+from django.http import JsonResponse
 from at_a_distance.models import Lesson
+from at_a_distance.settings import AT_A_DISTANCE_SLIDE_RESOLUTION
 
 
 class IndexView(generic.ListView):
@@ -34,3 +37,34 @@ class LessonSlideSpeakerNotesView(generic.TemplateView):
     """View for speaker notes window."""
 
     template_name = "at_a_distance/reveal-speaker-notes-plugin/speaker-notes-window.html"
+
+
+def slides_file_generation_json(request, **kwargs):
+    """Provide JSON data for creating thumbnails.
+
+    Args:
+        request: The HTTP request.
+
+    Returns:
+        JSON response is sent containing data for thumbnails.
+    """
+    data = dict()
+
+    if request.GET.get("language", False) == "all":
+        languages = settings.DEFAULT_LANGUAGES
+    elif request.GET.get("language", False):
+        languages = [(request.GET.get("language"), "")]
+    else:
+        languages = [("en", "")]
+
+    lesson_slugs = list(Lesson.objects.values_list('slug', flat=True))
+
+    # For each language
+    data["languages"] = dict()
+    for language_code, _ in languages:
+        data["languages"][language_code] = lesson_slugs
+
+    # Other values
+    data["resolution"] = AT_A_DISTANCE_SLIDE_RESOLUTION
+
+    return JsonResponse(data, safe=False)

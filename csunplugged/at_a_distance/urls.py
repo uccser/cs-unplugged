@@ -17,6 +17,10 @@ urlpatterns = [
         views.LessonSlideSpeakerNotesView.as_view(),
         name='speaker-notes'
     ),
+    path(
+        "slides-file-generation-json/",
+        views.slides_file_generation_json,
+    ),
     # eg: /at-a-distance/stroop-effect/
     path(
         '<slug:lesson_slug>/',
