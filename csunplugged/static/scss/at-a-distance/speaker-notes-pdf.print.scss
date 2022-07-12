@@ -1,0 +1,56 @@
+@import "speaker-notes";
+
+// General
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+$page_x_margin: 10mm;
+$thumbnail_width: 60mm;
+$notes_width: 120mm;
+
+@page {
+    size: A4;
+    margin: 10mm $page_x_margin 20mm $page_x_margin;
+}
+footer {
+    bottom: -13mm;
+}
+.fixed-running-element{
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.8em;
+    color: #888;
+    img {
+        max-height: 1.5em;
+        vertical-align: text-bottom;
+    }
+}
+
+#slides {
+    h2 {
+        padding-top: 5mm;
+        margin-bottom: 3mm;
+        break-after: avoid;
+        clear: both;
+        border-bottom: 1px solid $at-a-distance-colour;
+    }
+    .slide {
+        break-inside: avoid;
+    }
+    img {
+        float: right;
+        border: 0.2mm solid grey;
+        width: $thumbnail_width;
+    }
+    .speaker-notes {
+        width: $notes_width;
+    }
+}
+
+.text-muted {
+    color: grey;
+}

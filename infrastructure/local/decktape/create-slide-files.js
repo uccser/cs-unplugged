@@ -45,13 +45,15 @@ function generateSlideFiles(data) {
                 },
             );
 
-            // Move PDF file to correct directory
+            capitalised_name = lesson_slug.charAt(0).toUpperCase() + lesson_slug.slice(1);
+
+            // Move and rename PDF file to correct directory
             fs.renameSync(
                 path.join(ROOT_PATH, `${lesson_slug}.pdf`),
-                path.join(output_directory, `${lesson_slug}.pdf`),
+                path.join(output_directory, `${capitalised_name} (Slides).pdf`),
             )
 
-            console.log(`Created slide files for ${lesson_slug} in '${language_code}.`)
+            console.log(`Created '${language_code}' slide files for ${lesson_slug}.`)
         });
     }
 }

@@ -50,7 +50,8 @@ class LessonFileGenerationView(generic.DetailView):
         """
         # Call the base implementation first to get a context
         context = super().get_context_data(**kwargs)
-        context['fragments'] = 'false';
+        context['fragments'] = 'false'
+        context['slide_number'] = 'false'
         return context
 
 
@@ -80,7 +81,7 @@ def slides_file_generation_json(request, **kwargs):
 
     lesson_slugs = list(Lesson.objects.values_list('slug', flat=True))
 
-    # For each language
+    # For each language{}
     data["languages"] = dict()
     for language_code, _ in languages:
         data["languages"][language_code] = lesson_slugs

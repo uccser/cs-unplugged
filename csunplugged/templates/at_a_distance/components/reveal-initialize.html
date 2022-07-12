@@ -9,7 +9,7 @@
         hash: true,
         hashOneBasedIndex: true,
         progress: false,
-        slideNumber: true,
+        slideNumber: {{ slide_number|default:'true' }},
         fragments: {{ fragments|default:'true' }},
         transition: 'none',
         backgroundTransition: 'fade',

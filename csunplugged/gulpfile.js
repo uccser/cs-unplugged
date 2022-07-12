@@ -3,7 +3,7 @@
 ////////////////////////////////
 
 // Gulp and package
-const { src, dest, parallel, series, watch } = require('gulp')
+const { src, dest, parallel, series, watch, lastRun } = require('gulp')
 const pjson = require('./package.json')
 
 // Plugins
@@ -87,6 +87,9 @@ const processCss = [
     pixrem(),               // add fallbacks for rem units
     postcssFlexbugFixes(),  // adds flexbox fixes
 ]
+const printProcessCss = [
+    pixrem(),               // add fallbacks for rem units
+]
 const minifyCss = [
     cssnano({ preset: 'default' })   // minify result
 ]
@@ -116,7 +119,14 @@ function css() {
 }
 
 function scss() {
-    return src(`${paths.scss_source}/**/*.scss`)
+    function postcss_callback(file) {
+        if (file.basename.endsWith('.print.css')) {
+            return { plugins: printProcessCss }
+        } else {
+            return { plugins: processCss }
+        }
+    }
+    return src(`${paths.scss_source}/**/*.scss`, { since: lastRun(scss) })
         .pipe(errorHandler(catchError))
         .pipe(sourcemaps.init())
         .pipe(sass({
@@ -126,7 +136,7 @@ function scss() {
             ],
             sourceComments: !PRODUCTION,
         }).on('error', sass.logError))
-        .pipe(postcss(processCss))
+        .pipe(postcss(postcss_callback))
         .pipe(sourcemaps.write())
         .pipe(gulpif(PRODUCTION, postcss(minifyCss))) // Minifies the result
         .pipe(dest(paths.css_output))
@@ -138,7 +148,7 @@ function js() {
     return src([
             `${paths.js_source}/**/*.js`,
             `!${paths.js_source}/modules/**/*.js`
-        ])
+        ], { since: lastRun(js) })
         .pipe(errorHandler(catchError))
         .pipe(sourcemaps.init())
         .pipe(js_filter)
