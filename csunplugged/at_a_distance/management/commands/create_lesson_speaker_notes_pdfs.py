@@ -102,7 +102,7 @@ def create_speaker_notes_pdf(lesson, context):
     # does not have it installed.
     from weasyprint import HTML, CSS
 
-    filename = f"{lesson.name} (Speaker Notes)"
+    filename = f"{lesson.slug}-speaker-notes"
 
     context["lesson"] = lesson
     context["filename"] = filename

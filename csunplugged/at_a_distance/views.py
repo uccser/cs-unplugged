@@ -1,8 +1,10 @@
 """Views for the at a distance application."""
 
+import os.path
 from django.views import generic
 from django.conf import settings
 from django.http import JsonResponse
+from django.utils.translation import get_language
 from at_a_distance.models import Lesson
 from at_a_distance.settings import AT_A_DISTANCE_SLIDE_RESOLUTION
 from at_a_distance.utils import get_slide_lengths
@@ -23,6 +25,28 @@ class LessonView(generic.DetailView):
     template_name = "at_a_distance/lesson.html"
     context_object_name = "lesson"
     slug_url_kwarg = "lesson_slug"
+
+    def get_context_data(self, **kwargs):
+        """Provide the context data for the index view.
+
+        Returns:
+            Dictionary of context data.
+        """
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        context['slides_pdf'] = os.path.join(
+            "slides",
+            get_language(),
+            self.object.slug,
+            f"{self.object.slug}-slides.pdf"
+        )
+        context['notes_pdf'] = os.path.join(
+            "slides",
+            get_language(),
+            self.object.slug,
+            f"{self.object.slug}-speaker-notes.pdf"
+        )
+        return context
 
 
 class LessonSlidesView(generic.DetailView):

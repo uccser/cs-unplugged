@@ -1,9 +1,6 @@
 {% extends "at_a_distance/base.html" %}
 
-{% load i18n %}
-{% load static %}
-{% load render_html_field %}
-{% load django_bootstrap_breadcrumbs %}
+{% load i18n static render_html_field django_bootstrap_breadcrumbs %}
 
 {% block title %}
     {{ lesson.name }}
@@ -26,21 +23,27 @@
     {% if lesson.translation_available %}
         {% render_html_field lesson.introduction %}
 
-        <p>
-            <a href="{% url 'at_a_distance:lesson_slides' lesson.slug %}" class="btn btn-primary" target="_blank">
-                Open slides in presentation mode
-            </a>
-        </p>
+        <h2>Resources</h2>
+        <ul>
+            <li>
+                <a href="{% url 'at_a_distance:lesson_slides' lesson.slug %}" target="_blank">
+                    Open slides in presentation mode
+                </a>
+            </li>
+            <li>
+                <a href="{% static notes_pdf %}" target="_blank" download="{{ lesson.name }} - Speaker Notes.pdf">
+                    Download speaker notes as PDF
+                </a>
+            </li>
+            <li>
+                <a href="{% static slides_pdf %}" target="_blank" download="{{ lesson.name }} - Slides.pdf">
+                    Download slides as PDF
+                </a>
+                <em>(not recommended - no interactive elements)</em>
+            </li>
+        </ul>
 
-        <h2>Slides with notes</h2>
-        <div>
-            <h3 class="h6">How to use the slideshow</h3>
-            <ul>
-                <li>Press <kbd>F</kbd> to enter full screen.</li>
-                <li>Press <kbd>Esc</kbd> to exit full screen.</li>
-            </ul>
-        </div>
-
+        <h2>Preview slides with notes</h2>
         {% include "at_a_distance/components/reveal-slides-structure.html" with embed=True %}
     {% endif %}
 {% endblock content %}
