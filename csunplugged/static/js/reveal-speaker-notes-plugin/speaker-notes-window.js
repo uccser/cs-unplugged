@@ -21,14 +21,13 @@
 
     var SPEAKER_LAYOUTS = {
         'default': 'Default',
-        'wide': 'Wide',
-        'tall': 'Tall',
         'notes-only': 'Notes only'
     };
 
     setupLayout();
 
     let openerOrigin;
+
 
     try {
         openerOrigin = window.opener.location.origin;
@@ -189,7 +188,8 @@
             'history=false',
             'transition=none',
             'autoSlide=0',
-            'backgroundTransition=none'
+            'backgroundTransition=none',
+            'hide-controls-modal',
         ].join('&');
 
         var urlSeparator = /\?/.test(data.url) ? '&' : '?';

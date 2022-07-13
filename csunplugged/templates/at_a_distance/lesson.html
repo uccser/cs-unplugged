@@ -57,6 +57,10 @@
         {% endif %}
 
         <h2>Preview slides with notes</h2>
+        <aside class="reveal-controls-help-container">
+            {% include "at_a_distance/components/reveal-controls-help.html" %}
+        </aside>
+
         {% include "at_a_distance/components/reveal-slides-structure.html" with embed=True %}
     {% endif %}
 {% endblock content %}

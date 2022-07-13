@@ -38,7 +38,7 @@ function generateSlideFiles(data) {
                 --screenshots \
                 --screenshots-size=${resolution} \
                 --screenshots-directory=${output_directory} \
-                ${BASE_URL}/${language_code}/at-a-distance/${lesson_slug}/slides-file-generation/?hide-debug-toolbar \
+                ${BASE_URL}/${language_code}/at-a-distance/${lesson_slug}/slides-file-generation/?hide-debug-toolbar\\\&hide-controls-modal \
                 ${lesson_slug}.pdf`,
                 {
                     stdio: 'inherit',

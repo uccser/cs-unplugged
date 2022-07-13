@@ -1,5 +1,6 @@
 @import "../core-variables";
 @import "../at-a-distance/speaker-notes";
+@import "../at-a-distance/reveal-controls-help";
 
 body {
     font-size: 18px;
@@ -77,30 +78,37 @@ pre+div.tooltip-hide+div {
 
 #current-slide {
     position: absolute;
-    width: 60%;
-    height: 100%;
+    width: 45%;
+    height: 50%;
     top: 0;
     left: 0;
-    padding-right: 0;
+    padding: 6px;
 }
 
 #upcoming-slide {
     position: absolute;
-    width: 40%;
-    height: 40%;
-    right: 0;
-    top: 0;
+    width: 45%;
+    height: 50%;
+    top: 50%;
+    left: 0;
+    padding: 6px;
 }
+
 
 /* Speaker controls */
 #speaker-controls {
     position: absolute;
-    top: 40%;
-    right: 0;
-    width: 40%;
-    height: 60%;
+    padding-top: 40px;
+    top: 0;
+    left: 45%;
+    width: 55%;
+    height: 100%;
     overflow: auto;
     font-size: 18px;
+
+    .reveal-controls-help {
+        line-height: 2rem;
+    }
 }
 
 .speaker-controls-time.hidden,
@@ -122,8 +130,7 @@ pre+div.tooltip-hide+div {
 .speaker-controls-pace {
     border-bottom: 1px solid rgba(200, 200, 200, 0.5);
     margin-bottom: 10px;
-    padding: 10px 16px;
-    padding-bottom: 20px;
+    padding: 0;
     cursor: pointer;
 }
 
@@ -227,57 +234,6 @@ pre+div.tooltip-hide+div {
     clear: both;
 }
 
-/* Speaker layout: Wide */
-body[data-speaker-layout="wide"] #current-slide,
-body[data-speaker-layout="wide"] #upcoming-slide {
-    width: 50%;
-    height: 45%;
-    padding: 6px;
-}
-
-body[data-speaker-layout="wide"] #current-slide {
-    top: 0;
-    left: 0;
-}
-
-body[data-speaker-layout="wide"] #upcoming-slide {
-    top: 0;
-    left: 50%;
-}
-
-body[data-speaker-layout="wide"] #speaker-controls {
-    top: 45%;
-    left: 0;
-    width: 100%;
-    height: 50%;
-}
-
-/* Speaker layout: Tall */
-body[data-speaker-layout="tall"] #current-slide,
-body[data-speaker-layout="tall"] #upcoming-slide {
-    width: 45%;
-    height: 50%;
-    padding: 6px;
-}
-
-body[data-speaker-layout="tall"] #current-slide {
-    top: 0;
-    left: 0;
-}
-
-body[data-speaker-layout="tall"] #upcoming-slide {
-    top: 50%;
-    left: 0;
-}
-
-body[data-speaker-layout="tall"] #speaker-controls {
-    padding-top: 40px;
-    top: 0;
-    left: 45%;
-    width: 55%;
-    height: 100%;
-}
-
 /* Speaker layout: Notes only */
 body[data-speaker-layout="notes-only"] #current-slide,
 body[data-speaker-layout="notes-only"] #upcoming-slide {
@@ -290,22 +246,4 @@ body[data-speaker-layout="notes-only"] #speaker-controls {
     left: 0;
     width: 100%;
     height: 100%;
-}
-
-@media screen and (max-width: 1080px) {
-    body[data-speaker-layout="default"] #speaker-controls {
-        font-size: 16px;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    body[data-speaker-layout="default"] #speaker-controls {
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    body[data-speaker-layout="default"] #speaker-controls {
-        font-size: 12px;
-    }
 }

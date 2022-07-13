@@ -1,7 +1,9 @@
 @import "core-variables";
 @import "node_modules/reveal.js/dist/reveal";
+@import "at-a-distance/variables";
 @import "at-a-distance/slide-theme";
 @import "at-a-distance/speaker-notes";
+@import "at-a-distance/reveal-controls-help";
 
 #at-a-distance-jumbotron {
     background-color: rgba($at-a-distance-colour, 15%);
@@ -21,6 +23,53 @@
         .speaker-notes {
             width: 66.666%;
             padding: 0.8rem;
+        }
+    }
+}
+
+#controls-modal-background {
+    position: fixed;
+    z-index: 900;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #controls-modal {
+        @extend %reveal-help-container;
+        font-size: 1.4rem;
+        padding: 2rem;
+        line-height: 2em;
+        width: fit-content;
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 0.3rem;
+
+        h3 {
+            color: #c9760c;
+        }
+
+        button {
+            @extend %reveal-help-container;
+            text-align: center;
+            padding: 0 1rem;
+            background-color: $reveal-controls-help-colour-light;
+            border: 2px solid $reveal-controls-help-colour;
+            font-weight: bold;
+            color: #444;
+            border-radius: 0.3rem;
+
+            &:hover {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+                background-color: #ffde7a;
+            }
         }
     }
 }

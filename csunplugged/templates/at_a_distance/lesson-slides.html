@@ -16,7 +16,37 @@
 {% block extra_body_classes %}no-padding{% endblock extra_body_classes %}
 
 {% block body %}
+
+    <div id="controls-modal-background">
+        <div id="controls-modal">
+            <h3>Presentation controls</h3>
+            {% include "at_a_distance/components/reveal-controls-help.html" with blank=True fullscreen=True speaker_mode=True %}
+            <button id="controls-modal-close">Close</button>
+        </div>
+    </div>
+
     {% include "at_a_distance/components/reveal-slides-structure.html" %}
+
+    <script>
+        var modal = document.getElementById("controls-modal-background");
+        modal.onclick = function(event) {
+            if (event.target == this) {
+                hideModal();
+            }
+        }
+
+        var model_close = document.getElementById("controls-modal-close");
+        model_close.onclick = hideModal;
+
+        var url = new URL(window.location.href);
+        if (url.searchParams.has("hide-controls-modal")) {
+            hideModal();
+        }
+
+        function hideModal() {
+            modal.style.display = "none";
+        }
+    </script>
 
     {% block scripts %}
         {{ block.super }}
