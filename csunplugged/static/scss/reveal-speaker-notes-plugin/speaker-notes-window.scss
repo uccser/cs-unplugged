@@ -31,19 +31,32 @@ pre+div.tooltip-hide+div {
     -moz-box-sizing: border-box;
 }
 
-#current-slide iframe,
-#upcoming-slide iframe {
-    width: 100%;
-    height: 100%;
-    border: 1px solid #ddd;
+#current-slide,
+#upcoming-slide {
+    position: absolute;
+    width: 45%;
+    height: 50%;
+    left: 0;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ddd;
+    }
+    .label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 2;
+    }
 }
 
-#current-slide .label,
-#upcoming-slide .label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 2;
+#current-slide {
+    top: 0;
+}
+
+#upcoming-slide {
+    top: 50%;
 }
 
 #connection-status {
@@ -70,30 +83,11 @@ pre+div.tooltip-hide+div {
     background: rgba(220, 220, 220, 0.8);
     color: #222;
     font-size: 14px;
-}
 
-.overlay-element.interactive:hover {
-    background: rgba(220, 220, 220, 1);
+    .interactive:hover {
+        background: rgba(220, 220, 220, 1);
+    }
 }
-
-#current-slide {
-    position: absolute;
-    width: 45%;
-    height: 50%;
-    top: 0;
-    left: 0;
-    padding: 6px;
-}
-
-#upcoming-slide {
-    position: absolute;
-    width: 45%;
-    height: 50%;
-    top: 50%;
-    left: 0;
-    padding: 6px;
-}
-
 
 /* Speaker controls */
 #speaker-controls {
@@ -148,10 +142,6 @@ pre+div.tooltip-hide+div {
 .speaker-controls-time .timer,
 .speaker-controls-time .clock {
     width: 50%;
-}
-
-.speaker-controls-time .timer,
-.speaker-controls-time .clock {
     font-size: 2rem;
 }
 
@@ -170,13 +160,14 @@ pre+div.tooltip-hide+div {
 
 .speaker-controls-notes {
     padding: 10px 16px;
+
+    .value {
+        margin-top: 5px;
+        line-height: 1.5;
+        font-size: 1rem;
+    }
 }
 
-.speaker-controls-notes .value {
-    margin-top: 5px;
-    line-height: 1.5;
-    font-size: 1rem;
-}
 
 /* Layout selector */
 #speaker-layout {
@@ -185,30 +176,30 @@ pre+div.tooltip-hide+div {
     right: 10px;
     color: #222;
     z-index: 10;
-}
 
-#speaker-layout select {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border: 0;
-    box-shadow: 0;
-    cursor: pointer;
-    opacity: 0;
+    select {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border: 0;
+        box-shadow: 0;
+        cursor: pointer;
+        opacity: 0;
 
-    font-size: 1em;
-    background-color: transparent;
+        font-size: 1em;
+        background-color: transparent;
 
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-#speaker-layout select:focus {
-    outline: none;
-    box-shadow: none;
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
 }
 
 .clear {
