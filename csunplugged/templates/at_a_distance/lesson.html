@@ -43,6 +43,19 @@
             </li>
         </ul>
 
+        {% if lesson.supporting_resources.all %}
+            <h3>Supporting Resources</h3>
+            <ul id="supporting_resources">
+                {% for supporting_resource in lesson.supporting_resources.all %}
+                    <li>
+                        <a href="{{ supporting_resource.url }}">
+                            {{ supporting_resource.text }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
         <h2>Preview slides with notes</h2>
         {% include "at_a_distance/components/reveal-slides-structure.html" with embed=True %}
     {% endif %}

@@ -6,13 +6,17 @@
 #     order-number: 3
 finite-state-automata:
     order-number: 4
+    supporting-resources: true
 # image-representation:
 #     order-number: 5
 binary-representation:
     order-number: 6
+    supporting-resources: true
 stroop-effect:
     order-number: 7
+    supporting-resources: true
 algorithms:
     order-number: 8
+    supporting-resources: true
 # information-theory:
 #     order-number: 9

@@ -1,4 +1,4 @@
-{% load static %}
+{% load static render_html_field %}
 
 <div id="slides" class="{% if embed %}embed-responsive embed-responsive-16by9{% else %}w-100 h-100{% endif %}">
     <div class="reveal{% if embed %} embed-responsive-item{% endif %}">
@@ -9,6 +9,38 @@
             </section>
 
             {% include lesson.get_slides_path %}
+
+            {% if lesson.supporting_resources.all %}
+                <section class="r-supporting-resources">
+                    <h2>Supporting Resources</h2>
+                    <ul id="supporting_resources">
+                        {% for supporting_resource in lesson.supporting_resources.all %}
+                            <li>
+                                <a href="{{ supporting_resource.url }}">
+                                    {{ supporting_resource.text }}
+                                </a><br>
+                                <span class="raw-link">
+                                    {{ supporting_resource.url }}
+                                </span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <aside class="notes">
+                        {% include "at_a_distance/components/speech-bubble-open.html" %}
+                            <p>
+                                Here are some supporting resources for you.
+                                I'll paste these links in the chat.
+                            </p>
+                        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+                        <pre>{% for supporting_resource in lesson.supporting_resources.all %}
+                            {{ supporting_resource.text }}
+                            {{ supporting_resource.url }}
+                        {% endfor %}</pre>
+                    </aside>
+                </section>
+            {% endif %}
         </div>
 
         <div class="footer">

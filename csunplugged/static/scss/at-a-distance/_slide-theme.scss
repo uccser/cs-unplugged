@@ -171,6 +171,14 @@ $selectionColor: #fff;
     .r-iframe-scale-2 {
         transform: perspective(300em) scale(2);
     }
+
+    .r-supporting-resources {
+        .raw-link {
+            color: #333;
+            font-family: monospace;
+            font-size: .9em;
+        }
+    }
 }
 
 // Footer
