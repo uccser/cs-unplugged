@@ -106,6 +106,12 @@ $selectionColor: #fff;
     .r-text-white {
         color: white;
     }
+    .r-text-grey {
+        color: #575757;
+    }
+    .r-text-light-grey {
+        color: #c7c7c7;
+    }
 
     // Layout
     .r-flex {
@@ -127,14 +133,23 @@ $selectionColor: #fff;
         grid-auto-flow: column;
         grid-auto-columns: minmax(0, 1fr);
     }
-    .r-flex-align-items-center {
-        align-items: center;
+    .r-flex-align-items-end {
+        align-items: flex-end;
+    }
+    .r-flex-align-self-end {
+        align-self: flex-end;
     }
     .r-flex-justify-content-center {
         justify-content: center;
     }
+    .r-flex-justify-content-between {
+        justify-content: space-between;
+    }
     .r-m-0 {
         margin: 0;
+    }
+    .r-mr-2 {
+        margin-right: 2em;
     }
     .r-p-0 {
         padding: 0;
@@ -144,6 +159,9 @@ $selectionColor: #fff;
     }
     .r-h-100 {
         height: 100%;
+    }
+    .r-hidden {
+        visibility: hidden;
     }
 
     // Title slide
@@ -236,6 +254,18 @@ $footer-padding: 8px;
 }
 .binary-cards-5 {
     transform-origin: 86% 0%;
+}
+
+.r-timer {
+    font-family: monospace;
+
+    .r-timer-value {
+        font-size: 2em;
+        font-weight: bold;
+    }
+    .r-timer-unit {
+        color: #575757;
+    }
 }
 
 /*
