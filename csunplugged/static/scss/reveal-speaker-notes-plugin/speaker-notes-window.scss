@@ -151,10 +151,7 @@ pre+div.tooltip-hide+div {
 }
 
 .speaker-controls-time .timer,
-.speaker-controls-time .clock,
-.speaker-controls-time .pacing .hours-value,
-.speaker-controls-time .pacing .minutes-value,
-.speaker-controls-time .pacing .seconds-value {
+.speaker-controls-time .clock {
     font-size: 2rem;
 }
 
@@ -169,22 +166,6 @@ pre+div.tooltip-hide+div {
 
 .speaker-controls-time span.mute {
     opacity: 0.3;
-}
-
-.speaker-controls-time .pacing-title {
-    margin-top: 5px;
-}
-
-.speaker-controls-time .pacing.ahead {
-    color: blue;
-}
-
-.speaker-controls-time .pacing.on-track {
-    color: green;
-}
-
-.speaker-controls-time .pacing.behind {
-    color: red;
 }
 
 .speaker-controls-notes {

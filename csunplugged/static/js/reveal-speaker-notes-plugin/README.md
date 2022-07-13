@@ -21,6 +21,7 @@ A big thank you to Hakim El Hattab for making such a great framework.
 - Add feature to copy &lt;pre&gt; tag inside speaker notes to clipboard.
 - Replaced tall layout as default, and removed wide layout.
 - Show controls text.
+- Removed pacing timer as we don't use this feature. Timings cannot be suggested due to wide range of speakers (style, language, confidence, etc).
 
 ## Files related to plugin
 

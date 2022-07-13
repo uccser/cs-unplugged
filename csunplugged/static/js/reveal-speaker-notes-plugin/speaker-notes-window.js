@@ -232,57 +232,6 @@
 
     }
 
-    function getTimings(callback) {
-
-        callRevealApi('getSlidesAttributes', [], function (slideAttributes) {
-            callRevealApi('getConfig', [], function (config) {
-                var totalTime = config.totalTime;
-                var minTimePerSlide = config.minimumTimePerSlide || 0;
-                var defaultTiming = config.defaultTiming;
-                if ((defaultTiming == null) && (totalTime == null)) {
-                    callback(null);
-                    return;
-                }
-                // Setting totalTime overrides defaultTiming
-                if (totalTime) {
-                    defaultTiming = 0;
-                }
-                var timings = [];
-                for (var i in slideAttributes) {
-                    var slide = slideAttributes[i];
-                    var timing = defaultTiming;
-                    if (slide.hasOwnProperty('data-timing')) {
-                        var t = slide['data-timing'];
-                        timing = parseInt(t);
-                        if (isNaN(timing)) {
-                            console.warn("Could not parse timing '" + t + "' of slide " + i + "; using default of " + defaultTiming);
-                            timing = defaultTiming;
-                        }
-                    }
-                    timings.push(timing);
-                }
-                if (totalTime) {
-                    // After we've allocated time to individual slides, we summarize it and
-                    // subtract it from the total time
-                    var remainingTime = totalTime - timings.reduce(function (a, b) { return a + b; }, 0);
-                    // The remaining time is divided by the number of slides that have 0 seconds
-                    // allocated at the moment, giving the average time-per-slide on the remaining slides
-                    var remainingSlides = (timings.filter(function (x) { return x == 0 })).length
-                    var timePerSlide = Math.round(remainingTime / remainingSlides, 0)
-                    // And now we replace every zero-value timing with that average
-                    timings = timings.map(function (x) { return (x == 0 ? timePerSlide : x) });
-                }
-                var slidesUnderMinimum = timings.filter(function (x) { return (x < minTimePerSlide) }).length
-                if (slidesUnderMinimum) {
-                    message = "The pacing time for " + slidesUnderMinimum + " slide(s) is under the configured minimum of " + minTimePerSlide + " seconds. Check the data-timing attribute on individual slides, or consider increasing the totalTime or minimumTimePerSlide configuration options (or removing some slides).";
-                    alert(message);
-                }
-                callback(timings);
-            });
-        });
-
-    }
-
     /**
      * Return the number of seconds allocated for presenting
      * all slides up to and including this one.
@@ -310,30 +259,14 @@
             clockEl = timeEl.querySelector('.clock-value'),
             hoursEl = timeEl.querySelector('.hours-value'),
             minutesEl = timeEl.querySelector('.minutes-value'),
-            secondsEl = timeEl.querySelector('.seconds-value'),
-            pacingTitleEl = timeEl.querySelector('.pacing-title'),
-            pacingEl = timeEl.querySelector('.pacing'),
-            pacingHoursEl = pacingEl.querySelector('.hours-value'),
-            pacingMinutesEl = pacingEl.querySelector('.minutes-value'),
-            pacingSecondsEl = pacingEl.querySelector('.seconds-value');
+            secondsEl = timeEl.querySelector('.seconds-value');
 
         var timings = null;
-        getTimings(function (_timings) {
+        // Update once directly
+        _updateTimer();
 
-            timings = _timings;
-            if (_timings !== null) {
-                pacingTitleEl.style.removeProperty('display');
-                pacingEl.style.removeProperty('display');
-            }
-
-            // Update once directly
-            _updateTimer();
-
-            // Then update every second
-            setInterval(_updateTimer, 1000);
-
-        });
-
+        // Then update every second
+        setInterval(_updateTimer, 1000);
 
         function _resetTimer() {
 
@@ -395,34 +328,8 @@
 
             clockEl.innerHTML = now.toLocaleTimeString('en-US', { hour12: true, hour: '2-digit', minute: '2-digit' });
             _displayTime(hoursEl, minutesEl, secondsEl, diff);
-            if (timings !== null) {
-                _updatePacing(diff);
-            }
 
         }
-
-        function _updatePacing(diff) {
-
-            getTimeAllocated(timings, function (slideEndTimingSeconds) {
-                var slideEndTiming = slideEndTimingSeconds * 1000;
-
-                callRevealApi('getSlidePastCount', [], function (currentSlide) {
-                    var currentSlideTiming = timings[currentSlide] * 1000;
-                    var timeLeftCurrentSlide = slideEndTiming - diff;
-                    if (timeLeftCurrentSlide < 0) {
-                        pacingEl.className = 'pacing behind';
-                    }
-                    else if (timeLeftCurrentSlide < currentSlideTiming) {
-                        pacingEl.className = 'pacing on-track';
-                    }
-                    else {
-                        pacingEl.className = 'pacing ahead';
-                    }
-                    _displayTime(pacingHoursEl, pacingMinutesEl, pacingSecondsEl, timeLeftCurrentSlide);
-                });
-            });
-        }
-
     }
 
     /**
