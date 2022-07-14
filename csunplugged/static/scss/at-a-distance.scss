@@ -54,9 +54,12 @@
             color: #c9760c;
         }
 
+        .centered {
+            text-align: center;
+        }
+
         button {
             @extend %reveal-help-container;
-            text-align: center;
             padding: 0 1rem;
             background-color: $reveal-controls-help-colour-light;
             border: 2px solid $reveal-controls-help-colour;
