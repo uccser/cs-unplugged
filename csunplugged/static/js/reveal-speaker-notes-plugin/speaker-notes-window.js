@@ -11,7 +11,6 @@
         currentState,
         currentSlide,
         upcomingSlide,
-        layoutLabel,
         layoutDropdown,
         pendingCalls = {},
         lastRevealApiCallId = 0,
@@ -216,8 +215,8 @@
      */
     function setupNotes() {
 
-        notes = document.querySelector('.speaker-controls-notes');
-        notesValue = document.querySelector('.speaker-controls-notes .value');
+        notes = document.querySelector('#speaker-controls-notes');
+        notesValue = document.querySelector('#speaker-controls-notes .value');
     }
 
     /**
@@ -255,11 +254,11 @@
     function setupTimer() {
 
         var start = new Date(),
-            timeEl = document.querySelector('.speaker-controls-time'),
-            clockEl = timeEl.querySelector('.clock-value'),
+            timeEl = document.querySelector('#time-elapsed'),
             hoursEl = timeEl.querySelector('.hours-value'),
             minutesEl = timeEl.querySelector('.minutes-value'),
-            secondsEl = timeEl.querySelector('.seconds-value');
+            secondsEl = timeEl.querySelector('.seconds-value'),
+            clockEl = document.querySelector('#time-clock .value');
 
         var timings = null;
         // Update once directly
@@ -337,8 +336,7 @@
      */
     function setupLayout() {
 
-        layoutDropdown = document.querySelector('.speaker-layout-dropdown');
-        layoutLabel = document.querySelector('.speaker-layout-label');
+        layoutDropdown = document.querySelector('#speaker-layout select');
 
         // Render the list of available layouts
         for (var id in SPEAKER_LAYOUTS) {
@@ -365,12 +363,7 @@
      * in local storage.
      */
     function setLayout(value) {
-
-        var title = SPEAKER_LAYOUTS[value];
-
-        layoutLabel.innerHTML = 'Layout' + (title ? (': ' + title) : '');
         layoutDropdown.value = value;
-
         document.body.setAttribute('data-speaker-layout', value);
 
         // Persist locally
