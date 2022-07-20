@@ -23,6 +23,11 @@
         .speaker-notes {
             width: 66.666%;
             padding: 0.8rem;
+            // Always show notes
+            top: 0;
+            left: 100%;
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
     }
 }
