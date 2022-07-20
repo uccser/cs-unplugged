@@ -12,12 +12,19 @@ $notes_width: 120mm;
 @page {
     size: A4;
     margin: 10mm $page_x_margin 20mm $page_x_margin;
+
+    @bottom-right {
+        content: "Page " counter(page) " of " counter(pages);
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 0.8em;
+        color: #888;
+    }
 }
 footer {
-    bottom: -13mm;
+    bottom: -12.3mm;
 }
 .fixed-running-element{
-    text-align: center;
+    text-align: left;
     width: 100%;
     position: fixed;
     margin: 0;

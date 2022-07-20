@@ -6,11 +6,6 @@
     <title>{{ filename }}</title>
 </head>
 <body class="paper-{{ paper_size }}">
-    {% if header_text %}
-    <header class="fixed-running-element">
-        {{ header_text }}
-    </header>
-    {% endif %}
     <div id="slides">
         <h1>{{ lesson.name }} (Speaker Notes)</h1>
         {% for slide in slides %}
@@ -30,7 +25,7 @@
         {% endfor %}
     </div>
     <footer class="fixed-running-element">
-        <img src="./img/cs-unplugged-logo-at-a-distance.svg"> - {{ lesson.name }} (Speaker Notes) - csunplugged.org
+        <img src="./img/cs-unplugged-logo-at-a-distance.svg"> {{ lesson.name }} (Speaker Notes) - csunplugged.org
     </footer>
 </body>
 </html>
