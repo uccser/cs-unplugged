@@ -24,24 +24,36 @@
         {% render_html_field lesson.introduction %}
 
         <h2>Resources</h2>
-        <ul>
-            <li>
-                <a href="{% url 'at_a_distance:lesson_slides' lesson.slug %}" target="_blank">
-                    Open slides in presentation mode
+
+        <div class="row" id="resource-buttons">
+            <div class="col-12 col-sm-4">
+                <a class="btn btn-at-a-distance d-block" href="{% url 'at_a_distance:lesson_slides' lesson.slug %}" target="_blank">
+                    <img class="resource-button-image" src="{% static 'img/at_a_distance/button-open-slides.svg' %}">
+                    <div class="resource-button-text">
+                        Open slides in presentation mode
+                    </div>
                 </a>
-            </li>
-            <li>
-                <a href="{% static notes_pdf %}" target="_blank" download="{{ lesson.name }} - Speaker Notes.pdf">
-                    Download speaker notes as PDF
+            </div>
+            <div class="col-12 col-sm-4">
+                <a class="btn btn-at-a-distance d-block" href="{% static notes_pdf %}" target="_blank" download="{{ lesson.name }} - Speaker Notes.pdf">
+                    <img class="resource-button-image" src="{% static 'img/at_a_distance/button-download-speaker-notes.svg' %}">
+                    <div class="resource-button-text">
+                        Download speaker notes as PDF
+                    </div>
                 </a>
-            </li>
-            <li>
-                <a href="{% static slides_pdf %}" target="_blank" download="{{ lesson.name }} - Slides.pdf">
-                    Download slides as PDF
+            </div>
+            <div class="col-12 col-sm-4">
+                <a class="btn btn-at-a-distance d-block" href="{% static slides_pdf %}" target="_blank" download="{{ lesson.name }} - Slides.pdf">
+                    <img class="resource-button-image" src="{% static 'img/at_a_distance/button-download-slides.svg' %}">
+                    <div class="resource-button-text">
+                        Download slides as PDF
+                    </div>
                 </a>
-                <em>(not recommended - no interactive elements)</em>
-            </li>
-        </ul>
+                <div class="resource-button-subtitle">
+                    (not recommended - no interactive elements)
+                </div>
+            </div>
+        </div>
 
         {% if lesson.supporting_resources.all %}
             <h3>Supporting Resources</h3>

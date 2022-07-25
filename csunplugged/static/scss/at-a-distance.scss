@@ -81,3 +81,27 @@
         }
     }
 }
+
+#resource-buttons {
+    .resource-button-image {
+        max-height: 8rem;
+    }
+    .resource-button-text {
+        color: #000;
+        font-weight: bold;
+    }
+    .resource-button-subtitle {
+        text-align: center;
+        color: #444;
+        font-size: 0.85rem;
+        font-style: italic;
+    }
+}
+
+.btn-at-a-distance {
+    border: 2px solid $at-a-distance-colour;
+    background-color: mix($at-a-distance-colour, #fff, 10%);
+    &:hover, &:active {
+        background-color: mix($at-a-distance-colour, #fff, 30%);
+    }
+}
