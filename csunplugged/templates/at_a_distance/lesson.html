@@ -27,7 +27,7 @@
 
         <div class="row" id="resource-buttons">
             <div class="col-12 col-sm-4">
-                <a class="btn btn-at-a-distance d-block" href="{% url 'at_a_distance:lesson_slides' lesson.slug %}" target="_blank">
+                <a class="btn btn-outline-at-a-distance d-block mb-3" href="{% url 'at_a_distance:lesson_slides' lesson.slug %}" target="_blank">
                     <img class="resource-button-image" src="{% static 'img/at_a_distance/button-open-slides.svg' %}">
                     <div class="resource-button-text">
                         Open slides in presentation mode
@@ -35,7 +35,7 @@
                 </a>
             </div>
             <div class="col-12 col-sm-4">
-                <a class="btn btn-at-a-distance d-block" href="{% static notes_pdf %}" target="_blank" download="{{ lesson.name }} - Speaker Notes.pdf">
+                <a class="btn btn-outline-at-a-distance d-block mb-3" href="{% static notes_pdf %}" target="_blank" download="{{ lesson.name }} - Speaker Notes.pdf">
                     <img class="resource-button-image" src="{% static 'img/at_a_distance/button-download-speaker-notes.svg' %}">
                     <div class="resource-button-text">
                         Download speaker notes as PDF
@@ -43,13 +43,13 @@
                 </a>
             </div>
             <div class="col-12 col-sm-4">
-                <a class="btn btn-at-a-distance d-block" href="{% static slides_pdf %}" target="_blank" download="{{ lesson.name }} - Slides.pdf">
+                <a class="btn btn-outline-at-a-distance d-block" href="{% static slides_pdf %}" target="_blank" download="{{ lesson.name }} - Slides.pdf">
                     <img class="resource-button-image" src="{% static 'img/at_a_distance/button-download-slides.svg' %}">
                     <div class="resource-button-text">
                         Download slides as PDF
                     </div>
                 </a>
-                <div class="resource-button-subtitle">
+                <div class="resource-button-subtitle mb-3">
                     (not recommended - no interactive elements)
                 </div>
             </div>
