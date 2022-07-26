@@ -89,7 +89,6 @@ class AtADistanceLessonLoader(TranslatableModelLoader):
                     suitability_options,
                 )
 
-
         # Introduction content
         content_translations = self.get_markdown_translations(AT_A_DISTANCE_INTRODUCTION_FILENAME)
         for language, content in content_translations.items():
