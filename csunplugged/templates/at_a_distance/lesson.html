@@ -30,41 +30,10 @@
     </div>
 {% endblock page_heading %}
 
-{% block content %}
-    {% if lesson.translation_available %}
+
+{% block content_container %}
+    <div class="col-12 col-md-8 print-col-12">
         {% render_html_field lesson.introduction %}
-
-        <h2>Resources</h2>
-
-        <div class="row" id="resource-buttons">
-            <div class="col-12 col-sm-4">
-                <a class="btn btn-outline-at-a-distance d-block mb-3" href="{% url 'at_a_distance:lesson_slides' lesson.slug %}" target="_blank">
-                    <img class="resource-button-image" src="{% static 'img/at_a_distance/button-open-slides.svg' %}">
-                    <div class="resource-button-text">
-                        Open slides in presentation mode
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-sm-4">
-                <a class="btn btn-outline-at-a-distance d-block mb-3" href="{% static notes_pdf %}" target="_blank" download="{{ lesson.name }} - Speaker Notes.pdf">
-                    <img class="resource-button-image" src="{% static 'img/at_a_distance/button-download-speaker-notes.svg' %}">
-                    <div class="resource-button-text">
-                        Download speaker notes as PDF
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-sm-4">
-                <a class="btn btn-outline-at-a-distance d-block" href="{% static slides_pdf %}" target="_blank" download="{{ lesson.name }} - Slides.pdf">
-                    <img class="resource-button-image" src="{% static 'img/at_a_distance/button-download-slides.svg' %}">
-                    <div class="resource-button-text">
-                        Download slides as PDF
-                    </div>
-                </a>
-                <div class="resource-button-subtitle mb-3">
-                    (not recommended - no interactive elements)
-                </div>
-            </div>
-        </div>
 
         {% if lesson.supporting_resources.all %}
             <h3>Supporting Resources</h3>
@@ -78,20 +47,48 @@
                 {% endfor %}
             </ul>
         {% endif %}
-
-        <h2>Preview slides with notes</h2>
-
-        <div class="alert alert-danger my-2 d-block d-md-none">
-            We recommend previewing these slides on a larger screen to view the slides and speaker notes easily.
+    </div>
+    {% if lesson.translation_available %}
+        <div class="col-12 col-md-4 print-col-12">
+            <div id="resource-buttons">
+                <a class="btn btn-outline-at-a-distance d-block mb-3" href="{% url 'at_a_distance:lesson_slides' lesson.slug %}" target="_blank">
+                    <img class="resource-button-image" src="{% static 'img/at_a_distance/button-open-slides.svg' %}">
+                    <div class="resource-button-text">
+                        Open slides in presentation mode
+                    </div>
+                </a>
+                <a class="btn btn-outline-at-a-distance d-block mb-3" href="{% static notes_pdf %}" target="_blank" download="{{ lesson.name }} - Speaker Notes.pdf">
+                    <img class="resource-button-image" src="{% static 'img/at_a_distance/button-download-speaker-notes.svg' %}">
+                    <div class="resource-button-text">
+                        Download speaker notes as PDF
+                    </div>
+                </a>
+                <a class="btn btn-outline-at-a-distance d-block" href="{% static slides_pdf %}" target="_blank" download="{{ lesson.name }} - Slides.pdf">
+                    <img class="resource-button-image" src="{% static 'img/at_a_distance/button-download-slides.svg' %}">
+                    <div class="resource-button-text">
+                        Download slides as PDF
+                    </div>
+                </a>
+                <div class="resource-button-subtitle mb-3">
+                    (not recommended - no interactive elements)
+                </div>
+            </div>
         </div>
+        <div class="col-12">
+            <h2>Preview slides with notes</h2>
 
-        <aside class="reveal-controls-help-container">
-            {% include "at_a_distance/components/reveal-controls-help.html" %}
-        </aside>
+            <div class="alert alert-danger my-2 d-block d-md-none">
+                We recommend previewing these slides on a larger screen to view the slides and speaker notes easily.
+            </div>
 
-        {% include "at_a_distance/components/reveal-slides-structure.html" with embed=True %}
+            <aside class="reveal-controls-help-container">
+                {% include "at_a_distance/components/reveal-controls-help.html" %}
+            </aside>
+
+            {% include "at_a_distance/components/reveal-slides-structure.html" with embed=True %}
+        </div>
     {% endif %}
-{% endblock content %}
+{% endblock content_container %}
 
 {% block scripts %}
     {{ block.super }}
