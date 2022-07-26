@@ -22,7 +22,7 @@
             <h3>Presentation controls</h3>
             {% include "at_a_distance/components/reveal-controls-help.html" with blank=True fullscreen=True speaker_mode=True %}
             <div class="centered">
-                <button id="controls-modal-close">Close</button>
+                <button id="controls-modal-close">Close or push <kbd>Esc</kbd></button>
             </div>
         </div>
     </div>
@@ -45,8 +45,17 @@
             hideModal();
         }
 
+        function closeModalOnEsc(event) {
+            if(event.key == "Escape") {
+                hideModal();
+            }
+        }
+
+        document.addEventListener('keydown', closeModalOnEsc);
+
         function hideModal() {
             modal.style.display = "none";
+            document.removeEventListener('keydown', closeModalOnEsc);
         }
     </script>
 
