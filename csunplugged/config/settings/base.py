@@ -221,10 +221,11 @@ TEMPLATES = [
                 "bidiutils.context_processors.bidi",
             ],
             "libraries": {
+                "custom_tags": "config.templatetags.custom_tags",
+                "query_replace": "config.templatetags.query_replace",
+                "read_static_file": "config.templatetags.read_static_file",
                 "render_html_field": "config.templatetags.render_html_field",
                 "translate_url": "config.templatetags.translate_url",
-                "query_replace": "config.templatetags.query_replace",
-                'custom_tags': 'config.templatetags.custom_tags'
             },
         },
     },
