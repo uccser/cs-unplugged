@@ -1,6 +1,9 @@
 # Finite State Automata
 
-Description to be added.
+Finite State Automata (or FSA for short) is a very engaging topic from computer science for students, as it can be presented based on following simple maps.
+Yet it appears in advanced computer science courses because it opens all sorts of possibilities and answers the very idea of what computing is!
+In fact, the FSA is behind some deep philosophical reasoning about the limits of what computers can do.
+For our purposes, it's a fun exercise in reasoning that has some widely used everyday applications.
 
 ## Facilitator preparation
 

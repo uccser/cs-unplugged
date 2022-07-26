@@ -1,6 +1,9 @@
 # The Stroop Effect
 
-Description to be added.
+Ask someone if they have ever been frustrated using a computer, and you'll probably be given lots of examples.
+Often this is because computer interfaces have been badly designed, and don't take account of how people think and interact.
+This exercise turns things around, and uses a deliberately bad design to see how much people are slowed down when given clear but hard-to-process instructions.
+It's a lot of fun when you're deliberately tricking people, but it sheds light on how important it is that computer interfaces should be improved so that the user feels the computer is helping, and not hindering them.
 
 ## Facilitator preparation
 
