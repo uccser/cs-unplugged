@@ -1,4 +1,5 @@
 // Default mixins and settings -----------------
+@use "sass:math";
 @import "node_modules/reveal.js/css/theme/template/mixins";
 @import "node_modules/reveal.js/css/theme/template/settings";
 @import "node_modules/reveal.js/plugin/highlight/monokai";
@@ -81,6 +82,10 @@ $selectionColor: #fff;
         code {
             max-height: none;
             padding: 1em;
+
+            &.hide-line-numbers td.hljs-ln-numbers {
+                visibility: hidden;
+            }
         }
     }
 
@@ -163,6 +168,23 @@ $selectionColor: #fff;
     .r-hidden {
         visibility: hidden;
     }
+    .r-svg {
+        margin-bottom: 1em;
+
+        svg {
+            height: 100%;
+            width: auto;
+        }
+        &.compare-block svg #compare-block {
+            stroke: red;
+            stroke-width: 5px;
+        }
+
+        &.say-block svg #say-block {
+            stroke: red;
+            stroke-width: 5px;
+        }
+    }
 
     // Title slide
     .r-title-slide {
@@ -194,7 +216,7 @@ $selectionColor: #fff;
         .raw-link {
             color: #333;
             font-family: monospace;
-            font-size: .9em;
+            font-size: 0.7em;
         }
     }
 }

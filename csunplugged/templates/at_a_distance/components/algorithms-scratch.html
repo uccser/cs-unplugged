@@ -1,0 +1,16 @@
+{% load static read_static_file %}
+
+<h2>Scratch</h2>
+
+<div class="r-flex-grow r-grid r-grid-columns r-h-100">
+    <div class="r-svg {{ highlight_blocks }}">
+        {% read_static_file 'img/at_a_distance/algorithms/scratch-program.svg' %}
+    </div>
+    <div>
+        {% if interactive %}
+            <div class="r-h-100 r-flex">
+                <iframe class="r-flex-grow" src="https://scratch.mit.edu/projects/711368155/embed"></iframe>
+            </div>
+        {% endif %}
+    </div>
+</div>

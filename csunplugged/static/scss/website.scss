@@ -391,7 +391,7 @@ body {
   padding: ($spacer * .25) $spacer;
 }
 
-#content-container table:not(.table) {
+#content-container table:not(.table):not(.hljs-ln) {
   display: block;
   margin-bottom: $spacer;
   width: 100%;
