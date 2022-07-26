@@ -5,8 +5,23 @@
 @import "at-a-distance/speaker-notes";
 @import "at-a-distance/reveal-controls-help";
 
+.at-a-distance {
+    h1 {
+        color: $at-a-distance-colour;
+    }
+    h2 {
+        color: mix($at-a-distance-colour, #fff, 80%);
+    }
+    h3 {
+        color: mix($at-a-distance-colour, #fff, 60%);
+    }
+    .link-item {
+        border-color: $at-a-distance-colour;
+    }
+}
+
 #at-a-distance-jumbotron {
-    background-color: rgba($at-a-distance-colour, 15%);
+    background-color: mix($at-a-distance-colour, #fff, 15%);
 }
 
 .navbar.navbar-at-a-distance {
@@ -98,10 +113,23 @@
     }
 }
 
-.btn-at-a-distance {
+#at-a-distance-lead {
+    font-size: 1.1rem;
+}
+
+.btn-outline-at-a-distance {
     border: 2px solid $at-a-distance-colour;
-    background-color: mix($at-a-distance-colour, #fff, 10%);
+    background-color: mix($at-a-distance-colour, #fff, 5%);
     &:hover, &:active {
-        background-color: mix($at-a-distance-colour, #fff, 30%);
+        background-color: mix($at-a-distance-colour, #fff, 20%);
+    }
+}
+.btn-at-a-distance {
+    border: none;
+    color: #fff;
+    background-color: $at-a-distance-colour;
+    &:hover, &:active {
+        color: #fff;
+        background-color: darken($at-a-distance-colour, 10%);
     }
 }

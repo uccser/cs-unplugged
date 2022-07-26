@@ -8,6 +8,8 @@
     {% trans "CS Unplugged at a distance" %}
 {% endblock custom_title %}
 
+{% block extra_body_classes %}{{ block.super }} no-padding{% endblock extra_body_classes %}
+
 {% block body_container %}
     <div id="at-a-distance-jumbotron" class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -16,46 +18,62 @@
                     <img src="{% static 'img/cs-unplugged-logo-at-a-distance.svg' %}" class="img-fluid my-5" alt="CS Unplugged at a distance logo">
                     <h2 class="h4 text-dark">
                         {% blocktrans trimmed %}
-                            Guides on how to teach CS Unplugged remotely to students, or to train educators.
+                            Teach CS Unplugged remotely to students, or to train educators.
                         {% endblocktrans %}
                     </h2>
-
-                    <div class="alert alert-warning d-inline-block my-4" role="alert">
-                        You are viewing a sneak peek of new content.
-                        Contents and pages can change or disappear at any time, so we do not recommend using this content for teaching until this content is fully released.
-                        Feel free to look around in the meantime to see what's coming soon!
-                    </div>
-
-                    {% if LANGUAGE_CODE != "en" %}
-                        <div class="alert alert-danger text-dark" role="alert">
-                            {% blocktrans trimmed with language=current_language.name_local %}
-                            <h4>Sorry! This item is not yet available in {{ language }}.</h4>
-                            <p>This item is available in the following languages:</p>
-                            {% endblocktrans %}
-                            <p class="mb-0">
-                                {% with language='en' %}
-                                    <a class="btn btn-outline-primary" href="{% translate_url language %}">
-                                        English
-                                    </a>
-                                {% endwith %}
-                                <a class="btn btn-outline-danger" href="{% url 'general:home' %}">
-                                    {% trans "Return to homepage "%}
-                                </a>
-                            </p>
-                        </div>
-                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
 
     <div class="container">
-        <div id="lessons" class="row justify-content-start">
+        {% if LANGUAGE_CODE != "en" %}
+            <div class="alert alert-danger text-dark" role="alert">
+                {% blocktrans trimmed with language=current_language.name_local %}
+                <h4>Sorry! This item is not yet available in {{ language }}.</h4>
+                <p>This item is available in the following languages:</p>
+                {% endblocktrans %}
+                <p class="mb-0">
+                    {% with language='en' %}
+                        <a class="btn btn-outline-primary" href="{% translate_url language %}">
+                            English
+                        </a>
+                    {% endwith %}
+                    <a class="btn btn-outline-danger" href="{% url 'general:home' %}">
+                        {% trans "Return to homepage "%}
+                    </a>
+                </p>
+            </div>
+        {% endif %}
+
+        <div class="row my-5" id="at-a-distance-lead">
+            <div class="col-12 col-md-5">
+                <img class="img-fluid mb-3" src="{% static 'img/at_a_distance/teaching-online.png' %}">
+            </div>
+            <div class="col-12 col-md-7">
+                <p>
+                    We recommend teaching CS Unplugged at a Distance when you are unable to teach computer science concepts face to face.
+                    There are many situations where delivering teaching or professional development can only be done online.
+                </p>
+                <p>
+                    CS Unplugged at a Distance is an adaption of the CS Unplugged activities to help to understand how teaching CS Unplugged face to face would work when you are back in front of your students.
+                </p>
+                <p>
+                    Click the button below to learn how to teach this content:
+                </p>
+                <a href="#" class="btn btn-at-a-distance">
+                    How to teach CS Unplugged at a distance
+                </a>
+            </div>
+        </div>
+
+        <h2>Lessons</h2>
+        <div id="lessons">
             {% for lesson in lessons %}
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <a class="link-item no-text-decoration d-block h-100{% if not lesson.translation_available %} unavailable{% endif %}" href="{% url 'at_a_distance:lesson' lesson.slug %}">
-                        <div class="row align-items-center h-100">
-                            <div class="col-12 text-center text-md-{{LANGUAGE_START}}">
+                <div class="mb-4">
+                    <a class="link-item no-text-decoration d-block{% if not lesson.translation_available %} unavailable{% endif %}" href="{% url 'at_a_distance:lesson' lesson.slug %}">
+                        <div class="row align-items-center h-100 my-2">
+                            <div class="col-12 col-md-4 text-center text-md-{{LANGUAGE_START}}">
                                 <h2>{{ lesson.name }}</h2>
                                 {% if not lesson.translation_available %}
                                     {% include "generic/not-available-badge.html" %}
