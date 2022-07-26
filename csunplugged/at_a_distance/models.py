@@ -24,9 +24,30 @@ class Lesson(TranslatableModel):
 
     slug = models.SlugField(max_length=100)
     name = models.CharField(max_length=200, default="")
-    order_number = models.PositiveSmallIntegerField(unique=True)
+    order_number = models.PositiveSmallIntegerField()
     icon = models.CharField(max_length=150, null=True)
     objects = LessonManager()
+
+    # Suitability attributes
+    NOT_SUITABLE = 'not-suitable'
+    SUITABLE = 'suitable'
+    NOT_RECOMMENDED = 'not-recommended'
+    SUITABILITY_CHOICES = [
+        (NOT_SUITABLE, _('Not suitable')),
+        (SUITABLE, _('Suitable')),
+        (NOT_RECOMMENDED, _('Not recommended')),
+    ]
+    suitable_for_teaching_students = models.CharField(
+        max_length=15,
+        choices=SUITABILITY_CHOICES,
+        default=NOT_SUITABLE,
+    )
+    suitable_for_teaching_educators = models.CharField(
+        max_length=15,
+        choices=SUITABILITY_CHOICES,
+        default=NOT_SUITABLE,
+    )
+
     # Content
     introduction = models.TextField(default="")
     video = models.URLField(blank=True)

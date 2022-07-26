@@ -11,12 +11,23 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-    <h1 id="{{ lesson.slug }}">{{ lesson.name }}</h1>
-    {% if not lesson.translation_available %}
-      {% with model=lesson %}
-        {% include "topics/not-available-warning.html" %}
-      {% endwith %}
-    {% endif %}
+
+    <div id="{{ lesson.slug }}" class="row align-items-center mb-3">
+        <div class="d-none col-md-1 d-md-flex justify-content-end align-items-end">
+            {% if lesson.icon %}
+                <img class="img-fluid" src="{% static lesson.icon %}">
+            {% endif %}
+        </div>
+        <div class="col-12 col-md-7">
+            <h1>{{ lesson.name }}</h1>
+            {% if not lesson.translation_available %}
+                {% include "generic/not-available-badge.html" %}
+            {% endif %}
+        </div>
+        <div class="col-12 col-md-4">
+            {% include "at_a_distance/components/suitability-boxes.html" %}
+        </div>
+    </div>
 {% endblock page_heading %}
 
 {% block content %}

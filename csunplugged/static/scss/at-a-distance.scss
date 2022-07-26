@@ -133,3 +133,38 @@
         background-color: darken($at-a-distance-colour, 10%);
     }
 }
+
+.suitability-boxes {
+    display: flex;
+
+    .suitability-box {
+        flex: 1;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    $suitability-suitable: #319807;
+    $suitability-not-suitable: #c10303;
+    $suitability-not-recommended: #d97900;
+    .suitability-suitable {
+        color: $suitability-suitable;
+        background-color: rgba($suitability-suitable, 0.10);
+    }
+    .suitability-not-suitable {
+        color: $suitability-not-suitable;
+        background-color: rgba($suitability-not-suitable, 0.25);
+    }
+    .suitability-not-recommended {
+        color: $suitability-not-recommended;
+        background-color: rgba($suitability-not-recommended, 0.10);
+    }
+
+    .suitability-box-key {
+        color: #464646;
+        font-size: 0.9rem;
+    }
+    .suitability-box-icon {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+}

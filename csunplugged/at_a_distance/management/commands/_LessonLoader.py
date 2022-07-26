@@ -4,6 +4,7 @@ from django.db import transaction
 from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
+from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 from utils.language_utils import (
     get_available_languages,
     get_default_language,
@@ -46,8 +47,48 @@ class AtADistanceLessonLoader(TranslatableModelLoader):
                 [
                     "order-number",
                 ],
-                "Activity"
+                "Lesson"
             )
+
+        # Suitability values
+        suitability_options = [i[0] for i in Lesson.SUITABILITY_CHOICES]
+
+        try:
+            suitable_teaching_students = self.lesson_data['suitable-for-teaching-students']
+        except KeyError:
+            raise MissingRequiredFieldError(
+                self.structure_file_path,
+                [
+                    "suitable-for-teaching-students",
+                ],
+                "Lesson"
+            )
+        else:
+            if suitable_teaching_students not in suitability_options:
+                raise InvalidYAMLValueError(
+                    self.structure_file_path,
+                    "suitable-for-teaching-students",
+                    suitability_options,
+                )
+
+        try:
+            suitable_teaching_educators = self.lesson_data['suitable-for-teaching-educators']
+        except KeyError:
+            raise MissingRequiredFieldError(
+                self.structure_file_path,
+                [
+                    "suitable-for-teaching-educators",
+                ],
+                "Lesson"
+            )
+        else:
+            if suitable_teaching_educators not in suitability_options:
+                raise InvalidYAMLValueError(
+                    self.structure_file_path,
+                    "suitable-for-teaching-educators",
+                    suitability_options,
+                )
+
 
         # Introduction content
         content_translations = self.get_markdown_translations(AT_A_DISTANCE_INTRODUCTION_FILENAME)
@@ -60,6 +101,8 @@ class AtADistanceLessonLoader(TranslatableModelLoader):
             slug=self.lesson_slug,
             defaults={
                 'order_number': order_number,
+                'suitable_for_teaching_students': suitable_teaching_students,
+                'suitable_for_teaching_educators': suitable_teaching_educators,
             },
         )
 

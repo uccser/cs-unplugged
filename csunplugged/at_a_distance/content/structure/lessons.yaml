@@ -1,22 +1,40 @@
-# parity-magic:
-#     order-number: 1
-# qr-codes:
-#     order-number: 2
-# product-code-check-digits:
-#     order-number: 3
-finite-state-automata:
-    order-number: 4
-    supporting-resources: true
-# image-representation:
-#     order-number: 5
-binary-representation:
-    order-number: 6
-    supporting-resources: true
 stroop-effect:
-    order-number: 7
+    order-number: 1
+    suitable-for-teaching-students: suitable
+    suitable-for-teaching-educators: suitable
     supporting-resources: true
 algorithms:
-    order-number: 8
+    order-number: 2
+    suitable-for-teaching-students: suitable
+    suitable-for-teaching-educators: suitable
     supporting-resources: true
+binary-representation:
+    order-number: 3
+    suitable-for-teaching-students: not-recommended
+    suitable-for-teaching-educators: suitable
+    supporting-resources: true
+parity-magic:
+    order-number: 4
+    suitable-for-teaching-students: suitable
+    suitable-for-teaching-educators: suitable
+# qr-codes:
+#     order-number: 5
+#     suitable-for-teaching-students: suitable
+#     suitable-for-teaching-educators: suitable
+# product-code-check-digits:
+#     order-number: 6
+#     suitable-for-teaching-students: suitable
+#     suitable-for-teaching-educators: suitable
+# image-representation:
+#     order-number: 7
+#     suitable-for-teaching-students: not-recommended
+#     suitable-for-teaching-educators: suitable
 # information-theory:
-#     order-number: 9
+#     order-number: 8
+#     suitable-for-teaching-students: suitable
+#     suitable-for-teaching-educators: suitable
+finite-state-automata:
+    order-number: 9
+    suitable-for-teaching-students: not-recommended
+    suitable-for-teaching-educators: suitable
+    supporting-resources: true

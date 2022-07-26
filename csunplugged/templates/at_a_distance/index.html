@@ -52,11 +52,11 @@
             </div>
             <div class="col-12 col-md-7">
                 <p>
-                    We recommend teaching CS Unplugged at a Distance when you are unable to teach computer science concepts face to face.
+                    We recommend teaching CS Unplugged at a distance when you are unable to teach computer science concepts face to face.
                     There are many situations where delivering teaching or professional development can only be done online.
                 </p>
                 <p>
-                    CS Unplugged at a Distance is an adaption of the CS Unplugged activities to help to understand how teaching CS Unplugged face to face would work when you are back in front of your students.
+                    CS Unplugged at a distance is an adaption of the CS Unplugged activities to help to understand how teaching CS Unplugged face to face would work when you are back in front of your students.
                 </p>
                 <p>
                     Click the button below to learn how to teach this content:
@@ -67,27 +67,32 @@
             </div>
         </div>
 
-        <h2>Lessons</h2>
-        <div id="lessons">
-            {% for lesson in lessons %}
-                <div class="mb-4">
-                    <a class="link-item no-text-decoration d-block{% if not lesson.translation_available %} unavailable{% endif %}" href="{% url 'at_a_distance:lesson' lesson.slug %}">
-                        <div class="row align-items-center h-100 my-2">
-                            <div class="col-12 col-md-4 text-center text-md-{{LANGUAGE_START}}">
-                                <h2>{{ lesson.name }}</h2>
-                                {% if not lesson.translation_available %}
-                                    {% include "generic/not-available-badge.html" %}
-                                {% endif %}
+        <h2 class="text-center">Lessons</h2>
+        <div class="row justify-content-center">
+            <div id="lessons" class="col-12 col-lg-10">
+                {% for lesson in lessons %}
+                    <div class="mb-4">
+                        <a class="link-item no-text-decoration d-block p-0{% if not lesson.translation_available %} unavailable{% endif %}" href="{% url 'at_a_distance:lesson' lesson.slug %}">
+                            <div class="row align-items-center h-100 my-2">
+                                <div class="d-none col-md-1 d-md-flex justify-content-end align-items-end">
+                                    {% if lesson.icon %}
+                                        <img class="img-fluid" src="{% static lesson.icon %}">
+                                    {% endif %}
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <h2>{{ lesson.name }}</h2>
+                                    {% if not lesson.translation_available %}
+                                        {% include "generic/not-available-badge.html" %}
+                                    {% endif %}
+                                </div>
+                                <div class="col-12 col-md-5">
+                                    {% include "at_a_distance/components/suitability-boxes.html" %}
+                                </div>
                             </div>
-                            <div class="d-none col-md-5 d-md-flex justify-content-end align-items-end">
-                                {% if lesson.icon %}
-                                    <img class="img-fluid" src="{% static lesson.icon %}">
-                                {% endif %}
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            {% endfor %}
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock body_container %}
