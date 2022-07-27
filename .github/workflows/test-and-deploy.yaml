@@ -268,8 +268,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: slide-files-${{ matrix.language }}
-          path: slide-files.tar.gz
+          name: at-a-distance-files-${{ matrix.language }}
+          path: at-a-distance-files.tar.gz
           retention-days: 3
 
   create-resources:
@@ -365,7 +365,7 @@ jobs:
           mkdir -p csunplugged/staticfiles/resources
           ls artifacts/resources-*/resources.tar.gz | xargs -n1 tar -xz --directory csunplugged/staticfiles/resources --file
           mkdir -p csunplugged/staticfiles/slides
-          ls artifacts/slide-files-*/slide-files.tar.gz | xargs -n1 tar -xz --directory csunplugged/staticfiles/slides --file
+          ls artifacts/at-a-distance-files-*/at-a-distance-files.tar.gz | xargs -n1 tar -xz --directory csunplugged/staticfiles/slides --file
 
       - name: Log in to the Container registry
         uses: docker/login-action@v1.12.0
