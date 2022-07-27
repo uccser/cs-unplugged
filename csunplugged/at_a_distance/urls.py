@@ -11,6 +11,12 @@ urlpatterns = [
         views.IndexView.as_view(),
         name='index'
     ),
+    # eg: /at-a-distance/how-to-teach/
+    path(
+        'how-to-teach/',
+        views.HowToTeachView.as_view(),
+        name='how_to_teach'
+    ),
     # eg: /at-a-distance/speaker-notes/
     path(
         'speaker-notes/',
