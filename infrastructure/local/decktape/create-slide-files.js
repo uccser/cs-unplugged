@@ -81,6 +81,8 @@ http.get(BASE_URL + `/en/at-a-distance/slides-file-generation-json/?${query_para
 
     res.on('end', () => {
         json_data = Buffer.concat(data).toString();
+        console.log("Received data:");
+        console.log(json_data);
         generateSlideFiles(JSON.parse(json_data));
     });
 }).on('error', err => {
