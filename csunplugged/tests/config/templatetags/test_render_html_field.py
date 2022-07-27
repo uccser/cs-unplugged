@@ -1,63 +1,63 @@
 from django import template
-from django.test import override_settings
+
 from tests.BaseTestWithDB import BaseTestWithDB
-from tests.chapters.ChaptersTestDataGenerator import ChaptersTestDataGenerator
-from tests.interactives.InteractivesTestDataGenerator import InteractivesTestDataGenerator
-from tests.helpers import template_settings_for_test
+from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
-templates = template_settings_for_test("tests/config/templatetags/assets/templates/")
+from topics.models import CurriculumIntegration
 
 
-@override_settings(TEMPLATES=templates)
 class RenderHTMLFieldTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.test_data = ChaptersTestDataGenerator()
-        self.interactive_test_data = InteractivesTestDataGenerator()
+        self.test_data = TopicsTestDataGenerator()
 
     def render_template(self, string, context=None):
         context = context or {}
         context = template.Context(context)
         return template.Template(string).render(context)
 
-    def test_render_html_field_without_tags(self):
-        chapter = self.test_data.create_chapter(1)
-        context = {"chapter": chapter}
+    def test_render_html_field_without_static(self):
+        topic = self.test_data.create_topic(1)
+        curriculum_integration_without_static = self.test_data.create_integration(
+            topic=topic,
+            number=1,
+        )
+        context = {"integration": curriculum_integration_without_static}
         rendered = self.render_template(
-            "{% load render_html_field %}\n{% render_html_field chapter.introduction %}",
+            "{% load render_html_field %}\n{% render_html_field integration.content %}",
             context
         )
-        self.assertHTMLEqual(rendered, "<p>Introduction for chapter 1</p>")
+        self.assertHTMLEqual(rendered, "<p>Content for integration 1.</p>")
 
     def test_render_html_field_with_static(self):
-        chapter = self.test_data.create_chapter(1, "<img src='{% static 'image.png' %}'>")
-        context = {"chapter": chapter}
+        topic = self.test_data.create_topic(1)
+        curriculum_integration_with_static = CurriculumIntegration.objects.create(
+            topic=topic,
+            slug="slug-2",
+            number=2,
+            name="2",
+            content="<img src='{% static 'img/logo-small.png' %}'>"
+        )
+        context = {"integration": curriculum_integration_with_static}
         rendered = self.render_template(
-            "{% load render_html_field %}\n{% render_html_field chapter.introduction %}",
+            "{% load render_html_field %}\n{% render_html_field integration.content %}",
             context
         )
-        self.assertHTMLEqual(rendered, "<img src='/static/image.png'>")
-
-    def test_render_html_field_with_interactive_tag(self):
-        self.interactive_test_data.create_interactive(1)
-        chapter = self.test_data.create_chapter(1, "{% render_interactive_in_page 'interactive-1' %}")
-        context = {"chapter": chapter}
-        rendered = self.render_template(
-            "{% load render_html_field %}\n{% render_html_field chapter.introduction %}",
-            context
-        )
-        self.assertHTMLEqual(
-            "<div class='interactive text-center mb-3'><p>Interactive 1</p></div>",
-            rendered
-        )
+        self.assertHTMLEqual(rendered, "<img src='/static/img/logo-small.png'>")
 
     def test_render_html_field_empty(self):
-        chapter = self.test_data.create_chapter(1)
-        chapter.introduction = ""
-        context = {"chapter": chapter}
+        topic = self.test_data.create_topic(1)
+        curriculum_integration_empty = CurriculumIntegration.objects.create(
+            topic=topic,
+            slug="slug-3",
+            number=3,
+            name="3",
+            content=""
+        )
+        context = {"integration": curriculum_integration_empty}
         rendered = self.render_template(
-            "{% load render_html_field %}\n{% render_html_field chapter.introduction %}",
+            "{% load render_html_field %}\n{% render_html_field integration.content %}",
             context
         )
         self.assertEqual(rendered.strip(), "")
@@ -77,21 +77,34 @@ class RenderHTMLFieldTest(BaseTestWithDB):
         )
 
     def test_render_html_field_invalid_parameter(self):
-        chapter = self.test_data.create_chapter(1)
-        section_chapter = self.test_data.create_chapter_section(chapter, 1)
-        context = {"section_chapter": section_chapter}
+        topic = self.test_data.create_topic(1)
+        curriculum_integration_with_static = CurriculumIntegration.objects.create(
+            topic=topic,
+            slug="slug-2",
+            number=2,
+            name="2",
+            content="<img src='{% static 'img/logo-small.png' %}'>"
+        )
+        context = {"integration": curriculum_integration_with_static}
         self.assertRaises(
             TypeError,
             self.render_template,
-            "{% load render_html_field %}\n{% render_html_field section_chapter.chapter %}",
+            "{% load render_html_field %}\n{% render_html_field integration.topic %}",
             context
         )
 
     def test_render_html_field_missing_parameter(self):
-        chapter = self.test_data.create_chapter(1)
-        context = {"chapter": chapter}
+        topic = self.test_data.create_topic(1)
+        curriculum_integration_with_static = CurriculumIntegration.objects.create(
+            topic=topic,
+            slug="slug-2",
+            number=2,
+            name="2",
+            content="<img src='{% static 'img/logo-small.png' %}'>"
+        )
+        context = {"integration": curriculum_integration_with_static}
         rendered = self.render_template(
-            "{% load render_html_field %}\n{% render_html_field chapter.invalid %}",
+            "{% load render_html_field %}\n{% render_html_field integration.invalid %}",
             context
         )
         self.assertHTMLEqual(rendered, "")

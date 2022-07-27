@@ -2,7 +2,7 @@ from django.test import tag, override_settings
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-from tests.create_query_string import query_string
+from tests.helpers import query_string
 from http import HTTPStatus
 
 

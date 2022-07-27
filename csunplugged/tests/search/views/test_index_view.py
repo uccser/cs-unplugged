@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.core import management
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
-from tests.create_query_string import query_string
+from tests.helpers import query_string
 from topics.models import Topic, Lesson
 
 
