@@ -13,10 +13,6 @@ env:
 jobs:
   create-at-a-distance-files:
     name: Create at a distance files
-    if: |
-      (github.ref == 'refs/heads/develop')
-      || startsWith(github.ref, 'refs/heads/research-study-')
-      || github.event_name == 'release'
     runs-on: ubuntu-20.04
     strategy:
       matrix:
