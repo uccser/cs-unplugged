@@ -1,0 +1,61 @@
+{% extends "at_a_distance/base.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load render_html_field %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+    {{ lesson.name }}
+{% endblock title %}
+
+{% block breadcrumbs %}
+    {% breadcrumb lesson.name "at_a_distance:lesson" lesson.slug %}
+{% endblock breadcrumbs %}
+
+{% block extra_body_classes %}no-padding{% endblock extra_body_classes %}
+
+{% block body %}
+
+    <div id="controls-modal-background">
+        <div id="controls-modal">
+            <h3>Presentation controls</h3>
+            {% include "at_a_distance/components/reveal-controls-help.html" with blank=True fullscreen=True speaker_mode=True %}
+            <div class="centered">
+                <button id="controls-modal-close">Close or push any key</button>
+            </div>
+        </div>
+    </div>
+
+    {% include "at_a_distance/components/reveal-slides-structure.html" %}
+
+    <script>
+        var modal = document.getElementById("controls-modal-background");
+        modal.onclick = function(event) {
+            if (event.target == this) {
+                hideModal();
+            }
+        }
+
+        var model_close = document.getElementById("controls-modal-close");
+        model_close.onclick = hideModal;
+
+        var url = new URL(window.location.href);
+        if (url.searchParams.has("hide-controls-modal")) {
+            hideModal();
+        }
+
+        document.addEventListener('keydown', hideModal);
+
+        function hideModal() {
+            modal.style.display = "none";
+            document.removeEventListener('keydown', hideModal);
+        }
+    </script>
+
+    {% block scripts %}
+        {{ block.super }}
+        {% include "at_a_distance/components/reveal-initialize.html" with embedded="false" speaker_mode=True show_notes="false" %}
+    {% endblock scripts %}
+
+{% endblock body %}

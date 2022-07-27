@@ -18,6 +18,7 @@ urlpatterns = i18n_patterns(
     path('topics/', include('topics.urls', namespace='topics')),
     path('resources/', include('resources.urls', namespace='resources')),
     path('at-home/', include('at_home.urls', namespace='at_home')),
+    path('at-a-distance/', include('at_a_distance.urls', namespace='at_a_distance')),
     path('plugging-it-in/', include('plugging_it_in.urls', namespace='plugging_it_in')),
     path('moocs/', include('moocs.urls', namespace='moocs')),
 )

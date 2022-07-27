@@ -26,4 +26,5 @@ class Command(management.base.BaseCommand):
         management.call_command("loadgeneralpages", lite_load=lite_load)
         management.call_command("loadclassicpages", lite_load=lite_load)
         management.call_command("loadactivities", lite_load=lite_load)
+        management.call_command("load_at_a_distance_data")
         management.call_command("rebuild_search_indexes")

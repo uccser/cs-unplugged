@@ -40,6 +40,7 @@
 
 @import "pygments-vs";
 @import "directional";
+@import "at-a-distance";
 @import url('https://fonts.googleapis.com/css?family=Sniglet');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
@@ -83,6 +84,7 @@ h6 {
 .educator-colour { color: $educator-colour;}
 .at-home-colour { color: $at-home-colour;}
 .plugging-it-in-colour { color: $plugging-it-in-colour;}
+.at-a-distance-colour { color: $at-a-distance-colour;}
 
 input[type="text"].long-text-field {
   width: 20em;
@@ -359,11 +361,11 @@ $navbar-height: 50px;
 $navbar-padding-bottom: 24px;
 body {
   padding-top: $navbar-height;
-  &.homepage {
+  &.no-padding {
     padding-top: 0px;
   }
   position: relative;
-  background-color: $gray-100;
+  background-color: $background-colour;
 }
 
 #content-container {
@@ -389,7 +391,7 @@ body {
   padding: ($spacer * .25) $spacer;
 }
 
-#content-container table:not(.table) {
+#content-container table:not(.table):not(.hljs-ln) {
   display: block;
   margin-bottom: $spacer;
   width: 100%;
@@ -501,6 +503,12 @@ ol, ul {
       border-top-color: $plugging-it-in-colour;
       &:hover {
         background-color: mix($plugging-it-in-colour, $white, 10%);
+      }
+    }
+    &-at-a-distance-1 {
+      border-top-color: $at-a-distance-colour;
+      &:hover {
+        background-color: mix($at-a-distance-colour, $white, 10%);
       }
     }
     &-orange {

@@ -58,6 +58,7 @@ LOCAL_APPS = [
     "classic.apps.ClassicConfig",
     "at_home.apps.AtHomeConfig",
     "moocs.apps.MoocsConfig",
+    "at_a_distance.apps.AtADistanceConfig",
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -220,10 +221,11 @@ TEMPLATES = [
                 "bidiutils.context_processors.bidi",
             ],
             "libraries": {
+                "custom_tags": "config.templatetags.custom_tags",
+                "query_replace": "config.templatetags.query_replace",
+                "read_static_file": "config.templatetags.read_static_file",
                 "render_html_field": "config.templatetags.render_html_field",
                 "translate_url": "config.templatetags.translate_url",
-                "query_replace": "config.templatetags.query_replace",
-                'custom_tags': 'config.templatetags.custom_tags'
             },
         },
     },
@@ -337,9 +339,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # ------------------------------------------------------------------------------
 DEPLOYED = env.bool("DEPLOYED")
 GIT_SHA = env("GIT_SHA", default=None)
-if GIT_SHA:
-    GIT_SHA = GIT_SHA[:8]
-else:
+if not GIT_SHA:
     GIT_SHA = "local development"
 PRODUCTION_ENVIRONMENT = False
 STAGING_ENVIRONMENT = False
@@ -354,6 +354,7 @@ MODELTRANSLATION_CUSTOM_FIELDS = ("JSONField",)
 CLASSIC_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("classic")), "content")
 GENERAL_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("general")), "content")
 ACTIVITIES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("at_home")), "content")
+AT_A_DISTANCE_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("at_a_distance")), "content")
 BREADCRUMBS_TEMPLATE = "django_bootstrap_breadcrumbs/bootstrap4.html"
 JOBE_SERVER_URL = "http://jobe"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -363,3 +364,5 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "https://canterbury.ac.nz"
 ]
+# Used by speaker notes for at a distance slides
+X_FRAME_OPTIONS = "SAMEORIGIN"

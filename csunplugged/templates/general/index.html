@@ -7,7 +7,7 @@
     {% trans "CS Unplugged" %}
 {% endblock custom_title %}
 
-{% block body_attribute_overrides %} class="homepage"{% endblock body_attribute_overrides %}
+{% block extra_body_classes %}no-padding{% endblock extra_body_classes %}
 {% block navbar_class_overrides %} trans-navbar{% endblock navbar_class_overrides %}
 
 {% block body_container %}
@@ -87,6 +87,16 @@
                 <a class="link-item link-item-top link-item-top-at-home-1 no-text-decoration d-block mb-3" href="{% url 'at_home:index' %}">
                     <h3 class="mb-0">
                         {% trans "Activities" %}
+                    </h3>
+                    {% if LANGUAGE_CODE != "en" %}
+                        {% include "generic/not-available-badge.html" %}
+                    {% endif %}
+                </a>
+
+                <h2 class="at-a-distance-colour mt-4">At a distance</h2>
+                <a class="link-item link-item-top link-item-top-at-a-distance-1 no-text-decoration d-block mb-3" href="{% url 'at_a_distance:index' %}">
+                    <h3 class="mb-0">
+                        {% trans "Distance lessons" %}
                     </h3>
                     {% if LANGUAGE_CODE != "en" %}
                         {% include "generic/not-available-badge.html" %}

@@ -77,6 +77,17 @@ services:
             - "traefik.http.routers.cs-unplugged-docs.rule=Host(`docs.cs-unplugged.localhost`)"
             - "traefik.http.routers.cs-unplugged-docs.tls=true"
 
+    decktape:
+        build:
+            context: ./infrastructure/local/decktape/
+            dockerfile: Dockerfile
+        profiles:
+            - slides-pdf-generation
+        networks:
+            - backend
+        volumes:
+            - ./csunplugged/build/:/slides
+            - ./infrastructure/local/decktape/create-slide-files.js:/decktape/create-slide-files.js:z
 
 networks:
     backend:

@@ -1,0 +1,37 @@
+<div class="suitability-boxes">
+    <div class="suitability-box suitability-{{ lesson.suitable_for_teaching_students }}">
+        <div class="suitability-box-key">
+            Teaching students
+        </div>
+        <div class="suitability-box-icon">
+            {% if lesson.suitable_for_teaching_students == lesson.SUITABLE %}
+                ✓
+            {% elif lesson.suitable_for_teaching_students == lesson.NOT_SUITABLE %}
+                ✕
+            {% else %}
+                ~
+            {% endif %}
+        </div>
+        <div class="suitability-box-value">
+            {{ lesson.get_suitable_for_teaching_students_display }}
+        </div>
+    </div>
+    <div class="suitability-box suitability-{{ lesson.suitable_for_teaching_educators }}">
+        <div class="suitability-box-key">
+            Teaching educators
+        </div>
+        <div class="suitability-box-icon">
+            {% if lesson.suitable_for_teaching_educators == lesson.SUITABLE %}
+                ✓
+            {% elif lesson.suitable_for_teaching_educators == lesson.NOT_SUITABLE %}
+                ✕
+            {% else %}
+                ~
+            {% endif %}
+        </div>
+        <div class="suitability-box-value">
+            {{ lesson.get_suitable_for_teaching_educators_display }}
+        </div>
+    </div>
+
+</div>
