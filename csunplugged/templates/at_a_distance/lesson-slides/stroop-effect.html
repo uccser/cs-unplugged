@@ -111,14 +111,16 @@
             <p>
                 These next two activities are the same as our practice round, but with all the words on one page.
                 Say the colour the word is printed in, rather than the word.
-                The slide will look like this, which shows a timer; when you have read all of the words out loud, look at the timer at the bottom and note what time it is on when you finish.
+                The slide will look like this, which shows a timer.
+                When you have read all of the words out loud, look at the timer at the bottom and note what time it is on when you finish.
                 Are you ready?
-                Here's the list for you to read...
+                Here's the list for you to read.
+                Starting in 5, 4, 3, 2, 1...
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>
-            Count down from 5 seconds, then move to the next slide and say “Go!”.
+            Move to the next slide and say “Go!”.
         </p>
     </aside>
 </section>
@@ -146,6 +148,10 @@
     </div>
 
     <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            Go!
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
         <p>
             Wait about 10 seconds while participants read the colours to themselves.
         </p>
@@ -164,7 +170,7 @@
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>
-            Note the average time you have stated.
+            Record the average time you have stated.
         </p>
     </aside>
 </section>
@@ -194,10 +200,11 @@
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             We'll repeat the activity on the next slide, but this time the words will be “congruent” with the colours - the colour will be the same as the word.
             Let's see how long this one takes!
+            5, 4, 3, 2, 1...
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>
-            Countdown from 5 seconds, move to the next slide, and say “Go!”.
+            Move to the next slide, and say “Go!”.
         </p>
     </aside>
 </section>
@@ -225,6 +232,10 @@
     </div>
 
     <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            Go!
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
         <p>
             Wait about 8 seconds while participants read the colours to themselves.
         </p>
@@ -242,7 +253,7 @@
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>
-            Note the average time you have stated.
+            Record the average time you have stated.
         </p>
     </aside>
 </section>
@@ -292,11 +303,12 @@
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>
-            Wait for participants to comment and respond appropriately.
+            Watch participants for nodding or responses in chat.
         </p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
+                I can see several people nodding and we've had a couple of responses in the chat.
                 This activity is called the 'Stroop effect' and is a famous experiment from psychology named after John Ridley Stroop.
                 The Stroop test measures the amount of time it takes to say the name of the printed colours in an incongruent (incompatible, non-matching) list and compares this time to saying the name of the print colour in a congruent (agreeing, matching) list.
                 Stroop found that people were often 2 or 3 times slower trying to read incongruent information.
@@ -323,12 +335,15 @@
 
         <p>
             What for a couple of responses and respond appropriately.
-            <strong>Answer:</strong> if people are in a hurry, they will naturally press the green button to continue (green means “go”, orange means “warning”), but that will wipe all the information they have entered.
         </p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                A lot of people pressed the wrong button and lost all their work.
+                If people are in a hurry, they will naturally press the green button to continue (green means “go”, orange means “warning”), but that will wipe all the information they have entered.
+            </p>
+
+            <p>
+                In this example a lot of people pressed the wrong button and lost all their work.
                 You could say that they didn't read it properly, but usually people are under pressure when they are using systems, and don't have time to carefully consider every step.
                 If you expect them to do that, then it's like the Stroop effect.
                 A good interface shouldn't make people have to think hard.
@@ -358,7 +373,7 @@
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 This isn't a drastic problem, but you do have to think carefully, and the consequences of a mistake are severe.
-                Interfaces should be worded in a way that the user can confidently navigate it without having to stop and think hard all the time.
+                Interfaces should be worded in a way that the user can confidently navigate them without having to stop and think hard all the time.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
@@ -380,14 +395,16 @@
 
         <p>
             Wait for some responses and respond appropriately.
-            <strong>Answer:</strong> The month is in capital letters (“MAR”) but it should be written as “Mar”.
-            The format shows “MMM” which conflicts with the “Mar” example.
         </p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
+                Some of you have spotted it, the month is in capital letters (“MAR”) but it should be written as “Mar”.
+                The format shows “MMM” which conflicts with the “Mar” example.
+            </p>
+            <p>
                 These are examples of just one type of problem in interfaces: confusing people with potentially contradictory messaging, even though they can work out what to do if they think about it.
-                It only slows people down a little, but it can make them feel like you did when doing the Stroop experiment - frustrated and anxious, when they are trying to get their work done.
+                It only slows people down a little, but it can make them feel like you did when doing the Stroop experiment - frustrated and anxious - when they are trying to get their work done.
                 Good interface designers anticipate and avoid these sorts of problems.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
@@ -406,8 +423,8 @@
             </p>
             <p>
                 This kind of problem is just one of many ways that bad interfaces can make life difficult for computer users.
-                There are many other ideas from psychology that are important in interface design, such as the length of delays people can handle waiting for software to respond (spoiler: one tenth of a second is the limit in a lot of cases), how inconsistent designs can be confusing, and lots more.
-                Many of these things are fun when they are a game like the one we played, but can be very frustrating when the prevent someone from getting their job done.
+                There are many other ideas from psychology that are important in interface design, such as the length of delays people can handle waiting for software to respond (spoiler: one tenth of a second is the limit in a lot of cases), how inconsistent designs can be confusing, and many more.
+                A lot of these things are fun when they are a game like the one we played, but can be very frustrating when they prevent someone from getting their job done.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
