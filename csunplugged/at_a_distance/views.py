@@ -21,7 +21,7 @@ class IndexView(generic.ListView):
 class DeliveryGuideView(generic.TemplateView):
     """View for the devliery guide page."""
 
-    template_name = "at_a_distance/devliery-guide.html"
+    template_name = "at_a_distance/delivery-guide.html"
 
 
 class LessonView(generic.DetailView):
