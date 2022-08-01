@@ -44,7 +44,7 @@
     <meta name="msapplication-config" content="{% static 'img/browserconfig.xml' %}">
     <meta name="theme-color" content="#ffffff">
   </head>
-  <body style="text-align: {{LANGUAGE_START}};" class="{% block extra_body_classes %}{% endblock extra_body_classes %}">
+  <body id="top" style="text-align: {{LANGUAGE_START}};" class="{% block extra_body_classes %}{% endblock extra_body_classes %}">
     {% block body %}
 
     {% block navbar %}

@@ -386,9 +386,14 @@ body {
   background-color: lighten($green, 40%);
 }
 
-#scrollspy-table-of-contents .nav-link {
-  font-size: 0.9rem;
-  padding: ($spacer * .25) $spacer;
+ul#scrollspy-table-of-contents {
+    .nav-link {
+        font-size: 0.9rem;
+        padding: ($spacer * .25) $spacer;
+    }
+    & ul {
+        margin-left: 2rem;
+    }
 }
 
 #content-container table:not(.table):not(.hljs-ln) {

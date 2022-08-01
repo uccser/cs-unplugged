@@ -3,27 +3,21 @@
 {% load i18n static render_html_field django_bootstrap_breadcrumbs %}
 
 {% block title %}
-    Teaching CS Unplugged at a distance
+    Delivering CS Unplugged at a distance
 {% endblock title %}
 
 {% block breadcrumbs %}
-    {% breadcrumb "Teaching CS Unplugged at a distance" "at_a_distance:how_to_teach" %}
+    {% breadcrumb "Teaching CS Unplugged at a distance" "at_a_distance:devliery-guide" %}
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-    <h1>Teaching CS Unplugged at a distance</h1>
+    <h1>Delivering CS Unplugged at a distance</h1>
 {% endblock page_heading %}
 
 {% block content_container %}
     <div class="col-12 col-md-8 print-col-12">
         <p>
-            CS Unplugged at a Distance is a series of learning opportunities to grow your participants’ understanding of computer science concepts and how they relate to their world, whether your participants are students in a class, or teachers attending professional development.
-        </p>
-
-        <p>
-            CS Unplugged at a Distance is an adaptation of the CS Unplugged activities to support teachers faced with delivering teaching online, and those delivering professional development virtually.
-            The goal is for participants to have a close approximation to the usual in-person experience, for teachers learning about Unplugged, helping them to understand how teaching CS Unplugged face-to-face would work even if they aren’t able to experience it directly at the time.
-            It is a series of learning opportunities to grow your participants’ understanding of computer science concepts and how they relate to their world, whether your participants are students in a classroom, or teachers attending professional development.
+            These activities are based on live sessions using video conference systems such as Zoom, Google Meet, or Microsoft Teams. Below is a step-by-step guide for preparing to deliver CS Unplugged at a distance sessions.
         </p>
 
         <p>
@@ -33,286 +27,307 @@
         <div class="alert alert-warning">
             <strong>Disclaimer:</strong>
             The software, applications and equipment listed in this section and in the lessons are all tools that we used in 2021 - 2022 while developing these resources.
-            We have carefully considered the functionality that you need from these tools so that as new tools become available you are able to make an informed decision to use them.
         </div>
 
-        <h2>Age appropriateness of lessons</h2>
+        <h2 id="key-principles">Key principles</h2>
 
-        <p>
-            Many of these lessons state they are appropriate for ages 5+ years.
-            This does not mean that it is not worthwhile for older participants (even secondary school aged) to do these lessons.
-            More capable participants are likely to move through the lessons faster, but it is definitely worthwhile for them to do these same activities to support the computer science concepts taught through them.
-        </p>
+        <p>We followed several principles when designing lessons for online only situations:</p>
 
-        <h2>General tips for teaching CS Unplugged at a distance</h2>
+        <h3>Appropriate for all</h3>
 
-        <p>
-            This section summarises some general principles about transferring an engaging face-to-face experience to an online context; these were developed in the course of experimenting with different ways of delivering Unplugged online.
-        </p>
+        <p>The activities on CS Unplugged at a distance content have been taught at all age levels.</p>
 
-        <h3>Orientation with the video conferencing software</h3>
+        <h3>Easy to deliver</h3>
 
-        <p>
-            At the start of each session it’s good to ask some ice-breaker questions while people are joining your session.
-            If any participants can’t respond in the intended matter it’s a good time to help them understand how to use the video conferencing software.
-            Sometimes different versions of the software may mean that some participants don’t have the same features available, or don’t see the same layout, so you may need to adjust your presentation to take account of that.
-        </p>
+        <p>Our content has everything you need within the online slide deck. Each lesson has one key computer science concept for you to focus on.</p>
 
-        <h4>Icebreaker example questions</h4>
+        <h3>Considerate of people’s time</h3>
+
+        <p>These presentations are concise and easy for facilitators, as well as making the best use of the participants’ time.</p>
+
+        <h2 id="planning-a-session">Planning a session</h2>
+
+        <p>This section supports you to plan and prepare for delivering a session.</p>
+
+        <h3 id="general-presentation-considerations">General presentation considerations</h3>
 
         <ul>
-            <li>
-                Start with a simple question such as “Where are you joining us from?” or even “What’s your favourite colour?” and have them reply in the chat.
-            </li>
-            <li>
-                Send an emoji in the chat; to give this purpose, you could ask them to send one that reflects how their day is going.
-            </li>
-            <li>
-                Explore the reactions feature (typically a thumbs up/down or hand up) by asking questions like “do you like ice cream?” and “are you ready for a holiday?”
-                If these aren’t available in your system, participants can use a physical thumbs up/down with their video on, or with text in the chat.
-            </li>
+            <li>Have separate notes and/or print the speaker notes. This allows you to focus on facilitating and following the suggested script and facilitation notes while avoiding the audience seeing them.</li>
+            <li>Opening a presentation room 15 minutes before the start time allows participants to make sure they are logged in with time to resolve any technical issues before the presentation begins.</li>
+            <li>Mute participants' microphones unless they are speaking.</li>
         </ul>
 
-        <h3>Facilitation notes</h3>
+        <details>
+            <summary>Looking for ways to maintain the CS Unplugged feel</summary>
+            <div class="boxed-text-content">
+                <p>
+                    The lessons include interactives, so you don’t need to use any props.
+                    You may want to incorporate physical CS Unplugged material into your presentation to demonstrate how it works face-to-face.
+                </p>
+
+                <p>Here’s some ways you might do that:</p>
+
+                <ul>
+                    <li>
+                        If you are using a whiteboard, have a whiteboard behind you (or a small hand-held whiteboard).
+                        Consider where you are positioned and how easy it is to transition between teaching at the whiteboard and your screen.
+                    </li>
+                    <li>
+                        If you are holding up an object to the camera, remember that a blurred background setting may mean that your audience can’t see the object unless it’s in front of you.
+                    </li>
+                    <li>
+                        If you have a document camera directly connected as your main camera (rather than via screen sharing), make sure special effects like blurring backgrounds or ‘touching up appearance’ are switched off.
+                    </li>
+                </ul>
+            </div>
+        </details>
+
+        <h3 id="online-platform">Which online platform will you use?</h3>
 
         <p>
-            Each of your participants may have differing levels of confidence using their device.
-            Be aware that the layout, menus and features may be different between platforms and devices, such as iPads, tablets, Windows, MacOs (Apple) and mobile phones.
+            Some organisations and schools only allow one platform such as Zoom, Microsoft Teams, or Google Meet to be used, and some will block access to other platforms.
+            Make sure that you have mentioned what platform you are using in your promotional material.
         </p>
+
+        <h3 id="platform-settings-and-features">Familiarising yourself with the platforms settings and features</h3>
 
         <p>
-            Using the chat functionality is usually an effective way to engage participants.
-            We have found it to be an excellent primary method of getting audience feedback.
-            As a facilitator, be mindful that it does take time for your participants to think of an answer, type it, and for it to appear in the chat.
-            The response time depends on the question, and it could take up to 20 seconds before answers start to appear.
-            It’s important to not speak during that time to allow people to think.
-            If it’s a small group, open the discussion by unmuting your participants’ mics and ask them to indicate they have something to add by raising their hand.
+            We recommend using the following security settings to ensure your presentation is not accidentally interrupted:
         </p>
 
-        <p>
-            Breakout rooms can sometimes be useful during large online workshop presentations, but we have written these resources to keep the participants together online in the same room.
-            Using breakout rooms can require some experience for them to be effective, and can depend on having people available to facilitate them if you have a lot of participants.
-            The time it takes to organise people into the breakout rooms can interrupt the flow of a session, but if you’re confident using them, they can be used with discretion to manage the activities.
-        </p>
-
-        <p>
-            Likewise, polls and reactions are often available in video conference systems, but these can also be disruptive to the flow of the presentation, despite being an obvious way to get feedback.
-        </p>
-
-        <p>
-            If participants have cameras available, they are comfortable having them on, and you can view all the participants' cameras at the same time, participants could respond through their camera.
-            You could ask them to have a pad and paper ready and they hold up the answers in front of the camera.
-            Alternatively, small numbers could be indicated by holding up that number of fingers, and yes/no answers could be indicated with a physical thumbs up/down gesture.
-            Although these can all be done using online reactions and chat, using video like this can introduce slightly more physical engagement and makes responding less dependent on navigating the video interface.
-        </p>
-
-        <p>
-            It’s good if your online platform is set up so that you can mute individuals and mute the entire group, otherwise online platforms tend to switch to the participants who are speaking (including background noises) which can interrupt the flow of your session.
-            Be aware that if a participant is wearing noise cancelling headphones they may not be aware of the noise around them that other participants in your session may be able to hear if they are not on mute.
-        </p>
-
-        <p>
-            Sharing slides and screen sharing can make seeing your own speaker notes complicated.
-            If you don't have the ability to do this easily, we recommend printing the provided speaker notes.
-            This allows you to focus on facilitating and following the suggested script and facilitation notes while avoiding the audience seeing them.
-        </p>
-
-        <h3>Preparation and planning checklist</h3>
-
-        <p>
-            This section supports you to plan and prepare for your CS Unplugged at a Distance session.
-            The answers to these questions will support you to meet the learning needs of your participants.
-            This process will also highlight what information you should include when promoting your session, for example, the online platform you are using and what equipment participants should bring to the session.
-        </p>
-
-        <h4>How will your participants be accessing this session?</h4>
-
-        <p>
-            The reason we ask this question is that it affects how you ask people to respond - if multiple people are viewing on the same screen then they may not be able to answer individually.
-            The language you use in the session will help ensure everyone feels that they are involved e.g. asking a representative of each group to send responses to questions.
-        </p>
-
-        <p>Consider the different ways people may be viewing the session:</p>
+        <div class="alert alert-info">
+            <strong>Note:</strong> Some of these settings may not be available until the meeting is running.
+        </div>
 
         <ul>
-            <li>
-                Each person signing in from their own device: how will you let them know that the screen needs to be large enough to be able to view what is happening on the screen and access the ‘chat’ feature of the platform at the same time?
-            </li>
-            <li>
-                One screen (TV or data projector), camera and audio system with a group of 2 or more participants viewing it, with one person typing responses.
-            </li>
-            <li>
-                A shared screen and audio system with a group of 2 or more participants signing in from their own device (to interact from their own device, in which case they need to make sure their microphone and speaker are muted on their own device).
-            </li>
+            <li>Removing the participants ability to share their screen.</li>
+            <li>You may want to consider allowing or disabling the ability for participants to unmute themselves or show their video.</li>
         </ul>
 
-        <h4>Which online platform will you use?</h4>
-
         <p>
-            Some organisations and schools only allow one platform to be used, and some will block access to other platforms.
-            Participants may need to gain permission in advance to access your session, or access it from a home network where access isn’t blocked.
-            You may want to set up a meeting in advance for those wanting to check if they can access the online platform.
+            We highly recommend familiarising yourself with how to mute or unmute a participant if needed.
+            Online platforms tend to switch the screen to show whoever is speaking (including background noises) which can interrupt the flow of your session.
         </p>
 
-        <ul>
-            <li>Zoom</li>
-            <li>Microsoft Teams</li>
-            <li>Google Meet</li>
-        </ul>
-
-        <h4>What access will you give your participants?</h4>
+        <h3 id="participant-interaction">How will your participants interact with this session?</h3>
 
         <p>
-            Controlling access can be useful for security, but it can also mean that late arrivals might be disruptive if they need to be admitted, or arrive with the microphone turned on.
-            It’s good to allow for early arrivals; this can be a chance to connect with some of the audience.
+            Encouraging participation is key to making online sessions engaging.
+            Most platforms offer a variety of options for interacting with participants, but we have found the most immediate and reliable system is the standard text chat.
+            Participants can get a strong sense of the group's responses as they see them go past in the chat window.
+            Our lessons have been designed to only use this feature.
+            If it is a smaller group (fewer than 10) allowing participants to speak can also work.
         </p>
 
-        <p>
-            Consider how arrivals will access the session:
-        </p>
+        <details>
+            <summary>Other interaction features</summary>
+            <div class="boxed-text-content">
+                <p>
+                    Some of the Unplugged activities would seem to work well with polls and audience responses systems, but these can take some time to set up, and you often have to wait until everyone has responded, which can interrupt the flow of the session.
+                </p>
 
-        <ul>
-            <li>Wait to be admitted?</li>
-            <li>Be in a waiting room until you arrive?</li>
-            <li>Join the online platform room when they click on the link?</li>
-            <li>Muted and cameras off when they join?</li>
-        </ul>
+                <p>
+                    Consider the financial cost (to you and your participants) and immediacy of responses with different software.
+                    Sometimes “trial” versions of software have limitations that can interrupt the flow of the event.
+                    Also by using features built into the video conference system (such as text chat) avoids asking participants to install more software.
+                </p>
 
-        <h4>How will your participants interact with this session?</h4>
+                <p>
+                    Often the previous messages in the chat aren't available to people who join late; for example, if you post a link to a web page that they should be looking at, late arrivees may not be able to see the link.
+                    You may need to repeat messages for new arrivals.
+                </p>
+            </div>
+        </details>
 
-        <p>
-            Encouraging feedback and participation is key to making online sessions engaging.
-            Platforms offer a variety of options for this; “chat” is generally the most immediate, and in our experience the best to use because participants can respond quickly.
-            If you’re asking for a vote, it may not be private or completely accurate to have them vote using chat, but the immediacy can outweigh that, and participants can get a strong sense of responses as they see them go past in the chat window.
-            If you were there in person, you might have asked for a show of hands, and that wouldn’t be private or completely accurate either.
-        </p>
-
-        <p>
-            Some of the Unplugged activities would seem to work well with polls and audience responses systems, but these can take some time to set up, and you often have to wait until everyone has responded, which can interrupt the flow of the session.
-        </p>
+        <h3 id="recording">Are you recording this session?</h3>
 
         <p>
-            When taking into account which approach to use, considerations will include the cost (to you and your participants) and immediacy.
-            Sometimes “trial” versions of software have limitations (such as the length of a meeting) that can badly interrupt the flow of the event.
-            Also, try to use features built into the video conference system to avoid asking people to install more software.
-        </p>
-
-        <p>
-            One point to be aware of with some chat features is that often the previous content isn’t available to people who join late; for example, if you post a link to a web page that they should be looking at, late arrivees may not be able to see the link.
-            Look for features such as “pinning” information.
-        </p>
-
-        <p>
-            Spend time looking at how you can customise your meetings to meet your specific session needs, and if you’re not familiar with the system, experiment with a friend acting as the audience.
-        </p>
-
-        <p>
-            A list of features and tools we have used are below.
-            Which ones are you considering for your session?
-        </p>
-
-        <ul>
-            <li>Chat</li>
-            <li>Polls</li>
-            <li>Reactions</li>
-            <li>Using emojis in the chat</li>
-            <li>Verbal through microphone</li>
-            <li>Whiteboard</li>
-            <li>Shared platform - such as a shared document or slides that participants can access information from, or even contribute to</li>
-            <li>Audience response systems such as Socrative, Mentimeter, Kahoot!, Slido, Poll Everywhere</li>
-        </ul>
-
-        <h4>Which online presentation and interactive tool(s) are you considering using for this session?</h4>
-
-        <p>
-            The following tools provide alternative solutions to share information with participants, and allow them to share their own thoughts and ideas.
-            Some options place some trust on participants to not remove material added by other participants, while others keep track of each individual’s contribution.
-            Remember to check the sharing rights of any files.
-            To check to see if people will have access to files you will be sharing, use the ‘incognito’ feature on your web browser and then open the link you will be sharing with your participants.
-        </p>
-
-        <p>
-            Put time aside to look at the features of the tools you have chosen and consider which would be best for answering your questions.
-            Are you wanting to be able to go back to the answers at the end of the session or in future sessions?
-            If the answer is yes, then consider an application like Padlet or Jamboard; if it’s no, then chat may be the simplest way to do it.
-        </p>
-
-        <p>
-            Here is a list of tools that we have used with online sessions; which one(s) are you considering for your session?
-        </p>
-
-        <ul>
-            <li>Google Slides</li>
-            <li>Powerpoint</li>
-            <li>Padlet</li>
-            <li>Google Jamboard</li>
-            <li>Kahoot</li>
-            <li>Quizlet</li>
-            <li>Seesaw</li>
-            <li>Google classroom</li>
-            <li>Slido</li>
-            <li>MS Sway</li>
-            <li>Prezi</li>
-        </ul>
-
-        <h4>Are you recording this session?</h4>
-
-        <p>
-            Sometimes people will ask you to record a session, although this raises privacy risks (including surprise walk-ins), can inhibit questions and conversations, and people watching later miss out on the engagement that attendees would have.
+            Sometimes people will ask you to record a session.
+            This raises privacy risks, and can inhibit questions and conversations.
             If someone can’t be there live, it may be better to offer an alternative repeat session, or post a summary in a different format that’s more suitable for them to read or view.
         </p>
 
-        <ul>
-            <li>Yes, I have taken the participants’ privacy and willingness to participate into account.</li>
-            <li>No, I’m not recording this session.</li>
-        </ul>
+        <p>If you are using breakout rooms recording becomes problematic as you can’t usually record the conversations in the breakout rooms.</p>
 
-        <h4>How are you taking into account privacy for your participants including but not limited to:</h4>
+        <h2 id="running-a-session">Running a session</h2>
 
-        <ul>
-            <li>Background and where the participants are</li>
-            <li>Encouraging people to have their camera on but not requiring it</li>
-            <li>Conversations happening in the background</li>
-            <li>Referring to participants by name or location</li>
-            <li>Participants giving consent to be recorded</li>
-        </ul>
+        <p>Running an online session (especially the first time) can be stressful but we have provided some tips below to make it as smooth as possible.</p>
+
+        <h3 id="accessing-session">How are your participants accessing this session</h3>
+
+        <p>Consider the different ways people may be viewing the session, such as individually or in groups, and how this might affect the way you interact with your participants.</p>
+
+        <details>
+            <summary>Hearing feedback?</summary>
+            <div class="boxed-text-content">
+                <p>
+                    Have each participant mute their microphone unless they’re speaking.
+                    If feedback is still occurring, make sure the speaker’s speaker is not too loud.
+                </p>
+            </div>
+        </details>
+
+        <details>
+            <summary>Participants watching in groups?</summary>
+            <div class="boxed-text-content">
+                <p>
+                    Encourage each participant to sign in on their own device so they can use the chat feature individually.
+                    They will need to have their microphone and speaker muted so they don’t hear the audio multiple times.
+                </p>
+            </div>
+        </details>
+
+        <h3 id="familiarising-participants">Familiarising your participants with the online platform</h3>
 
         <p>
-            After the session you can record a separate summary or edit out conversations of the recorded session.
-            Bear in mind that if the chat is an important part of the session, it may need to be recorded, and if it can’t, the commentary could be used to explain what is happening to people watching the recording e.g. “I see that most people have answered ‘yes’”.
-            If you are using breakout rooms recording becomes problematic as you can’t usually record the conversations in the breakout rooms.
+            It’s good to ask some ice-breaker questions while people are joining your session.
+            You could ask for responses in the chat to questions like “Where are you/your group joining us from?” or “What age group do you teach?”.
+            This is a great opportunity for participants to get familiar with the chat functionality.
         </p>
 
-        <h4>What is your back up plan if you as the facilitator loses access to the session while you are live?</h4>
+        <h3 id="engaging-audience">Engaging your audience</h3>
+
+        <p>
+            Using the chat functionality is an effective way to engage participants.
+            As a facilitator, be mindful that it does take time for your participants to think of an answer, type it, and for it to appear in the chat.
+            The response time depends on the question, and it could take up to 20 seconds before answers start to appear.
+            It’s important to not speak during that time to allow people to think.
+        </p>
+
+        <p>If it’s a small group, open the discussion by allowing your participants to unmute their mics and ask them to indicate they have something to add by raising their hand.</p>
+
+        <details>
+            <summary>Other features</summary>
+            <div class="boxed-text-content">
+                <p>
+                    Breakout rooms can sometimes be useful during large online workshop presentations, but we have written these resources to keep the participants together.
+                    Using breakout rooms can require some experience to be effective, and can depend on having people available to facilitate them if you have a lot of participants.
+                    The time it takes to organise people into breakout rooms can interrupt the flow of a session, but if you’re confident using them, they can be used with discretion to manage activities.
+                </p>
+            </div>
+        </details>
+
+        <h3 id="participant-privacy">Participant privacy</h3>
+
+        <p>Supporting the privacy of participants is important, especially if you’re recording the session. Here are some general tips:</p>
 
         <ul>
             <li>
-                Present with two facilitators, where both have full access (both are “hosts”).
-                One person’s role could be to facilitate and the other as technical support and monitoring the chat.
-                The support person can fill in if the main presenter is temporarily dropped off the session.
+                Remind participants at the beginning of each session that others can see their background.
+                Allow them to turn their cameras off if they like.
             </li>
             <li>
-                Have a mobile device fully charged, with internet connectivity, ready to log into the online platform in case your primary device fails.
+                Remind participants at the beginning of each session that they can change their name that appears on their screen for others to see.
+            </li>
+            <li>
+                Familiarise yourself with how to mute individual participants in case they unmute themselves and unwanted sound is heard.
+            </li>
+        </ul>
+
+        <h3 id="if-things-go-wrong">If things go wrong</h3>
+
+        <p>
+            Firstly, don’t stress, things go wrong, we are all human.
+            Here are some ways you can prepare yourself for the unexpected.
+        </p>
+
+        <ul>
+            <li>
+                Remember the mute functionality is great for stopping disruptions.
+            </li>
+            <li>
+                Check what the host connection rights are in the online platform if the host drops out.
+                Will the session automatically end?
             </li>
             <li>
                 Have a way to communicate with participants if the live session is terminated unexpectedly (e.g. have their email addresses at hand so you can quickly send information about what you will do).
             </li>
+            <li>
+                Have a mobile device fully charged, with internet connectivity, ready to log into the online platform in case your primary device fails.
+            </li>
         </ul>
 
-        <p>
-            It’s helpful to check what the host connection rights are in the online platform (for example, if the host drops out will the session automatically end?)
-        </p>
+        <p class="text-center">And remember to have fun!</p>
     </div>
     <div class="col-12 col-md-4 print-col-12">
-        {% comment %} <div id="sticky-sidebar" class="position-sticky d-print-none">
+        <div id="sticky-sidebar" class="position-sticky d-print-none">
             <h2 class="mb-2">{% trans "Table of contents" %}</h2>
             <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-
+                    <a class="nav-link" href="#top">
+                        Introduction
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#key-principles">
+                        Key principles
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#planning-a-session">
+                        Planning a session
+                    </a>
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#general-presentation-considerations">
+                                General presentation considerations
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#online-platform">
+                                Which online platform will you use?
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#platform-settings-and-features">
+                                Familiarising yourself with the platforms settings and features
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#participant-interaction">
+                                How will your participants interact with this session?
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#recording">
+                                Are you recording this session?
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#running-a-session">
+                        Running a session
+                    </a>
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#accessing-session">
+                                How are your participants accessing this session
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#familiarising-participants">
+                                Familiarising your participants with the online platform
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#engaging-audience">
+                                Engaging your audience
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#participant-privacy">
+                                Participant privacy
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#if-things-go-wrong">
+                                If things go wrong
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
-        </div> {% endcomment %}
+        </div>
     </div>
 {% endblock content_container %}
