@@ -16,9 +16,9 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10 text-center">
                     <img src="{% static 'img/cs-unplugged-logo-at-a-distance.svg' %}" class="img-fluid my-5" alt="CS Unplugged at a distance logo">
-                    <h2 class="h4 text-dark">
+                    <h2 class="h1 text-dark">
                         {% blocktrans trimmed %}
-                            Teach CS Unplugged remotely to students, or to train educators.
+                            Teach CS Unplugged online
                         {% endblocktrans %}
                     </h2>
                 </div>
@@ -46,41 +46,50 @@
             </div>
         {% endif %}
 
-        <div class="row my-5" id="at-a-distance-lead">
-            <div class="col-12 col-md-5">
+        <div class="row justify-content-center my-5" id="at-a-distance-lead">
+            <div class="col-12 col-md-4 col-lg-3">
                 <img class="img-fluid mb-3" src="{% static 'img/at_a_distance/teaching-online.png' %}">
             </div>
-            <div class="col-12 col-md-7">
+            <div class="col-12 col-md-6 col-lg-7">
                 <p>
-                    We recommend teaching CS Unplugged at a distance when you are unable to teach computer science concepts face to face.
-                    There are many situations where delivering teaching or professional development can only be done online.
+                    CS Unplugged at a distance is a series of short lessons adapted from CS Unplugged activities that are suitable for teaching online to students, or for training educators.
                 </p>
-                <p>
-                    CS Unplugged at a distance is an adaption of the CS Unplugged activities to help to understand how teaching CS Unplugged face to face would work when you are back in front of your students.
-                </p>
-                <p>
-                    Click the button below to learn how to teach this content:
-                </p>
-                <a href="{% url "at_a_distance:how_to_teach" %}" class="btn btn-at-a-distance">
-                    How to teach CS Unplugged at a distance
-                </a>
+                <div class="alert alert-warning">
+                    CS Unplugged is <a href="{% url 'general:principles' %}">always better in person</a>!
+                    But if you find yourself having to facilitate online, this content is adapted to support this.
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-center">Start here</h2>
+        <div class="row justify-content-center">
+            <div id="at-a-distance-guide" class="col-12 col-lg-10">
+                <div class="mb-4">
+                    <a class="link-item no-text-decoration d-block p-0" href="{% url 'at_a_distance:delivery-guide' %}">
+                        <div class="row align-items-center h-100 my-2">
+                            <div class="col">
+                                <h2 class="text-center my-4">
+                                    Guide to deliver CS Unplugged at a distance
+                                </h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
 
         <h2 class="text-center">Lessons</h2>
         <div class="row justify-content-center">
-            <div id="lessons" class="col-12 col-lg-10">
+            <div id="at-a-distance-lessons" class="col-12 col-lg-10">
                 {% for lesson in lessons %}
                     <div class="mb-4">
                         <a class="link-item no-text-decoration d-block p-0{% if not lesson.translation_available %} unavailable{% endif %}" href="{% url 'at_a_distance:lesson' lesson.slug %}">
                             <div class="row align-items-center h-100 my-2">
-                                <div class="d-none col-md-1 d-md-flex justify-content-end align-items-end">
+                                <div class="col">
                                     {% if lesson.icon %}
-                                        <img class="img-fluid" src="{% static lesson.icon %}">
+                                        <img class="d-none d-lg-inline-block img-fluid at-a-distance-icon ml-3" src="{% static lesson.icon %}">
                                     {% endif %}
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <h2>{{ lesson.name }}</h2>
+                                    <h2 class="d-block d-md-inline-block text-center text-md-left my-2 mx-3">{{ lesson.name }}</h2>
                                     {% if not lesson.translation_available %}
                                         {% include "generic/not-available-badge.html" %}
                                     {% endif %}
@@ -94,5 +103,6 @@
                 {% endfor %}
             </div>
         </div>
+
     </div>
 {% endblock body_container %}

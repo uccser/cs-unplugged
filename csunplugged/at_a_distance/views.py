@@ -18,10 +18,10 @@ class IndexView(generic.ListView):
     context_object_name = "lessons"
 
 
-class HowToTeachView(generic.TemplateView):
-    """View for the how to teach page."""
+class DeliveryGuideView(generic.TemplateView):
+    """View for the devliery guide page."""
 
-    template_name = "at_a_distance/how-to-teach.html"
+    template_name = "at_a_distance/devliery-guide.html"
 
 
 class LessonView(generic.DetailView):

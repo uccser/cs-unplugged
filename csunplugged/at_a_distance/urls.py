@@ -13,9 +13,9 @@ urlpatterns = [
     ),
     # eg: /at-a-distance/how-to-teach/
     path(
-        'how-to-teach/',
-        views.HowToTeachView.as_view(),
-        name='how_to_teach'
+        'delivery-guide/',
+        views.DeliveryGuideView.as_view(),
+        name='delivery-guide'
     ),
     # eg: /at-a-distance/speaker-notes/
     path(
