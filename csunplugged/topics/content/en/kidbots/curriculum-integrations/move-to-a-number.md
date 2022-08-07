@@ -1,6 +1,6 @@
 # Move to a number
 
-Using the same structure and resources as the [Rescue Mission]('topics:lesson' 'kidbots' 'unit-plan' 'rescue-mission') lesson, we can integrate numeracy with Kidbots.
+Using the same structure and resources as the [Rescue Mission]('topics:lesson' 'kidbots' 'rescue-mission') lesson, we can integrate numeracy with Kidbots.
 
 ## Lesson activity
 

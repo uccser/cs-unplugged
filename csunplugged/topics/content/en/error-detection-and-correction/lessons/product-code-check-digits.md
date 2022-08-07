@@ -24,7 +24,7 @@ A demonstration of lesson two ("Product Code Check Digits") being taught is avai
 
 # Preparatory knowledge
 
-It is helpful, but not essential, for students to have done the [lesson on the Modulo operator]('topics:lesson' 'unplugged-programming' 'numeracy-unit-plan' 'modulo') before doing this lesson.
+It is helpful, but not essential, for students to have done the [lesson on the Modulo operator]('topics:lesson' 'kidbots' 'modulo') before doing this lesson.
 
 {panel end}
 

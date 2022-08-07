@@ -1,6 +1,6 @@
 # Moving in a shape
 
-Using the same structure and resources as the [Rescue Mission]('topics:lesson' 'kidbots' 'unit-plan' 'rescue-mission') lesson, we can integrate geometry with Kidbots.
+Using the same structure and resources as the [Rescue Mission]('topics:lesson' 'kidbots' 'rescue-mission') lesson, we can integrate geometry with Kidbots.
 
 ## Key questions
 
