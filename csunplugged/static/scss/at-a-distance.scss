@@ -152,7 +152,7 @@
     }
 }
 .btn-at-a-distance {
-    border: none;
+    border: 1px solid mix($at-a-distance-colour, #fff, 80%);
     color: #fff;
     background-color: $at-a-distance-colour;
     &:hover, &:active {

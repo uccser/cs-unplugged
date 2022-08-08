@@ -516,6 +516,12 @@ ol, ul {
         background-color: mix($at-a-distance-colour, $white, 10%);
       }
     }
+    &-at-a-distance-2 {
+      border-top-color: mix($at-a-distance-colour, $white, 80%);
+      &:hover {
+        background-color: mix($at-a-distance-colour, $white, 10%);
+      }
+    }
     &-orange {
       border-top-color: $orange;
       &:hover {
