@@ -14,6 +14,8 @@
         fragments: {{ fragments|default:'true' }},
         transition: 'none',
         backgroundTransition: 'fade',
+        viewDistance: 1,
+        mobileViewDistance: 1,
 
         plugins: [
             {% if speaker_mode %}CSU_ATD_SpeakerNotes,{% endif %},
