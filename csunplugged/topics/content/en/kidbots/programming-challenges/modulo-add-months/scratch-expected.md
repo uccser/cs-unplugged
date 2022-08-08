@@ -21,7 +21,7 @@ set [new month v] to (((original month) + (months to add)) mod (12))
 ```
 
 ```scratch
-ask [Type in a number betweem 1 and 12 for a month of the year:] and wait
+ask [Type in a number between 1 and 12 for a month of the year:] and wait
 
 ask [Enter the number of months to add to the month:] and wait
 ```
