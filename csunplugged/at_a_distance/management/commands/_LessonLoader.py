@@ -2,6 +2,7 @@
 
 from django.db import transaction
 from utils.TranslatableModelLoader import TranslatableModelLoader
+from utils.check_required_files import find_image_files
 from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
@@ -49,6 +50,10 @@ class AtADistanceLessonLoader(TranslatableModelLoader):
                 ],
                 "Lesson"
             )
+
+        icon_path = self.lesson_data.get('icon')
+        if icon_path:
+            find_image_files([icon_path], self.structure_file_path)
 
         # Suitability values
         suitability_options = [i[0] for i in Lesson.SUITABILITY_CHOICES]
@@ -100,6 +105,7 @@ class AtADistanceLessonLoader(TranslatableModelLoader):
             slug=self.lesson_slug,
             defaults={
                 'order_number': order_number,
+                'icon': icon_path,
                 'suitable_for_teaching_students': suitable_teaching_students,
                 'suitable_for_teaching_educators': suitable_teaching_educators,
             },

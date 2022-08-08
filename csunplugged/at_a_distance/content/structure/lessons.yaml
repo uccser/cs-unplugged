@@ -1,20 +1,24 @@
 stroop-effect:
     order-number: 1
+    # icon: img/at_a_distance/stroop-effect/stroop-effect-icon.svg
     suitable-for-teaching-students: suitable
     suitable-for-teaching-educators: suitable
     supporting-resources: true
 algorithms:
     order-number: 2
+    # icon: img/at_a_distance/algorithms/algorithms-icon.svg
     suitable-for-teaching-students: suitable
     suitable-for-teaching-educators: suitable
     supporting-resources: true
 binary-representation:
     order-number: 3
+    # icon: img/at_a_distance/binary-representation/binary-representation-icon.svg
     suitable-for-teaching-students: not-recommended
     suitable-for-teaching-educators: suitable
     supporting-resources: true
 parity-magic:
     order-number: 4
+    # icon: img/at_a_distance/parity-magic/parity-magic-icon.svg
     suitable-for-teaching-students: suitable
     suitable-for-teaching-educators: suitable
 # qr-codes:
@@ -35,6 +39,7 @@ parity-magic:
 #     suitable-for-teaching-educators: suitable
 finite-state-automata:
     order-number: 9
+    # icon: img/at_a_distance/finite-state-automata/finite-state-automata-icon.svg
     suitable-for-teaching-students: not-recommended
     suitable-for-teaching-educators: suitable
     supporting-resources: true

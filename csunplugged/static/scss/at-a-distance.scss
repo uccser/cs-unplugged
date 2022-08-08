@@ -28,6 +28,12 @@
     background-color: $at-a-distance-colour;
 }
 
+#at-a-distance-lessons {
+    img.at-a-distance-icon {
+            max-height: 5rem;
+    }
+}
+
 #slides.slides-embedded {
     border: 1px solid grey;
     position: relative;
@@ -187,6 +193,6 @@
     }
     .suitability-box-icon {
         font-size: 4rem;
-        line-height: 4rem;
+        line-height: 3rem;
     }
 }
