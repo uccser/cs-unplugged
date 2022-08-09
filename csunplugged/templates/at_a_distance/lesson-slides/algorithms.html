@@ -144,7 +144,7 @@
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                The first thing we did was found out the first number.
+                The first thing we did was find out the first number.
                 The first number was [say recorded first number].
                 We had nothing to compare it to, so it was our biggest number so far.
                 What shall we call it for our program?
@@ -239,6 +239,10 @@
             <p>
                 At the end we say what the high score was.
             </p>
+            <p>
+                To keep this program simple, it only handles numbers.
+                It would require extra blocks to test the inputs for invalid inputs like letters.
+            </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
 </section>
@@ -328,6 +332,8 @@
     {% include "at_a_distance/components/algorithms-python.html" with interactive=True%}
 
     <aside class="notes">
+        <p>Click the <code>▶ Run</code> button at the top of the interactive if the "Type in a score:" prompt doesn't show.</p>
+
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 Now lets try it out.
@@ -339,11 +345,13 @@
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>
-            Click next to <code>Type in a score:</code>.
-            Type in a score, say it out loud, and hit <kbd>Enter</kbd>.
-            Do this 4 more times.
-            Point out that it has identified the highest score.
+            Click within the interactive box.
+            Type in a score, say it out loud, and press the <kbd>Enter</kbd> key.
+            Repeat this 4 more times.
+            Point out that the program has displayed the highest score.
         </p>
+
+        <p>You can click the <code>▶ Run</code> button to rerun the program if you wish.</p>
     </aside>
 </section>
 
