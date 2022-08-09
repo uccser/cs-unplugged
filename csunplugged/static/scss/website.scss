@@ -41,8 +41,14 @@
 @import "pygments-vs";
 @import "directional";
 @import "at-a-distance";
-@import url('https://fonts.googleapis.com/css?family=Sniglet');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+@font-face {
+    font-family: "CS Unplugged Headings";
+    src: url('/static/fonts/CSUnplugged-Headings.otf') format('opentype');
+    font-style: normal;
+    font-weight: normal;
+}
 
 .at-home-divider {
     border-top: 3px solid $at-home-colour;

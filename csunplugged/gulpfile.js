@@ -52,6 +52,7 @@ function pathsConfig(appName) {
         js_source: `${staticSourceRoot}/js`,
         images_source: `${staticSourceRoot}/img`,
         files_source: `${staticSourceRoot}/files`,
+        fonts_source: `${staticSourceRoot}/fonts`,
         vendor_js_source: [
             `${vendorsRoot}/jquery/dist/jquery.js`,
             `${vendorsRoot}/popper.js/dist/umd/popper.js`,
@@ -65,6 +66,7 @@ function pathsConfig(appName) {
         images_output: `${staticOutputRoot}/img`,
         js_output: `${staticOutputRoot}/js`,
         files_output: `${staticOutputRoot}/files`,
+        fonts_output: `${staticOutputRoot}/fonts`,
     }
 }
 
@@ -186,6 +188,12 @@ function files() {
         .pipe(dest(paths.files_output))
 }
 
+// Custom fonts files
+function fonts() {
+    return src(`${paths.fonts_source}/**/*`)
+        .pipe(dest(paths.fonts_output))
+}
+
 // Browser sync server for live reload
 // TODO: Not yet working
 // function initBrowserSync() {
@@ -222,7 +230,8 @@ const generateAssets = parallel(
     js,
     vendorJs,
     img,
-    files
+    files,
+    fonts
 )
 
 // Set up dev environment
