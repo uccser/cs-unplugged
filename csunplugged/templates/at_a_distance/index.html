@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10 text-center">
-                    <img src="{% static 'img/cs-unplugged-logo-at-a-distance.svg' %}" class="img-fluid my-5" alt="CS Unplugged at a distance logo">
+                    <img src="{% static 'img/cs-unplugged-logo-at-a-distance.svg' %}" class="img-fluid my-4" alt="CS Unplugged at a distance logo">
                     <h2 class="h1 text-dark">
                         {% blocktrans trimmed %}
                             Teach CS Unplugged online
@@ -46,11 +46,11 @@
             </div>
         {% endif %}
 
-        <div class="row justify-content-center mt-5" id="at-a-distance-lead">
-            <div class="col-12 col-md-4">
+        <div class="row justify-content-center mt-4" id="at-a-distance-lead">
+            <div class="col-12 col-md-5">
                 <img class="img-fluid mb-3" src="{% static 'img/at_a_distance/teaching-online.png' %}">
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-5">
                 <p>
                     CS Unplugged at a distance is a series of short lessons adapted from CS Unplugged activities that are suitable for teaching online to students, or for training educators.
                 </p>
@@ -68,9 +68,13 @@
                     <a class="link-item no-text-decoration d-block p-0" href="{% url 'at_a_distance:delivery-guide' %}">
                         <div class="row align-items-center h-100 my-2">
                             <div class="col">
-                                <h2 class="text-center my-4">
-                                    Guide to deliver CS Unplugged at a distance
+                                <h2 class="my-2 mx-3">
+                                    <small>Introduction</small><br>
+                                    How to deliver CS Unplugged at a distance
                                 </h2>
+                            </div>
+                            <div class="d-none d-md-flex col-2">
+                                <img class="img-fluid my-2" src="{% static 'img/at_a_distance/computer-thumbs-up.png' %}">
                             </div>
                         </div>
                     </a>
