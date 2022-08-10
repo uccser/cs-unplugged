@@ -399,6 +399,9 @@ ul#scrollspy-table-of-contents {
     }
     & ul {
         margin-left: 2rem;
+        .nav-link.active {
+            background-color: #0050e3;
+        }
     }
 }
 
