@@ -16,11 +16,10 @@ binary-representation:
     suitable-for-teaching-students: not-recommended
     suitable-for-teaching-educators: suitable
     supporting-resources: true
-parity-magic:
-    order-number: 4
-    # icon: img/at_a_distance/parity-magic/parity-magic-icon.svg
-    suitable-for-teaching-students: suitable
-    suitable-for-teaching-educators: suitable
+# parity-magic:
+#     order-number: 4
+#     suitable-for-teaching-students: suitable
+#     suitable-for-teaching-educators: suitable
 # qr-codes:
 #     order-number: 5
 #     suitable-for-teaching-students: suitable
@@ -37,9 +36,8 @@ parity-magic:
 #     order-number: 8
 #     suitable-for-teaching-students: suitable
 #     suitable-for-teaching-educators: suitable
-finite-state-automata:
-    order-number: 9
-    # icon: img/at_a_distance/finite-state-automata/finite-state-automata-icon.svg
-    suitable-for-teaching-students: not-recommended
-    suitable-for-teaching-educators: suitable
-    supporting-resources: true
+# finite-state-automata:
+#     order-number: 9
+#     suitable-for-teaching-students: not-recommended
+#     suitable-for-teaching-educators: suitable
+#     supporting-resources: true
