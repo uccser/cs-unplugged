@@ -1,7 +1,7 @@
 <script>
     let Reveal = new CSU_ATD_Reveal({
-        embedded: {{ embedded }},
-        showNotes: {{ show_notes }},
+        embedded: {{ embedded|yesno:"true,false" }},
+        showNotes: {{ show_notes|yesno:"true,false" }},
         overview: false,
         controlsTutorial: false,
         disableLayout: false,
@@ -37,4 +37,9 @@
         maxScale: 2.0,
     })
     Reveal.initialize();
+    {% if embedded %}
+    Reveal.on( 'slidechanged', event => {
+        document.querySelector('#slides .reveal .speaker-notes').scrollTop = 0;
+    });
+    {% endif %}
 </script>

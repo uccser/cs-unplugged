@@ -22,6 +22,7 @@ A big thank you to Hakim El Hattab for making such a great framework.
 - Replaced tall layout as default, and removed wide layout.
 - Customise speaker view layout and show controls help text.
 - Removed pacing timer as we don't use this feature. Timings cannot be suggested due to wide range of speakers (style, language, confidence, etc).
+- Scroll to top of notes when slide changes.
 
 ## Files related to plugin
 

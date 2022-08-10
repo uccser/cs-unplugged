@@ -140,6 +140,7 @@
             notes.classList.remove('hidden');
             notesValue.style.whiteSpace = data.whitespace;
             notesValue.innerHTML = data.notes;
+            notesValue.scrollTop = 0;
             setupNoteCopyEvents();
         }
         else {

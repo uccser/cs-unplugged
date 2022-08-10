@@ -55,7 +55,7 @@
 
     {% block scripts %}
         {{ block.super }}
-        {% include "at_a_distance/components/reveal-initialize.html" with embedded="false" speaker_mode=True show_notes="false" %}
+        {% include "at_a_distance/components/reveal-initialize.html" with embedded=False speaker_mode=True show_notes=False %}
     {% endblock scripts %}
 
 {% endblock body %}
