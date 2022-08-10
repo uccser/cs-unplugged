@@ -11,14 +11,13 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-
     <div id="{{ lesson.slug }}" class="row align-items-center mb-3">
         {% if lesson.icon %}
             <div class="d-none col-md-1 d-md-flex justify-content-end align-items-end">
                 <img class="img-fluid" src="{% static lesson.icon %}">
             </div>
         {% endif %}
-        <div class="col-12 col-md-7">
+        <div class="col-12 col-md">
             <h1>{{ lesson.name }}</h1>
             {% if not lesson.translation_available %}
                 {% include "generic/not-available-badge.html" %}
