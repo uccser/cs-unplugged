@@ -98,4 +98,3 @@ networks:
 volumes:
     local-postgres-data: {}
     local-postgres-data-backups: {}
-    local-search-index: {}
