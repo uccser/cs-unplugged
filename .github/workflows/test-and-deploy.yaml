@@ -157,7 +157,7 @@ jobs:
         run: tar czf static-files.tar.gz --directory csunplugged/staticfiles/ .
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: static-files
           path: static-files.tar.gz
@@ -205,7 +205,7 @@ jobs:
         run: tar czf resource-thumbnails.tar.gz --directory csunplugged/build/img/resources/ .
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: resource-thumbnails
           path: resource-thumbnails.tar.gz
@@ -266,7 +266,7 @@ jobs:
         run: tar czf at-a-distance-files.tar.gz --directory csunplugged/build/slides/ .
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: at-a-distance-files-${{ matrix.language }}
           path: at-a-distance-files.tar.gz
@@ -325,7 +325,7 @@ jobs:
         run: tar czf resources.tar.gz --directory csunplugged/build/resources/ .
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: resources-${{ matrix.language }}
           path: resources.tar.gz
