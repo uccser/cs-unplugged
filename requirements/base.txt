@@ -5,7 +5,7 @@ django-bootstrap-breadcrumbs==0.9.2
 
 # Web serving
 gunicorn==20.1.0
-whitenoise==5.3.0
+whitenoise==6.2.0
 
 # Database APIs
 psycopg2==2.9.3
@@ -24,7 +24,7 @@ python-markdown-math==0.6
 PyYAML==6.0
 
 # System tools
-tqdm==4.62.3
+tqdm==4.64.0
 
 # XML Parsing
 lxml==4.9.1
