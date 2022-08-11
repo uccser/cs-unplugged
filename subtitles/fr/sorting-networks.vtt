@@ -1,0 +1,297 @@
+WEBVTT
+Kind: captions
+Language: fr
+
+NOTE
+Computer Science Education Research,
+University of Canterbury, New Zealand
+Subtitle file for the video "CS Unplugged - Sorting Networks (sample classroom lesson)"
+Author: Alasdair Smith
+Date: 01/10/2018
+
+00:00:05.060 --> 00:00:10.000
+[Réseaux de tri]
+
+00:00:11.480 --> 00:00:15.360
+Nous sommes donc allés dehors aujourd'hui
+pour comprendre un peu mieux comment fonctionnent les ordinateurs,
+
+00:00:15.360 --> 00:00:21.160
+et ce que nous avons ici, c'est un peu
+comme un supercalculateur fait à la craie.
+
+00:00:21.160 --> 00:00:24.919
+Et je vais vous montrer pourquoi dans un instant,
+j'ai besoin de six volontaires.
+
+00:00:24.919 --> 00:00:26.150
+Super.
+
+00:00:26.150 --> 00:00:30.710
+Ce que je vais faire c'est que je vais vous donner
+un disque, et vous allez devoir vous placer
+
+00:00:30.710 --> 00:00:33.430
+sur les cercles — les plus éloignés.
+
+00:00:33.430 --> 00:00:35.830
+Donc Rhylee tu vas sur
+celui qui est le plus éloigné.
+
+00:00:35.830 --> 00:00:39.090
+Robert tu vas sur le suivant.
+
+00:00:39.090 --> 00:00:42.900
+Ellie encore sur le suivant.
+
+00:00:42.900 --> 00:00:45.150
+Kourosh tu peux aller là-bas.
+
+00:00:45.150 --> 00:00:47.629
+Lewis tu peux aller sur le dernier.
+
+00:00:47.629 --> 00:00:48.629
+Ok !
+
+00:00:48.629 --> 00:00:52.219
+Donc vous êtes tous là, maintenant c'est
+un travail d'équipe.
+
+00:00:52.219 --> 00:00:55.850
+C'est aussi une question d'organisation des données.
+
+00:00:55.850 --> 00:00:59.460
+Donc vous êtes au début avec vos données
+et vous êtes tous désordonnés, nous avons
+
+00:00:59.460 --> 00:01:05.460
+le nombre 5, le nombre 2, le nombre 1,
+le nombre 3, le nombre 6 et le nombre 4.
+
+00:01:05.460 --> 00:01:10.680
+Et donc avant qu'on aille dans le supercalculateur,
+tout ce que je dois vous apprendre est ce symbole ici.
+
+00:01:10.680 --> 00:01:12.900
+Que signifie ce symbole ici ?
+
+00:01:12.900 --> 00:01:14.479
+Qu'est-ce que cela signifie Lewis ?
+
+00:01:14.480 --> 00:01:15.420
+Plus petit et plus grand.
+
+00:01:15.420 --> 00:01:19.940
+Plus petit et plus grand, quels autres termes
+mathématiques peut-on utiliser pour plus petit et plus grand
+
+00:01:19.940 --> 00:01:21.200
+-- oui ?
+-- Inférieur ou supérieur
+
+00:01:21.200 --> 00:01:27.100
+Inférieur ou supérieur. Super, donc ici
+la ligne orange est l'inférieur,
+
+00:01:27.100 --> 00:01:28.940
+et la ligne bleue est le supérieur.
+
+00:01:28.940 --> 00:01:33.560
+Donc voyons voir comment ça marche. Pouvez-vous tous
+avancer dans la boite.
+
+00:01:33.560 --> 00:01:37.980
+Pouvez-vous dire "bonjour" à votre voisin et
+lui faire un grand sourire.
+
+00:01:37.990 --> 00:01:39.100
+Pas trop mielleux.
+
+00:01:39.100 --> 00:01:42.500
+Maintenant vous devez décider : est-ce
+que j'ai le nombre le plus grand
+
+00:01:42.500 --> 00:01:44.600
+ou est-ce que j'ai le plus petit.
+
+00:01:44.600 --> 00:01:47.100
+Et le plus grand nombre
+suit la ligne bleue,
+
+00:01:47.100 --> 00:01:50.400
+le plus petit nombre suit la ligne orange, aller.
+
+00:01:51.120 --> 00:01:55.320
+Maintenant, vous devez regarder autour de vous et vérifier que tout le monde
+est là et dire bonjour et
+
+00:01:55.320 --> 00:01:58.000
+faire un grand sourire à votre voisin.
+
+00:01:58.000 --> 00:02:02.960
+Maintenant décidez qui a le plus petit, qui
+a le plus grand nombre.
+
+00:02:07.480 --> 00:02:08.640
+Est-ce que vous savez quoi faire ?
+
+00:02:08.649 --> 00:02:12.810
+On continue, je n'ai vu personne sourire et
+dire bonjour, souriez et dites bonjour.
+
+00:02:12.810 --> 00:02:13.810
+Salut.
+
+00:02:13.810 --> 00:02:15.980
+Maintenant, prenez votre décision.
+
+00:02:20.420 --> 00:02:21.260
+Bonjour !
+
+00:02:21.480 --> 00:02:22.120
+Bien.
+
+00:02:23.500 --> 00:02:24.660
+Quel nombre avez-vous ?
+
+00:02:25.840 --> 00:02:27.880
+J'ai le 4 alors je vais aller par ici.
+
+00:02:27.880 --> 00:02:28.860
+Parfait.
+
+00:02:33.980 --> 00:02:37.040
+Cool donc je vais vous demander de vous tourner et
+de me regarder et nous allons voir
+
+00:02:37.040 --> 00:02:40.860
+ce qu'il s'est passé avec les nombres, pouvez-vous vous tourner
+et montrer vos nombres s'il vous plait ?
+
+00:02:40.860 --> 00:02:44.000
+Oh, wow Kourosh quel nombre as-tu ?
+
+00:02:44.000 --> 00:02:45.360
+-- Un.
+-- Quel nombre as-tu Lewis ?
+
+00:02:45.360 --> 00:02:46.360
+Deux.
+
+00:02:46.360 --> 00:02:47.100
+Trois.
+
+00:02:47.100 --> 00:02:47.640
+Quatre.
+
+00:02:47.640 --> 00:02:48.540
+Cinq.
+
+00:02:48.540 --> 00:02:49.280
+Six.
+
+00:02:49.280 --> 00:02:51.060
+Ok qu'est-il arrivé à nos nombres ?
+
+00:02:51.080 --> 00:02:55.520
+Nous les avons mis dans notre supercalculateur
+la craie c'est comme un supercalculateur,
+
+00:02:55.520 --> 00:02:58.480
+et nous les avons traités et que s'est-il passé ?
+
+00:02:59.140 --> 00:03:01.980
+Nous les avons retrouvés dans le bon ordre.
+
+00:03:01.980 --> 00:03:04.680
+Oh, est-ce que vous pensez que ça marche avec tout ?
+[Astuce : cette activité peut être utilisée pour trier n'importe quoi !]
+
+00:03:04.680 --> 00:03:05.600
+Oui.
+[Astuce : cette activité peut être utilisée pour trier n'importe quoi !]
+
+00:03:05.600 --> 00:03:07.840
+Quelles autres choses vous pensez
+que l'on pourrait trier ?
+
+00:03:07.840 --> 00:03:08.740
+-- Oui ?
+-- Des livres.
+
+00:03:08.740 --> 00:03:10.060
+Nous pourrions trier des livres, quoi d'autre ?
+
+00:03:10.580 --> 00:03:11.220
+Des lettres ?
+
+00:03:11.220 --> 00:03:12.240
+Oui, quoi d'autre ?
+
+00:03:12.240 --> 00:03:13.080
+Des cloches ?
+
+00:03:13.080 --> 00:03:14.100
+Oui, quoi d'autre ?
+
+00:03:14.100 --> 00:03:15.700
+Des notes.
+
+00:03:15.700 --> 00:03:17.400
+Oui, quoi d'autre ?
+
+00:03:17.400 --> 00:03:18.400
+Qu'en est-il des grand nombres ?
+
+00:03:18.409 --> 00:03:20.690
+Avec de très grands nombres est-ce qu'on pourrait faire pareil ?
+
+00:03:20.690 --> 00:03:22.020
+-- Oui.
+-- Oui, super.
+
+00:03:22.020 --> 00:03:26.440
+[Titres de livres (ordre alphabétique)]
+
+00:03:34.640 --> 00:03:43.100
+[Grands nombres (ordre numérique)]
+
+00:03:44.360 --> 00:03:50.260
+[Lettres (ordre alphabétique)]
+
+00:03:51.500 --> 00:03:58.460
+[Cloches (ton musical, aigu ou grave)]
+
+00:03:58.740 --> 00:04:00.440
+Laquelle sonne le plus bas et laquelle sonne le plus haut ?
+
+00:04:00.440 --> 00:04:01.420
+Je suis plus bas.
+
+00:04:01.420 --> 00:04:03.040
+Tu es plus bas.
+
+00:04:08.420 --> 00:04:11.020
+Ok, faites-les sonner une par une.
+
+00:04:11.880 --> 00:04:14.100
+Laquelle sonne le plus bas ?
+
+00:04:14.480 --> 00:04:15.560
+Celle-ci est la plus basse.
+
+00:04:15.560 --> 00:04:18.100
+Ok, écoutons la une fois de plus pour être sûrs.
+
+00:04:19.880 --> 00:04:21.500
+Ça a l'air bon.
+
+00:04:27.620 --> 00:04:30.240
+Écoutons-les, écoutons-les une fois de plus.
+
+00:04:30.240 --> 00:04:31.560
+Très bien.
+
+00:04:31.560 --> 00:04:33.480
+Ok, continuez.
+

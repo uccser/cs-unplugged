@@ -8,7 +8,7 @@ decomposition:
 abstraction:
   name: Abstraction
 generalising-and-patterns:
-  name: Généralisation et modèles
+  name: Généralisation et motifs
 logic:
   name: Logique
 evaluation:
@@ -28,13 +28,13 @@ geometry:
 measurement:
   name: Mesures
 numeracy:
-  name: Innumérisme
+  name: Numératie
 algebra:
   name: Algèbre
 statistics:
   name: Statistiques
 literacy:
-  name: Illétrisme
+  name: Littératie
 reading:
   name: Lecture
 writing:
@@ -52,7 +52,7 @@ art:
 language:
   name: Apprentissage des langues
 performing-arts:
-  name: Arts du spectacle
+  name: Arts de la scène
 music:
   name: Musique
 dance:
@@ -62,7 +62,7 @@ drama:
 physical-education:
   name: Éducation physique
 fitness:
-  name: Fitness
+  name: Motricité
 sport:
   name: Sport
 health:
