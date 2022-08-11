@@ -21,7 +21,10 @@
 }
 
 #at-a-distance-jumbotron {
-    background-color: mix($at-a-distance-colour, #fff, 15%);
+    background: url("../img/at_a_distance/tile-background.png") mix($at-a-distance-colour, #fff, 15%);
+    background-repeat: repeat;
+    background-size: 4rem;
+    background-position: center;
 }
 
 .navbar.navbar-at-a-distance {

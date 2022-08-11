@@ -140,7 +140,10 @@ $rounded-corner-radius: 0.5rem;
     }
 }
 #plugging-it-in-jumbotron {
-    background: $plugging-it-in-colour;
+    background: url("../img/plugging-it-in/tile-background.png") $plugging-it-in-colour;
+    background-repeat: repeat;
+    background-size: 18rem;
+    background-position: center;
     h2 {
         font-size: 2rem;
     }
