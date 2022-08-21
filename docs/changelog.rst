@@ -72,12 +72,12 @@ This release adds the 'At a distance' area of the website.
     - Update bootstrap from 4.6.0 to 4.6.1.
     - Update browser-sync from 2.27.7 to 2.27.10.
     - Update codemirror from 5.65.1 to 5.65.6.
-    - Update coverage 6.2 to 6.4.3.
-    - Update crowdin/github-action from 1.4.6 to 1.4.11.
-    - Update cssnano from 5.0.15 to 5.1.12.
+    - Update coverage 6.2 to 6.4.4.
+    - Update crowdin/github-action from 1.4.6 to 1.4.12.
+    - Update cssnano from 5.0.15 to 5.1.13.
     - Update django from 3.2.11 to 3.2.15.
     - Update django-cors-headers from 3.11.0 to 3.13.0.
-    - Update django-debug-toolbar from 3.2.4 to 3.5.0.
+    - Update django-debug-toolbar from 3.2.4 to 3.6.0.
     - Update django-environ from 0.8.1 to 0.9.0.
     - Update django-extensions from 3.1.5 to 3.2.0.
     - Update django-modeltranslation from 0.17.3 to 0.18.4.
@@ -88,7 +88,7 @@ This release adds the 'At a distance' area of the website.
     - Update Pillow from 9.0.0 to 9.2.0.
     - Update postcss from 8.4.5 to 8.4.16.
     - Update postgres from 13.3 to 13.6.
-    - Update PyPDF2 from 1.26.0 to 2.10.0.
+    - Update PyPDF2 from 1.26.0 to 2.10.2.
     - Update requests from 2.27.1 to 2.28.1
     - Update sass from 1.49.0 to 1.54.4.
     - Update tqdm from 4.62.3 to 4.64.0.
