@@ -108,7 +108,7 @@ character, this shows the start of your terminal prompt).
 .. code-block:: bash
 
     $ docker version
-    $ docker-compose version
+    $ docke compose version
     $ docker run hello-world
 
 .. note::
