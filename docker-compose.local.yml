@@ -13,12 +13,12 @@ services:
             - ./infrastructure/local/postgres/.envs
         command: /start
         networks:
-            - uccser-development-proxy
+            - uccser-development-stack
             - backend
         labels:
             # General labels
             - "traefik.enable=true"
-            - "traefik.docker.network=uccser-development-proxy"
+            - "traefik.docker.network=uccser-development-stack"
             - "traefik.http.services.cs-unplugged-django.loadbalancer.server.port=8000"
             # HTTPS
             - "traefik.http.routers.cs-unplugged-django.entryPoints=web-secure"
@@ -66,7 +66,7 @@ services:
         volumes:
             - ./docs:/docs:z
         networks:
-            - uccser-development-proxy
+            - uccser-development-stack
         labels:
             # General labels
             - "traefik.enable=true"
@@ -92,7 +92,7 @@ services:
 networks:
     backend:
         driver: bridge
-    uccser-development-proxy:
+    uccser-development-stack:
         external: true
 
 volumes:

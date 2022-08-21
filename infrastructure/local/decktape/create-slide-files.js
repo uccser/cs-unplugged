@@ -4,7 +4,7 @@ const path = require('path');
 const { execSync } = require("child_process");
 
 // Top level directory is created by inherited Docker image and is mapped
-// by docker-compose to the csunplugged/build/ directory to set the correct
+// by Docker Compose to the csunplugged/build/ directory to set the correct
 // permissions.
 const ROOT_PATH = '/slides/'
 // The second /slides/ directory to be created in
