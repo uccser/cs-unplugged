@@ -118,13 +118,6 @@ TIME_ZONE = "UTC"
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = "en"
 
-INCONTEXT_L10N_PSEUDOLANGUAGE = "xx-lr"
-INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI = "yy-rl"
-INCONTEXT_L10N_PSEUDOLANGUAGES = (
-    INCONTEXT_L10N_PSEUDOLANGUAGE,
-    INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI
-)
-
 DEFAULT_LANGUAGES = (
     ("en", "English"),
     ("de", "Deutsche"),
@@ -144,36 +137,6 @@ EXTRA_LANG_INFO = {
         'name_local': "Te Reo Māori",
     }
 }
-
-if env.bool("INCLUDE_INCONTEXT_L10N", False):
-    EXTRA_LANGUAGES = [
-        (INCONTEXT_L10N_PSEUDOLANGUAGE, "Translation mode"),
-        (INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI, "Translation mode (Bi-directional)"),
-    ]
-
-    EXTRA_LANG_INFO.update({
-        INCONTEXT_L10N_PSEUDOLANGUAGE: {
-            'bidi': False,
-            'code': INCONTEXT_L10N_PSEUDOLANGUAGE,
-            'name': "Translation mode",
-            'name_local': _("Translation mode"),
-        },
-        INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI: {
-            'bidi': True,
-            'code': INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI,
-            'name': "Translation mode (Bi-directional)",
-            'name_local': _("Translation mode (Bi-directional)"),
-        }
-    })
-
-    # Add new languages to the list of all django languages
-    global_settings.LANGUAGES = global_settings.LANGUAGES + EXTRA_LANGUAGES
-    global_settings.LANGUAGES_BIDI = (global_settings.LANGUAGES_BIDI +
-                                      [INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI.split('-')[0]])
-    # Add new languages to the list of languages used for this project
-    LANGUAGES += tuple(EXTRA_LANGUAGES)
-    LANGUAGES_BIDI = global_settings.LANGUAGES_BIDI
-
 django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
