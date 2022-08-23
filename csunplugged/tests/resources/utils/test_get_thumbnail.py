@@ -1,4 +1,3 @@
-from django.conf import settings
 from django.test import tag, override_settings
 from django.utils import translation
 from tests.BaseTestWithDB import BaseTestWithDB
@@ -8,11 +7,6 @@ from resources.utils.get_thumbnail import (
     get_thumbnail_static_path_for_resource,
 )
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-
-MULTIPLE_LANGUAGES_WITH_INCONTEXT = (
-    *settings.LANGUAGES,
-    (settings.INCONTEXT_L10N_PSEUDOLANGUAGE, settings.INCONTEXT_L10N_PSEUDOLANGUAGE)
-)
 
 
 @tag("resource")
@@ -88,16 +82,6 @@ class GetThumbnailTest(BaseTestWithDB):
                 "https://static.csunplugged.org/img/resources/resource/thumbnails/de/"
             )
 
-    @override_settings(DEPLOYED=True)
-    @override_settings(STATIC_URL="https://static.csunplugged.org/")
-    @override_settings(LANGUAGES=MULTIPLE_LANGUAGES_WITH_INCONTEXT)
-    def test_get_thumbnail_base_production_in_context(self):
-        with translation.override(settings.INCONTEXT_L10N_PSEUDOLANGUAGE):
-            self.assertEqual(
-                get_thumbnail_base("resource"),
-                "https://static.csunplugged.org/img/resources/resource/thumbnails/en/"
-            )
-
     def test_get_thumbnail_static_path_for_resource_local_development(self):
         resource = self.test_data.create_resource(
             "resource",
@@ -137,20 +121,4 @@ class GetThumbnailTest(BaseTestWithDB):
             self.assertEqual(
                 get_thumbnail_static_path_for_resource(resource),
                 "https://static.csunplugged.org/img/resources/resource/thumbnails/de/resource-paper_size-a4.png"
-            )
-
-    @override_settings(DEPLOYED=True)
-    @override_settings(STATIC_URL="https://static.csunplugged.org/")
-    @override_settings(LANGUAGES=MULTIPLE_LANGUAGES_WITH_INCONTEXT)
-    def test_get_thumbnail_static_path_for_resource_production_in_context(self):
-        with translation.override(settings.INCONTEXT_L10N_PSEUDOLANGUAGE):
-            resource = self.test_data.create_resource(
-                "resource",
-                "Resource",
-                "Description of resource",
-                "GridResourceGenerator",
-            )
-            self.assertEqual(
-                get_thumbnail_static_path_for_resource(resource),
-                "https://static.csunplugged.org/img/resources/resource/thumbnails/en/resource-paper_size-a4.png"
             )

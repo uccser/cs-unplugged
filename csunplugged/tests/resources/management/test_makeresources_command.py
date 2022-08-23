@@ -1,7 +1,6 @@
 """Module for the testing custom Django resource commands."""
 
 from tests.BaseTestWithDB import BaseTestWithDB
-from django.conf import settings
 from django.core import management
 from django.test import tag, override_settings
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
@@ -15,10 +14,6 @@ LANGUAGE1 = "lang1"
 LANGUAGE2 = "lang2"
 SINGLE_LANGUAGE = ((LANGUAGE1, LANGUAGE1), )
 MULTIPLE_LANGUAGES = ((LANGUAGE1, LANGUAGE1), (LANGUAGE2, LANGUAGE2))
-MULTIPLE_LANGUAGES_WITH_INCONTEXT = (
-    (LANGUAGE1, LANGUAGE1),
-    (settings.INCONTEXT_L10N_PSEUDOLANGUAGE, settings.INCONTEXT_L10N_PSEUDOLANGUAGE)
-)
 
 
 @tag("management")
@@ -177,20 +172,4 @@ class MakeResourcesCommandTest(BaseTestWithDB):
         filepath = os.path.join(RESOURCE_PATH, LANGUAGE2, resource.slug, "Resource 1 (a4).pdf")
         self.assertFalse(os.path.exists(filepath))
         filepath = os.path.join(RESOURCE_PATH, LANGUAGE2, resource.slug, "Resource 1 (letter).pdf")
-        self.assertFalse(os.path.exists(filepath))
-
-    @override_settings(LANGUAGES=MULTIPLE_LANGUAGES_WITH_INCONTEXT)
-    def test_makeresources_command_single_language_incontext(self):
-        invalid_language = settings.INCONTEXT_L10N_PSEUDOLANGUAGE
-        resource = self.test_data.create_resource(
-            "resource1",
-            "Resource 1",
-            "Description of resource 1",
-            "BareResourceGenerator",
-        )
-        management.call_command("makeresources")
-        # Check incontext language does not exist
-        filepath = os.path.join(RESOURCE_PATH, invalid_language, resource.slug, "Resource 1 (a4).pdf")
-        self.assertFalse(os.path.exists(filepath))
-        filepath = os.path.join(RESOURCE_PATH, invalid_language, resource.slug, "Resource 1 (letter).pdf")
         self.assertFalse(os.path.exists(filepath))

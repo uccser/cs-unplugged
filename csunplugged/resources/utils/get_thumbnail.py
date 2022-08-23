@@ -35,8 +35,6 @@ def get_thumbnail_base(resource_slug):
     """
     if settings.DEPLOYED:
         resource_language = get_language()
-        if resource_language in settings.INCONTEXT_L10N_PSEUDOLANGUAGES:
-            resource_language = "en"
     else:
         resource_language = "en"
     resource_thumbnail_base = join(
