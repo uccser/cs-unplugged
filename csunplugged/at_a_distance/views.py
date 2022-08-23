@@ -2,6 +2,7 @@
 
 import os.path
 from django.views import generic
+from django.utils import translation
 from django.conf import settings
 from django.http import JsonResponse
 from django.utils.translation import get_language
@@ -109,12 +110,11 @@ def slides_file_generation_json(request, **kwargs):
     else:
         languages = [("en", "")]
 
-    lesson_slugs = list(Lesson.objects.values_list('slug', flat=True))
-
     # For each language{}
     data["languages"] = dict()
     for language_code, _ in languages:
-        data["languages"][language_code] = lesson_slugs
+        with translation.override(language_code):
+            data["languages"][language_code] = list(Lesson.translated_objects.values_list('slug', flat=True))
 
     # Other values
     data["resolution"] = AT_A_DISTANCE_SLIDE_RESOLUTION

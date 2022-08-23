@@ -26,6 +26,7 @@ urlpatterns = [
     path(
         "slides-file-generation-json/",
         views.slides_file_generation_json,
+        name='slides_file_generation_json'
     ),
     # eg: /at-a-distance/stroop-effect/
     path(
@@ -43,5 +44,6 @@ urlpatterns = [
     path(
         '<slug:lesson_slug>/slides-file-generation/',
         views.LessonFileGenerationView.as_view(),
+        name='lesson_file_generation'
     ),
 ]
