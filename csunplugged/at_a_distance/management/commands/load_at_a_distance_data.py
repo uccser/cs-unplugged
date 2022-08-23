@@ -5,6 +5,8 @@ from django.core.management.base import BaseCommand
 from django.conf import settings
 from utils.BaseLoader import BaseLoader
 from utils.LoaderFactory import LoaderFactory
+from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
+from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 
 
 class Command(BaseCommand):
@@ -28,16 +30,29 @@ class Command(BaseCommand):
         structure_file_path = os.path.join(
             base_path,
             base_loader.structure_dir,
-            "lessons.yaml"
+            "structure.yaml"
         )
 
-        structure_data = base_loader.load_yaml_file(structure_file_path)
+        structure_file = base_loader.load_yaml_file(structure_file_path)
 
-        for lesson_slug, lesson_data in structure_data.items():
-            activity_structure_file = "{}.yaml".format(lesson_slug)
-            factory.create_at_a_distance_lesson_loader(
-                base_path=base_path,
-                content_path=lesson_slug,
-                structure_filename=activity_structure_file,
-                lesson_data=lesson_data,
-            ).load()
+        if structure_file.get("lessons", None) is None:
+            raise MissingRequiredFieldError(
+                structure_file_path,
+                ["lessons"],
+                "Application Structure"
+            )
+        elif not isinstance(structure_file["lessons"], list):
+            raise InvalidYAMLValueError(
+                structure_file_path,
+                ["lessons"],
+                "list"
+            )
+        else:
+            for lesson_number, lesson_slug in enumerate(structure_file["lessons"]):
+                lesson_structure_file = f"{lesson_slug}.yaml"
+                factory.create_at_a_distance_lesson_loader(
+                    lesson_number,
+                    base_path=base_path,
+                    content_path=lesson_slug,
+                    structure_filename=lesson_structure_file,
+                ).load()

@@ -12,11 +12,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 import environ
 import os.path
 import logging.config
-
-# Add custom languages not provided by Django
 import django.conf.locale
-from django.conf import global_settings
-from django.utils.translation import ugettext_lazy as _
 
 # cs-unplugged/csunplugged/config/settings/base.py - 3 = csunplugged/
 ROOT_DIR = environ.Path(__file__) - 3
