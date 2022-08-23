@@ -26,7 +26,7 @@ We've given some links to Wikipedia below to get you started, but make sure you 
 
 Some people to research about are:
 
--   Richard Hamming (very early ideas in error control) [https://en.wikipedia.org/wiki/Richard_Hamming](https://en.wikipedia.org/wiki/Richard_Hamming)
--   Claude Shannon (American mathematician, juggler, and unicyclist - you should check out some of the interesting and entertaining gadgets that he invented) [https://en.wikipedia.org/wiki/Claude_Shannon](https://en.wikipedia.org/wiki/Claude_Shannon)
--   Hans Peter Luhn (developed a checksum algorithm that is widely used, especially in bank and credit card numbers) [https://en.wikipedia.org/wiki/Hans_Peter_Luhn](https://en.wikipedia.org/wiki/Hans_Peter_Luhn)
--   Irving S. Reed and Gustave Solomon (developed one of the most widely used error control codes, used on most digital devices) [https://en.wikipedia.org/wiki/Irving_S._Reed https://en.wikipedia.org/wiki/Gustave_Solomon](https://en.wikipedia.org/wiki/Irving_S._Reed https://en.wikipedia.org/wiki/Gustave_Solomon)
+- [Richard Hamming](https://en.wikipedia.org/wiki/Richard_Hamming) (very early ideas in error control)
+- [Claude Shannon](https://en.wikipedia.org/wiki/Claude_Shannon) (American mathematician, juggler, and unicyclist - you should check out some of the interesting and entertaining gadgets that he invented)
+- [Hans Peter Luhn](https://en.wikipedia.org/wiki/Hans_Peter_Luhn) (developed a checksum algorithm that is widely used, especially in bank and credit card numbers)
+- [Irving S. Reed](https://en.wikipedia.org/wiki/Irving_S._Reed) and [Gustave Solomon](https://en.wikipedia.org/wiki/Gustave_Solomon) (developed one of the most widely used error control codes, used on most digital devices)

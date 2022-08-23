@@ -1,0 +1,48 @@
+{% load static %}
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Speaker Notes</title>
+        <link rel="stylesheet" href="{% static 'css/reveal-speaker-notes-plugin/speaker-notes-window.css' %}">
+	</head>
+
+	<body>
+		<div id="connection-status">Loading speaker view...</div>
+
+		<div id="current-slide">
+            <span class="overlay-element label">Current</span>
+        </div>
+		<div id="upcoming-slide">
+            <span class="overlay-element label">Upcoming</span>
+        </div>
+		<div id="speaker-controls" class="flex-column">
+            <div id="speaker-controls-top-row">
+                <div id="time-elapsed">
+                    <h4>Elapsed Time</h4>
+                    <div class="value">
+                        <span class="hours-value">00</span><span class="minutes-value">:00</span><span class="seconds-value">:00</span>
+                    </div>
+                    <h4 class="reset-button">Click to Reset</h4>
+                </div>
+                <div id="time-clock">
+                    <h4>Current Time</h4>
+                    <div class="value">0:00 AM</div>
+                </div>
+                <div id="speaker-layout">
+                    <h4>Layout</h4>
+                    <select class="value"></select>
+                </div>
+            </div>
+
+            {% include "at_a_distance/components/reveal-controls-help.html" with blank=True %}
+
+			<div id="speaker-controls-notes" class="flex-column hidden">
+				<h4>Notes</h4>
+				<div class="value speaker-notes"></div>
+			</div>
+		</div>
+
+        <script src="{% static 'js/reveal-speaker-notes-plugin/speaker-notes-window.js' %}"></script>
+	</body>
+</html>

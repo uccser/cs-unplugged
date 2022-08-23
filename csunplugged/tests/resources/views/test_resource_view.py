@@ -1,5 +1,4 @@
 from http import HTTPStatus
-from django.conf import settings
 from django.test import tag, override_settings
 from django.urls import reverse
 from django.utils import translation
@@ -8,11 +7,6 @@ from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerato
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from topics.models import ResourceDescription
 from collections import OrderedDict
-
-MULTIPLE_LANGUAGES_WITH_INCONTEXT = (
-    *settings.LANGUAGES,
-    (settings.INCONTEXT_L10N_PSEUDOLANGUAGE, settings.INCONTEXT_L10N_PSEUDOLANGUAGE)
-)
 
 
 @tag("resource")
@@ -107,28 +101,6 @@ class ResourceViewTest(BaseTestWithDB):
                 "/static/img/resources/grid/thumbnails/de/"
             )
 
-    @override_settings(DEPLOYED=True)
-    @override_settings(LANGUAGES=MULTIPLE_LANGUAGES_WITH_INCONTEXT)
-    def test_resource_view_resource_thumbnail_base_context_production_in_context(self):
-        resource = self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        lang = settings.INCONTEXT_L10N_PSEUDOLANGUAGE
-        with translation.override(lang):
-            url = reverse("resources:resource", kwargs=kwargs)
-            response = self.client.get(url)
-            print(response.context["resource"])
-            self.assertEqual(
-                response.context["resource_thumbnail_base"],
-                "/static/img/resources/grid/thumbnails/en/"
-            )
-
     def test_resource_view_lesson_context(self):
         resource = self.test_data.create_resource(
             "grid",
@@ -140,24 +112,20 @@ class ResourceViewTest(BaseTestWithDB):
         # Create topic data
         topic_test_data = TopicsTestDataGenerator()
         topic = topic_test_data.create_topic(1)
-        unit_plan = topic_test_data.create_unit_plan(topic, 1)
         age_group_1 = topic_test_data.create_age_group(5, 7)
         age_group_2 = topic_test_data.create_age_group(8, 10)
         lesson1 = topic_test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             age_group_1
         )
         lesson2 = topic_test_data.create_lesson(
             topic,
-            unit_plan,
             2,
             age_group_1
         )
         lesson3 = topic_test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             age_group_2
         )

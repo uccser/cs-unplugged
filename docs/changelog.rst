@@ -23,10 +23,85 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+7.0.0
+==============================================================================
+
+**Release date:** 11 August 2022
+
+**Summary of changes:**
+
+This release adds the 'At a distance' area of the website.
+
+**Changelog:**
+
+- Add 'At a distance' area of the website for teaching CS Unplugged remotely:
+    - Includes three lessons:
+        - Stroop Effect
+        - Algorithms
+        - Binary Representation
+    - Six more planned to be released before the end of 2022.
+    - Each lesson includes presentation slides with speaker notes.
+- Remove unit plans from topics, the content of these unit plans have been moved to the topic.
+    - Unit plans were initially as we planned for storing multiple unit
+- Update 'Binary Windows' printable to be only one page, and have 5 and 6 bit options.
+- Replace blurry images of 'At home' challenges within 'Unlocking the secret in product codes'.
+- Update Chinese (Simplified) and French translations.
+- Add tiled background for 'Plugging it in' homepage.
+- Remove elasticsearch as search dependency and use Full Text Search (FTS) within Postgres.
+- Show full Git SHA on development website.
+- Suppress gunicorn access and error logs during local development.
+- Remove unused 'dev' application (local development sitemap).
+- Remove outdated xx_LR/yy_RL language files used for unsupported in-context translation feature provided by Crowdin.
+- Update Gulp SCSS task to only update files changed since last run.
+- Update test coverage to codecov.
+- Update documentation to use 'dev' script, instead of deprecated 'csu' script.
+- Auto-merge minor dependency updates (this includes minor and patch updates).
+- Allow all dependency update pull requests to be created (remove open limit on Dependabot).
+- Ignore updates to non-LTS Django packages.
+- Add OCI labels to Django Docker image.
+- Update license year.
+- Use modified Sniglet font with macron support for Te Reo Māori.
+- Dependency updates:
+    - Add decktape 3.4.1.
+    - Add gulp-dependents 1.2.5.
+    - Add reveal.js 4.3.1.
+    - Update actions/checkout from v2 to v3.
+    - Update actions/upload-artifact from v2 to v3.
+    - Update ansi-colors from 4.1.1 to 4.1.3.
+    - Update autoprefixer from 10.4.2 to 10.4.8.
+    - Update bootstrap from 4.6.0 to 4.6.1.
+    - Update browser-sync from 2.27.7 to 2.27.10.
+    - Update codemirror from 5.65.1 to 5.65.6.
+    - Update coverage 6.2 to 6.4.4.
+    - Update crowdin/github-action from 1.4.6 to 1.4.12.
+    - Update cssnano from 5.0.15 to 5.1.13.
+    - Update django from 3.2.11 to 3.2.15.
+    - Update django-cors-headers from 3.11.0 to 3.13.0.
+    - Update django-debug-toolbar from 3.2.4 to 3.6.0.
+    - Update django-environ from 0.8.1 to 0.9.0.
+    - Update django-extensions from 3.1.5 to 3.2.0.
+    - Update django-modeltranslation from 0.17.3 to 0.18.4.
+    - Update docker/metadata-action from v3 to v4.
+    - Update download-artifact from v2 to v3.
+    - Update login-action from v1.12.0 to v2.0.0.
+    - Update lxml from 4.7.1 to 4.9.1.
+    - Update Pillow from 9.0.0 to 9.2.0.
+    - Update postcss from 8.4.5 to 8.4.16.
+    - Update postgres from 13.3 to 13.6.
+    - Update PyPDF2 from 1.26.0 to 2.10.2.
+    - Update requests from 2.27.1 to 2.28.1
+    - Update sass from 1.49.0 to 1.54.4.
+    - Update tqdm from 4.62.3 to 4.64.0.
+    - Update whitenoise from 5.3.0 to 6.2.0.
+    - Update yargs from 17.3.1 to 17.5.1.
+    - Remove django-haystack[elasticsearch] 3.1.1.
+    - Remove django-widget-tweaks 1.4.12.
+    - Remove elasticsearch 5.5.3.
+
 6.5.0
 ==============================================================================
 
-**Release date:** 19th December 2022
+**Release date:** 19th December 2021
 
 **Changelog:**
 

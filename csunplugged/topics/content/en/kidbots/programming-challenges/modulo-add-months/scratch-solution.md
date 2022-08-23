@@ -1,7 +1,7 @@
 ```scratch
 when green flag clicked
 set [new month v] to [0]
-ask [Type in a number betweem 1 and 12 for a month of the year:] and wait
+ask [Type in a number between 1 and 12 for a month of the year:] and wait
 set [original month v] to (answer)
 ask [Enter the number of months to add to the month:] and wait
 set [months to add v] to (answer)

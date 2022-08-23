@@ -2,18 +2,18 @@
     question: If a product scans with the 13-digit code 9 414942 119252, is it likely to have been scanned correctly? (Type in yes or no).
     answer: "no"
 2:
-    question: What is the check digit that’s missing from this 12-digit product code? 7 19821 37345 _ 
+    question: What is the check digit that’s missing from this 12-digit product code? 7 19821 37345 _
     answer: "2"
 3:
     question: What is the check digit that’s missing from this 13-digit product code? 9 300652 80460_
     answer: "7"
 4:
-    question: The first digit on this product is smudged - can you work out what it is?
+    question: The first digit on this product is missing - can you work out what it is?
     answer: "9"
-    image: img/at_home/unlocking-the-secret-in-product-codes/unlocking-the-secret-in-product-codes-challenge-4.jpg
-    image_description: A thirteen digit product code with the first digit smudged. The rest of the digits are 400547010059.
+    image: img/at_home/unlocking-the-secret-in-product-codes/unlocking-the-secret-in-product-codes-challenge-4.svg
+    image_description: A thirteen digit product code with the first digit missing. The rest of the digits are 400547010059.
 5:
-    question: The second digit on this product is smudged - can you work out what it is?
+    question: The second digit on this product is missing - can you work out what it is?
     answer: "3"
-    image: img/at_home/unlocking-the-secret-in-product-codes/unlocking-the-secret-in-product-codes-challenge-5.jpg
-    image_description: A thirteen digit product code with the second digit smudged. The digits are 9, followed by the smudged digit, followed by 00657233860.
+    image: img/at_home/unlocking-the-secret-in-product-codes/unlocking-the-secret-in-product-codes-challenge-5.svg
+    image_description: A thirteen digit product code with the second digit missing. The digits are 9, followed by the smudged digit, followed by 00657233860.

@@ -7,7 +7,7 @@
     {% trans "CS Unplugged" %}
 {% endblock custom_title %}
 
-{% block body_attribute_overrides %} class="homepage"{% endblock body_attribute_overrides %}
+{% block extra_body_classes %}no-padding{% endblock extra_body_classes %}
 {% block navbar_class_overrides %} trans-navbar{% endblock navbar_class_overrides %}
 
 {% block body_container %}
@@ -26,8 +26,8 @@
                         {% endblocktrans %}
                     </p>
                     {% if LANGUAGE_CODE == "en" %}
-                        <a class="btn btn-info text-wrap mb-4" role="button" href="{% url 'moocs:index' %}">
-                            <strong>New online course for educators available</strong> - Click here to learn more
+                        <a class="btn btn-at-a-distance text-wrap mb-4" role="button" href="{% url 'at_a_distance:index' %}">
+                            <strong>New!</strong> Adapted CS Unplugged lessons for teaching students and educators online
                         </a>
                     {% endif %}
                 </div>
@@ -76,21 +76,21 @@
                         {% trans "Curriculum Integrations" %}
                     </h3>
                 </a>
-                <a class="link-item link-item-top link-item-top-educator-4 no-text-decoration d-block mb-3" href="{% url 'moocs:index' %}">
-                    <h3 class="mb-0">
-                        {% trans "Online Courses" %}
-                    </h3>
-                </a>
             </div>
             <div class="col-12 col-md-4 mb-4">
-                <h2 class="at-home-colour">At home</h2>
-                <a class="link-item link-item-top link-item-top-at-home-1 no-text-decoration d-block mb-3" href="{% url 'at_home:index' %}">
+                <h2 class="at-a-distance-colour">For remote educators</h2>
+                <a class="link-item link-item-top link-item-top-at-a-distance-1 no-text-decoration d-block mb-3" href="{% url 'at_a_distance:index' %}">
                     <h3 class="mb-0">
-                        {% trans "Activities" %}
+                        {% trans "Distance lessons" %}
                     </h3>
                     {% if LANGUAGE_CODE != "en" %}
                         {% include "generic/not-available-badge.html" %}
                     {% endif %}
+                </a>
+                <a class="link-item link-item-top link-item-top-at-a-distance-2 no-text-decoration d-block mb-3" href="{% url 'moocs:index' %}">
+                    <h3 class="mb-0">
+                        {% trans "MOOC (Online Course)" %}
+                    </h3>
                 </a>
             </div>
             <div class="col-12 col-md-4 mb-4">
@@ -98,6 +98,16 @@
                 <a class="link-item link-item-top link-item-top-plugging-it-in-1 no-text-decoration d-block mb-3" href="{% url 'plugging_it_in:index' %}">
                     <h3 class="mb-0">
                         {% trans "Plugging it in" %}
+                    </h3>
+                    {% if LANGUAGE_CODE != "en" %}
+                        {% include "generic/not-available-badge.html" %}
+                    {% endif %}
+                </a>
+
+                <h2 class="at-home-colour mt-4">At home</h2>
+                <a class="link-item link-item-top link-item-top-at-home-1 no-text-decoration d-block mb-3" href="{% url 'at_home:index' %}">
+                    <h3 class="mb-0">
+                        {% trans "Activities" %}
                     </h3>
                     {% if LANGUAGE_CODE != "en" %}
                         {% include "generic/not-available-badge.html" %}

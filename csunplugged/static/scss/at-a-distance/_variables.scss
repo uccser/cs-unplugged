@@ -1,0 +1,7 @@
+$reveal-controls-help-colour-light: #fff2cc;
+$reveal-controls-help-colour: #ffbc00;
+
+%reveal-help-container {
+    background-color: $reveal-controls-help-colour-light;
+    border: 1px solid $reveal-controls-help-colour;
+}

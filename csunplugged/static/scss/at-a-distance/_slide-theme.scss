@@ -1,0 +1,303 @@
+// Default mixins and settings -----------------
+@use "sass:math";
+@import "node_modules/reveal.js/css/theme/template/mixins";
+@import "node_modules/reveal.js/css/theme/template/settings";
+@import "node_modules/reveal.js/plugin/highlight/monokai";
+@import "core-variables";
+
+// Background of the presentation
+$backgroundColor: $background-colour;
+
+// Primary/body text
+$mainFont: $font-family-sans-serif;
+$mainFontSize: 3em;
+$mainColor: #222;
+
+// Vertical spacing between blocks of text
+$blockMargin: 0.2em;
+
+// Headings
+$headingMargin: 0 0 $blockMargin 0;
+$headingFont: $headings-font-family;
+$headingColor: #222;
+$headingLineHeight: 1.2;
+$headingLetterSpacing: normal;
+$headingTextTransform: normal;
+$headingTextShadow: none;
+$headingFontWeight: normal;
+$heading1TextShadow: $headingTextShadow;
+
+$heading1Size: 3.77em;
+$heading2Size: 2.11em;
+$heading3Size: 1.55em;
+$heading4Size: 1.00em;
+
+$codeFont: monospace;
+
+// Links and actions
+$linkColor: #2a76dd;
+$linkColorHover: lighten($linkColor, 20%);
+
+// Text selection
+$selectionBackgroundColor: $at-a-distance-colour;
+$selectionColor: #fff;
+
+// Generates the presentation background, can be overridden
+// to return a background image or gradient
+@mixin bodyBackground() {
+    background: $backgroundColor;
+}
+
+// Change text colors against dark slide backgrounds
+// @include dark-bg-text-color(#fff);
+
+// Custom theme rules
+
+#slides {
+
+    // Font
+    @for $i from 1 through 20 {
+        .r-font-size-#{$i} {
+            font-size: $i * 0.5em;
+        }
+    }
+    .r-left-align {
+        text-align: left;
+    }
+    .r-bold {
+        font-weight: bold;
+    }
+    p {
+        margin: 0 0 1rem;
+    }
+    p:last-child {
+        margin: 0;
+    }
+    li {
+        margin-bottom: $blockMargin;
+    }
+    pre {
+        line-height: inherit;
+
+        code {
+            max-height: none;
+            padding: 1em;
+
+            &.hide-line-numbers td.hljs-ln-numbers {
+                visibility: hidden;
+            }
+        }
+    }
+
+    // Colour overrides
+    .r-text-green {
+        color: #17BA1F;
+    }
+    .r-text-blue {
+        color: #0F70B7;
+    }
+    .r-text-purple {
+        color: #82358C;
+    }
+    .r-text-red {
+        color: #E30613;
+    }
+    .r-text-yellow {
+        color: #F0DA18;
+    }
+    .r-text-black {
+        color: black;
+    }
+    .r-text-white {
+        color: white;
+    }
+    .r-text-grey {
+        color: #575757;
+    }
+    .r-text-light-grey {
+        color: #c7c7c7;
+    }
+
+    // Layout
+    .r-flex {
+        top: 0;
+        bottom: 0;
+        display: flex !important;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    .r-flex-grow {
+        flex-grow: 1;
+    }
+
+    .r-grid {
+        display: grid;
+    }
+    .r-grid-columns {
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(0, 1fr);
+    }
+    .r-flex-align-items-end {
+        align-items: flex-end;
+    }
+    .r-flex-align-self-end {
+        align-self: flex-end;
+    }
+    .r-flex-justify-content-center {
+        justify-content: center;
+    }
+    .r-flex-justify-content-between {
+        justify-content: space-between;
+    }
+    .r-m-0 {
+        margin: 0;
+    }
+    .r-mr-2 {
+        margin-right: 2em;
+    }
+    .r-p-0 {
+        padding: 0;
+    }
+    .r-inline-block {
+        display: inline-block;
+    }
+    .r-h-100 {
+        height: 100%;
+    }
+    .r-hidden {
+        visibility: hidden;
+    }
+    .r-svg {
+        margin-bottom: 1em;
+
+        svg {
+            height: 100%;
+            width: auto;
+        }
+        &.compare-block svg #compare-block {
+            stroke: red;
+            stroke-width: 5px;
+        }
+
+        &.say-block svg #say-block {
+            stroke: red;
+            stroke-width: 5px;
+        }
+    }
+
+    // Title slide
+    .r-title-slide {
+        img {
+            max-width: 40%;
+        }
+    }
+
+    // Embeds
+    iframe {
+        border: none;
+        max-width: initial;
+        max-height: initial;
+    }
+    &.embed-responsive .reveal .slides section iframe {
+        position: initial;
+    }
+    .r-iframe-scale {
+        transform-origin: top center;
+    }
+    .r-iframe-scale-1-5 {
+        transform: perspective(300em) scale(1.5);
+    }
+    .r-iframe-scale-2 {
+        transform: perspective(300em) scale(2);
+    }
+
+    .r-supporting-resources {
+        .raw-link {
+            color: #333;
+            font-family: monospace;
+            font-size: 0.7em;
+        }
+    }
+}
+
+// Footer
+$footer-height: 5%;  // To ensure matches slide dimensions
+$footer-padding: 8px;
+.reveal > .footer {
+    position: absolute;
+    height: $footer-height;
+    bottom: $footer-padding;
+    left: 5px;
+    width: 80%;
+    z-index: 0;  // Hidden behind backgrounds
+    display: flex;
+    align-items: flex-end;
+
+    img {
+        margin: 0;
+    }
+}
+.reveal.has-dark-background > .footer {
+    color: white;
+}
+
+// Slide specific
+.binary-digit-word {
+    display: flex;
+    justify-content: center;
+
+    h2 {
+        position: relative;
+    }
+    #binary-digit-word-animation-start {
+        left: 0;
+        transition: left 1.5s ease-in-out 0.5s;
+    }
+    #binary-digit-word-animation-middle {
+        transition: all 1s ease-in;
+        opacity: 1;
+    }
+    #binary-digit-word-animation-end {
+        right: 0;
+        transition: right 1.5s ease-in-out 0.5s;
+    }
+    &.animate {
+        #binary-digit-word-animation-start {
+            left: 1.95em;
+        }
+        #binary-digit-word-animation-middle {
+            opacity: 0;
+        }
+        #binary-digit-word-animation-end {
+            right: 1.95em;
+        }
+    }
+}
+.binary-cards-5 {
+    transform-origin: 86% 0%;
+}
+
+.r-timer {
+    font-family: monospace;
+
+    .r-timer-value {
+        font-size: 2em;
+        font-weight: bold;
+    }
+    .r-timer-unit {
+        color: #575757;
+    }
+}
+
+/*
+Spacer to prevent the content from running into the footer.
+From https://github.com/hakimel/reveal.js/issues/2707#issuecomment-647708919
+*/
+.reveal .slides section::after {
+    content: ' ';
+    display: block;
+    height: $footer-height;
+}
+
+@import "node_modules/reveal.js/css/theme/template/theme";

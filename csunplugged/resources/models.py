@@ -4,6 +4,8 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.urls import reverse
 from utils.TranslatableModel import TranslatableModel
+from django.contrib.postgres.search import SearchVectorField
+from django.contrib.postgres.indexes import GinIndex
 
 
 class Resource(TranslatableModel):
@@ -17,6 +19,7 @@ class Resource(TranslatableModel):
     generator_module = models.CharField(max_length=200)
     copies = models.BooleanField()
     content = models.TextField(default="")
+    search_vector = SearchVectorField(null=True)
 
     def get_absolute_url(self):
         """Return the canonical URL for a resource.
@@ -37,7 +40,23 @@ class Resource(TranslatableModel):
         """
         return self.name
 
+    def index_contents(self):
+        """Return dictionary for search indexing.
+
+        Returns:
+            Dictionary of content for search indexing. The dictionary keys
+            are the weightings of content, and the dictionary values
+            are strings of content to index.
+        """
+        return {
+            'A': self.name,
+            'B': self.content,
+        }
+
     class Meta:
-        """Meta class settings."""
+        """Meta options for model."""
 
         ordering = ["name"]
+        indexes = [
+            GinIndex(fields=['search_vector'])
+        ]

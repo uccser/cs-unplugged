@@ -1,0 +1,201 @@
+@import "core-variables";
+@import "node_modules/reveal.js/dist/reveal";
+@import "at-a-distance/variables";
+@import "at-a-distance/slide-theme";
+@import "at-a-distance/speaker-notes";
+@import "at-a-distance/reveal-controls-help";
+
+.at-a-distance {
+    h1 {
+        color: $at-a-distance-colour;
+    }
+    h2 {
+        color: mix($at-a-distance-colour, #fff, 80%);
+    }
+    h3 {
+        color: mix($at-a-distance-colour, #fff, 60%);
+    }
+    .link-item {
+        border-color: $at-a-distance-colour;
+    }
+}
+
+#at-a-distance-jumbotron {
+    background: url("../img/at_a_distance/tile-background.png") mix($at-a-distance-colour, #fff, 15%);
+    background-repeat: repeat;
+    background-size: 4rem;
+    background-position: center;
+}
+
+.navbar.navbar-at-a-distance {
+    background-color: $at-a-distance-colour;
+}
+
+#at-a-distance-lessons {
+    img.at-a-distance-icon {
+            max-height: 5rem;
+    }
+}
+
+#slides.slides-embedded {
+    border: 1px solid grey;
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+
+    &::before {
+        padding-top: 56.25%;
+        display: block;
+        content: "";
+    }
+
+    .reveal {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    // Widen speaker view on lesson page
+    .reveal.show-notes {
+        max-width: 60%;
+
+        .speaker-notes {
+            width: 66.666%;
+            padding: 0.8rem;
+            // Always show notes
+            top: 0;
+            left: 100%;
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+    }
+}
+
+#controls-modal-background {
+    position: fixed;
+    z-index: 900;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #controls-modal {
+        @extend %reveal-help-container;
+        font-size: 1.4rem;
+        padding: 2rem;
+        line-height: 2em;
+        width: fit-content;
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 0.3rem;
+
+        h3 {
+            color: #c9760c;
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        button {
+            @extend %reveal-help-container;
+            padding: 0 1rem;
+            background-color: $reveal-controls-help-colour-light;
+            border: 2px solid $reveal-controls-help-colour;
+            font-weight: bold;
+            color: #444;
+            border-radius: 0.3rem;
+
+            &:hover {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+                background-color: #ffde7a;
+            }
+        }
+    }
+}
+
+#resource-buttons {
+    .resource-button-image {
+        max-height: 8rem;
+    }
+    .resource-button-text {
+        color: #000;
+        font-weight: bold;
+    }
+    .resource-button-subtitle {
+        text-align: center;
+        color: #444;
+        font-size: 0.85rem;
+        font-style: italic;
+    }
+}
+
+#at-a-distance-lead {
+    font-size: 1.1rem;
+}
+
+.btn-outline-at-a-distance {
+    border: 2px solid $at-a-distance-colour;
+    background-color: mix($at-a-distance-colour, #fff, 5%);
+    &:hover, &:active {
+        background-color: mix($at-a-distance-colour, #fff, 20%);
+    }
+}
+.btn-at-a-distance {
+    border: 1px solid mix($at-a-distance-colour, #fff, 80%);
+    color: #fff;
+    background-color: $at-a-distance-colour;
+    &:hover, &:active {
+        color: #fff;
+        background-color: darken($at-a-distance-colour, 10%);
+    }
+}
+
+.suitability-boxes {
+    display: flex;
+
+    .suitability-box {
+        flex: 1;
+        padding: 0.5rem 0;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    $suitability-suitable: #319807;
+    $suitability-not-suitable: #c10303;
+    $suitability-not-recommended: #d97900;
+    .suitability-suitable {
+        color: $suitability-suitable;
+        background-color: rgba($suitability-suitable, 0.10);
+    }
+    .suitability-not-suitable {
+        color: $suitability-not-suitable;
+        background-color: rgba($suitability-not-suitable, 0.25);
+    }
+    .suitability-not-recommended {
+        color: $suitability-not-recommended;
+        background-color: rgba($suitability-not-recommended, 0.10);
+    }
+
+    .suitability-box-key {
+        color: #464646;
+        font-size: 0.9rem;
+    }
+    .suitability-box-icon {
+        font-size: 4rem;
+        line-height: 3rem;
+    }
+}

@@ -16,70 +16,91 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Create Docker network
-        run: docker network create uccser-development-proxy
+        run: docker network create uccser-development-stack
       - name: Start systems
-        run: docker-compose -f docker-compose.local.yml up -d
+        run: docker compose -f docker-compose.local.yml up -d
       - name: Run Django system check
-        run: docker-compose -f docker-compose.local.yml run --rm django python ./manage.py check --fail-level WARNING
+        run: docker compose -f docker-compose.local.yml run --rm django python ./manage.py check --fail-level WARNING
 
   test-content:
     name: Tests - Content
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Create Docker network
-        run: docker network create uccser-development-proxy
+        run: docker network create uccser-development-stack
       - name: Start systems
-        run: docker-compose -f docker-compose.local.yml up -d
+        run: docker compose -f docker-compose.local.yml up -d
       - name: Create static files
-        run: docker-compose -f docker-compose.local.yml run --rm --user="root" node npm run generate-assets
+        run: docker compose -f docker-compose.local.yml run --rm --user="root" node npm run generate-assets
       - name: Collect static files
-        run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py collectstatic --no-input
+        run: docker compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py collectstatic --no-input
       - name: Migrate database
-        run: docker-compose -f docker-compose.local.yml run --rm django python ./manage.py migrate
+        run: docker compose -f docker-compose.local.yml run --rm django python ./manage.py migrate
       - name: Load content
-        run: docker-compose -f docker-compose.local.yml run --rm django python ./manage.py updatedata
+        run: docker compose -f docker-compose.local.yml run --rm django python ./manage.py updatedata
       - name: Make resource thumbnails
-        run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py makeresourcethumbnails
+        run: docker compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py makeresourcethumbnails
       - name: Collect static files
-        run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py collectstatic --no-input
+        run: docker compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py collectstatic --no-input
 
   test-general:
     name: Tests - General
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Run general tests
         run: ./dev ci test_general
+      - name: Create coverage file
+        run: docker compose -f docker-compose.local.yml run --rm --user="root" django coverage xml -i
+      - name: Upload coverage file
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./csunplugged/coverage.xml
+          verbose: true
 
   test-resources:
     name: Tests - Resources
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Run resource tests
         run: ./dev ci test_resources
+      - name: Create coverage file
+        run: docker compose -f docker-compose.local.yml run --rm --user="root" django coverage xml -i
+      - name: Upload coverage file
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./csunplugged/coverage.xml
+          verbose: true
 
   test-management:
     name: Tests - Management
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Run management tests
         run: ./dev ci test_management
+      - name: Create coverage file
+        run: docker compose -f docker-compose.local.yml run --rm --user="root" django coverage xml -i
+      - name: Upload coverage file
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./csunplugged/coverage.xml
+          verbose: true
 
   test-style:
     name: Tests - Style
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Run style tests
         run: ./dev ci style
 
@@ -88,7 +109,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
@@ -118,25 +139,25 @@ jobs:
     ]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Create Docker network
-        run: docker network create uccser-development-proxy
+        run: docker network create uccser-development-stack
 
       - name: Start system
-        run: docker-compose -f docker-compose.local.yml up -d
+        run: docker compose -f docker-compose.local.yml up -d
 
       - name: Create production static files
-        run: docker-compose -f docker-compose.local.yml run --rm --user="root" node npm run build
+        run: docker compose -f docker-compose.local.yml run --rm --user="root" node npm run build
 
       - name: Collect staticfiles
-        run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python manage.py collectstatic --no-input
+        run: docker compose -f docker-compose.local.yml run --rm --user="root" django python manage.py collectstatic --no-input
 
       - name: Archive static files
         run: tar czf static-files.tar.gz --directory csunplugged/staticfiles/ .
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: static-files
           path: static-files.tar.gz
@@ -160,34 +181,95 @@ jobs:
     ]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Create Docker network
-        run: docker network create uccser-development-proxy
+        run: docker network create uccser-development-stack
 
       - name: Start system
-        run: docker-compose -f docker-compose.local.yml up -d
+        run: docker compose -f docker-compose.local.yml up -d
 
       - name: Create production static files
-        run: docker-compose -f docker-compose.local.yml run --rm --user="root" node npm run build
+        run: docker compose -f docker-compose.local.yml run --rm --user="root" node npm run build
 
       - name: Migrate database
-        run: docker-compose -f docker-compose.local.yml run --rm django python ./manage.py migrate
+        run: docker compose -f docker-compose.local.yml run --rm django python ./manage.py migrate
 
       - name: Load resources
-        run: docker-compose -f docker-compose.local.yml run --rm django python ./manage.py loadresources
+        run: docker compose -f docker-compose.local.yml run --rm django python ./manage.py loadresources
 
       - name: Make resource thumbnails
-        run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py makeresourcethumbnails --all-languages
+        run: docker compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py makeresourcethumbnails --all-languages
 
       - name: Archive static files
         run: tar czf resource-thumbnails.tar.gz --directory csunplugged/build/img/resources/ .
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: resource-thumbnails
           path: resource-thumbnails.tar.gz
+          retention-days: 3
+
+  create-at-a-distance-files:
+    name: Create at a distance files
+    if: |
+      (github.ref == 'refs/heads/develop')
+      || startsWith(github.ref, 'refs/heads/research-study-')
+      || github.event_name == 'release'
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        language: [
+          'en',
+        ]
+      fail-fast: true
+
+    needs: [
+      test-django-system-check,
+      test-content,
+      test-general,
+      test-resources,
+      test-management,
+      test-style,
+      test-docs
+    ]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create Docker network
+        run: docker network create uccser-development-stack
+
+      - name: Start system
+        run: docker compose -f docker-compose.local.yml up -d
+
+      - name: Create standard static files
+        run: docker compose -f docker-compose.local.yml run --rm --user="root" node npm run generate-assets
+
+      - name: Collect staticfiles
+        run: docker compose -f docker-compose.local.yml run --rm --user="root" django python manage.py collectstatic --no-input
+
+      - name: Migrate database
+        run: docker compose -f docker-compose.local.yml run --rm django python ./manage.py migrate
+
+      - name: Load at a distance data
+        run: docker compose -f docker-compose.local.yml run --rm django python ./manage.py load_at_a_distance_data
+
+      - name: Run decktape script
+        run: docker compose -f docker-compose.local.yml run --rm --user="root" decktape --language ${{ matrix.language }}
+
+      - name: Create speaker notes PDFs
+        run: docker compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py create_lesson_speaker_notes_pdfs --language ${{ matrix.language }}
+
+      - name: Archive static files
+        run: tar czf at-a-distance-files.tar.gz --directory csunplugged/build/slides/ .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: at-a-distance-files-${{ matrix.language }}
+          path: at-a-distance-files.tar.gz
           retention-days: 3
 
   create-resources:
@@ -219,31 +301,31 @@ jobs:
     ]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Create Docker network
-        run: docker network create uccser-development-proxy
+        run: docker network create uccser-development-stack
 
       - name: Start system
-        run: docker-compose -f docker-compose.local.yml up -d
+        run: docker compose -f docker-compose.local.yml up -d
 
       - name: Create production static files
-        run: docker-compose -f docker-compose.local.yml run --rm --user="root" node npm run build
+        run: docker compose -f docker-compose.local.yml run --rm --user="root" node npm run build
 
       - name: Migrate database
-        run: docker-compose -f docker-compose.local.yml run --rm django python ./manage.py migrate
+        run: docker compose -f docker-compose.local.yml run --rm django python ./manage.py migrate
 
       - name: Load resources
-        run: docker-compose -f docker-compose.local.yml run --rm django python ./manage.py loadresources
+        run: docker compose -f docker-compose.local.yml run --rm django python ./manage.py loadresources
 
       - name: Make resources
-        run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py makeresources --language ${{ matrix.language }}
+        run: docker compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py makeresources --language ${{ matrix.language }}
 
       - name: Archive static files
         run: tar czf resources.tar.gz --directory csunplugged/build/resources/ .
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: resources-${{ matrix.language }}
           path: resources.tar.gz
@@ -260,13 +342,14 @@ jobs:
       create-static-files,
       create-resource-thumbnails,
       create-resources,
+      create-at-a-distance-files,
     ]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           path: artifacts/
 
@@ -281,9 +364,11 @@ jobs:
           tar -xz --file artifacts/resource-thumbnails/resource-thumbnails.tar.gz --directory csunplugged/staticfiles/img/resources
           mkdir -p csunplugged/staticfiles/resources
           ls artifacts/resources-*/resources.tar.gz | xargs -n1 tar -xz --directory csunplugged/staticfiles/resources --file
+          mkdir -p csunplugged/staticfiles/slides
+          ls artifacts/at-a-distance-files-*/at-a-distance-files.tar.gz | xargs -n1 tar -xz --directory csunplugged/staticfiles/slides --file
 
       - name: Log in to the Container registry
-        uses: docker/login-action@v1.12.0
+        uses: docker/login-action@v2.0.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -291,7 +376,7 @@ jobs:
 
       - name: Setup Docker metadata
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v4
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |

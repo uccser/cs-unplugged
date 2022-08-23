@@ -12,11 +12,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 import environ
 import os.path
 import logging.config
-
-# Add custom languages not provided by Django
 import django.conf.locale
-from django.conf import global_settings
-from django.utils.translation import ugettext_lazy as _
 
 # cs-unplugged/csunplugged/config/settings/base.py - 3 = csunplugged/
 ROOT_DIR = environ.Path(__file__) - 3
@@ -33,11 +29,10 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Full text search
     "django.contrib.postgres",
-
     # Useful template tags
     "django.contrib.humanize",
-
     # Admin
     "django.contrib.admin",
 ]
@@ -45,8 +40,6 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     "corsheaders",
     "django_bootstrap_breadcrumbs",
-    "haystack",
-    "widget_tweaks",
     "modeltranslation",
     "bidiutils",
 ]
@@ -61,6 +54,7 @@ LOCAL_APPS = [
     "classic.apps.ClassicConfig",
     "at_home.apps.AtHomeConfig",
     "moocs.apps.MoocsConfig",
+    "at_a_distance.apps.AtADistanceConfig",
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -120,13 +114,6 @@ TIME_ZONE = "UTC"
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = "en"
 
-INCONTEXT_L10N_PSEUDOLANGUAGE = "xx-lr"
-INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI = "yy-rl"
-INCONTEXT_L10N_PSEUDOLANGUAGES = (
-    INCONTEXT_L10N_PSEUDOLANGUAGE,
-    INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI
-)
-
 DEFAULT_LANGUAGES = (
     ("en", "English"),
     ("de", "Deutsche"),
@@ -146,36 +133,6 @@ EXTRA_LANG_INFO = {
         'name_local': "Te Reo Māori",
     }
 }
-
-if env.bool("INCLUDE_INCONTEXT_L10N", False):
-    EXTRA_LANGUAGES = [
-        (INCONTEXT_L10N_PSEUDOLANGUAGE, "Translation mode"),
-        (INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI, "Translation mode (Bi-directional)"),
-    ]
-
-    EXTRA_LANG_INFO.update({
-        INCONTEXT_L10N_PSEUDOLANGUAGE: {
-            'bidi': False,
-            'code': INCONTEXT_L10N_PSEUDOLANGUAGE,
-            'name': "Translation mode",
-            'name_local': _("Translation mode"),
-        },
-        INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI: {
-            'bidi': True,
-            'code': INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI,
-            'name': "Translation mode (Bi-directional)",
-            'name_local': _("Translation mode (Bi-directional)"),
-        }
-    })
-
-    # Add new languages to the list of all django languages
-    global_settings.LANGUAGES = global_settings.LANGUAGES + EXTRA_LANGUAGES
-    global_settings.LANGUAGES_BIDI = (global_settings.LANGUAGES_BIDI +
-                                      [INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI.split('-')[0]])
-    # Add new languages to the list of languages used for this project
-    LANGUAGES += tuple(EXTRA_LANGUAGES)
-    LANGUAGES_BIDI = global_settings.LANGUAGES_BIDI
-
 django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
@@ -223,10 +180,11 @@ TEMPLATES = [
                 "bidiutils.context_processors.bidi",
             ],
             "libraries": {
+                "custom_tags": "config.templatetags.custom_tags",
+                "query_replace": "config.templatetags.query_replace",
+                "read_static_file": "config.templatetags.read_static_file",
                 "render_html_field": "config.templatetags.render_html_field",
                 "translate_url": "config.templatetags.translate_url",
-                "query_replace": "config.templatetags.query_replace",
-                'custom_tags': 'config.templatetags.custom_tags'
             },
         },
     },
@@ -336,25 +294,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# SEARCH CONFIGURATION
-# ------------------------------------------------------------------------------
-# See: http://django-haystack.readthedocs.io/en/v2.6.0/settings.html
-HAYSTACK_CONNECTIONS = {
-    'default': {
-        'ENGINE': 'haystack.backends.elasticsearch5_backend.Elasticsearch5SearchEngine',
-        'URL': 'elasticsearch:9200',
-        'INDEX_NAME': 'haystack',
-    },
-}
-HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
-
 # OTHER SETTINGS
 # ------------------------------------------------------------------------------
 DEPLOYED = env.bool("DEPLOYED")
 GIT_SHA = env("GIT_SHA", default=None)
-if GIT_SHA:
-    GIT_SHA = GIT_SHA[:8]
-else:
+if not GIT_SHA:
     GIT_SHA = "local development"
 PRODUCTION_ENVIRONMENT = False
 STAGING_ENVIRONMENT = False
@@ -369,6 +313,7 @@ MODELTRANSLATION_CUSTOM_FIELDS = ("JSONField",)
 CLASSIC_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("classic")), "content")
 GENERAL_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("general")), "content")
 ACTIVITIES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("at_home")), "content")
+AT_A_DISTANCE_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("at_a_distance")), "content")
 BREADCRUMBS_TEMPLATE = "django_bootstrap_breadcrumbs/bootstrap4.html"
 JOBE_SERVER_URL = "http://jobe"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -378,3 +323,5 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "https://canterbury.ac.nz"
 ]
+# Used by speaker notes for at a distance slides
+X_FRAME_OPTIONS = "SAMEORIGIN"

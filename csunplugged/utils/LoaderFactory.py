@@ -9,13 +9,13 @@ from topics.management.commands._LessonsLoader import LessonsLoader
 from topics.management.commands._ProgrammingChallengesLoader import ProgrammingChallengesLoader
 from topics.management.commands._ProgrammingChallengesStructureLoader import ProgrammingChallengesStructureLoader
 from topics.management.commands._TopicLoader import TopicLoader
-from topics.management.commands._UnitPlanLoader import UnitPlanLoader
 from topics.management.commands._ClassroomResourcesLoader import ClassroomResourcesLoader
 from at_home.management.commands._ActivityLoader import ActivityLoader
 from at_home.management.commands._ChallengeLoader import ChallengeLoader
 from resources.management.commands._ResourcesLoader import ResourcesLoader
 from classic.management.commands._ClassicPagesLoader import ClassicPagesLoader
 from general.management.commands._GeneralPagesLoader import GeneralPagesLoader
+from at_a_distance.management.commands._LessonLoader import AtADistanceLessonLoader
 
 
 class LoaderFactory:
@@ -41,9 +41,9 @@ class LoaderFactory:
         """Create learning outcomes loader."""
         return LearningOutcomesLoader(**kwargs)
 
-    def create_lessons_loader(self, topic, unit_plan, **kwargs):
+    def create_lessons_loader(self, topic, **kwargs):
         """Create lessons loader."""
-        return LessonsLoader(topic, unit_plan, **kwargs)
+        return LessonsLoader(topic, **kwargs)
 
     def create_classroom_resources_loader(self, **kwargs):
         """Create lessons loader."""
@@ -60,10 +60,6 @@ class LoaderFactory:
     def create_topic_loader(self, **kwargs):
         """Create topic loader."""
         return TopicLoader(self, **kwargs)
-
-    def create_unit_plan_loader(self, topic, **kwargs):
-        """Create unit plan loader."""
-        return UnitPlanLoader(self, topic, **kwargs)
 
     def create_activity_loader(self, **kwargs):
         """Create activity loader."""
@@ -84,3 +80,7 @@ class LoaderFactory:
     def create_general_pages_loader(self, **kwargs):
         """Create general pages loader."""
         return GeneralPagesLoader(structure_dir="", **kwargs)
+
+    def create_at_a_distance_lesson_loader(self, lesson_number, **kwargs):
+        """Create at a distance lesson loader."""
+        return AtADistanceLessonLoader(lesson_number, **kwargs)

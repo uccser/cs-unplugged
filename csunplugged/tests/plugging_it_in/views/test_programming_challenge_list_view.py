@@ -13,11 +13,9 @@ class ProgrammingChallengeListViewTest(BaseTestWithDB):
 
     def test_programming_challenge_list_with_valid_slugs(self):
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
         lesson = self.test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             age_group_1
         )
@@ -46,11 +44,9 @@ class ProgrammingChallengeListViewTest(BaseTestWithDB):
 
     def test_programming_challenge_list_with_invalid_topic_slug(self):
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
         lesson = self.test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             age_group_1
         )
@@ -79,11 +75,9 @@ class ProgrammingChallengeListViewTest(BaseTestWithDB):
 
     def test_programming_challenge_list_with_invalid_lesson_slug(self):
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
         lesson = self.test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             age_group_1
         )
@@ -112,11 +106,9 @@ class ProgrammingChallengeListViewTest(BaseTestWithDB):
 
     def test_programming_challenge_list_topic_context(self):
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
         lesson = self.test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             age_group_1
         )
@@ -148,11 +140,9 @@ class ProgrammingChallengeListViewTest(BaseTestWithDB):
 
     def test_programming_challenge_list_lesson_context(self):
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
         lesson = self.test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             age_group_1
         )
@@ -184,11 +174,9 @@ class ProgrammingChallengeListViewTest(BaseTestWithDB):
 
     def test_programming_challenge_list_challenges_context(self):
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
         lesson = self.test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             age_group_1
         )

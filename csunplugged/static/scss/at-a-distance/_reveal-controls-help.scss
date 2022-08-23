@@ -1,0 +1,21 @@
+@import "variables";
+
+aside.reveal-controls-help-container {
+    @extend %reveal-help-container;
+    margin: 1em 0;
+    padding: 0 1em;
+}
+ul.reveal-controls-help {
+    margin: 0.5em 0;
+    padding: 0em;
+    list-style-type: none;
+
+    kbd {
+        font-family: monospace;
+        padding: 0.2em 0.4em;;
+        font-size: 80%;
+        color: #fff;
+        background-color: #222;
+        border-radius: 0.3em;
+    }
+}

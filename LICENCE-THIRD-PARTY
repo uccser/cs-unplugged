@@ -32,6 +32,17 @@ third-party-licenses/coverage.txt
 ==============================================================================
 
 ==============================================================================
+CS Unplugged Headings
+------------------------------------------------------------------------------
+https://github.com/uccser/cs-unplugged-font
+Copyright (c) 2008, Haley Fiege (haley@kingdomofawesome.com)
+Copyright (c) 2012, Brenda Gallo (gbrenda1987@gmail.com)
+Copyright (c) 2013, Pablo Impallari (www.impallari.com|impallari@gmail.com)
+Copyright (c) 2022, University of Canterbury Computer Science Education Research Group (https://github.com/uccser/cs-unplugged-font|csse-education-research@canterbury.ac.nz)
+Licensed under SIL Open Font License, Version 1.1.
+==============================================================================
+
+==============================================================================
 details-element-polyfill
 ------------------------------------------------------------------------------
 https://github.com/javan/details-element-polyfill
@@ -259,16 +270,6 @@ http://pyyaml.org/
 Copyright (c) 2006 Kirill Simonov.
 Licensed under MIT License.
 third-party-licenses/pyyaml.txt
-==============================================================================
-
-==============================================================================
-Sniglet
-------------------------------------------------------------------------------
-https://fonts.google.com/specimen/Sniglet
-https://github.com/theleagueof/sniglet
-Copyright (c) 2008 Haley Fiege
-Licensed under SIL Open Font License, Version 1.1.
-third-party-licenses/sniglet.txt
 ==============================================================================
 
 ==============================================================================

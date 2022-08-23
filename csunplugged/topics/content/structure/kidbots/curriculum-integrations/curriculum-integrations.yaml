@@ -3,7 +3,6 @@ storytelling:
   curriculum-areas:
     - speaking
   prerequisite-lessons:
-    unit-plan:
       - rescue-mission
 
 move-to-a-number:
@@ -11,7 +10,6 @@ move-to-a-number:
   curriculum-areas:
     - numeracy
   prerequisite-lessons:
-    unit-plan:
       - rescue-mission
 
 finding-shapes:
@@ -19,7 +17,6 @@ finding-shapes:
   curriculum-areas:
     - geometry
   prerequisite-lessons:
-    unit-plan:
       - rescue-mission
 
 moving-in-a-shape:
@@ -27,5 +24,4 @@ moving-in-a-shape:
   curriculum-areas:
     - geometry
   prerequisite-lessons:
-    unit-plan:
       - rescue-mission

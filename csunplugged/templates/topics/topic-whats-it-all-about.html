@@ -1,0 +1,69 @@
+{% extends "columns.html" %}
+
+{% load i18n %}
+{% load render_html_field %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+  {{ topic.name }} - {% trans "What's it all about" %}
+{% endblock title %}
+
+{% block breadcrumbs %}
+  {% breadcrumb "Topics" "topics:index" %}
+  {% breadcrumb topic.name "topics:topic" topic.slug %}
+  {% breadcrumb "What's it all about" "topics:topic_whats_it_all_about" topic.slug %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+  <h1 id="{{ topic.slug }}">
+        {{ topic.name }}
+        <br>
+        <small class="text-muted">
+            {% trans "What's it all about?"%}
+        </small>
+  </h1>
+  {% if not topic.translation_available %}
+    {% with model=topic %}
+      {% include 'topics/not-available-warning.html' %}
+    {% endwith %}
+  {% endif %}
+{% endblock page_heading %}
+
+{% block left_column_content  %}
+  {% if topic.translation_available %}
+    {% render_html_field topic.whats_it_all_about %}
+
+    {% with computational_thinking_links=topic.computational_thinking_links %}
+      {% include "topics/computational-thinking-links.html" %}
+    {% endwith %}
+  {% endif %}
+
+  <p class="text-center">
+    <a href="{% url 'topics:topic' topic.slug %}" class="btn btn-outline-primary">
+        {% trans "Go back to the topic homepage" %}
+    </a>
+  </p>
+{% endblock left_column_content  %}
+
+{% block right_column_content %}
+  {% if topic.translation_available %}
+  <div id="sticky-sidebar" class="position-sticky">
+    <h2 class="heading-underline">{% trans "Table of contents" %}</h2>
+    <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
+      <li class="nav-item">
+        <a class="nav-link" href="#{{ topic.slug }}">{{ topic.name }}</a>
+      </li>
+      {% for heading_node in topic.whats_it_all_about_heading_tree %}
+        <li class="nav-item">
+          <a class="nav-link" href="#{{ heading_node.slug }}">{{ heading_node.text }}</a>
+        </li>
+      {% endfor %}
+      {% if topic.computational_thinking_links %}
+        <li class="nav-item">
+          <a class="nav-link" href="#ct-links">{% trans "Computational Thinking" %}</a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+  {% endif %}
+{% endblock right_column_content %}

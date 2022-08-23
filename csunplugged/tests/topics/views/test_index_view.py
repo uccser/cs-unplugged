@@ -18,11 +18,9 @@ class IndexViewTest(BaseTestWithDB):
 
     def test_index_with_one_topic(self):
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group = self.test_data.create_age_group(5, 7)
         self.test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             age_group
         )
@@ -36,20 +34,16 @@ class IndexViewTest(BaseTestWithDB):
 
     def test_index_with_mulitple_topics(self):
         topic_1 = self.test_data.create_topic(1)
-        unit_plan_1 = self.test_data.create_unit_plan(topic_1, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
         self.test_data.create_lesson(
             topic_1,
-            unit_plan_1,
             1,
             age_group_1
         )
         topic_2 = self.test_data.create_topic(2)
-        unit_plan_2 = self.test_data.create_unit_plan(topic_2, 1)
         age_group_2 = self.test_data.create_age_group(5, 7)
         self.test_data.create_lesson(
             topic_2,
-            unit_plan_2,
             1,
             age_group_2
         )
@@ -63,11 +57,9 @@ class IndexViewTest(BaseTestWithDB):
 
     def test_index_topic_single_age_group_context(self):
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group = self.test_data.create_age_group(10, 30)
         self.test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             age_group
         )
@@ -80,13 +72,11 @@ class IndexViewTest(BaseTestWithDB):
 
     def test_index_topic_multiple_age_groups_context(self):
         topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(10, 30)
         age_group_2 = self.test_data.create_age_group(30, 50)
         age_group_3 = self.test_data.create_age_group(50, 99)
         self.test_data.create_lesson(
             topic,
-            unit_plan,
             1,
             [age_group_1, age_group_2, age_group_3]
         )

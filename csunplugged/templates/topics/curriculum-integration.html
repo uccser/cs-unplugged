@@ -47,8 +47,8 @@
         <ul class="mb-1">
           {% for lesson in prerequisite_lessons %}
             <li>
-              <a href="{% url 'topics:lesson' lesson.topic.slug lesson.unit_plan.slug lesson.slug %}">
-                <strong>{{ lesson.unit_plan.name }}:</strong> {{ lesson.name }}
+              <a href="{% url 'topics:lesson' lesson.topic.slug lesson.slug %}">
+                <strong>{{ lesson.topic.name }}:</strong> {{ lesson.name }}
                 ({% for age_group in lesson.age_group.all %}{{ age_group.ages.lower }} to {{ age_group.ages.upper }}{% if not forloop.last %} and {% endif %}{% endfor %})
               </a>
               {% if not lesson.translation_available %}

@@ -1,0 +1,12 @@
+<ul class="reveal-controls-help">
+    <li>Press the arrow keys <kbd>←</kbd> <kbd>→</kbd> <kbd>↑</kbd> <kbd>↓</kbd> to control the slideshow.</li>
+    {% if speaker_mode|default:False %}
+        <li>Press <kbd>S</kbd> to open the speaker/presenter window.</li>
+    {% endif %}
+    {% if fullscreen|default:False %}
+        <li>Press <kbd>F</kbd> to enter full screen, and <kbd>Esc</kbd> to exit full screen.</li>
+    {% endif %}
+    {% if blank|default:False %}
+        <li>Press <kbd>B</kbd> to blank the screen.</li>
+    {% endif %}
+</ul>

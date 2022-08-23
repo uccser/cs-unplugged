@@ -1,6 +1,6 @@
 # Zahlen ansteuern
 
-Anhand der in der Lektion [Rettungsaktion]('topics:lesson' 'kidbots' 'unit-plan' 'rescue-mission') verwendeten Struktur und Ressourcen können wir auch Rechnen in die Kidbots-Aktivitäten integrieren.
+Anhand der in der Lektion [Rettungsaktion]('topics:lesson' 'kidbots' 'rescue-mission') verwendeten Struktur und Ressourcen können wir auch Rechnen in die Kidbots-Aktivitäten integrieren.
 
 ## Lektionsaktivitäten
 

@@ -1,0 +1,45 @@
+<script>
+    let Reveal = new CSU_ATD_Reveal({
+        embedded: {{ embedded|yesno:"true,false" }},
+        showNotes: {{ show_notes|yesno:"true,false" }},
+        overview: false,
+        controlsTutorial: false,
+        disableLayout: false,
+        center: true,
+        hash: true,
+        help: false,
+        hashOneBasedIndex: true,
+        progress: false,
+        slideNumber: {{ slide_number|default:'true' }},
+        fragments: {{ fragments|default:'true' }},
+        transition: 'none',
+        backgroundTransition: 'fade',
+        viewDistance: 1,
+        mobileViewDistance: 1,
+
+        plugins: [
+            {% if speaker_mode %}CSU_ATD_SpeakerNotes,{% endif %},
+            CSU_ATD_Highlight,
+        ],
+
+        // The "normal" size of the presentation, aspect ratio will
+        // be preserved when the presentation is scaled to fit different
+        // resolutions. Can be specified using percentage units.
+        width: 1920,
+        height: 1080,
+
+        // Factor of the display size that should remain empty around
+        // the content
+        margin: 0.04,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 2.0,
+    })
+    Reveal.initialize();
+    {% if embedded %}
+    Reveal.on( 'slidechanged', event => {
+        document.querySelector('#slides .reveal .speaker-notes').scrollTop = 0;
+    });
+    {% endif %}
+</script>

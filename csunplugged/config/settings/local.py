@@ -3,7 +3,6 @@
 Django settings for local development environment.
 
 - Run in Debug mode
-- Add custom dev application
 - Add Django Debug Toolbar
 - Add django-extensions
 - Use console backend for emails
@@ -63,21 +62,19 @@ INSTALLED_APPS += ["debug_toolbar", ]  # noqa: F405
 INTERNAL_IPS = ["127.0.0.1", "10.0.2.2", ]
 
 ALLOWED_HOSTS = [
-    ".canterbury.ac.nz",
-    "localhost",
     "cs-unplugged.localhost",
-    "127.0.0.1",
-    "[::1]",
+    "localhost",
+    "django",
 ]
 
 
 def show_django_debug_toolbar(request):
-    """Show Django Debug Toolbar in every request when running locally.
+    """Show toolbar in request unless parameter is given.
 
     Args:
         request: The request object.
     """
-    return True
+    return "hide-debug-toolbar" not in request.GET
 
 
 DEBUG_TOOLBAR_CONFIG = {
@@ -86,7 +83,6 @@ DEBUG_TOOLBAR_CONFIG = {
     ],
     "SHOW_TEMPLATE_CONTEXT": True,
     "SHOW_TOOLBAR_CALLBACK": show_django_debug_toolbar,
-
 }
 
 # django-extensions
@@ -97,7 +93,9 @@ INSTALLED_APPS += ["django_extensions", ]
 # ----------------------------------------------------------------------------
 TEST_RUNNER = "django.test.runner.DiscoverRunner"
 
-
-# Your local stuff: Below this line define 3rd party library settings
-# ----------------------------------------------------------------------------
-INSTALLED_APPS += ["dev.apps.DevConfig"]  # noqa: F405
+# LOGGING
+# ------------------------------------------------------------------------------
+# Based off https://lincolnloop.com/blog/django-logging-right-way/
+# Suppress these loggers in local development for less noise in logs
+logging.getLogger('gunicorn.access').handlers = []  # noqa F405
+logging.getLogger('gunicorn.error').handlers = []  # noqa F405

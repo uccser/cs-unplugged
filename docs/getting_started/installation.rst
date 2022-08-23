@@ -108,14 +108,14 @@ character, this shows the start of your terminal prompt).
 .. code-block:: bash
 
     $ docker version
-    $ docker-compose version
+    $ docke compose version
     $ docker run hello-world
 
 .. note::
 
     Depending on your operating system, if the above commands don't work you
     may need to set Docker to be able to run without ``sudo``.
-    You will need to do this in order to use the ``csu`` helper script.
+    You will need to do this in order to use the ``dev`` helper script.
 
 Step 7: Install Text Editor/IDE (optional)
 =================================================
@@ -222,15 +222,15 @@ Step 9: Check Project Setup Works
 
 To check the project works, open a terminal in the project root directory,
 which is the ``cs-unplugged/`` directory (should contain a file called
-``csu``).
+``dev``).
 
 Type the following commands into the terminal (we will cover these commands
 in more detail on the next page):
 
 .. code-block:: bash
 
-    $ ./csu start
-    $ ./csu update
+    $ ./dev start
+    $ ./dev update
 
 If this is the first time you're running this script, it will need to build
 system images.

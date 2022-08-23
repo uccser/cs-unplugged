@@ -1,6 +1,6 @@
 # Storytelling
 
-Using the same structure and resources as the [Rescue Mission]('topics:lesson' 'kidbots' 'unit-plan' 'rescue-mission') lesson, we can retell a story using Kidbots.
+Using the same structure and resources as the [Rescue Mission]('topics:lesson' 'kidbots' 'rescue-mission') lesson, we can retell a story using Kidbots.
 
 ## Key questions
 

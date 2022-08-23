@@ -1,0 +1,21 @@
+<h2>Python</h2>
+
+<div class="r-flex-grow r-grid r-grid-columns r-h-100">
+    <div>
+        <pre><code class="language-python hide-line-numbers" data-trim data-line-numbers="{{ highlight_lines }}">
+            max_so_far = int(input("Type in a score: "))
+
+            for i in range(4):
+                score = int(input("Type in a score: "))
+                if score > max_so_far:
+                    max_so_far = score
+
+            print("High score was", max_so_far)
+        </code></pre>
+    </div>
+    <div>
+        {% if interactive %}
+            <iframe data-src="https://trinket.io/embed/python3/b7d22b2902?outputOnly=true&runOption=run&start=result" width="400" height="500" frameborder="0" marginwidth="0" marginheight="0" class="r-iframe-scale r-iframe-scale-2"></iframe>
+        {% endif %}
+    </div>
+</div>

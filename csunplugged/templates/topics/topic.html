@@ -24,55 +24,52 @@
     {% endwith %}
   {% endif %}
 
-  {% if topic.translation_available %}
-    {% render_html_field topic.content %}
-  {% endif %}
+  <div class="pb-3">
+    {% if topic.translation_available %}
+        {% render_html_field topic.content %}
+    {% endif %}
+  </div>
 {% endblock page_heading %}
 
-{% block content %}
-  <h2 id="units">{% trans "Unit Plans" %}</h2>
-  <div class="row justify-content-between">
-    {% for unit_plan in unit_plans %}
-      <div class="col-12 col-md-6 mb-4">
-        <a class="link-item no-text-decoration d-flex justify-content-between h-100{% if not unit_plan.translation_available %} unavailable{% endif %}" href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
-          <div>
-            <h3>{{ unit_plan.name }}</h3>
-            {% if not unit_plan.translation_available %}
-              {% include "generic/not-available-badge.html" %}
-            {% endif %}
-            <ul class="list-unstyled list-unstyled-i18n text-muted mb-0">
-              <li>
-                <strong>
-                  {% blocktrans trimmed with min_age=unit_plan.min_age max_age=unit_plan.max_age%}
-                    Ages {{ min_age }} to {{ max_age }}
-                  {% endblocktrans %}
-                </strong>
-              </li>
-            </ul>
-          </div>
-          <div class="summary">
-            <span class="summary-value">{{ unit_plan.lessons.count }}</span>
-            <br>
-            {% trans "lessons" %}
-          </div>
-        </a>
-      </div>
-    {% endfor %}
-  </div>
+{% block content_container %}
+    <div class="col-12 col-lg-6 col-xl-5">
+        {% if topic.translation_available %}
+            <h2>{% trans "What's it all about?" %}</h2>
+            {% render_html_field topic.whats_it_all_about as whats_it_all_about_html %}
+            {{ whats_it_all_about_html|truncatewords_html:150 }}
 
-  {% if curriculum_integrations %}
-    <h2 id="integrations">{% trans "Curriculum Integrations" %}</h2>
-    {% include "topics/curriculum-integrations-table.html" %}
-  {% endif %}
-{% endblock content %}
+            <p class="text-center">
+                <a href="{% url 'topics:topic_whats_it_all_about' topic.slug %}" class="btn btn-outline-primary">
+                    {% trans "Read more..." %}
+                    {% if topic.computational_thinking_links %}
+                        <br>
+                        <small>
+                            {% trans "Includes links to computational thinking" %}
+                        </small>
+                    {% endif %}
+                </a>
+            </p>
+        {% endif %}
+    </div>
 
-{% block end_content %}
-  {% if topic.other_resources %}
-    <h2 id="other-resources">{% trans "Looking for more?" %}</h2>
-    <p>
-      <a href="{% url 'topics:other_resources' topic.slug %}">
-        {% trans "Click here for other resources" %}
-      </a>
-    </p>
-  {% endif %}
-{% endblock end_content %}
+    <div class="col-12 col-lg-6 col-xl-7">
+        {% if grouped_lessons %}
+            <h2 id="lessons">{% trans "Lessons" %}</h2>
+            {% include "topics/lessons-table.html" %}
+        {% endif %}
+
+        {% if curriculum_integrations %}
+            <h2 id="integrations">{% trans "Curriculum Integrations" %}</h2>
+            {% include "topics/curriculum-integrations-table.html" %}
+        {% endif %}
+
+        {% if topic.other_resources %}
+            <h2 id="other-resources">{% trans "Looking for more?" %}</h2>
+            <p>
+                <a href="{% url 'topics:other_resources' topic.slug %}">
+                    {% trans "Click here for other resources" %}
+                </a>
+            </p>
+        {% endif %}
+    </div>
+{% endblock content_container %}

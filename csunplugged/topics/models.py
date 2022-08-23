@@ -6,6 +6,9 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.postgres.fields import IntegerRangeField
 from resources.models import Resource
 from utils.TranslatableModel import TranslatableModel
+from django.contrib.postgres.search import SearchVectorField
+from django.contrib.postgres.indexes import GinIndex
+from search.utils import concat_field_values
 
 
 class GlossaryTerm(TranslatableModel):
@@ -112,8 +115,12 @@ class Topic(TranslatableModel):
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=100, default="")
     content = models.TextField(default="")
+    whats_it_all_about = models.TextField(default="")
+    whats_it_all_about_heading_tree = models.JSONField(default=dict)
+    computational_thinking_links = models.TextField(default="")
     other_resources = models.TextField(default="")
     icon = models.CharField(max_length=100, null=True)
+    search_vector = SearchVectorField(null=True)
 
     def get_absolute_url(self):
         """Return the canonical URL for a topic.
@@ -134,44 +141,29 @@ class Topic(TranslatableModel):
         """
         return self.name
 
-
-class UnitPlan(TranslatableModel):
-    """Model for unit plan in database."""
-
-    MODEL_NAME = _("Unit Plan")
-    RETURN_TO_PARENT = _("Return to topic")
-
-    #  Auto-incrementing 'id' field is automatically set by Django
-    topic = models.ForeignKey(
-        Topic,
-        on_delete=models.CASCADE,
-        related_name="unit_plans"
-    )
-    slug = models.SlugField()
-    name = models.CharField(max_length=100, default="")
-    content = models.TextField(default="")
-    computational_thinking_links = models.TextField(default="")
-    heading_tree = models.JSONField(default=dict)
-
-    def get_absolute_url(self):
-        """Return the canonical URL for a unit plan.
+    def index_contents(self):
+        """Return dictionary for search indexing.
 
         Returns:
-            URL as string.
+            Dictionary of content for search indexing. The dictionary keys
+            are the weightings of content, and the dictionary values
+            are strings of content to index.
         """
-        kwargs = {
-            "topic_slug": self.topic.slug,
-            "unit_plan_slug": self.slug
+        return {
+            'A': self.name,
+            'B': self.content,
+            'C': concat_field_values(
+                self.lessons.values_list('name'),
+            ),
+            'D': self.other_resources,
         }
-        return reverse("topics:unit_plan", kwargs=kwargs)
 
-    def __str__(self):
-        """Text representation of UnitPlan object.
+    class Meta:
+        """Meta options for model."""
 
-        Returns:
-            Name of unit plan (str).
-        """
-        return self.name
+        indexes = [
+            GinIndex(fields=['search_vector'])
+        ]
 
 
 class ProgrammingChallengeDifficulty(TranslatableModel):
@@ -218,6 +210,7 @@ class ProgrammingChallenge(TranslatableModel):
         on_delete=models.CASCADE,
         related_name="programming_challenges"
     )
+    search_vector = SearchVectorField(null=True)
 
     def get_absolute_url(self):
         """Return the canonical URL for a programming challenge.
@@ -262,6 +255,27 @@ class ProgrammingChallenge(TranslatableModel):
             Name of programming challenge (str).
         """
         return self.name
+
+    def index_contents(self):
+        """Return dictionary for search indexing.
+
+        Returns:
+            Dictionary of content for search indexing. The dictionary keys
+            are the weightings of content, and the dictionary values
+            are strings of content to index.
+        """
+        return {
+            'A': self.name,
+            'B': self.content,
+            'D': self.topic.name,
+        }
+
+    class Meta:
+        """Meta options for model."""
+
+        indexes = [
+            GinIndex(fields=['search_vector'])
+        ]
 
 
 class ProgrammingChallengeLanguage(TranslatableModel):
@@ -356,17 +370,12 @@ class Lesson(TranslatableModel):
         on_delete=models.CASCADE,
         related_name="lessons"
     )
-    unit_plan = models.ForeignKey(
-        UnitPlan,
-        on_delete=models.CASCADE,
-        related_name="lessons"
-    )
     slug = models.SlugField(max_length=100)
     name = models.CharField(max_length=100, default="")
     duration = models.PositiveSmallIntegerField(null=True)
     content = models.TextField(default="")
     computational_thinking_links = models.TextField(default="")
-    heading_tree = models.JSONField(default=list)
+    heading_tree = models.JSONField(default=dict)
     age_group = models.ManyToManyField(
         AgeGroup,
         through="LessonNumber",
@@ -390,6 +399,7 @@ class Lesson(TranslatableModel):
     classroom_resources = models.ManyToManyField(
         ClassroomResource,
     )
+    search_vector = SearchVectorField(null=True)
 
     def has_programming_challenges(self):
         """Return boolean of lesson having any programming challenges.
@@ -444,7 +454,6 @@ class Lesson(TranslatableModel):
         """
         kwargs = {
             "topic_slug": self.topic.slug,
-            "unit_plan_slug": self.unit_plan.slug,
             "lesson_slug": self.slug
         }
         return reverse("topics:lesson", kwargs=kwargs)
@@ -456,6 +465,28 @@ class Lesson(TranslatableModel):
             Name of lesson (str).
         """
         return self.name
+
+    def index_contents(self):
+        """Return dictionary for search indexing.
+
+        Returns:
+            Dictionary of content for search indexing. The dictionary keys
+            are the weightings of content, and the dictionary values
+            are strings of content to index.
+        """
+        return {
+            'A': self.name,
+            'B': self.content,
+            'C': self.topic.name,
+            'D': self.computational_thinking_links,
+        }
+
+    class Meta:
+        """Meta options for model."""
+
+        indexes = [
+            GinIndex(fields=['search_vector'])
+        ]
 
 
 class LessonNumber(models.Model):
@@ -506,6 +537,7 @@ class CurriculumIntegration(TranslatableModel):
         Lesson,
         related_name="curriculum_integrations"
     )
+    search_vector = SearchVectorField(null=True)
 
     def has_prerequisite_lessons(self):
         """Return boolean of integration having any prerequisite lessons.
@@ -535,6 +567,30 @@ class CurriculumIntegration(TranslatableModel):
             Name of curriculum integration (str).
         """
         return self.name
+
+    def index_contents(self):
+        """Return dictionary for search indexing.
+
+        Returns:
+            Dictionary of content for search indexing. The dictionary keys
+            are the weightings of content, and the dictionary values
+            are strings of content to index.
+        """
+        return {
+            'A': self.name,
+            'B': self.content,
+            'C': concat_field_values(
+                self.curriculum_areas.values_list('name'),
+            ),
+            'D': self.topic.name,
+        }
+
+    class Meta:
+        """Meta options for model."""
+
+        indexes = [
+            GinIndex(fields=['search_vector'])
+        ]
 
 
 class ResourceDescription(TranslatableModel):

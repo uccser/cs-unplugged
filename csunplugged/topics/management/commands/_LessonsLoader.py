@@ -21,16 +21,14 @@ from topics.models import (
 class LessonsLoader(TranslatableModelLoader):
     """Custom loader for loading lessons."""
 
-    def __init__(self, topic, unit_plan, **kwargs):
+    def __init__(self, topic, **kwargs):
         """Create the loader for loading lessons.
 
         Args:
             topic: Object of Topic model (Topic).
-            unit_plan: Object of UnitPlan model (UnitPlan).
         """
         super().__init__(**kwargs)
         self.topic = topic
-        self.unit_plan = unit_plan
 
     def load(self):
         """Load the content for a single lesson.
@@ -89,7 +87,6 @@ class LessonsLoader(TranslatableModelLoader):
                 lesson_duration = None
 
             lesson = self.topic.lessons.create(
-                unit_plan=self.unit_plan,
                 slug=lesson_slug,
                 duration=lesson_duration,
             )

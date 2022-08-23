@@ -40,8 +40,15 @@
 
 @import "pygments-vs";
 @import "directional";
-@import url('https://fonts.googleapis.com/css?family=Sniglet');
+@import "at-a-distance";
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+@font-face {
+    font-family: "CS Unplugged Headings";
+    src: url('/static/fonts/CSUnplugged-Headings.otf') format('opentype');
+    font-style: normal;
+    font-weight: normal;
+}
 
 .at-home-divider {
     border-top: 3px solid $at-home-colour;
@@ -83,6 +90,7 @@ h6 {
 .educator-colour { color: $educator-colour;}
 .at-home-colour { color: $at-home-colour;}
 .plugging-it-in-colour { color: $plugging-it-in-colour;}
+.at-a-distance-colour { color: $at-a-distance-colour;}
 
 input[type="text"].long-text-field {
   width: 20em;
@@ -132,7 +140,10 @@ $rounded-corner-radius: 0.5rem;
     }
 }
 #plugging-it-in-jumbotron {
-    background: $plugging-it-in-colour;
+    background: url("../img/plugging-it-in/tile-background.png") $plugging-it-in-colour;
+    background-repeat: repeat;
+    background-size: 18rem;
+    background-position: center;
     h2 {
         font-size: 2rem;
     }
@@ -359,11 +370,11 @@ $navbar-height: 50px;
 $navbar-padding-bottom: 24px;
 body {
   padding-top: $navbar-height;
-  &.homepage {
+  &.no-padding {
     padding-top: 0px;
   }
   position: relative;
-  background-color: $gray-100;
+  background-color: $background-colour;
 }
 
 #content-container {
@@ -384,12 +395,20 @@ body {
   background-color: lighten($green, 40%);
 }
 
-#scrollspy-table-of-contents .nav-link {
-  font-size: 0.9rem;
-  padding: ($spacer * .25) $spacer;
+ul#scrollspy-table-of-contents {
+    .nav-link {
+        font-size: 0.9rem;
+        padding: ($spacer * .25) $spacer;
+    }
+    & ul {
+        margin-left: 2rem;
+        .nav-link.active {
+            background-color: #0050e3;
+        }
+    }
 }
 
-#content-container table:not(.table) {
+#content-container table:not(.table):not(.hljs-ln) {
   display: block;
   margin-bottom: $spacer;
   width: 100%;
@@ -423,7 +442,7 @@ body {
   border-radius: 3px;
 }
 
-.background-csfg {
+.bg-csfg {
   background-color: #2b387c;
 }
 
@@ -501,6 +520,18 @@ ol, ul {
       border-top-color: $plugging-it-in-colour;
       &:hover {
         background-color: mix($plugging-it-in-colour, $white, 10%);
+      }
+    }
+    &-at-a-distance-1 {
+      border-top-color: $at-a-distance-colour;
+      &:hover {
+        background-color: mix($at-a-distance-colour, $white, 10%);
+      }
+    }
+    &-at-a-distance-2 {
+      border-top-color: mix($at-a-distance-colour, $white, 80%);
+      &:hover {
+        background-color: mix($at-a-distance-colour, $white, 10%);
       }
     }
     &-orange {

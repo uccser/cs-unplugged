@@ -1,0 +1,81 @@
+@import "../core-variables";
+
+$speech-bubble-background: mix(#fff, $at-a-distance-colour, 95%);
+
+// Scoped twice to override default reveal.js theme
+#slides .speaker-notes,
+.speaker-notes {
+
+    font-family: $font-family-sans-serif;
+    font-size: 1rem;
+
+    p {
+        line-height: inherit;
+        margin: 0 0 1rem;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    .speech-bubble {
+        background: $speech-bubble-background;
+        border: 1px solid $at-a-distance-colour;
+        border-radius: 1rem;
+        margin: 1rem 0 1.5em 0;
+        padding: 0.5em;
+        position: relative;
+
+        blockquote {
+            // Overrides for reveal theme defaults
+            margin: 0;
+            padding: 0;
+            box-shadow: none;
+            background: none;
+            width: auto;
+            font-style: normal;
+        }
+
+        .speech-bubble-arrow {
+            border-left: 21px solid transparent;
+            bottom: -25px;
+            position: absolute;
+            right: 15px;
+
+            &::before {
+                border-left: 23px solid transparent;
+                border-top: 23px solid $at-a-distance-colour;
+                bottom: 2px;
+                content: "";
+                position: absolute;
+                right: 5px;
+            }
+
+            &::after {
+                border-left: 21px solid transparent;
+                border-top: 21px solid $speech-bubble-background;
+                bottom: 4px;
+                content: "";
+                position: absolute;
+                right: 6px;
+            }
+        }
+    }
+
+    pre {
+        white-space: pre-line;
+        font-size: 0.8rem;
+        line-height: inherit;
+        padding: 0.5rem;
+        margin: 0;
+        border-left: 3px solid $at-a-distance-colour;
+        background: rgba($at-a-distance-colour, 4%);
+        cursor: pointer;
+        user-select: all;
+        box-shadow: none;
+
+        &:hover {
+            background: rgba($at-a-distance-colour, 10%);
+        }
+    }
+}

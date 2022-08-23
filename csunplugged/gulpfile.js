@@ -3,7 +3,7 @@
 ////////////////////////////////
 
 // Gulp and package
-const { src, dest, parallel, series, watch } = require('gulp')
+const { src, dest, parallel, series, watch, lastRun } = require('gulp')
 const pjson = require('./package.json')
 
 // Plugins
@@ -14,6 +14,7 @@ const buffer = require('vinyl-buffer');
 const c = require('ansi-colors')
 const concat = require('gulp-concat')
 const cssnano = require('cssnano')
+const dependents = require('gulp-dependents')
 const errorHandler = require('gulp-error-handle')
 const filter = require('gulp-filter')
 const gulpif = require('gulp-if');
@@ -51,6 +52,7 @@ function pathsConfig(appName) {
         js_source: `${staticSourceRoot}/js`,
         images_source: `${staticSourceRoot}/img`,
         files_source: `${staticSourceRoot}/files`,
+        fonts_source: `${staticSourceRoot}/fonts`,
         vendor_js_source: [
             `${vendorsRoot}/jquery/dist/jquery.js`,
             `${vendorsRoot}/popper.js/dist/umd/popper.js`,
@@ -61,10 +63,10 @@ function pathsConfig(appName) {
         ],
         // Output files
         css_output: `${staticOutputRoot}/css`,
-        fonts_output: `${staticOutputRoot}/fonts`,
         images_output: `${staticOutputRoot}/img`,
         js_output: `${staticOutputRoot}/js`,
         files_output: `${staticOutputRoot}/files`,
+        fonts_output: `${staticOutputRoot}/fonts`,
     }
 }
 
@@ -87,6 +89,9 @@ const processCss = [
     autoprefixer(),         // adds vendor prefixes
     pixrem(),               // add fallbacks for rem units
     postcssFlexbugFixes(),  // adds flexbox fixes
+]
+const printProcessCss = [
+    pixrem(),               // add fallbacks for rem units
 ]
 const minifyCss = [
     cssnano({ preset: 'default' })   // minify result
@@ -117,8 +122,16 @@ function css() {
 }
 
 function scss() {
-    return src(`${paths.scss_source}/**/*.scss`)
+    function postcss_callback(file) {
+        if (file.basename.endsWith('.print.css')) {
+            return { plugins: printProcessCss }
+        } else {
+            return { plugins: processCss }
+        }
+    }
+    return src(`${paths.scss_source}/**/*.scss`, { since: lastRun(scss) })
         .pipe(errorHandler(catchError))
+        .pipe(dependents())
         .pipe(sourcemaps.init())
         .pipe(sass({
             includePaths: [
@@ -127,7 +140,7 @@ function scss() {
             ],
             sourceComments: !PRODUCTION,
         }).on('error', sass.logError))
-        .pipe(postcss(processCss))
+        .pipe(postcss(postcss_callback))
         .pipe(sourcemaps.write())
         .pipe(gulpif(PRODUCTION, postcss(minifyCss))) // Minifies the result
         .pipe(dest(paths.css_output))
@@ -139,7 +152,7 @@ function js() {
     return src([
             `${paths.js_source}/**/*.js`,
             `!${paths.js_source}/modules/**/*.js`
-        ])
+        ], { since: lastRun(js) })
         .pipe(errorHandler(catchError))
         .pipe(sourcemaps.init())
         .pipe(js_filter)
@@ -173,6 +186,12 @@ function img() {
 function files() {
     return src(`${paths.files_source}/**/*`)
         .pipe(dest(paths.files_output))
+}
+
+// Custom fonts files
+function fonts() {
+    return src(`${paths.fonts_source}/**/*`)
+        .pipe(dest(paths.fonts_output))
 }
 
 // Browser sync server for live reload
@@ -211,7 +230,8 @@ const generateAssets = parallel(
     js,
     vendorJs,
     img,
-    files
+    files,
+    fonts
 )
 
 // Set up dev environment

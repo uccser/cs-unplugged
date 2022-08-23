@@ -1,0 +1,29 @@
+{% load i18n %}
+
+<p class="mb-0">
+  <a href="{{ result.get_absolute_url }}">
+    {{ result.name }}
+  </a>
+</p>
+{% for lesson_age in lesson_ages %}
+  <p class="mb-0">
+    <small class="text-muted">
+      {% blocktrans with lower=lesson_age.lower upper=lesson_age.upper number=lesson_age.number trimmed %}
+        <strong>Ages {{ lower }} to {{ upper }}:</strong> Lesson {{ number }}
+      {% endblocktrans %}
+    </small>
+  </p>
+{% endfor %}
+<p class="mb-0">
+  <small class="text-muted">
+    {% trans "Within topic" %}
+    <a href="{{ result.topic.get_absolute_url }}" class="text-muted">
+      {{ result.topic.name }}
+    </a>
+  </small>
+</p>
+<p class="mb-0">
+  {% for area in curriculum_areas %}
+    {% include "topics/curriculum-area-badge.html" %}
+  {% endfor %}
+</p>

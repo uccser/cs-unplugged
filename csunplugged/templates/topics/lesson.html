@@ -12,14 +12,13 @@
 {% block breadcrumbs %}
   {% breadcrumb "Topics" "topics:index" %}
   {% breadcrumb topic.name "topics:topic" topic.slug %}
-  {% breadcrumb unit_plan.name "topics:unit_plan" topic.slug unit_plan.slug %}
-  {% breadcrumb lesson.name "topics:lesson" topic.slug unit_plan.slug lesson.slug %}
+  {% breadcrumb lesson.name "topics:lesson" topic.slug lesson.slug %}
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
     <h1 id="{{ lesson.slug }}">{{ lesson.name }}</h1>
     {% if not lesson.translation_available %}
-      {% with model=lesson parent=unit_plan %}
+      {% with model=lesson parent=topic %}
         {% include "topics/not-available-warning.html" %}
       {% endwith %}
     {% else %}
@@ -100,7 +99,7 @@
       <div class="d-print-none">
         <h2 class="mt-2">{% trans "Programming challenges" %}</h2>
         <p>
-          <a href="{% url 'topics:programming_challenges_list' topic.slug unit_plan.slug lesson.slug %}">
+          <a href="{% url 'topics:programming_challenges_list' topic.slug lesson.slug %}">
             {% trans "View related programming challenges" %}
           </a>
         </p>
