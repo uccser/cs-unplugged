@@ -122,3 +122,34 @@ class LessonFileGenerationViewTest(BaseTestWithDB):
                 },
             }
         )
+
+    @override_settings(DEFAULT_LANGUAGES=MULTIPLE_LANGUAGES)
+    def test_slides_file_generation_view_multiple_lessons_multiple_languages_one_requested(self):
+        lesson1 = self.test_data.create_lesson(1)
+        lesson1.languages = [LANGUAGE1, LANGUAGE2]
+        lesson1.save()
+        lesson2 = self.test_data.create_lesson(2)
+        lesson2.languages = [LANGUAGE1]
+        lesson2.save()
+        lesson3 = self.test_data.create_lesson(3)
+        lesson3.languages = [LANGUAGE2]
+        lesson3.save()
+        url = reverse("at_a_distance:slides_file_generation_json") + "?language=lang2"
+        response = self.client.get(url)
+        self.assertJSONEqual(
+            response.content.decode(),
+            {
+                "resolution": "1920x1080",
+                "slide_counts": {
+                    "lesson-1": 2,
+                    "lesson-2": 4,
+                    "lesson-3": 7,
+                },
+                "languages": {
+                    LANGUAGE2: [
+                        "lesson-1",
+                        "lesson-3",
+                    ]
+                },
+            }
+        )
