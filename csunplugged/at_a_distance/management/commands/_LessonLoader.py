@@ -20,16 +20,15 @@ from at_a_distance.settings import (
 class AtADistanceLessonLoader(TranslatableModelLoader):
     """Custom loader for loading an lesson."""
 
-    def __init__(self, factory, lesson_data, **kwargs):
-        """Create the loader for loading an activity.
+    def __init__(self, lesson_number, **kwargs):
+        """Create the loader for loading a lesson.
 
         Args:
-            factory: LoaderFactory object for creating loaders (LoaderFactory).
+            lesson_number: Number of the lesson (int).
         """
         super().__init__(**kwargs)
-        self.factory = factory
+        self.lesson_number = lesson_number
         self.lesson_slug = self.content_path
-        self.lesson_data = lesson_data
 
     @transaction.atomic
     def load(self):
@@ -38,20 +37,11 @@ class AtADistanceLessonLoader(TranslatableModelLoader):
         Raise:
             MissingRequiredFieldError: when no object can be found with the matching attribute.
         """
+        lesson_structure = self.load_yaml_file(self.structure_file_path)
+
         lesson_translations = self.get_blank_translation_dictionary()
 
-        try:
-            order_number = self.lesson_data['order-number']
-        except KeyError:
-            raise MissingRequiredFieldError(
-                self.structure_file_path,
-                [
-                    "order-number",
-                ],
-                "Lesson"
-            )
-
-        icon_path = self.lesson_data.get('icon')
+        icon_path = lesson_structure.get('icon')
         if icon_path:
             find_image_files([icon_path], self.structure_file_path)
 
@@ -59,7 +49,7 @@ class AtADistanceLessonLoader(TranslatableModelLoader):
         suitability_options = [i[0] for i in Lesson.SUITABILITY_CHOICES]
 
         try:
-            suitable_teaching_students = self.lesson_data['suitable-for-teaching-students']
+            suitable_teaching_students = lesson_structure['suitable-for-teaching-students']
         except KeyError:
             raise MissingRequiredFieldError(
                 self.structure_file_path,
@@ -77,7 +67,7 @@ class AtADistanceLessonLoader(TranslatableModelLoader):
                 )
 
         try:
-            suitable_teaching_educators = self.lesson_data['suitable-for-teaching-educators']
+            suitable_teaching_educators = lesson_structure['suitable-for-teaching-educators']
         except KeyError:
             raise MissingRequiredFieldError(
                 self.structure_file_path,
@@ -104,7 +94,7 @@ class AtADistanceLessonLoader(TranslatableModelLoader):
         lesson, created = Lesson.objects.update_or_create(
             slug=self.lesson_slug,
             defaults={
-                'order_number': order_number,
+                'order_number': self.lesson_number,
                 'icon': icon_path,
                 'suitable_for_teaching_students': suitable_teaching_students,
                 'suitable_for_teaching_educators': suitable_teaching_educators,
@@ -117,7 +107,7 @@ class AtADistanceLessonLoader(TranslatableModelLoader):
 
         # Supporting resources
         lesson.supporting_resources.all().delete()
-        supporting_resources = self.lesson_data.get('supporting-resources')
+        supporting_resources = lesson_structure.get('supporting-resources')
         if supporting_resources:
             self.add_supporting_resource_translations(lesson)
 

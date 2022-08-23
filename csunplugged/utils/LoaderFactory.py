@@ -81,6 +81,6 @@ class LoaderFactory:
         """Create general pages loader."""
         return GeneralPagesLoader(structure_dir="", **kwargs)
 
-    def create_at_a_distance_lesson_loader(self, **kwargs):
+    def create_at_a_distance_lesson_loader(self, lesson_number, **kwargs):
         """Create at a distance lesson loader."""
-        return AtADistanceLessonLoader(self, **kwargs)
+        return AtADistanceLessonLoader(lesson_number, **kwargs)
