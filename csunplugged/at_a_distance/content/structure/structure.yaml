@@ -7,4 +7,4 @@ lessons:
   # - product-code-check-digits
   # - image-representation
   # - information-theory
-  # - finite-state-automata
+  - finite-state-automata
