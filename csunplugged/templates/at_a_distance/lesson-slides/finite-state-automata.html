@@ -55,13 +55,14 @@
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                We're going to introduce this important idea using a map of a commuting service!
-                Have your pen and paper or drawing tool ready.
-                I'm going to tell you a story: there is a new city called Trainsylvania where there are several train stations, but there are no maps showing where the trains go.
-                We are starting at the <strong>Station 1: Airport</strong>.
+                We're going to use a map of a commuting service to help explain finite state automata.
+                Have your pen and paper ready.
+                I'm going to use this interactive to help you create a map of a city called Trainsylvania.
+                Trainsylvania has several train stations, but there are no maps showing where the trains go.
+                We are starting at the train station called <strong>Station 1: Airport</strong>.
             </p>
             <p>
-                Write down 'Station 1' on your paper, or just a '1' is fine.
+                Write down 'Airport Station' on your paper, or just a '1' is fine.
             </p>
             <p>
                 We want to get to <strong>Station 5: Harbour</strong>.
@@ -71,12 +72,12 @@
             </p>
             <p>
                 Remember, we are starting at Airport Station.
-                In the chat tell me which train you wouldd like to take.
+                In the chat tell me which train you would like to take.
                 Type “A” for train A or “B” for train B.
                 The majority will decide which train we catch.
                 We will choose which train to take from each station in this way for the rest of the activity.
                 At this stage you might as well make random choices since there's no information to base the decision on, so just quickly type whichever you want, A or B.
-                Later you'll have more clues on which to take.
+                Later you'll have more clues on which train to take.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
@@ -160,7 +161,7 @@
             <p>
                 Congratulations!
                 We've made it to Harbour Station.
-                Let's see if we have a sequence of A's and B's that will get us from City Mall to Suburbopolis.
+                Let's see if we have a sequence of A's and B's that will get us from the Airport to the Harbour.
                 Please type in the route you would take in the chat using just As and Bs.
                 I will copy it into the Trainsylvania Planner and see if it agrees that your route will work.
                 The technical term for this sequence of letters is a “string”.
@@ -185,15 +186,12 @@
             <p>
                 Here is the master map for this activity that you probably would have appreciated seeing earlier!
                 How similar is it to the one you drew?
-                Your map might have a completely different layout if you drew it from scratch, particularly if you started with Airport Station in the middle of your paper, but hopefully your lines are still labelled the same between each station.
+                Your map might have a completely different layout, particularly if you started with Airport Station in the middle of your paper, but hopefully your lines are still labelled the same between each station.
             </p>
             <p>
                 What would have happened (or did happen!) if you hadn't labelled your lines with As or Bs?
                 Or if you didn't put the directional arrows in?
-                As you can see on the map, even though train A took you from Airport Station to West Station, catching Train A from West Station doesn't take you back to City Mall, but rather to East Station.
-            </p>
-            <p>
-                With students, we deliberately let them find out as they do the activity that arrows and labels are important, because in the process they will invent for themselves the notation of a finite state automata!
+                As you can see on the map, even though train A took you from Airport Station to West Station, catching Train A from West Station doesn't take you back to Aiport Station, but rather to East Station.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
@@ -204,6 +202,10 @@
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
+                <em>When teaching educators:</em>
+                With students, we deliberately let them find out as they do the activity that arrows and labels are important, because in the process they will invent for themselves the notation of a finite state automata!
+            </p>
+            <p>
                 Without the As and Bs it would have been confusing as to which line represented which train.
                 Without arrows it would have been easy to forget which train went to the station and which was leaving it.
             </p>
@@ -211,7 +213,7 @@
                 Don't be too hard on yourself, we didn't say at the beginning that you couldn't get back to your starting point on the same train you took away from it.
             </p>
             <p>
-                You can see how having arrows on each line and labelling them with As or Bs makes it easier to describe the final successful route from City Mall to Suburbopolis.
+                You can see how having arrows on each line and labelling them with As or Bs makes it easier to describe the final successful route from the Airport Station to the Harbour Station.
             </p>
             <p>
                 These lines with arrows represent what are called 'transitions'.
@@ -227,7 +229,7 @@
                 The final destination (Harbour Station) is indicated with a double circle around it.
                 This is called the 'final', or 'accepting' state.
                 It is the state that says “Yes, your sequence (string) is in this machine's language, it works.”
-                In other words, in our example any string of As and Bs that gets us from City Mall to Suburbopolis is accepted as valid, i.e. will get us to the 'accepting' state.
+                In other words, in our example any string of As and Bs that gets us from the Airport Station to the Harbour Station is accepted as valid, i.e. will get us to the 'accepting' state.
                 It's important to note that with a finite state automata, we're not worried about the shortest way to get to the accepting state, but just whether or not you end up there for a given string.
             </p>
             <p>
@@ -235,7 +237,7 @@
                 Each A or B is a transition, (railway line), between the states (stations).
                 The starting state is Airport Station like before, and we'll be transitioning to other states.
                 I'll give you the string, you tell me which state we end up at, that is, which train station.
-                To make it quicker, you only need to type the first three letters of the station.
+                To make it quicker, you only need to type its number or the first three letters of the station.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
@@ -244,7 +246,7 @@
 <section>
     <h2>Trainsylvania Questions</h2>
     <ol>
-        <li><span class="fragment">BBB will take us to</span><span class="fragment"> East Station</span></li>
+        <li>BBB will take us to<span class="fragment"> East Station</span></li>
         <li><span class="fragment">BABA will take us to back to</span><span class="fragment"> Airport Station</span></li>
         <li><span class="fragment">Will AAB get us to Harbour Station?</span><span class="fragment r-text-red"> No</span></li>
         <li><span class="fragment">Will ABBAB get us to Harbour Station?</span><span class="fragment r-text-green"> Yes</span></li>
@@ -260,17 +262,23 @@
 
         <p>
             Wait for answers in the chat.
+            Once you are ready to continue, press the next slide button to show the answer.
         </p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 Yes, that's right, BBB will take us to East Station (via South Station and Factory Station).
             </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>Push the next slide button to show each prompt individually.</p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 How about BABA, where will this take us? (from Airport station back to South station, back Airport Station, twice!).
             </p>
             <p>
-                To mix it up a bit, will this string get me to Suburbopolis?
+                To mix it up a bit, will this string get me to the Harbour Station?
                 AAB.
                 Yes or no?
                 Type your answer in the chat.
@@ -304,11 +312,11 @@
                 Just as English is a language, there are also languages in computer science.
                 In computer science languages there are very strict rules that can be used to check the input (for example, an email address can have strictly one “@” sign in it).
                 Because these languages are very well defined, they are called formal languages.
-                In contrast, natural languages (like English) aren't strictly defined, and people may argue about whether a particular spelling for a word is correct.
+                In contrast, natural languages (like English) aren't strictly defined, and people may argue about whether a particular spelling for, or pronunciation of, a word is correct.
             </p>
             <p>
                 Formal languages are very useful in computing.
-                Before a computer attempts to process input information, it checks to see if the character inputs (the symbols, letterssymbols or letters, or button presses used in the input) are in the correct language or not.
+                Before a computer attempts to process input information, it checks to see if the character inputs (the symbols, letters, or button presses used in the input) are in the correct language or not.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
@@ -317,7 +325,7 @@
 <section>
     <h2>Is this English?</h2>
     <ol>
-        <li><span class="fragment">Tim likes cake.</span></li>
+        <li>Tim likes cake.</li>
         <li><span class="fragment">ADM;lasdf oodf9 bosfa</span></li>
         <li><span class="fragment">Kei te pēhea koe?</span></li>
     </ol>
@@ -327,6 +335,11 @@
             <p>
                 For a natural language like English, an “English checker” would ask Is this in English language: "Tim likes cake."
             </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>Push the next button to show each prompt individually.</p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 Is this English: "Adm;lasdf oodf9 bosfa"?
             </p>
