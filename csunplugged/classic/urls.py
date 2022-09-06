@@ -10,6 +10,10 @@ urlpatterns = [
         views.redirect_to_classic_unplugged,
     ),
     path(
+        'activities-under-development',
+        views.redirect_to_community_activities,
+    ),
+    path(
         'artificial-intelligence',
         views.redirect_to_classic_unplugged,
     ),
