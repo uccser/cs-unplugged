@@ -23,6 +23,27 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+7.1.0
+==============================================================================
+
+**Release date:** 18 September 2022
+
+**Changelog:**
+
+- Add 'Finite State Automata' to 'At a distance' lessons
+- Capitalise reference to Classic CS Unplugged resource.
+- Add redirect for old URL.
+- Update project to use uccser-development-stack v3.
+- Remove character within Crowdin config that caused workflow to fail.
+- Dependency updates:
+    - Update autoprefixer from 10.4.8 to 10.4.11.
+    - Update crowdin/github-action from 1.4.12 to 1.4.13.
+    - Update django-extensions from 3.2.0 to 3.2.1.
+    - Update jquery from 3.6.0 to 3.6.1.
+    - Update PyPDF2 from 2.10.2 to 2.10.8.
+    - Update sass from 1.54.4 to 1.54.9.
+    - Update tqdm from 4.64.0 to 4.64.1.
+
 7.0.0
 ==============================================================================
 

@@ -16,6 +16,15 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
             fetch_redirect_response=False
         )
 
+    def test_activities_under_development(self):
+        response = self.client.get("/activities-under-development")
+        self.assertRedirects(
+            response,
+            "https://classic.csunplugged.org/activities/community-activities/",
+            status_code=301,
+            fetch_redirect_response=False
+        )
+
     def test_artificial_intelligence(self):
         response = self.client.get("/artificial-intelligence")
         self.assertRedirects(

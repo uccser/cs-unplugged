@@ -46,3 +46,14 @@ def redirect_to_modems_unplugged(request):
         "https://classic.csunplugged.org/activities/community-activities/modems-unplugged/",
         permanent=True,
     )
+
+
+def redirect_to_community_activities(request):
+    """Redirect request to community activities page.
+
+    Returns a 301 permanent redirect HTTP response.
+    """
+    return redirect(
+        "https://classic.csunplugged.org/activities/community-activities/",
+        permanent=True,
+    )
