@@ -206,11 +206,13 @@ $selectionColor: #fff;
         transform-origin: top left;
         transform: perspective(300em) scale(1.5);
         width: 67%;
+        padding-bottom: 15%;
     }
     .r-iframe-scale-2 {
         transform-origin: top left;
         transform: perspective(300em) scale(2);
         width: 50%;
+        padding-bottom: 25%;
     }
 
     .r-supporting-resources {
