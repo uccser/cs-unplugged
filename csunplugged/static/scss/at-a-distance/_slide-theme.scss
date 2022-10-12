@@ -202,14 +202,15 @@ $selectionColor: #fff;
     &.embed-responsive .reveal .slides section iframe {
         position: initial;
     }
-    .r-iframe-scale {
-        transform-origin: top center;
-    }
     .r-iframe-scale-1-5 {
+        transform-origin: top left;
         transform: perspective(300em) scale(1.5);
+        width: 67%;
     }
     .r-iframe-scale-2 {
+        transform-origin: top left;
         transform: perspective(300em) scale(2);
+        width: 50%;
     }
 
     .r-supporting-resources {
