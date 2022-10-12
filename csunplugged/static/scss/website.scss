@@ -258,7 +258,7 @@ details {
   overflow: hidden;
   background-color: $gray-lighter;
 
-  &[open] summary:before {
+  &[open] > summary:before {
     content: '⊖';
   }
 
