@@ -1,3 +1,5 @@
+{% load static %}
+
 <section>
     <h2>Key question</h2>
     <ul>
@@ -25,19 +27,22 @@
             </ul>
 
             <p>
-                Often it is suggested that we can measure information on a computer by the size of the file.
-                This is a good idea, but what if the file is a three minute recording of a blank, silent screen?
-                Does this have as much information as a three minute instructional video on how to cook a roast meal?
+                We are going to play a game to demonstrate one way of working out how much information a file holds.
+                We know that information can be compressed, but do we know what the limitations are for each file?
+                Computer Scientists consider the limitations and why that is.
+                This helps us to understand what computers are capable of and what is impossible for them to do.
+                This activity also demonstrates how important mathematics, in particular probability, is.
             </p>
 
             <p>
-                We are going to play a game to demonstrate one way of working out how much information a file holds.
+                Let's look at the experiment that Claude Shannon used to prove this?
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
 </section>
 
 <section>
+    <img src="{% static 'img/topics/shannon-juggling.png' %}" class="img-fluid" />
     <h2>Claude Shannon</h2>
     <h3>1916 - 2001</h3>
 
@@ -62,27 +67,359 @@
 </section>
 
 <section class="r-flex">
-    <iframe class="r-flex-grow r-iframe-scale" src="https://cs-field-guide-dev.csse.canterbury.ac.nz/en/interactives/iframe/shannon-experiment/?sentence=THERE IS NO REVERSE ON A MOTORCYCLE."></iframe>
+    <iframe class="r-flex-grow r-iframe-scale-1-5" src="https://www.csfieldguide.org.nz/en/interactives/iframe/shannon-experiment/?sentence=84%7C72%7C69%7C82%7C69%7C32%7C73%7C83%7C32%7C78%7C79%7C32%7C82%7C69%7C86%7C69%7C82%7C83%7C69%7C32%7C79%7C78%7C32%7C65%7C32%7C77%7C79%7C84%7C79%7C82%7C67%7C89%7C67%7C76%7C69%7C46&language=en&hide-builder=true"></iframe>
 
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                We will be using this interactive to help us guess what the sentence is.
-                Let's start!
-                I'm thinking of a sentence.
-                You, as a group, are going to guess what my sentence is.
+                We will be using this interactive to help us predict what the sentence is.
+                Let’s start!
+                I’ve pre-set a sentence.
+                You, as a group, are going to guess what my sentence is, letter by letter.
                 What do you think the first letter is?
                 Put your choice in the chat and I will enter the most popular one into the interactive.
                 If we guess correctly, the letter will show in black.
                 If we guess incorrectly it will show in red.
                 I see several people have suggested __.
-                Let's try it.
+                Let’s try it.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
+        <p>Choose the appropriate response:</p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            It’s black, we were right.
+            What do you think the next letter is?
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>or</p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            It’s red.
+            You can see a count has been added under the letter.
+            We’ll see why this is happening later.
+            Let’s have another guess.
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
         <p>
-            The sentence is: <code>THERE IS NO REVERSE ON A MOTORCYCLE.</code>
-            <strong>DO NOT SAY THIS SENTENCE TO PARTICIPANTS!</strong>
+            The count under each letter shows the number of guesses it’s taken to get the letter correct.
         </p>
+
+        <p>
+            Continue guessing letters until the letter turns black.
+            The number of guesses will automatically be recorded and the letter greyed out of the list when you enter it.
+        </p>
+
+        <p>
+            It is important to respond to guesses only by letting the audience know if they are correct or incorrect so that you don’t give away any further information to help with the guessing.
+            For example, don’t say “S, you are close with that one”.
+            Also, don’t allow questions such as ‘is it a vowel’ or ‘is it before M in the alphabet’?
+            Each guess must be for a specific letter.
+        </p>
+
+        <p>
+            Continue with participants guessing what they think the next letter is as you enter their choices into the interactive.
+            If time permits continue for the whole sentence. If time is short, have them guess at least the first two to four words.
+        </p>
+
+        <p>
+            Suggested script when whole sentence has been deciphered:
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            Well done!
+            That took some perseverance!
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>Suggested script when stopping after the fourth word has been deciphered:</p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            To keep our session shorter I’m going to stop us here.
+            If we had kept going we would have deciphered it to read <code>THERE IS NO REVERSE ON A MOTORCYCLE.</code>, but we have done enough now to illustrate the concept.
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>Suggested script for both options:</p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            Each guess can be represented as one “bit”.
+            “Bit” is the technical term for the smallest piece of information a digital device can hold. 8 bits are called a “byte”.
+            You have probably heard this term in relation to computers, particularly in the context of mega- and gigabytes of storage.
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            Each bit can represent one of two states, in this case, either correct or incorrect.
+            We can represent each correct answer as a 1 (one), and each incorrect answer as a 0 (zero).
+            In our example, the first letter took [say how many guesses it took your group to find the correct letter, this is the number showing under the letter] bits of information to guess as each guess uses one bit.
+            If we measure it this way, effectively the first letter cost me [however many guesses it took them to guess it] bits to transfer the information to you.
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            From this exercise we can see that some of the characters in a sentence took less bits to predict than others.
+            Computer scientists use this information to determine how much information is needed to send a message accurately.
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Highlight a letter that took more than one guess to get right.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            We can see the __ [character] cost [the number of guesses it took to get it correct, the number showing under the letter] bits because we guessed incorrectly [one less than the total number of guesses] times before we got it right.
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            When we measure the information content of something in this manner it is based on how easy it is to predict what the content is going to be.
+            This activity gave an idea of how many bits you might need to represent a sentence if you understand the English language as English speaking humans.
+            If we count up how many guesses it took us as a group to guess this sentence we then have a number, a measurement, we can use.
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            [Point to a letter that took a lot of guesses and seemed to take a long time to get correct] Even this one that seemed to take a long time, still only took [number of guesses] bits.
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            In addition, if we look at the statistics we can see that we guessed __ [number shown in the left hand column] characters on the first guess.
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            If you click on the "Show statistics" button it will open up two graphs to assist in understanding the data.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            Often it is suggested that we can measure information on a computer by the size of the file.
+            This is a good idea, but what if the file is a three minute recording of a blank, silent screen?
+            Does this have as much information as a three minute instructional video on how to cook a roast meal?
+            It may take the same number of megabytes to store, but I think you will agree it doesn’t hold as much information.
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section>
+    <div id="data-structures-image">
+        <div class="left-bubble">
+            <div class="left-thought">
+                They would ask me if it was a T.
+            </div>
+        </div>
+        <div class="right-bubbles">
+            <div class="right-thought">
+                They will first ask me if it is a T.
+                It is, so I will just say "Yes".
+            </div>
+            <div class="speech">
+                Yes!
+            </div>
+        </div>
+        <div class="image">
+            <img src="{% static 'img/topics/data-structures-for-searching-old-computer-kiddo-computer.png' %}" class="img-fluid w-100" />
+        </div>
+    </div>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                So how does this fit with what computers do?
+                Let’s take the game we just played.
+                If two devices are running the same prediction software and play this game, then they don’t need to say the text to find the same sentence.
+                Think about it this way: if I could read your mind and know what order you were going to guess letters in, then I could tell you “yes, no, no, yes, no, no, no yes…” until you guessed the right letter for each space.
+                If I know what letters you are going to guess then you don’t need to actually tell me those letters.
+                This is what happens with data compression.
+                Perhaps you’ve heard of a zip file.
+            </p>
+
+            <p>
+                I have a file (information) I want to send to you from my device to your device.
+                Because we are both running the same program, which tells us the most common letter at the start is T, my device knows T is the letter your device is going to guess first.
+                So my device only needs to send “yes” to your device, in answer to the unasked question (“Is it T?”).
+                Then our program would know your device is going to guess H next, so I say “yes” again.
+                I can say “yes, yes” to you, and you will know that I mean “Th”.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section>
+    <img src="{% static 'img/at_a_distance/information-theory/image-as-binary.png' %}" class="img-fluid" />
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Data compression relies on prediction.
+                If you've looked at binary representation at all you might know that it typically takes 7 or 8 bits to store a single character.
+                Shannon's experiment pointed towards being able to use fewer bits on average (compared to binary representation) to represent characters, if they are predictable.
+                It also showed that random text, like "aZfoUs" will need the full number of bits since nothing is predictable.
+            </p>
+
+            <p>
+                The idea of having two people that think exactly the same is totally feasible with computers.
+                You just use the same program at each end.
+                This is how data compression works.
+                If you use a zip program to compress a file on your computer, and I use the same program on my computer to decompress it, the program is doing exactly the same thing to the same information.
+                For example, if you use JPEG it follows exactly the same rules for how it is going to code and decode pictures, wherever that program is used.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section>
+    <div>
+        <p>
+            <strong>Message:</strong>
+        </p>
+        <p class="r-font-size-4">
+            <code>a a a a a a a a a</code>
+        </p>
+        <p>
+            <em>What comes next?</em>
+        </p>
+    </div>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Shannon was really just interested in how much information content text has.
+            </p>
+
+            <p>
+                If I wanted to send you the message "aaaaaa", while it would probably take you a few guesses to work out what the first letter was, and probably several more to guess what the second letter was, it is likely you would guess 'a' fairly quickly for the third letter, and instantly for the ones after that.
+                As this message has very little surprise value, it has low information content.
+                After the first two letters, only 1 bit is needed to confirm every character.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section>
+    <div>
+        <p>
+            <strong>Message:</strong>
+        </p>
+        <p class="r-font-size-4">
+            <code>Z q a v</code>
+        </p>
+        <p>
+            <em>What comes next?</em>
+        </p>
+    </div>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                If my message was completely random, such as  "Z, q, a, v", it would cost on average 13 guesses (half the letters of the English alphabet) for every character.
+                Each letter is a surprise and, as you have no way of predicting random information, there is no model for what might be next.
+                So, that message is very surprising, it has a very high information content, 13 bits for every character you need.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section>
+    <div>
+        <p>
+            <strong>Message:</strong>
+        </p>
+        <p class="r-font-size-4">
+            <code>a b c a b c a b c</code>
+        </p>
+        <p>
+            <em>What comes next?</em>
+        </p>
+    </div>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                If my message had been, "a, b, c, a, b, c, a, b, c" it would also have been easy for you to predict, after the first 4 letters, and it can be transmitted efficiently.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section>
+    <div id="information-theory-pixel-grid">
+        <div class="green-pixel"></div>
+        <div class="green-pixel"></div>
+        <div class="green-pixel"></div>
+        <div class="white-pixel"></div>
+        <div class="white-pixel"></div>
+        <div class="white-pixel"></div>
+        <div class="green-pixel"></div>
+        <div class="green-pixel"></div>
+        <div>?</div>
+        <div>?</div>
+        <div>?</div>
+        <div>?</div>
+        <div>?</div>
+        <div>?</div>
+        <div>?</div>
+        <div>?</div>
+        <div>?</div>
+        <div>?</div>
+        <div>?</div>
+        <div>?</div>
+        <div>?</div>
+        <div>?</div>
+    </div>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Let's try it with something different.
+                If I was describing this image as "green, green, green, white, white, white, green, green" what colour would you guess the next pixel is?
+                Share your guesses in the chat.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>What for a few responses in the chat.</p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                What is the probability we guessed the correct colour?
+                50%?
+                What presumptions have we made?
+                That there is only green and white as options to select from.
+            </p>
+
+            <p>
+                You would probably say “green” as the pattern doesn't have single coloured pixels standing alone.
+                Or you might have said white.
+                But you probably wouldn't guess red.
+                This is an example of run-length coding, commonly used for JPEG images, and how they can be compressed using this method, (white, white, white, green, green, is like saying yes, yes, yes, no, no).
+                Here, the unspoken question is “Is it white?”
+                The cost is everytime the next pixel is a different colour to the previous one.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Let's try it with something different.
+                If I was describing this image as "green, green, green, white, white, white, green, green" what colour would you guess the next pixel is?
+                Share your guesses in the chat.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>What for a few responses in the chat.</p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                What is the probability we guessed the correct colour?
+                50%?
+                What presumptions have we made?
+                That there is only green and white as options to select from.
+            </p>
+
+            <p>
+                You would probably say “green” as the pattern doesn't have single coloured pixels standing alone.
+                Or you might have said white.
+                But you probably wouldn't guess red.
+                This is an example of run-length coding, commonly used for JPEG images, and how they can be compressed using this method, (white, white, white, green, green, is like saying yes, yes, yes, no, no).
+                Here, the unspoken question is “Is it white?”
+                The cost is everytime the next pixel is a different colour to the previous one.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
 </section>

@@ -293,6 +293,107 @@ $footer-padding: 8px;
     }
 }
 
+#data-structures-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 1.5fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+
+    .left-bubble {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    .right-bubbles {
+        grid-area: 2 / 2 / 3 / 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        .speech {
+            font-size: 5rem;
+            font-weight: bold;
+        }
+    }
+    .image {
+        grid-area: 2 / 1 / 4 / 3;
+    }
+    // Adapted snippet from: https://codepen.io/quadbaup/pen/rKOKQv Thanks Grant!
+    $thought-bubble-colours: "left" #c4bdb1, "right" #fecc66;
+    @each $side, $colour in $thought-bubble-colours {
+        .#{$side}-thought {
+            display: flex;
+            background-color: $colour;
+            padding: 20px;
+            border-radius: 30px;
+            min-height: 1rem;
+            margin: 0 3rem 1rem;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .#{$side}-thought:before,
+        .#{$side}-thought:after {
+            content: "";
+            background-color: $colour;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .#{$side}-thought:before {
+            width: 44px;
+            height: 44px;
+            top: -12px;
+            left: 28px;
+            box-shadow: -50px 30px 0 -12px $colour;
+        }
+
+        .#{$side}-thought:after {
+            bottom: -10px;
+            right: 26px;
+            width: 30px;
+            height: 30px;
+            box-shadow: 40px -34px 0 0 $colour,
+                -28px -6px 0 -2px $colour,
+                -24px 17px 0 -6px $colour,
+                -5px 25px 0 -10px $colour;
+        }
+    }
+    // End of snippet
+}
+
+#information-theory-pixel-grid {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0px 0px;
+    border-top: 5px solid black;
+    border-left: 5px solid black;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        aspect-ratio: 1;
+        color: #666;
+        font-weight: bold;
+        font-size: 5rem;
+        background-color: #ccc;
+    }
+    .green-pixel {
+        background-color: #63c536;
+    }
+    .white-pixel {
+        background-color: #fff;
+    }
+}
+
 /*
 Spacer to prevent the content from running into the footer.
 From https://github.com/hakimel/reveal.js/issues/2707#issuecomment-647708919
