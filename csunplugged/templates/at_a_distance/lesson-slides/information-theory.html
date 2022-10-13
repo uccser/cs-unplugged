@@ -343,7 +343,7 @@
         <div class="white-pixel"></div>
         <div class="white-pixel"></div>
         <div class="green-pixel"></div>
-        <div class="green-pixel"></div>
+        <div>?</div>
         <div>?</div>
         <div>?</div>
         <div>?</div>
@@ -364,7 +364,7 @@
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 Let's try it with something different.
-                If I was describing this image as "green, green, green, white, white, white, green, green" what colour would you guess the next pixel is?
+                If I was describing this image as "green, green, green, white, white, white, green" what colour would you guess the next pixel is?
                 Share your guesses in the chat.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
@@ -392,33 +392,65 @@
 </section>
 
 <section>
+    <img src="{% static 'img/at_a_distance/information-theory/information-scale.svg' %}" class="img-fluid" />
 
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                Let's try it with something different.
-                If I was describing this image as "green, green, green, white, white, white, green, green" what colour would you guess the next pixel is?
-                Share your guesses in the chat.
-            </p>
-        {% include "at_a_distance/components/speech-bubble-close.html" %}
-
-        <p>What for a few responses in the chat.</p>
-
-        {% include "at_a_distance/components/speech-bubble-open.html" %}
-            <p>
-                What is the probability we guessed the correct colour?
-                50%?
-                What presumptions have we made?
-                That there is only green and white as options to select from.
+                 So, how does this relate to what is happening inside the computer?
             </p>
 
             <p>
-                You would probably say “green” as the pattern doesn't have single coloured pixels standing alone.
-                Or you might have said white.
-                But you probably wouldn't guess red.
-                This is an example of run-length coding, commonly used for JPEG images, and how they can be compressed using this method, (white, white, white, green, green, is like saying yes, yes, yes, no, no).
-                Here, the unspoken question is “Is it white?”
-                The cost is everytime the next pixel is a different colour to the previous one.
+                This experiment is used by computer scientists to measure the amount of "information" in a document.
+                Being able to have a good guess at what is coming next is the basis of working out how to reduce the amount of data used for sending text, photos and videos.
+                This idea is called 'compression', and is the underlying theory behind showing videos over the internet and storing large amounts of photos or songs on a mobile phone.
+            </p>
+
+            <p>
+                Understanding the predictability of text enables computer scientists to design good compression algorithms, and estimate how much compression files can take.
+            </p>
+
+            <p>
+                Predicting what will come next is also used for auto-completing text while you are typing.
+                The computer is guessing what is most likely to come next based on what people usually type.
+                This can save people time entering text, especially on an awkward interface like a phone or TV remote.
+            </p>
+
+            <p>
+                A technical term that comes up a lot around information theory is 'Entropy'.
+                It's a word that is borrowed from thermodynamics, which loosely means the amount of disorder in a system.
+                This term is used by computer scientists in information theory to describe the amount of information a file contains.
+                The more information a file contains, the less predictable it is, and the more entropy, or disorder, it has.
+                If data is very predictable (like the colours of the pixels in an image that is completely black) then it has a low information content, and the entropy is low.
+            </p>
+
+            <p>
+                As I mentioned earlier, the amount of information in a file can be measured by its 'surprise' factor.
+                If the probability of a statement is 100%, then there is no new information in that file.
+                For example, if you are standing with someone in the rain and they say “it is raining”, there is no new information in that statement, you did not learn anything new from them having said it.
+                The information held in it is 100% likely.
+                If they say an impossible statement, for example, “I am 1 month old” (not many 1-month-olds can talk), then that sentence has a probability of 0%, it contains an infinite amount of information (it raises many questions, what does the person mean they are 1 month old, have you completely underestimated the ability of 1-month-old humans, is that 'person' human?...).
+                If the probability of the statement being true is 50% then that information uses 1 bit of computer memory to represent it.
+                It would be like our previous example of green and white and asking if the next colour will be white.
+                If the probability of the statement being true is 100% then it uses no bits to represent it as the computer already knows it.
+                If probability is 0% then it theoretically uses an infinite number of bits; in other words, it can't be represented.
+            </p>
+
+            <p>
+                These ideas might just seem to be of theoretical interest, but the experiment we've done really does help to answer the question of how small a file can be compressed down to.
+                In fact, Shannon's work has enabled people to spot some frauds over the years, when people tried to get investors for inventions that claimed to be able to compress files much more than the limits of Shannon's experiments. (For example, if you google “compression” with “Phil Whitley” or “Madison Priest” you'll see how millions of dollars have been lost by people who didn't know about Shannon's limits.)
+            </p>
+
+            <p>
+                In summary, Shannon's theory, what we have learnt about here, is fundamental to compression, encryption, error correction, and so on because it's all about how many bits we need to represent something.
+            </p>
+
+            <p>
+                Going back to our original questions: How can information be measured?
+                As we have shown, it can be measured by its surprise value, by how many questions have to be asked to get the full information.
+                What is entropy?
+                Entropy is the amount of disorder in a system or file.
+                The more disorder a file has, the less predictable it is, the more entropy it has.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
