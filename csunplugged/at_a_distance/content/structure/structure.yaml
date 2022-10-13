@@ -6,5 +6,5 @@ lessons:
   # - qr-codes
   # - product-code-check-digits
   # - image-representation
-  # - information-theory
+  - information-theory
   - finite-state-automata
