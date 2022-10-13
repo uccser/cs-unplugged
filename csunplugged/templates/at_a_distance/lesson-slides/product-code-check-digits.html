@@ -1,0 +1,303 @@
+{% load static %}
+
+<section>
+    <h2>Key question</h2>
+    <ul>
+        <li>
+            Who checks their reciept at a shop to make sure it matches your purchases?
+        </li>
+    </ul>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+               How many of you check each item on your receipt every time you buy something to check you were charged for the right item?
+               This is different from checking you were charged the right price, imagine if you were charged for the wrong item altogether!
+               For example, steak instead of a packet of lollies.
+            </p>
+
+            <p>
+                Thank you to those who do check!
+                For the rest of us, we are relying on the barcode system to get it right.
+                Barcodes let the computer know what the item is, the computer has a separate database to look up what the price is for that item.
+                Many of us don't check because the system is so reliable.
+                Today we'll explore why we can feel so confident that it works.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section>
+    <h2>What is a product code?</h2>
+    <img src="{% static 'img/at_a_distance/product-code-check-digits/barcode-9-400547-009879.svg' %}" class="img-fluid" style="height: 40rem;" />
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Have you ever noticed the numbers under the barcodes on products and wondered what they are for?
+                They are designed to make sure the correct product appears on your receipt.
+                These numbers are called 'product codes'.
+                As an off side, the computer has a separate database to look up the price for each item.
+            </p>
+
+            <p>
+                Each product code has a 'check digit' at the end of it, and we can calculate what it is.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section class="r-flex">
+    <iframe class="r-flex-grow r-iframe-scale-1-5" src="https://www.csfieldguide.org.nz/en/interactives/iframe/product-code-check-digit-calculation"></iframe>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Has someone got a product code they can read out to me please?
+                Write yes in the chat if you did.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Wait for someone to respond.
+            If no one responds, encourage your participants to have a quick look around them for any product with a barcode on it.
+            Packaged food items, and exercise books are good examples.
+            As a last resort use a barcode you have with you.
+            This is not ideal as, to the observer, you could easily cheat.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Thank you.
+                Can you count how many digits your product code has?
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Have them tell you the total number of digits (including the check digit).
+            Click on the button for the number of digits you have been told.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Can you please cover up the last digit of the product code with your finger, then read the other numbers out to me from left to right without saying the last number.
+                I'll be typing the numbers in one at a time while you read them out.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Type in the numbers as they are called out.
+            Also decide if you are going to demonstrate this using modulo 10 or not.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Let's write the corresponding answers by writing in the chat the answer to each calculation.
+                (If you are using modulo 10 say: When using modulo 10 we add the two numbers together, but just write in the number in the ones column).
+            </p>
+
+            <p>
+                Now we've completed that step, let's add them up, put your answer in the chat.
+            </p>
+
+            <p>
+                What's 10 minus [number]?
+                That's the last digit.
+                Is that correct?
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            At any point where the numbers are incorrect the box will turn red.
+            If the number wasn't said to you correctly all the calculations will be correct, but the checksum won't be.
+            These errors are great conversation points for how product codes work - view it as a teachable moment!
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+               Sometimes barcodes don't scan, and a person has to manually type in the product code.
+               When we are reading or typing numbers, what are the some likely mistakes to happen?
+               Put your ideas in the chat.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Monitor the chat for answers.
+            Read out suitable ones.
+            Remember to give thinking and typing time.
+            If no answers appear in a reasonable amount of time, move on.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+               There were some good answers there.
+               When we type numbers the most common mistake we make is swapping two numbers around, or putting in a completely wrong number.
+            </p>
+
+            <p>
+               What happens with our formula if a wrong number is put in, or two numbers are switched around?
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Give thinking and typing time.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+               There were some good answers there.
+               When we type numbers the most common mistake we make is swapping two numbers around, or putting in a completely wrong number.
+            </p>
+
+            <p>
+               What happens with our formula if a wrong number is put in, or two numbers are switched around?
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Give thinking and typing time.
+            Then get ready to change a value in the original barcode.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                There were some good answers in there.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            In the original barcode, switch two numbers that are next to each other by retyping them in.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                You can now see what happens if two numbers next to each other are swapped around.
+                The numbers won't add up the same any more so the check digit won't match what is on the product code.
+                Also, if any of the individual numbers are incorrect then the check digit will not match, and the computer will alert the person who put the number in.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section>
+    <h2>More check digits</h2>
+    <ul>
+        <li>
+            Where else are check digits used?
+        </li>
+        <li>
+            Where else is it important that the right number is used?
+        </li>
+    </ul>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+               Where else do you think check digits might be used?
+               Where else is it important that the right number or code is used?
+               Let's see how many places we can identify!
+               Share your answers in the chat.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Give thinking and typing time before moving to the next slide.
+        </p>
+    </aside>
+</section>
+
+<section>
+    <h2>Where check digits are used</h2>
+    <ul>
+        <li>Products</li>
+        <li>Event tickets</li>
+        <li>Bank accounts</li>
+        <li>Passports</li>
+        <li>Loyalty cards</li>
+        <li>Credit cards</li>
+        <li>Warehouses to track inventory</li>
+        <li>Invoicing and packaging slips</li>
+        <li>And many other places</li>
+    </ul>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+               Here are some places where check digits are used.
+            </p>
+
+            <p>
+                Why is it important to have check digits on product codes?
+                What could happen if errors in product codes in any of these situations weren't noticed?
+                Put your answers in the chat.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Give thinking and typing time before moving to the next slide.
+        </p>
+    </aside>
+</section>
+
+<section>
+    <h2 class="r-font-size-3">What could happen if check digits weren't used?</h2>
+    <ul>
+        <li>Charged for the wrong item</li>
+        <li>Not let into an event we had paid for</li>
+        <li>Money going into the wrong accounts</li>
+        <li>Mistaken identity when travelling</li>
+        <li>Not getting rewards we are due</li>
+        <li>The wrong person being charged</li>
+        <li>The right products not being available</li>
+        <li>Products arriving in the wrong places</li>
+    </ul>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+               If we didn't have check digits on products we might be charged for something different, maybe steak instead of the chewing gum we bought.
+               We might not get let into an event we had paid for.
+               Our money might go into the wrong bank account, either when we are being paid or when we are paying someone else.
+               Our passport might not match the information the computer has recorded when we travel.
+               We might not get loyalty points we have earned for shopping at a particular store.
+               Someone else might have money taken out of their account for something we bought.
+               A warehouse might think they have a lot of an item when really they only have a few or none.
+               The wrong item might be sent somewhere.
+            </p>
+
+            <p>
+                Much of our lives runs smoothly thanks to the addition of check digits to codes.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section>
+    <h2>Follow up discussion/activity</h2>
+    <p>Can you create your own formula for a product check code?</p>
+    <br>
+
+    <p>If you do, think about the following things:</p>
+    <ul>
+        <li>How long will your product code be?</li>
+        <li>What formula will you use to create the check digit?</li>
+        <li>Could you use addition instead of multiplication in your formula?</li>
+    </ul>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+               Do you think you could make up your own formula for a product check code?
+               Each of the examples we gave, bank accounts, credit cards, passports etc, use different formulas.
+               If you made up your own product code with a check digit, what would you have to think about?
+               Does it matter how long the number is?
+               How long would you want it to be?
+               How could we swap around what we add and multiply for our own formula?
+            </p>
+
+            <p>
+               Share your ideas in the chat.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>

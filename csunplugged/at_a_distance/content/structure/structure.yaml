@@ -4,7 +4,7 @@ lessons:
   - binary-representation
   # - parity-magic
   # - qr-codes
-  # - product-code-check-digits
+  - product-code-check-digits
   # - image-representation
   - information-theory
   - finite-state-automata

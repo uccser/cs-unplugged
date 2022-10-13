@@ -88,6 +88,9 @@ $selectionColor: #fff;
             }
         }
     }
+    .r-monospace {
+        font-family: $codeFont;
+    }
 
     // Colour overrides
     .r-text-green {
