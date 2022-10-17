@@ -3,7 +3,7 @@ lessons:
   - algorithms
   - binary-representation
   # - parity-magic
-  # - qr-codes
+  - qr-codes
   - product-code-check-digits
   # - image-representation
   - information-theory
