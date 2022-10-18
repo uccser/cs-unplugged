@@ -4,7 +4,7 @@ The product code on most consumer items is used to quickly scan a product at a p
 It's important that this happens accurately, since customers will be unhappy if they discover they are being charged for the wrong items.
 There's a simple trick built into every product code that supports them working so well; it uses simple arithmetic to check the numbers, and this activity shows how it can be accessed in a way that reveals an important idea from computer science that is right under our noses!
 
-## Facilitation preperation
+## Facilitation preparation
 
 For each slide we’ve written a suggested script, facilitation notes and preparation reminders for you.
 These have been written with the assumption that you are familiar with [the original lesson]('topics:lesson' 'error-detection-and-correction' 'product-code-check-digits').
