@@ -172,7 +172,7 @@
         <p>
             Wait for several responses.
             Several people will probably type in the same string of As and Bs.
-            When this happens copy that string into the planner, and it will say where that sequence takes you to.
+            When this happens type the sequence of A's and B's into the text box on the planner, and it will say what station that sequence takes you to.
         </p>
     </aside>
 </section>
@@ -470,10 +470,9 @@
 </section>
 
 <section>
-    <h2>Finite State Automata </h2>
-    <h3>Map for email addresses</h3>
-    <img src="{% static 'img/at_a_distance/finite-state-automata/fsa.svg' %}">
+    <h3>Email address to process</h3>
     <h3 class="r-text-black r-font-size-5">me@a.com</h3>
+    <img src="{% static 'img/at_a_distance/finite-state-automata/fsa.svg' %}">
 
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -501,10 +500,9 @@
 </section>
 
 <section>
-    <h2>Finite State Automata </h2>
-    <h3>Map for email addresses</h3>
-    <img src="{% static 'img/at_a_distance/finite-state-automata/fsa.svg' %}">
+    <h3>Email address to process</h3>
     <h3 class="r-text-black r-font-size-5">email@gmail.com</h3>
+    <img src="{% static 'img/at_a_distance/finite-state-automata/fsa.svg' %}">
 
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -525,10 +523,9 @@
 </section>
 
 <section>
-    <h2>Finite State Automata </h2>
-    <h3>Map for email addresses</h3>
-    <img src="{% static 'img/at_a_distance/finite-state-automata/fsa.svg' %}">
+    <h3>Email address to process</h3>
     <h3 class="r-text-black r-font-size-5">mygooglegmail</h3>
+    <img src="{% static 'img/at_a_distance/finite-state-automata/fsa.svg' %}">
 
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -572,6 +569,11 @@
                 Text-based programming languages use finite state automata to check code is written correctly in order for the program to read it and run as expected.
                 Have you ever received the message 'syntax error' for a program?
                 If you have, a finite state automata has probably been used to check your code for errors.
+            </p>
+
+            <p>
+                This is a simplified FSA for email addresses.
+                An FSA to test all valid email addresses is more complicated.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
