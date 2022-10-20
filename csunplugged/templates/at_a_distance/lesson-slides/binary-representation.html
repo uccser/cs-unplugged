@@ -37,8 +37,17 @@
             <p>
                 Here is a card.
                 It shows one dot on one side, and is black on the other.
-                We are going to use it to represent a bit.
-                Each bit can be either switched on (with the dots showing) or switched off with the black showing.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Click on a card to show that it has two sides.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                We are going to use it to represent a binary digit.
+                Each binary digit can be either switched on (with the dots showing) or switched off with the black showing.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
@@ -51,8 +60,8 @@
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                Here I've added another bit.
-                It has two dots on it. If we were doing this in real life we would be handing out cards to participants and having them stand in a row as we introduce each bit (card).
+                Here I've added another binary digit.
+                It has two dots on it. If we were doing this in real life we would be handing out cards to participants and having them stand in a row as we introduce each binary digit (card).
             </p>
 
             <p>
@@ -76,7 +85,7 @@
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 I can see some 3s, and yes, that is what most 8-year-olds would say, the next number in a sequence of 1, 2, is 3.
-                This is when we quietly reveal the next bit to be…
+                This is when we quietly reveal the next binary digit to be…
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
@@ -91,7 +100,7 @@
             <p>
                 Four.
                 Most students will then tell the teacher they have made a mistake.
-                But if you let them think for a little bit someone will normally work out the pattern.
+                But if you let them think for a little binary digit someone will normally work out the pattern.
             </p>
 
             <p>
@@ -189,7 +198,7 @@
             </p>
 
             <p>
-                Now that we know the pattern, and how many dots are on each bit, it's time to have some fun.
+                Now that we know the pattern, and how many dots are on each binary digit, it's time to have some fun.
                 For the rest of this session we are going to use 5 cards.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
@@ -208,11 +217,11 @@
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 I want you to think about how we can show exactly 13 dots using these cards.
-                Remember, each bit can either be switched on, showing us its dots for us to count, or switched off, with its dots hidden.
+                Remember, each binary digit can either be switched on, showing us its dots for us to count, or switched off, with its dots hidden.
             </p>
 
             <p>
-                A good way to do this is to go through the bits bit by bit, from left to right, asking if we want each bit for our final number.
+                A good way to do this is to go through the binary digits one at a time, from left to right, asking if we want each binary digit for our final number.
                 Do you want the 16 visible for our 13?
                 Type 'yes' or 'no' in the chat.
             </p>
@@ -234,7 +243,7 @@
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                Do we want the 8 bit card visible to make our 13?
+                Do we want the 8 binary digit card visible to make our 13?
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
@@ -248,8 +257,8 @@
             </p>
 
             <p>
-                What about the 4 bit card?
-                Do we want the 4 bit card visible?
+                What about the 4 binary digit card?
+                Do we want the 4 binary digit card visible?
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
@@ -263,7 +272,7 @@
             </p>
 
             <p>
-                What about the 2 bit card?
+                What about the 2 binary digit card?
                 Do we want it visible?
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
@@ -278,7 +287,7 @@
             </p>
 
             <p>
-                What about the 1 bit card?
+                What about the 1 binary digit card?
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
@@ -309,7 +318,7 @@
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                What bits do you need to show the number 25, and how would you say that using just zeros and ones, if we use 'one' for yes, and 'zero' for no?
+                What binary digits do you need to show the number 25, and how would you say that using just zeros and ones, if we use 'one' for yes, and 'zero' for no?
                 Type your ideas in the chat.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
@@ -431,7 +440,7 @@
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 When we look at the alphabet with students we can support them to get to the point where they say A can be 1, B can be 2, C 3 and so forth.
-                Of course, you may get a mischief student who says T should be 1, W should be 2, and S should be 3, but usually the class will talk them out of that!
+                Of course, you may get a creative student who says T should be 1, W should be 2, and S should be 3, but usually the class will talk them out of that!
             </p>
 
             <p>
@@ -456,6 +465,7 @@
 
         <p>
             Wait for responses.
+            You may need to remind them that A is 1, B is 2, etc.
         </p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -499,7 +509,7 @@
 
             <p>
                 As you can see we've been able to communicate months of the year, letters of the alphabet, and numbers, just by saying yes or no.
-                Properly we would have been saying zero, one, zero, one, one, instead of yes's and no's.
+                More conventionally we would have been saying zero, one, zero, one, one, instead of yes's and no's.
                 It all comes down to the same idea, that is, so long as I can communicate two values, I can communicate anything I want.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
