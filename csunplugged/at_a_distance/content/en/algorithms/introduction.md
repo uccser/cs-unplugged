@@ -13,7 +13,7 @@ If you aren’t familiar with this activity, review the following here:
 
 ### Preparation and teaching resources:
 
-- Read through the [guide on how to deliver this content]('at_a_distance:delivery-guide').
+- Read through the [guide on how to deliver CS Unplugged at a distance content]('at_a_distance:delivery-guide').
 - Prepare the lesson and practice it in the video conference software that you are going to present with.
 
 ### Resources:
