@@ -2,7 +2,7 @@ lessons:
   - stroop-effect
   - algorithms
   - binary-representation
-  # - parity-magic
+  - parity-magic
   - qr-codes
   - product-code-check-digits
   # - image-representation

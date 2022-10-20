@@ -1,39 +1,228 @@
+{% load static %}
+
 <section>
     <h2>Key questions</h2>
     <ul>
         <li>
-            Have you ever had a DVD glitch, a download fail, or a file that your computer can't open because it's corrupted?
+            Have you ever had a file that your computer can't open because it's corrupted?
         </li>
     </ul>
 
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                Today's session focuses on exploring the answers to these questions together.
+                By the end of this session we'll understand how error control, error detection and error correction has improved our digital lives.
             </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section data-background-color="black" data-background-image="{% static 'img/at_a_distance/parity-magic/parity-on-whiteboard.jpg' %}" data-background-size="contain">
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                Have you ever had a DVD glitch, a download fail, or a file that your computer can't open because it's corrupted?
-                What did you see and how did you know it didn't work?
-            </p>
-            <p>
-                Write your answers in the chat (or the shared space you're using for communicating).
+                Who has seen the parity trick before?
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>
-            Likely answers could be: the dvd skips, the image and sound freezes, the image is pixelated, the sound slows down or doesn't work at all.
-            You might get a message stating the file is corrupted or can't be opened.
-            With a download you might be asked to try again.
-        </p>
-        <p>
-            Consider the shared space that your participants can use to interact and share their answers for this question.
-            It could be via the chat because the answers are short.
-            You could also use an application like Padlet or Jamboard.
+            If a person doesn't know the trick, they can help you to present this trick.
         </p>
     </aside>
 </section>
 
 <section class="r-flex">
-    <h2>Parity interactive</h2>
-    <iframe class="r-flex-grow" data-src="https://www.csfieldguide.org.nz/interactives/iframe/parity/"></iframe>
+    <iframe class="r-flex-grow r-iframe-scale-1-5" data-src="https://www.csfieldguide.org.nz/interactives/iframe/parity/?show-grid-references&grid-size=6&hide-text&hide-size-controls&initial-bits=WBWBBBBWBWBWBBBWBBWBBBWWB"></iframe>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Here we have some data in a 5 by 5 grid of cards and for this trick to work, I'm going to make it more difficult for myself by adding another row and column to it.
+            </p>
+
+            <p>
+                The information represented in this grid is 'binary data' because it uses two values (black and white) to represent information.
+                The cards here have two sides, so we can represent a binary value by choosing which way up to put the card.
+                This data might be some text, or it might represent students' grades, or anything stored on a computer.
+                In reality this grid is just some random values, but let's imagine that it is some important data that we're relying on.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Change the cards to the following, starting in the top right and going clockwise: ⬛ Black, ⬛ Black, ⬜ White, ⬛ Black, ⬛ Black, ⬜ White, ⬜ White, ⬛ Black, ⬜ White, ⬜ White, ⬛ Black.
+            Then click 'Flip a bit'.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Now we are transmitting the information and one bit gets changed.
+                The interactive has changed a card from black to white or white to black.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Determine which bit has been changed by finding the bit at the intersection of the row and column which have an odd number of black squares.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                I've found it!
+                It's [say the grid reference of the changed bit].
+                So what happened?
+                How did I do that so quickly?
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Click the 'Start Over' button.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Firstly, when I said I was going to make it harder, I was actually making it easier by putting the data into parity.
+                Write in the chat what parity means to you.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Wait for some responses, if there aren't any responses prompt by asking what the mathematical term for pairs is (even amounts).
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Let's take this step by step.
+                What state does F1 need to be in (white or black) to create even parity, an even number of black cards.
+                Type in the chat a "B" if you think black or "W" for white if you think white.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Wait for a couple of responses and respond accordingly.
+            Continue this for the remainder of column F, except the last bit in the bottom right corner.
+            Check that people aren't racing ahead for each co-ordinate by asking participants to keep pace with you.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Now let's look at the rows, starting with A6.
+                Type in the chat a "B" if you think black or "W" for white if you think white.
+            </p>
+
+            <p>
+                And what about F6?
+                This is where we check we have completed the grid correctly, as the F column is the column we added to make all the rows have even parity.
+                What colour card do we need to complete row 6?
+                And what colour card do we need to complete column F?
+            </p>
+
+            <p>
+                That's right, it's the same colour to finish both row 8 and column H.
+                If it does work out the same when you're doing this with a class, then you can be confident that the other cards were put in correctly.
+                If it doesn't, you'll need to check back and see if one of the cards you've added is wrong.
+            </p>
+
+            <p>
+                Let's get the computer to flip a bit.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Wait for the “Confusation” to happen - the interactive will flip one card from black to white or white to black.
+        </p>
+
+        <p>
+            Note For this next section, that you can click a row or column label in the interactive to 'circle' the row or column when talking about it.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                With your knowledge of parity, can you find the card that was flipped?
+                Write in the chat the grid reference for the flipped card.
+            </p>
+
+            <p>
+                Before you check, let's see how we would know.
+                How many cards are in column [column letter suggested]?
+                Is it an even or odd number?
+                How many cards are in row [row number suggested]?
+                Is it an even or odd number?
+                What is the intercept of the columns and rows?
+                Is it the card that was flipped?
+                Let's check!
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Click on the card and see if you are correct.
+        </p>
+    </aside>
+</section>
+
+<section data-background-color="black" data-background-image="{% static 'img/at_a_distance/parity-magic/parity-cards-on-floor-unlabeled.jpg' %}" data-background-size="contain">
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Here are some students who created some binary data in a different time and place, but one of the cards has been flipped.
+                This reinforces the point that we can't go back and ask the students which card was flipped, but we can work it out because they have added a parity row and column of cards.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section data-background-color="black" data-background-image="{% static 'img/at_a_distance/parity-magic/parity-cards-on-floor-labeled.jpg' %}" data-background-size="contain">
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Can you figure out which one to flip to get the correct original data?
+                Share which one you think it is in the chat.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            What for a few responses in the chat.
+            This could take a while!
+            If they need some help, you could ask them to just give the row or column separately as they find them.
+        </p>
+    </aside>
+</section>
+
+<section data-background-color="black" data-background-image="{% static 'img/at_a_distance/parity-magic/parity-cards-on-floor-solved.jpg' %}" data-background-size="contain">
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                This image shows that the answer is G6.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Leave this slide up for a few seconds so participants can count the cards in the highlighted row and column themselves.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Does the grid in this image follow the same rule?
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Wait for a few responses, either in the chat, or from people nodding.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                We sometimes hear about pay parity, gender parity, currency parity, which is when two currencies are worth the same amount.
+                You may have even heard of number parity, which is whether a number is odd or even ( for example, the parity of 5 is odd).
+            </p>
+
+            <p>
+                The word parity comes from the same Latin root as pair, which is pār, meaning 'equal'.
+                An everyday example of parity is pairs of socks.
+                You can't make pairs out of 5 socks, even if they are all the same!
+            </p>
+
+            <p>
+                In this case we can detect there is an error and also correct it as there is only one card turned over.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
 </section>
