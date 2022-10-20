@@ -35,7 +35,7 @@
             </p>
 
             <p>
-                Let's look at the experiment that Claude Shannon used to prove this?
+                Let's look at the experiment that Claude Shannon used to explore this.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
@@ -50,7 +50,7 @@
 
     <figure>
         <blockquote>
-            <p>A hundred years after his birth, Claude Shannon’s fingerprints are on every electronic device we own.</p>
+            <p>A hundred years after his birth, Claude Shannon's fingerprints are on every electronic device we own.</p>
         </blockquote>
         <figcaption>—Siobhan Roberts <cite>The New Yorker 2016</cite></figcaption>
     </figure>
@@ -73,36 +73,36 @@
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 We will be using this interactive to help us predict what the sentence is.
-                Let’s start!
-                I’ve pre-set a sentence.
+                Let's start!
+                I've pre-set a sentence.
                 You, as a group, are going to guess what my sentence is, letter by letter.
                 What do you think the first letter is?
                 Put your choice in the chat and I will enter the most popular one into the interactive.
                 If we guess correctly, the letter will show in black.
                 If we guess incorrectly it will show in red.
                 I see several people have suggested __.
-                Let’s try it.
+                Let's try it.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>Choose the appropriate response:</p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
-            It’s black, we were right.
+            It's black, we were right.
             What do you think the next letter is?
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>or</p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
-            It’s red.
+            It's red.
             You can see a count has been added under the letter.
-            We’ll see why this is happening later.
-            Let’s have another guess.
+            We'll see why this is happening later.
+            Let's have another guess.
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>
-            The count under each letter shows the number of guesses it’s taken to get the letter correct.
+            The count under each letter shows the number of guesses it's taken to get the letter correct.
         </p>
 
         <p>
@@ -111,9 +111,9 @@
         </p>
 
         <p>
-            It is important to respond to guesses only by letting the audience know if they are correct or incorrect so that you don’t give away any further information to help with the guessing.
-            For example, don’t say “S, you are close with that one”.
-            Also, don’t allow questions such as ‘is it a vowel’ or ‘is it before M in the alphabet’?
+            It is important to respond to guesses only by letting the audience know if they are correct or incorrect so that you don't give away any further information to help with the guessing.
+            For example, don't say “S, you are close with that one”.
+            Also, don't allow questions such as 'is it a vowel?' or 'is it before M in the alphabet?'
             Each guess must be for a specific letter.
         </p>
 
@@ -134,7 +134,7 @@
         <p>Suggested script when stopping after the fourth word has been deciphered:</p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
-            To keep our session shorter I’m going to stop us here.
+            To keep our session shorter I'm going to stop us here.
             If we had kept going we would have deciphered it to read <code>THERE IS NO REVERSE ON A MOTORCYCLE.</code>, but we have done enough now to illustrate the concept.
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
@@ -188,7 +188,7 @@
             Often it is suggested that we can measure information on a computer by the size of the file.
             This is a good idea, but what if the file is a three minute recording of a blank, silent screen?
             Does this have as much information as a three minute instructional video on how to cook a roast meal?
-            It may take the same number of megabytes to store, but I think you will agree it doesn’t hold as much information.
+            It may take the same number of megabytes to store, but I think you will agree it doesn't hold as much information.
         {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
 </section>
@@ -197,7 +197,7 @@
     <div id="data-structures-image">
         <div class="left-bubble">
             <div class="left-thought">
-                They would ask me if it was a T.
+                I think I will ask if it is a T.
             </div>
         </div>
         <div class="right-bubbles">
@@ -218,12 +218,11 @@
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 So how does this fit with what computers do?
-                Let’s take the game we just played.
-                If two devices are running the same prediction software and play this game, then they don’t need to say the text to find the same sentence.
+                Let's take the game we just played.
+                If two devices are running the same prediction software and play this game, then they don't need to say the text to find the same sentence.
                 Think about it this way: if I could read your mind and know what order you were going to guess letters in, then I could tell you “yes, no, no, yes, no, no, no yes…” until you guessed the right letter for each space.
-                If I know what letters you are going to guess then you don’t need to actually tell me those letters.
-                This is what happens with data compression.
-                Perhaps you’ve heard of a zip file.
+                If I know what letters you are going to guess then you don't need to actually tell me those letters.
+                This principle is what makes data compression possible (data compression is reducing the size of a file, such as using zip files.)
             </p>
 
             <p>
@@ -252,9 +251,9 @@
             <p>
                 The idea of having two people that think exactly the same is totally feasible with computers.
                 You just use the same program at each end.
-                This is how data compression works.
+                Data compression software uses variations of this idea.
                 If you use a zip program to compress a file on your computer, and I use the same program on my computer to decompress it, the program is doing exactly the same thing to the same information.
-                For example, if you use JPEG it follows exactly the same rules for how it is going to code and decode pictures, wherever that program is used.
+                Or, if you use JPEG it follows exactly the same rules for how it is going to code and decode pictures, wherever that program is used.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
@@ -306,7 +305,7 @@
             <p>
                 If my message was completely random, such as  "Z, q, a, v", it would cost on average 13 guesses (half the letters of the English alphabet) for every character.
                 Each letter is a surprise and, as you have no way of predicting random information, there is no model for what might be next.
-                So, that message is very surprising, it has a very high information content, 13 bits for every character you need.
+                So, that message is very surprising, it has a very high information content.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
@@ -375,7 +374,7 @@
             <p>
                 What is the probability we guessed the correct colour?
                 50%?
-                What presumptions have we made?
+                What assumptions have we made?
                 That there is only green and white as options to select from.
             </p>
 
@@ -383,9 +382,7 @@
                 You would probably say “green” as the pattern doesn't have single coloured pixels standing alone.
                 Or you might have said white.
                 But you probably wouldn't guess red.
-                This is an example of run-length coding, commonly used for JPEG images, and how they can be compressed using this method, (white, white, white, green, green, is like saying yes, yes, yes, no, no).
-                Here, the unspoken question is “Is it white?”
-                The cost is everytime the next pixel is a different colour to the previous one.
+                This is an example of how images can be predictable - we can get a good idea of what a pixel's colour is likely to be based on the ones before it; as with guessing letters, we can't be sure, but if some things are more likely than others, there's an opportunity to represent it more efficiently than if all values were unpredictable.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
@@ -428,7 +425,6 @@
                 As I mentioned earlier, the amount of information in a file can be measured by its 'surprise' factor.
                 If the probability of a statement is 100%, then there is no new information in that file.
                 For example, if you are standing with someone in the rain and they say “it is raining”, there is no new information in that statement, you did not learn anything new from them having said it.
-                The information held in it is 100% likely.
                 If they say an impossible statement, for example, “I am 1 month old” (not many 1-month-olds can talk), then that sentence has a probability of 0%, it contains an infinite amount of information (it raises many questions, what does the person mean they are 1 month old, have you completely underestimated the ability of 1-month-old humans, is that 'person' human?...).
                 If the probability of the statement being true is 50% then that information uses 1 bit of computer memory to represent it.
                 It would be like our previous example of green and white and asking if the next colour will be white.
@@ -442,7 +438,7 @@
             </p>
 
             <p>
-                In summary, Shannon's theory, what we have learnt about here, is fundamental to compression, encryption, error correction, and so on because it's all about how many bits we need to represent something.
+                In summary, Shannon's theory, which we have learnt about here, is fundamental to compression, encryption, error correction, and so on because it's all about how many bits we need to represent something.
             </p>
 
             <p>
