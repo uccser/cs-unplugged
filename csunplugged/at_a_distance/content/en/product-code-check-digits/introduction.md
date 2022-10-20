@@ -1,6 +1,6 @@
 # Product Code Check Digits
 
-The product code on most consumer items is used to quickly scan a product at a point of sale.
+The product code on most consumer items is shown using a barcode that can be used to quickly scan a product at a point of sale.
 It's important that this happens accurately, since customers will be unhappy if they discover they are being charged for the wrong items.
 There's a simple trick built into every product code that supports them working so well; it uses simple arithmetic to check the numbers, and this activity shows how it can be accessed in a way that reveals an important idea from computer science that is right under our noses!
 
@@ -13,6 +13,7 @@ These have been written with the assumption that you are familiar with [the orig
 - Have participants bring an item with a barcode on it to the session if possible.
 - Find your own product codes on a variety of products to use during the session.
   You will need at least one to demonstrate with but it is good to have a couple of different ones also to give other examples to the audience.
+- Practise typing product codes and doing the arithmetic using the [Computer Science Field Guide interactive](https://www.csfieldguide.org.nz/en/interactives/product-code-check-digit-calculation/).
 
 If you are going to use the modulo 10 functionality then familiarise yourself on how to [teach modulo 10]('topics:lesson' 'kidbots' 'modulo').
-It’s actually easier to complete knowing how to add using modulo 10 - and it’s fun!
+It’s actually easier to complete this activity knowing how to add using modulo 10 - and it’s fun!

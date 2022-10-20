@@ -13,7 +13,7 @@
             <p>
                How many of you check each item on your receipt every time you buy something to check you were charged for the right item?
                This is different from checking you were charged the right price, imagine if you were charged for the wrong item altogether!
-               For example, steak instead of a packet of lollies.
+               For example, steak instead of a packet of gum.
             </p>
 
             <p>
@@ -37,7 +37,7 @@
                 Have you ever noticed the numbers under the barcodes on products and wondered what they are for?
                 They are designed to make sure the correct product appears on your receipt.
                 These numbers are called 'product codes'.
-                As an off side, the computer has a separate database to look up the price for each item.
+                As an aside, the computer has a separate database to look up the price for each item.
             </p>
 
             <p>
@@ -54,7 +54,7 @@
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 Has someone got a product code they can read out to me please?
-                Write yes in the chat if you did.
+                Write yes in the chat if you have one.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
@@ -82,6 +82,7 @@
             <p>
                 Can you please cover up the last digit of the product code with your finger, then read the other numbers out to me from left to right without saying the last number.
                 I'll be typing the numbers in one at a time while you read them out.
+                Please do <strong>NOT</strong> read out the last digit - I'm going to try to work it out!
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
@@ -93,7 +94,7 @@
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 Let's write the corresponding answers by writing in the chat the answer to each calculation.
-                (If you are using modulo 10 say: When using modulo 10 we add the two numbers together, but just write in the number in the ones column).
+                (If you are using modulo 10 say: When using modulo 10 we add or multiply the two numbers together, but just write in the number in the ones column).
             </p>
 
             <p>
@@ -255,7 +256,7 @@
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-               If we didn't have check digits on products we might be charged for something different, maybe steak instead of the chewing gum we bought.
+               If we didn't have check digits on products and just one digit was read incorrectly we might be charged for something different, maybe steak instead of the chewing gum we bought.
                We might not get let into an event we had paid for.
                Our money might go into the wrong bank account, either when we are being paid or when we are paying someone else.
                Our passport might not match the information the computer has recorded when we travel.
@@ -299,5 +300,18 @@
                Share your ideas in the chat.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Ideas that could come up include:
+        </p>
+
+        <ul>
+            <li>
+                The formula should show the wrong check digit is any digit changes from the original.
+            </li>
+            <li>
+                It would be ideal if it can detect if two digits have been transposed (a common typing error).
+            </li>
+        </ul>
     </aside>
 </section>
