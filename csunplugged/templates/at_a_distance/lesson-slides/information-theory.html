@@ -85,7 +85,7 @@
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
-        <p>Choose the appropriate response:</p>
+        <p>Click in the interactive on the character suggested most in the chat and choose the appropriate response:</p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             It's black, we were right.
@@ -119,7 +119,7 @@
 
         <p>
             Continue with participants guessing what they think the next letter is as you enter their choices into the interactive.
-            If time permits continue for the whole sentence. If time is short, have them guess at least the first two to four words.
+            If time permits continue for the whole sentence. If time is short, have them guess at least four words.
         </p>
 
         <p>
@@ -149,7 +149,7 @@
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             Each bit can represent one of two states, in this case, either correct or incorrect.
             We can represent each correct answer as a 1 (one), and each incorrect answer as a 0 (zero).
-            In our example, the first letter took [say how many guesses it took your group to find the correct letter, this is the number showing under the letter] bits of information to guess as each guess uses one bit.
+            In our example, the first letter took [say how many guesses it took your group to find the correct letter, this is the number showing under the letter] bits of information to guess as each guess used one bit.
             If we measure it this way, effectively the first letter cost me [however many guesses it took them to guess it] bits to transfer the information to you.
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
@@ -172,8 +172,12 @@
             If we count up how many guesses it took us as a group to guess this sentence we then have a number, a measurement, we can use.
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
+        <p>
+            Point to a letter that took a lot of guesses and seemed to take a long time to get correct.
+        </p>
+
         {% include "at_a_distance/components/speech-bubble-open.html" %}
-            [Point to a letter that took a lot of guesses and seemed to take a long time to get correct] Even this one that seemed to take a long time, still only took [number of guesses] bits.
+            Even this one that seemed to take a long time, still only took [number of guesses] bits.
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -250,7 +254,7 @@
 
             <p>
                 The idea of having two people that think exactly the same is totally feasible with computers.
-                You just use the same program at each end.
+                You just use the same program on both computers.
                 Data compression software uses variations of this idea.
                 If you use a zip program to compress a file on your computer, and I use the same program on my computer to decompress it, the program is doing exactly the same thing to the same information.
                 Or, if you use JPEG it follows exactly the same rules for how it is going to code and decode pictures, wherever that program is used.
@@ -425,7 +429,10 @@
                 As I mentioned earlier, the amount of information in a file can be measured by its 'surprise' factor.
                 If the probability of a statement is 100%, then there is no new information in that file.
                 For example, if you are standing with someone in the rain and they say “it is raining”, there is no new information in that statement, you did not learn anything new from them having said it.
-                If they say an impossible statement, for example, “I am 1 month old” (not many 1-month-olds can talk), then that sentence has a probability of 0%, it contains an infinite amount of information (it raises many questions, what does the person mean they are 1 month old, have you completely underestimated the ability of 1-month-old humans, is that 'person' human?...).
+                If they say an impossible statement, for example, “I am 1 month old” (not many 1-month-olds can talk), then that sentence has a probability of 0%, it contains an infinite amount of information (it raises many questions: what does the person mean they are 'one month old', have you completely underestimated the ability of 1-month-old humans, is that 'person' human?...).
+            </p>
+
+            <p>
                 If the probability of the statement being true is 50% then that information uses 1 bit of computer memory to represent it.
                 It would be like our previous example of green and white and asking if the next colour will be white.
                 If the probability of the statement being true is 100% then it uses no bits to represent it as the computer already knows it.
