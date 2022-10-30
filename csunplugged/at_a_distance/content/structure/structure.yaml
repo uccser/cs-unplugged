@@ -5,6 +5,6 @@ lessons:
   - parity-magic
   - qr-codes
   - product-code-check-digits
-  # - image-representation
+  - image-compression
   - information-theory
   - finite-state-automata

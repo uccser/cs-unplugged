@@ -1,0 +1,241 @@
+{% load static %}
+
+<section>
+    <h2>Key question</h2>
+    <ul>
+        <li>
+            What is it that digital displays actually store so you can see what's being displayed?
+        </li>
+    </ul>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+               Today we'll explore what is happening behind these digital displays and what they all have in common.
+               We'll also be looking at an introduction on how compression works and why it's so important.
+            </p>
+
+            <p>
+                First we'll start with zooming in on a digital image.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section class="r-flex">
+    <iframe class="r-flex-grow" src="https://www.csfieldguide.org.nz/en/interactives/iframe/pixel-viewer/?image=lake.png&hide-menu&hide-colour-codes"></iframe>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                As this image zooms in, write in the chat what you notice?
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Wait for the interactive to finish zooming important.
+            You can then zoom in more if you wish to see the squares clearly.
+            Wait for your participants to recognise these as "pixels".
+        </p>
+    </aside>
+</section>
+
+<section>
+    <h2>What are pixels?</h2>
+    <h3 class="r-monospace">
+        pic<span class="r-red-strikethrough"><span class="r-text-grey">ture</span></span>
+        el<span class="r-red-strikethrough"><span class="r-text-grey">ements</span></span>
+    </h3>
+    <h3 class="r-monospace">
+        pixel
+    </h3>
+    <p>
+        (an element is a part of something)
+    </p>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+               The word pixel is an abbreviation of 'picture element'.
+               Element means 'part of something'.
+               A standard 6 by 4 inch photo with 300 pixels per inch is 1,200 pixels high and 1,800 pixels wide.
+               This gives a total of 2,160,000 pixels, or 2.16 megapixels, as one megapixel is one million pixels.
+               Computer screens are divided into a grid of tiny squares.
+               The colour of each of these pixels is set by the computer.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section>
+    <h2>Pixels in black and white</h2>
+    <img src="{% static 'img/at_a_distance/image-compression/run-length-duck-two-sizes.svg' %}" style="height:12em;">
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+               On the left here you can see a small duck.
+               If we zoomed in on it it would become pixelated like the image on the right.
+               This image is a very simple black and white picture - each pixel is either black or white.
+               It has been magnified to show the pixels.
+               When a computer stores a picture, all it needs to store is the colour of each square (pixel) - in this case, whether it is black or white.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section>
+    <h2 class="r-font-size-3">How could a computer store this image as numbers?</h2>
+    <img src="{% static 'img/at_a_distance/image-compression/run-length-duck-finished.svg' %}" style="height:12em;">
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+               How could a computer record this image using just numbers?
+               We’ve added a grid to give you some ideas. Share your ideas in the chat.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Monitor the chat and respond appropriately.
+        </p>
+
+        <p>
+            Potential answers include:
+        </p>
+
+        <ul>
+            <li>
+                Saying 'black' and 'white' or variations of this, including 0 and 1 as binary digits.
+            </li>
+            <li>
+                Counting the number of black and white squares (pixels) and representing these with different notations such as W1, B3, W1 - this is the point where students are thinking about compressing their data.
+            </li>
+            <li>
+                Prompt students to discuss if we need some conventions, like where to start, do we go left to right, left down, right down, right to left?
+                If we all agreed the first pixel was always white, what compression code could we create?
+            </li>
+        </ul>
+    </aside>
+</section>
+
+<section>
+    <h2>We’ve just discussed run-length encoding</h2>
+    <img src="{% static 'img/at_a_distance/image-compression/run-length-duck-finished-with-row-labels.svg' %}" style="height:12em;">
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+               There were some great ideas there.
+               One way computers store images is by using run-length encoding.
+               This is a form of compression, it makes the information take up less room when it is stored and transmitted.
+               Each line of an image is described by how many pixels of each colour (runs) are used.
+               For example, row A of this image would be 4, 2, 2.
+               Row B would be 3, 1, 2, 1, 1.
+            </p>
+
+            <p>
+                What is the next line of code? Share your answer in the chat.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Wait until someone types in 3, 2, 2, 2.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+               Well done ___ (participant who wrote the correct code), you got it!
+               This code uses the assumption that the first pixel is always white.
+               How can we represent row D of this image using this convention? Put your suggestions in the chat.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Wait for a few suggestions.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+               Row D starts with a black pixel.
+               But if we say the code is 1, 3, 2, 2 then the computer will think the first square is white.
+               The rule is that the first number always states how many white squares there are.
+               This is because most margins are white.
+               So the code for row D is 0 (no white squares), 1, 3, 2, 2.
+            </p>
+
+            <p>
+               Let’s have a go at coding the rest of this image.
+               Choose a row of the image and write the code for it in the chat.
+               Remember to include what line your code is for!
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Wait until each line has been coded.
+            You may need to allocate lines to individuals.
+        </p>
+    </aside>
+</section>
+
+<section>
+    <h2>Completed run-length encoding</h2>
+    <img src="{% static 'img/at_a_distance/image-compression/run-length-duck-finished-with-coding.svg' %}" style="height:12em;">
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+               Did our answers match this?
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section class="r-flex">
+    <iframe class="r-flex-grow r-iframe-scale-1-5" src="https://www.csfieldguide.org.nz/en/interactives/iframe/run-length-encoding/"></iframe>
+
+    <aside class="notes">
+        <p>
+            On the next slide click on the grid to create the number 8, like so:
+        </p>
+
+        <div>
+            ⬜⬛⬛⬛⬜<br>
+            ⬜⬛⬜⬛⬜<br>
+            ⬜⬛⬛⬛⬜<br>
+            ⬜⬛⬜⬛⬜<br>
+            ⬜⬛⬛⬛⬜<br>
+        </div>
+
+        <p>
+            What happens on the right hand side?
+            Does this follow the same rules as we established before?
+        </p>
+    </aside>
+</section>
+
+<section>
+    <h2>
+        What is it that digital displays actually store so you can see what’s being displayed?
+    </h2>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+               This exercise also shows the importance of agreeing on standards for compressed files, so that a file compressed on one computer can be decompressed on another.
+               In this case, you need to know the order (left to right), and that the first pixel in each row is white.
+               The version of run-length encoding (RLE) used in this exercise above only works well for black and white images, and isn’t so good for photographs, because the level of colour detail is so accurate that it’s very unlikely that two adjacent pixels are exactly the same colour.
+            </p>
+
+            <p>
+                A different method, called JPEG, works particularly well for colour photos.
+                It finds patterns in the variations of the colours in a photo, and converts the patterns to numbers that are then compressed using RLE.
+                Both JPEG and MP3 allow images and sound to be recorded on one brand of equipment and played back on a variety of devices.
+            </p>
+
+            <p>
+                The form of run-length encoding used in this exercise is most related to the technique used by fax machines, which are based on black and white scanning, but a modified version of RLE is also used in JPEG images.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
