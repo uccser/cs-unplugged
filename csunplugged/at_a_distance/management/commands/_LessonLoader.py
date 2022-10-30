@@ -85,7 +85,7 @@ class AtADistanceLessonLoader(TranslatableModelLoader):
                 )
 
         # Introduction content
-        content_translations = self.get_markdown_translations(AT_A_DISTANCE_INTRODUCTION_FILENAME)
+        content_translations = self.get_markdown_translations(AT_A_DISTANCE_INTRODUCTION_FILENAME, relative_links_external=True)
         for language, content in content_translations.items():
             lesson_translations[language]['name'] = content.title
             lesson_translations[language]['introduction'] = content.html_string

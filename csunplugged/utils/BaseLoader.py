@@ -105,7 +105,7 @@ class BaseLoader():
         ]
         self.converter = Verto(html_templates=templates, extensions=extensions)
 
-    def convert_md_file(self, md_file_path, config_file_path, heading_required=True, remove_title=True):
+    def convert_md_file(self, md_file_path, config_file_path, heading_required=True, remove_title=True, relative_links_external=False):
         """Return the Verto object for a given Markdown file.
 
         Args:
@@ -169,6 +169,10 @@ class BaseLoader():
             "processor_argument_overrides": processor_argument_overrides,
         }
         templates = self.load_template_files()
+        if relative_links_external:
+            templates['relative-link'] = templates['relative-link-external']
+        del templates['relative-link-external']
+
         extensions = [
             "markdown.extensions.fenced_code",
             "markdown.extensions.codehilite",
