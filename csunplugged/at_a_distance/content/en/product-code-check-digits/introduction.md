@@ -10,8 +10,8 @@ For each slide we’ve written a suggested script, facilitation notes and prepar
 These have been written with the assumption that you are familiar with [the original lesson]('topics:lesson' 'error-detection-and-correction' 'product-code-check-digits').
 
 - It is useful for the participants to notice how many different places they see product codes (barcodes, not QR codes) being scanned (shops, books, loyalty cards, movie tickets, package delivery service, etc).
-- Have participants bring an item with a barcode on it to the session if possible.
-- Find your own product codes on a variety of products to use during the session.
+- Have participants bring a grocery item with a barcode on it to the session if possible.
+- Find your own product codes on a variety of grocery products to use during the session.
   You will need at least one to demonstrate with but it is good to have a couple of different ones also to give other examples to the audience.
 - Practise typing product codes and doing the arithmetic using the [Computer Science Field Guide interactive](https://www.csfieldguide.org.nz/en/interactives/product-code-check-digit-calculation/).
 

@@ -19,7 +19,7 @@
             <p>
                 Thank you to those who do check!
                 For the rest of us, we are relying on the barcode system to get it right.
-                Barcodes let the computer know what the item is, the computer has a separate database to look up what the price is for that item.
+                Barcodes let the computer know what the item is.
                 Many of us don't check because the system is so reliable.
                 Today we'll explore why we can feel so confident that it works.
             </p>
@@ -53,14 +53,14 @@
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                Has someone got a product code they can read out to me please?
+                Has someone got a grocery product code they can read out to me please?
                 Write yes in the chat if you have one.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>
             Wait for someone to respond.
-            If no one responds, encourage your participants to have a quick look around them for any product with a barcode on it.
+            If no one responds, encourage your participants to have a quick look around them for any grocery product with a barcode on it.
             Packaged food items, and exercise books are good examples.
             As a last resort use a barcode you have with you.
             This is not ideal as, to the observer, you could easily cheat.
@@ -82,13 +82,26 @@
             <p>
                 Can you please cover up the last digit of the product code with your finger, then read the other numbers out to me from left to right without saying the last number.
                 I'll be typing the numbers in one at a time while you read them out.
-                Please do <strong>NOT</strong> read out the last digit - I'm going to try to work it out!
+                Please do <strong>NOT</strong> read out the last digit - The interactive is going to tell us what it is!
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>
             Type in the numbers as they are called out.
             Also decide if you are going to demonstrate this using modulo 10 or not.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Thank you.
+                These calculations that have appeared are going to help us work out what the last digit of the product code is.
+                What's the answer to this first equation?
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Go through the equation for each digit of the code with the participants putting the answer to each equation in the chat.
+            The answer will show green if it is correct, red if it is wrong.
         </p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -142,32 +155,29 @@
 
         <p>
             Give thinking and typing time.
-        </p>
-
-        {% include "at_a_distance/components/speech-bubble-open.html" %}
-            <p>
-               There were some good answers there.
-               When we type numbers the most common mistake we make is swapping two numbers around, or putting in a completely wrong number.
-            </p>
-
-            <p>
-               What happens with our formula if a wrong number is put in, or two numbers are switched around?
-            </p>
-        {% include "at_a_distance/components/speech-bubble-close.html" %}
-
-        <p>
-            Give thinking and typing time.
             Then get ready to change a value in the original barcode.
         </p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 There were some good answers in there.
+                Let's try changing some of the numbers.
+                Let's try swapping two around.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>
             In the original barcode, switch two numbers that are next to each other by retyping them in.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Okay, now we can see our calculation is wrong and we need to fix it.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Correct the answers to the equations for the changed digits, so all the boxes are green again.
         </p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -307,7 +317,7 @@
 
         <ul>
             <li>
-                The formula should show the wrong check digit is any digit changes from the original.
+                The formula should show the wrong check digit if any digit changes from the original.
             </li>
             <li>
                 It would be ideal if it can detect if two digits have been transposed (a common typing error).
