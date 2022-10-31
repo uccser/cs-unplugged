@@ -105,7 +105,10 @@ class BaseLoader():
         ]
         self.converter = Verto(html_templates=templates, extensions=extensions)
 
-    def convert_md_file(self, md_file_path, config_file_path, heading_required=True, remove_title=True, relative_links_external=False):
+    def convert_md_file(
+        self, md_file_path, config_file_path,
+        heading_required=True, remove_title=True, relative_links_external=False
+    ):
         """Return the Verto object for a given Markdown file.
 
         Args:
