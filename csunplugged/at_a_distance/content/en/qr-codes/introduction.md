@@ -12,5 +12,5 @@ This activity explores just how resilient they are, and shows an error control m
 
 This session supports the learning in the following CS Unplugged at a distance sessions:
 
-- [Parity card magic]('at_a_distance:lesson' 'parity-magic') (where students see how extra bits are added to some data, and an error can "magically" be corrected)
+- [Parity card magic]('at_a_distance:lesson' 'parity-magic') (where students see how extra bits are added to some data, and an error can "magically" be corrected).
 - [Binary data representation]('at_a_distance:lesson' 'binary-representation') (where students can explore how just two values (such as black and white) can represent numbers, text and more, using only a small set of cards).

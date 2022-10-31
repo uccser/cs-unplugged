@@ -6,7 +6,8 @@
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                Type 'Yes' or 'No' in the chat if you recognise this image?
+                Hello everyone.
+                Type 'yes' or 'no' in the chat, or put your hand up, if you recognise this image?
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
@@ -45,14 +46,14 @@
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 Mine scans and brings up the words "Fun learning".
-                If you see the same message, type yes or no in the chat (alternatively depending on numbers you could ask people to give a thumbs up).
+                If you see the same message, type yes in the chat, or give me a thumbs up.
                 If it's not scanning for you check there's no sun reflecting on your screen or anything else interfering with the image.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>
             Wait until the majority of participants have indicated that they have been able to scan the QR code from your screen.
-            You may want to specifically ask if anyone is having any problems scanning it, check they are happy to observe what's happening and suggest downloading a free QR code app at the same time or change their camera settings to recognise QR codes.
+            If anyone is having any problems scanning it, check they are happy to observe what's happening and suggest downloading a free QR code app at the same time or change their camera settings to recognise QR codes.
         </p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -105,8 +106,8 @@
             <p>
                 As usual, this isn't a video to show your class, it's one for them to experience and create themselves.
                 Have them test for sunlight, reflections, or shadows, which can stop a QR code from working.
-                Creases, rips, stains, and other damage can also stop them from working.
-                Encouraging them to be as creative as possible.
+                Creases, rips, stains, and other damage can also stop QR codes from working.
+                Encourage your students to be as creative as possible.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
@@ -157,7 +158,13 @@
                 Have another go at scanning it.
                 Does it still work?
             </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
 
+            <p>
+                Click on one of the bits to reverse its colour.
+            </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 If you were doing this in person, instead of using the app you might print out some QR codes and have students change them with a black pen, which is more realistic since QR codes are normally seen on paper.
             </p>
@@ -222,12 +229,12 @@
                     For the first few changes, your scanners were able to perform error correction, which means they could work out the correct original message even though there were errors in the bits.
                     By changing one bit at a time, we have demonstrated the exact point when error correction became error detection only.
                     The QR code reader detected that there was an error in the information it was trying to scan, the QR code, and, rather than giving the wrong information, it gave no information at all.
-                    But at that point it couldn't work out the correct original information.
+                    At that point it couldn't work out the correct original information.
                 </p>
 
                 <p>
                     QR codes have a lot more extra bits added to them than the parity system you may have seen before (which can be presented as a magic trick).
-                    The parity method can correct a one-bit error, but if there is more than one bit changed, it can only detect the error.
+                    The parity method can correct a one-bit error, but if there is more than one bit changed, it can only detect that there is an error, not where it is.
                     In either case, this ensures the system is very reliable at giving either the intended information, or no information at all (not scan).
                     A damaged QR code is unlikely to accidentally give you the wrong information, as the likelihood of the damaged bits changing the original QR code to match another QR code exactly is extremely low.
                     Of course, someone could purposefully change the whole QR code if they wanted.
@@ -240,7 +247,7 @@
                 </p>
 
                 <p>
-                    Did you notice that some cell phone or tablet cameras read QR codes automatically.
+                    Did you notice that some cell phone or tablet cameras read QR codes automatically?
                     We have noticed that some of these cameras will read a QR code a certain number of times but will then stop reading it.
                     This may not be because the QR code is corrupt, but because the camera has stopped looking specifically for a QR code.
                 </p>
