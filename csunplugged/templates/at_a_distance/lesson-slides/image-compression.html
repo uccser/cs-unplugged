@@ -23,18 +23,18 @@
 </section>
 
 <section class="r-flex">
-    <iframe class="r-flex-grow" src="https://www.csfieldguide.org.nz/en/interactives/iframe/pixel-viewer/?image=lake.png&hide-menu&hide-colour-codes"></iframe>
+    <iframe class="r-flex-grow" data-src="https://www.csfieldguide.org.nz/en/interactives/iframe/pixel-viewer/?hide-menu&hide-colour-codes&preset-zoom=0.02" data-preload></iframe>
 
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                As this image zooms in, write in the chat what you notice?
+                Here is a picture of a colourful roof in Thailand.
+                As I zoom in on this image, write in the chat what you notice?
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>
-            Wait for the interactive to finish zooming important.
-            You can then zoom in more if you wish to see the squares clearly.
+            Click the 'Zoom in' button until you can see the squares clearly.
             Wait for your participants to recognise these as "pixels".
         </p>
     </aside>
@@ -140,7 +140,7 @@
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>
-            Wait until someone types in 3, 2, 2, 2.
+            Wait until someone types in 3, 1, 2, 2.
         </p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -180,7 +180,7 @@
 
 <section>
     <h2>Completed run-length encoding</h2>
-    <img src="{% static 'img/at_a_distance/image-compression/run-length-duck-finished-with-coding.svg' %}" style="height:12em;">
+    <img src="{% static 'img/at_a_distance/image-compression/run-length-duck-finished-with-coding-row-labels.svg' %}" style="height:12em;">
 
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -195,8 +195,16 @@
     <iframe class="r-flex-grow r-iframe-scale-1-5" src="https://www.csfieldguide.org.nz/en/interactives/iframe/run-length-encoding/"></iframe>
 
     <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+               I'm going to create the number 8 in this interactive.
+               It will automatically show the run length code for each line.
+               Watch and see if it follows the same rules as we established before.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
         <p>
-            On the next slide click on the grid to create the number 8, like so:
+            Click on the grid to create the number 8, like so:
         </p>
 
         <div>
@@ -207,10 +215,11 @@
             ⬜⬛⬛⬛⬜<br>
         </div>
 
-        <p>
-            What happens on the right hand side?
-            Does this follow the same rules as we established before?
-        </p>
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                Does this follow the same rules as we established before?
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
 </section>
 

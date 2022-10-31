@@ -5,7 +5,7 @@ In their raw form they can use up a lot of storage space and be very slow to dow
 But most pictures are converted to a reduced form using clever compression methods that make them much more efficient to store and view online.
 In this exercise we’re going to look at one kind of pattern in simple images that computers can use to achieve more efficiency.
 The method we’ll look at is called Run-Length Coding, and is the basis of how fax machines work.
-Even though fax machines are not so common these days, the method is used now as one of several ideas used to keep JPG images small.
+Even though fax machines are not so common these days, the method is used now as one of several ways used to keep JPG images small.
 And it’s just a fun way to represent a picture as numbers.
 
 ## Facilitator preparation
