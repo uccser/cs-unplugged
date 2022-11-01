@@ -6,4 +6,6 @@ Error control is a clever idea that enables computers to put data back to how it
 
 ## Facilitator preparation
 
-- If you aren’t familiar with this unplugged activity, you can review the in-person version in the [Error detection and correction topic]('topics:topic' 'error-detection-and-correction').
+- Read through the [guide on how to deliver CS Unplugged at a distance content]('at_a_distance:delivery-guide').
+- Go through the slides and trial them with the video conference software that you are going to present with.
+- If you aren’t familiar with the original unplugged activities, review the [in-person version of the lessons]('topics:topic' 'error-detection-and-correction').

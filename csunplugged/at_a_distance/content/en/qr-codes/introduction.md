@@ -6,8 +6,10 @@ This activity explores just how resilient they are, and shows an error control m
 
 ## Facilitator preparation
 
+- Read through the [guide on how to deliver CS Unplugged at a distance content]('at_a_distance:delivery-guide').
+- Go through the slides and trial them with the video conference software that you are going to present with.
+- If you aren’t familiar with the original unplugged activities, review the [in-person version of the lessons]('topics:topic' 'error-detection-and-correction') (based on product codes and parity error correction).
 - Make sure when you share your screen you also select to share the sound from your computer as this presentation contains a video.
-- If you aren’t familiar with error control, detection and correction, review the [original related in-person lessons]('topics:topic' 'error-detection-and-correction') (based on product codes and parity error correction).
 - In your pre-session messaging to participants encourage participants to have a separate device (perhaps a phone or tablet) with a QR reader app enabled, or a camera that reads QR codes.
 
 This session supports the learning in the following CS Unplugged at a distance sessions:

@@ -7,7 +7,7 @@ This activity uses a game that is actually an experiment to measure information 
 
 ## Facilitation preparation
 
-For each slide we’ve written a suggested script, facilitation notes and preparation reminders for you.
-These have been written with the assumption that you are familiar with [the original lesson]('at_home:activity' 'guess-the-sentence').
-
-Practice guessing a sentence using the [Shannon interactive](https://www.csfieldguide.org.nz/en/interactives/shannon-experiment/).
+- Read through the [guide on how to deliver CS Unplugged at a distance content]('at_a_distance:delivery-guide').
+- Go through the slides and trial them with the video conference software that you are going to present with.
+- If you aren’t familiar with the original unplugged activity, review the [in-person version of the lesson]('at_home:activity' 'guess-the-sentence').
+- Practice guessing a sentence using the [Shannon interactive](https://www.csfieldguide.org.nz/en/interactives/shannon-experiment/).

@@ -10,13 +10,9 @@ And it’s just a fun way to represent a picture as numbers.
 
 ## Facilitator preparation
 
-For each slide we’ve written a suggested script, facilitation notes and preparation reminders for you.
-These have been written with the assumption that you are familiar with [the original lesson]('topics:lesson' 'image-representation' 'squeezing-pictures-into-less-space').
-
-### Preparation and teaching resources:
-
 - Read through the [guide on how to deliver CS Unplugged at a distance content]('at_a_distance:delivery-guide').
-- Prepare the lesson and practice it in the video conference software that you are going to present with.
+- Go through the slides and trial them with the video conference software that you are going to present with.
+- If you aren’t familiar with the original unplugged activity, review the [in-person version of the lesson]('topics:lesson' 'image-representation' 'squeezing-pictures-into-less-space').
 
 ### Resources:
 
