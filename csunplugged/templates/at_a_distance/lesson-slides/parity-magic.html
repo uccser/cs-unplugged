@@ -26,7 +26,7 @@
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>
-            If a person doesn't know the trick, they can help you to present this trick.
+            If a participant does know the trick, they can help you to present this trick.
         </p>
     </aside>
 </section>
@@ -37,7 +37,8 @@
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                Here we have some data in a 5 by 5 grid of cards and for this trick to work, I'm going to make it more difficult for myself by adding another row and column to it.
+                Here we have some data in a 5 by 5 grid of cards.
+                I'm going to make it more difficult for myself by adding another row and column to it.
             </p>
 
             <p>
@@ -55,8 +56,9 @@
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                Now we are transmitting the information and one bit gets changed.
+                Now we are simulating transmitting the information and one bit gets changed.
                 The interactive has changed a card from black to white or white to black.
+                I'm going to see if I can work out which bit was changed.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
@@ -67,7 +69,16 @@
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 I've found it!
-                It's [say the grid reference of the changed bit].
+                It's this one.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Click on the appropriate bit and move the cursor to point to the green writing that should appear to the left of the interactive to confirm you were correct.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
                 So what happened?
                 How did I do that so quickly?
             </p>
@@ -91,7 +102,7 @@
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 Let's take this step by step.
-                What state does F1 need to be in (white or black) to create even parity, an even number of black cards.
+                What state does F1 need to be in (white or black) to create even parity, an even number of black cards in row 1?
                 Type in the chat a "B" if you think black or "W" for white if you think white.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
@@ -104,17 +115,29 @@
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                Now let's look at the rows, starting with A6.
-                Type in the chat a "B" if you think black or "W" for white if you think white.
+                Now let's look at the columns, starting with A6.
+                Type in the chat a "B" if you think black or "W" for white if you think white to make column A have an even number of black bits.
             </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
 
+        <p>
+            Continue for columns B to E.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 And what about F6?
                 This is where we check we have completed the grid correctly, as the F column is the column we added to make all the rows have even parity.
                 What colour card do we need to complete row 6?
                 And what colour card do we need to complete column F?
             </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
 
+        <p>
+            Wait for a few responses.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 That's right, it's the same colour to finish both row 8 and column H.
                 If it does work out the same when you're doing this with a class, then you can be confident that the other cards were put in correctly.
@@ -131,7 +154,7 @@
         </p>
 
         <p>
-            Note For this next section, that you can click a row or column label in the interactive to 'circle' the row or column when talking about it.
+            Note: For this next section, that you can click a row or column label in the interactive to 'circle' the row or column when talking about it.
         </p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -139,16 +162,39 @@
                 With your knowledge of parity, can you find the card that was flipped?
                 Write in the chat the grid reference for the flipped card.
             </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
 
+        <p>
+            Allow time for responses in chat.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                Before you check, let's see how we would know.
-                How many cards are in column [column letter suggested]?
-                Is it an even or odd number?
-                How many cards are in row [row number suggested]?
-                Is it an even or odd number?
-                What is the intercept of the columns and rows?
-                Is it the card that was flipped?
-                Let's check!
+                Let's check the suggested bit.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Click on the letter of the column suggested.
+            This will put a red rectangle around the selected column of bits.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                We can see that this column has an uneven number of black bits, so we know one of these bits has been changed.
+                Lets go check the row.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Click on the number of the row suggested to bring up another red rectangle.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                We can see that this row also has an uneven number of black bits.
+                So we know the bit at the intersection of these two red rectangles is the bit that was changed.
+                Let's click on this bit and see if we were right.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
@@ -211,7 +257,7 @@
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 We sometimes hear about pay parity, gender parity, currency parity, which is when two currencies are worth the same amount.
-                You may have even heard of number parity, which is whether a number is odd or even ( for example, the parity of 5 is odd).
+                You may have even heard of number parity, which is whether a number is odd or even (for example, the parity of 5 is odd).
             </p>
 
             <p>
