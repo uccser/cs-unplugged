@@ -11,7 +11,7 @@ And it’s just a fun way to represent a picture as numbers.
 ## Facilitator preparation
 
 For each slide we’ve written a suggested script, facilitation notes and preparation reminders for you.
-<!-- These have been written with the assumption that you are familiar with [the original lesson]('topics:lesson' 'image-representation' 'squeezing-pictures-into-less-space'). -->
+These have been written with the assumption that you are familiar with [the original lesson]('topics:lesson' 'image-representation' 'squeezing-pictures-into-less-space').
 
 ### Preparation and teaching resources:
 
