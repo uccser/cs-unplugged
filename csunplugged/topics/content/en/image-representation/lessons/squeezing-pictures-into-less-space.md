@@ -152,18 +152,11 @@ This exercise also shows the importance of agreeing on standards for compressed 
 In this case, you need to know the order (left to right), and that the first pixel in each row is white.
 There are other standards, like JPEG and MP3, that allow images and sound to be recorded on one brand of equipment and played back on a variety of devices.
 
-The version of run-length encoding (RLE) used in this exercise above only works well for black and white images, and isn’t so good for photographs, because the level of colour detail is so accurate that it’s very unlikely that two adjacent pixels are exactly the same colour.
+The version of run-length encoding (RLE) used in this exercise above only works well for black and white images, and isn’t so good for photographs, because in photos the level of colour detail is so accurate that it’s very unlikely that two adjacent pixels are exactly the same colour.
 A different method, called JPEG, works particularly well for colour photos.
 It finds patterns in the variations of the colours in a photo, and converts the patterns to numbers that are then compressed using RLE.
 
-The form of run-length encoding used in this exercise is most related to the technique used by fax machines, which are based on black and white scanning, but a modified version of RLE is also used in JPEG images.
-A fax machine is really just a simple computer that scans a black and white page into about 1000 × 2000 pixels, which are sent using a modem to another fax machine, which prints the pixels out on a page.
-Often fax images have large blocks of white (e.g. margins) or black pixels (e.g. a horizontal line).
-Without RLE, it would be infeasible to send faxes, and without it as part of JPEG images, photos on a web page would take a long time to load. For example, fax images are generally compressed to about one twentieth of their original size.
-A 10-page fax might take about 5 minutes to send; without compression it would take nearly two hours, which is hardly instant communication!
-These days fax machines aren’t so widely used because paper documents aren’t common, and people can scan and share documents through their own computer, or even using a cellphone camera, in which case other formats like JPEG (using a variant of RLE) are used.
-
-Photographs and colour pictures are harder to compress than black-and-white images because they have more variations of colour in them, but they are still often compressed to a tenth or even a hundredth of their original size (using techniques such as JPEG, GIF and PNG).
+Even though photographs and colour pictures are harder to compress than black-and-white images, they are still often compressed to a tenth or even a hundredth of their original size (using techniques such as JPEG, GIF and PNG).
 This allows many more images to be stored on a disk, and it means that viewing them over the web will take a fraction of the time.
 
 You need to choose which compression technique best suits the images you are working with, but either way, a form of run-length encoding is likely to be at work behind the scenes to make sure your pictures are stored and shared as efficiently as possible.
