@@ -184,7 +184,7 @@ class RunLengthEncodingResourceGenerator(BaseResourceGenerator):
             return {"type": "html", "data": doc.getvalue()}
         else:
             image = Image.open("static/img/resources/run-length-encoding/teacher-worksheet.png")
-            image = image.rotate(90, expand=True)
+            image = image.rotate(270, expand=True)
             return {"type": "image", "data": image}
 
     def add_run_length_encoding_table(self, tag, line, rows, columns, row_labels=None, underline=False):
