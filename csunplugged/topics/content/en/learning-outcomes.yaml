@@ -345,3 +345,18 @@ image-rep-understand-digits-representing-images:
 
 image-rep-understand-pixels:
   text: Understand that the images shown by computers are made up of pixels, each of which can display a different colour, based on digits.
+
+image-rep-run-length:
+  text: Demonstrate how run-length encoding compresses a black and white image.
+
+image-rep-compression:
+  text: Explain why compression is important for sharing and storing images.
+
+image-rep-follow-instructions:
+  text: Can follow instructions to create an image.
+
+image-rep-number-squares:
+  text: Recognise whole numbers and can colour in the appropriate number of squares.
+
+image-rep-pattern-to-run-length:
+  text: Can create a pattern and transform it into a run-length encoding code example.

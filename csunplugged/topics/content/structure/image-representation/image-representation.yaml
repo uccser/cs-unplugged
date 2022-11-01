@@ -6,8 +6,12 @@ age-groups:
   5-7:
     colour-by-numbers:
       number: 1
+    squeezing-pictures-into-less-space:
+      number: 2
   8-10:
     colour-by-numbers:
       number: 1
+    squeezing-pictures-into-less-space:
+      number: 2
 
 whats-it-all-about: whats-it-all-about.md

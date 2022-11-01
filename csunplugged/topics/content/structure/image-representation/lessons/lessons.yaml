@@ -8,3 +8,18 @@ colour-by-numbers:
   classroom-resources:
     - pencils
     - erasers
+
+squeezing-pictures-into-less-space:
+  duration: 45
+  computational-thinking-links: squeezing-pictures-into-less-space-ct-links.md
+  learning-outcomes:
+    - image-rep-run-length
+    - image-rep-compression
+    - image-rep-follow-instructions
+    - image-rep-number-squares
+    - image-rep-pattern-to-run-length
+  generated-resources:
+    - run-length-encoding
+  classroom-resources:
+    - pencils
+    - erasers
