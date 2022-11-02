@@ -88,7 +88,7 @@ class LessonsLoader(TranslatableModelLoader):
 
             lesson, lesson_created = self.topic.lessons.update_or_create(
                 slug=lesson_slug,
-                defaults= {
+                defaults={
                     'duration': lesson_duration,
                 }
             )

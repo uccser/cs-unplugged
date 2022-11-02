@@ -69,6 +69,4 @@ class LearningOutcomesLoader(TranslatableModelLoader):
             else:
                 term = 'Updated'
             self.log(f'{term} learning outcome: {outcome.__str__()}')
-
-
         self.log("All learning outcomes loaded!\n")
