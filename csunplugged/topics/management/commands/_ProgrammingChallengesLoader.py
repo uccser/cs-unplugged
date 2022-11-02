@@ -103,22 +103,26 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                     "Programming Challenge Difficulty"
                 )
 
-            programming_challenge = self.topic.programming_challenges.create(
+            programming_challenge, created = self.topic.programming_challenges.update_or_create(
                 slug=challenge_slug,
-                challenge_set_number=challenge_set_number,
-                challenge_number=challenge_number,
-                difficulty=difficulty_level
+                defaults={
+                    'challenge_set_number': challenge_set_number,
+                    'challenge_number': challenge_number,
+                    'difficulty': difficulty_level
+                }
             )
             self.populate_translations(programming_challenge, challenge_translations)
             self.mark_translation_availability(
                 programming_challenge,
                 required_fields=["name", "content", "testing_examples"]
             )
-
             programming_challenge.save()
 
-            LOG_TEMPLATE = "Added programming challenge: {}"
-            self.log(LOG_TEMPLATE.format(programming_challenge.name), 1)
+            if created:
+                term = 'Created'
+            else:
+                term = 'Updated'
+            self.log(f'{term} programming challenge: {programming_challenge.name}', 1)
 
             for prog_language in challenge_prog_languages:
                 if prog_language is None:
@@ -168,10 +172,10 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                 for language, content in hints_translations.items():
                     implementation_translations[language]["hints"] = content.html_string
 
-                implementation = ProgrammingChallengeImplementation(
+                implementation, created = ProgrammingChallengeImplementation.objects.update_or_create(
                     language=prog_language_object,
                     challenge=programming_challenge,
-                    topic=self.topic
+                    topic=self.topic,
                 )
 
                 self.populate_translations(implementation, implementation_translations)
@@ -179,8 +183,11 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
 
                 implementation.save()
 
-                LOG_TEMPLATE = "Added language implementation: {}"
-                self.log(LOG_TEMPLATE.format(implementation.language), 2)
+                if created:
+                    term = 'Created'
+                else:
+                    term = 'Updated'
+                self.log(f'{term} language implementation: {implementation.language}', 2)
 
             test_cases = challenge_structure.get("test-cases", None)
             if (test_cases is not None):
@@ -199,12 +206,14 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                     testcase_output = open(self.get_localised_file(
                         "en", testcase_filename_template.format("output")), encoding='UTF-8').read()
 
-                    test_case = TestCase(
+                    test_case, created = TestCase.objects.update_or_create(
                         number=testcase_id,
-                        test_input=testcase_input,
-                        expected_output=testcase_output,
-                        question_type=testcase_type,
-                        challenge=programming_challenge
+                        challenge=programming_challenge,
+                        defaults={
+                            'test_input': testcase_input,
+                            'expected_output': testcase_output,
+                            'question_type': testcase_type,
+                        }
                     )
 
                     required_fields = ['test_input', 'expected_output', 'question_type']
@@ -213,8 +222,11 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                     self.mark_translation_availability(test_case, required_fields=required_fields)
                     test_case.save()
 
-                    LOG_TEMPLATE = "Added Programming Challenge Test Case: {}"
-                    self.log(LOG_TEMPLATE.format(testcase_id), 2)
+                    if created:
+                        term = 'Created'
+                    else:
+                        term = 'Updated'
+                    self.log(f'{term} programming challenge test case: {testcase_id}', 2)
 
             if "learning-outcomes" in challenge_structure:
                 learning_outcomes = challenge_structure["learning-outcomes"]

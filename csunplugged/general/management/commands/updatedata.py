@@ -20,7 +20,6 @@ class Command(management.base.BaseCommand):
     def handle(self, *args, **options):
         """Automatically called when the updatedata command is given."""
         lite_load = options.get("lite_load")
-        management.call_command("flush", interactive=False)
         management.call_command("loadresources", lite_load=lite_load)
         management.call_command("loadtopics", lite_load=lite_load)
         management.call_command("loadgeneralpages", lite_load=lite_load)

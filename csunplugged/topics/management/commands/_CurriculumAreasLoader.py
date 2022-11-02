@@ -52,17 +52,23 @@ class CurriculumAreasLoader(TranslatableModelLoader):
                 )
 
             # Create area objects and save to database
-            new_area = CurriculumArea(
+            new_area, created = CurriculumArea.objects.update_or_create(
                 slug=curriculum_area_slug,
-                colour=curriculum_area_colour,
-                number=curriculum_area_number,
+                defaults={
+                    'colour': curriculum_area_colour,
+                    'number': curriculum_area_number,
+                }
             )
             self.populate_translations(new_area, translations)
             self.mark_translation_availability(new_area, required_fields=["name"])
 
             new_area.save()
 
-            self.log("Added curriculum area: {}".format(new_area.__str__()))
+            if created:
+                term = 'Created'
+            else:
+                term = 'Updated'
+            self.log(f'{term} curriculum area: {new_area.__str__()}')
 
             # Create children curriculum areas with reference to parent
             if "children" in curriculum_area_data:
@@ -76,17 +82,23 @@ class CurriculumAreasLoader(TranslatableModelLoader):
                 for child_slug in children_curriculum_areas:
                     translations = curriculum_areas_translations.get(child_slug, dict())
 
-                    new_child = CurriculumArea(
+                    new_child, created_child = CurriculumArea.objects.update_or_create(
                         slug=child_slug,
-                        colour=curriculum_area_colour,
-                        number=curriculum_area_number,
-                        parent=new_area,
+                        defaults={
+                            'colour': curriculum_area_colour,
+                            'number': curriculum_area_number,
+                            'parent': new_area,
+                        }
                     )
                     self.populate_translations(new_child, translations)
                     self.mark_translation_availability(new_child, required_fields=["name"])
 
                     new_child.save()
 
-                    self.log("Added child curriculum area: {}".format(new_child.__str__()), 1)
+                    if created_child:
+                        term = 'Created'
+                    else:
+                        term = 'Updated'
+                    self.log(f'{term} child curriculum area: {new_child.__str__()}', 1)
 
         self.log("All curriculum areas loaded!\n")

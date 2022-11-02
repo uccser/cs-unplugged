@@ -111,7 +111,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4.3.0
         with:
           python-version: '3.x'
       - name: Install dependencies
@@ -368,7 +368,7 @@ jobs:
           ls artifacts/at-a-distance-files-*/at-a-distance-files.tar.gz | xargs -n1 tar -xz --directory csunplugged/staticfiles/slides --file
 
       - name: Log in to the Container registry
-        uses: docker/login-action@v2.0.0
+        uses: docker/login-action@v2.1.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -384,7 +384,7 @@ jobs:
             type=ref,event=branch,priority=2
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v2.8.0
+        uses: docker/build-push-action@v3.2.0
         with:
           file: ./infrastructure/production/django/Dockerfile
           context: .

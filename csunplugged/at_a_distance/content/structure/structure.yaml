@@ -2,9 +2,9 @@ lessons:
   - stroop-effect
   - algorithms
   - binary-representation
-  # - parity-magic
-  # - qr-codes
-  # - product-code-check-digits
-  # - image-representation
-  # - information-theory
+  - parity-magic
+  - qr-codes
+  - product-code-check-digits
+  - image-compression
+  - information-theory
   - finite-state-automata

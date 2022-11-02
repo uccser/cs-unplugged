@@ -7,5 +7,7 @@ It's a lot of fun when you're deliberately tricking people, but it sheds light o
 
 ## Facilitator preparation
 
-- If you aren’t familiar with this unplugged activity, you can review the in-person version in Section 9.1 of the [EdX MOOC: Teaching Computational Thinking](https://www.edx.org/course/teaching-computational-thinking).
+- Read through the [guide on how to deliver CS Unplugged at a distance content]('at_a_distance:delivery-guide').
+- Go through the slides and trial them with the video conference software that you are going to present with.
+- If you aren’t familiar with this unplugged activity, review the in-person version in Section 9.1 of the [EdX MOOC: Teaching Computational Thinking](https://www.edx.org/course/teaching-computational-thinking).
 - Create your coloured word list in your participants’ first language (if you use English and it’s not their first language, it can be easier to say the colours, and the point is to make it confusing!)

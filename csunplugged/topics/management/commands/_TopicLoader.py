@@ -86,10 +86,12 @@ class TopicLoader(TranslatableModelLoader):
         else:
             topic_icon = None
 
-        # Create Topic object and save to the database
-        topic = Topic(
+        # Create or update topic object and save to the database
+        topic, created = Topic.objects.update_or_create(
             slug=self.topic_slug,
-            icon=topic_icon,
+            defaults={
+                'icon': topic_icon,
+            }
         )
 
         self.populate_translations(topic, topic_translations)
@@ -102,7 +104,11 @@ class TopicLoader(TranslatableModelLoader):
         )
         topic.save()
 
-        self.log("Added Topic: {}".format(topic.name))
+        if created:
+            term = 'Created'
+        else:
+            term = 'Updated'
+        self.log(f'{term} Topic: {topic.name}')
 
         # Load programming challenges
         if "programming-challenges" in topic_structure and not self.lite_loader:
@@ -144,7 +150,7 @@ class TopicLoader(TranslatableModelLoader):
             raise MissingRequiredFieldError(
                 self.structure_file_path,
                 ["lessons", "age-groups"],
-                "Unit Plan"
+                "Topic"
             )
 
         for (age_group_slug, age_group_data) in age_groups.items():
@@ -164,7 +170,7 @@ class TopicLoader(TranslatableModelLoader):
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
                     ["lesson keys"],
-                    "Unit Plan"
+                    "Topic"
                 )
 
             for (lesson_slug, lesson_data) in age_group_data.items():
@@ -183,12 +189,12 @@ class TopicLoader(TranslatableModelLoader):
                     raise MissingRequiredFieldError(
                         self.structure_file_path,
                         ["number"],
-                        "Unit Plan"
+                        "Topic"
                     )
                 else:
                     lesson_number = lesson_data.get("number", None)
 
-                relationship = LessonNumber(
+                relationship, created = LessonNumber.objects.update_or_create(
                     age_group=age_group,
                     lesson=lesson,
                     number=lesson_number,

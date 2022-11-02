@@ -59,12 +59,18 @@ class GeneralPagesLoader(BaseLoader):
                     "A URL name listed in 'csunplugged/general/urls.py'"
                 )
 
-            general_page = GeneralPage(
+            general_page, created = GeneralPage.objects.update_or_create(
                 slug=slug,
-                name=name,
-                template=template,
-                url_name=url_name,
+                defaults={
+                    'name': name,
+                    'template': template,
+                    'url_name': url_name,
+                }
             )
             general_page.save()
-            self.log("Added general page: {}".format(name))
+            if created:
+                term = 'Created'
+            else:
+                term = 'Updated'
+            self.log(f'{term} general page: {name}')
         self.log("All general pages loaded!\n")

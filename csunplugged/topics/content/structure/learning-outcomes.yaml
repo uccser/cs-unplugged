@@ -480,3 +480,24 @@ image-rep-understand-digits-representing-images:
 image-rep-understand-pixels:
   curriculum-areas:
     - data-representation
+
+
+image-rep-run-length:
+  curriculum-areas:
+    - generalising-and-patterns
+
+image-rep-compression:
+  curriculum-areas:
+    - abstraction
+
+image-rep-follow-instructions:
+  curriculum-areas:
+    - listening
+
+image-rep-number-squares:
+  curriculum-areas:
+    - numeracy
+
+image-rep-pattern-to-run-length:
+  curriculum-areas:
+    - geometry

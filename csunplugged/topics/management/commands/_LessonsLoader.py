@@ -86,9 +86,11 @@ class LessonsLoader(TranslatableModelLoader):
             else:
                 lesson_duration = None
 
-            lesson = self.topic.lessons.create(
+            lesson, lesson_created = self.topic.lessons.update_or_create(
                 slug=lesson_slug,
-                duration=lesson_duration,
+                defaults={
+                    'duration': lesson_duration,
+                }
             )
             self.populate_translations(lesson, lesson_translations)
             self.mark_translation_availability(lesson, required_fields=["name", "content"])
@@ -96,6 +98,7 @@ class LessonsLoader(TranslatableModelLoader):
 
             # Add programming challenges
             if "programming-challenges" in lesson_structure and not self.lite_loader:
+                lesson.programming_challenges.clear()
                 programming_challenge_slugs = lesson_structure["programming-challenges"]
                 if programming_challenge_slugs is not None:
                     # Check all slugs are valid
@@ -213,7 +216,7 @@ class LessonsLoader(TranslatableModelLoader):
                                 "Resources"
                             )
 
-                        relationship = ResourceDescription(
+                        relationship, created = ResourceDescription.objects.update_or_create(
                             resource=resource,
                             lesson=lesson,
                         )
@@ -222,4 +225,8 @@ class LessonsLoader(TranslatableModelLoader):
 
                         relationship.save()
 
-            self.log("Added lesson: {}".format(lesson.__str__()), 2)
+            if lesson_created:
+                term = 'Created'
+            else:
+                term = 'Updated'
+            self.log(f'{term} lesson: {lesson.__str__()}', 2)

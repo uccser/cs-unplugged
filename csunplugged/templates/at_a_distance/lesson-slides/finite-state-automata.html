@@ -50,7 +50,7 @@
 
 <section class="r-flex">
     <h2>Trainsylvania</h2>
-    <iframe class="r-flex-grow r-iframe-scale r-iframe-scale-2" data-src="https://www.csfieldguide.org.nz/interactives/iframe/trainsylvania/"></iframe>
+    <iframe class="r-flex-grow r-iframe-scale-2" data-src="https://www.csfieldguide.org.nz/interactives/iframe/trainsylvania/"></iframe>
 
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -67,17 +67,17 @@
             <p>
                 We want to get to <strong>Station 5: Harbour</strong>.
                 We have been told there are two trains that leave from each station, the <strong>A-train</strong> and the <strong>B-train</strong>.
-                We have been reassured that by taking a sequence of A and B trains we can get from the Airport Station to the Harbour Station.
+                We have been reassured that by <strong>taking</strong> a sequence of A and B trains we can get from the Airport Station to the Harbour Station.
                 Our goal is to find a sequence to do this.
             </p>
             <p>
                 Remember, we are starting at Airport Station.
-                In the chat tell me which train you would like to take.
+                In the chat tell me which train you would like to <strong>take</strong>.
                 Type “A” for train A or “B” for train B.
                 The majority will decide which train we catch.
-                We will choose which train to take from each station in this way for the rest of the activity.
+                We will choose which train to <strong>take</strong> from each station in this way for the rest of the activity.
                 At this stage you might as well make random choices since there's no information to base the decision on, so just quickly type whichever you want, A or B.
-                Later you'll have more clues on which train to take.
+                Later you'll have more clues on which train to <strong>take</strong>.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
@@ -150,7 +150,7 @@
 <section class="r-flex">
     <h2>Sequences</h2>
     <h3>Did we get it right?</h3>
-    <iframe class="r-flex-grow r-iframe-scale r-iframe-scale-2" data-src="https://www.csfieldguide.org.nz/interactives/iframe/trainsylvania-planner/"></iframe>
+    <iframe class="r-flex-grow r-iframe-scale-2" data-src="https://www.csfieldguide.org.nz/interactives/iframe/trainsylvania-planner/"></iframe>
 
      <aside class="notes">
         <p>
@@ -172,7 +172,7 @@
         <p>
             Wait for several responses.
             Several people will probably type in the same string of As and Bs.
-            When this happens copy that string into the planner, and it will say where that sequence takes you to.
+            When this happens type the sequence of A's and B's into the text box on the planner, and it will say what station that sequence takes you to.
         </p>
     </aside>
 </section>
@@ -243,16 +243,12 @@
     </aside>
 </section>
 
-<section>
-    <h2>Trainsylvania Questions</h2>
-    <ol>
-        <li>BBB will take us to<span class="fragment"> East Station</span></li>
-        <li><span class="fragment">BABA will take us to back to</span><span class="fragment"> Airport Station</span></li>
-        <li><span class="fragment">Will AAB get us to Harbour Station?</span><span class="fragment r-text-red"> No</span></li>
-        <li><span class="fragment">Will ABBAB get us to Harbour Station?</span><span class="fragment r-text-green"> Yes</span></li>
-        <li><span class="fragment">Will AAABBAB get us to Harbour Station?</span><span class="fragment r-text-green"> Yes</span></li>
-        <li><span class="fragment">Will BBBBB get us to Harbour Station?</span><span class="fragment r-text-red"> No</span></li>
-    </ol>
+<section class="r-flex">
+    <h2>Question 1</h2>
+    <iframe class="r-flex-grow" src="https://www.csfieldguide.org.nz/interactives/iframe/trainsylvania-map/?fsa"></iframe>
+    <p>
+        BBB will take us to<span class="fragment"> East Station</span>
+    </p>
 
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -262,7 +258,7 @@
 
         <p>
             Wait for answers in the chat.
-            Once you are ready to continue, press the next slide button to show the answer.
+            Once you are ready to continue, press the next slide button/key to show the answer.
         </p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -270,13 +266,44 @@
                 Yes, that's right, BBB will take us to East Station (via South Station and Factory Station).
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
 
-        <p>Push the next slide button to show each prompt individually.</p>
+<section class="r-flex">
+    <h2>Question 2</h2>
+    <iframe class="r-flex-grow" src="https://www.csfieldguide.org.nz/interactives/iframe/trainsylvania-map/?fsa"></iframe>
+    <p>
+        BABA will take us to back to <span class="fragment">Airport Station</span>
+    </p>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                How about BABA, where will this take us?.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Wait for responses, then push the next slide button/key to show the answer.
+        </p>
 
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                How about BABA, where will this take us? (from Airport station back to South station, back Airport Station, twice!).
+                From Airport station back to South station, back Airport Station, twice!
             </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section class="r-flex">
+    <h2>Question 3</h2>
+    <iframe class="r-flex-grow" src="https://www.csfieldguide.org.nz/interactives/iframe/trainsylvania-map/?fsa"></iframe>
+    <p>
+        Will AAB get us to Harbour Station?<span class="fragment r-text-red"> No</span>
+    </p>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
                 To mix it up a bit, will this string get me to the Harbour Station?
                 AAB.
@@ -286,14 +313,98 @@
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
         <p>
-            Type AAB in the chat and wait for responses. The answer is 'no'.
-            Repeat with the following strings:
+            Type AAB in the chat and wait for responses.
         </p>
-        <ul>
-            <li>ABBAB [Yes]</li>
-            <li>AAABBAB [Yes]</li>
-            <li>BBBBB [No]</li>
-        </ul>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                The answer is 'no'.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section class="r-flex">
+    <h2>Question 4</h2>
+    <iframe class="r-flex-grow" src="https://www.csfieldguide.org.nz/interactives/iframe/trainsylvania-map/?fsa"></iframe>
+    <p>
+        Will ABBAB get us to Harbour Station?<span class="fragment r-text-green"> Yes</span>
+    </p>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                What about ABBAB?
+                Yes or no?
+                Type your answer in the chat.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Type AAB in the chat and wait for responses.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                The answer is 'yes'.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section class="r-flex">
+    <h2>Question 5</h2>
+    <iframe class="r-flex-grow" src="https://www.csfieldguide.org.nz/interactives/iframe/trainsylvania-map/?fsa"></iframe>
+    <p>
+        Will AAABBAB get us to Harbour Station?<span class="fragment r-text-green"> Yes</span>
+    </p>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                What about AAABBAB?
+                Yes or no?
+                Type your answer in the chat.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Type AAB in the chat and wait for responses.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                The answer is 'yes'.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+    </aside>
+</section>
+
+<section class="r-flex">
+    <h2>Question 6</h2>
+    <iframe class="r-flex-grow" src="https://www.csfieldguide.org.nz/interactives/iframe/trainsylvania-map/?fsa"></iframe>
+    <p>
+        Will BBBBB get us to Harbour Station?<span class="fragment r-text-red"> No</span>
+    </p>
+
+    <aside class="notes">
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                What about BBBBB?
+                Yes or no?
+                Type your answer in the chat.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
+
+        <p>
+            Type AAB in the chat and wait for responses.
+        </p>
+
+        {% include "at_a_distance/components/speech-bubble-open.html" %}
+            <p>
+                The answer is 'no'.
+            </p>
+        {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>
 </section>
 
@@ -325,7 +436,7 @@
 <section>
     <h2>Is this English?</h2>
     <ol>
-        <li>Tim likes cake.</li>
+        <li>I'm gonna be late</li>
         <li><span class="fragment">ADM;lasdf oodf9 bosfa</span></li>
         <li><span class="fragment">ancay youay eakspay igpay atinlay?</span></li>
     </ol>
@@ -333,7 +444,7 @@
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
             <p>
-                For a natural language like English, an “English checker” would ask Is this in English language: "Tim likes cake."
+                For a natural language like English, an “English checker” would ask is this English language: "I'm gonna be late."
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
 
@@ -359,10 +470,9 @@
 </section>
 
 <section>
-    <h2>Finite State Automata </h2>
-    <h3>Map for email addresses</h3>
+    <h3>Email address to process</h3>
+    <h3 class="r-text-black r-font-size-5">me@a.com</h3>
     <img src="{% static 'img/at_a_distance/finite-state-automata/fsa.svg' %}">
-    <h3>me@a.com</h3>
 
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -390,10 +500,9 @@
 </section>
 
 <section>
-    <h2>Finite State Automata </h2>
-    <h3>Map for email addresses</h3>
+    <h3>Email address to process</h3>
+    <h3 class="r-text-black r-font-size-5">email@gmail.com</h3>
     <img src="{% static 'img/at_a_distance/finite-state-automata/fsa.svg' %}">
-    <h3>email@gmail.com</h3>
 
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -414,10 +523,9 @@
 </section>
 
 <section>
-    <h2>Finite State Automata </h2>
-    <h3>Map for email addresses</h3>
+    <h3>Email address to process</h3>
+    <h3 class="r-text-black r-font-size-5">mygooglegmail</h3>
     <img src="{% static 'img/at_a_distance/finite-state-automata/fsa.svg' %}">
-    <h3>mygooglegmail</h3>
 
     <aside class="notes">
         {% include "at_a_distance/components/speech-bubble-open.html" %}
@@ -461,6 +569,11 @@
                 Text-based programming languages use finite state automata to check code is written correctly in order for the program to read it and run as expected.
                 Have you ever received the message 'syntax error' for a program?
                 If you have, a finite state automata has probably been used to check your code for errors.
+            </p>
+
+            <p>
+                This is a simplified FSA for email addresses.
+                An FSA to test all valid email addresses is more complicated.
             </p>
         {% include "at_a_distance/components/speech-bubble-close.html" %}
     </aside>

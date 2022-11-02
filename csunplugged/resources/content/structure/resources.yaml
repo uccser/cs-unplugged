@@ -55,3 +55,6 @@ pixel-painter:
 treasure-island:
   generator-module: TreasureIslandResourceGenerator
   copies: false
+run-length-encoding:
+  generator-module: RunLengthEncodingResourceGenerator
+  copies: false
