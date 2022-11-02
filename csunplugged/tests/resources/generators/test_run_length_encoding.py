@@ -1,4 +1,3 @@
-from unittest import mock
 from django.http import QueryDict
 from django.test import tag
 from resources.generators.RunLengthEncodingResourceGenerator import RunLengthEncodingResourceGenerator
