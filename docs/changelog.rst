@@ -23,6 +23,57 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+7.3.0
+==============================================================================
+
+**Release date:** 2 November 2022
+
+**Changelog:**
+
+- Add new lesson 'Squeezing pictures into less space' for ages 5 to 10 within the 'Image Representation' topic.
+- Add 'Run Length Encoding Worksheet' printable.
+- Add new 'At a distance' lessons:
+    - Parity Magic
+    - QR Codes
+    - Product Code Check Digits
+    - Image Compression
+    - Information Theory
+- Updated existing 'At a distance' lessons, to be consistent with new content:
+    - The Stroop Effect
+    - Algorithms
+    - Binary Representation
+    - Finite State Automata
+- Open links within 'At a distance' content in a new tab.
+- Clarify prompt for closing 'At a distance' slides starting modal.
+- Update existing content instead of deleting and recreating content.
+  Used to remove downtime of content upon deployments.
+- Fix bug where a nested details element would use icon state from parent details element.
+- Switch to Plausible analytics.
+- Dependency updates:
+    - Update actions/setup-python from v2 to v4.3.0.
+    - Update autoprefixer from 10.4.11 to 10.4.13.
+    - Update coverage from 6.4.4 to 6.5.0.
+    - Update crowdin/github-action from 1.4.13 to 1.4.16.
+    - Update cssnano from 5.1.13 to 5.1.14.
+    - Update cssselect from 1.1.0 to 1.2.0.
+    - Update dependabot/fetch-metadata from v1.3.3 to v1.3.4.
+    - Update django from 3.2.15 to 3.2.16.
+    - Update django-debug-toolbar from 3.6.0 to 3.7.0.
+    - Update django-modeltranslation from 0.18.4 to 0.18.5.
+    - Update docker/build-push-action from v2.8.0 to v3.2.0.
+    - Update docker/login-action from v2.0.0 to v2.1.0.
+    - Update Pillow from 9.2.0 to 9.3.0.
+    - Update postcss from 8.4.16 to 8.4.18.
+    - Update psycopg2 from 2.9.3 to 2.9.5.
+    - Update PyPDF2 from 2.10.8 to 2.11.1.
+    - Update reveal.js from 4.3.1 to 4.4.0.
+    - Update sass from 1.54.9 to 1.55.0.
+    - Update scratchblocks from UCCSER version to official 3.6.1.
+      Our changes were accepted within the official repository.
+    - Update sphinx-rtd-theme from 1.0.0 to 1.1.0.
+    - Update uniseg from 0.7.1.post2 to 0.7.2.
+    - Update yargs from 17.5.1 to 17.6.0.
+
 7.1.0
 ==============================================================================
 
