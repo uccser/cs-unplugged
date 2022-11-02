@@ -27,13 +27,17 @@ class ClassroomResourcesLoader(TranslatableModelLoader):
 
         for classroom_resource_slug in classroom_resources:
             translations = classroom_resources_translations.get(classroom_resource_slug, dict())
-            new_resource = ClassroomResource(
+            new_resource, created = ClassroomResource.objects.update_or_create(
                 slug=classroom_resource_slug,
             )
             self.populate_translations(new_resource, translations)
             self.mark_translation_availability(new_resource, required_fields=["description"])
             new_resource.save()
 
-            self.log("Added classroom resource: {}".format(new_resource.__str__()))
+            if created:
+                term = 'Created'
+            else:
+                term = 'Updated'
+            self.log(f'{term} classroom resource: {new_resource.__str__()}')
 
         self.log("All classroom resources loaded!\n")

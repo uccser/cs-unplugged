@@ -57,14 +57,21 @@ class ResourcesLoader(TranslatableModelLoader):
                     "'true' or 'false'"
                 )
 
-            resource = Resource(
+            # Create or update lesson objects and save to the database
+            resource, created = Resource.objects.update_or_create(
                 slug=resource_slug,
-                generator_module=generator_module,
-                copies=resource_copies,
+                defaults={
+                    'generator_module': generator_module,
+                    'copies': resource_copies,
+                },
             )
             self.populate_translations(resource, resource_translations)
             self.mark_translation_availability(resource, required_fields=["name", "content"])
             resource.save()
 
-            self.log("Added Resource: {}".format(resource.name))
+            if created:
+                term = 'Created'
+            else:
+                term = 'Updated'
+            self.log(f'{term} Resource: {resource.name}')
         self.log("All resources loaded!\n")

@@ -34,11 +34,16 @@ class ClassicPagesLoader(BaseLoader):
 
             redirect_url = urljoin("https://classic.csunplugged.org/", slug)
 
-            classic_page = ClassicPage(
+            classic_page, created = ClassicPage.objects.update_or_create(
                 slug=slug,
                 name=name,
                 redirect=redirect_url,
             )
             classic_page.save()
-            self.log("Added Classic CS Unplugged page: {}".format(name))
+
+            if created:
+                term = 'Created'
+            else:
+                term = 'Updated'
+            self.log(f'{term} Classic CS Unplugged page: {name}')
         self.log("All Classic CS Unplugged pages loaded!\n")

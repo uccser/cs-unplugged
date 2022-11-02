@@ -33,8 +33,8 @@ class LearningOutcomesLoader(TranslatableModelLoader):
             translations = self.get_blank_translation_dictionary()
             translations.update(learning_outcomes_translations.get(outcome_slug, dict()))
 
-            # Create outcome objects and save to db
-            outcome = LearningOutcome(
+            # Create or update learning outcome objects and save to db
+            outcome, created = LearningOutcome.objects.update_or_create(
                 slug=outcome_slug,
             )
             self.populate_translations(outcome, translations)
@@ -64,6 +64,11 @@ class LearningOutcomesLoader(TranslatableModelLoader):
                         "Curriculum Areas"
                     )
 
-            self.log("Added learning outcome: {}".format(outcome.__str__()))
+            if created:
+                term = 'Created'
+            else:
+                term = 'Updated'
+            self.log(f'{term} learning outcome: {outcome.__str__()}')
+
 
         self.log("All learning outcomes loaded!\n")

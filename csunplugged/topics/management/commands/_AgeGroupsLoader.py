@@ -50,14 +50,19 @@ class AgeGroupsLoader(TranslatableModelLoader):
                 )
 
             # Create area objects and save to database
-            age_group = AgeGroup(
+            age_group, created = AgeGroup.objects.update_or_create(
                 slug=age_group_slug,
-                ages=(int(group_min_age), int(group_max_age)),
+                defaults={
+                    'ages': (int(group_min_age), int(group_max_age)),
+                }
             )
             self.populate_translations(age_group, translations)
             self.mark_translation_availability(age_group, required_fields=["description"])
             age_group.save()
 
-            self.log("Added age group: {}".format(age_group.__str__()))
-
+            if created:
+                term = 'Created'
+            else:
+                term = 'Updated'
+            self.log(f'{term} age group: {age_group.__str__()}')
         self.log("All age groups loaded!\n")

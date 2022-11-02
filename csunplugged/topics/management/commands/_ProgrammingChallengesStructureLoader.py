@@ -77,10 +77,12 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
                 for language, content in programming_reminders_translations.items():
                     prog_reminders_translations[language]["programming_reminders"] = content.html_string
 
-            new_prog_language = ProgrammingChallengeLanguage(
+            new_prog_language, created = ProgrammingChallengeLanguage.objects.update_or_create(
                 slug=prog_language,
-                number=prog_language_number,
-                icon=prog_language_icon
+                defaults={
+                    'number': prog_language_number,
+                    'icon': prog_language_icon
+                }
             )
 
             translations = prog_languages_translations.get(prog_language, dict())
@@ -89,7 +91,11 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
             self.mark_translation_availability(new_prog_language, required_fields=["name"])
             new_prog_language.save()
 
-            self.log("Added programming language: {}".format(new_prog_language.__str__()))
+            if created:
+                term = 'Created'
+            else:
+                term = 'Updated'
+            self.log(f'{term} programming language: {new_prog_language.__str__()}')
 
         # Add "-languages" to the structure filename
         difficulties_translation_filename = "{}-difficulties.yaml".format(
@@ -103,7 +109,7 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
 
         for level, difficulty_slug in enumerate(difficulty_levels):
 
-            new_difficulty = ProgrammingChallengeDifficulty(
+            new_difficulty, created = ProgrammingChallengeDifficulty.objects.update_or_create(
                 level=level,
             )
 
@@ -112,6 +118,10 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
             self.mark_translation_availability(new_difficulty, required_fields=["name"])
             new_difficulty.save()
 
-            self.log("Added programming difficulty level: {}".format(new_difficulty.__str__()))
+            if created:
+                term = 'Created'
+            else:
+                term = 'Updated'
+            self.log(f'{term} programming difficulty level: {new_difficulty.__str__()}')
 
         self.log("")

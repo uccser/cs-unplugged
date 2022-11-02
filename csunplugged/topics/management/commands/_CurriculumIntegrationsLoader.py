@@ -55,9 +55,11 @@ class CurriculumIntegrationsLoader(TranslatableModelLoader):
                     "Curriculum Integration"
                 )
 
-            integration = self.topic.curriculum_integrations.create(
+            integration, created = self.topic.curriculum_integrations.update_or_create(
                 slug=integration_slug,
-                number=integration_number,
+                defaults={
+                    'number': integration_number,
+                }
             )
             self.populate_translations(integration, integration_translations)
             self.mark_translation_availability(integration, required_fields=["name", "content"])
@@ -102,4 +104,8 @@ class CurriculumIntegrationsLoader(TranslatableModelLoader):
                                 "Lessons"
                             )
 
-            self.log("Added curriculum integration: {}".format(integration.name), 1)
+            if created:
+                term = 'Created'
+            else:
+                term = 'Updated'
+            self.log(f'{term} curriculum integration: {integration.name}', 1)
