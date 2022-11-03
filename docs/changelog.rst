@@ -23,7 +23,17 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
-7.3.0
+7.2.1
+==============================================================================
+
+**Release date:** 3 November 2022
+
+**Changelog:**
+
+- Update embedded 'At home' videos to UCCSER original versions. Previous versions were modified variants.
+- Fix typo of wrong version number in changelog.
+
+7.2.0
 ==============================================================================
 
 **Release date:** 2 November 2022
