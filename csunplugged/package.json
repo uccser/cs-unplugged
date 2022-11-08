@@ -38,7 +38,7 @@
         "sass": "1.55.0",
         "scratchblocks": "3.6.1",
         "vinyl-buffer": "1.0.1",
-        "yargs": "17.6.1"
+        "yargs": "17.6.2"
     },
     "engines": {
         "node": ">=8"
