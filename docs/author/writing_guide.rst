@@ -25,8 +25,9 @@ For example, the following text:
 
   {iframe link="http://scratch.mit.edu/projects/embed/148423714/?autostart=false"}
 
-  {panel type="note" title="Tips"}
-
+  {panel type="note}
+  # Tips
+  
   - Make sure all your blocks are “snapped” together in a line like a
     jigsaw puzzle.
 
@@ -404,6 +405,21 @@ Panel (Verto feature)
 ==============================================================================
 
 `Click here to read the documentation on how to create a panel`_.
+
+Supported panel types
+---------------------
+
+These are the panel types that have built in styling for CS Unplugged.
+Have a play around with them to see how they look!
+
+
+- ct-algorithm
+- ct-abstraction
+- ct-decomposition
+- ct-pattern
+- ct-logic
+- ct-evaluation
+- video
 
 ------------------------------------------------------------------------------
 
