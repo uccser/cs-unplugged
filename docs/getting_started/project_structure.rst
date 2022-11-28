@@ -22,6 +22,16 @@ The repository directory (or root directory) contains the following:
   - This directory contains the documentation for the repository (which includes
     the file you are reading now).
 
+- ``infrastructure/``
+
+  - This directory contains Dockerfiles and helper scripts, used to setup the
+    development and production environments for CS Unplugged.
+
+- ``requirements/``
+
+  - This directory contains requirements files which outline Python dependencies
+    required to run the project.
+
 - ``subtitles/``
 
   - This directory contains subtitle files for CS Unplugged videos.
