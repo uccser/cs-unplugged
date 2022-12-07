@@ -410,6 +410,7 @@ Supported panel types
 ---------------------
 
 These are the panel types that have built in styling for CS Unplugged.
+Other panel types are supported, but will not have any special styling.
 Have a play around with them to see how they look!
 
 
