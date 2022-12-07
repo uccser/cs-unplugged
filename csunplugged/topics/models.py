@@ -597,7 +597,6 @@ class CurriculumIntegration(TranslatableModel):
         ]
 
 
-
 class ResourceDescription(TranslatableModel):
     """Model for relationship between resource and lesson in database."""
 

@@ -104,6 +104,6 @@ class CurriculumAreasLoader(TranslatableModelLoader):
                     self.log(f'{term} child curriculum area: {new_child.__str__()}', 1)
 
         areas = [*curriculum_areas_structure, *child_slugs]
-        CurriculumArea.objects.exclude(slug__in=areas).delete();
+        CurriculumArea.objects.exclude(slug__in=areas).delete()
 
         self.log("All curriculum areas loaded!\n")

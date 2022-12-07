@@ -181,7 +181,8 @@ class GeneralPageLoaderTest(BaseTestWithDB):
                 "<GeneralPage: Page 3>",
             ],
         )
-    def test_general_page_loader_multiple_configuration_insert_middle(self):
+
+    def test_general_page_loader_multiple_configuration_remove_end(self):
         config_file = "multiple.yaml"
         general_page_loader = GeneralPagesLoader(
             structure_dir="",

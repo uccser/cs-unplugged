@@ -66,6 +66,6 @@ class AgeGroupsLoader(TranslatableModelLoader):
                 term = 'Updated'
             self.log(f'{term} age group: {age_group.__str__()}')
 
-        AgeGroup.objects.exclude(slug__in=age_groups_structure.keys()).delete();
+        AgeGroup.objects.exclude(slug__in=age_groups_structure.keys()).delete()
 
         self.log("All age groups loaded!\n")

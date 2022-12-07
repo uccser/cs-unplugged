@@ -311,7 +311,7 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
                 "<LearningOutcome: Outcome 2>",
             ]
         )
-    
+
     def test_insert_start(self):
         config_file = "basic-config-1.yaml"
         topic = self.test_data.create_topic(1)
@@ -319,7 +319,7 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
         self.test_data.create_programming_language(1)
         pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
         pc_loader.load()
-        
+
         pc_objects = ProgrammingChallenge.objects.all()
 
         self.assertQuerysetEqual(

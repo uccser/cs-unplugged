@@ -151,10 +151,10 @@ class AgeGroupsLoaderTest(BaseTestWithDB):
         group_loader = AgeGroupsLoader(structure_filename=config_file, base_path=self.base_path)
         group_loader.load()
         self.assertQuerysetEqual(
-            AgeGroup.objects.filter(slug="8-10"), [
-            "<AgeGroup: NumericRange(8, 10, '[)')>"
-        ])
-    
+            AgeGroup.objects.filter(slug="8-10"),
+            ["<AgeGroup: NumericRange(8, 10, '[)')>"]
+        )
+
     def test_age_groups_insert_middle(self):
         config_file = "multiple.yaml"
         group_loader = AgeGroupsLoader(structure_filename=config_file, base_path=self.base_path)

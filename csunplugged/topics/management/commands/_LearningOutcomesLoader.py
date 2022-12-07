@@ -70,5 +70,5 @@ class LearningOutcomesLoader(TranslatableModelLoader):
                 term = 'Updated'
             self.log(f'{term} learning outcome: {outcome.__str__()}')
 
-        LearningOutcome.objects.exclude(slug__in=learning_outcomes.keys()).delete();
+        LearningOutcome.objects.exclude(slug__in=learning_outcomes.keys()).delete()
         self.log("All learning outcomes loaded!\n")

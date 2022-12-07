@@ -47,6 +47,5 @@ class ClassicPagesLoader(BaseLoader):
                 term = 'Updated'
             self.log(f'{term} Classic CS Unplugged page: {name}')
 
-        ClassicPage.objects.exclude(slug__in=classic_pages.keys()).delete();
-
+        ClassicPage.objects.exclude(slug__in=classic_pages.keys()).delete()
         self.log("All Classic CS Unplugged pages loaded!\n")

@@ -762,7 +762,7 @@ class LessonsLoaderTest(BaseTestWithDB):
             base_path=self.base_path
         )
         lesson_loader.load()
-        
+
         lesson_objects = Lesson.objects.all()
         self.assertQuerysetEqual(
             list(lesson_objects),
@@ -812,7 +812,7 @@ class LessonsLoaderTest(BaseTestWithDB):
                 "<Lesson: Lesson 3>",
             ],
         )
-        
+
         config_file = "multiple-lessons.yaml"
         lesson_loader = LessonsLoader(
             topic,
@@ -820,7 +820,7 @@ class LessonsLoaderTest(BaseTestWithDB):
             base_path=self.base_path
         )
         lesson_loader.load()
-        
+
         lesson_objects = Lesson.objects.all()
         self.assertQuerysetEqual(
             list(lesson_objects),

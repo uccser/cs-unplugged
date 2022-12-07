@@ -74,6 +74,6 @@ class GeneralPagesLoader(BaseLoader):
                 term = 'Updated'
             self.log(f'{term} general page: {name}')
 
-        GeneralPage.objects.exclude(slug__in=general_pages.keys()).delete();
+        GeneralPage.objects.exclude(slug__in=general_pages.keys()).delete()
 
         self.log("All general pages loaded!\n")

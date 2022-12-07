@@ -32,20 +32,19 @@ class IndexViewTest(BaseTestWithDB):
             ["<Topic: Topic 1>"]
         )
 
-    def test_index_with_mulitple_topics(self):
+    def test_index_with_multiple_topics(self):
         topic_1 = self.test_data.create_topic(1)
-        age_group_1 = self.test_data.create_age_group(5, 7)
+        age_group = self.test_data.create_age_group(5, 7)
         self.test_data.create_lesson(
             topic_1,
             1,
-            age_group_1
+            age_group
         )
         topic_2 = self.test_data.create_topic(2)
-        age_group_2 = self.test_data.create_age_group(5, 7)
         self.test_data.create_lesson(
             topic_2,
             1,
-            age_group_2
+            age_group
         )
         url = reverse("topics:index")
         response = self.client.get(url)

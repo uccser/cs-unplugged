@@ -40,6 +40,6 @@ class ClassroomResourcesLoader(TranslatableModelLoader):
                 term = 'Updated'
             self.log(f'{term} classroom resource: {new_resource.__str__()}')
 
-        ClassroomResource.objects.exclude(slug__in=classroom_resources).delete();
+        ClassroomResource.objects.exclude(slug__in=classroom_resources).delete()
 
         self.log("All classroom resources loaded!\n")

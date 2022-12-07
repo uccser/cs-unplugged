@@ -206,7 +206,7 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
         ci_loader = CurriculumIntegrationsLoader(topic, base_path=self.base_path, structure_filename=config_file)
         ci_loader.load()
         ci_objects = CurriculumIntegration.objects.all()
-        
+
         self.assertEqual(2, len(ci_objects))
         self.assertQuerysetEqual(
             list(ci_objects),
@@ -230,7 +230,7 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
         ci_loader = CurriculumIntegrationsLoader(topic, base_path=self.base_path, structure_filename=config_file)
         ci_loader.load()
         ci_objects = CurriculumIntegration.objects.all()
-        
+
         self.assertEqual(1, len(ci_objects))
         self.assertQuerysetEqual(
             list(ci_objects),

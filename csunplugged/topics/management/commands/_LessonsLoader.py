@@ -232,6 +232,6 @@ class LessonsLoader(TranslatableModelLoader):
                 term = 'Updated'
 
             self.log(f'{term} lesson: {lesson.__str__()}', 2)
-        
-        Lesson.objects.filter(topic=self.topic).exclude(slug__in=lessons_structure.keys()).delete();
+
+        Lesson.objects.filter(topic=self.topic).exclude(slug__in=lessons_structure.keys()).delete()
         self.log('Finished loading lessons', 1)
