@@ -340,7 +340,7 @@ class AgeGroup(TranslatableModel):
     """Model for age group in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
-    slug = models.SlugField()
+    slug = models.SlugField(unique=True)
     ages = IntegerRangeField()
     description = models.CharField(max_length=500, default="")
 
@@ -590,6 +590,10 @@ class CurriculumIntegration(TranslatableModel):
 
         indexes = [
             GinIndex(fields=['search_vector'])
+        ]
+
+        constraints = [
+            models.UniqueConstraint(fields=["topic", "number"], name="unique_topic_integration_number"),
         ]
 
 

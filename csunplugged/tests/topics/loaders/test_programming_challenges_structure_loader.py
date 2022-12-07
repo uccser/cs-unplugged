@@ -133,3 +133,55 @@ class ProgrammingChallengesStructureLoaderTest(BaseTestWithDB):
         # Check name does not fall back to english for missing translation
         with translation.override("de"):
             self.assertEqual("", untranslated_difficulty.name)
+
+    def test_insert_start(self):
+        config_file = "basic-config.yaml"
+        pes_loader = ProgrammingChallengesStructureLoader(structure_filename=config_file, base_path=self.base_path)
+        pes_loader.load()
+
+        config_file = "insert-start.yaml"
+        pes_loader = ProgrammingChallengesStructureLoader(structure_filename=config_file, base_path=self.base_path)
+        pes_loader.load()
+
+        ped_objects = ProgrammingChallengeDifficulty.objects.all()
+        pel_objects = ProgrammingChallengeLanguage.objects.all()
+        self.assertQuerysetEqual(
+            ped_objects,
+            ["<ProgrammingChallengeDifficulty: Level 1>", "<ProgrammingChallengeDifficulty: Level 2>"],
+            ordered=False
+        )
+        self.assertQuerysetEqual(
+            pel_objects,
+            ["<ProgrammingChallengeLanguage: Language 1>", "<ProgrammingChallengeLanguage: Language 2>"],
+            ordered=False
+        )
+
+    def test_remove_start(self):
+        config_file = "insert-start.yaml"
+        pes_loader = ProgrammingChallengesStructureLoader(structure_filename=config_file, base_path=self.base_path)
+        pes_loader.load()
+
+        config_file = "basic-config.yaml"
+        pes_loader = ProgrammingChallengesStructureLoader(structure_filename=config_file, base_path=self.base_path)
+        pes_loader.load()
+
+        ped_objects = ProgrammingChallengeDifficulty.objects.all()
+        pel_objects = ProgrammingChallengeLanguage.objects.all()
+        self.assertQuerysetEqual(
+            ped_objects,
+            ["<ProgrammingChallengeDifficulty: Level 1>"],
+            ordered=False
+        )
+        self.assertQuerysetEqual(
+            pel_objects,
+            ["<ProgrammingChallengeLanguage: Language 1>"],
+            ordered=False
+        )
+
+    def test_duplicate_language_numbers(self):
+        config_file = "duplicate-language-numbers.yaml"
+        pes_loader = ProgrammingChallengesStructureLoader(structure_filename=config_file, base_path=self.base_path)
+        self.assertRaises(
+            InvalidYAMLValueError,
+            pes_loader.load
+        )

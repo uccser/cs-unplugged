@@ -143,3 +143,77 @@ class GeneralPageLoaderTest(BaseTestWithDB):
                 "<GeneralPage: Page 3>",
             ],
         )
+
+    def test_general_page_loader_multiple_configuration_insert_middle(self):
+        config_file = "multiple.yaml"
+        general_page_loader = GeneralPagesLoader(
+            structure_dir="",
+            structure_filename=config_file,
+            base_path=self.BASE_PATH,
+        )
+        general_page_loader.load()
+        pages = GeneralPage.objects.order_by("name")
+        self.assertEqual(3, len(pages))
+        self.assertQuerysetEqual(
+            pages,
+            [
+                "<GeneralPage: Page 1>",
+                "<GeneralPage: Page 2>",
+                "<GeneralPage: Page 3>",
+            ],
+        )
+
+        config_file = "insert-middle.yaml"
+        general_page_loader = GeneralPagesLoader(
+            structure_dir="",
+            structure_filename=config_file,
+            base_path=self.BASE_PATH,
+        )
+        general_page_loader.load()
+        pages = GeneralPage.objects.order_by("name")
+        self.assertEqual(4, len(pages))
+        self.assertQuerysetEqual(
+            pages,
+            [
+                "<GeneralPage: Page 1>",
+                "<GeneralPage: Page 1a>",
+                "<GeneralPage: Page 2>",
+                "<GeneralPage: Page 3>",
+            ],
+        )
+
+    def test_general_page_loader_multiple_configuration_remove_end(self):
+        config_file = "multiple.yaml"
+        general_page_loader = GeneralPagesLoader(
+            structure_dir="",
+            structure_filename=config_file,
+            base_path=self.BASE_PATH,
+        )
+        general_page_loader.load()
+        pages = GeneralPage.objects.order_by("name")
+        self.assertEqual(3, len(pages))
+        self.assertQuerysetEqual(
+            pages,
+            [
+                "<GeneralPage: Page 1>",
+                "<GeneralPage: Page 2>",
+                "<GeneralPage: Page 3>",
+            ],
+        )
+
+        config_file = "remove-end.yaml"
+        general_page_loader = GeneralPagesLoader(
+            structure_dir="",
+            structure_filename=config_file,
+            base_path=self.BASE_PATH,
+        )
+        general_page_loader.load()
+        pages = GeneralPage.objects.order_by("name")
+        self.assertEqual(2, len(pages))
+        self.assertQuerysetEqual(
+            pages,
+            [
+                "<GeneralPage: Page 1>",
+                "<GeneralPage: Page 2>",
+            ],
+        )

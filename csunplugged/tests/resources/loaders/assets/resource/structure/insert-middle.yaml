@@ -1,0 +1,12 @@
+resource-untranslated:
+  generator-module: GridResourceGenerator
+  thumbnail-static-path: img/resources/grid/thumbnail.png
+  copies: false
+resource3-untranslated:
+  generator-module: GridResourceGenerator
+  thumbnail-static-path: img/resources/grid/thumbnail.png
+  copies: false
+resource2-untranslated:
+  generator-module: JobBadgesResourceGenerator
+  thumbnail-static-path: img/resources/job-badges/thumbnail.png
+  copies: false

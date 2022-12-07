@@ -1,0 +1,9 @@
+languages:
+  language-1:
+    number: 1
+  language-2:
+    number: 2
+
+difficulties:
+  - difficulty-2
+  - difficulty-1

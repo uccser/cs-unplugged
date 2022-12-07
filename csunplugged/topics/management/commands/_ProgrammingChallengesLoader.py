@@ -15,6 +15,7 @@ from topics.models import (
     ProgrammingChallengeDifficulty,
     ProgrammingChallengeLanguage,
     ProgrammingChallengeImplementation,
+    ProgrammingChallenge
 )
 
 
@@ -242,3 +243,7 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                                 self.structure_file_path,
                                 learning_outcome_slug,
                                 "Learning Outcome")
+
+        ProgrammingChallenge.objects.all().filter(topic=self.topic).exclude(
+            slug__in=programming_challenges_structure.keys()
+        ).delete()
