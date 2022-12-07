@@ -25,6 +25,7 @@ class CurriculumAreasLoader(TranslatableModelLoader):
             required_slugs=curriculum_areas_structure.keys()
         )
 
+        child_slugs = []
         for (curriculum_area_slug, curriculum_area_data) in curriculum_areas_structure.items():
 
             if curriculum_area_data is None:
@@ -80,6 +81,7 @@ class CurriculumAreasLoader(TranslatableModelLoader):
                         "Child Curriculum Area"
                     )
                 for child_slug in children_curriculum_areas:
+                    child_slugs.append(child_slug)
                     translations = curriculum_areas_translations.get(child_slug, dict())
 
                     new_child, created_child = CurriculumArea.objects.update_or_create(
@@ -100,5 +102,8 @@ class CurriculumAreasLoader(TranslatableModelLoader):
                     else:
                         term = 'Updated'
                     self.log(f'{term} child curriculum area: {new_child.__str__()}', 1)
+
+        areas = [*curriculum_areas_structure, *child_slugs]
+        CurriculumArea.objects.exclude(slug__in=areas).delete();
 
         self.log("All curriculum areas loaded!\n")

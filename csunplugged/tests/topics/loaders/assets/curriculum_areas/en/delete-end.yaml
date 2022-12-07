@@ -1,0 +1,9 @@
+maths:
+  name: Maths
+geometry:
+  name: Geometry
+algebra:
+  name: Algebra
+
+science:
+  name: Science

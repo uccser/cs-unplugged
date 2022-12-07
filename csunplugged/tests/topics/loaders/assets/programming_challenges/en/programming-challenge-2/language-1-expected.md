@@ -1,4 +1,5 @@
-{panel type="general" title="Note"}
+{panel type="general"}
+# Note
 Etiam in massa. Nam ut metus. In rhoncus venenatis tellus. Etiam aliquam. Ut
 aliquam lectus ut lectus. Nam turpis lacus, tristique sit amet, convallis
 sollicitudin, commodo a, purus. Nulla vitae eros a diam blandit mollis. Proin

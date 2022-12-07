@@ -187,3 +187,64 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
             KeyNotFoundError,
             ci_loader.load
         )
+
+    def test_insert_middle(self):
+        config_file = "basic-config.yaml"
+        self.test_data.create_curriculum_area("1")
+        self.test_data.create_curriculum_area("2")
+        topic = self.test_data.create_topic("1")
+        ci_loader = CurriculumIntegrationsLoader(topic, base_path=self.base_path, structure_filename=config_file)
+        ci_loader.load()
+        ci_objects = CurriculumIntegration.objects.all()
+        self.assertEqual(1, len(ci_objects))
+        ci = ci_objects[0]
+        self.assertSetEqual(set(["en"]), set(ci.languages))
+        self.assertEqual("Integration 1", ci.name)
+        self.assertIn("English curriculum integration content", ci.content)
+
+        config_file = "insert-middle.yaml"
+        ci_loader = CurriculumIntegrationsLoader(topic, base_path=self.base_path, structure_filename=config_file)
+        ci_loader.load()
+        ci_objects = CurriculumIntegration.objects.all()
+        
+        self.assertEqual(2, len(ci_objects))
+        self.assertQuerysetEqual(
+            list(ci_objects),
+            [
+                "<CurriculumIntegration: Integration 2>",
+                "<CurriculumIntegration: Integration 1>",
+            ]
+        )
+
+    def test_delete_start(self):
+        config_file = "insert-middle.yaml"
+        self.test_data.create_curriculum_area("1")
+        self.test_data.create_curriculum_area("2")
+        topic = self.test_data.create_topic("1")
+        ci_loader = CurriculumIntegrationsLoader(topic, base_path=self.base_path, structure_filename=config_file)
+        ci_loader.load()
+        ci_objects = CurriculumIntegration.objects.all()
+        self.assertEqual(2, len(ci_objects))
+
+        config_file = "basic-config.yaml"
+        ci_loader = CurriculumIntegrationsLoader(topic, base_path=self.base_path, structure_filename=config_file)
+        ci_loader.load()
+        ci_objects = CurriculumIntegration.objects.all()
+        
+        self.assertEqual(1, len(ci_objects))
+        self.assertQuerysetEqual(
+            list(ci_objects),
+            [
+                "<CurriculumIntegration: Integration 1>",
+            ]
+        )
+
+    def test_duplicate_numbers(self):
+        config_file = "duplicate-numbers.yaml"
+        self.test_data.create_curriculum_area("1")
+        topic = self.test_data.create_topic("1")
+        ci_loader = CurriculumIntegrationsLoader(topic, base_path=self.base_path, structure_filename=config_file)
+        self.assertRaises(
+            InvalidYAMLValueError,
+            ci_loader.load
+        )

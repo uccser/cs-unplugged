@@ -1,0 +1,15 @@
+maths:
+  name: Maths
+geometry:
+  name: Geometry
+algebra:
+  name: Algebra
+
+literacy:
+  name: Literacy
+
+science:
+  name: Science
+
+art:
+  name: Art

@@ -1,0 +1,18 @@
+maths:
+  colour: green
+  number: 1
+  children:
+    - geometry
+    - algebra
+
+literacy:
+  colour: orange
+  number: 2
+
+science:
+  colour: blue
+  number: 3
+
+art:
+  colour: teal
+  number: 4

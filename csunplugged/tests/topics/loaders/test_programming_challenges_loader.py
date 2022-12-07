@@ -311,3 +311,67 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
                 "<LearningOutcome: Outcome 2>",
             ]
         )
+    
+    def test_insert_start(self):
+        config_file = "basic-config-1.yaml"
+        topic = self.test_data.create_topic(1)
+        self.test_data.create_difficulty_level(1)
+        self.test_data.create_programming_language(1)
+        pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
+        pc_loader.load()
+        
+        pc_objects = ProgrammingChallenge.objects.all()
+
+        self.assertQuerysetEqual(
+            list(pc_objects),
+            [
+                "<ProgrammingChallenge: Programming Challenge 1>",
+            ]
+        )
+
+        config_file = "multiple-challenges.yaml"
+        pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
+        pc_loader.load()
+
+        pc_objects = ProgrammingChallenge.objects.all()
+
+        self.assertQuerysetEqual(
+            pc_objects,
+            [
+                "<ProgrammingChallenge: Translation English>",
+                "<ProgrammingChallenge: Programming Challenge 1>",
+            ],
+            ordered=False
+        )
+
+    def test_remove_start(self):
+        config_file = "multiple-challenges.yaml"
+        topic = self.test_data.create_topic(1)
+        self.test_data.create_difficulty_level(1)
+        self.test_data.create_programming_language(1)
+        pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
+        pc_loader.load()
+
+        pc_objects = ProgrammingChallenge.objects.all()
+
+        self.assertQuerysetEqual(
+            pc_objects,
+            [
+                "<ProgrammingChallenge: Translation English>",
+                "<ProgrammingChallenge: Programming Challenge 1>",
+            ],
+            ordered=False
+        )
+
+        config_file = "basic-config-1.yaml"
+        pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
+        pc_loader.load()
+
+        pc_objects = ProgrammingChallenge.objects.all()
+
+        self.assertQuerysetEqual(
+            list(pc_objects),
+            [
+                "<ProgrammingChallenge: Programming Challenge 1>",
+            ]
+        )

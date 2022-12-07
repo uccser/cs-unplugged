@@ -12,6 +12,7 @@ from topics.models import (
     ProgrammingChallenge,
     ProgrammingChallengeNumber,
     LearningOutcome,
+    Lesson,
     Resource,
     ResourceDescription,
     ClassroomResource
@@ -229,4 +230,8 @@ class LessonsLoader(TranslatableModelLoader):
                 term = 'Created'
             else:
                 term = 'Updated'
+
             self.log(f'{term} lesson: {lesson.__str__()}', 2)
+        
+        Lesson.objects.filter(topic=self.topic).exclude(slug__in=lessons_structure.keys()).delete();
+        self.log('Finished loading lessons', 1)

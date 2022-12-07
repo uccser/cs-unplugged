@@ -123,3 +123,49 @@ class LearningOutcomesLoaderTest(BaseTestWithDB):
         # Check name does not fall back to english for missing translation
         with translation.override("de"):
             self.assertEqual("", untranslated.text)
+
+    def test_insert_start(self):
+        self.test_data.create_curriculum_area(1)
+        config_file = "basic-config.yaml"
+        lo_loader = LearningOutcomesLoader(structure_filename=config_file, base_path=self.base_path)
+        lo_loader.load()
+        lo_objects = LearningOutcome.objects.all()
+        self.assertQuerysetEqual(
+            lo_objects,
+            ["<LearningOutcome: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.>"]
+        )
+
+        config_file = "insert-start.yaml"
+        lo_loader = LearningOutcomesLoader(structure_filename=config_file, base_path=self.base_path)
+        lo_loader.load()
+        lo_objects = LearningOutcome.objects.all()
+        self.assertQuerysetEqual(
+            lo_objects,
+            [
+                "<LearningOutcome: Inserted outcome.>",
+                "<LearningOutcome: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.>",
+            ]
+        )
+
+    def test_delete_start(self):
+        self.test_data.create_curriculum_area(1)
+        config_file = "insert-start.yaml"
+        lo_loader = LearningOutcomesLoader(structure_filename=config_file, base_path=self.base_path)
+        lo_loader.load()
+        lo_objects = LearningOutcome.objects.all()
+        self.assertQuerysetEqual(
+            lo_objects,
+            [
+                "<LearningOutcome: Inserted outcome.>",
+                "<LearningOutcome: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.>",
+            ]
+        )
+
+        config_file = "basic-config.yaml"
+        lo_loader = LearningOutcomesLoader(structure_filename=config_file, base_path=self.base_path)
+        lo_loader.load()
+        lo_objects = LearningOutcome.objects.all()
+        self.assertQuerysetEqual(
+            lo_objects,
+            ["<LearningOutcome: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.>"]
+        )

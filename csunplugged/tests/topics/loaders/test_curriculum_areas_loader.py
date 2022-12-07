@@ -241,3 +241,79 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
         # Check name does not fall back to english for missing translation
         with translation.override("de"):
             self.assertEqual("", translated.name)
+
+    def test_insert_middle(self):
+        config_file = "multiple.yaml"
+
+        ca_loader = CurriculumAreasLoader(structure_filename=config_file, base_path=self.base_path)
+        ca_loader.load()
+
+        ca_objects = CurriculumArea.objects.all()
+        self.assertQuerysetEqual(
+            ca_objects,
+            [
+                "<CurriculumArea: Maths: Algebra>",
+                "<CurriculumArea: Maths: Geometry>",
+                "<CurriculumArea: Maths>",
+                "<CurriculumArea: Science>",
+                "<CurriculumArea: Art>",
+            ],
+            ordered=False,
+        )
+
+        config_file = "insert-middle.yaml"
+
+        ca_loader = CurriculumAreasLoader(structure_filename=config_file, base_path=self.base_path)
+        ca_loader.load()
+
+        ca_objects = CurriculumArea.objects.all()
+
+        self.assertQuerysetEqual(
+            ca_objects,
+            [
+                "<CurriculumArea: Maths>",
+                "<CurriculumArea: Maths: Algebra>",
+                "<CurriculumArea: Maths: Geometry>",
+                "<CurriculumArea: Literacy>",
+                "<CurriculumArea: Science>",
+                "<CurriculumArea: Art>",
+            ],
+            ordered=False,
+        )
+
+    def test_delete_end(self):
+        config_file = "multiple.yaml"
+
+        ca_loader = CurriculumAreasLoader(structure_filename=config_file, base_path=self.base_path)
+        ca_loader.load()
+
+        ca_objects = CurriculumArea.objects.all()
+        self.assertQuerysetEqual(
+            ca_objects,
+            [
+                "<CurriculumArea: Maths>",
+                "<CurriculumArea: Maths: Algebra>",
+                "<CurriculumArea: Maths: Geometry>",
+                "<CurriculumArea: Science>",
+                "<CurriculumArea: Art>",
+            ],
+            ordered=False,
+        )
+
+        config_file = "delete-end.yaml"
+
+        ca_loader = CurriculumAreasLoader(structure_filename=config_file, base_path=self.base_path)
+        ca_loader.load()
+
+        ca_objects = CurriculumArea.objects.all()
+        print("ca_objects", ca_objects)
+        self.assertQuerysetEqual(
+            ca_objects,
+            [
+                "<CurriculumArea: Maths>",
+                "<CurriculumArea: Maths: Algebra>",
+                "<CurriculumArea: Maths: Geometry>",
+                "<CurriculumArea: Science>",
+            ],
+            ordered=False,
+        )

@@ -329,7 +329,7 @@ add-in-parts-1-digit-number:
   difficulty-level: 2
   programming-languages:
     - scratch
-    - python
+    # - python
   learning-outcomes:
     - programming-explain-join-concatenate
     - programming-describe-variables
