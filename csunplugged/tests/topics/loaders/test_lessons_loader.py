@@ -804,13 +804,14 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_objects = Lesson.objects.all()
         self.assertQuerysetEqual(
-            list(lesson_objects),
+            lesson_objects,
             [
                 "<Lesson: Lesson 0>",
                 "<Lesson: Lesson 1>",
                 "<Lesson: Lesson 2>",
                 "<Lesson: Lesson 3>",
             ],
+            ordered=False,
         )
 
         config_file = "multiple-lessons.yaml"
@@ -823,10 +824,11 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_objects = Lesson.objects.all()
         self.assertQuerysetEqual(
-            list(lesson_objects),
+            lesson_objects,
             [
                 "<Lesson: Lesson 1>",
                 "<Lesson: Lesson 2>",
                 "<Lesson: Lesson 3>",
-            ]
+            ],
+            ordered=False,
         )
