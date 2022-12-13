@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-04 01:45+0000\n"
+"POT-Creation-Date: 2022-12-13 23:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,26 +17,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: at_home/models.py:12
-#: templates/topics/all-curriculum-integration-list.html:28
-#: templates/topics/curriculum-integrations-table.html:6
-msgid "Activity"
+#: at_a_distance/models.py:23
+msgid "At A Disance Lesson"
 msgstr ""
 
-#: classic/models.py:10
-msgid "Classic CS Unplugged page"
+#: at_a_distance/models.py:36
+msgid "Not suitable"
 msgstr ""
 
-#: config/settings/base.py:161
-msgid "Translation mode"
+#: at_a_distance/models.py:37
+msgid "Suitable"
 msgstr ""
 
-#: config/settings/base.py:167
-msgid "Translation mode (Bi-directional)"
+#: at_a_distance/models.py:38
+msgid "Not recommended"
 msgstr ""
 
-#: general/models.py:11
-msgid "General page"
+#: at_home/models.py:14
+msgid "At Home Activity"
+msgstr ""
+
+#: classic/models.py:12
+msgid "Classic CS Unplugged Page"
+msgstr ""
+
+#: general/models.py:14
+msgid "General Page"
 msgstr ""
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:10
@@ -113,12 +119,12 @@ msgid "without black back"
 msgstr ""
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:20
-#: resources/generators/BinaryWindowsResourceGenerator.py:15
+#: resources/generators/BinaryWindowsResourceGenerator.py:19
 msgid "Four (1 to 8)"
 msgstr ""
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:21
-#: resources/generators/BinaryWindowsResourceGenerator.py:16
+#: resources/generators/BinaryWindowsResourceGenerator.py:22
 msgid "Eight (1 to 128)"
 msgstr ""
 
@@ -127,22 +133,22 @@ msgid "Twelve (1 to 2048)"
 msgstr ""
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:35
-#: resources/generators/BinaryWindowsResourceGenerator.py:34
+#: resources/generators/BinaryWindowsResourceGenerator.py:40
 msgid "Number of Bits"
 msgstr ""
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:41
-#: resources/generators/BinaryWindowsResourceGenerator.py:40
+#: resources/generators/BinaryWindowsResourceGenerator.py:46
 msgid "Display Dot Counts"
 msgstr ""
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:106
-#: resources/generators/BinaryWindowsResourceGenerator.py:192
+#: resources/generators/BinaryWindowsResourceGenerator.py:300
 msgid "with dot counts"
 msgstr ""
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:108
-#: resources/generators/BinaryWindowsResourceGenerator.py:194
+#: resources/generators/BinaryWindowsResourceGenerator.py:302
 msgid "without dot counts"
 msgstr ""
 
@@ -171,14 +177,22 @@ msgid "Letter"
 msgstr ""
 
 #: resources/generators/BinaryWindowsResourceGenerator.py:20
-msgid "Binary (0 or 1)"
+msgid "Five (1 to 16)"
 msgstr ""
 
 #: resources/generators/BinaryWindowsResourceGenerator.py:21
+msgid "Six (1 to 32)"
+msgstr ""
+
+#: resources/generators/BinaryWindowsResourceGenerator.py:26
+msgid "Binary (0 or 1)"
+msgstr ""
+
+#: resources/generators/BinaryWindowsResourceGenerator.py:27
 msgid "Lightbulb (off or on)"
 msgstr ""
 
-#: resources/generators/BinaryWindowsResourceGenerator.py:45
+#: resources/generators/BinaryWindowsResourceGenerator.py:51
 msgid "Value Representation"
 msgstr ""
 
@@ -438,7 +452,7 @@ msgid "Hot air balloon"
 msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:80
-#: templates/general/people.html:155
+#: templates/general/people.html:156
 msgid "Parrots"
 msgstr ""
 
@@ -500,6 +514,54 @@ msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:482
 msgid "Encoding for page {}"
+msgstr ""
+
+#: resources/generators/RunLengthEncodingResourceGenerator.py:10
+msgid "Student Worksheet - Kid Fax"
+msgstr ""
+
+#: resources/generators/RunLengthEncodingResourceGenerator.py:11
+msgid "Student Worksheet - Create your own"
+msgstr ""
+
+#: resources/generators/RunLengthEncodingResourceGenerator.py:12
+msgid "Student Worksheet - Create your own in colour"
+msgstr ""
+
+#: resources/generators/RunLengthEncodingResourceGenerator.py:13
+msgid "Teacher Worksheet"
+msgstr ""
+
+#: resources/generators/RunLengthEncodingResourceGenerator.py:18
+msgid ""
+"The first picture is the easiest and the last one is the most complex. It is "
+"easy to make mistakes and therefore a good idea to use a pencil to colour "
+"with and have an eraser handy!"
+msgstr ""
+
+#: resources/generators/RunLengthEncodingResourceGenerator.py:23
+msgid ""
+"Now that you know how numbers can represent pictures, why not try making "
+"your own coded picture for a friend? Draw your picture on the top grid, and "
+"when you’ve finished, write the code numbers beside the bottom grid. Cut "
+"along the dotted line and give the bottom grid to a friend to colour in. "
+"(Note: you don’t have to use the whole grid if you don’t want to—just leave "
+"some blank lines at the bottom if your picture doesn’t take up the whole "
+"grid.)"
+msgstr ""
+
+#: resources/generators/RunLengthEncodingResourceGenerator.py:31
+msgid ""
+"Extra for Experts: If you want to produce coloured images you can use a "
+"number to represent the colour (e.g. 0 is black, 1 is red, 2 is green etc.) "
+"Two numbers are now used to represent a run of pixels: the first gives the "
+"length of the run as before, and the second specifies the colour. Try making "
+"a coloured picture for a friend. Don’t forget to let your friend know which "
+"number stands for which colour!"
+msgstr ""
+
+#: resources/generators/RunLengthEncodingResourceGenerator.py:50
+msgid "Worksheet Type"
 msgstr ""
 
 #: resources/generators/SearchingCardsResourceGenerator.py:23
@@ -679,7 +741,7 @@ msgstr ""
 msgid "Boat B"
 msgstr ""
 
-#: resources/models.py:12
+#: resources/models.py:14
 msgid "Printable"
 msgstr ""
 
@@ -738,18 +800,59 @@ msgid "Homepage"
 msgstr ""
 
 #: templates/404.html:26 templates/base-educators.html:78
-#: templates/core.html:181
+#: templates/core.html:179
 msgid "Search"
 msgstr ""
 
-#: templates/404.html:32 templates/general/index.html:107
-#: templates/general/people.html:75
+#: templates/404.html:32 templates/general/index.html:121
+#: templates/general/people.html:76
+#: templates/generic/classic-unplugged-button.html:21
 msgid "Classic CS Unplugged"
 msgstr ""
 
-#: templates/at_home/activity.html:29 templates/topics/lesson.html:111
-#: templates/topics/unit-plan-description.html:40
+#: templates/at_a_distance/base.html:12 templates/base-at-home.html:12
+#: templates/base-educators.html:12 templates/base-plugging-it-in.html:12
+msgid "Home"
+msgstr ""
+
+#: templates/at_a_distance/base.html:37 templates/base-at-home.html:39
+#: templates/base-educators.html:35 templates/base-plugging-it-in.html:39
+msgid "Language"
+msgstr ""
+
+#: templates/at_a_distance/base.html:67 templates/base-at-home.html:69
+#: templates/base-plugging-it-in.html:69
+msgid "Back to CS Unplugged"
+msgstr ""
+
+#: templates/at_a_distance/delivery-guide.html:252
+#: templates/at_home/activity.html:29 templates/topics/lesson.html:110
+#: templates/topics/topic-whats-it-all-about.html:51
 msgid "Table of contents"
+msgstr ""
+
+#: templates/at_a_distance/index.html:8
+msgid "CS Unplugged at a distance"
+msgstr ""
+
+#: templates/at_a_distance/index.html:20
+msgid "Teach CS Unplugged online"
+msgstr ""
+
+#: templates/at_a_distance/index.html:32 templates/at_home/index.html:27
+#: templates/plugging_it_in/index.html:28
+#: templates/topics/not-available-warning.html:6
+#, python-format
+msgid ""
+"<h4>Sorry! This item is not yet available in %(language)s.</h4> <p>This item "
+"is available in the following languages:</p>"
+msgstr ""
+
+#: templates/at_a_distance/index.html:43 templates/at_home/index.html:38
+#: templates/plugging_it_in/index.html:39
+#: templates/topics/not-available-warning.html:37
+#: templates/topics/not-available-warning.html:41
+msgid "Return to homepage "
 msgstr ""
 
 #: templates/at_home/activity.html:38 templates/at_home/activity.html:77
@@ -807,20 +910,6 @@ msgstr ""
 msgid "Try something different away from the screen"
 msgstr ""
 
-#: templates/at_home/index.html:27 templates/plugging_it_in/index.html:28
-#: templates/topics/not-available-warning.html:6
-#, python-format
-msgid ""
-"<h4>Sorry! This item is not yet available in %(language)s.</h4> <p>This item "
-"is available in the following languages:</p>"
-msgstr ""
-
-#: templates/at_home/index.html:38 templates/plugging_it_in/index.html:39
-#: templates/topics/not-available-warning.html:37
-#: templates/topics/not-available-warning.html:41
-msgid "Return to homepage "
-msgstr ""
-
 #: templates/at_home/index.html:55
 msgid ""
 "<strong>Welcome to Computer Science Unplugged!</strong> This is a collection "
@@ -835,107 +924,93 @@ msgstr ""
 msgid "Activity Guide"
 msgstr ""
 
-#: templates/base-at-home.html:12 templates/base-educators.html:12
-#: templates/base-plugging-it-in.html:12
-msgid "Home"
-msgstr ""
-
-#: templates/base-at-home.html:39 templates/base-educators.html:35
-#: templates/base-plugging-it-in.html:39
-msgid "Language"
-msgstr ""
-
-#: templates/base-at-home.html:69 templates/base-plugging-it-in.html:69
-msgid "Back to CS Unplugged"
-msgstr ""
-
-#: templates/base-educators.html:63 templates/core.html:134
+#: templates/base-educators.html:63 templates/core.html:132
 #: templates/general/index.html:66 templates/topics/index.html:8
 #: templates/topics/index.html:16
 msgid "Topics"
 msgstr ""
 
-#: templates/base-educators.html:64 templates/core.html:139
+#: templates/base-educators.html:64 templates/core.html:137
 #: templates/general/index.html:71 templates/resources/index.html:8
-#: templates/resources/index.html:16 templates/topics/lesson.html:74
+#: templates/resources/index.html:16 templates/topics/lesson.html:73
 msgid "Printables"
 msgstr ""
 
-#: templates/base-educators.html:65 templates/core.html:129
+#: templates/base-educators.html:65 templates/core.html:127
 #: templates/general/about.html:7 templates/general/about.html:15
 #: templates/general/base.html:10
 msgid "About"
 msgstr ""
 
-#: templates/core.html:25 templates/general/index.html:7
+#: templates/core.html:18 templates/general/index.html:7
 #: templates/general/people.html:21
 msgid "CS Unplugged"
 msgstr ""
 
-#: templates/core.html:100
+#: templates/core.html:98
 msgid ""
 "Looking for something for high schools? Check out the <a href=\"http://"
 "csfieldguide.org.nz/\">Computer Science Field Guide</a>."
 msgstr ""
 
-#: templates/core.html:112
+#: templates/core.html:110
 msgid ""
 "The primary goal of the Unplugged project is to promote Computer Science "
 "(and computing in general) to young people as an interesting, engaging, and "
 "intellectually stimulating discipline."
 msgstr ""
 
-#: templates/core.html:118
+#: templates/core.html:116
 #, python-format
 msgid "Read more about <a href=\"%(principles_url)s\">our principles here</a>."
 msgstr ""
 
-#: templates/core.html:125
+#: templates/core.html:123
 msgid "Useful Links"
 msgstr ""
 
-#: templates/core.html:144
+#: templates/core.html:142
 msgid "At home"
 msgstr ""
 
-#: templates/core.html:150
+#: templates/core.html:148
 msgid "Community"
 msgstr ""
 
-#: templates/core.html:154
+#: templates/core.html:152
 msgid "Twitter"
 msgstr ""
 
-#: templates/core.html:159
+#: templates/core.html:157
 msgid "Vimeo"
 msgstr ""
 
-#: templates/core.html:164
+#: templates/core.html:162
 msgid "YouTube"
 msgstr ""
 
-#: templates/core.html:169
+#: templates/core.html:167
 msgid "GitHub"
 msgstr ""
 
-#: templates/core.html:175
+#: templates/core.html:173
 msgid "Help"
 msgstr ""
 
-#: templates/core.html:187 templates/topics/glossary.html:8
+#: templates/core.html:185 templates/topics/glossary.html:8
 #: templates/topics/glossary.html:17
 msgid "Glossary"
 msgstr ""
 
-#: templates/core.html:192
+#: templates/core.html:190
 msgid "Feedback"
 msgstr ""
 
-#: templates/core.html:197 templates/general/contact.html:7
+#: templates/core.html:195 templates/general/contact.html:7
 msgid "Contact"
 msgstr ""
 
-#: templates/core.html:221
+#: templates/core.html:219
 msgid ""
 "The CS Unplugged material is open source on <a href=\"https://github.com/"
 "uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under "
@@ -947,23 +1022,19 @@ msgid ""
 "Canterbury</a>, New Zealand."
 msgstr ""
 
-#: templates/core.html:225
+#: templates/core.html:223
 msgid ""
 "Icons provided generously by <a target=\"_blank\" rel=\"noopener noreferrer"
 "\" href=\"https://icons8.com/\">icons8</a>."
 msgstr ""
 
-#: templates/core.html:247
+#: templates/core.html:245
 #, python-format
 msgid "This definition is not available in %(language)s, sorry!"
 msgstr ""
 
-#: templates/core.html:254
+#: templates/core.html:252
 msgid "Close"
-msgstr ""
-
-#: templates/dev/index.html:22
-msgid "Unit Plan:"
 msgstr ""
 
 #: templates/general/about.html:20
@@ -1065,8 +1136,8 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:33
 msgid ""
-"This is why Computational Thinking has been called the ‘21st Century Skill "
-"Set’, and is important for everyone to learn. It is critical to "
+"This is why Computational Thinking has been called the '21st Century Skill "
+"Set', and is important for everyone to learn. It is critical to "
 "understanding how the digital world works, for harnessing the power of "
 "computers to solve tough problems, and making great things happen! It also "
 "enables us to think critically about not just the benefits of certain "
@@ -1076,7 +1147,7 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:41
 msgid ""
-"But what exactly is Computational Thinking? Let’s have a look at a technical "
+"But what exactly is Computational Thinking? Let's have a look at a technical "
 "definition..."
 msgstr ""
 
@@ -1089,11 +1160,11 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:58
 msgid ""
-"Phew, it’s quite a mouthful isn’t it? But, as we like to say at CS "
-"Unplugged, it’s just big words for simple ideas! 'Information-processing "
+"Phew, it's quite a mouthful isn't it? But, as we like to say at CS "
+"Unplugged, it's just big words for simple ideas! 'Information-processing "
 "agent' means anything that follows a set of instructions to complete a task "
 "(we call this 'computing'). Most of the time this 'agent' means a computer "
-"or other type of digital device - but it could also be a human! We’ll refer "
+"or other type of digital device - but it could also be a human! We'll refer "
 "to it as a computer to make things a bit simpler. To represent solutions in "
 "a way that a computer can carry them out, we have to represent them as a "
 "step by step process - an <strong>algorithm</strong>. To create these "
@@ -1106,8 +1177,8 @@ msgstr ""
 msgid ""
 "Computational Thinking could be described as 'thinking like a Computer "
 "Scientist', but it is now an important skill for everyone to learn, whether "
-"they want to be a Computer Scientist or not! It’s interesting, and "
-"important, to note that Computational Thinking, and Computer Science, aren’t "
+"they want to be a Computer Scientist or not! It's interesting, and "
+"important, to note that Computational Thinking, and Computer Science, aren't "
 "entirely about computers, they are more about <strong>people</strong>. You "
 "might think that we write programs for computers, but really we write "
 "programs for people - to help them communicate, find information, and solve "
@@ -1179,7 +1250,7 @@ msgstr ""
 msgid ""
 "Algorithms are at the heart of Computational Thinking and Computer Science, "
 "because in Computer Science the solutions to problems are not simply an "
-"answer (e.g. ‘42’, or a fact), they are algorithms. An algorithm is a step-"
+"answer (e.g. '42', or a fact), they are algorithms. An algorithm is a step-"
 "by-step process that solves a problem or completes a task. If you follow the "
 "algorithm's steps correctly, you will arrive at a correct solution, even for "
 "different inputs. For example, we can use an algorithm to find the shortest "
@@ -1187,7 +1258,7 @@ msgid ""
 "pair of starting and finishing points, so the solution depends on the input "
 "to the algorithm. If we know the algorithm for solving a problem then we can "
 "solve that problem easily, whenever we want, without having to think! We can "
-"just follow the steps. Computers can’t think for themselves, so they need to "
+"just follow the steps. Computers can't think for themselves, so they need to "
 "be given algorithms to do things."
 msgstr ""
 
@@ -1217,7 +1288,7 @@ msgstr ""
 msgid ""
 "Abstraction is all about simplifying things to help us manage complexity. It "
 "requires identifying what the most important aspects of a problem are and "
-"hiding the other specific details that we don’t need to focus on. The "
+"hiding the other specific details that we don't need to focus on. The "
 "important aspects can be used to create a model, or simplified "
 "representation, of the original thing we were dealing with. We can then work "
 "with this model to solve the problem, rather than having to deal with all "
@@ -1249,11 +1320,11 @@ msgstr ""
 msgid ""
 "The picture you took is stored on the computer as a big list of pixels, "
 "which are each a different colour, and each colour is represented by a set "
-"of numbers, and each of these numbers are stored as binary digits! That’s a "
+"of numbers, and each of these numbers are stored as binary digits! That's a "
 "lot of information. Imagine if when you adjusted the colours you had to go "
 "through and look at all the colour values of every pixel and change each and "
-"every one of those! That’s what the computer is doing for you, but since you "
-"don’t need to know this to accomplish your goal the computer hides this "
+"every one of those! That's what the computer is doing for you, but since you "
+"don't need to know this to accomplish your goal the computer hides this "
 "information away."
 msgstr ""
 
@@ -1314,7 +1385,7 @@ msgstr ""
 msgid ""
 "Spotting patterns is an important part of this process, when we think about "
 "problems we might recognise similarities between them and that they can be "
-"solved in similar ways. This is called pattern matching, and it’s something "
+"solved in similar ways. This is called pattern matching, and it's something "
 "we do naturally all the time in our daily life."
 msgstr ""
 
@@ -1347,7 +1418,7 @@ msgid ""
 "by counting or calculating how many steps they are likely to take. We can "
 "test that our algorithmic solutions work correctly by giving them lots of "
 "different inputs, and checking they work as expected. When we do this we "
-"need to think about the different inputs we test, because we don’t want to "
+"need to think about the different inputs we test, because we don't want to "
 "check every possible input (often there's an infinite number of possible "
 "inputs!), but we still need to know if our algorithmic solutions will work "
 "for all inputs. Testing is something Computer Scientists and programmers do "
@@ -1475,7 +1546,7 @@ msgstr ""
 msgid "Computer Science<br>without a computer"
 msgstr ""
 
-#: templates/general/index.html:29
+#: templates/general/index.html:24
 msgid ""
 "CS Unplugged is a collection of free teaching material that teaches Computer "
 "Science through engaging games and puzzles that use cards, string, crayons "
@@ -1491,16 +1562,24 @@ msgstr ""
 #: templates/general/index.html:76
 #: templates/topics/all-curriculum-integration-list.html:8
 #: templates/topics/all-curriculum-integration-list.html:17
-#: templates/topics/topic.html:64
+#: templates/topics/topic.html:62
 msgid "Curriculum Integrations"
 msgstr ""
 
 #: templates/general/index.html:84
-msgid "Activities"
+msgid "Distance lessons"
 msgstr ""
 
-#: templates/general/index.html:95
+#: templates/general/index.html:92
+msgid "MOOC (Online Course)"
+msgstr ""
+
+#: templates/general/index.html:100
 msgid "Plugging it in"
+msgstr ""
+
+#: templates/general/index.html:110
+msgid "Activities"
 msgstr ""
 
 #: templates/general/people.html:21
@@ -1511,7 +1590,7 @@ msgstr ""
 msgid "Founders"
 msgstr ""
 
-#: templates/general/people.html:31 templates/general/people.html:114
+#: templates/general/people.html:31 templates/general/people.html:115
 msgid "Advisers"
 msgstr ""
 
@@ -1527,46 +1606,50 @@ msgstr ""
 msgid "Founder &amp; Content Writer"
 msgstr ""
 
-#: templates/general/people.html:42 templates/general/people.html:43
-#: templates/general/people.html:51 templates/general/people.html:56
+#: templates/general/people.html:42
+msgid "Project Manager &amp; Content Writer"
+msgstr ""
+
+#: templates/general/people.html:43 templates/general/people.html:44
+#: templates/general/people.html:52 templates/general/people.html:57
 msgid "Content Writer"
 msgstr ""
 
-#: templates/general/people.html:44
+#: templates/general/people.html:45
 msgid "Project Manager &amp; Technical Team"
-msgstr ""
-
-#: templates/general/people.html:45 templates/general/people.html:52
-#: templates/general/people.html:53 templates/general/people.html:55
-#: templates/general/people.html:57
-msgid "Technical Team"
 msgstr ""
 
 #: templates/general/people.html:48
 msgid "Previous Team Members"
 msgstr ""
 
-#: templates/general/people.html:54
+#: templates/general/people.html:51 templates/general/people.html:53
+#: templates/general/people.html:54 templates/general/people.html:56
+#: templates/general/people.html:58
+msgid "Technical Team"
+msgstr ""
+
+#: templates/general/people.html:55
 msgid "Creative Content Developer &amp; Illustrator"
 msgstr ""
 
-#: templates/general/people.html:60
+#: templates/general/people.html:61
 msgid "Community Contributors"
 msgstr ""
 
-#: templates/general/people.html:69
+#: templates/general/people.html:70
 msgid "Translations"
 msgstr ""
 
-#: templates/general/people.html:75
+#: templates/general/people.html:76
 msgid "up to version 3.2.2"
 msgstr ""
 
-#: templates/general/people.html:77
+#: templates/general/people.html:78
 msgid "Contributors"
 msgstr ""
 
-#: templates/general/people.html:144
+#: templates/general/people.html:145
 msgid "Website"
 msgstr ""
 
@@ -1852,12 +1935,32 @@ msgstr ""
 msgid "Not available in %(language)s"
 msgstr ""
 
+#: templates/moocs/index.html:8 templates/moocs/index.html:16
+msgid "Online Courses"
+msgstr ""
+
+#: templates/moocs/index.html:21
+msgid ""
+"The following massive open online courses have been created by the CS "
+"Unplugged team."
+msgstr ""
+
+#: templates/moocs/index.html:46
+msgid "Click here to access course on"
+msgstr ""
+
 #: templates/plugging_it_in/about.html:7 templates/plugging_it_in/about.html:15
 msgid "Educators' Guide to Plugging It In"
 msgstr ""
 
-#: templates/plugging_it_in/about.html:54
+#: templates/plugging_it_in/about.html:62
+#: templates/plugging_it_in/block-based-vs-scratch.html:65
 msgid "Go back to home"
+msgstr ""
+
+#: templates/plugging_it_in/block-based-vs-scratch.html:7
+#: templates/plugging_it_in/block-based-vs-scratch.html:15
+msgid "Block-based System vs Scratch"
 msgstr ""
 
 #: templates/plugging_it_in/index.html:8
@@ -1897,7 +2000,23 @@ msgid ""
 "However, you can still access the old content using the links below."
 msgstr ""
 
-#: templates/plugging_it_in/lesson.html:47
+#: templates/plugging_it_in/lesson.html:43
+msgid ""
+"The following challenges use Blockly, which have been adapted to look like "
+"Scratch and contains an interactive editor. To find out the differences, "
+msgstr ""
+
+#: templates/plugging_it_in/lesson.html:43
+msgid "click here"
+msgstr ""
+
+#: templates/plugging_it_in/lesson.html:43
+msgid ""
+". If you like the challenges to be purely in Scratch, then go over to the "
+"Scratch tab instead."
+msgstr ""
+
+#: templates/plugging_it_in/lesson.html:51
 #: templates/topics/programming-challenge-lesson-list.html:34
 #, python-format
 msgid "No programming challenges for %(topic)s."
@@ -1938,45 +2057,59 @@ msgid "Challenge "
 msgstr ""
 
 #: templates/plugging_it_in/programming-challenge.html:94
-#: templates/search/result/programmingchallenge.html:10
+#: templates/search/result/topics.programmingchallenge.html:10
 #: templates/topics/programming-challenge.html:28
 msgid "Challenge Level:"
 msgstr ""
 
-#: templates/plugging_it_in/programming-challenge.html:107
-#: templates/topics/programming-challenge.html:125
+#: templates/plugging_it_in/programming-challenge.html:108
+#: templates/topics/programming-challenge.html:137
 msgid "Hints"
 msgstr ""
 
-#: templates/plugging_it_in/programming-challenge.html:122
+#: templates/plugging_it_in/programming-challenge.html:123
 msgid "Programming Reminders"
 msgstr ""
 
-#: templates/plugging_it_in/programming-challenge.html:133
-msgid "Enter your code in the editor below"
-msgstr ""
-
-#: templates/plugging_it_in/programming-challenge.html:137
-msgid "Check"
-msgstr ""
-
-#: templates/plugging_it_in/programming-challenge.html:138
-msgid "Download"
-msgstr ""
-
-#: templates/plugging_it_in/programming-challenge.html:147
-msgid "Your results will be displayed here"
+#: templates/plugging_it_in/programming-challenge.html:136
+msgid "Recommended Blocks"
 msgstr ""
 
 #: templates/plugging_it_in/programming-challenge.html:150
-msgid "How does this page work?"
+msgid "Enter your code in the editor below"
+msgstr ""
+
+#: templates/plugging_it_in/programming-challenge.html:154
+#: templates/plugging_it_in/programming-challenge.html:179
+msgid "Test code"
+msgstr ""
+
+#: templates/plugging_it_in/programming-challenge.html:155
+msgid "Download"
+msgstr ""
+
+#: templates/plugging_it_in/programming-challenge.html:164
+msgid "Your results will be displayed here"
 msgstr ""
 
 #: templates/plugging_it_in/programming-challenge.html:167
+#: templates/plugging_it_in/programming-challenge.html:191
+msgid "How does this page work?"
+msgstr ""
+
+#: templates/plugging_it_in/programming-challenge.html:173
+msgid "Create your program in the editor below"
+msgstr ""
+
+#: templates/plugging_it_in/programming-challenge.html:188
+msgid "Your submission results will be displayed here"
+msgstr ""
+
+#: templates/plugging_it_in/programming-challenge.html:209
 msgid "Previous Challenge"
 msgstr ""
 
-#: templates/plugging_it_in/programming-challenge.html:175
+#: templates/plugging_it_in/programming-challenge.html:217
 msgid "Next Challenge"
 msgstr ""
 
@@ -2048,7 +2181,7 @@ msgstr ""
 
 #: templates/resources/resource.html:78
 #: templates/topics/all-curriculum-integration-list.html:27
-#: topics/models.py:109
+#: topics/models.py:112
 msgid "Topic"
 msgstr ""
 
@@ -2056,30 +2189,31 @@ msgstr ""
 msgid "Ages"
 msgstr ""
 
-#: templates/resources/resource.html:81 topics/models.py:350
+#: templates/resources/resource.html:81 topics/models.py:364
 msgid "Lesson"
 msgstr ""
 
-#: templates/search/result/curriculumintegration.html:15
-#: templates/search/result/lesson.html:19
-#: templates/search/result/programmingchallenge.html:15
-#: templates/search/result/unitplan.html:10
+#: templates/search/result/topics.curriculumintegration.html:15
+#: templates/search/result/topics.lesson.html:19
+#: templates/search/result/topics.programmingchallenge.html:15
 msgid "Within topic"
 msgstr ""
 
-#: templates/search/result/lesson.html:11 templates/topics/lesson.html:30
+#: templates/search/result/topics.lesson.html:11
+#: templates/topics/lesson.html:29
 #, python-format
 msgid "<strong>Ages %(lower)s to %(upper)s:</strong> Lesson %(number)s"
-msgstr ""
-
-#: templates/search/result/lesson.html:23
-msgid "within unit plan"
 msgstr ""
 
 #: templates/topics/all-curriculum-integration-list.html:19
 msgid ""
 "The following table lists curriculum integrations for all topics in the CS "
 "Unplugged content."
+msgstr ""
+
+#: templates/topics/all-curriculum-integration-list.html:28
+#: templates/topics/curriculum-integrations-table.html:6
+msgid "Activity"
 msgstr ""
 
 #: templates/topics/all-curriculum-integration-list.html:29
@@ -2147,7 +2281,7 @@ msgid ""
 "integrations, and programming challenges."
 msgstr ""
 
-#: templates/topics/index.html:38 templates/topics/topic.html:46
+#: templates/topics/index.html:38
 #, python-format
 msgid "Ages %(min_age)s to %(max_age)s"
 msgstr ""
@@ -2199,37 +2333,37 @@ msgstr[1] ""
 msgid "No topics are available."
 msgstr ""
 
-#: templates/topics/lesson.html:27
+#: templates/topics/lesson.html:26
 #, python-format
 msgid "<strong>Duration:</strong> %(duration)s minutes"
 msgstr ""
 
-#: templates/topics/lesson.html:44
+#: templates/topics/lesson.html:43
 #: templates/topics/programming-challenge.html:61
 #: templates/topics/programming-challenges-table.html:56
 msgid "Learning outcomes"
 msgstr ""
 
-#: templates/topics/lesson.html:48
+#: templates/topics/lesson.html:47
 #: templates/topics/programming-challenge.html:65
 #: templates/topics/programming-challenges-table.html:58
 msgid "Students will be able to:"
 msgstr ""
 
-#: templates/topics/lesson.html:91
+#: templates/topics/lesson.html:90
 msgid "Classroom resources"
 msgstr ""
 
-#: templates/topics/lesson.html:101 templates/topics/lessons-table.html:14
+#: templates/topics/lesson.html:100 templates/topics/lessons-table.html:14
 msgid "Programming challenges"
 msgstr ""
 
-#: templates/topics/lesson.html:104
+#: templates/topics/lesson.html:103
 msgid "View related programming challenges"
 msgstr ""
 
-#: templates/topics/lesson.html:124
-#: templates/topics/unit-plan-description.html:52
+#: templates/topics/lesson.html:123
+#: templates/topics/topic-whats-it-all-about.html:63
 msgid "Computational Thinking"
 msgstr ""
 
@@ -2262,7 +2396,7 @@ msgid "Back to programming challenge"
 msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:68
-#: templates/topics/programming-challenge.html:154
+#: templates/topics/programming-challenge.html:168
 msgid "Extra Challenge"
 msgstr ""
 
@@ -2296,19 +2430,20 @@ msgid "Languages"
 msgstr ""
 
 #: templates/topics/programming-challenge.html:112
+#: templates/topics/programming-challenge.html:124
 msgid "Try this challenge out in Plugging it in!"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:118
+#: templates/topics/programming-challenge.html:130
 msgid "What it should look like"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:138
+#: templates/topics/programming-challenge.html:151
 #, python-format
 msgid ""
 "\n"
-"                Show %(name)s solution\n"
-"              "
+"                    Show %(name)s solution\n"
+"                  "
 msgstr ""
 
 #: templates/topics/programming-challenges-table.html:39
@@ -2342,75 +2477,67 @@ msgstr ""
 msgid "Return to the topic"
 msgstr ""
 
-#: templates/topics/topic.html:33
-msgid "Unit Plans"
+#: templates/topics/topic-whats-it-all-about.html:8
+msgid "What's it all about"
 msgstr ""
 
-#: templates/topics/topic.html:56
-msgid "lessons"
-msgstr ""
-
-#: templates/topics/topic.html:71
-msgid "Looking for more?"
-msgstr ""
-
-#: templates/topics/topic.html:74
-msgid "Click here for other resources"
-msgstr ""
-
-#: templates/topics/unit-plan-description.html:8
-msgid "Description"
-msgstr ""
-
-#: templates/topics/unit-plan-description.html:19
-#: templates/topics/unit-plan.html:18
-msgid "Unit plan:"
-msgstr ""
-
-#: templates/topics/unit-plan.html:29
+#: templates/topics/topic-whats-it-all-about.html:22
+#: templates/topics/topic.html:37
 msgid "What's it all about?"
 msgstr ""
 
-#: templates/topics/unit-plan.html:35
-msgid "Read the full unit plan description"
+#: templates/topics/topic-whats-it-all-about.html:43
+msgid "Go back to the topic homepage"
 msgstr ""
 
-#: templates/topics/unit-plan.html:43
+#: templates/topics/topic.html:43
+msgid "Read more..."
+msgstr ""
+
+#: templates/topics/topic.html:47
+msgid "Includes links to computational thinking"
+msgstr ""
+
+#: templates/topics/topic.html:57
 msgid "Lessons"
 msgstr ""
 
-#: topics/models.py:31
+#: templates/topics/topic.html:67
+msgid "Looking for more?"
+msgstr ""
+
+#: templates/topics/topic.html:70
+msgid "Click here for other resources"
+msgstr ""
+
+#: topics/models.py:34
 msgid "Curriculum Area"
 msgstr ""
 
-#: topics/models.py:65
+#: topics/models.py:68
 msgid "Learning Outcome"
 msgstr ""
 
-#: topics/models.py:92
+#: topics/models.py:95
 msgid "Classroom Resource"
 msgstr ""
 
-#: topics/models.py:141
-msgid "Unit Plan"
-msgstr ""
-
-#: topics/models.py:142 topics/models.py:197 topics/models.py:489
-msgid "Return to topic"
-msgstr ""
-
-#: topics/models.py:196
+#: topics/models.py:188
 msgid "Programming Challenge"
 msgstr ""
 
-#: topics/models.py:289
+#: topics/models.py:189 topics/models.py:520
+msgid "Return to topic"
+msgstr ""
+
+#: topics/models.py:303
 msgid "Return to programming challenge"
 msgstr ""
 
-#: topics/models.py:351
+#: topics/models.py:365
 msgid "Return to unit plan"
 msgstr ""
 
-#: topics/models.py:488
+#: topics/models.py:519
 msgid "Curriculum Integration"
 msgstr ""
