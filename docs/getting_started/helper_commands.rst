@@ -18,13 +18,19 @@ Where ``[COMMAND]`` is a word from the list below:
 
 - :ref:`build`
 - :ref:`collect_static`
+- :ref:`create_lesson_pdfs`
+- :ref:`createsuperuser`
 - :ref:`end`
+- :ref:`exec`
 - :ref:`help`
 - :ref:`logs`
 - :ref:`makemessages`
 - :ref:`makemigrations`
+- :ref:`make_resources`
+- :ref:`make_resource_thumbnails`
 - :ref:`migrate`
 - :ref:`reboot_django`
+- :ref:`rebuid_search_indexes`
 - :ref:`restart`
 - :ref:`start`
 - :ref:`static`
@@ -35,6 +41,7 @@ Where ``[COMMAND]`` is a word from the list below:
 - :ref:`test_suite`
 - :ref:`update`
 - :ref:`update_data`
+- :ref:`update_static`
 
 All users of the project (content and technical developers) should become familiar with the following commands:
 
@@ -54,6 +61,16 @@ Running ``./dev build`` will build or rebuild the Docker images that are require
 
 -----------------------------------------------------------------------------
 
+.. _createsuperuser:
+
+``createsuperuser``
+==============================================================================
+
+Running ``./dev createsuperuser`` runs the Django ``createsuperuser`` command to create a superuser account.
+This is required to access the Django admin interface.
+
+-----------------------------------------------------------------------------
+
 .. _collect_static:
 
 ``collect_static``
@@ -64,6 +81,14 @@ It will copy files under the ``static/`` folder into the ``staticfiles/`` folder
 
 -----------------------------------------------------------------------------
 
+.. _create_lesson_pdfs:
+
+``create_lesson_pdfs``
+==============================================================================
+
+Running ``./dev create_lesson_pdfs`` runs the Django ``create_lesson_pdfs`` command.
+This will create PDF files for each lesson that are accessible through the website.
+
 .. _end:
 
 ``end``
@@ -72,6 +97,18 @@ It will copy files under the ``static/`` folder into the ``staticfiles/`` folder
 Running ``./dev end`` will stop any containers which are currently running, this usually takes 10 to 20 seconds.
 
 -----------------------------------------------------------------------------
+
+.. _exec:
+
+``exec``
+==============================================================================
+
+Running ``./dev exec [COMMAND]`` will run the given command in the Django Docker container.
+For example, to run ``ls`` in the Django Docker container, enter:
+
+.. code-block:: bash
+
+    $ ./dev exec ls
 
 .. _help:
 
@@ -100,7 +137,7 @@ To follow logs as they output, enter ``docker compose logs --follow``.
 ``makemessages``
 ==============================================================================
 
-Running ``./dev makemessages`` runs the Djanog ``makemessages`` command.
+Running ``./dev makemessages`` runs the Django ``makemessages`` command.
 This will create message files where each message file represents a single language.
 Message files contain all available translation strings and how they should be represented in the given language.
 
@@ -112,6 +149,26 @@ Message files contain all available translation strings and how they should be r
 ==============================================================================
 
 Running ``./dev makemigrations`` runs the Django ``makemigrations`` command to create migration files.
+
+-----------------------------------------------------------------------------
+
+.. _make_resources:
+
+``make_resources``
+==============================================================================
+
+Running ``./dev make_resources`` runs the Django ``makeresources`` command.
+This will create resource files for each resource and puts them in ``build/resources/``.
+
+-----------------------------------------------------------------------------
+
+.. _make_resource_thumbnails:
+
+``make_resource_thumbnails``
+==============================================================================
+
+Running ``./dev make_resource_thumbnails`` runs the Django ``makeresourcethumbnails`` command.
+This will create thumbnail images for each resource and puts them in ``build/img/resources/{resource}/thumbnails/{language}``.
 
 -----------------------------------------------------------------------------
 
@@ -132,6 +189,14 @@ Running ``./dev migrate`` runs the Django ``migrate`` command to apply migration
 Running ``./dev reboot_django`` will rebuild the Django Docker container.
 
 -----------------------------------------------------------------------------
+
+.. _rebuid_search_indexes:
+
+``rebuid_search_indexes``
+==============================================================================
+
+Running ``./dev rebuild_search_indexes`` runs the Django ``rebuild_search_indexes`` command.
+This will rebuild the search indexes for the website.
 
 .. _restart:
 
@@ -256,6 +321,16 @@ If changes are made to the topics content when the system is running, this comma
 ==============================================================================
 
 Running ``./dev update_data`` runs the custom ``update_data`` command to load the topics content into the database.
+
+-----------------------------------------------------------------------------
+
+.. _update_static:
+
+``update_static``
+==============================================================================
+
+Running ``./dev update_static`` runs ``./dev static`` to build all the static files.
+Then runs the Django ``collectstatic`` command to copy all static files into the ``staticfiles`` directory.
 
 -----------------------------------------------------------------------------
 
