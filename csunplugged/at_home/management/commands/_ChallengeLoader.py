@@ -74,3 +74,9 @@ class ChallengeLoader(TranslatableModelLoader):
                 self.log("Added challenge: {}".format(challenge.__str__()), 1)
             else:
                 self.log("Updated challenge: {}".format(challenge.__str__()), 1)
+
+        _, results = Challenge.objects.filter(activity=self.activity).exclude(
+            order_number__in=challenge_translations.keys()
+        ).delete()
+        if results.get("at_home.Challenge", 0) > 0:
+            self.log("Deleted {} challenges".format(results["at_home.Challenge"]), 1)
