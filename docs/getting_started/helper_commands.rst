@@ -103,12 +103,12 @@ Running ``./dev end`` will stop any containers which are currently running, this
 ``exec``
 ==============================================================================
 
-Running ``./dev exec [COMMAND]`` will run the given command in the Django Docker container.
-For example, to run ``ls`` in the Django Docker container, enter:
+Running ``./dev exec [CONTAINER] [COMMAND]`` will run the given command in the given Docker container.
+For example, to run ``./manage.py loadactivities`` in the Django Docker container, enter:
 
 .. code-block:: bash
 
-    $ ./dev exec ls
+    $ ./dev exec django ./manage.py loadactivities
 
 .. _help:
 
