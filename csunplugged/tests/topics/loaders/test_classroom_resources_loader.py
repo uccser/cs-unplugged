@@ -62,3 +62,69 @@ class ClassroomResourcesLoaderTest(BaseTestWithDB):
         # Check description does not fall back to english for missing translation
         with translation.override("de"):
             self.assertEqual("", untranslated.description)
+
+    def test_insert_middle(self):
+        config_file = "basic-config.yaml"
+
+        cr_loader = ClassroomResourcesLoader(structure_filename=config_file, base_path=self.base_path)
+        cr_loader.load()
+
+        cr_objects = ClassroomResource.objects.all()
+        self.assertQuerysetEqual(
+            list(cr_objects),
+            [
+                '<ClassroomResource: Description of resource 1>',
+                '<ClassroomResource: Description of resource 2>'
+            ],
+        )
+
+        self.assertEqual(2, len(cr_objects))
+
+        config_file = "insert-middle.yaml"
+
+        cr_loader = ClassroomResourcesLoader(structure_filename=config_file, base_path=self.base_path)
+        cr_loader.load()
+
+        cr_objects = ClassroomResource.objects.all()
+
+        self.assertEqual(3, len(cr_objects))
+        self.assertQuerysetEqual(
+            list(cr_objects),
+            [
+                '<ClassroomResource: Description of resource 1>',
+                '<ClassroomResource: Description of resource 3>',
+                '<ClassroomResource: Description of resource 2>'
+            ],
+        )
+
+    def test_delete_end(self):
+        config_file = "basic-config.yaml"
+
+        cr_loader = ClassroomResourcesLoader(structure_filename=config_file, base_path=self.base_path)
+        cr_loader.load()
+
+        cr_objects = ClassroomResource.objects.all()
+        self.assertQuerysetEqual(
+            list(cr_objects),
+            [
+                '<ClassroomResource: Description of resource 1>',
+                '<ClassroomResource: Description of resource 2>'
+            ],
+        )
+
+        self.assertEqual(2, len(cr_objects))
+
+        config_file = "delete-end.yaml"
+
+        cr_loader = ClassroomResourcesLoader(structure_filename=config_file, base_path=self.base_path)
+        cr_loader.load()
+
+        cr_objects = ClassroomResource.objects.all()
+
+        self.assertEqual(1, len(cr_objects))
+        self.assertQuerysetEqual(
+            list(cr_objects),
+            [
+                '<ClassroomResource: Description of resource 1>',
+            ],
+        )

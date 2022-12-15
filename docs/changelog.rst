@@ -23,6 +23,38 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+7.3.0
+==============================================================================
+
+**Release date:** 15 December 2022
+
+**Changelog:**
+
+- Update infrastructure to fix issues with local development on multi-user Linux machines.
+- Update panel documentation to include information about supported panel types.
+- Update panel example in documentation to use the new format.
+- Set English as the default langauge for the local docs server.
+- Update project structure to be more inline with the current state of the project.
+- Fix majority of loading bugs caused by 7.2.0.
+- Bring documentation for helper commands up to date.
+- Dependency updates:
+    - Update jquery from 3.6.1 to 3.6.2.
+    - Update lxml from 4.9.1 to 4.9.2.
+    - Update crowdin/github-action from 1.4.16 to 1.5.2.
+    - Update postcss from 8.4.18 to 8.4.20.
+    - Update pypdf2 from 2.11.1 to 2.12.1.
+    - Update sass from 1.56.0 to 1.56.2.
+    - Update django-modeltranslation from 0.18.5 to 0.18.7.
+    - Update dependabot/fetch-metadata from 1.3.4 to 1.3.5.
+    - Update yargs from 17.6.0 to 17.6.2.
+    - Update sphinx-rtd-theme from 1.1.0 to 1.1.1.
+    - Update django-debug-toolbar from 3.7.0 to 3.8.1.
+    - Update actions/setup-python from 4.3.0 to 4.3.1.
+
+
+
+
+
 7.2.1
 ==============================================================================
 

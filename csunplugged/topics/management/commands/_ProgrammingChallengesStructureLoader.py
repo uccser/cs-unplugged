@@ -2,6 +2,7 @@
 
 import os
 from django.db import transaction
+from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.TranslatableModelLoader import TranslatableModelLoader
 from topics.models import ProgrammingChallengeLanguage, ProgrammingChallengeDifficulty
@@ -39,6 +40,7 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
             required_fields=["name"]
         )
 
+        current_number = 1
         for (prog_language, prog_language_data) in prog_languages.items():
 
             if prog_language_data is None:
@@ -76,6 +78,15 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
                 )
                 for language, content in programming_reminders_translations.items():
                     prog_reminders_translations[language]["programming_reminders"] = content.html_string
+
+            if prog_language_number != current_number:
+                print(InvalidYAMLValueError)
+                raise InvalidYAMLValueError(
+                    self.structure_file_path,
+                    "number",
+                    "Programming Challenge Language numbers must be sequential"
+                )
+            current_number += 1
 
             new_prog_language, created = ProgrammingChallengeLanguage.objects.update_or_create(
                 slug=prog_language,
@@ -124,4 +135,10 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
                 term = 'Updated'
             self.log(f'{term} programming difficulty level: {new_difficulty.__str__()}')
 
-        self.log("")
+        ProgrammingChallengeDifficulty.objects.exclude(
+            level__lt=len(difficulty_levels)
+        ).delete()
+
+        ProgrammingChallengeLanguage.objects.exclude(
+            slug__in=prog_languages.keys()
+        ).delete()

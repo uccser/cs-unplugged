@@ -752,3 +752,83 @@ class LessonsLoaderTest(BaseTestWithDB):
             self.assertEqual(lesson.name, "Complex Translated Lesson German")
             # accessing the untranslated field should not default back to english
             self.assertEqual("", lesson.programming_challenges_description)
+
+    def test_lessons_loader_insert_start(self):
+        config_file = "multiple-lessons.yaml"
+        topic = self.test_data.create_topic("1")
+        lesson_loader = LessonsLoader(
+            topic,
+            structure_filename=config_file,
+            base_path=self.base_path
+        )
+        lesson_loader.load()
+
+        lesson_objects = Lesson.objects.all()
+        self.assertQuerysetEqual(
+            list(lesson_objects),
+            [
+                "<Lesson: Lesson 1>",
+                "<Lesson: Lesson 2>",
+                "<Lesson: Lesson 3>",
+            ]
+        )
+
+        config_file = "insert-start.yaml"
+        lesson_loader = LessonsLoader(
+            topic,
+            structure_filename=config_file,
+            base_path=self.base_path
+        )
+        lesson_loader.load()
+
+        lesson_objects = Lesson.objects.all()
+        self.assertQuerysetEqual(
+            list(lesson_objects),
+            [
+                "<Lesson: Lesson 0>",
+                "<Lesson: Lesson 1>",
+                "<Lesson: Lesson 2>",
+                "<Lesson: Lesson 3>",
+            ],
+        )
+
+    def test_lessons_loader_delete_start(self):
+        config_file = "insert-start.yaml"
+        topic = self.test_data.create_topic("1")
+        lesson_loader = LessonsLoader(
+            topic,
+            structure_filename=config_file,
+            base_path=self.base_path
+        )
+        lesson_loader.load()
+
+        lesson_objects = Lesson.objects.all()
+        self.assertQuerysetEqual(
+            lesson_objects,
+            [
+                "<Lesson: Lesson 0>",
+                "<Lesson: Lesson 1>",
+                "<Lesson: Lesson 2>",
+                "<Lesson: Lesson 3>",
+            ],
+            ordered=False,
+        )
+
+        config_file = "multiple-lessons.yaml"
+        lesson_loader = LessonsLoader(
+            topic,
+            structure_filename=config_file,
+            base_path=self.base_path
+        )
+        lesson_loader.load()
+
+        lesson_objects = Lesson.objects.all()
+        self.assertQuerysetEqual(
+            lesson_objects,
+            [
+                "<Lesson: Lesson 1>",
+                "<Lesson: Lesson 2>",
+                "<Lesson: Lesson 3>",
+            ],
+            ordered=False,
+        )

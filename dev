@@ -15,6 +15,8 @@
 
 set -e
 
+export DOCKER_UID=$UID
+
 ERROR='\033[0;31m'
 SUCCESS='\033[0;32m'
 CODE='\033[0;36m'
@@ -112,7 +114,7 @@ cmd_update_data() {
   echo "Loading content..."
   docker compose -f docker-compose.local.yml run --rm --label traefik.enable=false django python ./manage.py updatedata "$@"
 }
-defhelp updatedata 'Load content into database.'
+defhelp update_data 'Load content into database.'
 
 # Build static files
 cmd_static() {
@@ -144,21 +146,21 @@ cmd_rebuild_search_indexes() {
   echo "Rebuilding search index..."
   docker compose -f docker-compose.local.yml run --rm --label traefik.enable=false django python ./manage.py rebuild_search_indexes
 }
-defhelp rebuild_index "Run Django rebuild_search_indexes command."
+defhelp rebuild_search_indexes "Run Django rebuild_search_indexes command."
 
 # Run Django makeresourcethumbnails command
 cmd_make_resource_thumbnails() {
   echo "Creating thumbnails for resource PDFs..."
   docker compose -f docker-compose.local.yml run --rm --label traefik.enable=false django python ./manage.py makeresourcethumbnails
 }
-defhelp makeresourcethumbnails 'Run Django makeresourcethumbnails command.'
+defhelp make_resource_thumbnails 'Run Django makeresourcethumbnails command.'
 
 # Run Django makeresources command
 cmd_make_resources() {
   echo "Creating static resource PDFs..."
   docker compose -f docker-compose.local.yml run --rm --label traefik.enable=false django python ./manage.py makeresources "$@"
 }
-defhelp makeresources 'Run Django makeresources command.'
+defhelp make_resources 'Run Django makeresources command.'
 
 # Run Django create_lesson_pdfs command
 cmd_create_lesson_pdfs() {

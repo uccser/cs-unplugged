@@ -5,7 +5,7 @@ from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
-from topics.models import CurriculumArea, Lesson
+from topics.models import CurriculumArea, CurriculumIntegration, Lesson
 
 
 class CurriculumIntegrationsLoader(TranslatableModelLoader):
@@ -30,6 +30,7 @@ class CurriculumIntegrationsLoader(TranslatableModelLoader):
         """
         structure = self.load_yaml_file(self.structure_file_path)
 
+        current_number = 1
         for (integration_slug, integration_data) in structure.items():
             if integration_data is None:
                 raise MissingRequiredFieldError(
@@ -47,6 +48,7 @@ class CurriculumIntegrationsLoader(TranslatableModelLoader):
                 integration_translations[language]["name"] = content.title
 
             integration_number = integration_data.get("number", None)
+
             integration_curriculum_areas = integration_data.get("curriculum-areas", None)
             if None in [integration_number, integration_curriculum_areas]:
                 raise MissingRequiredFieldError(
@@ -55,10 +57,17 @@ class CurriculumIntegrationsLoader(TranslatableModelLoader):
                     "Curriculum Integration"
                 )
 
+            if integration_number != current_number:
+                raise InvalidYAMLValueError(
+                    self.structure_file_path,
+                    "number",
+                    "Curriculum integrations must be numbered sequentially starting from 1"
+                )
+
             integration, created = self.topic.curriculum_integrations.update_or_create(
-                slug=integration_slug,
+                number=integration_number,
                 defaults={
-                    'number': integration_number,
+                    "slug": integration_slug,
                 }
             )
             self.populate_translations(integration, integration_translations)
@@ -109,3 +118,9 @@ class CurriculumIntegrationsLoader(TranslatableModelLoader):
             else:
                 term = 'Updated'
             self.log(f'{term} curriculum integration: {integration.name}', 1)
+
+            current_number += 1
+
+        CurriculumIntegration.objects.filter(topic=self.topic).exclude(
+            number__lt=current_number
+        ).delete()

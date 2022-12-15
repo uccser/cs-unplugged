@@ -1,0 +1,44 @@
+See
+
+Not connected to lesson, but working (only uses old scratch system):
+    - Geometry Unit Plan
+        - draw-square-without-loop (1.1)
+        - draw-square-with-loop (1.2)
+        - rotation-of-a-square (1.3)
+        - draw-triangle-without-loop (2.1)
+        - draw-triangle-with-loop (2.2)
+        - draw-pentagon-without-loop (3.1)
+        - draw-pentagon-with-loop (3.2)
+        - rotation-of-a-pentagon (3.3)
+        - draw-360-sided-polygon (4.1)
+        - draw-circle-with-radius-100 (4.2)
+        - rotation-of-a-circle (4.3)
+        - draw-regular-polygons (5.1)
+        - calculate-inside-angles-of-regular-polygons (5.2)
+        - draw-different-types-of-angles (6.1)
+        - draw-different-types-of-triangles (6.2)
+        - draw-5-pointed-star (7.1)
+        - draw-star-with-odd-points (7.2)
+        - draw-star-without-crossing-lines (7.3)
+        - draw-star (7.4)
+        - draw-rhombus (8.1)
+        - draw-cube (8.2)
+        - translation (8.3)
+        - reflection (9.1)
+    
+    - Numeracy Unit Plan
+        - add-in-parts-quiz (1.3)
+Not connected to lesson, and not working (uses new python system):
+    - Numeracy Unit Plan
+        - add-in-parts-1-digit-number (1.1)
+        - add-in-parts-2-digit-number (1.2)
+        - go-up-10-numbers (2.1)
+        - go-up-1-10-100-numbers (2.2)
+        - calculate-exponents (3.1)
+        - check-if-divisor (4.1) (has a counterpart that works in the modulo lesson)
+        - check-if-divisor-series (4.2)
+        - find-factors (4.3)
+        - check-prime (4.4)
+        - generate-primes (4.5)
+        - find-prime-factors (4.6)
+        - flip-coins (5.1)

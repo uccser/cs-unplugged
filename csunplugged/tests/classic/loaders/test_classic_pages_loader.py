@@ -82,3 +82,83 @@ class ClassicPageLoaderTest(BaseTestWithDB):
                 "<ClassicPage: CS Unplugged Book>",
             ],
         )
+
+    def test_classic_page_loader_insert_middle(self):
+        config_file = "multiple.yaml"
+        classic_page_loader = ClassicPagesLoader(
+            structure_dir="",
+            structure_filename=config_file,
+            base_path=self.BASE_PATH,
+        )
+        classic_page_loader.load()
+        pages = ClassicPage.objects.order_by("name")
+        self.assertEqual(4, len(pages))
+        self.assertQuerysetEqual(
+            pages,
+            [
+                "<ClassicPage: Activities>",
+                "<ClassicPage: Artificial intelligence>",
+                "<ClassicPage: Binary numbers>",
+                "<ClassicPage: CS Unplugged Book>",
+            ],
+        )
+
+        # Now try adding an element in the middle of this collection
+        config_file = "insert-middle.yaml"
+        classic_page_loader = ClassicPagesLoader(
+            structure_dir="",
+            structure_filename=config_file,
+            base_path=self.BASE_PATH,
+        )
+        classic_page_loader.load()
+        pages = ClassicPage.objects.order_by("name")
+        self.assertEqual(5, len(pages))
+        self.assertQuerysetEqual(
+            pages,
+            [
+                "<ClassicPage: Activities>",
+                "<ClassicPage: Artificial intelligence>",
+                "<ClassicPage: Attention spans>",
+                "<ClassicPage: Binary numbers>",
+                "<ClassicPage: CS Unplugged Book>",
+            ],
+        )
+
+    def test_classic_page_loader_remove_end(self):
+        config_file = "multiple.yaml"
+        classic_page_loader = ClassicPagesLoader(
+            structure_dir="",
+            structure_filename=config_file,
+            base_path=self.BASE_PATH,
+        )
+        classic_page_loader.load()
+        pages = ClassicPage.objects.order_by("name")
+        self.assertEqual(4, len(pages))
+        self.assertQuerysetEqual(
+            pages,
+            [
+                "<ClassicPage: Activities>",
+                "<ClassicPage: Artificial intelligence>",
+                "<ClassicPage: Binary numbers>",
+                "<ClassicPage: CS Unplugged Book>",
+            ],
+        )
+
+        # Remove from end of list
+        config_file = "remove-end.yaml"
+        classic_page_loader = ClassicPagesLoader(
+            structure_dir="",
+            structure_filename=config_file,
+            base_path=self.BASE_PATH,
+        )
+        classic_page_loader.load()
+        pages = ClassicPage.objects.order_by("name")
+        self.assertEqual(3, len(pages))
+        self.assertQuerysetEqual(
+            pages,
+            [
+                "<ClassicPage: Activities>",
+                "<ClassicPage: Artificial intelligence>",
+                "<ClassicPage: Binary numbers>",
+            ],
+        )

@@ -1,0 +1,14 @@
+translation:
+  challenge-set-number: 1
+  challenge-number: 2
+  difficulty-level: 1
+  programming-languages:
+    - language-1
+
+
+programming-challenge-1:
+  challenge-set-number: 1
+  challenge-number: 1
+  difficulty-level: 1
+  programming-languages:
+    - language-1

@@ -124,3 +124,53 @@ class ResourceLoaderTest(BaseTestWithDB):
         with translation.override("de"):
             self.assertEqual("German Resource Name", resource.name)
             self.assertIn("German resource description", resource.content)
+
+    def test_resource_loader_insert_middle(self):
+        config_file = "multiple.yaml"
+        resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
+        resource_loader.load()
+        self.assertQuerysetEqual(
+            Resource.objects.all(),
+            [
+                "<Resource: Resource 1>",
+                "<Resource: Resource 2>",
+            ],
+            ordered=False,
+        )
+
+        config_file = "insert-middle.yaml"
+        resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
+        resource_loader.load()
+        self.assertQuerysetEqual(
+            Resource.objects.all(),
+            [
+                "<Resource: Resource 1>",
+                "<Resource: Resource 3>",
+                "<Resource: Resource 2>",
+            ],
+            ordered=False,
+        )
+
+    def test_resource_loader_delete_end(self):
+        config_file = "multiple.yaml"
+        resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
+        resource_loader.load()
+        self.assertQuerysetEqual(
+            Resource.objects.all(),
+            [
+                "<Resource: Resource 1>",
+                "<Resource: Resource 2>",
+            ],
+            ordered=False,
+        )
+
+        config_file = "delete-end.yaml"
+        resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
+        resource_loader.load()
+        self.assertQuerysetEqual(
+            Resource.objects.all(),
+            [
+                "<Resource: Resource 1>",
+            ],
+            ordered=False,
+        )

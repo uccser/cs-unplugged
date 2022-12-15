@@ -74,4 +74,7 @@ class ResourcesLoader(TranslatableModelLoader):
             else:
                 term = 'Updated'
             self.log(f'{term} Resource: {resource.name}')
+
+        Resource.objects.exclude(slug__in=resources_structure.keys()).delete()
+
         self.log("All resources loaded!\n")

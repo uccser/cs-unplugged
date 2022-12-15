@@ -145,3 +145,62 @@ class AgeGroupsLoaderTest(BaseTestWithDB):
         self.assertEqual("English description.", age_group.description)
         with translation.override("de"):
             self.assertEqual("German description.", age_group.description)
+
+    def test_age_groups_same_slugs(self):
+        config_file = "same-slugs.yaml"
+        group_loader = AgeGroupsLoader(structure_filename=config_file, base_path=self.base_path)
+        group_loader.load()
+        self.assertQuerysetEqual(
+            AgeGroup.objects.filter(slug="8-10"),
+            ["<AgeGroup: NumericRange(8, 10, '[)')>"]
+        )
+
+    def test_age_groups_insert_middle(self):
+        config_file = "multiple.yaml"
+        group_loader = AgeGroupsLoader(structure_filename=config_file, base_path=self.base_path)
+        group_loader.load()
+        self.assertQuerysetEqual(
+            AgeGroup.objects.order_by("ages"),
+            [
+                "<AgeGroup: NumericRange(5, 7, '[)')>",
+                "<AgeGroup: NumericRange(8, 10, '[)')>",
+                "<AgeGroup: NumericRange(11, 14, '[)')>",
+            ]
+        )
+
+        config_file = "insert-middle.yaml"
+        group_loader = AgeGroupsLoader(structure_filename=config_file, base_path=self.base_path)
+        group_loader.load()
+        self.assertQuerysetEqual(
+            AgeGroup.objects.order_by("ages"),
+            [
+                "<AgeGroup: NumericRange(5, 7, '[)')>",
+                "<AgeGroup: NumericRange(7, 8, '[)')>",
+                "<AgeGroup: NumericRange(8, 10, '[)')>",
+                "<AgeGroup: NumericRange(11, 14, '[)')>",
+            ]
+        )
+
+    def test_age_groups_remove_end(self):
+        config_file = "multiple.yaml"
+        group_loader = AgeGroupsLoader(structure_filename=config_file, base_path=self.base_path)
+        group_loader.load()
+        self.assertQuerysetEqual(
+            AgeGroup.objects.order_by("ages"),
+            [
+                "<AgeGroup: NumericRange(5, 7, '[)')>",
+                "<AgeGroup: NumericRange(8, 10, '[)')>",
+                "<AgeGroup: NumericRange(11, 14, '[)')>",
+            ]
+        )
+
+        config_file = "remove-end.yaml"
+        group_loader = AgeGroupsLoader(structure_filename=config_file, base_path=self.base_path)
+        group_loader.load()
+        self.assertQuerysetEqual(
+            AgeGroup.objects.order_by("ages"),
+            [
+                "<AgeGroup: NumericRange(5, 7, '[)')>",
+                "<AgeGroup: NumericRange(8, 10, '[)')>",
+            ]
+        )

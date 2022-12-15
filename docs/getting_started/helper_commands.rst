@@ -17,36 +17,31 @@ To run this script, open a terminal window in the directory and enter the follow
 Where ``[COMMAND]`` is a word from the list below:
 
 - :ref:`build`
-- :ref:`clean`
 - :ref:`collect_static`
-- :ref:`compilemessages`
-- :ref:`docs`
+- :ref:`create_lesson_pdfs`
+- :ref:`createsuperuser`
 - :ref:`end`
-- :ref:`flush`
+- :ref:`exec`
 - :ref:`help`
 - :ref:`logs`
 - :ref:`makemessages`
 - :ref:`makemigrations`
-- :ref:`makeresources`
-- :ref:`makeresourcethumbnails`
+- :ref:`make_resources`
+- :ref:`make_resource_thumbnails`
 - :ref:`migrate`
 - :ref:`reboot_django`
-- :ref:`rebuild_index`
+- :ref:`rebuid_search_indexes`
 - :ref:`restart`
-- :ref:`shell`
 - :ref:`start`
 - :ref:`static`
-- :ref:`static_prod`
-- :ref:`static_scratch`
 - :ref:`style`
 - :ref:`test_backwards`
 - :ref:`test_coverage`
 - :ref:`test_specific`
 - :ref:`test_suite`
 - :ref:`update`
-- :ref:`updatedata`
-- :ref:`update_lite`
-- :ref:`wipe`
+- :ref:`update_data`
+- :ref:`update_static`
 
 All users of the project (content and technical developers) should become familiar with the following commands:
 
@@ -66,12 +61,13 @@ Running ``./dev build`` will build or rebuild the Docker images that are require
 
 -----------------------------------------------------------------------------
 
-.. _clean:
+.. _createsuperuser:
 
-``clean``
+``createsuperuser``
 ==============================================================================
 
-Running ``./dev clean`` deletes 'dangling' Docker images left over from builds, which will free up hard drive space.
+Running ``./dev createsuperuser`` runs the Django ``createsuperuser`` command to create a superuser account.
+This is required to access the Django admin interface.
 
 -----------------------------------------------------------------------------
 
@@ -85,25 +81,13 @@ It will copy files under the ``static/`` folder into the ``staticfiles/`` folder
 
 -----------------------------------------------------------------------------
 
-.. _compilemessages:
+.. _create_lesson_pdfs:
 
-``compilemessages``
+``create_lesson_pdfs``
 ==============================================================================
 
-Running ``./dev compilemessages`` runs the Django ``compilemessages`` command.
-This runs over ``.po`` files and creates ``.mo`` files which are optimised for use by ``gettext``.
-You will need to run this command after each time you create your message file or each time you make changes to it.
-
------------------------------------------------------------------------------
-
-.. _docs:
-
-``docs``
-==============================================================================
-
-Running ``./dev docs`` will remove any existing documentation and build a fresh copy of the documentation for CS Unplugged.
-
------------------------------------------------------------------------------
+Running ``./dev create_lesson_pdfs`` runs the Django ``create_lesson_pdfs`` command.
+This will create PDF files for each lesson that are accessible through the website.
 
 .. _end:
 
@@ -114,14 +98,17 @@ Running ``./dev end`` will stop any containers which are currently running, this
 
 -----------------------------------------------------------------------------
 
-.. _flush:
+.. _exec:
 
-``flush``
+``exec``
 ==============================================================================
 
-Running ``./dev flush`` runs the Django ``flush`` command to flush the database.
+Running ``./dev exec [COMMAND]`` will run the given command in the Django Docker container.
+For example, to run ``ls`` in the Django Docker container, enter:
 
------------------------------------------------------------------------------
+.. code-block:: bash
+
+    $ ./dev exec ls
 
 .. _help:
 
@@ -150,7 +137,7 @@ To follow logs as they output, enter ``docker compose logs --follow``.
 ``makemessages``
 ==============================================================================
 
-Running ``./dev makemessages`` runs the Djanog ``makemessages`` command.
+Running ``./dev makemessages`` runs the Django ``makemessages`` command.
 This will create message files where each message file represents a single language.
 Message files contain all available translation strings and how they should be represented in the given language.
 
@@ -165,21 +152,23 @@ Running ``./dev makemigrations`` runs the Django ``makemigrations`` command to c
 
 -----------------------------------------------------------------------------
 
-.. _makeresources:
+.. _make_resources:
 
-``makeresources``
+``make_resources``
 ==============================================================================
 
-Running ``./dev makeresources`` runs the custom Django ``makeresources`` command to create static resource PDF files.
+Running ``./dev make_resources`` runs the Django ``makeresources`` command.
+This will create resource files for each resource and puts them in ``build/resources/``.
 
 -----------------------------------------------------------------------------
 
-.. _makeresourcethumbnails:
+.. _make_resource_thumbnails:
 
-``makeresourcethumbnails``
+``make_resource_thumbnails``
 ==============================================================================
 
-Running ``./dev makeresourcethumbnails`` generates the thumbnails for each resource PDF.
+Running ``./dev make_resource_thumbnails`` runs the Django ``makeresourcethumbnails`` command.
+This will create thumbnail images for each resource and puts them in ``build/img/resources/{resource}/thumbnails/{language}``.
 
 -----------------------------------------------------------------------------
 
@@ -201,14 +190,13 @@ Running ``./dev reboot_django`` will rebuild the Django Docker container.
 
 -----------------------------------------------------------------------------
 
-.. _rebuild_index:
+.. _rebuid_search_indexes:
 
-``rebuild_index``
+``rebuid_search_indexes``
 ==============================================================================
 
-Running ``./dev rebuild_index`` will rebuild the search indexes.
-
------------------------------------------------------------------------------
+Running ``./dev rebuild_search_indexes`` runs the Django ``rebuild_search_indexes`` command.
+This will rebuild the search indexes for the website.
 
 .. _restart:
 
@@ -221,17 +209,6 @@ Running ``./dev restart`` is a shortcut for running:
 - ``./dev start``
 
 More details for each command can be found on this page.
-
------------------------------------------------------------------------------
-
-.. _shell:
-
-``shell``
-==============================================================================
-
-Running ``./dev shell`` opens a bash terminal within the Django container (this requires the CS Unplugged system to be running).
-
-This is the equivalent to entering ``docker compose run django bash``.
 
 -----------------------------------------------------------------------------
 
@@ -268,25 +245,6 @@ If changes are made to the static files (for example, a new image is added) when
 
 -----------------------------------------------------------------------------
 
-.. _static_prod:
-
-``static_prod``
-==============================================================================
-
-Running ``./dev static_prod`` runs the commands for generating production static files for the website.
-This produces compressed SASS files without sourcemaps.
-
------------------------------------------------------------------------------
-
-.. _static_scratch:
-
-``static_scratch``
-==============================================================================
-
-Running ``./dev static_scratch`` runs the commands for generating scratch images for the website.
-
------------------------------------------------------------------------------
-
 .. _style:
 
 ``style``
@@ -304,7 +262,6 @@ If the output is ``0`` for a check, then there are zero errors.
 
 Running ``./dev test_backwards`` will run the test suite in reverse.
 This is useful to check if any tests are influencing the result of each other.
-If this command if run on Travis CI, it will only run for a pull request.
 
 -----------------------------------------------------------------------------
 
@@ -358,32 +315,22 @@ If changes are made to the topics content when the system is running, this comma
 
 -----------------------------------------------------------------------------
 
-.. _updatedata:
+.. _update_data:
 
 ``updatedata``
 ==============================================================================
 
-Running ``./dev updatedata`` runs the custom ``updatedata`` command to load the topics content into the database.
+Running ``./dev update_data`` runs the custom ``update_data`` command to load the topics content into the database.
 
 -----------------------------------------------------------------------------
 
-.. _update_lite:
+.. _update_static:
 
-``update_lite``
+``update_static``
 ==============================================================================
 
-Running ``./dev update_lite`` only loads key content.
-Useful for development.
-
------------------------------------------------------------------------------
-
-.. _wipe:
-
-``wipe``
-==============================================================================
-
-Running ``./dev wipe`` delete all Docker containers and images on your computer.
-Once this command has be run, a full download and rebuild of images is required to run the system (can be triggered by the ``build`` or ``start`` commands).
+Running ``./dev update_static`` runs ``./dev static`` to build all the static files.
+Then runs the Django ``collectstatic`` command to copy all static files into the ``staticfiles`` directory.
 
 -----------------------------------------------------------------------------
 

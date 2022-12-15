@@ -1,0 +1,8 @@
+page-1:
+  name: Page 1
+  template: template.html
+  url-name: page
+page-2:
+  name: Page 2
+  template: template.html
+  url-name: page

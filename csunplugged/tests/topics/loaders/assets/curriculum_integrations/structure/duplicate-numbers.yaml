@@ -1,0 +1,9 @@
+integration-1:
+    number: 1
+    curriculum-areas:
+      - area-1
+
+integration-2:
+    number: 1
+    curriculum-areas:
+      - area-1

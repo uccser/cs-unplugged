@@ -1,0 +1,10 @@
+maths:
+  colour: green
+  number: 1
+  children:
+    - geometry
+    - algebra
+
+science:
+  colour: blue
+  number: 2
