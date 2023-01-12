@@ -17,7 +17,7 @@ yattag==1.15.0
 tinycss==0.4
 
 # Markdown
-verto==1.1.0
+verto==1.1.1
 python-markdown-math==0.6
 
 # YAML Loading
