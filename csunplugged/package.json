@@ -35,7 +35,7 @@
         "postcss": "8.4.31",
         "postcss-flexbugs-fixes": "5.0.2",
         "reveal.js": "4.6.1",
-        "sass": "1.69.1",
+        "sass": "1.69.2",
         "scratchblocks": "3.6.4",
         "vinyl-buffer": "1.0.1",
         "yargs": "17.7.2"
