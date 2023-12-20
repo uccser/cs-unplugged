@@ -390,7 +390,7 @@ jobs:
           ls artifacts/at-a-distance-files-*/at-a-distance-files.tar.gz | xargs -n1 tar -xz --directory csunplugged/staticfiles/slides --file
 
       - name: Log in to the Container registry
-        uses: docker/login-action@v2.2.0
+        uses: docker/login-action@v3.0.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
