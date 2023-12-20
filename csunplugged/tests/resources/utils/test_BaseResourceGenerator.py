@@ -9,7 +9,7 @@ from utils.errors.MoreThanOneThumbnailPageFoundError import MoreThanOneThumbnail
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from resources.utils.resource_parameters import ResourceParameter, EnumResourceParameter
 from io import BytesIO
-from PyPDF2 import PdfFileReader
+from PyPDF2 import PdfReader
 
 
 @tag("resource")
@@ -22,14 +22,14 @@ class BaseResourceGeneratorTest(BaseTestWithDB):
     def test_pdf_single_page(self):
         generator = BareResourceGenerator()
         (pdf_file, filename) = generator.pdf("Test")
-        pdf = PdfFileReader(BytesIO(pdf_file))
-        self.assertEqual(pdf.getNumPages(), 1)
+        pdf = PdfReader(BytesIO(pdf_file))
+        self.assertEqual(len(pdf.pages), 1)
 
     def test_pdf_single_page_copies(self):
         generator = BareResourceGeneratorWithCopies(QueryDict("paper_size=a4&copies=8"))
         (pdf_file, filename) = generator.pdf("Test")
-        pdf = PdfFileReader(BytesIO(pdf_file))
-        self.assertEqual(pdf.getNumPages(), 8)
+        pdf = PdfReader(BytesIO(pdf_file))
+        self.assertEqual(len(pdf.pages), 8)
 
     def test_pdf_multiple_pages(self):
         generator = BareResourceGenerator()
@@ -40,8 +40,8 @@ class BaseResourceGeneratorTest(BaseTestWithDB):
             ]
         )
         (pdf_file, filename) = generator.pdf("Test")
-        pdf = PdfFileReader(BytesIO(pdf_file))
-        self.assertEqual(pdf.getNumPages(), 2)
+        pdf = PdfReader(BytesIO(pdf_file))
+        self.assertEqual(len(pdf.pages), 2)
 
     def test_pdf_multiple_pages_copies(self):
         generator = BareResourceGeneratorWithCopies(QueryDict("paper_size=a4&copies=8"))
@@ -52,8 +52,8 @@ class BaseResourceGeneratorTest(BaseTestWithDB):
             ]
         )
         (pdf_file, filename) = generator.pdf("Test")
-        pdf = PdfFileReader(BytesIO(pdf_file))
-        self.assertEqual(pdf.getNumPages(), 16)
+        pdf = PdfReader(BytesIO(pdf_file))
+        self.assertEqual(len(pdf.pages), 16)
 
     def test_generate_thumbnail_valid_single_page(self):
         generator = BareResourceGenerator()
