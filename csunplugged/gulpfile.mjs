@@ -3,15 +3,20 @@
 ////////////////////////////////
 
 // Gulp and package
-import { src, dest, parallel, series, watch, lastRun } from 'gulp'
-import { name } from './package.json'
+import gulp from "gulp";
+const { src, dest, parallel, series, watch, lastRun } = gulp;
+
+// Package
+import { readFile } from "node:fs/promises";
+const pjson = JSON.parse(await readFile('./package.json'))
 
 // Plugins
 import autoprefixer from 'autoprefixer'
 import browserify from 'browserify'
-const browserSync = require('browser-sync').create()
+import browserSync from 'browser-sync'
 import buffer from 'vinyl-buffer'
-import { bgRed, red } from 'ansi-colors'
+import c from 'ansi-colors'
+const { bgRed, red } = c;
 import concat from 'gulp-concat'
 import cssnano from 'cssnano'
 import dependents from 'gulp-dependents'
@@ -24,9 +29,12 @@ import { error as _error } from 'fancy-log'
 import pixrem from 'pixrem'
 import postcss from 'gulp-postcss'
 import postcssFlexbugFixes from 'postcss-flexbugs-fixes'
-const reload = browserSync.reload
-const sass = require('gulp-sass')(require('sass'));
-import { init, write } from 'gulp-sourcemaps'
+const { reload } = browserSync.create();
+import * as dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+const sass = gulpSass(dartSass);
+import sourcemaps from 'gulp-sourcemaps'
+const { init, write } = sourcemaps
 import { spawn } from 'child_process'
 import tap from 'gulp-tap'
 import terser from 'gulp-terser'
@@ -38,13 +46,12 @@ const PRODUCTION = !!argv.production;
 
 // Relative paths function
 function pathsConfig(appName) {
-    this.app = `./${name}`
     const vendorsRoot = 'node_modules'
     const staticSourceRoot = 'static'
     const staticOutputRoot = 'build'
 
     return {
-        app: this.app,
+        app: `./${pjson.name}`,
         // Source files
         bootstrap_source: `${vendorsRoot}/bootstrap/scss`,
         css_source: `${staticSourceRoot}/css`,
@@ -224,7 +231,7 @@ function watchPaths() {
 }
 
 // Generate all assets
-const generateAssets = parallel(
+export const generateAssets = parallel(
     css,
     scss,
     js,
@@ -233,6 +240,7 @@ const generateAssets = parallel(
     files,
     fonts
 )
+generateAssets.displayName = "generate-assets";
 
 // Set up dev environment
 const dev = parallel(
@@ -240,7 +248,4 @@ const dev = parallel(
     watchPaths
 )
 // TODO: Look at cleaning build folder
-exports["generate-assets"] = generateAssets
-exports["dev"] = dev
-const _default = series(generateAssets, dev)
-export { _default as default }
+export default series(generateAssets, dev);

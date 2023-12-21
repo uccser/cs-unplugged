@@ -37,7 +37,7 @@ services:
         volumes:
             # https://burnedikt.com/dockerized-node-development-and-mounting-node-volumes/#exclude-node_modules-from-the-mount
             - ./csunplugged/package.json:/app/package.json:z
-            - ./csunplugged/gulpfile.js:/app/gulpfile.js:z
+            - ./csunplugged/gulpfile.mjs:/app/gulpfile.mjs:z
             - ./csunplugged/static:/app/static:z
             - ./csunplugged/build:/app/build:z
         command: npm run dev
