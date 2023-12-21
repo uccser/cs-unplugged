@@ -9,7 +9,7 @@ from utils.errors.MoreThanOneThumbnailPageFoundError import MoreThanOneThumbnail
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from resources.utils.resource_parameters import ResourceParameter, EnumResourceParameter
 from io import BytesIO
-from PyPDF2 import PdfReader
+from pypdf import PdfReader
 
 
 @tag("resource")

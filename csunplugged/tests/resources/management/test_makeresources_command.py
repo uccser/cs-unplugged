@@ -4,7 +4,7 @@ from tests.BaseTestWithDB import BaseTestWithDB
 from django.core import management
 from django.test import tag, override_settings
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-from PyPDF2 import PdfReader
+from pypdf import PdfReader
 import os.path
 import shutil
 from resources.models import Resource
