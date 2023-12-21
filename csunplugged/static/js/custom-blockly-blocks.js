@@ -1,4 +1,4 @@
-function setupBlockly(Blockly) {
+function setupBlockly(Blockly, pythonGenerator) {
 
 // Custom block definitions that were created to look and act like Scratch blocks
 Blockly.defineBlocksWithJsonArray([
@@ -716,47 +716,47 @@ Blockly.defineBlocksWithJsonArray([
 ]);
 
 // Python code generator for Values boolean block
-Blockly.Python['values_boolean'] = function(block) {
+pythonGenerator.forBlock['values_boolean'] = function(block) {
     var dropdown_value = block.getFieldValue('VALUE');
     var code = (dropdown_value == 'TRUE') ? 'True' : 'False';
-    return [code, Blockly.Python.ORDER_ATOMIC];
+    return [code, pythonGenerator.ORDER_ATOMIC];
 };
 
 // Python code generator for Values number block
-Blockly.Python['values_number'] = function(block) {
+pythonGenerator.forBlock['values_number'] = function(block) {
     var code = Number(block.getFieldValue('NUM'));
     var order;
     if (code == Infinity) {
     code = 'float("inf")';
-    order = Blockly.Python.ORDER_FUNCTION_CALL;
+    order = pythonGenerator.ORDER_FUNCTION_CALL;
     } else if (code == -Infinity) {
     code = '-float("inf")';
-    order = Blockly.Python.ORDER_UNARY_SIGN;
+    order = pythonGenerator.ORDER_UNARY_SIGN;
     } else {
-    order = code < 0 ? Blockly.Python.ORDER_UNARY_SIGN :
-            Blockly.Python.ORDER_ATOMIC;
+    order = code < 0 ? pythonGenerator.ORDER_UNARY_SIGN :
+            pythonGenerator.ORDER_ATOMIC;
     }
     return [code, order];
 };
 
 // Python code generator for Values string block
-Blockly.Python['values_string'] = function(block) {
-    var code = Blockly.Python.quote_(block.getFieldValue('TEXT'));
-    return [code, Blockly.Python.ORDER_ATOMIC];
+pythonGenerator.forBlock['values_string'] = function(block) {
+    var code = pythonGenerator.quote_(block.getFieldValue('TEXT'));
+    return [code, pythonGenerator.ORDER_ATOMIC];
 };
 
 // Python code generator for Operators length of block
-Blockly.Python['operators_length_of'] = function(block) {
+pythonGenerator.forBlock['operators_length_of'] = function(block) {
     // Is the string null or array empty?
-    var text = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE) || '\'\'';
-    return ['len(' + text + ')', Blockly.Python.ORDER_FUNCTION_CALL];
+    var text = pythonGenerator.valueToCode(block, 'VALUE', pythonGenerator.ORDER_NONE) || '\'\'';
+    return ['len(' + text + ')', pythonGenerator.ORDER_FUNCTION_CALL];
 };
 
 // Python code generator for Operators equality block
-Blockly.Python['operators_equality'] = function(block) {
-    var order = Blockly.Python.ORDER_RELATIONAL;
-    var value_a = Blockly.Python.valueToCode(block, 'A', order) || '0';
-    var value_b = Blockly.Python.valueToCode(block, 'B', order) || '0';
+pythonGenerator.forBlock['operators_equality'] = function(block) {
+    var order = pythonGenerator.ORDER_RELATIONAL;
+    var value_a = pythonGenerator.valueToCode(block, 'A', order) || '0';
+    var value_b = pythonGenerator.valueToCode(block, 'B', order) || '0';
     if (!value_a && !value_b) {
         value_a = '0';
         value_b = '0';
@@ -766,10 +766,10 @@ Blockly.Python['operators_equality'] = function(block) {
 };
 
 // Python code generator for Operators less than block
-Blockly.Python['operators_less_than'] = function(block) {
-    var order = Blockly.Python.ORDER_RELATIONAL;
-    var value_a = Blockly.Python.valueToCode(block, 'A', order);
-    var value_b = Blockly.Python.valueToCode(block, 'B', order);
+pythonGenerator.forBlock['operators_less_than'] = function(block) {
+    var order = pythonGenerator.ORDER_RELATIONAL;
+    var value_a = pythonGenerator.valueToCode(block, 'A', order);
+    var value_b = pythonGenerator.valueToCode(block, 'B', order);
     if (!value_a && !value_b) {
         value_a = '0';
         value_b = '0';
@@ -779,10 +779,10 @@ Blockly.Python['operators_less_than'] = function(block) {
 };
 
 // Python code generator for Operators greater than block
-Blockly.Python['operators_greater_than'] = function(block) {
-    var order = Blockly.Python.ORDER_RELATIONAL;
-    var value_a = Blockly.Python.valueToCode(block, 'A', order);
-    var value_b = Blockly.Python.valueToCode(block, 'B', order);
+pythonGenerator.forBlock['operators_greater_than'] = function(block) {
+    var order = pythonGenerator.ORDER_RELATIONAL;
+    var value_a = pythonGenerator.valueToCode(block, 'A', order);
+    var value_b = pythonGenerator.valueToCode(block, 'B', order);
     if (!value_a && !value_b) {
         value_a = '0';
         value_b = '0';
@@ -792,19 +792,19 @@ Blockly.Python['operators_greater_than'] = function(block) {
 };
 
 // Python code generator for Operators single operand block
-Blockly.Python['operators_single'] = function(block) {
+pythonGenerator.forBlock['operators_single'] = function(block) {
     // Math operators with single operand.
     var operator = block.getFieldValue('OP');
     var code;
     var arg;
 
-    Blockly.Python.definitions_['import_math'] = 'import math';
+    pythonGenerator.definitions_['import_math'] = 'import math';
     if (operator == 'SIN' || operator == 'COS' || operator == 'TAN') {
-    arg = Blockly.Python.valueToCode(block, 'NUM',
-        Blockly.Python.ORDER_MULTIPLICATIVE) || '0';
+    arg = pythonGenerator.valueToCode(block, 'NUM',
+        pythonGenerator.ORDER_MULTIPLICATIVE) || '0';
     } else {
-    arg = Blockly.Python.valueToCode(block, 'NUM',
-        Blockly.Python.ORDER_NONE) || '0';
+    arg = pythonGenerator.valueToCode(block, 'NUM',
+        pythonGenerator.ORDER_NONE) || '0';
     }
 
     // First, handle cases which generate values that don't need parentheses
@@ -845,7 +845,7 @@ Blockly.Python['operators_single'] = function(block) {
         break;
     }
     if (code) {
-    return [code, Blockly.Python.ORDER_FUNCTION_CALL];
+    return [code, pythonGenerator.ORDER_FUNCTION_CALL];
     }
     // Second, handle cases which generate values that may need parentheses
     // wrapping the code.
@@ -862,47 +862,47 @@ Blockly.Python['operators_single'] = function(block) {
     default:
         throw Error('Unknown math operator: ' + operator);
     }
-    return [code, Blockly.Python.ORDER_MULTIPLICATIVE];
+    return [code, pythonGenerator.ORDER_MULTIPLICATIVE];
 };
 
 // Python code generator for Operators logical NOT block
-Blockly.Python['operators_not'] = function(block) {
-    var value_argument = Blockly.Python.valueToCode(block, 'argument', Blockly.Python.ORDER_LOGICAL_NOT) || 'True';
+pythonGenerator.forBlock['operators_not'] = function(block) {
+    var value_argument = pythonGenerator.valueToCode(block, 'argument', pythonGenerator.ORDER_LOGICAL_NOT) || 'True';
     var code = 'not ' + value_argument;
-    return [code, Blockly.Python.ORDER_LOGICAL_NOT];
+    return [code, pythonGenerator.ORDER_LOGICAL_NOT];
 };
 
 // Python code generator for Operators pick random int block
-Blockly.Python['operators_random_int'] = function(block) {
-    Blockly.Python.definitions_['import_random'] = 'import random';
-    var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_NONE) || '0';
-    var value_b = Blockly.Python.valueToCode(block, 'b', Blockly.Python.ORDER_NONE) || '0';
+pythonGenerator.forBlock['operators_random_int'] = function(block) {
+    pythonGenerator.definitions_['import_random'] = 'import random';
+    var value_a = pythonGenerator.valueToCode(block, 'a', pythonGenerator.ORDER_NONE) || '0';
+    var value_b = pythonGenerator.valueToCode(block, 'b', pythonGenerator.ORDER_NONE) || '0';
     var code = 'random.randint(' + value_a + ', ' + value_b + ')';
-    return [code, Blockly.Python.ORDER_FUNCTION_CALL];
+    return [code, pythonGenerator.ORDER_FUNCTION_CALL];
 };
 
 // Python code generator for Controls repeat until block
-Blockly.Python['controls_repeat_until'] = function(block) {
-    var value_condition = Blockly.Python.valueToCode(block, 'condition', Blockly.Python.ORDER_ATOMIC) || 'False';
-    var statements_body = Blockly.Python.statementToCode(block, 'body') || '  pass';
+pythonGenerator.forBlock['controls_repeat_until'] = function(block) {
+    var value_condition = pythonGenerator.valueToCode(block, 'condition', pythonGenerator.ORDER_ATOMIC) || 'False';
+    var statements_body = pythonGenerator.statementToCode(block, 'body') || '  pass';
     var code = 'while not ' + value_condition + ':\n' + statements_body + '\n';
     return code;
 };
 
 // Python code generator for Controls repeat block
-Blockly.Python['controls_repeat_num_times'] = function(block) {
-    var value_num = Blockly.Python.valueToCode(block, 'num', Blockly.Python.ORDER_ATOMIC) || '0';
-    var statements_body = Blockly.Python.statementToCode(block, 'body') || '  pass';
+pythonGenerator.forBlock['controls_repeat_num_times'] = function(block) {
+    var value_num = pythonGenerator.valueToCode(block, 'num', pythonGenerator.ORDER_ATOMIC) || '0';
+    var statements_body = pythonGenerator.statementToCode(block, 'body') || '  pass';
 
     var code = 'for count in range(' + value_num + '):\n' + statements_body + '\n';
     return code;
 };
 
 // Python code generator for Controls, if, then, else block
-Blockly.Python['controls_if_then_else'] = function(block) {
-    var value_condition = Blockly.Python.valueToCode(block, 'condition', Blockly.Python.ORDER_ATOMIC) || "False";
-    var statements_body_1 = Blockly.Python.statementToCode(block, 'body_1');
-    var statements_body_2 = Blockly.Python.statementToCode(block, 'body_2');
+pythonGenerator.forBlock['controls_if_then_else'] = function(block) {
+    var value_condition = pythonGenerator.valueToCode(block, 'condition', pythonGenerator.ORDER_ATOMIC) || "False";
+    var statements_body_1 = pythonGenerator.statementToCode(block, 'body_1');
+    var statements_body_2 = pythonGenerator.statementToCode(block, 'body_2');
 
     if (statements_body_1 === "") {
     statements_body_1 = '  pass\n'; // 2 spaces for indentation in Python
@@ -916,9 +916,9 @@ Blockly.Python['controls_if_then_else'] = function(block) {
 };
 
 // Python code generator for Controls if, then block
-Blockly.Python['controls_if_then'] = function(block) {
-    var value_condition = Blockly.Python.valueToCode(block, 'condition', Blockly.Python.ORDER_ATOMIC) || "False";
-    var statements_body = Blockly.Python.statementToCode(block, 'body');
+pythonGenerator.forBlock['controls_if_then'] = function(block) {
+    var value_condition = pythonGenerator.valueToCode(block, 'condition', pythonGenerator.ORDER_ATOMIC) || "False";
+    var statements_body = pythonGenerator.statementToCode(block, 'body');
 
     if (statements_body === "") {
     statements_body = '  pass\n';
@@ -929,49 +929,49 @@ Blockly.Python['controls_if_then'] = function(block) {
 };
 
 // Python code generator for Looks say block
-Blockly.Python['looks_say'] = function(block) {
-    var value_value = Blockly.Python.valueToCode(block, 'value', Blockly.Python.ORDER_ATOMIC) || '\'\'';
+pythonGenerator.forBlock['looks_say'] = function(block) {
+    var value_value = pythonGenerator.valueToCode(block, 'value', pythonGenerator.ORDER_ATOMIC) || '\'\'';
     var code = 'print(' + value_value + ')\n';
     return code;
 };
 
 
 // Python code generator for Operators round up block
-Blockly.Python['operators_round'] = function(block) {
-    var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC) || '0';
+pythonGenerator.forBlock['operators_round'] = function(block) {
+    var value_a = pythonGenerator.valueToCode(block, 'a', pythonGenerator.ORDER_ATOMIC) || '0';
     var code = 'round(' + value_a + ')';
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, pythonGenerator.ORDER_NONE];
 };
 
 
 // Python code generator for Operators logical OR block
-Blockly.Python['operators_or'] = function(block) {
-    var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC) || 'False';
-    var value_b = Blockly.Python.valueToCode(block, 'b', Blockly.Python.ORDER_ATOMIC) || 'False';
+pythonGenerator.forBlock['operators_or'] = function(block) {
+    var value_a = pythonGenerator.valueToCode(block, 'a', pythonGenerator.ORDER_ATOMIC) || 'False';
+    var value_b = pythonGenerator.valueToCode(block, 'b', pythonGenerator.ORDER_ATOMIC) || 'False';
     var code = value_a + ' or ' + value_b;
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, pythonGenerator.ORDER_NONE];
 };
 
 
 // Python code generator for Operators logical AND block
-Blockly.Python['operators_and'] = function(block) {
-    var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC) || 'False';
-    var value_b = Blockly.Python.valueToCode(block, 'b', Blockly.Python.ORDER_ATOMIC) || 'False';
+pythonGenerator.forBlock['operators_and'] = function(block) {
+    var value_a = pythonGenerator.valueToCode(block, 'a', pythonGenerator.ORDER_ATOMIC) || 'False';
+    var value_b = pythonGenerator.valueToCode(block, 'b', pythonGenerator.ORDER_ATOMIC) || 'False';
     var code = value_a + ' and ' + value_b;
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, pythonGenerator.ORDER_NONE];
 };
 
 // Python code generator for Controls stop block
-Blockly.Python['controls_stop'] = function(block) {
+pythonGenerator.forBlock['controls_stop'] = function(block) {
     var code = 'break\n';
     return code;
 };
 
 // Python code generator for Sensing ask and wait number block
-Blockly.Python['sensing_ask_and_wait_number'] = function(block) {
-    var functionName = Blockly.Python.provideFunction_(
+pythonGenerator.forBlock['sensing_ask_and_wait_number'] = function(block) {
+    var functionName = pythonGenerator.provideFunction_(
         'text_prompt',
-        ['def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '(msg):',
+        ['def ' + pythonGenerator.FUNCTION_NAME_PLACEHOLDER_ + '(msg):',
             '  try:',
             '    user_input = raw_input(msg)',
             '  except NameError:',
@@ -983,51 +983,51 @@ Blockly.Python['sensing_ask_and_wait_number'] = function(block) {
             '      return int(user_input)']);
     if (block.getField('question')) {
         // Internal message.
-        var msg = Blockly.Python.quote_(block.getFieldValue('question'));
+        var msg = pythonGenerator.quote_(block.getFieldValue('question'));
     } else {
         // External message.
-        var msg = Blockly.Python.valueToCode(block, 'question', Blockly.Python.ORDER_NONE) || '\'\'';
+        var msg = pythonGenerator.valueToCode(block, 'question', pythonGenerator.ORDER_NONE) || '\'\'';
     }
     msg = '""' // Replaces user input parameters to be blank so it matches the expected output
     var code = functionName + '(' + msg + ')';
-    return [code, Blockly.Python.ORDER_FUNCTION_CALL];
+    return [code, pythonGenerator.ORDER_FUNCTION_CALL];
 };
 
 // Python code generator for Sensing ask and wait text block
-Blockly.Python['sensing_ask_and_wait_text'] = function(block) {
-    var functionName = Blockly.Python.provideFunction_(
+pythonGenerator.forBlock['sensing_ask_and_wait_text'] = function(block) {
+    var functionName = pythonGenerator.provideFunction_(
         'text_prompt',
-        ['def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '(msg):',
+        ['def ' + pythonGenerator.FUNCTION_NAME_PLACEHOLDER_ + '(msg):',
             '  try:',
             '    return raw_input(msg)',
             '  except NameError:',
             '    return input(msg)']);
         if (block.getField('question')) {
             // Internal message.
-            var msg = Blockly.Python.quote_(block.getFieldValue('question'));
+            var msg = pythonGenerator.quote_(block.getFieldValue('question'));
         } else {
             // External message.
-            var msg = Blockly.Python.valueToCode(block, 'question', Blockly.Python.ORDER_NONE) || '\'\'';
+            var msg = pythonGenerator.valueToCode(block, 'question', pythonGenerator.ORDER_NONE) || '\'\'';
         }
         msg = '""' // Replaces user input parameters to be blank so it matches the expected output
         var code = functionName + '(' + msg + ')';
 
-    return [code, Blockly.Python.ORDER_FUNCTION_CALL];
+    return [code, pythonGenerator.ORDER_FUNCTION_CALL];
   };
 
 // Python code generator for Operators <string> contains <substring> block
-Blockly.Python['operators_string_contains'] = function(block) {
-    var value_word = Blockly.Python.valueToCode(block, 'word', Blockly.Python.ORDER_ATOMIC) || '\'\'';
-    var value_subword = Blockly.Python.valueToCode(block, 'subword', Blockly.Python.ORDER_ATOMIC) || '\'\'';
+pythonGenerator.forBlock['operators_string_contains'] = function(block) {
+    var value_word = pythonGenerator.valueToCode(block, 'word', pythonGenerator.ORDER_ATOMIC) || '\'\'';
+    var value_subword = pythonGenerator.valueToCode(block, 'subword', pythonGenerator.ORDER_ATOMIC) || '\'\'';
     var code = value_subword + " in " + value_word;
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, pythonGenerator.ORDER_NONE];
 };
 
 
 // Python code generator for Operators letter <num> of <string> block
-Blockly.Python['operators_letter_of'] = function(block) {
-    var value_index = Blockly.Python.valueToCode(block, 'index', Blockly.Python.ORDER_ATOMIC);
-    var value_word = Blockly.Python.valueToCode(block, 'word', Blockly.Python.ORDER_ATOMIC) || '\'\'';
+pythonGenerator.forBlock['operators_letter_of'] = function(block) {
+    var value_index = pythonGenerator.valueToCode(block, 'index', pythonGenerator.ORDER_ATOMIC);
+    var value_word = pythonGenerator.valueToCode(block, 'word', pythonGenerator.ORDER_ATOMIC) || '\'\'';
     value_index = parseInt(value_index)
     if (value_index) {
         // subtract 1 since index starts from 0 in Python
@@ -1037,63 +1037,63 @@ Blockly.Python['operators_letter_of'] = function(block) {
         value_index = 0
     }
     var code = value_word + "[" + value_index + "]";
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, pythonGenerator.ORDER_NONE];
 };
 
 // Python code generator for Operators join/concatenate string block
-Blockly.Python['operators_join_string'] = function(block) {
-    var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC) || '\'\'';
-    var value_b = Blockly.Python.valueToCode(block, 'b', Blockly.Python.ORDER_ATOMIC) || '\'\'';
+pythonGenerator.forBlock['operators_join_string'] = function(block) {
+    var value_a = pythonGenerator.valueToCode(block, 'a', pythonGenerator.ORDER_ATOMIC) || '\'\'';
+    var value_b = pythonGenerator.valueToCode(block, 'b', pythonGenerator.ORDER_ATOMIC) || '\'\'';
     var code = 'str(' + value_a + ') + str(' + value_b + ')';
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, pythonGenerator.ORDER_NONE];
 };
 
 // Python code generator for Operators modulo block
-Blockly.Python['operators_modulo'] = function(block) {
-    var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC);
-    var value_n = Blockly.Python.valueToCode(block, 'n', Blockly.Python.ORDER_ATOMIC);
+pythonGenerator.forBlock['operators_modulo'] = function(block) {
+    var value_a = pythonGenerator.valueToCode(block, 'a', pythonGenerator.ORDER_ATOMIC);
+    var value_n = pythonGenerator.valueToCode(block, 'n', pythonGenerator.ORDER_ATOMIC);
     if (!value_a && !value_n) {
         value_a = '0';
         value_n = '1';
     }
     var code = value_a + ' % ' + value_n;
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, pythonGenerator.ORDER_NONE];
 };
 
 // Python code generator for Operators multiply block
-Blockly.Python['operators_multiply'] = function(block) {
-    var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC) || '0';
-    var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC) || '0';
+pythonGenerator.forBlock['operators_multiply'] = function(block) {
+    var value_x = pythonGenerator.valueToCode(block, 'x', pythonGenerator.ORDER_ATOMIC) || '0';
+    var value_y = pythonGenerator.valueToCode(block, 'y', pythonGenerator.ORDER_ATOMIC) || '0';
     var code = value_x + ' * ' + value_y;
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, pythonGenerator.ORDER_NONE];
 };
 
 // Python code generator for Operators divide block
-Blockly.Python['operators_divide'] = function(block) {
-    var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC) || '0';
-    var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC) || '0';
-    var functionName = Blockly.Python.provideFunction_(
+pythonGenerator.forBlock['operators_divide'] = function(block) {
+    var value_x = pythonGenerator.valueToCode(block, 'x', pythonGenerator.ORDER_ATOMIC) || '0';
+    var value_y = pythonGenerator.valueToCode(block, 'y', pythonGenerator.ORDER_ATOMIC) || '0';
+    var functionName = pythonGenerator.provideFunction_(
         'divideNumber',
-        ['def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '(x, y):',
+        ['def ' + pythonGenerator.FUNCTION_NAME_PLACEHOLDER_ + '(x, y):',
             '  return int(x/y) if (x/y).is_integer() else (x/y)']);
     var code = functionName + '(' + value_x + ', ' + value_y + ')';
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, pythonGenerator.ORDER_NONE];
 };
 
 // Python code generator for Operators add block
-Blockly.Python['operators_add'] = function(block) {
-    var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC) || '0';
-    var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC) || '0';
+pythonGenerator.forBlock['operators_add'] = function(block) {
+    var value_x = pythonGenerator.valueToCode(block, 'x', pythonGenerator.ORDER_ATOMIC) || '0';
+    var value_y = pythonGenerator.valueToCode(block, 'y', pythonGenerator.ORDER_ATOMIC) || '0';
     var code = value_x + ' + ' + value_y;
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, pythonGenerator.ORDER_NONE];
 };
 
 // Python code generator for Operators subtract blocks
-Blockly.Python['operators_subtract'] = function(block) {
-    var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC) || '0';
-    var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC) || '0';
+pythonGenerator.forBlock['operators_subtract'] = function(block) {
+    var value_x = pythonGenerator.valueToCode(block, 'x', pythonGenerator.ORDER_ATOMIC) || '0';
+    var value_y = pythonGenerator.valueToCode(block, 'y', pythonGenerator.ORDER_ATOMIC) || '0';
     var code = value_x + ' - ' + value_y;
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, pythonGenerator.ORDER_NONE];
 };
 
 }

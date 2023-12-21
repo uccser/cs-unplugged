@@ -9,8 +9,8 @@ require("codemirror/mode/python/python.js");
 
 // Blockly editor imports
 const Blockly = require('blockly');
+const { pythonGenerator } = require('blockly/python');
 const setupBlockly = require("./custom-blockly-blocks.js");
-require('blockly/python');
 
 
 // Has to be global as other functions use these variables
@@ -110,7 +110,7 @@ if (programming_lang == "python") {
     });
 
     // Add the custom Scratch-like Blockly blocks
-    setupBlockly(Blockly);
+    setupBlockly(Blockly, pythonGenerator);
 
     // TODO: Implement continuous toolbox when using ES6 syntax.
     // https://google.github.io/blockly-samples/plugins/continuous-toolbox/README.html
@@ -150,7 +150,7 @@ if (programming_lang == "python") {
     if (previous_block_based_submission) {
       // Decodes the previous_block_based_submission as it contains unwanted HTML entities
       // The decoded string is then converted into XML
-      var xml_node = Blockly.Xml.textToDom(utils.decodeHTMLEntities(previous_block_based_submission));
+      var xml_node = Blockly.utils.xml.textToDom(utils.decodeHTMLEntities(previous_block_based_submission));
 
       // Outputs the XML to the workspace
       Blockly.Xml.domToWorkspace(xml_node, workspace);
@@ -173,7 +173,7 @@ function sendCodeToJobe() {
     code = myCodeMirror.getValue().replace(/(input\("[^"]+"\)|input\('[^']+'\)|input\([^)]+\))/mg, 'input()');
   } else {
     // Uses the Python code generators to convert blocks into Python code
-    code = Blockly['Python'].workspaceToCode(workspace);
+    code = pythonGenerator.workspaceToCode(workspace);
   }
 
 
