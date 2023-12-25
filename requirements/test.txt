@@ -11,4 +11,4 @@ coverage==7.3.4
 django-test-without-migrations==0.6
 
 # PDF file checking
-pypdf==3.17.3
+pypdf==3.17.4
