@@ -3,7 +3,7 @@
 from PIL import Image, ImageDraw, ImageFont
 from math import pi, sin, cos
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from resources.utils.resource_parameters import EnumResourceParameter
 
 MODULO_NUMBER_VALUES = {

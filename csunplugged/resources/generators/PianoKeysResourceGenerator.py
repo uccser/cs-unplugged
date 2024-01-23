@@ -3,7 +3,7 @@
 from PIL import Image, ImageDraw
 from utils.str_to_bool import str_to_bool
 from utils.TextBoxDrawer import TextBoxDrawer, TextBox
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from resources.utils.resource_parameters import EnumResourceParameter
 

@@ -5,7 +5,7 @@ from math import ceil
 from yattag import Doc
 import string
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from resources.utils.resource_parameters import EnumResourceParameter
 
 METHOD_VALUES = {

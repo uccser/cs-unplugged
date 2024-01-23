@@ -3,7 +3,7 @@
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from resources.utils.resource_parameters import EnumResourceParameter
 
 PREFILLED_VALUES_VALUES = {

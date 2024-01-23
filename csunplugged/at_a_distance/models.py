@@ -4,7 +4,7 @@ from os.path import join
 from django.urls import reverse
 from django.db import models
 from django.utils.translation import get_language
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from utils.TranslatableModel import TranslatableModel
 from at_a_distance.settings import AT_A_DISTANCE_SLIDES_TEMPLATE_BASE_PATH
 
