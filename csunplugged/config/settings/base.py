@@ -14,6 +14,10 @@ import os.path
 import logging.config
 import django.conf.locale
 
+# django-bootstrap-breadcrumbs compatibility: smart_text changed to smart_str.
+from django.utils.encoding import smart_str
+django.utils.encoding.smart_text = smart_str
+
 # cs-unplugged/csunplugged/config/settings/base.py - 3 = csunplugged/
 ROOT_DIR = environ.Path(__file__) - 3
 
