@@ -60,5 +60,6 @@ class ProgrammingChallengeModelTest(BaseTestWithDB):
             ProgrammingChallenge.objects.get(slug="challenge-1").related_test_cases(),
             [
                 f"<TestCase: TestCase object ({test_case.pk})>",
-            ]
+            ],
+            transform=repr,
         )

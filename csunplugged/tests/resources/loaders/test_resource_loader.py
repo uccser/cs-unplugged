@@ -110,6 +110,7 @@ class ResourceLoaderTest(BaseTestWithDB):
                 "<Resource: Resource 2>",
             ],
             ordered=False,
+            transform=repr,
         )
 
     def test_resource_loader_translation(self):
@@ -136,6 +137,7 @@ class ResourceLoaderTest(BaseTestWithDB):
                 "<Resource: Resource 2>",
             ],
             ordered=False,
+            transform=repr,
         )
 
         config_file = "insert-middle.yaml"
@@ -149,6 +151,7 @@ class ResourceLoaderTest(BaseTestWithDB):
                 "<Resource: Resource 2>",
             ],
             ordered=False,
+            transform=repr,
         )
 
     def test_resource_loader_delete_end(self):
@@ -162,6 +165,7 @@ class ResourceLoaderTest(BaseTestWithDB):
                 "<Resource: Resource 2>",
             ],
             ordered=False,
+            transform=repr,
         )
 
         config_file = "delete-end.yaml"
@@ -173,4 +177,5 @@ class ResourceLoaderTest(BaseTestWithDB):
                 "<Resource: Resource 1>",
             ],
             ordered=False,
+            transform=repr,
         )

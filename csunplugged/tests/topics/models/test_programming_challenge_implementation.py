@@ -74,5 +74,6 @@ class ProgrammingChallengeImplementationModelTest(BaseTestWithDB):
                 "<ProgrammingChallengeImplementation: Language 2 for challenge 1.1, Challenge 1.1: 1>",
                 "<ProgrammingChallengeImplementation: Language 3 for challenge 1.1, Challenge 1.1: 1>",
                 "<ProgrammingChallengeImplementation: Language 4 for challenge 1.1, Challenge 1.1: 1>",
-            ]
+            ],
+            transform=repr,
         )

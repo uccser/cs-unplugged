@@ -31,7 +31,8 @@ class GlossaryViewTest(BaseTestWithDB):
         self.assertEqual(len(response.context["glossary_terms"]), 1)
         self.assertQuerysetEqual(
             response.context["glossary_terms"],
-            ["<GlossaryTerm: Algorithms>"]
+            ["<GlossaryTerm: Algorithms>"],
+            transform=repr,
         )
 
     def test_glossary_with_two_definitions(self):
@@ -56,7 +57,11 @@ class GlossaryViewTest(BaseTestWithDB):
         self.assertEqual(len(response.context["glossary_terms"]), 2)
         self.assertQuerysetEqual(
             response.context["glossary_terms"],
-            ["<GlossaryTerm: Algorithms>", "<GlossaryTerm: Pixel>"]
+            [
+                "<GlossaryTerm: Algorithms>",
+                "<GlossaryTerm: Pixel>"
+            ],
+            transform=repr,
         )
 
     def test_glossary_order(self):
@@ -92,7 +97,8 @@ class GlossaryViewTest(BaseTestWithDB):
                 "<GlossaryTerm: A>",
                 "<GlossaryTerm: B>",
                 "<GlossaryTerm: C>"
-            ]
+            ],
+            transform=repr,
         )
 
     def test_glossary_json_with_one_definition(self):

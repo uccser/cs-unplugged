@@ -82,7 +82,8 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
             [
                 "<CurriculumArea: Area 1>",
                 "<CurriculumArea: Area 2>",
-            ]
+            ],
+            transform=repr,
         )
 
     def test_curriculum_integration_view_prerequisite_lessons_context(self):
@@ -118,5 +119,6 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
             [
                 "<Lesson: Lesson 1 (5 to 7)>",
                 "<Lesson: Lesson 2 (5 to 7)>",
-            ]
+            ],
+            transform=repr,
         )

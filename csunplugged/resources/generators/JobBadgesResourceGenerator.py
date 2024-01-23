@@ -2,7 +2,7 @@
 
 from PIL import Image, ImageDraw
 from utils.TextBoxDrawer import TextBox, TextBoxDrawer
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from resources.utils.coords import calculate_box_vertices
 

@@ -1,7 +1,7 @@
 """Class for Binary to Alphabet resource generator."""
 
 from yattag import Doc
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.utils.translation import get_language
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from resources.utils.resource_parameters import EnumResourceParameter

@@ -2,7 +2,7 @@
 
 from PIL import Image, ImageDraw
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from resources.utils.resource_parameters import EnumResourceParameter
 
 CARDS_COLUMNS = 4

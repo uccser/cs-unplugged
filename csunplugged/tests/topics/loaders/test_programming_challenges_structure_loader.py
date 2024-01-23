@@ -25,11 +25,13 @@ class ProgrammingChallengesStructureLoaderTest(BaseTestWithDB):
         pel_objects = ProgrammingChallengeLanguage.objects.all()
         self.assertQuerysetEqual(
             ped_objects,
-            ["<ProgrammingChallengeDifficulty: Level 1>"]
+            ["<ProgrammingChallengeDifficulty: Level 1>"],
+            transform=repr,
         )
         self.assertQuerysetEqual(
             pel_objects,
-            ["<ProgrammingChallengeLanguage: Language 1>"]
+            ["<ProgrammingChallengeLanguage: Language 1>"],
+            transform=repr,
         )
 
     def test_missing_languages(self):
@@ -148,12 +150,14 @@ class ProgrammingChallengesStructureLoaderTest(BaseTestWithDB):
         self.assertQuerysetEqual(
             ped_objects,
             ["<ProgrammingChallengeDifficulty: Level 1>", "<ProgrammingChallengeDifficulty: Level 2>"],
-            ordered=False
+            ordered=False,
+            transform=repr,
         )
         self.assertQuerysetEqual(
             pel_objects,
             ["<ProgrammingChallengeLanguage: Language 1>", "<ProgrammingChallengeLanguage: Language 2>"],
-            ordered=False
+            ordered=False,
+            transform=repr,
         )
 
     def test_remove_start(self):
@@ -170,12 +174,14 @@ class ProgrammingChallengesStructureLoaderTest(BaseTestWithDB):
         self.assertQuerysetEqual(
             ped_objects,
             ["<ProgrammingChallengeDifficulty: Level 1>"],
-            ordered=False
+            ordered=False,
+            transform=repr,
         )
         self.assertQuerysetEqual(
             pel_objects,
             ["<ProgrammingChallengeLanguage: Language 1>"],
-            ordered=False
+            ordered=False,
+            transform=repr,
         )
 
     def test_duplicate_language_numbers(self):

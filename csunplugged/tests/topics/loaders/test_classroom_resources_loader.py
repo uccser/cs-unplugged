@@ -76,6 +76,7 @@ class ClassroomResourcesLoaderTest(BaseTestWithDB):
                 '<ClassroomResource: Description of resource 1>',
                 '<ClassroomResource: Description of resource 2>'
             ],
+            transform=repr,
         )
 
         self.assertEqual(2, len(cr_objects))
@@ -95,6 +96,7 @@ class ClassroomResourcesLoaderTest(BaseTestWithDB):
                 '<ClassroomResource: Description of resource 3>',
                 '<ClassroomResource: Description of resource 2>'
             ],
+            transform=repr,
         )
 
     def test_delete_end(self):
@@ -110,6 +112,7 @@ class ClassroomResourcesLoaderTest(BaseTestWithDB):
                 '<ClassroomResource: Description of resource 1>',
                 '<ClassroomResource: Description of resource 2>'
             ],
+            transform=repr,
         )
 
         self.assertEqual(2, len(cr_objects))
@@ -127,4 +130,5 @@ class ClassroomResourcesLoaderTest(BaseTestWithDB):
             [
                 '<ClassroomResource: Description of resource 1>',
             ],
+            transform=repr,
         )

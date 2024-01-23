@@ -29,7 +29,8 @@ class IndexViewTest(BaseTestWithDB):
         self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertQuerysetEqual(
             response.context["topics"],
-            ["<Topic: Topic 1>"]
+            ["<Topic: Topic 1>"],
+            transform=repr
         )
 
     def test_index_with_multiple_topics(self):
@@ -51,7 +52,8 @@ class IndexViewTest(BaseTestWithDB):
         self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertQuerysetEqual(
             response.context["topics"],
-            ["<Topic: Topic 1>", "<Topic: Topic 2>"]
+            ["<Topic: Topic 1>", "<Topic: Topic 2>"],
+            transform=repr
         )
 
     def test_index_topic_single_age_group_context(self):

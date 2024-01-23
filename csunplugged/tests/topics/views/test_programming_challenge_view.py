@@ -126,6 +126,7 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
                 "<Lesson: Lesson 2 (5 to 7)>",
             ],
             ordered=False,
+            transform=repr,
         )
 
     def test_programming_challenge_view_learning_outcomes_context(self):
@@ -142,7 +143,8 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         response = self.client.get(url)
         self.assertQuerysetEqual(
             response.context["learning_outcomes"],
-            ["<LearningOutcome: Outcome 1>"]
+            ["<LearningOutcome: Outcome 1>"],
+            transform=repr,
         )
 
     def test_programming_challenge_view_learning_outcomes_context_order(self):
@@ -167,7 +169,8 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
                 "<LearningOutcome: Outcome 1>",
                 "<LearningOutcome: Outcome 2>",
                 "<LearningOutcome: Outcome 3>",
-            ]
+            ],
+            transform=repr,
         )
 
     # Created to avoid https://github.com/uccser/cs-unplugged/issues/827
@@ -188,7 +191,8 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         response = self.client.get(url)
         self.assertQuerysetEqual(
             response.context["learning_outcomes"],
-            ["<LearningOutcome: Outcome 1>"]
+            ["<LearningOutcome: Outcome 1>"],
+            transform=repr,
         )
 
     def test_programming_challenge_view_implementations_context(self):
@@ -209,7 +213,10 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         response = self.client.get(url)
         self.assertQuerysetEqual(
             response.context["implementations"],
-            ["<ProgrammingChallengeImplementation: Language 1 for challenge 1.1, Challenge 1.1: 1>"]
+            [
+                "<ProgrammingChallengeImplementation: Language 1 for challenge 1.1, Challenge 1.1: 1>"
+            ],
+            transform=repr,
         )
 
     def test_programming_challenge_view_implementations_context_order(self):
@@ -246,5 +253,6 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
                 "<ProgrammingChallengeImplementation: Language 1 for challenge 1.1, Challenge 1.1: 1>",
                 "<ProgrammingChallengeImplementation: Language 2 for challenge 1.1, Challenge 1.1: 1>",
                 "<ProgrammingChallengeImplementation: Language 3 for challenge 1.1, Challenge 1.1: 1>",
-            ]
+            ],
+            transform=repr,
         )
