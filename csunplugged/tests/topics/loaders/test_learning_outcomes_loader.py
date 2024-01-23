@@ -27,7 +27,8 @@ class LearningOutcomesLoaderTest(BaseTestWithDB):
         lo_objects = LearningOutcome.objects.all()
         self.assertQuerysetEqual(
             lo_objects,
-            ["<LearningOutcome: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.>"]
+            ["<LearningOutcome: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.>"],
+            transform=repr,
         )
 
     def test_missing_configuration_file(self):
@@ -74,7 +75,8 @@ class LearningOutcomesLoaderTest(BaseTestWithDB):
             [
                 "<CurriculumArea: Area 1>",
                 "<CurriculumArea: Area 2>",
-            ]
+            ],
+            transform=repr,
         )
 
     def test_curriculum_areas_undefined(self):
@@ -132,7 +134,8 @@ class LearningOutcomesLoaderTest(BaseTestWithDB):
         lo_objects = LearningOutcome.objects.all()
         self.assertQuerysetEqual(
             lo_objects,
-            ["<LearningOutcome: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.>"]
+            ["<LearningOutcome: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.>"],
+            transform=repr,
         )
 
         config_file = "insert-start.yaml"
@@ -144,7 +147,8 @@ class LearningOutcomesLoaderTest(BaseTestWithDB):
             [
                 "<LearningOutcome: Inserted outcome.>",
                 "<LearningOutcome: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.>",
-            ]
+            ],
+            transform=repr,
         )
 
     def test_delete_start(self):
@@ -158,7 +162,8 @@ class LearningOutcomesLoaderTest(BaseTestWithDB):
             [
                 "<LearningOutcome: Inserted outcome.>",
                 "<LearningOutcome: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.>",
-            ]
+            ],
+            transform=repr,
         )
 
         config_file = "basic-config.yaml"
@@ -167,5 +172,6 @@ class LearningOutcomesLoaderTest(BaseTestWithDB):
         lo_objects = LearningOutcome.objects.all()
         self.assertQuerysetEqual(
             lo_objects,
-            ["<LearningOutcome: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.>"]
+            ["<LearningOutcome: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.>"],
+            transform=repr,
         )

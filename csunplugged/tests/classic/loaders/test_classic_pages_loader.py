@@ -24,7 +24,8 @@ class ClassicPageLoaderTest(BaseTestWithDB):
         self.assertEqual(1, len(pages))
         self.assertQuerysetEqual(
             pages,
-            ["<ClassicPage: Binary numbers>"]
+            ["<ClassicPage: Binary numbers>"],
+            transform=repr
         )
 
     def test_classic_page_loader_missing_configuration_file(self):
@@ -81,6 +82,7 @@ class ClassicPageLoaderTest(BaseTestWithDB):
                 "<ClassicPage: Binary numbers>",
                 "<ClassicPage: CS Unplugged Book>",
             ],
+            transform=repr
         )
 
     def test_classic_page_loader_insert_middle(self):
@@ -101,6 +103,7 @@ class ClassicPageLoaderTest(BaseTestWithDB):
                 "<ClassicPage: Binary numbers>",
                 "<ClassicPage: CS Unplugged Book>",
             ],
+            transform=repr
         )
 
         # Now try adding an element in the middle of this collection
@@ -122,6 +125,7 @@ class ClassicPageLoaderTest(BaseTestWithDB):
                 "<ClassicPage: Binary numbers>",
                 "<ClassicPage: CS Unplugged Book>",
             ],
+            transform=repr
         )
 
     def test_classic_page_loader_remove_end(self):
@@ -142,6 +146,7 @@ class ClassicPageLoaderTest(BaseTestWithDB):
                 "<ClassicPage: Binary numbers>",
                 "<ClassicPage: CS Unplugged Book>",
             ],
+            transform=repr
         )
 
         # Remove from end of list
@@ -161,4 +166,5 @@ class ClassicPageLoaderTest(BaseTestWithDB):
                 "<ClassicPage: Artificial intelligence>",
                 "<ClassicPage: Binary numbers>",
             ],
+            transform=repr
         )

@@ -198,5 +198,6 @@ class ProgrammingChallengeListViewTest(BaseTestWithDB):
             response.context["programming_challenges"],
             [
                 "<ProgrammingChallenge: Challenge 1.1: 1>",
-            ]
+            ],
+            transform=repr,
         )

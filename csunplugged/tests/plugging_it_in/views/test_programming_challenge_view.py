@@ -182,7 +182,8 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         # Should only return the first challenge with the python language
         self.assertQuerysetEqual(
             response.context["programming_challenges"],
-            ["<ProgrammingChallenge: Challenge 1.1: 1>"]
+            ["<ProgrammingChallenge: Challenge 1.1: 1>"],
+            transform=repr,
         )
 
     def test_programming_challenge_view_programming_challenges_json_context(self):
@@ -249,7 +250,8 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
             response.context["test_cases"],
             [
                 f"<TestCase: TestCase object ({test_case.pk})>",
-            ]
+            ],
+            transform=repr,
         )
 
     def test_programming_challenge_view_test_cases_json_context(self):

@@ -28,7 +28,8 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
         pc_objects = ProgrammingChallenge.objects.all()
         self.assertQuerysetEqual(
             pc_objects,
-            ["<ProgrammingChallenge: Programming Challenge 1>"]
+            ["<ProgrammingChallenge: Programming Challenge 1>"],
+            transform=repr,
         )
 
     def test_missing_translation_is_listed_unavailable(self):
@@ -309,7 +310,8 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
             [
                 "<LearningOutcome: Outcome 1>",
                 "<LearningOutcome: Outcome 2>",
-            ]
+            ],
+            transform=repr,
         )
 
     def test_insert_start(self):
@@ -326,7 +328,8 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
             list(pc_objects),
             [
                 "<ProgrammingChallenge: Programming Challenge 1>",
-            ]
+            ],
+            transform=repr,
         )
 
         config_file = "multiple-challenges.yaml"
@@ -341,7 +344,8 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
                 "<ProgrammingChallenge: Translation English>",
                 "<ProgrammingChallenge: Programming Challenge 1>",
             ],
-            ordered=False
+            ordered=False,
+            transform=repr,
         )
 
     def test_remove_start(self):
@@ -360,7 +364,8 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
                 "<ProgrammingChallenge: Translation English>",
                 "<ProgrammingChallenge: Programming Challenge 1>",
             ],
-            ordered=False
+            ordered=False,
+            transform=repr,
         )
 
         config_file = "basic-config-1.yaml"
@@ -373,5 +378,6 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
             list(pc_objects),
             [
                 "<ProgrammingChallenge: Programming Challenge 1>",
-            ]
+            ],
+            transform=repr,
         )

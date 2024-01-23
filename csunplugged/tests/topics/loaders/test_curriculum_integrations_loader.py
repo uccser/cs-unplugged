@@ -38,7 +38,8 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
         ci_objects = CurriculumIntegration.objects.all()
         self.assertQuerysetEqual(
             ci_objects,
-            ["<CurriculumIntegration: English Heading>"]
+            ["<CurriculumIntegration: English Heading>"],
+            transform=repr,
         )
 
     def test_missing_data(self):
@@ -117,7 +118,8 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
         ci_objects = CurriculumIntegration.objects.all()
         self.assertQuerysetEqual(
             ci_objects,
-            ["<CurriculumIntegration: Integration 1>"]
+            ["<CurriculumIntegration: Integration 1>"],
+            transform=repr,
         )
         integration = CurriculumIntegration.objects.get(slug="integration-1")
         self.assertQuerysetEqual(
@@ -127,6 +129,7 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
                 "<Lesson: Lesson 2 (none to none)>",
             ],
             ordered=False,
+            transform=repr,
         )
         self.assertEqual(1, len(ci_objects))
 
@@ -141,7 +144,8 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
         ci_objects = CurriculumIntegration.objects.all()
         self.assertQuerysetEqual(
             ci_objects,
-            ["<CurriculumIntegration: English Heading>"]
+            ["<CurriculumIntegration: English Heading>"],
+            transform=repr,
         )
         integration = CurriculumIntegration.objects.get(slug="translation")
         self.assertQuerysetEqual(
@@ -151,6 +155,7 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
                 "<Lesson: Lesson 2 (none to none)>",
             ],
             ordered=False,
+            transform=repr,
         )
         self.assertEqual(1, len(ci_objects))
         ci = ci_objects[0]
@@ -170,12 +175,14 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
         ci_objects = CurriculumIntegration.objects.all()
         self.assertQuerysetEqual(
             ci_objects,
-            ["<CurriculumIntegration: Integration 1>"]
+            ["<CurriculumIntegration: Integration 1>"],
+            transform=repr,
         )
         integration = CurriculumIntegration.objects.get(slug="integration-1")
         self.assertQuerysetEqual(
             integration.prerequisite_lessons.all(),
             [],
+            transform=repr,
         )
 
     def test_prerequisite_lessons_invalid_lesson(self):
@@ -213,7 +220,8 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
             [
                 "<CurriculumIntegration: Integration 2>",
                 "<CurriculumIntegration: Integration 1>",
-            ]
+            ],
+            transform=repr,
         )
 
     def test_delete_start(self):
@@ -236,7 +244,8 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
             list(ci_objects),
             [
                 "<CurriculumIntegration: Integration 1>",
-            ]
+            ],
+            transform=repr,
         )
 
     def test_duplicate_numbers(self):

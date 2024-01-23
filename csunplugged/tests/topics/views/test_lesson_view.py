@@ -181,7 +181,8 @@ class LessonViewTest(BaseTestWithDB):
         response = self.client.get(url)
         self.assertQuerysetEqual(
             response.context["learning_outcomes"],
-            ["<LearningOutcome: Outcome 1>"]
+            ["<LearningOutcome: Outcome 1>"],
+            transform=repr,
         )
 
     def test_lesson_view_ages_context_learning_outcome_multiple(self):
@@ -211,7 +212,8 @@ class LessonViewTest(BaseTestWithDB):
                 "<LearningOutcome: Outcome 2>",
                 "<LearningOutcome: Outcome 3>",
             ],
-            ordered=False
+            ordered=False,
+            transform=repr,
         )
 
     # Created to avoid https://github.com/uccser/cs-unplugged/issues/827
@@ -236,7 +238,8 @@ class LessonViewTest(BaseTestWithDB):
         response = self.client.get(url)
         self.assertQuerysetEqual(
             response.context["learning_outcomes"],
-            ["<LearningOutcome: Outcome 1>"]
+            ["<LearningOutcome: Outcome 1>"],
+            transform=repr,
         )
 
     def test_lesson_view_ages_context_learning_outcome_none(self):
