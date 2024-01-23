@@ -327,5 +327,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "https://canterbury.ac.nz"
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.localhost",
+    "https://*.canterbury.ac.nz"
+]
+
 # Used by speaker notes for at a distance slides
 X_FRAME_OPTIONS = "SAMEORIGIN"
