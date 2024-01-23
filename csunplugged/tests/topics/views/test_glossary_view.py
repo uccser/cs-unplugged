@@ -58,7 +58,7 @@ class GlossaryViewTest(BaseTestWithDB):
         self.assertQuerysetEqual(
             response.context["glossary_terms"],
             [
-                "<GlossaryTerm: Algorithms>", 
+                "<GlossaryTerm: Algorithms>",
                 "<GlossaryTerm: Pixel>"
             ],
             transform=repr,
