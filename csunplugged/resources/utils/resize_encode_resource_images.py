@@ -55,7 +55,7 @@ def resize_encode_resource_image(image, max_pixel_height):
         ratio = max_pixel_height / height
         width *= ratio
         height *= ratio
-        image = image.resize((int(width), int(height)), Image.ANTIALIAS)
+        image = image.resize((int(width), int(height)), Image.LANCZOS)
     # Convert from Image object to base64 string
     image_buffer = BytesIO()
     image.save(image_buffer, format="PNG")
