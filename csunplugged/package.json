@@ -34,7 +34,7 @@
         "popper.js": "1.16.1",
         "postcss": "8.4.38",
         "postcss-flexbugs-fixes": "5.0.2",
-        "reveal.js": "5.0.5",
+        "reveal.js": "5.1.0",
         "sass": "1.74.1",
         "scratchblocks": "3.6.4",
         "vinyl-buffer": "1.0.1",
