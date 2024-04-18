@@ -23,6 +23,21 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+7.4.0
+==============================================================================
+
+**Release date:** 19 April 2024
+
+**Changelog:**
+
+- Fix helper commands documentation
+- Fix style checks failing
+- Update gulpfile from cjs to ejs file
+- Disable scroll view on small screens in slides
+- Django 4.2 compatibility changes
+- Dependency updates:
+    - Todo
+
 7.3.0
 ==============================================================================
 
@@ -50,10 +65,6 @@ All notable changes to this project will be documented in this file.
     - Update sphinx-rtd-theme from 1.1.0 to 1.1.1.
     - Update django-debug-toolbar from 3.7.0 to 3.8.1.
     - Update actions/setup-python from 4.3.0 to 4.3.1.
-
-
-
-
 
 7.2.1
 ==============================================================================
