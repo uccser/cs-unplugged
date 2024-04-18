@@ -35,8 +35,58 @@ All notable changes to this project will be documented in this file.
 - Update gulpfile from cjs to ejs file
 - Disable scroll view on small screens in slides
 - Django 4.2 compatibility changes
-- Dependency updates:
-    - Todo
+- Update Node image to latest LTS.
+- Python dependency changes:
+    - Update sphinx from 4.4.0 to 7.3.6
+    - Update sphinx-rtd-theme from 1.1.1 to 2.0.0
+    - Update django from 3.2.16 to 4.2.11
+    - Update django-environ from 0.9.0 to 0.11.2
+    - Update gunicorn from 20.1.0 to 22.0.0
+    - Update whitenoise from 6.2.0 to 6.6.0
+    - Update psycopg2 from 2.9.5 to 2.9.9
+    - Update Pillow from 9.3.0 to 9.5.0
+    - Update yattag from 1.14.0 to 1.15.2
+    - Update verto from 1.0.1 to 1.1.1
+    - Update PyYAML from 6.0 to 6.0.1
+    - Update tqdm from 4.64.1 to 4.66.2
+    - Update lxml from 4.9.2 to 5.2.1
+    - Update django-modeltranslation from 0.18.7 to 0.18.11
+    - Update uniseg from 0.7.2 to 0.8.0
+    - Update requests 2.28.1 to 2.31.0
+    - Update django-cors-headers from 3.13.0 to 4.3.1
+    - Update django-debug-toolbar from 3.8.1 to 4.3.0
+    - Update django-extensions from 3.2.1 to 3.2.3
+    - Update flake8 from 4.0.1 to 7.0.0
+    - Update pydocstyle from 6.1.1 to 6.3.0
+    - Update coverage from 6.5.0 to 7.4.4
+    - Remove PyPDF2
+    - Add pypdf 3.17.4
+- JS dependency changes:
+    - Update autoprefixer from 10.4.13 to 10.4.19
+    - Update browser-sync from 3.0.2
+    - Update cssnano from 5.1.14 to 6.1.2
+    - Update blockly from 7.20211209.2 to 10.4.3
+    - Update gulp-filter from 7.0.0 to 9.0.1
+    - Update gulp-imagemin from 7.1.0 to 9.0.0
+    - Update gulp-postcss from 9.0.1 to 10.0.0
+    - Update intro.js from 4.3.0 to 7.2.0
+    - Update jquery from 3.6.2 to 3.7.1
+    - Update multiple-select from 1.5.2 to 1.7.0
+    - Update postcss from 8.4.20 to 8.4.38
+    - Update reveal.js from 4.4.0 to 5.1.0
+    - Update sass from 1.56.2 to 1.75.0
+    - Update scratchblocks from 3.6.1 to 3.6.4
+    - Update yargs from 17.6.2 to 17.7.2
+- Github Action dependency changes:
+    - Update actions/checkout from 3 to 4
+    - Update actions/setup-python from 4.3.1 to 5.1.0
+    - Update actions/upload-artifact from 3 to 4
+    - Update actions/download-artifact from 3 to 4
+    - Update crowdin/github-action from 1.5.2 to 1.20.2
+    - Update dependabot/fetch-metadata from 1.3.5 to 2.0.0
+    - Update docker/metadata-action from 4 to 5
+    - Update docker/login-action from 2.1.0 to v3.1.0
+    - Update docker/build-push-action from 3.2.0 to 5.3.0
 
 7.3.0
 ==============================================================================
