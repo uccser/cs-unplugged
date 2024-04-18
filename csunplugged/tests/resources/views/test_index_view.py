@@ -31,7 +31,8 @@ class IndexViewTest(BaseTestWithDB):
         self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertQuerysetEqual(
             response.context["all_resources"],
-            ["<Resource: Resource>"]
+            ["<Resource: Resource>"],
+            transform=repr,
         )
         self.assertEqual(
             response.context["all_resources"][0].thumbnail,
@@ -59,5 +60,6 @@ class IndexViewTest(BaseTestWithDB):
             [
                 "<Resource: Binary Cards>",
                 "<Resource: Sorting Network>",
-            ]
+            ],
+            transform=repr,
         )

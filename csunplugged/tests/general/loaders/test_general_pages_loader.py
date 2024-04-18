@@ -142,6 +142,7 @@ class GeneralPageLoaderTest(BaseTestWithDB):
                 "<GeneralPage: Page 2>",
                 "<GeneralPage: Page 3>",
             ],
+            transform=repr
         )
 
     def test_general_page_loader_multiple_configuration_insert_middle(self):
@@ -161,6 +162,7 @@ class GeneralPageLoaderTest(BaseTestWithDB):
                 "<GeneralPage: Page 2>",
                 "<GeneralPage: Page 3>",
             ],
+            transform=repr,
         )
 
         config_file = "insert-middle.yaml"
@@ -180,6 +182,7 @@ class GeneralPageLoaderTest(BaseTestWithDB):
                 "<GeneralPage: Page 2>",
                 "<GeneralPage: Page 3>",
             ],
+            transform=repr,
         )
 
     def test_general_page_loader_multiple_configuration_remove_end(self):
@@ -199,6 +202,7 @@ class GeneralPageLoaderTest(BaseTestWithDB):
                 "<GeneralPage: Page 2>",
                 "<GeneralPage: Page 3>",
             ],
+            transform=repr,
         )
 
         config_file = "remove-end.yaml"
@@ -216,4 +220,5 @@ class GeneralPageLoaderTest(BaseTestWithDB):
                 "<GeneralPage: Page 1>",
                 "<GeneralPage: Page 2>",
             ],
+            transform=repr,
         )

@@ -105,7 +105,11 @@ class LessonModelTest(BaseTestWithDB):
         non_filtered_challenges = lesson.retrieve_related_programming_challenges()
 
         # One challenge should be returned in the non filtered set
-        self.assertQuerysetEqual(non_filtered_challenges, [str(challenge.__repr__())])
+        self.assertQuerysetEqual(
+            non_filtered_challenges,
+            ['<ProgrammingChallenge: Challenge 1.1: 1>'],
+            transform=repr,
+        )
 
     def test_get_available_languages(self):
         topic = self.test_data.create_topic(1)
@@ -155,5 +159,6 @@ class LessonModelTest(BaseTestWithDB):
         # One distinct language should be returned
         self.assertQuerysetEqual(
             available_languages,
-            [str(language1.__repr__())]
+            ['<ProgrammingChallengeLanguage: Language 1>'],
+            transform=repr,
         )

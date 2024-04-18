@@ -14,6 +14,10 @@ import os.path
 import logging.config
 import django.conf.locale
 
+# django-bootstrap-breadcrumbs compatibility: smart_text changed to smart_str.
+from django.utils.encoding import smart_str
+django.utils.encoding.smart_text = smart_str
+
 # cs-unplugged/csunplugged/config/settings/base.py - 3 = csunplugged/
 ROOT_DIR = environ.Path(__file__) - 3
 
@@ -323,5 +327,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "https://canterbury.ac.nz"
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.localhost",
+    "https://*.canterbury.ac.nz"
+]
+
 # Used by speaker notes for at a distance slides
 X_FRAME_OPTIONS = "SAMEORIGIN"

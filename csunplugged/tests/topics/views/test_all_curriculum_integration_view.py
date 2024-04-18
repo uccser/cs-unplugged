@@ -27,7 +27,8 @@ class AllCurriculumIntegrationViewTest(BaseTestWithDB):
         self.assertEqual(len(response.context["curriculum_integrations"]), 1)
         self.assertQuerysetEqual(
             response.context["curriculum_integrations"],
-            ["<CurriculumIntegration: Integration 1>"]
+            ["<CurriculumIntegration: Integration 1>"],
+            transform=repr,
         )
 
     def test_all_curriculum_integration_view_with_multiple_integration(self):
@@ -46,7 +47,8 @@ class AllCurriculumIntegrationViewTest(BaseTestWithDB):
                 "<CurriculumIntegration: Integration 1>",
                 "<CurriculumIntegration: Integration 2>",
                 "<CurriculumIntegration: Integration 3>",
-            ]
+            ],
+            transform=repr,
         )
 
     def test_all_curriculum_integration_view_order(self):
@@ -72,5 +74,6 @@ class AllCurriculumIntegrationViewTest(BaseTestWithDB):
                 "<CurriculumIntegration: Integration 1>",
                 "<CurriculumIntegration: Integration 2>",
                 "<CurriculumIntegration: Integration 3>",
-            ]
+            ],
+            transform=repr,
         )

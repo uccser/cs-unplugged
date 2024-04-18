@@ -37,7 +37,8 @@ class TopicLoaderTest(BaseTestWithDB):
         temp_topic.delete()
         self.assertQuerysetEqual(
             Topic.objects.all(),
-            ["<Topic: Topic 1>"]
+            ["<Topic: Topic 1>"],
+            transform=repr,
         )
         self.assertSetEqual(set(["en"]), set(Topic.objects.get(slug="topic-1").languages))
 

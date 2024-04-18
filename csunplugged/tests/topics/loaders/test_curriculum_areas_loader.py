@@ -24,7 +24,8 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
         area_loader.load()
         self.assertQuerysetEqual(
             CurriculumArea.objects.all(),
-            ["<CurriculumArea: Maths>"]
+            ["<CurriculumArea: Maths>"],
+            transform=repr,
         )
 
     def test_curriculum_areas_loader_missing_configuration_file(self):
@@ -123,6 +124,7 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
                 "<CurriculumArea: Maths: Geometry>",
             ],
             ordered=False,
+            transform=repr,
         )
         parent = CurriculumArea.objects.get(slug="maths")
         self.assertQuerysetEqual(
@@ -132,6 +134,7 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
                 "<CurriculumArea: Maths: Geometry>",
             ],
             ordered=False,
+            transform=repr,
         )
 
     def test_curriculum_areas_loader_missing_children_value(self):
@@ -141,6 +144,7 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
         self.assertQuerysetEqual(
             CurriculumArea.objects.all(),
             ["<CurriculumArea: Maths>"],
+            transform=repr,
         )
 
     def test_curriculum_areas_loader_empty_children_value(self):
@@ -217,6 +221,7 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
                 "<CurriculumArea: Art>",
             ],
             ordered=False,
+            transform=repr,
         )
 
     def test_curriculum_areas_loader_translation(self):
@@ -259,6 +264,7 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
                 "<CurriculumArea: Art>",
             ],
             ordered=False,
+            transform=repr,
         )
 
         config_file = "insert-middle.yaml"
@@ -279,6 +285,7 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
                 "<CurriculumArea: Art>",
             ],
             ordered=False,
+            transform=repr,
         )
 
     def test_delete_end(self):
@@ -298,6 +305,7 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
                 "<CurriculumArea: Art>",
             ],
             ordered=False,
+            transform=repr,
         )
 
         config_file = "delete-end.yaml"
@@ -316,4 +324,5 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
                 "<CurriculumArea: Science>",
             ],
             ordered=False,
+            transform=repr,
         )

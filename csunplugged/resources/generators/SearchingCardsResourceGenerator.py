@@ -5,7 +5,7 @@ from math import ceil
 from PIL import Image, ImageDraw, ImageFont
 from yattag import Doc
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from resources.utils.resource_parameters import EnumResourceParameter, BoolResourceParameter
 IMAGE_PATH = "static/img/resources/searching-cards/{}-cards-{}.png"
 X_BASE_COORD = 1803

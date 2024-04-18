@@ -1,6 +1,6 @@
 """Class for Treasure Island resource generator."""
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from PIL import Image, ImageDraw
 from utils.TextBoxDrawer import TextBoxDrawer, TextBox
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator

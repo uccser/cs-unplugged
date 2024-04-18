@@ -30,7 +30,8 @@ class AtADistanceLessonsLoaderTest(BaseTestWithDB):
         lesson_loader.load()
         self.assertQuerysetEqual(
             Lesson.objects.all(),
-            ["<Lesson: Lesson 1>"]
+            ["<Lesson: Lesson 1>"],
+            transform=repr
         )
 
     def test_lesson_loader_slug_set_correctly(self):

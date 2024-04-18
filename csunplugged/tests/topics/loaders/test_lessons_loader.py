@@ -38,7 +38,8 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         self.assertQuerysetEqual(
             Lesson.objects.all(),
-            ["<Lesson: Lesson 1>"]
+            ["<Lesson: Lesson 1>"],
+            transform=repr,
         )
 
     def test_lesson_loader_topic_set_correctly(self):
@@ -185,7 +186,8 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         self.assertQuerysetEqual(
             Lesson.objects.all(),
-            ["<Lesson: Lesson 1>"]
+            ["<Lesson: Lesson 1>"],
+            transform=repr,
         )
         self.assertEquals(
             Lesson.objects.get(slug="lesson-1").duration,
@@ -263,6 +265,7 @@ class LessonsLoaderTest(BaseTestWithDB):
                 "<ProgrammingChallenge: Challenge 1.1: 2>",
             ],
             ordered=False,
+            transform=repr,
         )
 
     def test_lesson_loader_optional_programming_challenges_empty(self):
@@ -306,6 +309,7 @@ class LessonsLoaderTest(BaseTestWithDB):
         self.assertQuerysetEqual(
             Lesson.objects.get(slug="lesson-1").programming_challenges.all(),
             [],
+            transform=repr,
         )
 
     def test_lesson_loader_valid_programming_challenges_description(self):
@@ -357,6 +361,7 @@ class LessonsLoaderTest(BaseTestWithDB):
                 "<LearningOutcome: Outcome 2>",
             ],
             ordered=False,
+            transform=repr,
         )
 
     def test_lesson_loader_optional_learning_outcomes_invalid(self):
@@ -406,6 +411,7 @@ class LessonsLoaderTest(BaseTestWithDB):
         self.assertQuerysetEqual(
             Lesson.objects.get(slug="lesson-1").learning_outcomes.all(),
             [],
+            transform=repr,
         )
 
     def test_lesson_loader_optional_classroom_resources_set_correctly(self):
@@ -428,6 +434,7 @@ class LessonsLoaderTest(BaseTestWithDB):
                 "<ClassroomResource: Resource 2>",
             ],
             ordered=False,
+            transform=repr,
         )
 
     def test_lesson_loader_optional_classroom_resources_invalid(self):
@@ -475,6 +482,7 @@ class LessonsLoaderTest(BaseTestWithDB):
         self.assertQuerysetEqual(
             Lesson.objects.get(slug="lesson-1").classroom_resources.all(),
             [],
+            transform=repr,
         )
 
     def test_lesson_loader_multiple_lessons(self):
@@ -496,6 +504,7 @@ class LessonsLoaderTest(BaseTestWithDB):
                 "<Lesson: Lesson 3>",
             ],
             ordered=False,
+            transform=repr,
         )
 
     def test_lessons_loader_missing_configuration_file(self):
@@ -565,6 +574,7 @@ class LessonsLoaderTest(BaseTestWithDB):
                 "<Resource: Arrows>",
                 "<Resource: Grid>",
             ],
+            transform=repr,
         )
 
     def test_lesson_loader_optional_generated_resources_empty(self):
@@ -770,7 +780,8 @@ class LessonsLoaderTest(BaseTestWithDB):
                 "<Lesson: Lesson 1>",
                 "<Lesson: Lesson 2>",
                 "<Lesson: Lesson 3>",
-            ]
+            ],
+            transform=repr,
         )
 
         config_file = "insert-start.yaml"
@@ -790,6 +801,7 @@ class LessonsLoaderTest(BaseTestWithDB):
                 "<Lesson: Lesson 2>",
                 "<Lesson: Lesson 3>",
             ],
+            transform=repr,
         )
 
     def test_lessons_loader_delete_start(self):
@@ -812,6 +824,7 @@ class LessonsLoaderTest(BaseTestWithDB):
                 "<Lesson: Lesson 3>",
             ],
             ordered=False,
+            transform=repr,
         )
 
         config_file = "multiple-lessons.yaml"
@@ -831,4 +844,5 @@ class LessonsLoaderTest(BaseTestWithDB):
                 "<Lesson: Lesson 3>",
             ],
             ordered=False,
+            transform=repr,
         )

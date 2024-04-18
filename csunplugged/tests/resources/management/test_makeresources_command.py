@@ -4,7 +4,7 @@ from tests.BaseTestWithDB import BaseTestWithDB
 from django.core import management
 from django.test import tag, override_settings
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-from PyPDF2 import PdfFileReader
+from pypdf import PdfReader
 import os.path
 import shutil
 from resources.models import Resource
@@ -41,11 +41,11 @@ class MakeResourcesCommandTest(BaseTestWithDB):
         )
         management.call_command("makeresources")
         filepath = os.path.join(RESOURCE_PATH, self.language, resource.slug, "Resource 1 (a4).pdf")
-        pdf = PdfFileReader(open(filepath, "rb"))
-        self.assertEqual(pdf.getNumPages(), 1)
+        pdf = PdfReader(open(filepath, "rb"))
+        self.assertEqual(len(pdf.pages), 1)
         filepath = os.path.join(RESOURCE_PATH, self.language, resource.slug, "Resource 1 (letter).pdf")
-        pdf = PdfFileReader(open(filepath, "rb"))
-        self.assertEqual(pdf.getNumPages(), 1)
+        pdf = PdfReader(open(filepath, "rb"))
+        self.assertEqual(len(pdf.pages), 1)
 
     def test_makeresources_command_multiple_resources(self):
         resource_1 = self.test_data.create_resource(
@@ -62,17 +62,17 @@ class MakeResourcesCommandTest(BaseTestWithDB):
         )
         management.call_command("makeresources")
         filepath = os.path.join(RESOURCE_PATH, self.language, resource_1.slug,  "Resource 1 (a4).pdf")
-        pdf = PdfFileReader(open(filepath, "rb"))
-        self.assertEqual(pdf.getNumPages(), 1)
+        pdf = PdfReader(open(filepath, "rb"))
+        self.assertEqual(len(pdf.pages), 1)
         filepath = os.path.join(RESOURCE_PATH, self.language, resource_1.slug, "Resource 1 (letter).pdf")
-        pdf = PdfFileReader(open(filepath, "rb"))
-        self.assertEqual(pdf.getNumPages(), 1)
+        pdf = PdfReader(open(filepath, "rb"))
+        self.assertEqual(len(pdf.pages), 1)
         filepath = os.path.join(RESOURCE_PATH, self.language, resource_2.slug, "Resource 2 (a4).pdf")
-        pdf = PdfFileReader(open(filepath, "rb"))
-        self.assertEqual(pdf.getNumPages(), 1)
+        pdf = PdfReader(open(filepath, "rb"))
+        self.assertEqual(len(pdf.pages), 1)
         filepath = os.path.join(RESOURCE_PATH, self.language, resource_2.slug, "Resource 2 (letter).pdf")
-        pdf = PdfFileReader(open(filepath, "rb"))
-        self.assertEqual(pdf.getNumPages(), 1)
+        pdf = PdfReader(open(filepath, "rb"))
+        self.assertEqual(len(pdf.pages), 1)
 
     def test_makeresources_command_single_resource_with_copies(self):
         resource = self.test_data.create_resource(
@@ -84,8 +84,8 @@ class MakeResourcesCommandTest(BaseTestWithDB):
         )
         management.call_command("makeresources")
         filepath = os.path.join(RESOURCE_PATH, self.language, resource.slug, "Resource 1 (a4).pdf")
-        pdf = PdfFileReader(open(filepath, "rb"))
-        self.assertEqual(pdf.getNumPages(), 20)
+        pdf = PdfReader(open(filepath, "rb"))
+        self.assertEqual(len(pdf.pages), 20)
 
     def test_makeresources_command_valid_parameter(self):
         resource = self.test_data.create_resource(
@@ -97,8 +97,8 @@ class MakeResourcesCommandTest(BaseTestWithDB):
         )
         management.call_command("makeresources", "--resource", "resource1")
         filepath = os.path.join(RESOURCE_PATH, self.language, resource.slug, "Resource 1 (a4).pdf")
-        pdf = PdfFileReader(open(filepath, "rb"))
-        self.assertEqual(pdf.getNumPages(), 20)
+        pdf = PdfReader(open(filepath, "rb"))
+        self.assertEqual(len(pdf.pages), 20)
 
     def test_makeresources_command_invalid_parameter(self):
         self.test_data.create_resource(
@@ -122,8 +122,8 @@ class MakeResourcesCommandTest(BaseTestWithDB):
         )
         management.call_command("makeresources", "--resource", "resource1")
         filepath = os.path.join(RESOURCE_PATH, self.language, resource.slug, "Resource 1 (a4).pdf")
-        pdf = PdfFileReader(open(filepath, "rb"))
-        self.assertEqual(pdf.getNumPages(), 20)
+        pdf = PdfReader(open(filepath, "rb"))
+        self.assertEqual(len(pdf.pages), 20)
 
     def test_makeresources_command_resource_generator_has_non_enum_options(self):
         self.test_data.create_resource(
@@ -146,11 +146,11 @@ class MakeResourcesCommandTest(BaseTestWithDB):
         management.call_command("makeresources")
         for language_code, _ in MULTIPLE_LANGUAGES:
             filepath = os.path.join(RESOURCE_PATH, language_code, resource.slug, "Resource 1 (a4).pdf")
-            pdf = PdfFileReader(open(filepath, "rb"))
-            self.assertEqual(pdf.getNumPages(), 1)
+            pdf = PdfReader(open(filepath, "rb"))
+            self.assertEqual(len(pdf.pages), 1)
             filepath = os.path.join(RESOURCE_PATH, language_code, resource.slug, "Resource 1 (letter).pdf")
-            pdf = PdfFileReader(open(filepath, "rb"))
-            self.assertEqual(pdf.getNumPages(), 1)
+            pdf = PdfReader(open(filepath, "rb"))
+            self.assertEqual(len(pdf.pages), 1)
 
     @override_settings(LANGUAGES=SINGLE_LANGUAGE)
     def test_makeresources_command_single_language(self):
@@ -163,11 +163,11 @@ class MakeResourcesCommandTest(BaseTestWithDB):
         management.call_command("makeresources", "--resource", resource.slug, "--language", LANGUAGE1)
         # Check language 1 exists
         filepath = os.path.join(RESOURCE_PATH, LANGUAGE1, resource.slug, "Resource 1 (a4).pdf")
-        pdf = PdfFileReader(open(filepath, "rb"))
-        self.assertEqual(pdf.getNumPages(), 1)
+        pdf = PdfReader(open(filepath, "rb"))
+        self.assertEqual(len(pdf.pages), 1)
         filepath = os.path.join(RESOURCE_PATH, LANGUAGE1, resource.slug, "Resource 1 (letter).pdf")
-        pdf = PdfFileReader(open(filepath, "rb"))
-        self.assertEqual(pdf.getNumPages(), 1)
+        pdf = PdfReader(open(filepath, "rb"))
+        self.assertEqual(len(pdf.pages), 1)
         # Check language 2 does not exist
         filepath = os.path.join(RESOURCE_PATH, LANGUAGE2, resource.slug, "Resource 1 (a4).pdf")
         self.assertFalse(os.path.exists(filepath))

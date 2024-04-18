@@ -27,7 +27,8 @@ class AgeGroupsLoaderTest(BaseTestWithDB):
         group_loader.load()
         self.assertQuerysetEqual(
             AgeGroup.objects.all(),
-            ["<AgeGroup: NumericRange(8, 10, '[)')>"]
+            ["<AgeGroup: NumericRange(8, 10, '[)')>"],
+            transform=repr,
         )
 
     def test_age_groups_loader_missing_configuration_file(self):
@@ -122,7 +123,8 @@ class AgeGroupsLoaderTest(BaseTestWithDB):
                 "<AgeGroup: NumericRange(5, 7, '[)')>",
                 "<AgeGroup: NumericRange(8, 10, '[)')>",
                 "<AgeGroup: NumericRange(11, 14, '[)')>",
-            ]
+            ],
+            transform=repr,
         )
 
     def test_age_groups_loader_missing_translation(self):
@@ -152,7 +154,8 @@ class AgeGroupsLoaderTest(BaseTestWithDB):
         group_loader.load()
         self.assertQuerysetEqual(
             AgeGroup.objects.filter(slug="8-10"),
-            ["<AgeGroup: NumericRange(8, 10, '[)')>"]
+            ["<AgeGroup: NumericRange(8, 10, '[)')>"],
+            transform=repr,
         )
 
     def test_age_groups_insert_middle(self):
@@ -165,7 +168,8 @@ class AgeGroupsLoaderTest(BaseTestWithDB):
                 "<AgeGroup: NumericRange(5, 7, '[)')>",
                 "<AgeGroup: NumericRange(8, 10, '[)')>",
                 "<AgeGroup: NumericRange(11, 14, '[)')>",
-            ]
+            ],
+            transform=repr,
         )
 
         config_file = "insert-middle.yaml"
@@ -178,7 +182,8 @@ class AgeGroupsLoaderTest(BaseTestWithDB):
                 "<AgeGroup: NumericRange(7, 8, '[)')>",
                 "<AgeGroup: NumericRange(8, 10, '[)')>",
                 "<AgeGroup: NumericRange(11, 14, '[)')>",
-            ]
+            ],
+            transform=repr,
         )
 
     def test_age_groups_remove_end(self):
@@ -191,7 +196,8 @@ class AgeGroupsLoaderTest(BaseTestWithDB):
                 "<AgeGroup: NumericRange(5, 7, '[)')>",
                 "<AgeGroup: NumericRange(8, 10, '[)')>",
                 "<AgeGroup: NumericRange(11, 14, '[)')>",
-            ]
+            ],
+            transform=repr,
         )
 
         config_file = "remove-end.yaml"
@@ -202,5 +208,6 @@ class AgeGroupsLoaderTest(BaseTestWithDB):
             [
                 "<AgeGroup: NumericRange(5, 7, '[)')>",
                 "<AgeGroup: NumericRange(8, 10, '[)')>",
-            ]
+            ],
+            transform=repr,
         )
