@@ -71,3 +71,9 @@ DATABASES = {
 # SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)  # noqa: F405
 # CSRF_COOKIE_SECURE = True
 # CSRF_COOKIE_HTTPONLY = True
+
+# CSRF
+# ------------------------------------------------------------------------------
+CSRF_TRUSTED_ORIGINS = [
+    "https://www.csunplugged.org",
+]

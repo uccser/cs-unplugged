@@ -99,3 +99,12 @@ TEST_RUNNER = "django.test.runner.DiscoverRunner"
 # Suppress these loggers in local development for less noise in logs
 logging.getLogger('gunicorn.access').handlers = []  # noqa F405
 logging.getLogger('gunicorn.error').handlers = []  # noqa F405
+
+
+# CSRF
+# ------------------------------------------------------------------------------
+CSRF_TRUSTED_ORIGINS = [
+    "https://www.csunplugged.org",
+    "https://cs-unplugged-dev.csse.canterbury.ac.nz",
+    "https://cs-unplugged.localhost",
+]
