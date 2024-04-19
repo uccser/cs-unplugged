@@ -84,7 +84,6 @@ LANGUAGES = (
 # CSRF
 # ------------------------------------------------------------------------------
 CSRF_TRUSTED_ORIGINS = [
-    "https://www.csunplugged.org",
-    "https://cs-unplugged-dev.csse.canterbury.ac.nz",
+    "https://*.canterbury.ac.nz",
     "https://cs-unplugged.localhost",
 ]
