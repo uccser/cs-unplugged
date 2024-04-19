@@ -23,6 +23,15 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+7.2.1
+==============================================================================
+
+**Release date:** 19 April 2024
+
+**Changelog:**
+
+- Fix jobe access issue breaking Plugging it in test code button.
+
 7.4.0
 ==============================================================================
 
