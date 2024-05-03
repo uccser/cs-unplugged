@@ -24,7 +24,7 @@ python-markdown-math==0.6
 PyYAML==6.0.1
 
 # System tools
-tqdm==4.66.2
+tqdm==4.66.4
 
 # XML Parsing
 lxml==5.2.1
