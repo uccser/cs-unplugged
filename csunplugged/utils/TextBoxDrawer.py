@@ -229,7 +229,9 @@ class TextBoxDrawer(object):
             font: PIL.ImageFont object
             text: (str) text to get width of
         """
-        return font.getsize(text)[0]
+        left, top, right, bottom = font.getbbox(text)
+        width = right - left
+        return width
 
     @staticmethod
     def get_font(font_path, font_size):
