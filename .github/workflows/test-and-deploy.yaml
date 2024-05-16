@@ -64,10 +64,12 @@ jobs:
       - name: Create coverage file
         run: docker compose -f docker-compose.local.yml run --rm --user="root" django coverage xml -i
       - name: Upload coverage file
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           files: ./csunplugged/coverage.xml
           verbose: true
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   test-resources:
     name: Tests - Resources
@@ -80,10 +82,12 @@ jobs:
       - name: Create coverage file
         run: docker compose -f docker-compose.local.yml run --rm --user="root" django coverage xml -i
       - name: Upload coverage file
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           files: ./csunplugged/coverage.xml
           verbose: true
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   test-management:
     name: Tests - Management
@@ -96,10 +100,12 @@ jobs:
       - name: Create coverage file
         run: docker compose -f docker-compose.local.yml run --rm --user="root" django coverage xml -i
       - name: Upload coverage file
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           files: ./csunplugged/coverage.xml
           verbose: true
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   test-style:
     name: Tests - Style
