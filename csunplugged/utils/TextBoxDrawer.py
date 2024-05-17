@@ -365,12 +365,12 @@ class TextBoxDrawer(object):
         # Dummy image draw because multiline_textsize isn't a @classmethod
         dummy_img = Image.new("1", (1, 1))
         dummy_draw = ImageDraw.Draw(dummy_img)
-        text_width, text_height = dummy_draw.multiline_textsize(
+        left, top, right, bottom = dummy_draw.multiline_textbbox(
+            (0,0),
             "\n".join(lines),
             font=font,
             spacing=line_spacing)
-
-        # Reduce text_height by offset at top
+        text_width, text_height = right - left, bottom - top
         text_height -= cls.get_font_y_offset(font)
         return lines, text_width, text_height
 
