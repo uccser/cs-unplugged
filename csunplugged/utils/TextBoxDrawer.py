@@ -366,7 +366,7 @@ class TextBoxDrawer(object):
         dummy_img = Image.new("1", (1, 1))
         dummy_draw = ImageDraw.Draw(dummy_img)
         left, top, right, bottom = dummy_draw.multiline_textbbox(
-            (0,0),
+            (0, 0),
             "\n".join(lines),
             font=font,
             spacing=line_spacing)
