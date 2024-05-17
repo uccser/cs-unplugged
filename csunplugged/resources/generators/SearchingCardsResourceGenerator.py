@@ -7,10 +7,11 @@ from yattag import Doc
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from django.utils.translation import ugettext_lazy as _
 from resources.utils.resource_parameters import EnumResourceParameter, BoolResourceParameter
+
 IMAGE_PATH = "static/img/resources/searching-cards/{}-cards-{}.png"
 X_BASE_COORD = 1803
 X_COORD_DECREMENT = 516
-Y_COORD = 240
+Y_COORD = 200
 FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
 FONT = ImageFont.truetype(FONT_PATH, 200)
 
@@ -94,7 +95,8 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
                 coord_x = X_BASE_COORD
                 for number in page_numbers:
                     text = str(number)
-                    text_width, text_height = draw.textsize(text, font=FONT)
+                    left, top, right, bottom = draw.textbbox((0, 0), text, font=FONT)
+                    text_width, text_height = right - left, bottom - top
                     draw.text(
                         (coord_x - (text_width / 2), Y_COORD - (text_height / 2)),
                         text,
