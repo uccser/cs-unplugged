@@ -133,7 +133,7 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
                     ratio = min(height_ratio, width_ratio)
                     width *= ratio
                     height *= ratio
-                    image = image.resize((int(width), int(height)), Image.ANTIALIAS)
+                    image = image.resize((int(width), int(height)), Image.LANCZOS)
                 if image_number % 2 == 0:
                     page = card_outlines.copy()
                     draw = ImageDraw.Draw(page)
@@ -169,9 +169,10 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
                 else:
                     (x, y) = card_centers[1]
 
-                text_width, text_height = draw.textsize(text_string, font=font)
+                left, top, right, bottom = draw.textbbox((0, 0), text_string, font=font)
+                text_width, text_height = right - left, bottom - top
                 coord_x = x - (text_width / 2)
-                coord_y = y - (text_height / 1.5)
+                coord_y = y - text_height
                 draw.text(
                     (coord_x, coord_y),
                     text_string,

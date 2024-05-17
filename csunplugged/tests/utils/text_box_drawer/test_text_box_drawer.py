@@ -152,7 +152,8 @@ class TextBoxDrawerTest(SimpleTestCase):
         font_size = 50
         font = ImageFont.truetype(font_path, font_size)
         text = "This is a string"
-        text_width, text_height = font.getsize(text)
+        left, top, right, bottom = font.getbbox(text)
+        text_width, text_height = right - left, bottom - top
         new_font_size, lines, new_text_width, new_text_height = TextBoxDrawer.fit_text(
             text,
             text_width * 2,
@@ -173,7 +174,8 @@ class TextBoxDrawerTest(SimpleTestCase):
         font_size = 50
         font = ImageFont.truetype(font_path, font_size)
         text = "This is a string"
-        text_width, text_height = font.getsize(text)
+        left, top, right, bottom = font.getbbox(text)
+        text_width, text_height = right - left, bottom - top
         new_font_size, lines, new_text_width, new_text_height = TextBoxDrawer.fit_text(
             text,
             text_width * 0.8,  # Make box slightly narrower than text, to force 2 lines
@@ -193,7 +195,8 @@ class TextBoxDrawerTest(SimpleTestCase):
         font_size = 50
         font = ImageFont.truetype(font_path, font_size)
         text = "This is a string"
-        text_width, text_height = font.getsize(text)
+        left, top, right, bottom = font.getbbox(text)
+        text_width, text_height = right - left, bottom - top
         new_font_size, lines, new_text_width, new_text_height = TextBoxDrawer.fit_text(
             text,
             text_width * 0.8,  # Make box slightly narrower than text, to force 2 lines
@@ -213,7 +216,8 @@ class TextBoxDrawerTest(SimpleTestCase):
         font_size = 10
         text = "This is a string"
         font = ImageFont.truetype(font_path, font_size * 2)
-        text_width, text_height = font.getsize(text)
+        left, top, right, bottom = font.getbbox(text)
+        text_width, text_height = right - left, bottom - top
         new_font_size, lines, new_text_width, new_text_height = TextBoxDrawer.fit_text(
             text,
             text_width,
@@ -229,7 +233,8 @@ class TextBoxDrawerTest(SimpleTestCase):
         font_size = 10
         text = "This is a string"
         font = ImageFont.truetype(font_path, font_size)
-        text_width, text_height = font.getsize(text)
+        left, top, right, bottom = font.getbbox(text)
+        text_width, text_height = right - left, bottom - top
         new_font_size, lines, new_text_width, new_text_height = TextBoxDrawer.fit_text(
             text,
             text_width - 1,  # Force one decrease loop
@@ -245,7 +250,8 @@ class TextBoxDrawerTest(SimpleTestCase):
         font_size = 100
         text = "This is a string"
         font = ImageFont.truetype(font_path, font_size)
-        text_width, text_height = font.getsize(text)
+        left, top, right, bottom = font.getbbox(text)
+        text_width, text_height = right - left, bottom - top
         new_font_size, lines, new_text_width, new_text_height = TextBoxDrawer.fit_text(
             text,
             text_width * 0.5,  # Force many decrease loops
@@ -261,7 +267,8 @@ class TextBoxDrawerTest(SimpleTestCase):
         font_size = 10
         text = ""
         font = ImageFont.truetype(font_path, font_size)
-        text_width, text_height = font.getsize(text)
+        left, top, right, bottom = font.getbbox(text)
+        text_width, text_height = right - left, bottom - top
         new_font_size, lines, new_text_width, new_text_height = TextBoxDrawer.fit_text(
             text,
             text_width,
@@ -280,7 +287,8 @@ class TextBoxDrawerTest(SimpleTestCase):
         font_size = 10
         text = "word"
         font = ImageFont.truetype(font_path, font_size)
-        text_width, text_height = font.getsize(text)
+        left, top, right, bottom = font.getbbox(text)
+        text_width, text_height = right - left, bottom - top
         new_font_size, lines, new_text_width, new_text_height = TextBoxDrawer.fit_text(
             text,
             text_width,
