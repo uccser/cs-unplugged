@@ -11,7 +11,7 @@ whitenoise==6.6.0
 psycopg2==2.9.9
 
 # Resources
-WeasyPrint==52.4
+WeasyPrint==62.1
 Pillow==10.3.0
 yattag==1.15.2
 tinycss==0.4
