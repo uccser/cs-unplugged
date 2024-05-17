@@ -51,9 +51,10 @@ class SortingNetworkResourceGenerator(BaseResourceGenerator):
             coord_x_increment = 204
             for number in numbers:
                 text = str(number)
-                text_width, text_height = draw.textsize(text, font=font)
+                left, top, right, bottom = draw.textbbox((0, 0), text, font=font)
+                text_width, text_height = right - left, bottom - top
                 coord_x = base_coord_x - (text_width / 2)
-                coord_y = base_coord_y - (text_height / 2)
+                coord_y = base_coord_y - (text_height / 1.2)
                 draw.text(
                     (coord_x, coord_y),
                     text,
