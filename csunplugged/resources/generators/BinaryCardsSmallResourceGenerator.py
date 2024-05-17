@@ -60,10 +60,10 @@ class BinaryCardsSmallResourceGenerator(BaseResourceGenerator):
             font_path = "static/fonts/PatrickHand-Regular.ttf"
             font = ImageFont.truetype(font_path, 200)
             TEXT_COORDS = [
-                (525, 1341),
-                (1589, 1341),
-                (525, 2889),
-                (1589, 2889),
+                (525, 1311),
+                (1589, 1311),
+                (525, 2859),
+                (1589, 2859),
             ]
 
         pages = []
@@ -75,7 +75,8 @@ class BinaryCardsSmallResourceGenerator(BaseResourceGenerator):
                     draw = ImageDraw.Draw(image)
                     for number in range(image_bits - 4, image_bits):
                         text = str(pow(2, number))
-                        text_width, text_height = draw.textsize(text, font=font)
+                        left, top, right, bottom = draw.textbbox((0, 0), text, font=font)
+                        text_width, text_height = right - left, bottom - top
                         coord_x = TEXT_COORDS[number % 4][0] - (text_width / 2)
                         coord_y = TEXT_COORDS[number % 4][1] - (text_height / 2)
                         draw.text(
