@@ -176,7 +176,7 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
         coord_x_increment = column_width
         coord_x = coord_x_start
         base_image_coord_y = IMAGE_SIZE_Y * 0.2
-        base_text_coord_y = IMAGE_SIZE_Y * 0.4
+        base_text_coord_y = IMAGE_SIZE_Y * 0.38
         dots_value = 1
 
         while coord_x > 0:
@@ -204,7 +204,8 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
 
             if show_bits_value:
                 text = str(dots_value)
-                text_width, text_height = draw.textsize(text, font=SMALL_FONT)
+                left, top, right, bottom = draw.textbbox((0, 0), text, font=SMALL_FONT)
+                text_width, text_height = right - left, bottom - top
                 text_coord_x = coord_x - (text_width / 2)
                 text_coord_y = base_text_coord_y - (text_height / 2)
                 draw.text(
@@ -267,7 +268,8 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
 
         while coord_x < IMAGE_SIZE_X:
             if value_type == "binary":
-                text_width, text_height = draw.textsize(text, font=FONT)
+                left, top, right, bottom = draw.textbbox((0, 0), text, font=FONT)
+                text_width, text_height = right - left, bottom - top
                 text_coord_x = coord_x - (text_width / 2)
                 text_coord_y = base_coord_y - (text_height * .7)
                 draw.text(
