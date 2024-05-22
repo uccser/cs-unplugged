@@ -56,9 +56,10 @@ class ModuloClockResourceGenerator(BaseResourceGenerator):
             angle = start_angle + (angle_between_numbers * number)
             x_coord = radius * cos(angle) + x_center
             y_coord = radius * sin(angle) + y_center
-            text_width, text_height = draw.textsize(text, font=font)
+            left, top, right, bottom = draw.textbbox((0, 0), text, font=font)
+            text_width, text_height = right - left, bottom - top
             text_coord_x = x_coord - (text_width / 2)
-            text_coord_y = y_coord - (text_height / 2)
+            text_coord_y = y_coord - (text_height / 2) - 40
             draw.text(
                 (text_coord_x, text_coord_y),
                 text,

@@ -76,4 +76,5 @@ DATABASES = {
 # ------------------------------------------------------------------------------
 CSRF_TRUSTED_ORIGINS = [
     "https://www.csunplugged.org",
+    "https://cs-unplugged-dev.csse.canterbury.ac.nz",
 ]

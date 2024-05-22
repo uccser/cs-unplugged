@@ -23,7 +23,33 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
-7.2.1
+7.5.0
+==============================================================================
+
+**Release date:** 22 May 2024
+
+**Changelog:**
+
+- Fix jobe access issue breaking Plugging it in test code button in staging.
+- Update worksheets for compatibility with Pilow 10
+- Update docker images to use debian bookworm
+- Update docker images to python 3.11
+- Core Dependency changes:
+
+    - Update crowdin/github-action from 1.20.2 to 1.20.4
+    - Update codecov/codecov-action from 3 to 4
+    - Update cssnano from 6.1.2 to 7.0.1
+    - Update gulp-imagemin from 9.0.0 to 9.1.0
+    - Update sass from 1.75.0 to 1.77.2
+    - Update Pillow from 9.5.0 to 10.3.0
+    - Update tqdm from 4.66.2 to 4.66.4
+    - Update lxml from 5.2.1 to 5.2.2
+    - Update django-modeltranslation from 0.18.11 to 0.18.13
+    - Update requests from 2.31.0 to 2.32.2
+    - Update coverage from 7.4.4 to 7.5.1
+    - Update pypdf from 3.17.4 to 4.2.0
+
+7.4.1
 ==============================================================================
 
 **Release date:** 19 April 2024

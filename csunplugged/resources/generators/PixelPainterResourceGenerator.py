@@ -218,7 +218,8 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
                 )
 
                 # Draw text
-                text_width, text_height = draw.textsize(text, font=self.FONT)
+                left, top, right, bottom = draw.textbbox((0, 0), text, font=self.FONT)
+                text_width, text_height = right - left, bottom - top
                 text_coord_x = (column * self.BOX_SIZE) + (self.BOX_SIZE / 2) - (text_width / 2)
                 text_coord_y = (row * self.BOX_SIZE) + (self.BOX_SIZE / 2) - (text_height / 2)
                 draw.text(

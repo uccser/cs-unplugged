@@ -12,7 +12,7 @@ psycopg2==2.9.9
 
 # Resources
 WeasyPrint==52.4
-Pillow==9.5.0
+Pillow==10.3.0
 yattag==1.15.2
 tinycss==0.4
 
@@ -24,20 +24,20 @@ python-markdown-math==0.6
 PyYAML==6.0.1
 
 # System tools
-tqdm==4.66.2
+tqdm==4.66.4
 
 # XML Parsing
-lxml==5.2.1
+lxml==5.2.2
 cssselect==1.2.0
 
 # I18n
-django-modeltranslation==0.18.11
+django-modeltranslation==0.18.13
 uniseg==0.8.0
 python-bidi==0.4.2
 django-bidi-utils==1.0
 
 # Plugging it in
-requests==2.31.0
+requests==2.32.2
 
 # CORS
 django-cors-headers==4.3.1
