@@ -37,7 +37,7 @@ python-bidi==0.4.2
 django-bidi-utils==1.0
 
 # Plugging it in
-requests==2.32.1
+requests==2.32.2
 
 # CORS
 django-cors-headers==4.3.1
