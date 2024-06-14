@@ -6,6 +6,7 @@ from django.conf import settings
 from utils.BaseLoader import BaseLoader
 from utils.LoaderFactory import LoaderFactory
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
+from at_home.models import Activity
 
 
 class Command(BaseCommand):
@@ -61,3 +62,7 @@ class Command(BaseCommand):
                     lite_loader=lite_load,
                     activity_data=activity_data,
                 ).load()
+
+            _, result = Activity.objects.exclude(slug__in=structure_file["activities"].keys()).delete()
+            if result.get("at_home.Activity", 0) > 0:
+                print("Deleted {} activities".format(result["at_home.Activity"]))
