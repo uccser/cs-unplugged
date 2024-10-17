@@ -8,7 +8,7 @@ gunicorn==22.0.0
 whitenoise==6.7.0
 
 # Database APIs
-psycopg2==2.9.9
+psycopg2==2.9.10
 
 # Resources
 WeasyPrint==52.4
