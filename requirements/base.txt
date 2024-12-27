@@ -31,7 +31,7 @@ lxml==5.3.0
 cssselect==1.2.0
 
 # I18n
-django-modeltranslation==0.19.11
+django-modeltranslation==0.19.12
 uniseg==0.9.0
 python-bidi==0.6.3
 django-bidi-utils==1.0
