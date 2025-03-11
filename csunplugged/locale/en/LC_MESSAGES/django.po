@@ -943,7 +943,7 @@ msgid ""
 "Commons Attribution-ShareAlike 4.0 International license</a>. The CS "
 "Unplugged is a project by the <a href=\"https://www.canterbury.ac.nz/"
 "engineering/schools/csse/research/cse/\">Computer Science Education Research "
-"Group</a> at the <a href=\"http://www.canterbury.ac.nz/\">University of "
+"Group</a> at the <a href=\"https://www.canterbury.ac.nz/\">University of "
 "Canterbury</a>, New Zealand."
 msgstr ""
 

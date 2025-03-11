@@ -863,8 +863,8 @@ msgid "Contact"
 msgstr "联系"
 
 #: templates/core.html:218
-msgid "The CS Unplugged material is open source on <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International license</a>. The CS Unplugged is a project by the <a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">Computer Science Education Research Group</a> at the <a href=\"http://www.canterbury.ac.nz/\">University of Canterbury</a>, New Zealand."
-msgstr "CS Unplugged 资料属于 <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a> 上的开放资源，此网站的内容均根据 <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">创意公用授权-相同方式共享 4.0 国际许可</a>进行分享。CS Unplugged 是由<a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">计算机科学教育研究小组</a>在新西兰<a href=\"http://www.canterbury.ac.nz/\">坎特伯雷大学</a>开展的项目。"
+msgid "The CS Unplugged material is open source on <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International license</a>. The CS Unplugged is a project by the <a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">Computer Science Education Research Group</a> at the <a href=\"https://www.canterbury.ac.nz/\">University of Canterbury</a>, New Zealand."
+msgstr "CS Unplugged 资料属于 <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a> 上的开放资源，此网站的内容均根据 <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">创意公用授权-相同方式共享 4.0 国际许可</a>进行分享。CS Unplugged 是由<a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">计算机科学教育研究小组</a>在新西兰<a href=\"https://www.canterbury.ac.nz/\">坎特伯雷大学</a>开展的项目。"
 
 #: templates/core.html:222
 msgid "Icons provided generously by <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://icons8.com/\">icons8</a>."
