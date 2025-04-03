@@ -8,7 +8,7 @@ It's really easy to start contributing translations using CS Unplugged
 
 1. Read this documentation page, especially the `Translation Notes`_ section.
 2. Create an account on `Crowdin <https://crowdin.com/join>`__.
-3. Visit the `CS Unplugged Crowdin page <https://translate.csunplugged.org/>`__.
+3. Visit the `CS Unplugged Crowdin page <https://crowdin.com/project/cs-unplugged>`__.
 4. Start translating!
 
 .. note::
