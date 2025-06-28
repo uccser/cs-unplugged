@@ -48,7 +48,7 @@
     ],
     "scripts": {
         "dev": "gulp",
-        "generate-assets": "gulp generate-assets",
-        "build": "gulp generate-assets --production"
+        "generate-assets": "gulp generate-assets --no-experimental-require-module",
+        "build": "gulp generate-assets --no-experimental-require-module --production"
     }
 }
