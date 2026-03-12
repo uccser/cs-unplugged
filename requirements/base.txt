@@ -41,3 +41,6 @@ requests==2.32.4
 
 # CORS
 django-cors-headers==4.7.0
+
+# FIXME: Lock setuptools to 81.0.0 as 82 and higher removes pkg_resources
+setuptools<=81.0.0.0
