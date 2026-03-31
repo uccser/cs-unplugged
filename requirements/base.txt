@@ -21,7 +21,7 @@ verto==1.2.0
 python-markdown-math==0.6
 
 # YAML Loading
-PyYAML==6.0.2
+PyYAML==6.0.3
 
 # System tools
 tqdm==4.67.1
