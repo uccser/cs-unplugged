@@ -1,0 +1,3 @@
+# Ngā Whatunga Kōmaka
+
+Ki a tātou ngā kiritaki, ka hiahia kia tere rawa ngā tukanga mōhiohio, kia tere ai te haere o ngā papatono, kia tere te uta o ngā whārangi tukutuku, kia kaua tātou e hōhā ki te mātakitaki i ngā pae kaunuku, me ngā wīra hurihuri e puta ana i te wā kei te whakaaro te rorohiko mō tētahi mea! Ko tētahi o ngā ara kia tere ake ai ngā rorohiko, ko te tuhi i ngā papatono e whakamahi i ngā takahanga iti iho (ka kitea tēnei i ngā akomanga mō ngā hātepe kōmaka me te rapu). Ko tētahi atu ara kia tere ake ai te whakaoti hopanga, ko te whakamahi i ngā rorohiko maha i te wā kotahi ki te whakaoti i ngā wāhanga rerekē o te hopanga, ko tērā te kaupapa i tūhuratia i tēnei kōwae ako.
