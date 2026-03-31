@@ -1,4 +1,4 @@
-FROM astefanutti/decktape:3.4.1
+FROM astefanutti/decktape:3.12.0
 
 COPY --chown=node:node ./create-slide-files.js /decktape
 
