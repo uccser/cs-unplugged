@@ -1,7 +1,7 @@
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require("child_process");
+import http from 'http'
+import fs from 'fs'
+import path from 'path'
+import { execSync } from 'child_process'
 
 // Top level directory is created by inherited Docker image and is mapped
 // by Docker Compose to the csunplugged/build/ directory to set the correct
