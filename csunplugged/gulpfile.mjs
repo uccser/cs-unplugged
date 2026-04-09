@@ -184,20 +184,20 @@ function vendorJs() {
 
 // Image compression
 function img() {
-    return src(`${paths.images_source}/**/*`)
+    return src(`${paths.images_source}/**/*`, {encoding: false})
         .pipe(gulpif(PRODUCTION, imagemin())) // Compresses PNG, JPEG, GIF and SVG images
         .pipe(dest(paths.images_output))
 }
 
 // Downloadable files
 function files() {
-    return src(`${paths.files_source}/**/*`)
+    return src(`${paths.files_source}/**/*`, {encoding: false})
         .pipe(dest(paths.files_output))
 }
 
 // Custom fonts files
 function fonts() {
-    return src(`${paths.fonts_source}/**/*`)
+    return src(`${paths.fonts_source}/**/*`, {encoding: false})
         .pipe(dest(paths.fonts_output))
 }
 
