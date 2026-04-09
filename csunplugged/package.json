@@ -26,7 +26,7 @@
         "gulp-sourcemaps": "3.0.0",
         "gulp-tap": "2.0.0",
         "gulp-terser": "2.1.0",
-        "intro.js": "7.2.0",
+        "intro.js": "8.3.2",
         "jquery": "3.7.1",
         "multiple-select": "1.7.0",
         "pixrem": "5.0.0",
