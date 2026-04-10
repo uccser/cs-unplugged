@@ -27,7 +27,7 @@ PyYAML==6.0.3
 tqdm==4.67.3
 
 # XML Parsing
-lxml==5.4.0
+lxml==6.0.3
 cssselect==1.4.0
 
 # I18n
