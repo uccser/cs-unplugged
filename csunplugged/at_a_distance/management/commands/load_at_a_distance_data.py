@@ -7,6 +7,7 @@ from utils.BaseLoader import BaseLoader
 from utils.LoaderFactory import LoaderFactory
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
+from at_a_distance.models import Lesson
 
 
 class Command(BaseCommand):
@@ -56,3 +57,7 @@ class Command(BaseCommand):
                     content_path=lesson_slug,
                     structure_filename=lesson_structure_file,
                 ).load()
+
+            _, results = Lesson.objects.exclude(slug__in=structure_file["lessons"]).delete()
+            if results.get("at_a_distance", 0) > 0:
+                print(f"Deleted {results['at_a_distance.Lesson']} lessons")
