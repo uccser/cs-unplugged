@@ -33,7 +33,7 @@ cssselect==1.4.0
 # I18n
 django-modeltranslation==0.19.15
 uniseg==0.10.1
-python-bidi==0.6.7
+python-bidi==0.6.10
 django-bidi-utils==1.0
 
 # Plugging it in
