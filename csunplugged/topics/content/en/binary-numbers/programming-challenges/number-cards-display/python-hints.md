@@ -6,5 +6,6 @@
 -   In this challenge, use the `input()` function to receive input from the
     user. Place text inside the brackets of input with your question. The user input
     will be stored whichever variable you assign it to. Set the value of variable
-    `number_of_cards` to the input you received. Use a for loop, repeating the
-    blocks inside (displaying the number of dots) `number_of_cards` times.
+    `number_of_cards` to the input you received, then use `int()` to convert the
+    input from a string into a number. Use a for loop, repeating the blocks
+    inside (displaying the number of dots) `number_of_cards` times.
